@@ -171,7 +171,7 @@ export default function HomePage() {
       <section className="py-12 bg-white border-b border-gray-100">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <p className="text-center text-sm font-heading font-semibold uppercase tracking-wider text-gray-600 mb-8">Trusted By &amp; Affiliated With</p>
-          <div className="grid grid-cols-2 md:grid-cols-5 gap-4">
+          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-4">
             {[
               {
                 label: "BBB Accredited",
@@ -272,14 +272,14 @@ export default function HomePage() {
               We are not just another towing company. We are your dedicated parking enforcement partner, committed to protecting your property and keeping your tenants happy -- all at absolutely no cost to you.
             </p>
           </div>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6">
             {[
               { end: 5, suffix: "+", label: "Years Experience" },
               { end: 6, suffix: "+", label: "Tow Trucks" },
               { end: 8, suffix: "", label: "Cities Served" },
               { end: 0, prefix: "$", suffix: "", label: "Cost to Property Owners" },
             ].map((counter, i) => (
-              <div key={counter.label} className="rounded-2xl p-8 reveal bg-white/10 backdrop-blur-sm border border-white/15" style={{ transitionDelay: `${i * 150}ms` }}>
+              <div key={counter.label} className="rounded-2xl p-5 sm:p-8 reveal bg-white/10 backdrop-blur-sm border border-white/15" style={{ transitionDelay: `${i * 150}ms` }}>
                 <AnimatedCounter end={counter.end} prefix={counter.prefix || ""} suffix={counter.suffix} label={counter.label} />
               </div>
             ))}
@@ -567,7 +567,7 @@ export default function HomePage() {
               We provide towing and parking enforcement services throughout the Phoenix metro, including these communities.
             </p>
           </div>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
             {SERVICE_AREAS.map((area, i) => (
               <Link key={area.slug} href={["phoenix", "scottsdale", "mesa"].includes(area.slug) ? `/locations/${area.slug}` : "/#locations"} className="glass-card-white rounded-2xl p-6 text-center group border-glow-blue reveal" style={{ transitionDelay: `${i * 80}ms` }}>
                 <div className="w-10 h-10 bg-blue-50 text-blue-600 rounded-lg flex items-center justify-center mx-auto mb-3 group-hover:bg-blue-600 group-hover:text-white transition-all duration-300">
@@ -595,9 +595,9 @@ export default function HomePage() {
           <Image src="/images/arizona-skyline-panoramic.jpg" alt="Phoenix Arizona skyline" fill className="object-cover" />
         </div>
         <div className="absolute inset-0 z-[1]" style={{ background: "linear-gradient(160deg, rgba(15,31,54,0.92) 0%, rgba(27,42,63,0.88) 50%, rgba(30,107,184,0.75) 100%)" }} />
-        <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-white reveal">
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold font-heading mb-4">Ready to Secure Your Property?</h2>
-          <p className="text-xl text-white/95 mb-10 max-w-2xl mx-auto">Get started with a free consultation. Our parking enforcement services cost you absolutely nothing.</p>
+        <div className="hero-text relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-white reveal">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold font-heading mb-4">Ready to Secure Your Property?</h2>
+          <p className="text-base sm:text-lg md:text-xl text-white mb-10 max-w-2xl mx-auto">Get started with a free consultation. Our parking enforcement services cost you absolutely nothing.</p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a href={`tel:${COMPANY.phone}`} className="btn-primary text-lg inline-flex items-center gap-2">
               <svg className="w-5 h-5" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24">

@@ -91,6 +91,25 @@ h1, h2, h3, h4, h5, h6 {
   line-height: 1.2;
 }
 
+/* Override heading color to white inside dark containers */
+.parallax-container h1,
+.parallax-container h2,
+.parallax-container h3,
+.parallax-container h4,
+.hero-text h1,
+.hero-text h2,
+.hero-text h3,
+.hero-text h4,
+footer h1,
+footer h2,
+footer h3,
+footer h4,
+[style*="background: #1b2a3f"] h1,
+[style*="background: #1b2a3f"] h2,
+[style*="background: #1b2a3f"] h3 {
+  color: #ffffff;
+}
+
 /* ========================================
    SCROLLBAR — subtle, unobtrusive
    ======================================== */
@@ -725,6 +744,34 @@ h1, h2, h3, h4, h5, h6 {
 /* ========================================
    MISC UTILITIES
    ======================================== */
+
+/* ========================================
+   MOBILE RESPONSIVE OVERRIDES
+   ======================================== */
+
+@media (max-width: 480px) {
+  /* Tighter padding on very small screens */
+  .btn-primary,
+  .btn-secondary,
+  .btn-cta {
+    padding: 12px 20px;
+    font-size: 0.875rem;
+  }
+
+  /* Ensure no horizontal overflow from cards */
+  .glass-card,
+  .glass-card-white {
+    overflow: hidden;
+    word-break: break-word;
+  }
+}
+
+@media (max-width: 640px) {
+  /* Section title sizing on mobile */
+  .section-title {
+    font-size: 1.75rem;
+  }
+}
 
 .border-glow-blue {
   border: 1px solid rgba(30, 107, 184, 0.12);
