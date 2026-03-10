@@ -10,7 +10,7 @@ export default function EmergencyBanner() {
 
   return (
     <div
-      className={`bg-gradient-to-r from-accent-dark via-accent to-accent-dark text-white overflow-hidden transition-all duration-500 ease-out ${
+      className={`hidden md:block bg-gradient-to-r from-accent-dark via-accent to-accent-dark text-white overflow-hidden transition-all duration-500 ease-out ${
         dismissed ? 'max-h-0 opacity-0' : 'max-h-16 opacity-100'
       }`}
     >
