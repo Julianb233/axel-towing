@@ -218,7 +218,7 @@ export default function CaseStudiesPage() {
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 font-heading">
               Real Results for <span className="text-gradient">Real Properties</span>
             </h1>
-            <p className="text-lg md:text-xl text-white/80 leading-relaxed">
+            <p className="text-lg md:text-xl text-white/95 leading-relaxed">
               See how Phoenix property managers solved their parking challenges with Axle Towing &amp; Impound
               &mdash; at zero cost.
             </p>
@@ -352,7 +352,7 @@ export default function CaseStudiesPage() {
           <h2 className="text-3xl md:text-4xl font-bold mb-6 font-heading">
             Your Property Could Be Our Next Success Story
           </h2>
-          <p className="text-lg text-white/80 mb-8 max-w-2xl mx-auto">
+          <p className="text-lg text-white/95 mb-8 max-w-2xl mx-auto">
             Every case study above started with a single phone call. Let us show you what professional
             parking enforcement can do for your property &mdash; at absolutely no cost.
           </p>

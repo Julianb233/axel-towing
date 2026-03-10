@@ -175,7 +175,7 @@ export default function ResourcesPage() {
           <h2 className="font-heading text-3xl md:text-4xl font-bold text-white mb-4 reveal">
             Need a Custom Parking Program?
           </h2>
-          <p className="text-white/80 text-lg mb-10 max-w-2xl mx-auto reveal delay-100">
+          <p className="text-white/95 text-lg mb-10 max-w-2xl mx-auto reveal delay-100">
             Our free resources are a great start, but nothing beats a personalized parking enforcement program. Contact us for a free property assessment.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center reveal delay-200">

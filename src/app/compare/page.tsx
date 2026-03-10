@@ -107,7 +107,7 @@ export default function ComparePage() {
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 font-heading">
               See How We <span className="text-gradient">Compare</span>
             </h1>
-            <p className="text-lg md:text-xl text-white/80 leading-relaxed">
+            <p className="text-lg md:text-xl text-white/95 leading-relaxed">
               Not all towing companies are created equal. See why Phoenix property managers
               are switching to Axle Towing &amp; Impound.
             </p>
@@ -204,7 +204,7 @@ export default function ComparePage() {
               <blockquote className="text-lg md:text-xl text-white/90 leading-relaxed mb-6 italic">
                 &ldquo;We switched to Axle Towing after dealing with missed calls and slow response times from our previous company. Within the first month, unauthorized parking dropped by over 80%. Their online portal alone saves me hours every week. Best part? It costs us absolutely nothing.&rdquo;
               </blockquote>
-              <div className="text-white/70">
+              <div className="text-white/90">
                 <div className="font-bold text-white font-heading">Sarah M.</div>
                 <div className="text-sm">Property Manager &mdash; 320-Unit Phoenix Apartment Community</div>
               </div>
@@ -220,7 +220,7 @@ export default function ComparePage() {
           <h2 className="text-3xl md:text-4xl font-bold mb-6 font-heading">
             Ready to Switch? It&rsquo;s Free.
           </h2>
-          <p className="text-lg text-white/80 mb-8 max-w-2xl mx-auto">
+          <p className="text-lg text-white/95 mb-8 max-w-2xl mx-auto">
             Join hundreds of property managers who upgraded to modern, professional parking enforcement
             &mdash; at zero cost. No contracts, no commitments, no risk.
           </p>

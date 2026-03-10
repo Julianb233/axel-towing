@@ -143,7 +143,7 @@ export default function PreguntasFrecuentesPage() {
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 font-heading">
               Preguntas <span className="text-gradient">Frecuentes</span>
             </h1>
-            <p className="text-lg md:text-xl text-white/80 leading-relaxed">
+            <p className="text-lg md:text-xl text-white/95 leading-relaxed">
               Todo lo que necesita saber sobre nuestros servicios de remolque y control de estacionamiento &mdash; ya sea propietario o dueno de vehiculo.
             </p>
           </div>
@@ -241,7 +241,7 @@ export default function PreguntasFrecuentesPage() {
           <h2 className="text-3xl md:text-4xl font-bold mb-6 font-heading">
             Aun Tiene Preguntas?
           </h2>
-          <p className="text-lg text-white/80 mb-8 max-w-2xl mx-auto">
+          <p className="text-lg text-white/95 mb-8 max-w-2xl mx-auto">
             Nuestro equipo esta listo para ayudarle. Comuniquese para una consulta gratuita y responderemos todas sus preguntas sobre su situacion especifica.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">

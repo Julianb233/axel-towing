@@ -44,7 +44,7 @@ export default function ContactWidget() {
               </svg>
             </button>
             <h3 className="text-lg font-bold font-heading">How can we help?</h3>
-            <p className="text-white/70 text-sm mt-0.5">Choose an option below</p>
+            <p className="text-white/90 text-sm mt-0.5">Choose an option below</p>
           </div>
 
           {/* Body */}

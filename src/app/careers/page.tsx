@@ -150,7 +150,7 @@ export default function CareersPage() {
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 font-heading">
               Join <span className="text-gradient">Our Team</span>
             </h1>
-            <p className="text-lg md:text-xl text-white/80 leading-relaxed">
+            <p className="text-lg md:text-xl text-white/95 leading-relaxed">
               Build a career with Phoenix&rsquo;s fastest-growing private property towing company.
               We&rsquo;re looking for dedicated professionals who share our commitment to integrity and service.
             </p>
@@ -248,7 +248,7 @@ export default function CareersPage() {
         <div className="relative z-10 max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-10 reveal">
             <h2 className="text-3xl md:text-4xl font-bold mb-4 font-heading">Apply Now</h2>
-            <p className="text-white/70 text-lg">
+            <p className="text-white/90 text-lg">
               Ready to join our team? Fill out the form below and we&rsquo;ll be in touch.
             </p>
           </div>
@@ -256,7 +256,7 @@ export default function CareersPage() {
             <form action="#" className="glass rounded-2xl p-8 md:p-10 space-y-6">
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                 <div>
-                  <label htmlFor="name" className="block text-sm font-medium text-white/80 mb-2">
+                  <label htmlFor="name" className="block text-sm font-medium text-white/95 mb-2">
                     Full Name *
                   </label>
                   <input
@@ -269,7 +269,7 @@ export default function CareersPage() {
                   />
                 </div>
                 <div>
-                  <label htmlFor="email" className="block text-sm font-medium text-white/80 mb-2">
+                  <label htmlFor="email" className="block text-sm font-medium text-white/95 mb-2">
                     Email Address *
                   </label>
                   <input
@@ -284,7 +284,7 @@ export default function CareersPage() {
               </div>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                 <div>
-                  <label htmlFor="phone" className="block text-sm font-medium text-white/80 mb-2">
+                  <label htmlFor="phone" className="block text-sm font-medium text-white/95 mb-2">
                     Phone Number *
                   </label>
                   <input
@@ -297,7 +297,7 @@ export default function CareersPage() {
                   />
                 </div>
                 <div>
-                  <label htmlFor="position" className="block text-sm font-medium text-white/80 mb-2">
+                  <label htmlFor="position" className="block text-sm font-medium text-white/95 mb-2">
                     Position *
                   </label>
                   <select
@@ -315,7 +315,7 @@ export default function CareersPage() {
                 </div>
               </div>
               <div>
-                <label htmlFor="experience" className="block text-sm font-medium text-white/80 mb-2">
+                <label htmlFor="experience" className="block text-sm font-medium text-white/95 mb-2">
                   Tell Us About Your Experience
                 </label>
                 <textarea
@@ -327,7 +327,7 @@ export default function CareersPage() {
                 />
               </div>
               <div>
-                <label htmlFor="resume" className="block text-sm font-medium text-white/80 mb-2">
+                <label htmlFor="resume" className="block text-sm font-medium text-white/95 mb-2">
                   Upload Resume
                 </label>
                 <div className="w-full px-4 py-8 rounded-lg border-2 border-dashed border-white/20 text-center text-white/40 hover:border-white/40 transition-colors cursor-pointer">
@@ -380,7 +380,7 @@ export default function CareersPage() {
           <h2 className="text-3xl md:text-4xl font-bold mb-6 font-heading">
             Have Questions About Working With Us?
           </h2>
-          <p className="text-lg text-white/80 mb-8 max-w-2xl mx-auto">
+          <p className="text-lg text-white/95 mb-8 max-w-2xl mx-auto">
             Give us a call or send an email. We&rsquo;d love to hear from you.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">

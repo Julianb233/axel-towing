@@ -157,7 +157,7 @@ export default function GetQuotePage() {
               <br />
               <span className="text-gradient">Enforcement Quote</span>
             </h1>
-            <p className="text-lg md:text-xl text-white/80 leading-relaxed max-w-2xl">
+            <p className="text-lg md:text-xl text-white/95 leading-relaxed max-w-2xl">
               Answer a few quick questions and we&rsquo;ll create a custom parking enforcement
               program for your property — completely free.
             </p>

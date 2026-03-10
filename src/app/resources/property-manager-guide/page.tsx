@@ -109,7 +109,7 @@ export default function PropertyManagerGuidePage() {
               The Property Manager&rsquo;s Guide to{" "}
               <span className="text-gradient">Arizona Towing Laws</span>
             </h1>
-            <p className="text-lg md:text-xl text-white/80 leading-relaxed">
+            <p className="text-lg md:text-xl text-white/95 leading-relaxed">
               The definitive resource for property managers navigating Arizona&rsquo;s private property towing regulations. Written by towing industry experts.
             </p>
           </div>
@@ -252,7 +252,7 @@ export default function PropertyManagerGuidePage() {
           <h2 className="text-3xl md:text-4xl font-bold mb-6 font-heading">
             Want Expert Help With Your Parking Program?
           </h2>
-          <p className="text-lg text-white/80 mb-8 max-w-2xl mx-auto">
+          <p className="text-lg text-white/95 mb-8 max-w-2xl mx-auto">
             {COMPANY.name} has helped hundreds of Arizona properties implement professional parking enforcement programs &mdash; at zero cost. Let us help you too.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">

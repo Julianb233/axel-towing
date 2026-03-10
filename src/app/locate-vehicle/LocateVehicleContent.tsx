@@ -99,7 +99,7 @@ export default function LocateVehicleContent() {
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 font-heading">
               Locate Your <span className="text-gradient">Towed Vehicle</span>
             </h1>
-            <p className="text-lg md:text-xl text-white/80 leading-relaxed">
+            <p className="text-lg md:text-xl text-white/95 leading-relaxed">
               If your vehicle has been towed, we&rsquo;re here to help you get
               it back as quickly as possible.
             </p>

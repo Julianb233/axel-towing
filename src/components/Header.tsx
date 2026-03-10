@@ -77,7 +77,7 @@ export default function Header() {
             <div className="flex items-center gap-4">
               <a
                 href={`tel:${COMPANY.phone}`}
-                className="flex items-center gap-1.5 text-white/80 hover:text-white transition-colors"
+                className="flex items-center gap-1.5 text-white/95 hover:text-white transition-colors"
               >
                 <svg
                   className="w-3.5 h-3.5"
@@ -165,7 +165,7 @@ export default function Header() {
                   className={`relative px-4 py-2 text-sm font-medium tracking-wide transition-colors duration-300 group ${
                     scrolled
                       ? (isActive ? 'text-blue-700' : 'text-gray-600 hover:text-gray-900')
-                      : (isActive ? 'text-white' : 'text-white/70 hover:text-white')
+                      : (isActive ? 'text-white' : 'text-white/90 hover:text-white')
                   }`}
                 >
                   {link.label}
@@ -188,7 +188,7 @@ export default function Header() {
             <a
               href={`tel:${COMPANY.phone}`}
               className={`flex items-center gap-2 transition-colors text-sm font-medium ${
-                scrolled ? 'text-gray-600 hover:text-gray-900' : 'text-white/80 hover:text-white'
+                scrolled ? 'text-gray-600 hover:text-gray-900' : 'text-white/95 hover:text-white'
               }`}
             >
               <svg
@@ -277,7 +277,7 @@ export default function Header() {
                     className={`flex items-center gap-3 px-4 py-3.5 rounded-xl text-lg font-medium transition-all duration-300 ${
                       isActive
                         ? 'bg-white/10 text-white'
-                        : 'text-white/70 hover:bg-white/5 hover:text-white'
+                        : 'text-white/90 hover:bg-white/5 hover:text-white'
                     }`}
                     style={{
                       transitionDelay: mobileOpen ? `${i * 50}ms` : '0ms',

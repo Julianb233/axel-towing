@@ -18,9 +18,9 @@ export default function LocationPageTemplate({
           }}
         />
         <div className="absolute inset-0 z-[1]" style={{ background: "linear-gradient(160deg, rgba(27,42,63,0.85) 0%, rgba(30,107,184,0.65) 100%)" }} />
-        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 md:py-32 w-full">
+        <div className="hero-text relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 md:py-32 w-full">
           <div className="max-w-3xl">
-            <div className="inline-flex items-center glass rounded-full px-4 py-1.5 text-white/80 text-sm font-medium mb-6">
+            <div className="inline-flex items-center glass rounded-full px-4 py-1.5 text-white text-sm font-medium mb-6">
               <svg
                 className="w-4 h-4 mr-1.5"
                 fill="none"
@@ -46,7 +46,7 @@ export default function LocationPageTemplate({
               Towing &amp; Parking Enforcement in{" "}
               <span className="text-gradient">{data.city}</span>, AZ
             </h1>
-            <p className="text-lg md:text-xl text-white/80 leading-relaxed mb-8">
+            <p className="text-lg md:text-xl text-white leading-relaxed mb-8">
               {data.heroSubtext}
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
@@ -352,7 +352,7 @@ export default function LocationPageTemplate({
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
               Get Free Towing Service in {data.city}
             </h2>
-            <p className="text-white/80 text-lg mb-8 max-w-2xl mx-auto">
+            <p className="text-white/95 text-lg mb-8 max-w-2xl mx-auto">
               Contact us today for a free consultation. All our private property
               towing services in {data.city} are at zero cost to property
               owners.

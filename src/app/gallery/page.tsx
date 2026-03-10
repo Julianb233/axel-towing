@@ -146,7 +146,7 @@ export default function GalleryPage() {
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 font-heading">
               Our Fleet &amp; <span className="text-gradient">Work</span>
             </h1>
-            <p className="text-lg md:text-xl text-white/80 leading-relaxed">
+            <p className="text-lg md:text-xl text-white/95 leading-relaxed">
               A look at our trucks, signage installations, property
               transformations, and the team behind Axle Towing.
             </p>
@@ -275,7 +275,7 @@ export default function GalleryPage() {
           <h2 className="text-3xl md:text-4xl font-bold mb-6 font-heading">
             See Our Fleet in Action
           </h2>
-          <p className="text-lg text-white/80 mb-8 max-w-2xl mx-auto">
+          <p className="text-lg text-white/95 mb-8 max-w-2xl mx-auto">
             Ready to put our professional fleet and experienced team to work for
             your property? Get started with a free consultation today.
           </p>

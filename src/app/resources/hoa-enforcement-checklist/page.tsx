@@ -79,7 +79,7 @@ export default function HOAEnforcementChecklistPage() {
               Free HOA Parking{" "}
               <span className="text-gradient">Enforcement Checklist</span>
             </h1>
-            <p className="text-lg md:text-xl text-white/80 leading-relaxed">
+            <p className="text-lg md:text-xl text-white/95 leading-relaxed">
               A 20-item compliance checklist that covers everything your HOA board needs to implement a professional parking enforcement program.
             </p>
           </div>
@@ -210,7 +210,7 @@ export default function HOAEnforcementChecklistPage() {
           <h2 className="text-3xl md:text-4xl font-bold mb-6 font-heading">
             Ready to Implement Your HOA Parking Program?
           </h2>
-          <p className="text-lg text-white/80 mb-8 max-w-2xl mx-auto">
+          <p className="text-lg text-white/95 mb-8 max-w-2xl mx-auto">
             {COMPANY.name} specializes in HOA parking enforcement. We handle signage, patrols, and vehicle removal &mdash; all at zero cost to your community.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">

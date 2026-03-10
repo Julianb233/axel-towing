@@ -71,7 +71,7 @@ export default function ParkingPolicyTemplatePage() {
               Free Parking Policy Template for{" "}
               <span className="text-gradient">Arizona Properties</span>
             </h1>
-            <p className="text-lg md:text-xl text-white/80 leading-relaxed">
+            <p className="text-lg md:text-xl text-white/95 leading-relaxed">
               A comprehensive, ARS-compliant parking policy template you can customize for your HOA, apartment complex, or commercial property.
             </p>
           </div>
@@ -217,7 +217,7 @@ export default function ParkingPolicyTemplatePage() {
           <h2 className="text-3xl md:text-4xl font-bold mb-6 font-heading">
             Need Help Implementing Your Policy?
           </h2>
-          <p className="text-lg text-white/80 mb-8 max-w-2xl mx-auto">
+          <p className="text-lg text-white/95 mb-8 max-w-2xl mx-auto">
             {COMPANY.name} can help you implement your parking policy with professional signage, enforcement patrols, and vehicle removal &mdash; all at no cost to you.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">

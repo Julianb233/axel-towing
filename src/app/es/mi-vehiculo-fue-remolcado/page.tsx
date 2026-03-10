@@ -99,7 +99,7 @@ export default function MiVehiculoFueRemolcadoPage() {
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 font-heading">
               Mi Vehiculo Fue <span className="text-gradient">Remolcado</span>
             </h1>
-            <p className="text-lg md:text-xl text-white/80 leading-relaxed">
+            <p className="text-lg md:text-xl text-white/95 leading-relaxed">
               Si su vehiculo fue remolcado, estamos aqui para ayudarle a recuperarlo lo mas rapido posible.
             </p>
           </div>

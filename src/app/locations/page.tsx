@@ -41,7 +41,7 @@ export default function LocationsPage() {
           <h1 className="font-heading text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4">
             Serving the Greater Phoenix Area
           </h1>
-          <p className="text-lg md:text-xl text-white/80 max-w-2xl mx-auto">
+          <p className="text-lg md:text-xl text-white/95 max-w-2xl mx-auto">
             Professional private property towing and parking enforcement across
             8 cities. Find your local service area below.
           </p>
@@ -128,7 +128,7 @@ export default function LocationsPage() {
           <h2 className="text-3xl md:text-4xl font-bold font-heading mb-4">
             Don&apos;t See Your City?
           </h2>
-          <p className="text-white/80 text-lg mb-8 max-w-2xl mx-auto">
+          <p className="text-white/95 text-lg mb-8 max-w-2xl mx-auto">
             We serve the entire Phoenix metro area. Contact us to discuss towing
             services for your property — it&apos;s completely free.
           </p>

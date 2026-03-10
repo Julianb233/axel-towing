@@ -63,17 +63,25 @@ const SOCIAL_LINKS = [
 export default function Footer() {
   return (
     <footer className="relative">
-      {/* CTA Banner with parallax background */}
-      <section
-        className="relative py-20 parallax grain-overlay"
-        style={{ backgroundImage: `url('/images/testimonial-bg.jpg')` }}
-      >
-        <div className="absolute inset-0 gradient-overlay-dark" />
-        <div className="relative z-10 max-w-4xl mx-auto px-4 text-center">
+      {/* CTA Banner */}
+      <section className="relative py-20 md:py-24 overflow-hidden">
+        <div className="absolute inset-0 z-0">
+          <Image
+            src="/images/testimonial-bg.jpg"
+            alt="Phoenix Arizona property"
+            fill
+            className="object-cover"
+            sizes="100vw"
+            quality={85}
+          />
+        </div>
+        <div className="absolute inset-0 z-[1]" style={{ background: 'linear-gradient(160deg, rgba(15,31,54,0.92) 0%, rgba(27,42,63,0.88) 50%, rgba(30,107,184,0.75) 100%)' }} />
+        <div className="absolute inset-0 grain-overlay z-[2]" />
+        <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-3xl md:text-4xl font-bold text-white mb-4 font-heading">
             Ready to Protect Your Property?
           </h2>
-          <p className="text-blue-100 mb-8 text-lg max-w-2xl mx-auto">
+          <p className="text-white/80 mb-8 text-lg max-w-2xl mx-auto">
             Get a free consultation and custom towing program &mdash; at no cost
             to you. Serving the entire Phoenix metro area.
           </p>
@@ -135,7 +143,7 @@ export default function Footer() {
                   <li key={s.slug}>
                     <Link
                       href={`/services/${s.slug}`}
-                      className="text-white/60 hover:text-white/80 transition-colors inline-flex items-center gap-1.5 group"
+                      className="text-white/60 hover:text-white/95 transition-colors inline-flex items-center gap-1.5 group"
                     >
                       <span className="w-0 h-0.5 bg-cta rounded-full transition-all duration-300 group-hover:w-3" />
                       {s.title}
@@ -159,7 +167,7 @@ export default function Footer() {
                           ? `/locations/${area.slug}`
                           : '/#locations'
                       }
-                      className="text-white/60 hover:text-white/80 transition-colors inline-flex items-center gap-1.5 group"
+                      className="text-white/60 hover:text-white/95 transition-colors inline-flex items-center gap-1.5 group"
                     >
                       <span className="w-0 h-0.5 bg-cta rounded-full transition-all duration-300 group-hover:w-3" />
                       {area.name}, AZ
@@ -179,7 +187,7 @@ export default function Footer() {
                   <li key={link.href}>
                     <Link
                       href={link.href}
-                      className="text-white/60 hover:text-white/80 transition-colors inline-flex items-center gap-1.5 group"
+                      className="text-white/60 hover:text-white/95 transition-colors inline-flex items-center gap-1.5 group"
                     >
                       <span className="w-0 h-0.5 bg-cta rounded-full transition-all duration-300 group-hover:w-3" />
                       {link.label}
@@ -214,7 +222,7 @@ export default function Footer() {
                 </a>
                 <a
                   href={`mailto:${COMPANY.email}`}
-                  className="flex items-center gap-2 text-white/60 hover:text-white/80 transition-colors"
+                  className="flex items-center gap-2 text-white/60 hover:text-white/95 transition-colors"
                 >
                   <svg
                     className="w-4 h-4 shrink-0"
@@ -255,7 +263,7 @@ export default function Footer() {
                       />
                     </svg>
                     <div>
-                      <span className="text-white/80 font-medium text-xs uppercase tracking-wide">
+                      <span className="text-white/95 font-medium text-xs uppercase tracking-wide">
                         {addr.label}
                       </span>
                       <br />

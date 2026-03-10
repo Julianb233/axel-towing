@@ -115,15 +115,15 @@ export default function HomePage() {
           style={{ background: "linear-gradient(160deg, rgba(30,107,184,0.7) 0%, rgba(27,42,63,0.78) 100%)" }}
         />
 
-        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-white py-32">
+        <div className="hero-text relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-white py-32">
           <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold font-heading leading-tight mb-6 animate-fade-in-up">
             Phoenix&apos;s Most Trusted
             <br />
-            <span className="text-gradient" style={{ WebkitTextFillColor: "transparent", background: "linear-gradient(135deg, #ffffff, #93ccf7)", WebkitBackgroundClip: "text", backgroundClip: "text" }}>
+            <span style={{ WebkitTextFillColor: "transparent", background: "linear-gradient(135deg, #ffffff, #93ccf7)", WebkitBackgroundClip: "text", backgroundClip: "text", filter: "drop-shadow(0 2px 4px rgba(0,0,0,0.4))" }}>
               Private Property Towing
             </span>
           </h1>
-          <p className="text-lg sm:text-xl md:text-2xl text-white/85 max-w-3xl mx-auto mb-10 animate-fade-in-up delay-200 leading-relaxed">
+          <p className="text-lg sm:text-xl md:text-2xl text-white max-w-3xl mx-auto mb-10 animate-fade-in-up delay-200 leading-relaxed">
             Professional parking enforcement and vehicle management at zero cost to property owners.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center animate-fade-in-up delay-300">
@@ -263,12 +263,12 @@ export default function HomePage() {
           <Image src={IMAGES.hero.parkingLot} alt="Phoenix parking lot" fill className="object-cover" />
         </div>
         <div className="absolute inset-0 z-[1]" style={{ background: "linear-gradient(160deg, rgba(27,42,63,0.88) 0%, rgba(30,107,184,0.7) 100%)" }} />
-        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="hero-text relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16 reveal">
             <span className="text-blue-300 font-semibold text-sm uppercase tracking-wider font-heading">Why Us</span>
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold font-heading text-white mt-3 mb-4">Why Choose Axle Towing?</h2>
             <div className="mx-auto w-24 h-1 bg-gradient-to-r from-blue-400 to-blue-200 rounded-full mb-6" />
-            <p className="text-white/80 text-lg max-w-2xl mx-auto leading-relaxed">
+            <p className="text-white text-lg max-w-2xl mx-auto leading-relaxed">
               We are not just another towing company. We are your dedicated parking enforcement partner, committed to protecting your property and keeping your tenants happy -- all at absolutely no cost to you.
             </p>
           </div>
@@ -482,7 +482,7 @@ export default function HomePage() {
                     className={`px-3 py-2.5 rounded-lg text-sm font-medium mb-1 ${
                       item.active
                         ? "bg-white/15 text-white"
-                        : "text-white/50 hover:text-white/70"
+                        : "text-white/50 hover:text-white/90"
                     }`}
                   >
                     {item.label}
@@ -597,7 +597,7 @@ export default function HomePage() {
         <div className="absolute inset-0 z-[1]" style={{ background: "linear-gradient(160deg, rgba(15,31,54,0.92) 0%, rgba(27,42,63,0.88) 50%, rgba(30,107,184,0.75) 100%)" }} />
         <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-white reveal">
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold font-heading mb-4">Ready to Secure Your Property?</h2>
-          <p className="text-xl text-white/80 mb-10 max-w-2xl mx-auto">Get started with a free consultation. Our parking enforcement services cost you absolutely nothing.</p>
+          <p className="text-xl text-white/95 mb-10 max-w-2xl mx-auto">Get started with a free consultation. Our parking enforcement services cost you absolutely nothing.</p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a href={`tel:${COMPANY.phone}`} className="btn-primary text-lg inline-flex items-center gap-2">
               <svg className="w-5 h-5" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24">

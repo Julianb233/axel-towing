@@ -236,7 +236,7 @@ export default function SpanishHomePage() {
             <span className="text-cta font-semibold text-sm uppercase tracking-wider font-heading">Testimonios</span>
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold font-heading text-white mt-3 mb-4">La Confianza de Nuestros Clientes</h2>
             <div className="mx-auto w-24 h-1 bg-gradient-to-r from-primary to-cta rounded-full mb-6" />
-            <p className="text-blue-200/60 text-lg">Vea lo que dicen nuestros clientes en el area metropolitana de Phoenix.</p>
+            <p className="text-blue-200/80 text-lg">Vea lo que dicen nuestros clientes en el area metropolitana de Phoenix.</p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {TESTIMONIALS_ES.map((t, i) => (
@@ -291,7 +291,7 @@ export default function SpanishHomePage() {
         <div className="absolute inset-0 z-[1] grain-overlay" />
         <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-white reveal">
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold font-heading mb-4">Listo para Proteger Su Propiedad?</h2>
-          <p className="text-xl text-white/80 mb-10 max-w-2xl mx-auto">Comience con una consulta gratuita. Nuestros servicios de control de estacionamiento no le cuestan absolutamente nada.</p>
+          <p className="text-xl text-white/95 mb-10 max-w-2xl mx-auto">Comience con una consulta gratuita. Nuestros servicios de control de estacionamiento no le cuestan absolutamente nada.</p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a href={`tel:${COMPANY.phone}`} className="btn-primary text-lg inline-flex items-center gap-2">
               <svg className="w-5 h-5" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24">

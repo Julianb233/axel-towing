@@ -143,7 +143,7 @@ export default function FAQContent() {
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 font-heading">
               Frequently Asked <span className="text-gradient">Questions</span>
             </h1>
-            <p className="text-lg md:text-xl text-white/80 leading-relaxed">
+            <p className="text-lg md:text-xl text-white/95 leading-relaxed">
               Everything you need to know about our towing and parking
               enforcement services &mdash; whether you&rsquo;re a property owner or a
               vehicle owner.
@@ -243,7 +243,7 @@ export default function FAQContent() {
           <h2 className="text-3xl md:text-4xl font-bold mb-6 font-heading">
             Still Have Questions?
           </h2>
-          <p className="text-lg text-white/80 mb-8 max-w-2xl mx-auto">
+          <p className="text-lg text-white/95 mb-8 max-w-2xl mx-auto">
             Our team is ready to help. Reach out for a free consultation and
             we&rsquo;ll answer any questions about your specific situation.
           </p>

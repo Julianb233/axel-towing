@@ -109,7 +109,7 @@ export default function WeBuyCarsPage() {
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 font-heading">
               We Buy Cars <span className="text-gradient">for Cash</span>
             </h1>
-            <p className="text-lg md:text-xl text-white/80 leading-relaxed">
+            <p className="text-lg md:text-xl text-white/95 leading-relaxed">
               Selling your car? Get a fast, fair cash offer from a trusted local company.
               Any condition, any make, any model &mdash; running or not.
             </p>
@@ -215,7 +215,7 @@ export default function WeBuyCarsPage() {
         <div className="relative z-10 max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-10 reveal">
             <h2 className="text-3xl md:text-4xl font-bold mb-4 font-heading">Get a Free Quote</h2>
-            <p className="text-white/70 text-lg">
+            <p className="text-white/90 text-lg">
               Tell us about your vehicle and we&rsquo;ll get back to you with a cash offer.
             </p>
           </div>
@@ -223,7 +223,7 @@ export default function WeBuyCarsPage() {
             <form action="#" className="glass rounded-2xl p-8 md:p-10 space-y-6">
               <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
                 <div>
-                  <label htmlFor="year" className="block text-sm font-medium text-white/80 mb-2">
+                  <label htmlFor="year" className="block text-sm font-medium text-white/95 mb-2">
                     Year *
                   </label>
                   <input
@@ -236,7 +236,7 @@ export default function WeBuyCarsPage() {
                   />
                 </div>
                 <div>
-                  <label htmlFor="make" className="block text-sm font-medium text-white/80 mb-2">
+                  <label htmlFor="make" className="block text-sm font-medium text-white/95 mb-2">
                     Make *
                   </label>
                   <input
@@ -249,7 +249,7 @@ export default function WeBuyCarsPage() {
                   />
                 </div>
                 <div>
-                  <label htmlFor="model" className="block text-sm font-medium text-white/80 mb-2">
+                  <label htmlFor="model" className="block text-sm font-medium text-white/95 mb-2">
                     Model *
                   </label>
                   <input
@@ -264,7 +264,7 @@ export default function WeBuyCarsPage() {
               </div>
               <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
                 <div>
-                  <label htmlFor="condition" className="block text-sm font-medium text-white/80 mb-2">
+                  <label htmlFor="condition" className="block text-sm font-medium text-white/95 mb-2">
                     Condition *
                   </label>
                   <select
@@ -282,7 +282,7 @@ export default function WeBuyCarsPage() {
                   </select>
                 </div>
                 <div>
-                  <label htmlFor="running" className="block text-sm font-medium text-white/80 mb-2">
+                  <label htmlFor="running" className="block text-sm font-medium text-white/95 mb-2">
                     Running? *
                   </label>
                   <select
@@ -297,7 +297,7 @@ export default function WeBuyCarsPage() {
                   </select>
                 </div>
                 <div>
-                  <label htmlFor="has-title" className="block text-sm font-medium text-white/80 mb-2">
+                  <label htmlFor="has-title" className="block text-sm font-medium text-white/95 mb-2">
                     Has Title? *
                   </label>
                   <select
@@ -314,7 +314,7 @@ export default function WeBuyCarsPage() {
               </div>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                 <div>
-                  <label htmlFor="phone" className="block text-sm font-medium text-white/80 mb-2">
+                  <label htmlFor="phone" className="block text-sm font-medium text-white/95 mb-2">
                     Phone Number *
                   </label>
                   <input
@@ -327,7 +327,7 @@ export default function WeBuyCarsPage() {
                   />
                 </div>
                 <div>
-                  <label htmlFor="email" className="block text-sm font-medium text-white/80 mb-2">
+                  <label htmlFor="email" className="block text-sm font-medium text-white/95 mb-2">
                     Email Address
                   </label>
                   <input
@@ -421,7 +421,7 @@ export default function WeBuyCarsPage() {
           <h2 className="text-3xl md:text-4xl font-bold mb-6 font-heading">
             Ready to Sell Your Car?
           </h2>
-          <p className="text-lg text-white/80 mb-8 max-w-2xl mx-auto">
+          <p className="text-lg text-white/95 mb-8 max-w-2xl mx-auto">
             Get a fair cash offer today. No obligations, no hassle, no hidden fees.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">

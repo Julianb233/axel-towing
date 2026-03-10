@@ -136,7 +136,7 @@ export default function ROICalculatorPage() {
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 font-heading">
               Calculate Your <span className="text-gradient">ROI</span>
             </h1>
-            <p className="text-lg md:text-xl text-white/80 leading-relaxed">
+            <p className="text-lg md:text-xl text-white/95 leading-relaxed">
               See the impact professional parking enforcement can have on your property
               &mdash; completely free of charge.
             </p>
@@ -329,7 +329,7 @@ export default function ROICalculatorPage() {
                 <div className="glass rounded-2xl p-6 bg-gradient-to-r from-blue-900 to-primary text-white glow-blue">
                   <div className="flex items-center justify-between">
                     <div>
-                      <div className="text-sm font-bold text-white/70 uppercase tracking-wider font-heading">
+                      <div className="text-sm font-bold text-white/90 uppercase tracking-wider font-heading">
                         Your Total Cost
                       </div>
                       <div className="text-sm text-white/60 mt-1">
@@ -398,7 +398,7 @@ export default function ROICalculatorPage() {
           <h2 className="text-3xl md:text-4xl font-bold mb-6 font-heading">
             Ready to See These Results on Your Property?
           </h2>
-          <p className="text-lg text-white/80 mb-8 max-w-2xl mx-auto">
+          <p className="text-lg text-white/95 mb-8 max-w-2xl mx-auto">
             Get a free, no-obligation assessment of your parking situation. We&rsquo;ll show you exactly how
             Axle Towing can help &mdash; and it won&rsquo;t cost you a thing.
           </p>

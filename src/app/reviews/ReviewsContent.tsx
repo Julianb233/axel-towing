@@ -175,7 +175,7 @@ export default function ReviewsContent() {
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 font-heading">
               What Our Partners <span className="text-gradient">Say</span>
             </h1>
-            <p className="text-lg md:text-xl text-white/80 leading-relaxed">
+            <p className="text-lg md:text-xl text-white/95 leading-relaxed">
               Hear from property managers, HOA boards, and property owners across
               the Phoenix metro area who trust Axle Towing.
             </p>
@@ -282,7 +282,7 @@ export default function ReviewsContent() {
             <h2 className="text-3xl md:text-4xl font-bold font-heading">
               By The Numbers
             </h2>
-            <p className="text-white/70 text-lg mt-4 max-w-2xl mx-auto">
+            <p className="text-white/90 text-lg mt-4 max-w-2xl mx-auto">
               The results speak for themselves.
             </p>
           </div>
@@ -309,7 +309,7 @@ export default function ReviewsContent() {
           <h2 className="text-3xl md:text-4xl font-bold mb-6 font-heading">
             Ready to Join Our Satisfied Partners?
           </h2>
-          <p className="text-lg text-white/80 mb-8 max-w-2xl mx-auto">
+          <p className="text-lg text-white/95 mb-8 max-w-2xl mx-auto">
             See why hundreds of property managers across Phoenix trust Axle
             Towing for their parking enforcement needs &mdash; at zero cost.
           </p>

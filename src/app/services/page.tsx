@@ -151,7 +151,7 @@ export default function ServicesPage() {
           <h2 className="font-heading text-3xl md:text-4xl font-bold text-white mb-4 reveal">
             Get Started Today &mdash; At No Cost to You
           </h2>
-          <p className="text-white/80 text-lg mb-10 max-w-2xl mx-auto reveal delay-100">
+          <p className="text-white/95 text-lg mb-10 max-w-2xl mx-auto reveal delay-100">
             Our towing and parking enforcement services are completely free for property owners and managers. Let us handle your parking problems.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center reveal delay-200">

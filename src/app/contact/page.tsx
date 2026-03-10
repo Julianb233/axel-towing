@@ -44,7 +44,7 @@ export default function ContactPage() {
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 font-heading">
               Get In <span className="text-gradient">Touch</span>
             </h1>
-            <p className="text-lg md:text-xl text-white/80 leading-relaxed">
+            <p className="text-lg md:text-xl text-white/95 leading-relaxed">
               Ready to protect your property from unauthorized parking? Reach out for a
               free consultation and custom towing program.
             </p>

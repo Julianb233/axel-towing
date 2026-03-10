@@ -77,7 +77,7 @@ export default function PricingPage() {
                 Always.
               </span>
             </h1>
-            <p className="text-lg sm:text-xl md:text-2xl text-white/85 max-w-3xl mx-auto mb-10 leading-relaxed">
+            <p className="text-lg sm:text-xl md:text-2xl text-white/95 max-w-3xl mx-auto mb-10 leading-relaxed">
               Professional parking enforcement, patrol, signage, and vehicle removal -- all completely free. No hidden fees. No contracts.
             </p>
           </div>
@@ -273,7 +273,7 @@ export default function PricingPage() {
               How We Make It Free
             </h2>
             <div className="mx-auto w-24 h-1 bg-gradient-to-r from-blue-400 to-blue-200 rounded-full mb-6" />
-            <p className="text-white/80 text-lg max-w-2xl mx-auto leading-relaxed">
+            <p className="text-white/95 text-lg max-w-2xl mx-auto leading-relaxed">
               Our business model is simple and transparent. You never pay a dime.
             </p>
           </div>
@@ -323,7 +323,7 @@ export default function PricingPage() {
                   <div className="text-blue-200">{item.icon}</div>
                 </div>
                 <h3 className="text-xl font-bold font-heading text-white mb-3">{item.title}</h3>
-                <p className="text-white/70 leading-relaxed max-w-xs mx-auto">{item.desc}</p>
+                <p className="text-white/90 leading-relaxed max-w-xs mx-auto">{item.desc}</p>
               </div>
             ))}
           </div>

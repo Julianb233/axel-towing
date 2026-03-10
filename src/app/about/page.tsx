@@ -133,7 +133,7 @@ export default function AboutPage() {
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 font-heading">
               About <span className="text-gradient">Axle Towing &amp; Impound</span>
             </h1>
-            <p className="text-lg md:text-xl text-white/80 leading-relaxed">
+            <p className="text-lg md:text-xl text-white/95 leading-relaxed">
               Phoenix&rsquo;s modern approach to private property towing and parking enforcement.
               Built on integrity, powered by technology.
             </p>
@@ -206,7 +206,7 @@ export default function AboutPage() {
           <div className="reveal">
             <div className="glass rounded-2xl p-10 md:p-14 glow-blue">
               <h2 className="text-3xl md:text-4xl font-bold mb-6 font-heading">Our Mission</h2>
-              <p className="text-lg md:text-xl text-white/85 leading-relaxed">
+              <p className="text-lg md:text-xl text-white/95 leading-relaxed">
                 To provide professional, ethical, and legally compliant private property towing
                 services that protect property owners and communities &mdash; while treating every
                 individual we interact with respectfully. We believe towing can be done right:
@@ -346,7 +346,7 @@ export default function AboutPage() {
           <h2 className="text-3xl md:text-4xl font-bold mb-6 font-heading">
             Partner With Phoenix&rsquo;s Modern Towing Company
           </h2>
-          <p className="text-lg text-white/80 mb-8 max-w-2xl mx-auto">
+          <p className="text-lg text-white/95 mb-8 max-w-2xl mx-auto">
             Join hundreds of property managers who trust Axle Towing to protect their
             properties &mdash; professionally, legally, and at zero cost.
           </p>

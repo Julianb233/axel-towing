@@ -102,7 +102,7 @@ export default function PortalPage() {
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 font-heading">
               Property Manager <span className="text-gradient">Portal</span>
             </h1>
-            <p className="text-lg md:text-xl text-white/80 leading-relaxed max-w-2xl mx-auto">
+            <p className="text-lg md:text-xl text-white/95 leading-relaxed max-w-2xl mx-auto">
               Access your account to track tows, view reports, manage contracts, and
               submit dispatch requests &mdash; all in one place.
             </p>
@@ -317,7 +317,7 @@ export default function PortalPage() {
           <h2 className="text-3xl md:text-4xl font-bold mb-6 font-heading">
             Not a Partner Yet?
           </h2>
-          <p className="text-lg text-white/80 mb-8 max-w-2xl mx-auto">
+          <p className="text-lg text-white/95 mb-8 max-w-2xl mx-auto">
             Contact us to learn how we can help manage your property&rsquo;s parking enforcement
             &mdash; professionally, legally, and at zero cost to you.
           </p>

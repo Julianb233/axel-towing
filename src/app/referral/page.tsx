@@ -111,7 +111,7 @@ export default function ReferralPage() {
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 font-heading">
               Refer a Property Manager, <span className="text-gradient" style={{ WebkitTextFillColor: "transparent", background: "linear-gradient(135deg, #F59E0B, #FBBF24)", WebkitBackgroundClip: "text", backgroundClip: "text" }}>Get Rewarded</span>
             </h1>
-            <p className="text-lg md:text-xl text-white/80 leading-relaxed">
+            <p className="text-lg md:text-xl text-white/95 leading-relaxed">
               Know a property manager struggling with parking? Refer them to {COMPANY.name} and earn up to $200+ per referral.
             </p>
           </div>
@@ -170,7 +170,7 @@ export default function ReferralPage() {
                 style={{ transitionDelay: `${i * 150}ms` }}
               >
                 <div className={`bg-gradient-to-r ${tier.color} py-4 px-6`}>
-                  <div className="text-white/80 text-sm font-heading font-semibold uppercase tracking-wider">{tier.referral}</div>
+                  <div className="text-white/95 text-sm font-heading font-semibold uppercase tracking-wider">{tier.referral}</div>
                 </div>
                 <div className="p-8">
                   <div className="text-5xl font-bold font-heading text-blue-900 mb-2">{tier.reward}</div>
@@ -301,7 +301,7 @@ export default function ReferralPage() {
           <h2 className="text-3xl md:text-4xl font-bold mb-4 font-heading">
             Ready to Start Earning?
           </h2>
-          <p className="text-lg text-white/80 mb-8 max-w-2xl mx-auto">
+          <p className="text-lg text-white/95 mb-8 max-w-2xl mx-auto">
             Have questions about the referral program? Give us a call or scroll up to submit your first referral.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">

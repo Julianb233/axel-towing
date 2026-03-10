@@ -13,9 +13,9 @@ export default function ServicePageTemplate({ data }: { data: ServicePageData })
           <Image src={data.heroImage || COMPANY.heroImage} alt={data.heroHeadline} fill className="object-cover" priority />
         </div>
         <div className="absolute inset-0" style={{ background: "linear-gradient(160deg, rgba(27,42,63,0.88) 0%, rgba(30,107,184,0.7) 100%)" }} />
-        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 md:py-32 w-full">
+        <div className="hero-text relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 md:py-32 w-full">
           {/* Breadcrumbs */}
-          <nav className="flex items-center gap-2 text-sm text-white/60 mb-6 reveal">
+          <nav className="flex items-center gap-2 text-sm text-white/90 mb-6 reveal">
             <Link href="/" className="hover:text-white transition-colors">Home</Link>
             <span>/</span>
             <Link href="/services" className="hover:text-white transition-colors">Services</Link>
@@ -25,7 +25,7 @@ export default function ServicePageTemplate({ data }: { data: ServicePageData })
           <h1 className="font-heading text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 reveal">
             {data.heroHeadline}
           </h1>
-          <p className="text-lg md:text-xl text-white/80 max-w-2xl leading-relaxed reveal delay-200">
+          <p className="text-lg md:text-xl text-white max-w-2xl leading-relaxed reveal delay-200">
             {data.heroSubtext}
           </p>
           <div className="mt-10 flex flex-col sm:flex-row gap-4 reveal delay-300">
@@ -341,7 +341,7 @@ export default function ServicePageTemplate({ data }: { data: ServicePageData })
           <h2 className="font-heading text-3xl md:text-4xl font-bold text-white mb-4 reveal">
             Ready to Protect Your Property?
           </h2>
-          <p className="text-white/80 text-lg mb-10 max-w-2xl mx-auto reveal delay-100">
+          <p className="text-white/95 text-lg mb-10 max-w-2xl mx-auto reveal delay-100">
             Contact us today for a free consultation. Our {data.title.toLowerCase()} services are completely free for {data.targetAudience}.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center reveal delay-200">

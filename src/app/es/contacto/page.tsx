@@ -42,7 +42,7 @@ export default function ContactoPage() {
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 font-heading">
               Contacte<span className="text-gradient">nos</span>
             </h1>
-            <p className="text-lg md:text-xl text-white/80 leading-relaxed">
+            <p className="text-lg md:text-xl text-white/95 leading-relaxed">
               Listo para proteger su propiedad del estacionamiento no autorizado? Comuniquese para una consulta gratuita y un programa de remolque personalizado.
             </p>
           </div>
