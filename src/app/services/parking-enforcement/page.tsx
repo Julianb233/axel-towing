@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { SERVICE_PAGES } from "@/lib/service-data";
 import ServicePageTemplate from "@/components/ServicePageTemplate";
-import { serviceSchema, breadcrumbSchema } from "@/lib/schema";
+import { serviceSchema, breadcrumbSchema, faqSchema } from "@/lib/schema";
 
 const data = SERVICE_PAGES["parking-enforcement"];
 
@@ -35,6 +35,14 @@ export default function ParkingEnforcementPage() {
             { name: "Services", url: "https://axletowing.com/services" },
             { name: data.title, url: `https://axletowing.com/services/${data.slug}` },
           ])),
+        }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(faqSchema(
+            data.faqs.map(f => ({ question: f.q, answer: f.a }))
+          )),
         }}
       />
       <ServicePageTemplate data={data} />
