@@ -127,10 +127,10 @@ export default function HomePage() {
             Professional parking enforcement and vehicle management at zero cost to property owners.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center animate-fade-in-up delay-300">
-            <Link href="/contact" className="btn-primary text-lg px-10 py-4">
+            <Link href="/contact" className="btn-primary px-8 py-3">
               Get a Free Quote
             </Link>
-            <a href={`tel:${COMPANY.phone}`} className="btn-secondary text-lg px-10 py-4">
+            <a href={`tel:${COMPANY.phone}`} className="btn-secondary px-8 py-3">
               Call Now: {COMPANY.phone}
             </a>
           </div>
@@ -599,13 +599,13 @@ export default function HomePage() {
           <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold font-heading mb-4">Ready to Secure Your Property?</h2>
           <p className="text-base sm:text-lg md:text-xl text-white mb-10 max-w-2xl mx-auto">Get started with a free consultation. Our parking enforcement services cost you absolutely nothing.</p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <a href={`tel:${COMPANY.phone}`} className="btn-primary text-lg inline-flex items-center gap-2">
+            <a href={`tel:${COMPANY.phone}`} className="btn-primary inline-flex items-center gap-2">
               <svg className="w-5 h-5" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
               </svg>
               Call {COMPANY.phone}
             </a>
-            <Link href="/contact" className="btn-secondary text-lg">
+            <Link href="/contact" className="btn-secondary">
               Get a Free Quote
             </Link>
           </div>
