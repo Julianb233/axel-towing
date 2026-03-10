@@ -117,7 +117,7 @@ export default function ParkingPolicyTemplatePage() {
                 </p>
                 <div>
                   <div className="font-semibold text-blue-900 font-heading">Maria Gonzalez</div>
-                  <div className="text-sm text-gray-500">Property Manager, Chandler AZ</div>
+                  <div className="text-sm text-gray-700">Property Manager, Chandler AZ</div>
                 </div>
               </div>
             </div>
@@ -128,7 +128,7 @@ export default function ParkingPolicyTemplatePage() {
                 <h2 className="text-2xl font-bold text-blue-900 mb-2 font-heading">
                   Download Your Free Template
                 </h2>
-                <p className="text-gray-500 mb-6">
+                <p className="text-gray-700 mb-6">
                   Enter your information below and we&rsquo;ll send the template straight to your inbox.
                 </p>
 

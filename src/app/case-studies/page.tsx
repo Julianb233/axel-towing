@@ -285,7 +285,7 @@ export default function CaseStudiesPage() {
                   <div className="text-3xl md:text-4xl font-bold text-primary font-heading">
                     <AnimatedCounter target={stat.value} suffix={stat.suffix} prefix={stat.prefix} />
                   </div>
-                  <div className="text-sm text-gray-500 mt-2 font-medium">{stat.label}</div>
+                  <div className="text-sm text-gray-700 mt-2 font-medium">{stat.label}</div>
                 </div>
               ))}
             </div>
@@ -330,7 +330,7 @@ export default function CaseStudiesPage() {
                     </div>
                     <div>
                       <div className="font-bold text-blue-900 font-heading">{cs.quoteName}</div>
-                      <div className="text-sm text-gray-500">{cs.quoteRole}</div>
+                      <div className="text-sm text-gray-700">{cs.quoteRole}</div>
                     </div>
                     <div className="ml-auto">
                       <span className="inline-block text-xs text-primary font-heading font-semibold uppercase tracking-wider bg-primary/5 px-3 py-1 rounded-full">

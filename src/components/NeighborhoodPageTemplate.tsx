@@ -72,7 +72,7 @@ export default function NeighborhoodPageTemplate({
       <section className="bg-white border-b border-gray-100 relative z-10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
           <div className="flex flex-wrap items-center justify-center gap-3">
-            <span className="text-sm text-gray-500 font-medium mr-2">
+            <span className="text-sm text-gray-700 font-medium mr-2">
               Zip Codes Served:
             </span>
             {data.zipCodes.map((zip) => (
@@ -153,7 +153,7 @@ export default function NeighborhoodPageTemplate({
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4 text-center reveal">
             Property Types We Serve in {data.name}
           </h2>
-          <p className="text-gray-500 text-lg text-center mb-10 max-w-2xl mx-auto reveal">
+          <p className="text-gray-700 text-lg text-center mb-10 max-w-2xl mx-auto reveal">
             No matter what type of property you manage in {data.name}, our
             towing and parking enforcement services are completely free for
             property owners.
@@ -185,50 +185,28 @@ export default function NeighborhoodPageTemplate({
         </div>
       </section>
 
-      {/* Back to City + CTA */}
-      <section className="py-16 bg-gradient-to-br from-blue-950 via-blue-900 to-blue-950 relative overflow-hidden">
-        <div className="absolute inset-0 grain-overlay" />
-        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-brand-cta/10 rounded-full blur-3xl" />
-        <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <div className="reveal">
-            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
-              Get Free Towing Service in {data.name}
-            </h2>
-            <p className="text-blue-100 text-lg mb-8 max-w-2xl mx-auto">
-              Contact us today for a free consultation. All our private property
-              towing services in {data.name}, {data.city} are at zero cost to
-              property owners.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <a href={`tel:${COMPANY.phone}`} className="btn-primary">
-                Call {COMPANY.phone}
-              </a>
-              <Link href="/contact" className="btn-secondary">
-                Request Free Quote
-              </Link>
-            </div>
-            <div className="mt-8">
-              <Link
-                href={`/locations/${data.citySlug}`}
-                className="text-blue-100 hover:text-white transition-colors text-sm inline-flex items-center gap-1"
-              >
-                <svg
-                  className="w-4 h-4"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M15 19l-7-7 7-7"
-                  />
-                </svg>
-                Back to all {data.city} towing services
-              </Link>
-            </div>
-          </div>
+      {/* Back to City Navigation */}
+      <section className="py-6 bg-gray-50 border-t border-gray-100">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <Link
+            href={`/locations/${data.citySlug}`}
+            className="text-brand-blue hover:text-blue-800 transition-colors text-sm font-medium inline-flex items-center gap-1"
+          >
+            <svg
+              className="w-4 h-4"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d="M15 19l-7-7 7-7"
+              />
+            </svg>
+            Back to all {data.city} towing services
+          </Link>
         </div>
       </section>
     </>

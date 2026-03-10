@@ -100,7 +100,7 @@ export default function HOAEnforcementChecklistPage() {
                 </div>
                 <div>
                   <div className="font-bold text-blue-900 font-heading text-sm">Used by 500+ Arizona HOA Communities</div>
-                  <div className="text-xs text-gray-500">The most comprehensive HOA parking checklist in Arizona</div>
+                  <div className="text-xs text-gray-700">The most comprehensive HOA parking checklist in Arizona</div>
                 </div>
               </div>
 
@@ -137,7 +137,7 @@ export default function HOAEnforcementChecklistPage() {
                 <h2 className="text-2xl font-bold text-blue-900 mb-2 font-heading">
                   Download the Full Checklist
                 </h2>
-                <p className="text-gray-500 mb-6">
+                <p className="text-gray-700 mb-6">
                   Get the complete 20-item checklist with implementation notes and Arizona law references.
                 </p>
 

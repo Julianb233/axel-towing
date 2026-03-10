@@ -24,7 +24,7 @@ export default function CTASection({
         <h2 className={`text-3xl md:text-4xl font-bold mb-5 ${dark ? "text-white" : ""}`} style={dark ? undefined : { color: '#1a202c' }}>
           {headline}
         </h2>
-        <p className={`text-lg mb-8 max-w-2xl mx-auto ${dark ? "text-gray-300" : "text-gray-500"}`}>
+        <p className={`text-lg mb-8 max-w-2xl mx-auto ${dark ? "text-gray-300" : "text-gray-700"}`}>
           {subtext}
         </p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center">

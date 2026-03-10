@@ -77,11 +77,11 @@ export default function Footer() {
         </div>
         <div className="absolute inset-0 z-[1]" style={{ background: 'linear-gradient(160deg, rgba(15,31,54,0.92) 0%, rgba(27,42,63,0.88) 50%, rgba(30,107,184,0.75) 100%)' }} />
         <div className="absolute inset-0 grain-overlay z-[2]" />
-        <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl md:text-4xl font-bold text-white mb-4 font-heading">
+        <div className="hero-text relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-4 font-heading">
             Ready to Protect Your Property?
           </h2>
-          <p className="text-white/80 mb-8 text-lg max-w-2xl mx-auto">
+          <p className="text-white mb-8 text-base sm:text-lg max-w-2xl mx-auto">
             Get a free consultation and custom towing program &mdash; at no cost
             to you. Serving the entire Phoenix metro area.
           </p>
@@ -104,7 +104,7 @@ export default function Footer() {
 
         {/* Main footer content */}
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 sm:gap-10">
             {/* Column 1: Brand / Company */}
             <div>
               <Image
@@ -114,7 +114,7 @@ export default function Footer() {
                 height={66}
                 className="h-14 w-auto mb-4 brightness-0 invert"
               />
-              <p className="text-sm text-white/60 leading-relaxed mb-6">
+              <p className="text-sm text-white/80 leading-relaxed mb-6">
                 {COMPANY.description}
               </p>
 
@@ -125,7 +125,7 @@ export default function Footer() {
                     key={social.label}
                     href={social.href}
                     aria-label={social.label}
-                    className="p-2.5 rounded-lg text-white/60 hover:text-white bg-white/5 hover:bg-white/10 border border-white/10 transition-colors"
+                    className="p-2.5 rounded-lg text-white/80 hover:text-white bg-white/5 hover:bg-white/10 border border-white/10 transition-colors"
                   >
                     {social.icon}
                   </a>
@@ -143,7 +143,7 @@ export default function Footer() {
                   <li key={s.slug}>
                     <Link
                       href={`/services/${s.slug}`}
-                      className="text-white/60 hover:text-white/95 transition-colors inline-flex items-center gap-1.5 group"
+                      className="text-white/80 hover:text-white/95 transition-colors inline-flex items-center gap-1.5 group"
                     >
                       <span className="w-0 h-0.5 bg-cta rounded-full transition-all duration-300 group-hover:w-3" />
                       {s.title}
@@ -167,7 +167,7 @@ export default function Footer() {
                           ? `/locations/${area.slug}`
                           : '/#locations'
                       }
-                      className="text-white/60 hover:text-white/95 transition-colors inline-flex items-center gap-1.5 group"
+                      className="text-white/80 hover:text-white/95 transition-colors inline-flex items-center gap-1.5 group"
                     >
                       <span className="w-0 h-0.5 bg-cta rounded-full transition-all duration-300 group-hover:w-3" />
                       {area.name}, AZ
@@ -187,7 +187,7 @@ export default function Footer() {
                   <li key={link.href}>
                     <Link
                       href={link.href}
-                      className="text-white/60 hover:text-white/95 transition-colors inline-flex items-center gap-1.5 group"
+                      className="text-white/80 hover:text-white/95 transition-colors inline-flex items-center gap-1.5 group"
                     >
                       <span className="w-0 h-0.5 bg-cta rounded-full transition-all duration-300 group-hover:w-3" />
                       {link.label}
@@ -222,7 +222,7 @@ export default function Footer() {
                 </a>
                 <a
                   href={`mailto:${COMPANY.email}`}
-                  className="flex items-center gap-2 text-white/60 hover:text-white/95 transition-colors"
+                  className="flex items-center gap-2 text-white/80 hover:text-white/95 transition-colors"
                 >
                   <svg
                     className="w-4 h-4 shrink-0"
@@ -242,7 +242,7 @@ export default function Footer() {
 
                 {/* Both addresses */}
                 {COMPANY.addresses.map((addr) => (
-                  <div key={addr.label} className="flex items-start gap-2 text-white/60">
+                  <div key={addr.label} className="flex items-start gap-2 text-white/80">
                     <svg
                       className="w-4 h-4 shrink-0 mt-0.5"
                       fill="none"
@@ -281,7 +281,7 @@ export default function Footer() {
               <h3 className="text-white font-bold font-heading text-lg mb-2">
                 Get Parking Enforcement Tips Monthly
               </h3>
-              <p className="text-white/50 text-sm mb-5">
+              <p className="text-white/80 text-sm mb-5">
                 Join property managers across Phoenix who get our best tips on parking enforcement, towing compliance, and tenant satisfaction.
               </p>
               <form
@@ -316,14 +316,14 @@ export default function Footer() {
             <div className="flex items-center gap-4">
               <Link
                 href="/privacy-policy"
-                className="hover:text-white/60 transition-colors"
+                className="hover:text-white/80 transition-colors"
               >
                 Privacy Policy
               </Link>
               <span className="text-white/20">|</span>
               <Link
                 href="/terms-of-service"
-                className="hover:text-white/60 transition-colors"
+                className="hover:text-white/80 transition-colors"
               >
                 Terms of Service
               </Link>

@@ -234,7 +234,7 @@ export default function AboutPage() {
                 <div className="text-4xl md:text-5xl font-bold text-primary font-heading">
                   <AnimatedCounter target={stat.value} suffix={stat.suffix} />
                 </div>
-                <div className="text-sm text-gray-500 mt-2 font-medium">{stat.label}</div>
+                <div className="text-sm text-gray-700 mt-2 font-medium">{stat.label}</div>
               </div>
             ))}
           </div>
@@ -332,7 +332,7 @@ export default function AboutPage() {
                   {member.initials}
                 </div>
                 <h3 className="text-lg font-bold text-blue-900 font-heading">{member.name}</h3>
-                <p className="text-gray-500 text-sm mt-1">{member.role}</p>
+                <p className="text-gray-700 text-sm mt-1">{member.role}</p>
               </div>
             ))}
           </div>

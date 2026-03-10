@@ -206,7 +206,7 @@ export default function GetQuotePage() {
                               ? "bg-primary text-white shadow-md"
                               : isActive
                               ? "bg-primary text-white shadow-lg ring-4 ring-primary/20"
-                              : "bg-gray-200 text-gray-500"
+                              : "bg-gray-200 text-gray-700"
                           }`}
                         >
                           {isComplete ? (
@@ -251,7 +251,7 @@ export default function GetQuotePage() {
                       <h2 className="text-2xl font-bold text-blue-900 mb-2 font-heading">
                         What type of property do you manage?
                       </h2>
-                      <p className="text-gray-500 mb-6">Select the option that best describes your property.</p>
+                      <p className="text-gray-700 mb-6">Select the option that best describes your property.</p>
                       <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
                         {PROPERTY_TYPES.map((pt) => (
                           <button
@@ -268,7 +268,7 @@ export default function GetQuotePage() {
                               className={`w-10 h-10 rounded-lg flex items-center justify-center transition-colors ${
                                 formData.propertyType === pt.id
                                   ? "bg-primary text-white"
-                                  : "bg-gray-100 text-gray-500 group-hover:bg-blue-100 group-hover:text-primary"
+                                  : "bg-gray-100 text-gray-700 group-hover:bg-blue-100 group-hover:text-primary"
                               }`}
                             >
                               <svg className="w-5 h-5" fill="none" stroke="currentColor" strokeWidth={1.5} viewBox="0 0 24 24">
@@ -290,7 +290,7 @@ export default function GetQuotePage() {
                       <h2 className="text-2xl font-bold text-blue-900 mb-2 font-heading">
                         Tell us about your property
                       </h2>
-                      <p className="text-gray-500 mb-6">These details help us tailor our enforcement program.</p>
+                      <p className="text-gray-700 mb-6">These details help us tailor our enforcement program.</p>
                       <div className="space-y-5">
                         <div>
                           <label className="block text-sm font-medium text-gray-700 mb-1">Property Name *</label>
@@ -399,7 +399,7 @@ export default function GetQuotePage() {
                       <h2 className="text-2xl font-bold text-blue-900 mb-2 font-heading">
                         Which services do you need?
                       </h2>
-                      <p className="text-gray-500 mb-6">Select all that apply — all services are free for property owners.</p>
+                      <p className="text-gray-700 mb-6">Select all that apply — all services are free for property owners.</p>
                       <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                         {SERVICES_LIST.map((svc) => {
                           const selected = formData.services.includes(svc.id);
@@ -445,7 +445,7 @@ export default function GetQuotePage() {
                       <h2 className="text-2xl font-bold text-blue-900 mb-2 font-heading">
                         How can we reach you?
                       </h2>
-                      <p className="text-gray-500 mb-6">We&rsquo;ll use this to send your custom proposal.</p>
+                      <p className="text-gray-700 mb-6">We&rsquo;ll use this to send your custom proposal.</p>
                       <div className="space-y-5">
                         <div>
                           <label className="block text-sm font-medium text-gray-700 mb-1">Full Name *</label>
@@ -521,24 +521,24 @@ export default function GetQuotePage() {
                       <h2 className="text-2xl font-bold text-blue-900 mb-2 font-heading">
                         Review Your Quote Request
                       </h2>
-                      <p className="text-gray-500 mb-6">Everything look right? Hit submit and we&rsquo;ll get started.</p>
+                      <p className="text-gray-700 mb-6">Everything look right? Hit submit and we&rsquo;ll get started.</p>
 
                       <div className="space-y-4 mb-8">
                         {/* Property Info */}
                         <div className="bg-blue-50/70 rounded-xl p-5 border border-blue-100">
                           <h3 className="text-sm font-bold text-primary uppercase tracking-wide mb-3">Property</h3>
                           <div className="grid grid-cols-2 gap-y-2 text-sm">
-                            <span className="text-gray-500">Type</span>
+                            <span className="text-gray-700">Type</span>
                             <span className="font-semibold text-gray-800">{selectedPropertyLabel}</span>
-                            <span className="text-gray-500">Name</span>
+                            <span className="text-gray-700">Name</span>
                             <span className="font-semibold text-gray-800">{formData.propertyName}</span>
-                            <span className="text-gray-500">City</span>
+                            <span className="text-gray-700">City</span>
                             <span className="font-semibold text-gray-800">{formData.city}, AZ</span>
-                            <span className="text-gray-500">Parking Spaces</span>
+                            <span className="text-gray-700">Parking Spaces</span>
                             <span className="font-semibold text-gray-800">{formData.parkingSpaces}</span>
-                            <span className="text-gray-500">Current Enforcement</span>
+                            <span className="text-gray-700">Current Enforcement</span>
                             <span className="font-semibold text-gray-800">{formData.currentEnforcement ? "Yes" : "No"}</span>
-                            <span className="text-gray-500">Service Urgency</span>
+                            <span className="text-gray-700">Service Urgency</span>
                             <span className="font-semibold text-gray-800">{URGENCY_OPTIONS.find((o) => o.id === formData.urgency)?.label || formData.urgency}</span>
                           </div>
                         </div>
@@ -565,15 +565,15 @@ export default function GetQuotePage() {
                         <div className="bg-blue-50/70 rounded-xl p-5 border border-blue-100">
                           <h3 className="text-sm font-bold text-primary uppercase tracking-wide mb-3">Contact</h3>
                           <div className="grid grid-cols-2 gap-y-2 text-sm">
-                            <span className="text-gray-500">Name</span>
+                            <span className="text-gray-700">Name</span>
                             <span className="font-semibold text-gray-800">{formData.fullName}</span>
-                            <span className="text-gray-500">Email</span>
+                            <span className="text-gray-700">Email</span>
                             <span className="font-semibold text-gray-800">{formData.email}</span>
-                            <span className="text-gray-500">Phone</span>
+                            <span className="text-gray-700">Phone</span>
                             <span className="font-semibold text-gray-800">{formData.phone}</span>
                             {formData.bestTime && (
                               <>
-                                <span className="text-gray-500">Best Time</span>
+                                <span className="text-gray-700">Best Time</span>
                                 <span className="font-semibold text-gray-800">{formData.bestTime}</span>
                               </>
                             )}

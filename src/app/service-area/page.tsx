@@ -140,7 +140,7 @@ export default function ServiceAreaPage() {
                 <div className="text-3xl md:text-4xl font-bold text-brand-blue">
                   {stat.value}
                 </div>
-                <div className="text-sm text-gray-500 mt-1">{stat.label}</div>
+                <div className="text-sm text-gray-700 mt-1">{stat.label}</div>
               </div>
             ))}
           </div>
@@ -153,7 +153,7 @@ export default function ServiceAreaPage() {
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4 text-center reveal">
             Coverage Map
           </h2>
-          <p className="text-gray-500 text-lg text-center mb-12 max-w-2xl mx-auto reveal">
+          <p className="text-gray-700 text-lg text-center mb-12 max-w-2xl mx-auto reveal">
             We provide free private property towing services across the entire
             Phoenix metropolitan area.
           </p>
@@ -244,7 +244,7 @@ export default function ServiceAreaPage() {
               ))}
 
               {/* Map legend */}
-              <div className="absolute bottom-3 left-3 bg-white/90 backdrop-blur-sm rounded-lg px-3 py-2 text-[10px] text-gray-500 shadow-sm">
+              <div className="absolute bottom-3 left-3 bg-white/90 backdrop-blur-sm rounded-lg px-3 py-2 text-[10px] text-gray-700 shadow-sm">
                 <div className="flex items-center gap-2 mb-1">
                   <div className="w-2 h-2 rounded-full bg-brand-blue" />
                   <span>Service location</span>
@@ -270,7 +270,7 @@ export default function ServiceAreaPage() {
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4 text-center reveal">
             Cities We Serve
           </h2>
-          <p className="text-gray-500 text-lg text-center mb-12 max-w-2xl mx-auto reveal">
+          <p className="text-gray-700 text-lg text-center mb-12 max-w-2xl mx-auto reveal">
             Click any city to learn more about our free private property towing
             and parking enforcement services in that area.
           </p>
@@ -302,7 +302,7 @@ export default function ServiceAreaPage() {
                       />
                     </svg>
                   </div>
-                  <p className="text-gray-500 text-sm mb-4 leading-relaxed">
+                  <p className="text-gray-700 text-sm mb-4 leading-relaxed">
                     {area.description}
                   </p>
                   {stats && (

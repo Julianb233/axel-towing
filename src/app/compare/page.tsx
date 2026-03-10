@@ -152,7 +152,7 @@ export default function ComparePage() {
                       <td className="px-6 py-4 text-center text-sm md:text-base">
                         <span className="inline-flex items-center gap-1">
                           <XIcon />
-                          <span className="text-gray-500">{row.industry}</span>
+                          <span className="text-gray-700">{row.industry}</span>
                         </span>
                       </td>
                     </tr>

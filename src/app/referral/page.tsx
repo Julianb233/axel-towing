@@ -125,7 +125,7 @@ export default function ReferralPage() {
             <span className="text-primary font-semibold text-sm uppercase tracking-wider font-heading">Simple Process</span>
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold font-heading mt-3 mb-4" style={{ color: '#1a202c' }}>How It Works</h2>
             <div className="mx-auto w-24 h-1 bg-gradient-to-r from-blue-500 to-blue-300 rounded-full mb-6" />
-            <p className="text-gray-500 text-lg max-w-2xl mx-auto">
+            <p className="text-gray-700 text-lg max-w-2xl mx-auto">
               Three easy steps to earning your reward. No fine print, no catches.
             </p>
           </div>
@@ -141,7 +141,7 @@ export default function ReferralPage() {
                     </div>
                   </div>
                   <h3 className="text-xl font-bold font-heading mb-3" style={{ color: '#1a202c' }}>{item.title}</h3>
-                  <p className="text-gray-500 leading-relaxed max-w-xs mx-auto">{item.desc}</p>
+                  <p className="text-gray-700 leading-relaxed max-w-xs mx-auto">{item.desc}</p>
                 </div>
               ))}
             </div>
@@ -158,7 +158,7 @@ export default function ReferralPage() {
             <span className="text-amber-600 font-semibold text-sm uppercase tracking-wider font-heading">Rewards</span>
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold font-heading mt-3 mb-4" style={{ color: '#1a202c' }}>Reward Tiers</h2>
             <div className="mx-auto w-24 h-1 bg-gradient-to-r from-amber-400 to-amber-300 rounded-full mb-6" />
-            <p className="text-gray-500 text-lg max-w-2xl mx-auto">
+            <p className="text-gray-700 text-lg max-w-2xl mx-auto">
               The more you refer, the more you earn. No limit on referrals.
             </p>
           </div>
@@ -174,7 +174,7 @@ export default function ReferralPage() {
                 </div>
                 <div className="p-8">
                   <div className="text-5xl font-bold font-heading text-blue-900 mb-2">{tier.reward}</div>
-                  <div className="text-gray-500 font-medium">{tier.desc}</div>
+                  <div className="text-gray-700 font-medium">{tier.desc}</div>
                   {i === 2 && (
                     <div className="mt-4 inline-block bg-amber-50 border border-amber-200 text-amber-700 text-xs font-bold font-heading uppercase tracking-wider px-3 py-1 rounded-full">
                       Best Value

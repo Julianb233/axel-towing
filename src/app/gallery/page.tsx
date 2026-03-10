@@ -195,7 +195,7 @@ export default function GalleryPage() {
                   <h3 className="font-bold text-blue-900 font-heading mb-1">
                     {item.title}
                   </h3>
-                  <p className="text-sm text-gray-500 leading-relaxed">
+                  <p className="text-sm text-gray-700 leading-relaxed">
                     {item.description}
                   </p>
                 </div>

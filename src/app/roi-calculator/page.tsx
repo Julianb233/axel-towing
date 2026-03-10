@@ -261,10 +261,10 @@ export default function ROICalculatorPage() {
                 <div className="glass-card-white rounded-2xl p-6 shadow-md border-l-4 border-green-500">
                   <div className="flex items-center justify-between">
                     <div>
-                      <div className="text-sm font-bold text-gray-500 uppercase tracking-wider font-heading">
+                      <div className="text-sm font-bold text-gray-700 uppercase tracking-wider font-heading">
                         Estimated Violation Reduction
                       </div>
-                      <div className="text-sm text-gray-500 mt-1">
+                      <div className="text-sm text-gray-700 mt-1">
                         From {violations} to ~{results.violationsAfter} violations/month
                       </div>
                     </div>
@@ -278,10 +278,10 @@ export default function ROICalculatorPage() {
                 <div className="glass-card-white rounded-2xl p-6 shadow-md border-l-4 border-blue-500">
                   <div className="flex items-center justify-between">
                     <div>
-                      <div className="text-sm font-bold text-gray-500 uppercase tracking-wider font-heading">
+                      <div className="text-sm font-bold text-gray-700 uppercase tracking-wider font-heading">
                         Monthly Complaints After Enforcement
                       </div>
-                      <div className="text-sm text-gray-500 mt-1">
+                      <div className="text-sm text-gray-700 mt-1">
                         Down from {complaints} complaints/month
                       </div>
                     </div>
@@ -295,10 +295,10 @@ export default function ROICalculatorPage() {
                 <div className="glass-card-white rounded-2xl p-6 shadow-md border-l-4 border-primary">
                   <div className="flex items-center justify-between">
                     <div>
-                      <div className="text-sm font-bold text-gray-500 uppercase tracking-wider font-heading">
+                      <div className="text-sm font-bold text-gray-700 uppercase tracking-wider font-heading">
                         Est. Annual Property Value Impact
                       </div>
-                      <div className="text-sm text-gray-500 mt-1">
+                      <div className="text-sm text-gray-700 mt-1">
                         Based on {spaces} spaces at market rates
                       </div>
                     </div>
@@ -312,10 +312,10 @@ export default function ROICalculatorPage() {
                 <div className="glass-card-white rounded-2xl p-6 shadow-md border-l-4 border-yellow-500">
                   <div className="flex items-center justify-between">
                     <div>
-                      <div className="text-sm font-bold text-gray-500 uppercase tracking-wider font-heading">
+                      <div className="text-sm font-bold text-gray-700 uppercase tracking-wider font-heading">
                         Time to See Results
                       </div>
-                      <div className="text-sm text-gray-500 mt-1">
+                      <div className="text-sm text-gray-700 mt-1">
                         Most properties see major improvement in weeks
                       </div>
                     </div>

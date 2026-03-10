@@ -131,7 +131,7 @@ export default function PropertyManagerGuidePage() {
                   </div>
                   <div>
                     <div className="font-bold text-blue-900 font-heading">Written by Axle Towing Experts</div>
-                    <div className="text-sm text-gray-500">25+ years of combined Arizona towing industry experience</div>
+                    <div className="text-sm text-gray-700">25+ years of combined Arizona towing industry experience</div>
                   </div>
                 </div>
               </div>
@@ -149,7 +149,7 @@ export default function PropertyManagerGuidePage() {
                         </div>
                         <div>
                           <h3 className="font-bold text-blue-900 font-heading text-sm mb-1">{ch.title}</h3>
-                          <p className="text-gray-500 text-xs leading-relaxed">{ch.desc}</p>
+                          <p className="text-gray-700 text-xs leading-relaxed">{ch.desc}</p>
                         </div>
                       </div>
                     </div>
@@ -164,7 +164,7 @@ export default function PropertyManagerGuidePage() {
                 <h2 className="text-2xl font-bold text-blue-900 mb-2 font-heading">
                   Download the Complete Guide
                 </h2>
-                <p className="text-gray-500 mb-6">
+                <p className="text-gray-700 mb-6">
                   Get all 10 chapters delivered to your inbox as a beautifully formatted PDF guide.
                 </p>
 

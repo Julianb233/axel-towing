@@ -58,7 +58,7 @@ export default function ContactWidget() {
                     </svg>
                   </div>
                   <p className="font-semibold text-blue-900 text-sm">Message sent!</p>
-                  <p className="text-gray-500 text-xs mt-1">We&rsquo;ll get back to you shortly.</p>
+                  <p className="text-gray-700 text-xs mt-1">We&rsquo;ll get back to you shortly.</p>
                 </div>
               ) : (
                 <form onSubmit={handleSubmit} className="space-y-3">
@@ -110,7 +110,7 @@ export default function ContactWidget() {
                   </div>
                   <div>
                     <div className="text-sm font-semibold text-gray-800">My car was towed</div>
-                    <div className="text-xs text-gray-500">Find your vehicle</div>
+                    <div className="text-xs text-gray-700">Find your vehicle</div>
                   </div>
                 </Link>
 
@@ -126,7 +126,7 @@ export default function ContactWidget() {
                   </div>
                   <div>
                     <div className="text-sm font-semibold text-gray-800">I need towing service</div>
-                    <div className="text-xs text-gray-500">Get a free quote</div>
+                    <div className="text-xs text-gray-700">Get a free quote</div>
                   </div>
                 </Link>
 
@@ -141,7 +141,7 @@ export default function ContactWidget() {
                   </div>
                   <div>
                     <div className="text-sm font-semibold text-gray-800">Call us now</div>
-                    <div className="text-xs text-gray-500">{COMPANY.phone}</div>
+                    <div className="text-xs text-gray-700">{COMPANY.phone}</div>
                   </div>
                 </a>
 
@@ -156,7 +156,7 @@ export default function ContactWidget() {
                   </div>
                   <div>
                     <div className="text-sm font-semibold text-gray-800">Send us a message</div>
-                    <div className="text-xs text-gray-500">Quick contact form</div>
+                    <div className="text-xs text-gray-700">Quick contact form</div>
                   </div>
                 </button>
               </div>

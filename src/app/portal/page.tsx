@@ -127,7 +127,7 @@ export default function PortalPage() {
                 <h2 className="text-xl font-bold text-blue-900 font-heading">
                   Sign In to Your Account
                 </h2>
-                <p className="text-sm text-gray-500 mt-1">
+                <p className="text-sm text-gray-700 mt-1">
                   Access your property management dashboard
                 </p>
               </div>
@@ -194,7 +194,7 @@ export default function PortalPage() {
               )}
 
               {!submitted && (
-                <div className="mt-6 text-center text-sm text-gray-500">
+                <div className="mt-6 text-center text-sm text-gray-700">
                   Don&rsquo;t have an account?{" "}
                   <Link
                     href="/contact"

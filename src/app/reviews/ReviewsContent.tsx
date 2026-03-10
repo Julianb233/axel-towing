@@ -206,7 +206,7 @@ export default function ReviewsContent() {
                     ))}
                   </div>
                 </div>
-                <p className="text-xs text-gray-500">Based on 127 reviews</p>
+                <p className="text-xs text-gray-700">Based on 127 reviews</p>
               </div>
             </div>
 
@@ -222,7 +222,7 @@ export default function ReviewsContent() {
               </svg>
               <div>
                 <span className="text-lg font-bold text-blue-900 font-heading">Write a Review</span>
-                <p className="text-xs text-gray-500">Share your experience on Google</p>
+                <p className="text-xs text-gray-700">Share your experience on Google</p>
               </div>
               <svg className="w-5 h-5 text-gray-600 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                 <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
@@ -262,7 +262,7 @@ export default function ReviewsContent() {
                     <div className="font-bold text-blue-900 text-sm font-heading">
                       {t.name}
                     </div>
-                    <div className="text-xs text-gray-500">
+                    <div className="text-xs text-gray-700">
                       {t.role} &mdash; {t.property}
                     </div>
                     <div className="text-xs text-primary">{t.city}</div>
