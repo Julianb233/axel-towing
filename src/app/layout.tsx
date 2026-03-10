@@ -1,14 +1,25 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Open_Sans, Mohave } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import ScrollReveal from "@/components/ScrollReveal";
+import ScrollAnimator from "@/components/ScrollAnimator";
+import FloatingCTA from "@/components/FloatingCTA";
 import { COMPANY } from "@/lib/constants";
 
-const inter = Inter({
-  variable: "--font-geist-sans",
+const openSans = Open_Sans({
+  variable: "--font-open-sans",
   subsets: ["latin"],
   display: "swap",
+  weight: ["300", "400", "500", "600", "700"],
+});
+
+const mohave = Mohave({
+  variable: "--font-mohave",
+  subsets: ["latin"],
+  display: "swap",
+  weight: ["300", "400", "500", "600", "700"],
 });
 
 export const metadata: Metadata = {
@@ -25,6 +36,8 @@ export const metadata: Metadata = {
     "apartment towing",
     "vehicle relocation Phoenix",
     "commercial property towing",
+    "Axle Towing",
+    "Apache Junction towing",
   ],
   openGraph: {
     type: "website",
@@ -52,12 +65,15 @@ export default function RootLayout({
               description: COMPANY.description,
               url: `https://${COMPANY.domain}`,
               telephone: COMPANY.phone,
-              address: {
+              email: COMPANY.email,
+              address: COMPANY.addresses.map((a) => ({
                 "@type": "PostalAddress",
-                addressLocality: "Phoenix",
-                addressRegion: "AZ",
+                streetAddress: a.street,
+                addressLocality: a.city,
+                addressRegion: a.state,
+                postalCode: a.zip,
                 addressCountry: "US",
-              },
+              })),
               areaServed: [
                 "Phoenix, AZ",
                 "Scottsdale, AZ",
@@ -69,16 +85,35 @@ export default function RootLayout({
                 "Apache Junction, AZ",
               ],
               priceRange: "Free for property owners",
-              openingHours: "Mo-Su 00:00-23:59",
+              openingHoursSpecification: [
+                {
+                  "@type": "OpeningHoursSpecification",
+                  dayOfWeek: [
+                    "Monday",
+                    "Tuesday",
+                    "Wednesday",
+                    "Thursday",
+                    "Friday",
+                  ],
+                  opens: "09:00",
+                  closes: "17:00",
+                },
+              ],
+              image: COMPANY.logo,
               sameAs: [],
             }),
           }}
         />
       </head>
-      <body className={`${inter.variable} antialiased`}>
+      <body
+        className={`${openSans.variable} ${mohave.variable} antialiased`}
+      >
         <Header />
         <main>{children}</main>
         <Footer />
+        <FloatingCTA />
+        <ScrollReveal />
+        <ScrollAnimator />
       </body>
     </html>
   );

@@ -13,23 +13,26 @@ export default function CTASection({
   dark = false,
 }: CTASectionProps) {
   return (
-    <section className={`py-16 ${dark ? "bg-navy-900 text-white" : "bg-gray-50"}`}>
-      <div className="max-w-4xl mx-auto px-4 text-center">
-        <h2 className="text-2xl md:text-3xl font-bold mb-4">{headline}</h2>
-        <p className={`text-lg mb-8 ${dark ? "text-gray-300" : "text-gray-600"}`}>
+    <section className={`relative py-20 ${dark ? "bg-blue-950 grain-overlay" : "bg-blue-50"}`}>
+      {dark && (
+        <>
+          <div className="absolute inset-0 bg-gradient-to-br from-blue-900/50 via-blue-950 to-blue-900/50" />
+          <div className="absolute top-0 left-1/4 w-96 h-96 bg-primary/10 rounded-full blur-3xl" />
+          <div className="absolute bottom-0 right-1/4 w-72 h-72 bg-cta/10 rounded-full blur-3xl" />
+        </>
+      )}
+      <div className="relative z-10 max-w-4xl mx-auto px-4 text-center">
+        <h2 className={`text-3xl md:text-4xl font-bold mb-5 ${dark ? "text-white" : "text-heading"}`}>
+          {headline}
+        </h2>
+        <p className={`text-lg mb-8 max-w-2xl mx-auto ${dark ? "text-blue-200/70" : "text-body-text"}`}>
           {subtext}
         </p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
-          <a
-            href={`tel:${COMPANY.phone}`}
-            className="bg-orange-500 hover:bg-orange-400 text-navy-950 font-bold px-8 py-3 rounded-lg transition-colors text-lg"
-          >
+          <a href={`tel:${COMPANY.phone}`} className="btn-primary">
             Call {COMPANY.phone}
           </a>
-          <Link
-            href="/contact"
-            className={`font-bold px-8 py-3 rounded-lg transition-colors text-lg border-2 ${dark ? "border-white text-white hover:bg-white hover:text-navy-950" : "border-navy-900 text-navy-900 hover:bg-navy-900 hover:text-white"}`}
-          >
+          <Link href="/contact" className={dark ? "btn-secondary" : "btn-cta"}>
             Request Free Quote
           </Link>
         </div>

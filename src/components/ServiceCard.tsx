@@ -44,18 +44,18 @@ export default function ServiceCard({ title, slug, shortDesc, icon }: ServiceCar
   return (
     <Link
       href={`/services/${slug}`}
-      className="group bg-white rounded-xl border border-gray-200 p-6 hover:shadow-xl hover:border-orange-400 transition-all duration-300 hover:-translate-y-1"
+      className="group glass-card rounded-2xl p-7 block"
     >
-      <div className="w-14 h-14 bg-navy-100 text-navy-700 rounded-xl flex items-center justify-center mb-4 group-hover:bg-orange-100 group-hover:text-orange-600 transition-colors">
+      <div className="w-14 h-14 bg-blue-50 text-primary rounded-xl flex items-center justify-center mb-5 group-hover:bg-primary group-hover:text-white transition-all duration-300 group-hover:scale-110">
         {ICONS[icon] || ICONS.truck}
       </div>
-      <h3 className="text-lg font-bold text-navy-900 mb-2 group-hover:text-orange-600 transition-colors">
+      <h3 className="text-lg font-bold text-heading mb-2 group-hover:text-primary transition-colors">
         {title}
       </h3>
-      <p className="text-gray-600 text-sm leading-relaxed">{shortDesc}</p>
-      <span className="inline-flex items-center mt-4 text-sm font-semibold text-navy-600 group-hover:text-orange-600 transition-colors">
+      <p className="text-body-text text-sm leading-relaxed">{shortDesc}</p>
+      <span className="inline-flex items-center mt-5 text-sm font-semibold text-primary group-hover:text-cta transition-colors uppercase tracking-wider">
         Learn More
-        <svg className="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <svg className="w-4 h-4 ml-2 group-hover:translate-x-2 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
         </svg>
       </span>

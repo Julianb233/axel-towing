@@ -1,13 +1,37 @@
 export const COMPANY = {
-  name: "Axel Towing",
-  phone: "(602) 555-XXXX",
+  name: "Axle Towing & Impound",
+  phone: "480-288-5526",
   email: "info@axletowing.com",
   address: "Phoenix, AZ",
+  addresses: [
+    {
+      label: "Apache Junction",
+      street: "1151 W. Apache Trail",
+      city: "Apache Junction",
+      state: "AZ",
+      zip: "85120",
+    },
+    {
+      label: "Phoenix",
+      street: "320 E. Pioneer St.",
+      city: "Phoenix",
+      state: "AZ",
+      zip: "85040",
+    },
+  ],
+  hours: {
+    weekday: "Mon-Fri 9am-5pm",
+    saturday: "Sat by appointment",
+    sunday: "Sun closed",
+  },
   foundedYear: 2021,
   domain: "axletowing.com",
-  tagline: "Phoenix's Trusted Private Property Towing & Parking Enforcement",
+  tagline: "Professional Towing & Parking Management",
   description:
-    "Axel Towing provides professional private property impound, parking enforcement, and vehicle relocation services across the Phoenix metro area at no cost to property owners.",
+    "Axle Towing & Impound provides professional private property impound, parking enforcement, and vehicle relocation services across the Phoenix metro area at no cost to property owners.",
+  logo: "https://e5cdia7uckj.exactdn.com/wp-content/uploads/2021/05/Axle-Towing-and-Impound-in-Arizona-Logo.png",
+  heroImage:
+    "https://e5cdia7uckj.exactdn.com/wp-content/uploads/2023/09/242A4356-Multiple-Trucks-new.jpg?strip=all",
 };
 
 export const SERVICE_AREAS = [

@@ -1,196 +1,279 @@
 import Link from "next/link";
 import { COMPANY, SERVICES, SERVICE_AREAS } from "@/lib/constants";
-import ServiceCard from "@/components/ServiceCard";
-import CTASection from "@/components/CTASection";
+import AnimatedCounter from "@/components/AnimatedCounter";
 
-const TRUST_STATS = [
-  { value: "5+", label: "Years in Business" },
-  { value: "24/7", label: "Service Available" },
-  { value: "8+", label: "Cities Served" },
-  { value: "0", label: "Cost to Property Owners" },
+const ICONS: Record<string, React.ReactNode> = {
+  shield: (
+    <svg className="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+    </svg>
+  ),
+  clipboard: (
+    <svg className="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4" />
+    </svg>
+  ),
+  truck: (
+    <svg className="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M13 16V6a1 1 0 00-1-1H4a1 1 0 00-1 1v10l2-1 2 1 2-1 2 1 2-1zm0 0l2-1 2 1 2-1 2 1V6a1 1 0 00-1-1h-4" />
+    </svg>
+  ),
+  home: (
+    <svg className="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-4 0a1 1 0 01-1-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 01-1 1" />
+    </svg>
+  ),
+  building: (
+    <svg className="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
+    </svg>
+  ),
+  store: (
+    <svg className="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 100 4 2 2 0 000-4z" />
+    </svg>
+  ),
+};
+
+const SERVICE_CARDS = [
+  { icon: "shield", title: "Private Property Impounds", desc: "Remove unauthorized vehicles at zero cost to you", slug: "private-property-impounds" },
+  { icon: "clipboard", title: "Parking Enforcement", desc: "Professional patrol for garages and private lots", slug: "parking-enforcement" },
+  { icon: "truck", title: "Vehicle Relocations", desc: "Fast vehicle moves for repairs and maintenance", slug: "vehicle-relocations" },
+  { icon: "home", title: "HOA Towing", desc: "Custom towing programs for homeowner associations", slug: "hoa-towing" },
+  { icon: "building", title: "Apartment Towing", desc: "Keep your complex parking organized", slug: "apartment-towing" },
+  { icon: "store", title: "Commercial Property", desc: "Protect your commercial property from unauthorized parking", slug: "commercial-property-towing" },
 ];
 
 const TESTIMONIALS = [
   {
-    quote:
-      "Axel Towing has been a game-changer for our apartment community. Unauthorized parking dropped by 90% within the first month.",
-    name: "Sarah M.",
+    quote: "Axle Towing transformed our apartment complex parking situation overnight. We went from daily complaints to zero unauthorized vehicles in under a month. Their team is incredibly professional and responsive.",
+    name: "Sarah Mitchell",
     role: "Property Manager, Phoenix",
+    type: "Apartment Complex (240 units)",
   },
   {
-    quote:
-      "Professional, responsive, and their portal makes it so easy to manage everything. Best towing company we've worked with.",
-    name: "James R.",
+    quote: "As an HOA board president, I was skeptical about free towing services. Axle proved me wrong -- their signage program and patrol response times are outstanding. Best decision our board ever made.",
+    name: "James Richardson",
     role: "HOA Board President, Scottsdale",
+    type: "Homeowner Association",
   },
   {
-    quote:
-      "The fact that their service is free for property owners made the decision easy. Their team is always courteous and efficient.",
-    name: "Linda K.",
+    quote: "We manage three commercial plazas and Axle handles all of them. Their portal makes tracking easy, and the fact that it costs us nothing is remarkable. Highly recommend to any property owner in the Valley.",
+    name: "Linda Kerrigan",
     role: "Commercial Property Owner, Mesa",
+    type: "Commercial Plaza Management",
+  },
+];
+
+const BLOG_POSTS = [
+  {
+    title: "Understanding Arizona's Private Property Towing Laws in 2025",
+    excerpt: "A comprehensive guide to ARS 28-1104 and what property owners need to know about legal towing requirements, proper signage, and compliance.",
+    slug: "/blog",
+  },
+  {
+    title: "How to Reduce Unauthorized Parking at Your Apartment Complex",
+    excerpt: "Five proven strategies that property managers use to eliminate parking violations and improve tenant satisfaction across the Phoenix metro.",
+    slug: "/blog",
+  },
+  {
+    title: "The True Cost of Not Enforcing Your Parking Policy",
+    excerpt: "Unauthorized parking costs Phoenix property owners thousands annually in lost revenue, liability exposure, and tenant turnover. Here is what you can do.",
+    slug: "/blog",
   },
 ];
 
 export default function HomePage() {
   return (
     <>
-      {/* Hero */}
-      <section className="relative bg-navy-950 text-white overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-navy-900 via-navy-950 to-navy-900" />
-        <div className="absolute inset-0 opacity-10">
-          <div className="absolute top-20 right-20 w-96 h-96 bg-orange-500 rounded-full blur-3xl" />
-          <div className="absolute bottom-10 left-10 w-72 h-72 bg-navy-400 rounded-full blur-3xl" />
-        </div>
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 md:py-32">
-          <div className="max-w-3xl">
-            <div className="inline-flex items-center bg-orange-500/20 border border-orange-500/30 rounded-full px-4 py-1.5 text-orange-400 text-sm font-medium mb-6">
-              <span className="w-2 h-2 bg-orange-400 rounded-full mr-2 animate-pulse" />
-              Serving the Greater Phoenix Metro Area
-            </div>
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-6">
-              Private Property Towing &amp;{" "}
-              <span className="text-orange-400">Parking Enforcement</span>{" "}
-              You Can Trust
-            </h1>
-            <p className="text-lg md:text-xl text-gray-300 mb-8 leading-relaxed">
-              Protect your property from unauthorized parking &mdash; at{" "}
-              <strong className="text-white">absolutely no cost to you</strong>.
-              Axel Towing provides professional impound, enforcement, and vehicle
-              relocation services across Phoenix, Scottsdale, Mesa, and beyond.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4">
-              <a
-                href={`tel:${COMPANY.phone}`}
-                className="bg-orange-500 hover:bg-orange-400 text-navy-950 font-bold px-8 py-4 rounded-lg transition-colors text-lg text-center"
-              >
-                Get a Free Quote
-              </a>
-              <Link
-                href="/services"
-                className="border-2 border-white/30 hover:border-white text-white font-bold px-8 py-4 rounded-lg transition-colors text-lg text-center"
-              >
-                Explore Services
-              </Link>
-            </div>
-          </div>
-        </div>
-      </section>
+      {/* ========== 1. HERO SECTION (full viewport) ========== */}
+      <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+        <div
+          className="parallax-fixed absolute inset-0 z-0"
+          style={{ backgroundImage: `url('${COMPANY.heroImage}')` }}
+        />
+        <div
+          className="absolute inset-0 z-[1]"
+          style={{ background: "linear-gradient(135deg, rgba(12,113,195,0.85) 0%, rgba(26,26,46,0.9) 100%)" }}
+        />
+        <div className="absolute inset-0 z-[2] grain-overlay" />
 
-      {/* Trust Stats */}
-      <section className="bg-white border-b border-gray-100">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
-            {TRUST_STATS.map((stat) => (
-              <div key={stat.label}>
-                <div className="text-3xl md:text-4xl font-bold text-navy-900">
-                  {stat.value === "0" ? "$0" : stat.value}
-                </div>
-                <div className="text-sm text-gray-500 mt-1">{stat.label}</div>
+        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-white py-32">
+          <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold font-heading leading-tight mb-6 animate-fade-in-up">
+            Phoenix&apos;s Most Trusted
+            <br />
+            <span style={{ WebkitTextFillColor: "transparent", background: "linear-gradient(135deg, #2ea3f2, #6bbbf5)", WebkitBackgroundClip: "text", backgroundClip: "text" }}>
+              Private Property Towing
+            </span>
+          </h1>
+          <p className="text-lg sm:text-xl md:text-2xl text-blue-100 max-w-3xl mx-auto mb-10 animate-fade-in-up delay-200 leading-relaxed">
+            Professional parking enforcement and vehicle management at zero cost to property owners.
+          </p>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center animate-fade-in-up delay-300">
+            <Link href="/contact" className="btn-primary text-lg px-10 py-4">
+              Get a Free Quote
+            </Link>
+            <a href={`tel:${COMPANY.phone}`} className="btn-secondary text-lg px-10 py-4">
+              Call Now: {COMPANY.phone}
+            </a>
+          </div>
+          <div className="flex flex-wrap justify-center gap-4 md:gap-6 mt-16 animate-fade-in-up delay-500">
+            {[
+              { label: "Since 2021", icon: "\u{1F4C5}" },
+              { label: "6+ Trucks", icon: "\u{1F69B}" },
+              { label: "8 Cities Served", icon: "\u{1F4CD}" },
+            ].map((stat) => (
+              <div key={stat.label} className="glass rounded-2xl px-6 py-3 flex items-center gap-3 animate-float">
+                <span className="text-2xl">{stat.icon}</span>
+                <span className="font-heading font-semibold text-white tracking-wide">{stat.label}</span>
               </div>
             ))}
           </div>
         </div>
+        <div className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10">
+          <a href="#services" className="block animate-bounce text-white/70 hover:text-white transition-colors">
+            <svg className="w-8 h-8" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
+            </svg>
+          </a>
+        </div>
       </section>
 
-      {/* Services */}
-      <section className="py-20 bg-gray-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold text-navy-900 mb-4">
-              Our Services
-            </h2>
-            <p className="text-gray-600 text-lg max-w-2xl mx-auto">
-              Comprehensive private property towing solutions tailored for HOAs,
-              apartment complexes, and commercial properties.
+      {/* ========== 2. SERVICES SECTION ========== */}
+      <section id="services" className="py-24 bg-blue-950 relative">
+        <div className="absolute inset-0 grain-overlay" />
+        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16 reveal">
+            <span className="text-cta font-semibold text-sm uppercase tracking-wider font-heading">What We Do</span>
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold font-heading text-white mt-3 mb-4">Our Services</h2>
+            <div className="mx-auto w-24 h-1 bg-gradient-to-r from-primary to-cta rounded-full mb-6" />
+            <p className="text-blue-200 text-lg max-w-2xl mx-auto">
+              Comprehensive private property towing solutions tailored for HOAs, apartment complexes, and commercial properties.
             </p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {SERVICES.map((service) => (
-              <ServiceCard key={service.slug} {...service} />
+            {SERVICE_CARDS.map((service, i) => (
+              <Link key={service.title} href={`/services/${service.slug}`} className="glass-card rounded-2xl p-8 group cursor-pointer reveal" style={{ transitionDelay: `${i * 100}ms` }}>
+                <div className="w-16 h-16 rounded-xl bg-primary/20 text-cta flex items-center justify-center mb-5 group-hover:bg-cta/20 transition-colors">
+                  {ICONS[service.icon]}
+                </div>
+                <h3 className="text-xl font-bold font-heading text-white mb-3 group-hover:text-cta transition-colors">{service.title}</h3>
+                <p className="text-blue-200 leading-relaxed mb-4">{service.desc}</p>
+                <span className="inline-flex items-center text-cta font-semibold text-sm group-hover:gap-2 transition-all">
+                  Learn More
+                  <svg className="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                  </svg>
+                </span>
+              </Link>
             ))}
           </div>
         </div>
       </section>
 
-      {/* How It Works */}
-      <section className="py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold text-navy-900 mb-4">
-              How It Works
-            </h2>
-            <p className="text-gray-600 text-lg max-w-2xl mx-auto">
-              Getting started with Axel Towing is simple and completely free for
-              property owners.
+      {/* ========== 3. WHY CHOOSE US (parallax, red-tinted) ========== */}
+      <section className="relative py-32 overflow-hidden clip-diagonal-top">
+        <div className="parallax-fixed absolute inset-0 z-0" style={{ backgroundImage: `url('${COMPANY.heroImage}')` }} />
+        <div className="absolute inset-0 z-[1]" style={{ background: "linear-gradient(135deg, rgba(224,43,32,0.6) 0%, rgba(6,26,51,0.9) 60%)" }} />
+        <div className="absolute inset-0 z-[2] grain-overlay" />
+        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16 reveal">
+            <span className="text-red-300 font-semibold text-sm uppercase tracking-wider font-heading">Why Us</span>
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold font-heading text-white mt-3 mb-4">Why Choose Axle Towing?</h2>
+            <div className="mx-auto w-24 h-1 bg-gradient-to-r from-accent to-cta rounded-full mb-6" />
+            <p className="text-blue-100 text-lg max-w-2xl mx-auto leading-relaxed">
+              We are not just another towing company. We are your dedicated parking enforcement partner, committed to protecting your property and keeping your tenants happy -- all at absolutely no cost to you.
             </p>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
             {[
-              {
-                step: "1",
-                title: "Contact Us",
-                desc: "Reach out for a free consultation. We will assess your property's needs and design a custom towing program.",
-              },
-              {
-                step: "2",
-                title: "We Set Up Signage",
-                desc: "We install compliant towing signage on your property at no cost, ensuring legal authorization for enforcement.",
-              },
-              {
-                step: "3",
-                title: "We Handle Everything",
-                desc: "Our team patrols and enforces your parking rules 24/7. Unauthorized vehicles are removed quickly and professionally.",
-              },
-            ].map((item) => (
-              <div key={item.step} className="text-center">
-                <div className="w-16 h-16 bg-orange-500 text-navy-950 rounded-2xl flex items-center justify-center text-2xl font-bold mx-auto mb-4">
-                  {item.step}
-                </div>
-                <h3 className="text-xl font-bold text-navy-900 mb-2">
-                  {item.title}
-                </h3>
-                <p className="text-gray-600 leading-relaxed">{item.desc}</p>
+              { end: 5, suffix: "+", label: "Years Experience" },
+              { end: 6, suffix: "+", label: "Tow Trucks" },
+              { end: 8, suffix: "", label: "Cities Served" },
+              { end: 0, prefix: "$", suffix: "", label: "Cost to Property Owners" },
+            ].map((counter, i) => (
+              <div key={counter.label} className="glass-card rounded-2xl p-8 reveal" style={{ transitionDelay: `${i * 150}ms` }}>
+                <AnimatedCounter end={counter.end} prefix={counter.prefix || ""} suffix={counter.suffix} label={counter.label} />
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Testimonials */}
-      <section className="py-20 bg-navy-950 text-white">
+      {/* ========== 4. HOW IT WORKS ========== */}
+      <section className="py-24 bg-white relative">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">
-              Trusted by Property Managers Across Phoenix
-            </h2>
-            <p className="text-gray-400 text-lg">
-              See what our clients have to say about our services.
+          <div className="text-center mb-16 reveal">
+            <span className="text-primary font-semibold text-sm uppercase tracking-wider font-heading">Simple Process</span>
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold font-heading text-blue-950 mt-3 mb-4">How It Works</h2>
+            <div className="mx-auto w-24 h-1 bg-gradient-to-r from-primary to-cta rounded-full mb-6" />
+            <p className="text-gray-600 text-lg max-w-2xl mx-auto">
+              Getting started is simple. Three easy steps and your parking problems are solved -- permanently.
             </p>
           </div>
+          <div className="relative">
+            <div className="hidden md:block absolute top-16 left-[16.67%] right-[16.67%] h-0.5 bg-gradient-to-r from-primary via-cta to-primary" />
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12">
+              {[
+                {
+                  step: "1", title: "Contact Us",
+                  desc: "Reach out for a free consultation. We assess your property and design a custom towing program tailored to your needs.",
+                  icon: (<svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" /></svg>),
+                },
+                {
+                  step: "2", title: "We Assess Your Property",
+                  desc: "Our team visits your property, evaluates parking needs, and installs compliant towing signage -- all at no cost to you.",
+                  icon: (<svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01" /></svg>),
+                },
+                {
+                  step: "3", title: "We Handle Everything",
+                  desc: "We patrol, enforce, and remove unauthorized vehicles professionally. You sit back while we protect your property 24/7.",
+                  icon: (<svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" /></svg>),
+                },
+              ].map((item, i) => (
+                <div key={item.step} className="text-center reveal" style={{ transitionDelay: `${i * 200}ms` }}>
+                  <div className="relative mx-auto mb-6">
+                    <div className="w-32 h-32 mx-auto rounded-2xl glass-card-white border-glow-blue flex flex-col items-center justify-center gap-2 p-4">
+                      <div className="w-10 h-10 rounded-full bg-primary text-white flex items-center justify-center font-bold font-heading text-lg">{item.step}</div>
+                      <div className="text-primary">{item.icon}</div>
+                    </div>
+                  </div>
+                  <h3 className="text-xl font-bold font-heading text-blue-950 mb-3">{item.title}</h3>
+                  <p className="text-gray-600 leading-relaxed max-w-xs mx-auto">{item.desc}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ========== 5. TESTIMONIALS ========== */}
+      <section className="py-24 bg-blue-950 relative overflow-hidden">
+        <div className="absolute inset-0 grain-overlay" />
+        <div className="absolute top-0 left-1/3 w-96 h-96 bg-primary/10 rounded-full blur-3xl" />
+        <div className="absolute bottom-0 right-1/3 w-72 h-72 bg-cta/10 rounded-full blur-3xl" />
+        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16 reveal">
+            <span className="text-cta font-semibold text-sm uppercase tracking-wider font-heading">Testimonials</span>
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold font-heading text-white mt-3 mb-4">Trusted by Property Managers</h2>
+            <div className="mx-auto w-24 h-1 bg-gradient-to-r from-primary to-cta rounded-full mb-6" />
+            <p className="text-blue-200/60 text-lg">See what our clients across the Phoenix metro have to say.</p>
+          </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {TESTIMONIALS.map((t) => (
-              <div
-                key={t.name}
-                className="bg-navy-900 rounded-xl p-6 border border-navy-800"
-              >
-                <div className="flex gap-1 mb-4">
+            {TESTIMONIALS.map((t, i) => (
+              <div key={t.name} className="glass-card rounded-2xl p-8 reveal" style={{ transitionDelay: `${i * 150}ms` }}>
+                <div className="flex gap-1 mb-5">
                   {[1, 2, 3, 4, 5].map((s) => (
-                    <svg
-                      key={s}
-                      className="w-5 h-5 text-orange-400"
-                      fill="currentColor"
-                      viewBox="0 0 20 20"
-                    >
+                    <svg key={s} className="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
                       <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
                     </svg>
                   ))}
                 </div>
-                <p className="text-gray-300 mb-4 leading-relaxed italic">
-                  &ldquo;{t.quote}&rdquo;
-                </p>
-                <div>
-                  <div className="font-semibold text-white">{t.name}</div>
-                  <div className="text-sm text-gray-500">{t.role}</div>
+                <p className="text-blue-100/80 leading-relaxed mb-6 italic">&ldquo;{t.quote}&rdquo;</p>
+                <div className="border-t border-white/10 pt-4">
+                  <div className="font-semibold text-white font-heading">{t.name}</div>
+                  <div className="text-sm text-blue-300">{t.role}</div>
+                  <div className="text-xs text-blue-400 mt-1">{t.type}</div>
                 </div>
               </div>
             ))}
@@ -198,42 +281,92 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Locations */}
-      <section id="locations" className="py-20 bg-white">
+      {/* ========== 6. SERVICE AREAS ========== */}
+      <section id="locations" className="py-24 bg-white relative">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold text-navy-900 mb-4">
-              Serving the Greater Phoenix Area
-            </h2>
+          <div className="text-center mb-16 reveal">
+            <span className="text-primary font-semibold text-sm uppercase tracking-wider font-heading">Coverage Area</span>
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold font-heading text-blue-950 mt-3 mb-4">Serving the Greater Phoenix Area</h2>
+            <div className="mx-auto w-24 h-1 bg-gradient-to-r from-primary to-cta rounded-full mb-6" />
             <p className="text-gray-600 text-lg max-w-2xl mx-auto">
-              We provide towing and parking enforcement services throughout the
-              Phoenix metro, including these communities.
+              We provide towing and parking enforcement services throughout the Phoenix metro, including these communities.
             </p>
           </div>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-            {SERVICE_AREAS.map((area) => (
-              <Link
-                key={area.slug}
-                href={
-                  area.slug === "phoenix" ||
-                  area.slug === "scottsdale" ||
-                  area.slug === "mesa"
-                    ? `/locations/${area.slug}`
-                    : "/#locations"
-                }
-                className="bg-gray-50 hover:bg-orange-50 border border-gray-200 hover:border-orange-300 rounded-xl p-4 text-center transition-all group"
-              >
-                <div className="text-lg font-bold text-navy-900 group-hover:text-orange-600 transition-colors">
-                  {area.name}
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
+            {SERVICE_AREAS.map((area, i) => (
+              <Link key={area.slug} href={["phoenix", "scottsdale", "mesa"].includes(area.slug) ? `/locations/${area.slug}` : "/#locations"} className="glass-card-white rounded-2xl p-6 text-center group border-glow-blue reveal" style={{ transitionDelay: `${i * 80}ms` }}>
+                <div className="w-10 h-10 bg-blue-50 text-primary rounded-lg flex items-center justify-center mx-auto mb-3 group-hover:bg-primary group-hover:text-white transition-all duration-300">
+                  <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                  </svg>
                 </div>
-                <div className="text-sm text-gray-500">Arizona</div>
+                <div className="text-lg font-bold font-heading text-blue-950 group-hover:text-primary transition-colors mb-2">{area.name}</div>
+                <p className="text-sm text-gray-500 leading-relaxed mb-3">{area.description}</p>
+                <span className="inline-flex items-center text-sm font-semibold text-primary opacity-0 group-hover:opacity-100 transition-opacity">
+                  Learn More
+                  <svg className="w-3 h-3 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                  </svg>
+                </span>
               </Link>
             ))}
           </div>
         </div>
       </section>
 
-      <CTASection />
+      {/* ========== 7. CTA BANNER ========== */}
+      <section className="relative py-24 clip-diagonal-top overflow-hidden">
+        <div className="absolute inset-0 z-0" style={{ background: "linear-gradient(135deg, #e02b20 0%, #c42219 50%, #a81d14 100%)" }} />
+        <div className="absolute inset-0 z-[1] grain-overlay" />
+        <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-white reveal">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold font-heading mb-4">Ready to Secure Your Property?</h2>
+          <p className="text-xl text-red-100 mb-10 max-w-2xl mx-auto">Get started with a free consultation. Our parking enforcement services cost you absolutely nothing.</p>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <a href={`tel:${COMPANY.phone}`} className="bg-white text-red-600 font-bold font-heading px-10 py-4 rounded-lg text-lg uppercase tracking-wider hover:bg-blue-50 transition-colors hover:-translate-y-0.5 transform inline-flex items-center justify-center gap-2">
+              <svg className="w-5 h-5" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+              </svg>
+              Call {COMPANY.phone}
+            </a>
+            <Link href="/contact" className="border-2 border-white text-white font-bold font-heading px-10 py-4 rounded-lg text-lg uppercase tracking-wider hover:bg-white/10 transition-colors hover:-translate-y-0.5 transform inline-flex items-center justify-center">
+              Get a Free Quote
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* ========== 8. BLOG PREVIEW ========== */}
+      <section className="py-24 bg-blue-50 relative">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16 reveal">
+            <span className="text-primary font-semibold text-sm uppercase tracking-wider font-heading">From Our Blog</span>
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold font-heading text-blue-950 mt-3 mb-4">Latest Insights</h2>
+            <div className="mx-auto w-24 h-1 bg-gradient-to-r from-primary to-cta rounded-full mb-6" />
+            <p className="text-gray-600 text-lg">Stay informed about parking enforcement, Arizona towing laws, and property management best practices.</p>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {BLOG_POSTS.map((post, i) => (
+              <Link key={post.title} href={post.slug} className="glass-card-white rounded-2xl overflow-hidden group reveal" style={{ transitionDelay: `${i * 150}ms` }}>
+                <div className="h-48 bg-gradient-to-br from-primary to-blue-900 flex items-center justify-center">
+                  <svg className="w-16 h-16 text-white/20" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1} d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 01-2-2V7m2 13a2 2 0 002-2V9a2 2 0 00-2-2h-2m-4-3H9M7 16h6M7 8h6v4H7V8z" />
+                  </svg>
+                </div>
+                <div className="p-6">
+                  <h3 className="text-lg font-bold font-heading text-blue-950 mb-3 group-hover:text-primary transition-colors leading-snug">{post.title}</h3>
+                  <p className="text-gray-600 text-sm leading-relaxed mb-4">{post.excerpt}</p>
+                  <span className="inline-flex items-center text-sm font-semibold text-primary group-hover:gap-2 transition-all">
+                    Read More
+                    <svg className="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                    </svg>
+                  </span>
+                </div>
+              </Link>
+            ))}
+          </div>
+        </div>
+      </section>
     </>
   );
 }
