@@ -52,6 +52,7 @@ type FormData = {
   city: string;
   parkingSpaces: number;
   currentEnforcement: boolean | null;
+  urgency: string;
   services: string[];
   fullName: string;
   email: string;
@@ -60,12 +61,19 @@ type FormData = {
   notes: string;
 };
 
+const URGENCY_OPTIONS = [
+  { id: "immediately", label: "Immediately (within 24 hours)" },
+  { id: "this-week", label: "This week" },
+  { id: "exploring", label: "Exploring options" },
+];
+
 const initialFormData: FormData = {
   propertyType: "",
   propertyName: "",
   city: "",
   parkingSpaces: 50,
   currentEnforcement: null,
+  urgency: "",
   services: [],
   fullName: "",
   email: "",
@@ -87,7 +95,7 @@ export default function GetQuotePage() {
   function canAdvance(): boolean {
     switch (step) {
       case 1: return formData.propertyType !== "";
-      case 2: return formData.propertyName !== "" && formData.city !== "" && formData.currentEnforcement !== null;
+      case 2: return formData.propertyName !== "" && formData.city !== "" && formData.currentEnforcement !== null && formData.urgency !== "";
       case 3: return formData.services.length > 0;
       case 4: return formData.fullName !== "" && formData.email !== "" && formData.phone !== "";
       default: return true;
@@ -360,6 +368,27 @@ export default function GetQuotePage() {
                             </button>
                           </div>
                         </div>
+                        <div>
+                          <label className="block text-sm font-medium text-gray-700 mb-2">
+                            How soon do you need service? *
+                          </label>
+                          <div className="flex flex-col sm:flex-row gap-3">
+                            {URGENCY_OPTIONS.map((opt) => (
+                              <button
+                                key={opt.id}
+                                type="button"
+                                onClick={() => setFormData((d) => ({ ...d, urgency: opt.id }))}
+                                className={`flex-1 py-3 px-4 rounded-lg border-2 font-semibold text-sm transition-all ${
+                                  formData.urgency === opt.id
+                                    ? "border-primary bg-blue-50 text-primary"
+                                    : "border-gray-200 bg-white text-gray-600 hover:border-primary/40"
+                                }`}
+                              >
+                                {opt.label}
+                              </button>
+                            ))}
+                          </div>
+                        </div>
                       </div>
                     </div>
                   )}
@@ -509,6 +538,8 @@ export default function GetQuotePage() {
                             <span className="font-semibold text-gray-800">{formData.parkingSpaces}</span>
                             <span className="text-gray-500">Current Enforcement</span>
                             <span className="font-semibold text-gray-800">{formData.currentEnforcement ? "Yes" : "No"}</span>
+                            <span className="text-gray-500">Service Urgency</span>
+                            <span className="font-semibold text-gray-800">{URGENCY_OPTIONS.find((o) => o.id === formData.urgency)?.label || formData.urgency}</span>
                           </div>
                         </div>
 

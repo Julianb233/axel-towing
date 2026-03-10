@@ -205,6 +205,69 @@ export default function GalleryPage() {
         </div>
       </section>
 
+      {/* ── Documentation Showcase ── */}
+      <section className="py-20 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12 reveal">
+            <span className="text-primary font-semibold text-sm uppercase tracking-wider font-heading">Legal Protection</span>
+            <h2 className="text-3xl md:text-4xl font-bold text-blue-900 mb-4 font-heading mt-3">
+              Documentation Showcase
+            </h2>
+            <div className="mx-auto w-24 h-1 bg-gradient-to-r from-blue-500 to-blue-300 rounded-full mb-6" />
+            <p className="text-gray-600 text-lg max-w-2xl mx-auto">
+              Every vehicle we tow is thoroughly documented with timestamped,
+              geo-tagged photos for complete legal protection.
+            </p>
+          </div>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            {[
+              { image: IMAGES.services.privateImpound, angle: "Front Driver Side", time: "03/09/2026 2:47 PM", coords: "33.4484\u00b0 N, 112.0740\u00b0 W" },
+              { image: IMAGES.services.parkingEnforcement, angle: "Rear Passenger Side", time: "03/09/2026 3:12 PM", coords: "33.5092\u00b0 N, 111.8988\u00b0 W" },
+              { image: IMAGES.services.apartmentTowing, angle: "VIN Plate Close-Up", time: "03/08/2026 11:33 AM", coords: "33.4152\u00b0 N, 111.8315\u00b0 W" },
+              { image: IMAGES.services.hoaTowing, angle: "Signage & Vehicle", time: "03/08/2026 9:05 AM", coords: "33.6060\u00b0 N, 111.9253\u00b0 W" },
+              { image: IMAGES.services.commercialTowing, angle: "Wide Angle Context", time: "03/07/2026 4:58 PM", coords: "33.3528\u00b0 N, 111.7890\u00b0 W" },
+              { image: IMAGES.hero.parkingLot, angle: "License Plate", time: "03/07/2026 1:20 PM", coords: "33.4373\u00b0 N, 112.0078\u00b0 W" },
+              { image: IMAGES.services.vehicleRelocation, angle: "Damage Pre-Check", time: "03/06/2026 6:15 PM", coords: "33.4942\u00b0 N, 112.1141\u00b0 W" },
+              { image: IMAGES.arizona.impoundLot, angle: "Impound Lot Arrival", time: "03/06/2026 7:02 PM", coords: "33.4484\u00b0 N, 112.0740\u00b0 W" },
+            ].map((doc, i) => (
+              <div
+                key={i}
+                className={`reveal glass-card rounded-2xl overflow-hidden group delay-${((i % 4) + 1) * 100}`}
+              >
+                <div className="relative h-52 overflow-hidden">
+                  <Image src={doc.image} alt={doc.angle} fill className="object-cover group-hover:scale-105 transition-transform duration-500" />
+                  {/* Dark gradient overlay for text readability */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent" />
+                  {/* Documentation overlay */}
+                  <div className="absolute bottom-0 left-0 right-0 p-4 text-white">
+                    <div className="flex items-center gap-1.5 mb-1">
+                      <svg className="w-3.5 h-3.5 text-amber-400 flex-shrink-0" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z" />
+                      </svg>
+                      <span className="text-xs font-mono">{doc.time}</span>
+                    </div>
+                    <div className="flex items-center gap-1.5 mb-1">
+                      <svg className="w-3.5 h-3.5 text-green-400 flex-shrink-0" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z" />
+                        <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z" />
+                      </svg>
+                      <span className="text-xs font-mono">{doc.coords}</span>
+                    </div>
+                    <div className="flex items-center gap-1.5">
+                      <svg className="w-3.5 h-3.5 text-blue-400 flex-shrink-0" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" d="M6.827 6.175A2.31 2.31 0 015.186 7.23c-.38.054-.757.112-1.134.175C2.999 7.58 2.25 8.507 2.25 9.574V18a2.25 2.25 0 002.25 2.25h15A2.25 2.25 0 0021.75 18V9.574c0-1.067-.75-1.994-1.802-2.169a47.865 47.865 0 00-1.134-.175 2.31 2.31 0 01-1.64-1.055l-.822-1.316a2.192 2.192 0 00-1.736-1.039 48.774 48.774 0 00-5.232 0 2.192 2.192 0 00-1.736 1.039l-.821 1.316z" />
+                        <path strokeLinecap="round" strokeLinejoin="round" d="M16.5 12.75a4.5 4.5 0 11-9 0 4.5 4.5 0 019 0z" />
+                      </svg>
+                      <span className="text-xs font-semibold">{doc.angle}</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* ── CTA Section ── */}
       <section className="relative py-20 bg-gradient-to-r from-blue-900 via-primary to-blue-800 text-white overflow-hidden">
         <div className="absolute inset-0 grain-overlay" />

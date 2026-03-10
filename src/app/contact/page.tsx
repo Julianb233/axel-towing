@@ -126,12 +126,39 @@ export default function ContactPage() {
                         className="w-full border border-gray-300 rounded-lg px-4 py-3 focus:ring-2 focus:ring-primary focus:border-primary outline-none transition bg-white"
                       >
                         <option value="">Select property type</option>
-                        <option value="hoa">HOA Community</option>
                         <option value="apartment">Apartment Complex</option>
+                        <option value="hoa">HOA Community</option>
                         <option value="commercial">Commercial Property</option>
-                        <option value="parking-lot">Parking Lot</option>
+                        <option value="retail">Retail Center</option>
                         <option value="other">Other</option>
                       </select>
+                    </div>
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                      <div>
+                        <label className="block text-sm font-medium text-gray-700 mb-1">
+                          How soon do you need service? *
+                        </label>
+                        <select
+                          required
+                          className="w-full border border-gray-300 rounded-lg px-4 py-3 focus:ring-2 focus:ring-primary focus:border-primary outline-none transition bg-white"
+                        >
+                          <option value="">Select timeline</option>
+                          <option value="immediately">Immediately (within 24 hours)</option>
+                          <option value="this-week">This week</option>
+                          <option value="exploring">Exploring options</option>
+                        </select>
+                      </div>
+                      <div>
+                        <label className="block text-sm font-medium text-gray-700 mb-1">
+                          Estimated parking spaces
+                        </label>
+                        <input
+                          type="number"
+                          min={1}
+                          className="w-full border border-gray-300 rounded-lg px-4 py-3 focus:ring-2 focus:ring-primary focus:border-primary outline-none transition bg-white"
+                          placeholder="e.g., 150"
+                        />
+                      </div>
                     </div>
                     <div>
                       <label className="block text-sm font-medium text-gray-700 mb-1">
