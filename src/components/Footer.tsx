@@ -8,7 +8,12 @@ const QUICK_LINKS = [
   { label: 'Blog & Resources', href: '/blog' },
   { label: 'Contact Us', href: '/contact' },
   { label: 'Property Manager Portal', href: '/portal' },
-  { label: 'Privacy Policy', href: '/privacy' },
+  { label: 'Locate Vehicle', href: '/locate-vehicle' },
+  { label: 'FAQ', href: '/faq' },
+  { label: 'We Buy Cars', href: '/we-buy-cars' },
+  { label: 'Careers', href: '/careers' },
+  { label: 'Privacy Policy', href: '/privacy-policy' },
+  { label: 'Terms of Service', href: '/terms-of-service' },
 ];
 
 const SOCIAL_LINKS = [
@@ -59,9 +64,9 @@ export default function Footer() {
       {/* CTA Banner with parallax background */}
       <section
         className="relative py-20 parallax grain-overlay"
-        style={{ backgroundImage: `url('${COMPANY.heroImage}')` }}
+        style={{ backgroundImage: `url('/images/testimonial-bg.jpg')` }}
       >
-        <div className="absolute inset-0 gradient-overlay-blue" />
+        <div className="absolute inset-0 gradient-overlay-dark" />
         <div className="relative z-10 max-w-4xl mx-auto px-4 text-center">
           <h2 className="text-3xl md:text-4xl font-bold text-white mb-4 font-heading">
             Ready to Protect Your Property?
@@ -81,39 +86,14 @@ export default function Footer() {
         </div>
       </section>
 
-      {/* Animated gradient border line */}
-      <div
-        className="h-1 w-full"
-        style={{
-          background:
-            'linear-gradient(90deg, #0c71c3, #2ea3f2, #e02b20, #2ea3f2, #0c71c3)',
-          backgroundSize: '200% 100%',
-          animation: 'shimmer 4s linear infinite',
-        }}
-      />
+      {/* Clean separator line */}
+      <div className="h-px w-full bg-gradient-to-r from-transparent via-blue-300 to-transparent" />
 
-      {/* Wave SVG separator */}
-      <div className="relative" style={{ background: 'linear-gradient(180deg, #1a1a2e 0%, #0c71c3 100%)' }}>
-        <svg
-          className="absolute -top-px left-0 w-full"
-          viewBox="0 0 1440 80"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-          preserveAspectRatio="none"
-          style={{ height: '80px' }}
-        >
-          <path
-            d="M0 40C240 80 480 0 720 40C960 80 1200 0 1440 40V0H0V40Z"
-            fill="transparent"
-          />
-          <path
-            d="M0 40C240 80 480 0 720 40C960 80 1200 0 1440 40V80H0V40Z"
-            fill="#1a1a2e"
-          />
-        </svg>
+      {/* Footer content — clean dark background */}
+      <div className="relative" style={{ background: '#1b2a3f' }}>
 
         {/* Main footer content */}
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 pt-28">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
             {/* Column 1: Brand / Company */}
             <div>
@@ -124,7 +104,7 @@ export default function Footer() {
                 height={66}
                 className="h-14 w-auto mb-4 brightness-0 invert"
               />
-              <p className="text-sm text-blue-200/70 leading-relaxed mb-6">
+              <p className="text-sm text-white/60 leading-relaxed mb-6">
                 {COMPANY.description}
               </p>
 
@@ -135,7 +115,7 @@ export default function Footer() {
                     key={social.label}
                     href={social.href}
                     aria-label={social.label}
-                    className="glass-card !p-2.5 rounded-lg text-white/60 hover:text-white !transform-none hover:!translate-y-0 hover:!bg-white/20"
+                    className="p-2.5 rounded-lg text-white/60 hover:text-white bg-white/5 hover:bg-white/10 border border-white/10 transition-colors"
                   >
                     {social.icon}
                   </a>
@@ -153,7 +133,7 @@ export default function Footer() {
                   <li key={s.slug}>
                     <Link
                       href={`/services/${s.slug}`}
-                      className="text-blue-200/70 hover:text-cta transition-colors inline-flex items-center gap-1.5 group"
+                      className="text-white/60 hover:text-white/80 transition-colors inline-flex items-center gap-1.5 group"
                     >
                       <span className="w-0 h-0.5 bg-cta rounded-full transition-all duration-300 group-hover:w-3" />
                       {s.title}
@@ -177,7 +157,7 @@ export default function Footer() {
                           ? `/locations/${area.slug}`
                           : '/#locations'
                       }
-                      className="text-blue-200/70 hover:text-cta transition-colors inline-flex items-center gap-1.5 group"
+                      className="text-white/60 hover:text-white/80 transition-colors inline-flex items-center gap-1.5 group"
                     >
                       <span className="w-0 h-0.5 bg-cta rounded-full transition-all duration-300 group-hover:w-3" />
                       {area.name}, AZ
@@ -197,7 +177,7 @@ export default function Footer() {
                   <li key={link.href}>
                     <Link
                       href={link.href}
-                      className="text-blue-200/70 hover:text-cta transition-colors inline-flex items-center gap-1.5 group"
+                      className="text-white/60 hover:text-white/80 transition-colors inline-flex items-center gap-1.5 group"
                     >
                       <span className="w-0 h-0.5 bg-cta rounded-full transition-all duration-300 group-hover:w-3" />
                       {link.label}
@@ -232,7 +212,7 @@ export default function Footer() {
                 </a>
                 <a
                   href={`mailto:${COMPANY.email}`}
-                  className="flex items-center gap-2 text-blue-200/70 hover:text-cta transition-colors"
+                  className="flex items-center gap-2 text-white/60 hover:text-white/80 transition-colors"
                 >
                   <svg
                     className="w-4 h-4 shrink-0"
@@ -252,7 +232,7 @@ export default function Footer() {
 
                 {/* Both addresses */}
                 {COMPANY.addresses.map((addr) => (
-                  <div key={addr.label} className="flex items-start gap-2 text-blue-200/60">
+                  <div key={addr.label} className="flex items-start gap-2 text-white/60">
                     <svg
                       className="w-4 h-4 shrink-0 mt-0.5"
                       fill="none"
@@ -286,17 +266,24 @@ export default function Footer() {
           </div>
 
           {/* Bottom bar */}
-          <div className="border-t border-white/10 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-blue-200/40">
+          <div className="border-t border-white/10 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-white/40">
             <p>
               &copy; {new Date().getFullYear()} {COMPANY.name}. All rights
               reserved.
             </p>
             <div className="flex items-center gap-4">
               <Link
-                href="/privacy"
+                href="/privacy-policy"
                 className="hover:text-white/60 transition-colors"
               >
                 Privacy Policy
+              </Link>
+              <span className="text-white/20">|</span>
+              <Link
+                href="/terms-of-service"
+                className="hover:text-white/60 transition-colors"
+              >
+                Terms of Service
               </Link>
               <span className="text-white/20">|</span>
               <span>Serving the Greater Phoenix Metro Area &mdash; 24/7</span>

@@ -2,7 +2,9 @@
 
 import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { COMPANY } from "@/lib/constants";
+import { IMAGES } from "@/lib/images";
 
 /* ── Animated Counter ── */
 function AnimatedCounter({ target, suffix = "" }: { target: number; suffix?: string }) {
@@ -122,7 +124,7 @@ export default function AboutPage() {
         <div
           ref={parallaxRef}
           className="parallax-bg"
-          style={{ backgroundImage: `url(${COMPANY.heroImage})` }}
+          style={{ backgroundImage: `url(/images/about-team.jpg)` }}
         />
         <div className="absolute inset-0 gradient-overlay-blue z-[1]" />
         <div className="absolute inset-0 grain-overlay z-[2]" />
@@ -294,12 +296,8 @@ export default function AboutPage() {
                   </div>
                 </div>
                 <div className={d.align === "right" ? "reveal-left lg:order-1" : "reveal-right"}>
-                  <div className="rounded-2xl bg-gradient-to-br from-blue-100 to-blue-50 h-64 flex items-center justify-center border border-blue-200">
-                    <div className="text-primary opacity-30">
-                      <svg className="w-24 h-24" fill="none" stroke="currentColor" strokeWidth={0.5} viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" d="M8.25 18.75a1.5 1.5 0 01-3 0m3 0a1.5 1.5 0 00-3 0m3 0h6m-9 0H3.375a1.125 1.125 0 01-1.125-1.125V14.25m17.25 4.5a1.5 1.5 0 01-3 0m3 0a1.5 1.5 0 00-3 0m3 0h1.125c.621 0 1.129-.504 1.09-1.124a17.902 17.902 0 00-3.213-9.193 2.056 2.056 0 00-1.58-.86H14.25m-2.25 0h-2.25m4.5 0V6.375c0-.621-.504-1.125-1.125-1.125H3.375c-.621 0-1.125.504-1.125 1.125v11.25c0 .621.504 1.125 1.125 1.125" />
-                      </svg>
-                    </div>
+                  <div className="rounded-2xl h-64 relative overflow-hidden border border-blue-200">
+                    <Image src={i === 0 ? IMAGES.about.office : i === 1 ? IMAGES.about.team : IMAGES.about.office} alt={d.title} fill className="object-cover" />
                   </div>
                 </div>
               </div>
@@ -309,9 +307,13 @@ export default function AboutPage() {
       </section>
 
       {/* ── Team Section ── */}
-      <section className="py-20 bg-white">
+      <section className="py-20 bg-white relative">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12 reveal">
+            <div className="relative w-full h-64 rounded-2xl overflow-hidden mb-8">
+              <Image src={IMAGES.about.team} alt="Axle Towing team" fill className="object-cover" />
+              <div className="absolute inset-0 bg-gradient-to-t from-white via-white/30 to-transparent" />
+            </div>
             <h2 className="text-3xl md:text-4xl font-bold text-blue-900 mb-4 font-heading">
               Our Leadership
             </h2>

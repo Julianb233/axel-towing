@@ -14,14 +14,13 @@ export default function LocationPageTemplate({
         <div
           className="parallax-bg"
           style={{
-            backgroundImage: `url(${COMPANY.heroImage})`,
+            backgroundImage: `url(/images/contact-phoenix.jpg)`,
           }}
         />
-        <div className="absolute inset-0 gradient-overlay-blue z-[1]" />
-        <div className="absolute inset-0 gradient-overlay-dark z-[1]" />
+        <div className="absolute inset-0 z-[1]" style={{ background: "linear-gradient(160deg, rgba(27,42,63,0.85) 0%, rgba(30,107,184,0.65) 100%)" }} />
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 md:py-32 w-full">
           <div className="max-w-3xl">
-            <div className="inline-flex items-center glass rounded-full px-4 py-1.5 text-blue-200 text-sm font-medium mb-6">
+            <div className="inline-flex items-center glass rounded-full px-4 py-1.5 text-white/80 text-sm font-medium mb-6">
               <svg
                 className="w-4 h-4 mr-1.5"
                 fill="none"
@@ -47,7 +46,7 @@ export default function LocationPageTemplate({
               Towing &amp; Parking Enforcement in{" "}
               <span className="text-gradient">{data.city}</span>, AZ
             </h1>
-            <p className="text-lg md:text-xl text-blue-100/80 leading-relaxed mb-8">
+            <p className="text-lg md:text-xl text-white/80 leading-relaxed mb-8">
               {data.heroSubtext}
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
@@ -140,15 +139,12 @@ export default function LocationPageTemplate({
       </section>
 
       {/* Services Grid */}
-      <section className="py-20 bg-gradient-to-br from-blue-950 via-blue-900 to-blue-950 relative overflow-hidden">
-        <div className="absolute inset-0 grain-overlay" />
-        <div className="absolute top-20 right-20 w-96 h-96 bg-brand-cta/5 rounded-full blur-3xl" />
-        <div className="absolute bottom-10 left-10 w-72 h-72 bg-brand-blue/5 rounded-full blur-3xl" />
-        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl md:text-4xl font-bold text-white mb-4 text-center reveal">
+      <section className="py-20 bg-gray-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="text-3xl md:text-4xl font-bold mb-4 text-center reveal" style={{ color: '#1a202c' }}>
             Our Services in {data.city}
           </h2>
-          <p className="text-blue-200/60 text-lg text-center mb-12 max-w-2xl mx-auto reveal">
+          <p className="text-gray-500 text-lg text-center mb-12 max-w-2xl mx-auto reveal">
             Comprehensive private property towing solutions tailored for{" "}
             {data.city}&apos;s residential and commercial communities.
           </p>
@@ -160,67 +156,37 @@ export default function LocationPageTemplate({
                 className="glass-card rounded-2xl p-6 group reveal"
                 style={{ transitionDelay: `${index * 100}ms` }}
               >
-                <div className="w-12 h-12 rounded-xl bg-brand-cta/20 flex items-center justify-center mb-4">
+                <div className="w-12 h-12 rounded-xl bg-blue-50 flex items-center justify-center mb-4 group-hover:bg-blue-600 group-hover:text-white transition-colors duration-300">
                   <svg
-                    className="w-6 h-6 text-brand-cta"
+                    className="w-6 h-6 text-blue-600 group-hover:text-white transition-colors duration-300"
                     fill="none"
                     stroke="currentColor"
                     viewBox="0 0 24 24"
                   >
                     {service.icon === "shield" && (
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={2}
-                        d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"
-                      />
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
                     )}
                     {service.icon === "clipboard" && (
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={2}
-                        d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4"
-                      />
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4" />
                     )}
                     {service.icon === "truck" && (
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={2}
-                        d="M8 17h8M8 17l-2 0a2 2 0 01-2-2V7a2 2 0 012-2h8l4 4v6a2 2 0 01-2 2h-2M8 17a2 2 0 100 4 2 2 0 000-4zm8 0a2 2 0 100 4 2 2 0 000-4z"
-                      />
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 17h8M8 17l-2 0a2 2 0 01-2-2V7a2 2 0 012-2h8l4 4v6a2 2 0 01-2 2h-2M8 17a2 2 0 100 4 2 2 0 000-4zm8 0a2 2 0 100 4 2 2 0 000-4z" />
                     )}
                     {service.icon === "home" && (
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={2}
-                        d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"
-                      />
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
                     )}
                     {service.icon === "building" && (
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={2}
-                        d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"
-                      />
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
                     )}
                     {service.icon === "store" && (
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={2}
-                        d="M3 3h18l-2 13H5L3 3zm0 0l-1-1m3 14v5m12-5v5M9 21h6"
-                      />
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 3h18l-2 13H5L3 3zm0 0l-1-1m3 14v5m12-5v5M9 21h6" />
                     )}
                   </svg>
                 </div>
-                <h3 className="text-lg font-bold text-white mb-2 group-hover:text-brand-cta transition-colors">
+                <h3 className="text-lg font-bold mb-2 group-hover:text-blue-600 transition-colors" style={{ color: '#1a202c' }}>
                   {service.title}
                 </h3>
-                <p className="text-blue-200/60 text-sm leading-relaxed">
+                <p className="text-gray-500 text-sm leading-relaxed">
                   {service.shortDesc}
                 </p>
               </Link>
@@ -375,24 +341,22 @@ export default function LocationPageTemplate({
       </section>
 
       {/* CTA Banner */}
-      <section className="py-20 bg-gradient-to-br from-blue-950 via-blue-900 to-blue-950 relative overflow-hidden">
-        <div className="absolute inset-0 grain-overlay" />
-        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-brand-cta/10 rounded-full blur-3xl" />
+      <section className="py-20 relative overflow-hidden" style={{ background: "linear-gradient(135deg, #dc3a30 0%, #b52a22 50%, #8f2018 100%)" }}>
         <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <div className="reveal">
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
               Get Free Towing Service in {data.city}
             </h2>
-            <p className="text-blue-200/70 text-lg mb-8 max-w-2xl mx-auto">
+            <p className="text-white/85 text-lg mb-8 max-w-2xl mx-auto">
               Contact us today for a free consultation. All our private property
               towing services in {data.city} are at zero cost to property
               owners.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <a href={`tel:${COMPANY.phone}`} className="btn-primary">
+              <a href={`tel:${COMPANY.phone}`} className="bg-white text-red-600 font-bold font-heading px-8 py-4 rounded-xl text-lg uppercase tracking-wider hover:bg-gray-50 transition-colors hover:-translate-y-0.5 transform inline-flex items-center justify-center gap-2 shadow-lg">
                 Call {COMPANY.phone}
               </a>
-              <Link href="/contact" className="btn-secondary">
+              <Link href="/contact" className="border-2 border-white text-white font-bold font-heading px-8 py-4 rounded-xl text-lg uppercase tracking-wider hover:bg-white/10 transition-colors hover:-translate-y-0.5 transform inline-flex items-center justify-center">
                 Request Free Quote
               </Link>
             </div>

@@ -98,7 +98,7 @@ export default function ComparePage() {
         <div
           ref={parallaxRef}
           className="parallax-bg"
-          style={{ backgroundImage: `url(${COMPANY.heroImage})` }}
+          style={{ backgroundImage: `url(/images/hero-parking-lot.jpg)` }}
         />
         <div className="absolute inset-0 gradient-overlay-blue z-[1]" />
         <div className="absolute inset-0 grain-overlay z-[2]" />
