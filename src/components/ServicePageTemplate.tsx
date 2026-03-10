@@ -36,6 +36,32 @@ export default function ServicePageTemplate({ data }: { data: ServicePageData })
               Request Free Quote
             </Link>
           </div>
+          {/* Response Time Guarantee Badge */}
+          <div className="mt-8 inline-flex items-center gap-3 backdrop-blur-xl bg-amber-500/20 border border-amber-400/40 rounded-full px-6 py-3 shadow-lg shadow-amber-500/10 reveal delay-500">
+            <svg className="w-6 h-6 text-amber-400" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24">
+              <circle cx="12" cy="12" r="10" />
+              <path strokeLinecap="round" strokeLinejoin="round" d="M12 6v6l4 2" />
+            </svg>
+            <span className="font-heading font-bold text-amber-300 tracking-wide text-sm sm:text-base">30-Minute Response Guarantee</span>
+          </div>
+        </div>
+      </section>
+
+      {/* ===== PHOTO DOCUMENTATION BADGE ===== */}
+      <section className="py-6 bg-white">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="glass-card rounded-2xl p-6 flex items-center gap-5 reveal border border-blue-100/60">
+            <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-primary/10 to-cta/10 flex items-center justify-center flex-shrink-0">
+              <svg className="w-7 h-7 text-primary" fill="none" stroke="currentColor" strokeWidth={1.5} viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" d="M6.827 6.175A2.31 2.31 0 015.186 7.23c-.38.054-.757.112-1.134.175C2.999 7.58 2.25 8.507 2.25 9.574V18a2.25 2.25 0 002.25 2.25h15A2.25 2.25 0 0021.75 18V9.574c0-1.067-.75-1.994-1.802-2.169a47.865 47.865 0 00-1.134-.175 2.31 2.31 0 01-1.64-1.055l-.822-1.316a2.192 2.192 0 00-1.736-1.039 48.774 48.774 0 00-5.232 0 2.192 2.192 0 00-1.736 1.039l-.821 1.316z" />
+                <path strokeLinecap="round" strokeLinejoin="round" d="M16.5 12.75a4.5 4.5 0 11-9 0 4.5 4.5 0 019 0zM18.75 10.5h.008v.008h-.008V10.5z" />
+              </svg>
+            </div>
+            <div>
+              <h3 className="font-heading text-lg font-bold" style={{ color: '#1a202c' }}>Every Vehicle Documented</h3>
+              <p className="text-gray-500 text-sm leading-relaxed">Timestamped &amp; Geo-Tagged Photos for Legal Protection</p>
+            </div>
+          </div>
         </div>
       </section>
 
