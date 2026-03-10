@@ -152,7 +152,7 @@ export default function GetQuotePage() {
               </svg>
               <span className="text-sm font-semibold tracking-wide">Takes only 60 seconds</span>
             </div>
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4 font-heading leading-tight">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4 font-heading leading-tight">
               Get Your Free Parking
               <br />
               <span className="text-gradient">Enforcement Quote</span>

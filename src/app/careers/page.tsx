@@ -147,7 +147,7 @@ export default function CareersPage() {
         <div className="absolute inset-0 grain-overlay z-[2]" />
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 md:py-32 w-full">
           <div className="reveal max-w-3xl">
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 font-heading">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 font-heading">
               Join <span className="text-gradient">Our Team</span>
             </h1>
             <p className="text-lg md:text-xl text-white/95 leading-relaxed">
@@ -247,7 +247,7 @@ export default function CareersPage() {
         <div className="absolute inset-0 grain-overlay" />
         <div className="relative z-10 max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-10 reveal">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4 font-heading">Apply Now</h2>
+            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4 font-heading">Apply Now</h2>
             <p className="text-white/90 text-lg">
               Ready to join our team? Fill out the form below and we&rsquo;ll be in touch.
             </p>
@@ -377,7 +377,7 @@ export default function CareersPage() {
       <section className="relative py-20 bg-gradient-to-r from-blue-900 via-primary to-blue-800 text-white overflow-hidden">
         <div className="absolute inset-0 grain-overlay" />
         <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center reveal">
-          <h2 className="text-3xl md:text-4xl font-bold mb-6 font-heading">
+          <h2 className="text-3xl md:text-4xl font-bold text-white mb-6 font-heading">
             Have Questions About Working With Us?
           </h2>
           <p className="text-lg text-white/95 mb-8 max-w-2xl mx-auto">

@@ -22,7 +22,7 @@ export default function ContactWidget() {
   const phoneHref = `tel:${COMPANY.phone.replace(/-/g, '')}`;
 
   return (
-    <div className="fixed bottom-24 right-6 z-40 sm:bottom-28 sm:right-6">
+    <div className="fixed bottom-[88px] right-6 z-40 md:bottom-28 md:right-6">
       {/* Expanded Panel */}
       <div
         className={`absolute bottom-16 right-0 w-80 transition-all duration-300 origin-bottom-right ${

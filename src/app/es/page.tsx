@@ -75,7 +75,7 @@ export default function SpanishHomePage() {
               </svg>
             </Link>
           </div>
-          <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold font-heading leading-tight mb-6 animate-fade-in-up">
+          <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white font-heading leading-tight mb-6 animate-fade-in-up">
             Servicios de Grua
             <br />
             <span style={{ WebkitTextFillColor: "transparent", background: "linear-gradient(135deg, #2ea3f2, #6bbbf5)", WebkitBackgroundClip: "text", backgroundClip: "text" }}>
@@ -290,7 +290,7 @@ export default function SpanishHomePage() {
         <div className="absolute inset-0 z-0" style={{ background: "linear-gradient(160deg, rgba(15,31,54,0.95) 0%, rgba(27,42,63,0.92) 50%, rgba(30,107,184,0.85) 100%)" }} />
         <div className="absolute inset-0 z-[1] grain-overlay" />
         <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-white reveal">
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold font-heading mb-4">Listo para Proteger Su Propiedad?</h2>
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white font-heading mb-4">Listo para Proteger Su Propiedad?</h2>
           <p className="text-xl text-white/95 mb-10 max-w-2xl mx-auto">Comience con una consulta gratuita. Nuestros servicios de control de estacionamiento no le cuestan absolutamente nada.</p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a href={`tel:${COMPANY.phone}`} className="btn-primary text-lg inline-flex items-center gap-2">

@@ -67,7 +67,7 @@ export default function ParkingPolicyTemplatePage() {
               </svg>
               Free Download
             </div>
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 font-heading">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 font-heading">
               Free Parking Policy Template for{" "}
               <span className="text-gradient">Arizona Properties</span>
             </h1>
@@ -214,7 +214,7 @@ export default function ParkingPolicyTemplatePage() {
       <section className="relative py-20 bg-gradient-to-r from-blue-900 via-primary to-blue-800 text-white overflow-hidden">
         <div className="absolute inset-0 grain-overlay" />
         <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center reveal">
-          <h2 className="text-3xl md:text-4xl font-bold mb-6 font-heading">
+          <h2 className="text-3xl md:text-4xl font-bold text-white mb-6 font-heading">
             Need Help Implementing Your Policy?
           </h2>
           <p className="text-lg text-white/95 mb-8 max-w-2xl mx-auto">

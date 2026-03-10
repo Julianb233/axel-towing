@@ -33,7 +33,7 @@ export default function NotFound() {
         </div>
 
         <p className="text-6xl md:text-8xl font-bold text-white/10 font-heading mb-2">404</p>
-        <h1 className="text-3xl md:text-4xl font-bold mb-4 font-heading">
+        <h1 className="text-3xl md:text-4xl font-bold text-white mb-4 font-heading">
           Looks Like This Page Got <span className="text-gradient">Towed!</span>
         </h1>
         <p className="text-lg text-white/60 mb-10 max-w-xl mx-auto">

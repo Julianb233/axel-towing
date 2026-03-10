@@ -306,7 +306,7 @@ export default function PricingPage() {
               </svg>
               <span className="text-sm font-semibold tracking-wide text-green-300">100% Free for Property Owners</span>
             </div>
-            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold font-heading leading-tight mb-6">
+            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white font-heading leading-tight mb-6">
               $0 for Property Owners.
               <br />
               <span className="text-white">

@@ -14,7 +14,7 @@ export default function TermsOfServicePage() {
       <section className="relative bg-gradient-to-br from-blue-950 to-blue-900 text-white py-20">
         <div className="absolute inset-0 grain-overlay" />
         <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h1 className="text-4xl md:text-5xl font-bold mb-4 font-heading">Terms of Service</h1>
+          <h1 className="text-4xl md:text-5xl font-bold text-white mb-4 font-heading">Terms of Service</h1>
           <p className="text-white/90 text-lg">Last updated: March 9, 2026</p>
         </div>
       </section>

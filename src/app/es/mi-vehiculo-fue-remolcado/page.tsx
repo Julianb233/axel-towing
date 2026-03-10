@@ -96,7 +96,7 @@ export default function MiVehiculoFueRemolcadoPage() {
         <div className="absolute inset-0 grain-overlay z-[2]" />
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 md:py-32 w-full">
           <div className="reveal max-w-3xl">
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 font-heading">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 font-heading">
               Mi Vehiculo Fue <span className="text-gradient">Remolcado</span>
             </h1>
             <p className="text-lg md:text-xl text-white/95 leading-relaxed">
@@ -361,7 +361,7 @@ export default function MiVehiculoFueRemolcadoPage() {
             <svg className="w-8 h-8 animate-float" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" d="M12 9v3.75m-9.303 3.376c-.866 1.5.217 3.374 1.948 3.374h14.71c1.73 0 2.813-1.874 1.948-3.374L13.949 3.378c-.866-1.5-3.032-1.5-3.898 0L2.697 16.126zM12 15.75h.007v.008H12v-.008z" />
             </svg>
-            <h2 className="text-3xl md:text-4xl font-bold font-heading">
+            <h2 className="text-3xl md:text-4xl font-bold text-white font-heading">
               Necesita Ayuda Inmediata?
             </h2>
           </div>

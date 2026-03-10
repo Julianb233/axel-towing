@@ -104,7 +104,7 @@ export default function RootLayout({
       >
         <EmergencyBanner />
         <Header />
-        <main className="pb-16 md:pb-0">{children}</main>
+        <main className="pb-20 md:pb-0">{children}</main>
         <Footer />
         <ContactWidget />
         <FloatingCTA />

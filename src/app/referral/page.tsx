@@ -108,7 +108,7 @@ export default function ReferralPage() {
             <span className="inline-block bg-amber-500/20 border border-amber-400/40 text-amber-300 text-sm font-bold font-heading uppercase tracking-wider px-4 py-1.5 rounded-full mb-6">
               Referral Program
             </span>
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 font-heading">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 font-heading">
               Refer a Property Manager, <span className="text-white">Get Rewarded</span>
             </h1>
             <p className="text-lg md:text-xl text-white/95 leading-relaxed">
@@ -298,7 +298,7 @@ export default function ReferralPage() {
       <section className="relative py-20 text-white overflow-hidden" style={{ background: "linear-gradient(160deg, rgba(15,31,54,1) 0%, rgba(27,42,63,0.95) 50%, rgba(30,107,184,0.9) 100%)" }}>
         <div className="absolute inset-0 grain-overlay" />
         <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center reveal">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4 font-heading">
+          <h2 className="text-3xl md:text-4xl font-bold text-white mb-4 font-heading">
             Ready to Start Earning?
           </h2>
           <p className="text-lg text-white/95 mb-8 max-w-2xl mx-auto">
