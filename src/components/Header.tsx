@@ -6,6 +6,37 @@ import { useState, useEffect, useCallback } from 'react';
 import { usePathname } from 'next/navigation';
 import { COMPANY, NAV_LINKS } from '@/lib/constants';
 
+function useTruckStatus() {
+  const [status, setStatus] = useState({ trucks: 6, label: '6 Trucks Active' });
+
+  useEffect(() => {
+    function update() {
+      const hour = new Date().getHours();
+      if (hour >= 8 && hour < 18) {
+        setStatus({ trucks: 6, label: '6 Trucks Active' });
+      } else if (hour >= 18 && hour < 22) {
+        setStatus({ trucks: 3, label: '3 Trucks Active' });
+      } else {
+        setStatus({ trucks: 2, label: '2 Trucks Active' });
+      }
+    }
+    update();
+    const interval = setInterval(update, 60000);
+    return () => clearInterval(interval);
+  }, []);
+
+  return status;
+}
+
+function TruckCount() {
+  const { label } = useTruckStatus();
+  return (
+    <span className="hidden md:inline text-white/60 text-xs uppercase tracking-wide">
+      {label}
+    </span>
+  );
+}
+
 export default function Header() {
   const [mobileOpen, setMobileOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
@@ -84,14 +115,22 @@ export default function Header() {
                 <span>{COMPANY.email}</span>
               </a>
             </div>
-            <div className="flex items-center gap-1.5">
-              <span className="relative flex h-2.5 w-2.5">
-                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75" />
-                <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-green-500" />
-              </span>
-              <span className="text-green-400 font-semibold tracking-wide text-xs uppercase">
+            <div className="flex items-center gap-3">
+              <div className="flex items-center gap-1.5">
+                <span className="relative flex h-2.5 w-2.5">
+                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75" />
+                  <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-green-500" />
+                </span>
+                <span className="text-green-400 font-semibold tracking-wide text-xs uppercase">
+                  Available Now
+                </span>
+              </div>
+              <span className="hidden sm:inline text-white/30">|</span>
+              <span className="hidden sm:inline text-white/60 text-xs uppercase tracking-wide">
                 24/7 Emergency Service
               </span>
+              <span className="hidden md:inline text-white/30">|</span>
+              <TruckCount />
             </div>
           </div>
         </div>

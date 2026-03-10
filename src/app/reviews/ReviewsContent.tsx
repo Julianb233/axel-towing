@@ -183,6 +183,55 @@ export default function ReviewsContent() {
         </div>
       </section>
 
+      {/* ── Google Reviews Badge + Write a Review CTA ── */}
+      <section className="py-12 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
+            {/* Google Reviews Badge */}
+            <div className="glass-card-white rounded-2xl px-8 py-5 flex items-center gap-4 shadow-md">
+              <div className="flex items-center gap-1">
+                <svg className="w-8 h-8" viewBox="0 0 24 24" fill="none">
+                  <path d="M12.48 10.92v3.28h7.84c-.24 1.84-.853 3.187-1.787 4.133-1.147 1.147-2.933 2.4-6.053 2.4-4.827 0-8.6-3.893-8.6-8.72s3.773-8.72 8.6-8.72c2.6 0 4.507 1.027 5.907 2.347l2.307-2.307C18.747 1.44 16.133 0 12.48 0 5.867 0 .307 5.387.307 12s5.56 12 12.173 12c3.573 0 6.267-1.173 8.373-3.36 2.16-2.16 2.84-5.213 2.84-7.667 0-.76-.053-1.467-.173-2.053H12.48z" fill="#4285F4"/>
+                </svg>
+                <span className="text-lg font-bold text-blue-900 font-heading">Google Reviews</span>
+              </div>
+              <div className="border-l border-gray-200 pl-4">
+                <div className="flex items-center gap-1.5">
+                  <span className="text-2xl font-bold text-blue-900 font-heading">4.9</span>
+                  <div className="flex gap-0.5 text-yellow-400">
+                    {[...Array(5)].map((_, i) => (
+                      <svg key={i} className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                        <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                      </svg>
+                    ))}
+                  </div>
+                </div>
+                <p className="text-xs text-gray-500">Based on 127 reviews</p>
+              </div>
+            </div>
+
+            {/* Write a Review CTA */}
+            <a
+              href="https://g.page/axletowing/review"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="glass-card-white rounded-2xl px-8 py-5 flex items-center gap-3 shadow-md hover:shadow-lg transition-shadow group"
+            >
+              <svg className="w-6 h-6 text-amber-500 group-hover:scale-110 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                <path strokeLinecap="round" strokeLinejoin="round" d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z" />
+              </svg>
+              <div>
+                <span className="text-lg font-bold text-blue-900 font-heading">Write a Review</span>
+                <p className="text-xs text-gray-500">Share your experience on Google</p>
+              </div>
+              <svg className="w-5 h-5 text-gray-400 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
+              </svg>
+            </a>
+          </div>
+        </div>
+      </section>
+
       {/* ── Testimonials Grid ── */}
       <section className="py-20 bg-gray-50 wave-separator">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

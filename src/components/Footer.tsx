@@ -12,6 +12,8 @@ const QUICK_LINKS = [
   { label: 'FAQ', href: '/faq' },
   { label: 'We Buy Cars', href: '/we-buy-cars' },
   { label: 'Careers', href: '/careers' },
+  { label: 'Referral Program', href: '/referral' },
+  { label: 'Pricing', href: '/pricing' },
   { label: 'Privacy Policy', href: '/privacy-policy' },
   { label: 'Terms of Service', href: '/terms-of-service' },
 ];
@@ -265,8 +267,40 @@ export default function Footer() {
             </div>
           </div>
 
+          {/* Newsletter Signup */}
+          <div className="border-t border-white/10 mt-12 pt-10 pb-2">
+            <div className="max-w-xl mx-auto text-center">
+              <h3 className="text-white font-bold font-heading text-lg mb-2">
+                Get Parking Enforcement Tips Monthly
+              </h3>
+              <p className="text-white/50 text-sm mb-5">
+                Join property managers across Phoenix who get our best tips on parking enforcement, towing compliance, and tenant satisfaction.
+              </p>
+              <form
+                action="#"
+                method="POST"
+                className="flex flex-col sm:flex-row gap-3"
+              >
+                <input
+                  type="email"
+                  name="email"
+                  placeholder="Enter your email address"
+                  required
+                  className="flex-1 px-4 py-3 rounded-lg bg-white/10 border border-white/15 text-white placeholder-white/40 text-sm focus:outline-none focus:border-amber-400/60 focus:ring-1 focus:ring-amber-400/30 transition-colors"
+                />
+                <button
+                  type="submit"
+                  className="px-6 py-3 rounded-lg bg-amber-500 hover:bg-amber-400 text-white font-heading font-bold text-sm tracking-wide transition-colors whitespace-nowrap"
+                >
+                  Subscribe
+                </button>
+              </form>
+              <p className="text-white/30 text-xs mt-3">No spam. Unsubscribe anytime.</p>
+            </div>
+          </div>
+
           {/* Bottom bar */}
-          <div className="border-t border-white/10 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-white/40">
+          <div className="border-t border-white/10 mt-8 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-white/40">
             <p>
               &copy; {new Date().getFullYear()} {COMPANY.name}. All rights
               reserved.

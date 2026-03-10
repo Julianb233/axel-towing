@@ -72,7 +72,33 @@ export function localBusinessSchema(location: "phoenix" | "apache-junction") {
         description: "By appointment only",
       },
     ],
+    makesOffer: {
+      "@type": "Offer",
+      description: "30-Minute Response Guarantee",
+      availableAtOrFrom: {
+        "@type": "Place",
+        name: "Phoenix Metro Area",
+      },
+    },
     sameAs: [],
+  };
+}
+
+/**
+ * AggregateRating schema for review pages
+ */
+export function aggregateRatingSchema() {
+  return {
+    "@context": "https://schema.org",
+    "@type": "AggregateRating",
+    itemReviewed: {
+      "@type": "LocalBusiness",
+      name: "Axle Towing & Impound",
+    },
+    ratingValue: "4.9",
+    reviewCount: "127",
+    bestRating: "5",
+    worstRating: "1",
   };
 }
 

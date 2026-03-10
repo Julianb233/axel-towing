@@ -1,5 +1,6 @@
 import { Metadata } from "next";
 import ReviewsContent from "./ReviewsContent";
+import { aggregateRatingSchema } from "@/lib/schema";
 
 export const metadata: Metadata = {
   title: "Reviews",
@@ -8,5 +9,15 @@ export const metadata: Metadata = {
 };
 
 export default function ReviewsPage() {
-  return <ReviewsContent />;
+  return (
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(aggregateRatingSchema()),
+        }}
+      />
+      <ReviewsContent />
+    </>
+  );
 }
