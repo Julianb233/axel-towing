@@ -4,6 +4,10 @@ import { useEffect } from "react";
 
 export default function ScrollReveal() {
   useEffect(() => {
+    // Add js-loaded class so animations only apply when JS is active.
+    // Without this class, .reveal elements remain fully visible (progressive enhancement).
+    document.body.classList.add("js-loaded");
+
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
@@ -19,7 +23,10 @@ export default function ScrollReveal() {
       observer.observe(el);
     });
 
-    return () => observer.disconnect();
+    return () => {
+      observer.disconnect();
+      document.body.classList.remove("js-loaded");
+    };
   }, []);
 
   return null;

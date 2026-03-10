@@ -4,6 +4,9 @@ import { useEffect } from 'react';
 
 export default function ScrollAnimator() {
   useEffect(() => {
+    // Add js-loaded class so animations only apply when JS is active.
+    document.body.classList.add('js-loaded');
+
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
@@ -17,7 +20,10 @@ export default function ScrollAnimator() {
 
     document.querySelectorAll('.animate-on-scroll').forEach((el) => observer.observe(el));
 
-    return () => observer.disconnect();
+    return () => {
+      observer.disconnect();
+      document.body.classList.remove('js-loaded');
+    };
   }, []);
 
   return null;
