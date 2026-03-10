@@ -7,8 +7,12 @@ const data = SERVICE_PAGES["hoa-towing"];
 export const metadata: Metadata = {
   title: data.metaTitle,
   description: data.metaDescription,
+  openGraph: {
+    title: data.metaTitle,
+    description: data.metaDescription,
+  },
 };
 
-export default function Page() {
+export default function HOATowingPage() {
   return <ServicePageTemplate data={data} />;
 }

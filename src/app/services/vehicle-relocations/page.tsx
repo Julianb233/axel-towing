@@ -7,8 +7,12 @@ const data = SERVICE_PAGES["vehicle-relocations"];
 export const metadata: Metadata = {
   title: data.metaTitle,
   description: data.metaDescription,
+  openGraph: {
+    title: data.metaTitle,
+    description: data.metaDescription,
+  },
 };
 
-export default function Page() {
+export default function VehicleRelocationsPage() {
   return <ServicePageTemplate data={data} />;
 }

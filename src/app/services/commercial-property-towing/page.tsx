@@ -7,8 +7,12 @@ const data = SERVICE_PAGES["commercial-property-towing"];
 export const metadata: Metadata = {
   title: data.metaTitle,
   description: data.metaDescription,
+  openGraph: {
+    title: data.metaTitle,
+    description: data.metaDescription,
+  },
 };
 
-export default function Page() {
+export default function CommercialPropertyTowingPage() {
   return <ServicePageTemplate data={data} />;
 }
