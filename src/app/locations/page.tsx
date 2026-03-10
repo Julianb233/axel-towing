@@ -82,7 +82,7 @@ export default function LocationsPage() {
                 <h2 className="text-xl font-bold font-heading mb-2 group-hover:text-blue-600 transition-colors" style={{ color: "#1a202c" }}>
                   {area.name}, AZ
                 </h2>
-                <p className="text-gray-500 text-sm leading-relaxed mb-4">
+                <p className="text-gray-700 text-sm leading-relaxed mb-4">
                   {area.description}
                 </p>
                 <span className="inline-flex items-center text-sm font-semibold text-blue-600">

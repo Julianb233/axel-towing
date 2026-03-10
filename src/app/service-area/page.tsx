@@ -106,7 +106,7 @@ export default function ServiceAreaPage() {
               Our Service Area &mdash;{" "}
               <span className="text-gradient">Greater Phoenix Metro</span>
             </h1>
-            <p className="text-lg md:text-xl text-blue-100/80 leading-relaxed mb-8">
+            <p className="text-lg md:text-xl text-blue-100 leading-relaxed mb-8">
               Free private property towing and parking enforcement across 8
               cities and over 3,000 square miles of the Valley of the Sun.
             </p>
@@ -308,7 +308,7 @@ export default function ServiceAreaPage() {
                   {stats && (
                     <div className="grid grid-cols-3 gap-2 pt-4 border-t border-gray-100">
                       <div>
-                        <div className="text-xs text-gray-400 uppercase tracking-wider">
+                        <div className="text-xs text-gray-600 uppercase tracking-wider">
                           Pop.
                         </div>
                         <div className="text-sm font-bold text-brand-blue">
@@ -316,7 +316,7 @@ export default function ServiceAreaPage() {
                         </div>
                       </div>
                       <div>
-                        <div className="text-xs text-gray-400 uppercase tracking-wider">
+                        <div className="text-xs text-gray-600 uppercase tracking-wider">
                           Properties
                         </div>
                         <div className="text-sm font-bold text-brand-blue">
@@ -324,7 +324,7 @@ export default function ServiceAreaPage() {
                         </div>
                       </div>
                       <div>
-                        <div className="text-xs text-gray-400 uppercase tracking-wider">
+                        <div className="text-xs text-gray-600 uppercase tracking-wider">
                           Response
                         </div>
                         <div className="text-sm font-bold text-brand-blue">
@@ -437,7 +437,7 @@ export default function ServiceAreaPage() {
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
               Protect Your Property Today
             </h2>
-            <p className="text-blue-200/70 text-lg mb-8 max-w-2xl mx-auto">
+            <p className="text-blue-100 text-lg mb-8 max-w-2xl mx-auto">
               Join thousands of property owners across the Greater Phoenix metro
               who trust Axle Towing &amp; Impound for free private property
               towing and parking enforcement.

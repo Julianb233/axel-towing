@@ -61,7 +61,7 @@ export default function HOAEnforcementChecklistPage() {
         <div className="absolute inset-0 gradient-overlay-blue z-[1]" />
         <div className="absolute inset-0 grain-overlay z-[2]" />
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 md:py-32 w-full">
-          <nav className="flex items-center gap-2 text-sm text-blue-200/70 mb-6 reveal">
+          <nav className="flex items-center gap-2 text-sm text-blue-100 mb-6 reveal">
             <Link href="/" className="hover:text-white transition-colors">Home</Link>
             <span>/</span>
             <Link href="/resources" className="hover:text-white transition-colors">Resources</Link>
@@ -114,10 +114,10 @@ export default function HOAEnforcementChecklistPage() {
                       key={item.num}
                       className={`flex items-start gap-3 ${!item.visible ? "opacity-40 blur-[2px] select-none" : ""}`}
                     >
-                      <div className={`w-7 h-7 rounded-lg flex items-center justify-center shrink-0 text-sm font-bold font-heading ${item.visible ? "bg-blue-100 text-primary border border-blue-200" : "bg-gray-100 text-gray-400"}`}>
+                      <div className={`w-7 h-7 rounded-lg flex items-center justify-center shrink-0 text-sm font-bold font-heading ${item.visible ? "bg-blue-100 text-primary border border-blue-200" : "bg-gray-100 text-gray-600"}`}>
                         {item.num}
                       </div>
-                      <span className={item.visible ? "text-gray-700" : "text-gray-400"}>
+                      <span className={item.visible ? "text-gray-700" : "text-gray-600"}>
                         {item.text}
                       </span>
                     </div>
@@ -192,7 +192,7 @@ export default function HOAEnforcementChecklistPage() {
                     <button type="submit" className="btn-primary w-full text-center justify-center">
                       Download Free Checklist
                     </button>
-                    <p className="text-xs text-gray-400 text-center">
+                    <p className="text-xs text-gray-600 text-center">
                       No spam. Unsubscribe anytime.
                     </p>
                   </form>

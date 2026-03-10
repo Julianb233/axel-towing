@@ -74,7 +74,7 @@ export default function LocationPageTemplate({
                 <div className="text-3xl md:text-4xl font-bold text-brand-blue">
                   {stat.value}
                 </div>
-                <div className="text-sm text-gray-500 mt-1">{stat.label}</div>
+                <div className="text-sm text-gray-700 mt-1">{stat.label}</div>
               </div>
             ))}
           </div>
@@ -124,7 +124,7 @@ export default function LocationPageTemplate({
                 </ul>
                 {data.address && (
                   <div className="mt-6 pt-4 border-t border-gray-200">
-                    <p className="text-xs text-gray-400 uppercase tracking-wider font-semibold mb-1">
+                    <p className="text-xs text-gray-600 uppercase tracking-wider font-semibold mb-1">
                       Local Office
                     </p>
                     <p className="text-sm text-gray-700 font-medium">
@@ -144,7 +144,7 @@ export default function LocationPageTemplate({
           <h2 className="text-3xl md:text-4xl font-bold mb-4 text-center reveal" style={{ color: '#1a202c' }}>
             Our Services in {data.city}
           </h2>
-          <p className="text-gray-500 text-lg text-center mb-12 max-w-2xl mx-auto reveal">
+          <p className="text-gray-700 text-lg text-center mb-12 max-w-2xl mx-auto reveal">
             Comprehensive private property towing solutions tailored for{" "}
             {data.city}&apos;s residential and commercial communities.
           </p>
@@ -186,7 +186,7 @@ export default function LocationPageTemplate({
                 <h3 className="text-lg font-bold mb-2 group-hover:text-blue-600 transition-colors" style={{ color: '#1a202c' }}>
                   {service.title}
                 </h3>
-                <p className="text-gray-500 text-sm leading-relaxed">
+                <p className="text-gray-700 text-sm leading-relaxed">
                   {service.shortDesc}
                 </p>
               </Link>
@@ -201,7 +201,7 @@ export default function LocationPageTemplate({
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4 text-center reveal">
             {data.city} Areas We Serve
           </h2>
-          <p className="text-gray-500 text-lg text-center mb-12 max-w-2xl mx-auto reveal">
+          <p className="text-gray-700 text-lg text-center mb-12 max-w-2xl mx-auto reveal">
             Our towing and parking enforcement services cover all neighborhoods
             and communities throughout {data.city}.
           </p>
@@ -285,7 +285,7 @@ export default function LocationPageTemplate({
                     <div className="font-bold text-gray-900">
                       {data.testimonial.name}
                     </div>
-                    <div className="text-sm text-gray-500">
+                    <div className="text-sm text-gray-700">
                       {data.testimonial.role}
                     </div>
                   </div>
@@ -302,7 +302,7 @@ export default function LocationPageTemplate({
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4 text-center reveal">
             Why {data.city} Property Owners Choose Us
           </h2>
-          <p className="text-gray-500 text-lg text-center mb-12 max-w-2xl mx-auto reveal">
+          <p className="text-gray-700 text-lg text-center mb-12 max-w-2xl mx-auto reveal">
             Here is why property owners and managers throughout {data.city} trust
             Axle Towing &amp; Impound for their parking enforcement needs.
           </p>

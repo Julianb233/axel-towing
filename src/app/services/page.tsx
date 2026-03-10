@@ -58,7 +58,7 @@ export default function ServicesPage() {
       >
         <div className="absolute inset-0 bg-gradient-to-br from-blue-950/95 via-blue-900/80 to-primary/60" />
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 md:py-32 w-full">
-          <nav className="flex items-center gap-2 text-sm text-blue-200/70 mb-6 reveal">
+          <nav className="flex items-center gap-2 text-sm text-white/80 mb-6 reveal">
             <Link href="/" className="hover:text-white transition-colors">Home</Link>
             <span>/</span>
             <span className="text-white">Services</span>
@@ -66,7 +66,7 @@ export default function ServicesPage() {
           <h1 className="font-heading text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 reveal">
             Our Services
           </h1>
-          <p className="text-lg md:text-xl text-blue-100/90 max-w-2xl leading-relaxed reveal delay-200">
+          <p className="text-lg md:text-xl text-white/90 max-w-2xl leading-relaxed reveal delay-200">
             From private property impounds to parking enforcement and vehicle
             relocations, {COMPANY.name} provides comprehensive towing solutions
             for every type of property &mdash; all at no cost to property owners.
@@ -82,7 +82,7 @@ export default function ServicesPage() {
           <h2 className="font-heading text-3xl md:text-4xl font-bold text-white text-center mb-4 reveal">
             Comprehensive Towing Solutions
           </h2>
-          <p className="text-blue-200/70 text-center text-lg mb-12 max-w-2xl mx-auto reveal delay-100">
+          <p className="text-blue-100 text-center text-lg mb-12 max-w-2xl mx-auto reveal delay-100">
             Choose the service that fits your property type. Every program is customized and completely free for property owners.
           </p>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -90,19 +90,19 @@ export default function ServicesPage() {
               <Link
                 key={service.slug}
                 href={`/services/${service.slug}`}
-                className="group glass-card rounded-2xl p-8 reveal"
+                className="group rounded-2xl p-8 reveal bg-white/10 backdrop-blur-sm border border-white/15 hover:bg-white/15 transition-all hover:-translate-y-1"
                 style={{ animationDelay: `${(i + 1) * 100}ms` }}
               >
-                <div className="w-14 h-14 rounded-xl bg-cta/20 flex items-center justify-center mb-5 text-cta group-hover:bg-cta/30 transition-colors">
+                <div className="w-14 h-14 rounded-xl bg-white/15 flex items-center justify-center mb-5 text-blue-200 group-hover:bg-white/25 transition-colors">
                   {SERVICE_ICONS[service.icon] || SERVICE_ICONS.truck}
                 </div>
-                <h3 className="font-heading text-xl font-bold text-white mb-3 group-hover:text-cta transition-colors">
+                <h3 className="font-heading text-xl font-bold text-white mb-3 group-hover:text-blue-200 transition-colors">
                   {service.title}
                 </h3>
-                <p className="text-blue-200/70 text-sm leading-relaxed mb-4">
+                <p className="text-blue-100 text-sm leading-relaxed mb-4">
                   {service.shortDesc}
                 </p>
-                <span className="inline-flex items-center text-sm font-semibold text-cta group-hover:text-white transition-colors">
+                <span className="inline-flex items-center text-sm font-semibold text-blue-300 group-hover:text-white transition-colors">
                   Learn More
                   <svg className="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />

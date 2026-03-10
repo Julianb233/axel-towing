@@ -286,17 +286,17 @@ export default function ArticlePage() {
                     <div className="w-16 h-16 rounded-full bg-gradient-to-br from-primary to-cta flex items-center justify-center text-white text-xl font-bold shrink-0">AT</div>
                     <div>
                       <h4 className="font-bold text-gray-900">Axle Towing &amp; Impound</h4>
-                      <p className="text-gray-500 text-sm">Professional private property towing and parking enforcement serving the Greater Phoenix metro area since 2021. Experts in abandoned vehicle removal under Arizona law.</p>
+                      <p className="text-gray-700 text-sm">Professional private property towing and parking enforcement serving the Greater Phoenix metro area since 2021. Experts in abandoned vehicle removal under Arizona law.</p>
                     </div>
                   </div>
                 </div>
 
                 {/* Share Buttons */}
                 <div className="mt-8 pt-8 border-t border-gray-200 reveal">
-                  <p className="text-sm font-semibold text-gray-500 uppercase tracking-wider mb-3">Share This Article</p>
+                  <p className="text-sm font-semibold text-gray-700 uppercase tracking-wider mb-3">Share This Article</p>
                   <div className="flex gap-3">
                     {["Facebook", "Twitter", "LinkedIn", "Email"].map((platform) => (
-                      <button key={platform} className="px-4 py-2 rounded-lg bg-gray-100 text-gray-500 text-sm font-medium hover:bg-primary hover:text-white transition-colors">{platform}</button>
+                      <button key={platform} className="px-4 py-2 rounded-lg bg-gray-100 text-gray-700 text-sm font-medium hover:bg-primary hover:text-white transition-colors">{platform}</button>
                     ))}
                   </div>
                 </div>
@@ -323,7 +323,7 @@ export default function ArticlePage() {
                     <svg className="w-7 h-7 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" /></svg>
                   </div>
                   <h3 className="font-bold text-gray-900 mb-2">Need Help?</h3>
-                  <p className="text-gray-500 text-sm mb-4">Talk to our abandoned vehicle specialists today.</p>
+                  <p className="text-gray-700 text-sm mb-4">Talk to our abandoned vehicle specialists today.</p>
                   <a href={`tel:${COMPANY.phone}`} className="btn-primary text-sm w-full">Call {COMPANY.phone}</a>
                 </div>
                 <div className="rounded-2xl p-6 bg-gradient-to-br from-primary to-blue-800 text-white text-center reveal">
@@ -353,7 +353,7 @@ export default function ArticlePage() {
                 <div className="p-6">
                   <span className="text-xs text-primary font-bold uppercase tracking-wider">{article.category}</span>
                   <h3 className="text-lg font-bold text-gray-900 mt-1 group-hover:text-primary transition-colors leading-snug">{article.title}</h3>
-                  <span className="text-xs text-gray-400 mt-2 inline-block">{article.readTime} read</span>
+                  <span className="text-xs text-gray-600 mt-2 inline-block">{article.readTime} read</span>
                 </div>
               </Link>
             ))}

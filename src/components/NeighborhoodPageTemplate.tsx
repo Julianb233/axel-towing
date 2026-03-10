@@ -52,7 +52,7 @@ export default function NeighborhoodPageTemplate({
               Towing &amp; Parking Enforcement in{" "}
               <span className="text-gradient">{data.name}</span>
             </h1>
-            <p className="text-lg text-blue-100/80 leading-relaxed mb-6">
+            <p className="text-lg text-blue-100 leading-relaxed mb-6">
               Free private property towing and parking enforcement services for{" "}
               {data.name} property owners and managers.
             </p>
@@ -194,7 +194,7 @@ export default function NeighborhoodPageTemplate({
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
               Get Free Towing Service in {data.name}
             </h2>
-            <p className="text-blue-200/70 text-lg mb-8 max-w-2xl mx-auto">
+            <p className="text-blue-100 text-lg mb-8 max-w-2xl mx-auto">
               Contact us today for a free consultation. All our private property
               towing services in {data.name}, {data.city} are at zero cost to
               property owners.
@@ -210,7 +210,7 @@ export default function NeighborhoodPageTemplate({
             <div className="mt-8">
               <Link
                 href={`/locations/${data.citySlug}`}
-                className="text-blue-200/70 hover:text-white transition-colors text-sm inline-flex items-center gap-1"
+                className="text-blue-100 hover:text-white transition-colors text-sm inline-flex items-center gap-1"
               >
                 <svg
                   className="w-4 h-4"

@@ -60,7 +60,7 @@ export default function ContactoPage() {
                 <h2 className="text-2xl font-bold text-blue-900 mb-2 font-heading">
                   Solicite una Cotizacion Gratis
                 </h2>
-                <p className="text-gray-500 mb-6">
+                <p className="text-gray-700 mb-6">
                   Complete el formulario y le responderemos dentro de 1 hora habil.
                 </p>
 
@@ -165,7 +165,7 @@ export default function ContactoPage() {
                   >
                     {COMPANY.phone}
                   </a>
-                  <p className="text-sm text-gray-500 mt-1">Despacho disponible 24/7</p>
+                  <p className="text-sm text-gray-700 mt-1">Despacho disponible 24/7</p>
                 </div>
               </div>
 
@@ -184,7 +184,7 @@ export default function ContactoPage() {
                   >
                     {COMPANY.email}
                   </a>
-                  <p className="text-sm text-gray-500 mt-1">Respondemos dentro de 1 hora habil</p>
+                  <p className="text-sm text-gray-700 mt-1">Respondemos dentro de 1 hora habil</p>
                 </div>
               </div>
 
@@ -266,7 +266,7 @@ export default function ContactoPage() {
                     className="bg-blue-50 rounded-xl px-4 py-3 text-center border border-blue-100 hover:border-primary hover:bg-blue-100 transition-all"
                   >
                     <div className="font-bold text-blue-900 font-heading">{area.name}</div>
-                    <div className="text-xs text-gray-500">Arizona</div>
+                    <div className="text-xs text-gray-700">Arizona</div>
                   </div>
                 ))}
               </div>

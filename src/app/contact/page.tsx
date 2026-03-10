@@ -63,7 +63,7 @@ export default function ContactPage() {
                 <h2 className="text-2xl font-bold text-blue-900 mb-2 font-heading">
                   Request a Free Quote
                 </h2>
-                <p className="text-gray-500 mb-6">
+                <p className="text-gray-700 mb-6">
                   Fill out the form and we&rsquo;ll get back to you within 1 business hour.
                 </p>
 
@@ -195,7 +195,7 @@ export default function ContactPage() {
                   >
                     {COMPANY.phone}
                   </a>
-                  <p className="text-sm text-gray-500 mt-1">Dispatch available 24/7</p>
+                  <p className="text-sm text-gray-700 mt-1">Dispatch available 24/7</p>
                 </div>
               </div>
 
@@ -214,7 +214,7 @@ export default function ContactPage() {
                   >
                     {COMPANY.email}
                   </a>
-                  <p className="text-sm text-gray-500 mt-1">We respond within 1 business hour</p>
+                  <p className="text-sm text-gray-700 mt-1">We respond within 1 business hour</p>
                 </div>
               </div>
 
@@ -303,7 +303,7 @@ export default function ContactPage() {
                     className="bg-blue-50 rounded-xl px-4 py-3 text-center border border-blue-100 hover:border-primary hover:bg-blue-100 transition-all"
                   >
                     <div className="font-bold text-blue-900 font-heading">{area.name}</div>
-                    <div className="text-xs text-gray-500">Arizona</div>
+                    <div className="text-xs text-gray-700">Arizona</div>
                   </div>
                 ))}
               </div>

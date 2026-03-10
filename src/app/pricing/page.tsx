@@ -65,15 +65,7 @@ export default function PricingPage() {
             <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold font-heading leading-tight mb-6">
               $0 for Property Owners.
               <br />
-              <span
-                className="text-gradient"
-                style={{
-                  WebkitTextFillColor: "transparent",
-                  background: "linear-gradient(135deg, #ffffff, #93ccf7)",
-                  WebkitBackgroundClip: "text",
-                  backgroundClip: "text",
-                }}
-              >
+              <span className="text-white">
                 Always.
               </span>
             </h1>
@@ -93,7 +85,7 @@ export default function PricingPage() {
               See the Difference
             </h2>
             <div className="mx-auto w-24 h-1 bg-gradient-to-r from-blue-500 to-blue-300 rounded-full mb-6" />
-            <p className="text-gray-500 text-lg max-w-2xl mx-auto">
+            <p className="text-gray-700 text-lg max-w-2xl mx-auto">
               Compare {COMPANY.name} to the industry average. The savings speak for themselves.
             </p>
           </div>
@@ -131,7 +123,7 @@ export default function PricingPage() {
                     </span>
                   </div>
                   <div className="p-4 md:p-5 text-center border-l border-gray-100">
-                    <span className="text-gray-500 text-sm md:text-base">{row.industry}</span>
+                    <span className="text-gray-700 text-sm md:text-base">{row.industry}</span>
                   </div>
                 </div>
               ))}
@@ -149,7 +141,7 @@ export default function PricingPage() {
               Everything You Get at $0
             </h2>
             <div className="mx-auto w-24 h-1 bg-gradient-to-r from-blue-500 to-blue-300 rounded-full mb-6" />
-            <p className="text-gray-500 text-lg max-w-2xl mx-auto">
+            <p className="text-gray-700 text-lg max-w-2xl mx-auto">
               No tiers, no upsells. Every property owner gets the full suite of services.
             </p>
           </div>
@@ -181,7 +173,7 @@ export default function PricingPage() {
               Retrieving Your Vehicle
             </h2>
             <div className="mx-auto w-24 h-1 bg-gradient-to-r from-red-400 to-red-300 rounded-full mb-6" />
-            <p className="text-gray-500 text-lg max-w-2xl mx-auto">
+            <p className="text-gray-700 text-lg max-w-2xl mx-auto">
               If your vehicle was towed, here is what you need to know about storage fees, payment, and the pickup process.
             </p>
           </div>
@@ -208,7 +200,7 @@ export default function PricingPage() {
                   <span>Tow / Recovery fee</span>
                   <span className="font-bold text-gray-800">Per ARS schedule</span>
                 </div>
-                <p className="text-xs text-gray-400 pt-2">
+                <p className="text-xs text-gray-600 pt-2">
                   All fees comply with Arizona Revised Statutes (ARS) 28-1104 and 28-1108.
                 </p>
               </div>
@@ -336,7 +328,7 @@ export default function PricingPage() {
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold font-heading mb-4" style={{ color: "#1a202c" }}>
             Start Your Free Parking Enforcement Program
           </h2>
-          <p className="text-xl text-gray-500 mb-10 max-w-2xl mx-auto">
+          <p className="text-xl text-gray-700 mb-10 max-w-2xl mx-auto">
             No cost. No contract. No catch. Get a custom enforcement program tailored to your property today.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">

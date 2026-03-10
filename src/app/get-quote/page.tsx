@@ -219,7 +219,7 @@ export default function GetQuotePage() {
                         </div>
                         <span
                           className={`text-xs mt-1.5 font-medium transition-colors hidden sm:block ${
-                            isActive || isComplete ? "text-primary" : "text-gray-400"
+                            isActive || isComplete ? "text-primary" : "text-gray-600"
                           }`}
                         >
                           {label}
@@ -331,7 +331,7 @@ export default function GetQuotePage() {
                               onChange={(e) => setFormData((d) => ({ ...d, parkingSpaces: Number(e.target.value) }))}
                               className="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer accent-primary"
                             />
-                            <div className="flex justify-between text-xs text-gray-400 mt-1 px-1">
+                            <div className="flex justify-between text-xs text-gray-600 mt-1 px-1">
                               <span>10</span>
                               <span>100</span>
                               <span>250</span>
@@ -416,7 +416,7 @@ export default function GetQuotePage() {
                             >
                               <div
                                 className={`w-8 h-8 rounded-lg flex items-center justify-center shrink-0 transition-colors ${
-                                  selected ? "bg-primary text-white" : "bg-gray-100 text-gray-400"
+                                  selected ? "bg-primary text-white" : "bg-gray-100 text-gray-600"
                                 }`}
                               >
                                 {selected ? (

@@ -91,7 +91,7 @@ export default function PropertyManagerGuidePage() {
         <div className="absolute inset-0 gradient-overlay-blue z-[1]" />
         <div className="absolute inset-0 grain-overlay z-[2]" />
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 md:py-32 w-full">
-          <nav className="flex items-center gap-2 text-sm text-blue-200/70 mb-6 reveal">
+          <nav className="flex items-center gap-2 text-sm text-blue-100 mb-6 reveal">
             <Link href="/" className="hover:text-white transition-colors">Home</Link>
             <span>/</span>
             <Link href="/resources" className="hover:text-white transition-colors">Resources</Link>
@@ -234,7 +234,7 @@ export default function PropertyManagerGuidePage() {
                     <button type="submit" className="btn-primary w-full text-center justify-center">
                       Download Free Guide
                     </button>
-                    <p className="text-xs text-gray-400 text-center">
+                    <p className="text-xs text-gray-600 text-center">
                       No spam. We respect your privacy.
                     </p>
                   </form>

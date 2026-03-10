@@ -109,7 +109,7 @@ export default function ReferralPage() {
               Referral Program
             </span>
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 font-heading">
-              Refer a Property Manager, <span className="text-gradient" style={{ WebkitTextFillColor: "transparent", background: "linear-gradient(135deg, #F59E0B, #FBBF24)", WebkitBackgroundClip: "text", backgroundClip: "text" }}>Get Rewarded</span>
+              Refer a Property Manager, <span className="text-white">Get Rewarded</span>
             </h1>
             <p className="text-lg md:text-xl text-white/95 leading-relaxed">
               Know a property manager struggling with parking? Refer them to {COMPANY.name} and earn up to $200+ per referral.

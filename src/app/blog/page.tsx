@@ -629,7 +629,7 @@ export default function BlogPage() {
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight">
               Insights &amp; <span className="text-gradient">Resources</span>
             </h1>
-            <p className="text-lg md:text-xl text-blue-100/80 leading-relaxed">
+            <p className="text-lg md:text-xl text-blue-100 leading-relaxed">
               Expert articles and guides on private property towing, parking
               enforcement, and Arizona towing laws from the team at Axle Towing
               &amp; Impound.
@@ -669,7 +669,7 @@ export default function BlogPage() {
                         </span>
                       );
                     })()}
-                    <span className="text-sm text-gray-400">{featuredArticle.readTime} read</span>
+                    <span className="text-sm text-gray-600">{featuredArticle.readTime} read</span>
                   </div>
                   <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4 group-hover:text-primary transition-colors leading-snug">
                     {featuredArticle.title}
@@ -710,7 +710,7 @@ export default function BlogPage() {
                   {cat.label}
                 </span>
                 <div className="h-px flex-1 bg-gray-200" />
-                <span className="text-sm text-gray-400">{catArticles.length} articles</span>
+                <span className="text-sm text-gray-600">{catArticles.length} articles</span>
               </div>
 
               {/* Article Grid */}
@@ -730,7 +730,7 @@ export default function BlogPage() {
                         <span className={`${cat.color} ${cat.textColor} text-[10px] font-bold px-2 py-0.5 rounded-full uppercase tracking-wider`}>
                           {cat.label}
                         </span>
-                        <span className="text-xs text-gray-400">{article.readTime} read</span>
+                        <span className="text-xs text-gray-600">{article.readTime} read</span>
                       </div>
                       <h3 className="text-base font-bold text-gray-900 mb-2 group-hover:text-primary transition-colors leading-snug line-clamp-2">
                         {article.title}
@@ -781,7 +781,7 @@ export default function BlogPage() {
                 <h3 className="font-bold text-gray-900 group-hover:text-primary transition-colors">
                   {area.name}
                 </h3>
-                <p className="text-xs text-gray-500 mt-1 line-clamp-2">
+                <p className="text-xs text-gray-700 mt-1 line-clamp-2">
                   {area.description}
                 </p>
               </Link>
@@ -805,7 +805,7 @@ export default function BlogPage() {
             <h2 className="text-2xl md:text-3xl font-bold text-white mb-4">
               Get Parking Management Tips Delivered Monthly
             </h2>
-            <p className="text-blue-200/70 mb-8 text-lg">
+            <p className="text-blue-100 mb-8 text-lg">
               Join property managers across Arizona who get our latest guides,
               legal updates, and enforcement tips straight to their inbox.
             </p>

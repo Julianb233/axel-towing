@@ -117,7 +117,7 @@ export default function MiVehiculoFueRemolcadoPage() {
                 <h2 className="text-2xl font-bold text-blue-900 mb-2 font-heading">
                   Buscar Mi Vehiculo
                 </h2>
-                <p className="text-gray-500 mb-6">
+                <p className="text-gray-700 mb-6">
                   Ingrese la informacion de su vehiculo a continuacion. Confirmaremos si su vehiculo se encuentra en uno de nuestros patios de deposito.
                 </p>
 
@@ -158,7 +158,7 @@ export default function MiVehiculoFueRemolcadoPage() {
                   <button type="submit" className="btn-primary w-full text-center justify-center">
                     Buscar Vehiculo
                   </button>
-                  <p className="text-xs text-gray-400 text-center">
+                  <p className="text-xs text-gray-600 text-center">
                     Para la respuesta mas rapida, llamenos directamente al{" "}
                     <a href={`tel:${COMPANY.phone}`} className="text-primary font-semibold">
                       {COMPANY.phone}

@@ -193,7 +193,7 @@ export default function ROICalculatorPage() {
                     onChange={handleSpaces}
                     className="w-full h-2 bg-blue-100 rounded-full appearance-none cursor-pointer accent-primary"
                   />
-                  <div className="flex justify-between text-xs text-gray-400 mt-1">
+                  <div className="flex justify-between text-xs text-gray-600 mt-1">
                     <span>20</span>
                     <span>500</span>
                   </div>
@@ -216,7 +216,7 @@ export default function ROICalculatorPage() {
                     onChange={handleViolations}
                     className="w-full h-2 bg-blue-100 rounded-full appearance-none cursor-pointer accent-primary"
                   />
-                  <div className="flex justify-between text-xs text-gray-400 mt-1">
+                  <div className="flex justify-between text-xs text-gray-600 mt-1">
                     <span>5</span>
                     <span>100</span>
                   </div>
@@ -239,7 +239,7 @@ export default function ROICalculatorPage() {
                     onChange={handleComplaints}
                     className="w-full h-2 bg-blue-100 rounded-full appearance-none cursor-pointer accent-primary"
                   />
-                  <div className="flex justify-between text-xs text-gray-400 mt-1">
+                  <div className="flex justify-between text-xs text-gray-600 mt-1">
                     <span>0</span>
                     <span>50</span>
                   </div>

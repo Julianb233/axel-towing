@@ -118,7 +118,7 @@ export default function LocateVehicleContent() {
                 <h2 className="text-2xl font-bold text-blue-900 mb-2 font-heading">
                   Vehicle Lookup
                 </h2>
-                <p className="text-gray-500 mb-6">
+                <p className="text-gray-700 mb-6">
                   Enter your vehicle information below. We&rsquo;ll confirm if your
                   vehicle is at one of our impound yards.
                 </p>
@@ -160,7 +160,7 @@ export default function LocateVehicleContent() {
                   <button type="submit" className="btn-primary w-full text-center justify-center">
                     Look Up Vehicle
                   </button>
-                  <p className="text-xs text-gray-400 text-center">
+                  <p className="text-xs text-gray-600 text-center">
                     For the fastest response, call us directly at{" "}
                     <a href={`tel:${COMPANY.phone}`} className="text-primary font-semibold">
                       {COMPANY.phone}

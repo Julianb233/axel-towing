@@ -64,7 +64,7 @@ export default function ResourcesPage() {
       >
         <div className="absolute inset-0 bg-gradient-to-br from-blue-950/95 via-blue-900/80 to-primary/60" />
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 md:py-32 w-full">
-          <nav className="flex items-center gap-2 text-sm text-blue-200/70 mb-6 reveal">
+          <nav className="flex items-center gap-2 text-sm text-white/80 mb-6 reveal">
             <Link href="/" className="hover:text-white transition-colors">Home</Link>
             <span>/</span>
             <span className="text-white">Resources</span>
@@ -72,7 +72,7 @@ export default function ResourcesPage() {
           <h1 className="font-heading text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 reveal">
             Free <span className="text-gradient">Resources</span>
           </h1>
-          <p className="text-lg md:text-xl text-blue-100/90 max-w-2xl leading-relaxed reveal delay-200">
+          <p className="text-lg md:text-xl text-white/90 max-w-2xl leading-relaxed reveal delay-200">
             Download free templates, checklists, and guides to help you manage parking enforcement at your Arizona property &mdash; created by the experts at {COMPANY.name}.
           </p>
         </div>

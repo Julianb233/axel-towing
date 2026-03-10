@@ -59,7 +59,7 @@ export default function ServicePageTemplate({ data }: { data: ServicePageData })
             </div>
             <div>
               <h3 className="font-heading text-lg font-bold" style={{ color: '#1a202c' }}>Every Vehicle Documented</h3>
-              <p className="text-gray-500 text-sm leading-relaxed">Timestamped &amp; Geo-Tagged Photos for Legal Protection</p>
+              <p className="text-gray-700 text-sm leading-relaxed">Timestamped &amp; Geo-Tagged Photos for Legal Protection</p>
             </div>
           </div>
         </div>
@@ -87,7 +87,7 @@ export default function ServicePageTemplate({ data }: { data: ServicePageData })
           <h2 className="font-heading text-3xl md:text-4xl font-bold text-center mb-4 reveal" style={{ color: '#1a202c' }}>
             What&apos;s Included
           </h2>
-          <p className="text-gray-500 text-center text-lg mb-12 max-w-2xl mx-auto reveal delay-100">
+          <p className="text-gray-700 text-center text-lg mb-12 max-w-2xl mx-auto reveal delay-100">
             Everything you need for professional {data.title.toLowerCase()} — completely free for {data.targetAudience}.
           </p>
           <div className={`grid grid-cols-1 md:grid-cols-2 ${data.features.length > 3 ? "lg:grid-cols-4" : "lg:grid-cols-3"} gap-6`}>
@@ -103,7 +103,7 @@ export default function ServicePageTemplate({ data }: { data: ServicePageData })
                   </svg>
                 </div>
                 <h3 className="font-heading text-lg font-bold mb-2" style={{ color: '#1a202c' }}>{f.title}</h3>
-                <p className="text-gray-500 text-sm leading-relaxed">{f.desc}</p>
+                <p className="text-gray-700 text-sm leading-relaxed">{f.desc}</p>
               </div>
             ))}
           </div>
@@ -229,7 +229,7 @@ export default function ServicePageTemplate({ data }: { data: ServicePageData })
                   </blockquote>
                   <div>
                     <p className="font-heading font-bold text-gray-900">{t.name}</p>
-                    <p className="text-sm text-gray-500">{t.role}{t.company ? `, ${t.company}` : ""}</p>
+                    <p className="text-sm text-gray-700">{t.role}{t.company ? `, ${t.company}` : ""}</p>
                   </div>
                 </div>
               ))}
@@ -314,7 +314,7 @@ export default function ServicePageTemplate({ data }: { data: ServicePageData })
                 style={{ animationDelay: `${(i + 1) * 50}ms` }}
               >
                 <p className="font-heading font-bold text-gray-900 group-hover:text-blue-700 transition-colors">{area.name}</p>
-                <p className="text-xs text-gray-500 mt-1">Arizona</p>
+                <p className="text-xs text-gray-700 mt-1">Arizona</p>
               </Link>
             ))}
           </div>

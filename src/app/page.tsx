@@ -456,7 +456,7 @@ export default function HomePage() {
                 <div className="w-3 h-3 rounded-full bg-yellow-500" />
                 <div className="w-3 h-3 rounded-full bg-green-500" />
               </div>
-              <div className="flex-1 bg-gray-700 rounded-lg px-4 py-1.5 text-gray-400 text-xs font-mono flex items-center gap-2">
+              <div className="flex-1 bg-gray-700 rounded-lg px-4 py-1.5 text-gray-600 text-xs font-mono flex items-center gap-2">
                 <svg className="w-3 h-3" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
                 </svg>
@@ -514,7 +514,7 @@ export default function HomePage() {
                   <div className="overflow-x-auto">
                     <table className="w-full text-sm">
                       <thead>
-                        <tr className="text-left text-xs text-gray-400 uppercase tracking-wider">
+                        <tr className="text-left text-xs text-gray-600 uppercase tracking-wider">
                           <th className="px-4 py-2.5">Vehicle</th>
                           <th className="px-4 py-2.5">Date</th>
                           <th className="px-4 py-2.5">Status</th>

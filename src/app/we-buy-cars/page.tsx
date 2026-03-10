@@ -378,7 +378,7 @@ export default function WeBuyCarsPage() {
             >
               Get Instant Offer on Peddle
             </a>
-            <p className="text-gray-400 text-sm mt-4">
+            <p className="text-gray-600 text-sm mt-4">
               Or call us directly at{" "}
               <a href={`tel:${COMPANY.phone}`} className="text-primary hover:underline font-medium">
                 {COMPANY.phone}

@@ -224,7 +224,7 @@ export default function ReviewsContent() {
                 <span className="text-lg font-bold text-blue-900 font-heading">Write a Review</span>
                 <p className="text-xs text-gray-500">Share your experience on Google</p>
               </div>
-              <svg className="w-5 h-5 text-gray-400 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+              <svg className="w-5 h-5 text-gray-600 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                 <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
               </svg>
             </a>

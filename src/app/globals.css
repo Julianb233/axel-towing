@@ -16,7 +16,7 @@
   --color-cta: #4a9ae0;
   --color-dark: #1b2a3f;
   --color-dark-light: #2d3e55;
-  --color-body-text: #4a5568;
+  --color-body-text: #374151;
   --color-heading: #1a202c;
 
   /* Neutral scale (warm grays for clean look) */
@@ -691,10 +691,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .text-gradient {
-  background: linear-gradient(135deg, #4a9ae0, #1e6bb8);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+  color: #ffffff;
 }
 
 /* Readable text over background images — apply .hero-text to non-parallax image sections */

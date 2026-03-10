@@ -248,7 +248,7 @@ export default function SpanishHomePage() {
                     </svg>
                   ))}
                 </div>
-                <p className="text-blue-100/80 leading-relaxed mb-6 italic">&ldquo;{t.quote}&rdquo;</p>
+                <p className="text-blue-100 leading-relaxed mb-6 italic">&ldquo;{t.quote}&rdquo;</p>
                 <div className="border-t border-white/10 pt-4">
                   <div className="font-semibold text-white font-heading">{t.name}</div>
                   <div className="text-sm text-blue-300">{t.role}</div>
