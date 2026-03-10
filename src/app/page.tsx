@@ -119,7 +119,7 @@ export default function HomePage() {
           <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold font-heading leading-tight mb-6 animate-fade-in-up">
             Phoenix&apos;s Most Trusted
             <br />
-            <span style={{ WebkitTextFillColor: "transparent", background: "linear-gradient(135deg, #ffffff, #93ccf7)", WebkitBackgroundClip: "text", backgroundClip: "text", filter: "drop-shadow(0 2px 4px rgba(0,0,0,0.4))" }}>
+            <span className="text-white">
               Private Property Towing
             </span>
           </h1>
@@ -170,7 +170,7 @@ export default function HomePage() {
       {/* ========== TRUST BADGE BAR ========== */}
       <section className="py-12 bg-white border-b border-gray-100">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <p className="text-center text-sm font-heading font-semibold uppercase tracking-wider text-gray-400 mb-8">Trusted By &amp; Affiliated With</p>
+          <p className="text-center text-sm font-heading font-semibold uppercase tracking-wider text-gray-600 mb-8">Trusted By &amp; Affiliated With</p>
           <div className="grid grid-cols-2 md:grid-cols-5 gap-4">
             {[
               {
@@ -233,7 +233,7 @@ export default function HomePage() {
             <span className="text-primary font-semibold text-sm uppercase tracking-wider font-heading">What We Do</span>
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold font-heading mt-3 mb-4" style={{ color: '#1a202c' }}>Our Services</h2>
             <div className="mx-auto w-24 h-1 bg-gradient-to-r from-blue-500 to-blue-300 rounded-full mb-6" />
-            <p className="text-gray-500 text-lg max-w-2xl mx-auto">
+            <p className="text-gray-700 text-lg max-w-2xl mx-auto">
               Comprehensive private property towing solutions tailored for HOAs, apartment complexes, and commercial properties.
             </p>
           </div>
@@ -244,7 +244,7 @@ export default function HomePage() {
                   {ICONS[service.icon]}
                 </div>
                 <h3 className="text-xl font-bold font-heading mb-3 group-hover:text-blue-600 transition-colors" style={{ color: '#1a202c' }}>{service.title}</h3>
-                <p className="text-gray-500 leading-relaxed mb-4">{service.desc}</p>
+                <p className="text-gray-700 leading-relaxed mb-4">{service.desc}</p>
                 <span className="inline-flex items-center text-blue-600 font-semibold text-sm group-hover:gap-2 transition-all">
                   Learn More
                   <svg className="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -294,7 +294,7 @@ export default function HomePage() {
             <span className="text-blue-600 font-semibold text-sm uppercase tracking-wider font-heading">Simple Process</span>
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold font-heading mt-3 mb-4" style={{ color: '#1a202c' }}>How It Works</h2>
             <div className="mx-auto w-24 h-1 bg-gradient-to-r from-blue-500 to-blue-300 rounded-full mb-6" />
-            <p className="text-gray-500 text-lg max-w-2xl mx-auto">
+            <p className="text-gray-700 text-lg max-w-2xl mx-auto">
               Getting started is simple. Four easy steps and your parking problems are solved -- permanently.
             </p>
           </div>
@@ -344,7 +344,7 @@ export default function HomePage() {
                       {item.icon}
                     </div>
                     <h3 className="text-lg font-bold font-heading mb-2" style={{ color: '#1a202c' }}>{item.title}</h3>
-                    <p className="text-gray-500 text-sm leading-relaxed">{item.desc}</p>
+                    <p className="text-gray-700 text-sm leading-relaxed">{item.desc}</p>
                   </div>
                 </div>
               ))}
@@ -392,7 +392,7 @@ export default function HomePage() {
                       </div>
                       <h3 className="text-lg font-bold font-heading" style={{ color: '#1a202c' }}>{item.title}</h3>
                     </div>
-                    <p className="text-gray-500 text-sm leading-relaxed">{item.desc}</p>
+                    <p className="text-gray-700 text-sm leading-relaxed">{item.desc}</p>
                   </div>
                 </div>
               ))}
@@ -411,7 +411,7 @@ export default function HomePage() {
             <span className="text-blue-600 font-semibold text-sm uppercase tracking-wider font-heading">Testimonials</span>
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold font-heading mt-3 mb-4" style={{ color: '#1a202c' }}>Trusted by Property Managers</h2>
             <div className="mx-auto w-24 h-1 bg-gradient-to-r from-blue-500 to-blue-300 rounded-full mb-6" />
-            <p className="text-gray-500 text-lg">See what our clients across the Phoenix metro have to say.</p>
+            <p className="text-gray-700 text-lg">See what our clients across the Phoenix metro have to say.</p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {TESTIMONIALS.map((t, i) => (
@@ -426,7 +426,7 @@ export default function HomePage() {
                 <p className="text-gray-600 leading-relaxed mb-6 italic">&ldquo;{t.quote}&rdquo;</p>
                 <div className="border-t border-gray-100 pt-4">
                   <div className="font-semibold font-heading" style={{ color: '#1a202c' }}>{t.name}</div>
-                  <div className="text-sm text-gray-500">{t.role}</div>
+                  <div className="text-sm text-gray-700">{t.role}</div>
                   <div className="text-xs text-blue-500 mt-1">{t.type}</div>
                 </div>
               </div>
@@ -442,7 +442,7 @@ export default function HomePage() {
             <span className="text-blue-600 font-semibold text-sm uppercase tracking-wider font-heading">Client Portal</span>
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold font-heading mt-3 mb-4" style={{ color: '#1a202c' }}>Your Property Management Dashboard</h2>
             <div className="mx-auto w-24 h-1 bg-gradient-to-r from-blue-500 to-blue-300 rounded-full mb-6" />
-            <p className="text-gray-500 text-lg max-w-2xl mx-auto">
+            <p className="text-gray-700 text-lg max-w-2xl mx-auto">
               Every client gets a real-time dashboard to track tows, view documentation, and manage their parking enforcement program.
             </p>
           </div>
@@ -501,7 +501,7 @@ export default function HomePage() {
                   ].map((stat) => (
                     <div key={stat.label} className="bg-white rounded-xl p-4 shadow-sm border border-gray-100">
                       <div className={`text-2xl font-bold font-heading ${stat.color}`}>{stat.value}</div>
-                      <div className="text-xs text-gray-500 mt-1">{stat.label}</div>
+                      <div className="text-xs text-gray-700 mt-1">{stat.label}</div>
                     </div>
                   ))}
                 </div>
@@ -530,7 +530,7 @@ export default function HomePage() {
                         ].map((row, i) => (
                           <tr key={i} className="hover:bg-gray-50/50">
                             <td className="px-4 py-2.5 font-medium text-gray-800">{row.vehicle}</td>
-                            <td className="px-4 py-2.5 text-gray-500">{row.date}</td>
+                            <td className="px-4 py-2.5 text-gray-700">{row.date}</td>
                             <td className="px-4 py-2.5">
                               <span className={`inline-block px-2.5 py-0.5 rounded-full text-xs font-semibold ${row.statusColor}`}>{row.status}</span>
                             </td>
@@ -563,7 +563,7 @@ export default function HomePage() {
             <span className="text-blue-600 font-semibold text-sm uppercase tracking-wider font-heading">Coverage Area</span>
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold font-heading mt-3 mb-4" style={{ color: '#1a202c' }}>Serving the Greater Phoenix Area</h2>
             <div className="mx-auto w-24 h-1 bg-gradient-to-r from-blue-500 to-blue-300 rounded-full mb-6" />
-            <p className="text-gray-500 text-lg max-w-2xl mx-auto">
+            <p className="text-gray-700 text-lg max-w-2xl mx-auto">
               We provide towing and parking enforcement services throughout the Phoenix metro, including these communities.
             </p>
           </div>
@@ -576,7 +576,7 @@ export default function HomePage() {
                   </svg>
                 </div>
                 <div className="text-lg font-bold font-heading group-hover:text-blue-600 transition-colors mb-2" style={{ color: '#1a202c' }}>{area.name}</div>
-                <p className="text-sm text-gray-500 leading-relaxed mb-3">{area.description}</p>
+                <p className="text-sm text-gray-700 leading-relaxed mb-3">{area.description}</p>
                 <span className="inline-flex items-center text-sm font-semibold text-blue-600 opacity-0 group-hover:opacity-100 transition-opacity">
                   Learn More
                   <svg className="w-3 h-3 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -619,7 +619,7 @@ export default function HomePage() {
             <span className="text-blue-600 font-semibold text-sm uppercase tracking-wider font-heading">From Our Blog</span>
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold font-heading mt-3 mb-4" style={{ color: '#1a202c' }}>Latest Insights</h2>
             <div className="mx-auto w-24 h-1 bg-gradient-to-r from-blue-500 to-blue-300 rounded-full mb-6" />
-            <p className="text-gray-500 text-lg">Stay informed about parking enforcement, Arizona towing laws, and property management best practices.</p>
+            <p className="text-gray-700 text-lg">Stay informed about parking enforcement, Arizona towing laws, and property management best practices.</p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {BLOG_POSTS.map((post, i) => (
@@ -629,7 +629,7 @@ export default function HomePage() {
                 </div>
                 <div className="p-6">
                   <h3 className="text-lg font-bold font-heading mb-3 group-hover:text-blue-600 transition-colors leading-snug" style={{ color: '#1a202c' }}>{post.title}</h3>
-                  <p className="text-gray-500 text-sm leading-relaxed mb-4">{post.excerpt}</p>
+                  <p className="text-gray-700 text-sm leading-relaxed mb-4">{post.excerpt}</p>
                   <span className="inline-flex items-center text-sm font-semibold text-blue-600 group-hover:gap-2 transition-all">
                     Read More
                     <svg className="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
