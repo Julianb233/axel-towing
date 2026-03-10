@@ -4,8 +4,8 @@ import { useEffect } from 'react';
 
 export default function ScrollAnimator() {
   useEffect(() => {
-    // Add js-loaded class so animations only apply when JS is active.
-    document.body.classList.add('js-loaded');
+    const elements = document.querySelectorAll('.animate-on-scroll');
+    if (!elements.length) return;
 
     const observer = new IntersectionObserver(
       (entries) => {
@@ -15,15 +15,12 @@ export default function ScrollAnimator() {
           }
         });
       },
-      { threshold: 0.1, rootMargin: '0px 0px -50px 0px' }
+      { threshold: 0.05, rootMargin: '50px 0px 0px 0px' }
     );
 
-    document.querySelectorAll('.animate-on-scroll').forEach((el) => observer.observe(el));
+    elements.forEach((el) => observer.observe(el));
 
-    return () => {
-      observer.disconnect();
-      document.body.classList.remove('js-loaded');
-    };
+    return () => observer.disconnect();
   }, []);
 
   return null;

@@ -32,7 +32,7 @@ export default function Header() {
   return (
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ease-out ${
-        scrolled ? 'glass-nav shadow-lg shadow-black/20' : 'bg-transparent'
+        scrolled ? 'glass-nav' : 'bg-transparent'
       }`}
     >
       {/* Top utility bar - collapses on scroll */}
@@ -41,7 +41,7 @@ export default function Header() {
           scrolled ? 'max-h-0 opacity-0' : 'max-h-12 opacity-100'
         }`}
       >
-        <div className="bg-blue-950/60 backdrop-blur-sm border-b border-white/5">
+        <div className="bg-gray-900/70 backdrop-blur-sm border-b border-white/5">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between h-10 text-sm">
             <div className="flex items-center gap-4">
               <a
@@ -124,7 +124,9 @@ export default function Header() {
                   key={link.href}
                   href={link.href}
                   className={`relative px-4 py-2 text-sm font-medium tracking-wide transition-colors duration-300 group ${
-                    isActive ? 'text-white' : 'text-white/70 hover:text-white'
+                    scrolled
+                      ? (isActive ? 'text-blue-700' : 'text-gray-600 hover:text-gray-900')
+                      : (isActive ? 'text-white' : 'text-white/70 hover:text-white')
                   }`}
                 >
                   {link.label}
@@ -132,8 +134,8 @@ export default function Header() {
                   <span
                     className={`absolute bottom-0 left-4 right-4 h-0.5 rounded-full transition-all duration-300 ${
                       isActive
-                        ? 'bg-accent scale-x-100'
-                        : 'bg-white/50 scale-x-0 group-hover:scale-x-100'
+                        ? 'bg-blue-600 scale-x-100'
+                        : `${scrolled ? 'bg-gray-400' : 'bg-white/50'} scale-x-0 group-hover:scale-x-100`
                     }`}
                     style={{ transformOrigin: 'center' }}
                   />
@@ -146,7 +148,9 @@ export default function Header() {
           <div className="hidden lg:flex items-center gap-3">
             <a
               href={`tel:${COMPANY.phone}`}
-              className="flex items-center gap-2 text-white/80 hover:text-white transition-colors text-sm font-medium"
+              className={`flex items-center gap-2 transition-colors text-sm font-medium ${
+                scrolled ? 'text-gray-600 hover:text-gray-900' : 'text-white/80 hover:text-white'
+              }`}
             >
               <svg
                 className="w-4 h-4"
@@ -171,23 +175,25 @@ export default function Header() {
           {/* Mobile hamburger button with animated bars */}
           <button
             onClick={() => setMobileOpen(!mobileOpen)}
-            className="lg:hidden relative w-10 h-10 flex items-center justify-center text-white focus:outline-none"
+            className={`lg:hidden relative w-10 h-10 flex items-center justify-center focus:outline-none ${
+              scrolled ? 'text-gray-700' : 'text-white'
+            }`}
             aria-label="Toggle navigation menu"
             aria-expanded={mobileOpen}
           >
             <div className="w-6 h-5 relative flex flex-col justify-between">
               <span
-                className={`block h-0.5 w-full bg-white rounded-full transition-all duration-300 origin-center ${
+                className={`block h-0.5 w-full bg-current rounded-full transition-all duration-300 origin-center ${
                   mobileOpen ? 'rotate-45 translate-y-[9px]' : ''
                 }`}
               />
               <span
-                className={`block h-0.5 w-full bg-white rounded-full transition-all duration-300 ${
+                className={`block h-0.5 w-full bg-current rounded-full transition-all duration-300 ${
                   mobileOpen ? 'opacity-0 scale-x-0' : 'opacity-100'
                 }`}
               />
               <span
-                className={`block h-0.5 w-full bg-white rounded-full transition-all duration-300 origin-center ${
+                className={`block h-0.5 w-full bg-current rounded-full transition-all duration-300 origin-center ${
                   mobileOpen ? '-rotate-45 -translate-y-[9px]' : ''
                 }`}
               />

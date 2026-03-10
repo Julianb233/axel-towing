@@ -1,7 +1,9 @@
 "use client";
 
 import { useEffect, useRef, useState, FormEvent } from "react";
+import Image from "next/image";
 import { COMPANY, SERVICE_AREAS } from "@/lib/constants";
+import { IMAGES } from "@/lib/images";
 
 /* ── Parallax Hook ── */
 function useParallax() {
@@ -33,7 +35,7 @@ export default function ContactPage() {
         <div
           ref={parallaxRef}
           className="parallax-bg"
-          style={{ backgroundImage: `url(${COMPANY.heroImage})` }}
+          style={{ backgroundImage: `url(${IMAGES.contact.phoenix})` }}
         />
         <div className="absolute inset-0 gradient-overlay-blue z-[1]" />
         <div className="absolute inset-0 grain-overlay z-[2]" />

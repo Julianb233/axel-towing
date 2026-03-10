@@ -6,6 +6,8 @@ import Footer from "@/components/Footer";
 import ScrollReveal from "@/components/ScrollReveal";
 import ScrollAnimator from "@/components/ScrollAnimator";
 import FloatingCTA from "@/components/FloatingCTA";
+import ContactWidget from "@/components/ContactWidget";
+import EmergencyBanner from "@/components/EmergencyBanner";
 import { COMPANY } from "@/lib/constants";
 import { organizationSchema } from "@/lib/schema";
 
@@ -100,9 +102,11 @@ export default function RootLayout({
       <body
         className={`${openSans.variable} ${mohave.variable} antialiased`}
       >
+        <EmergencyBanner />
         <Header />
         <main>{children}</main>
         <Footer />
+        <ContactWidget />
         <FloatingCTA />
         <ScrollReveal />
         <ScrollAnimator />

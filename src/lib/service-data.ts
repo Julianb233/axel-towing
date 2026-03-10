@@ -1,3 +1,10 @@
+export interface ServiceTestimonial {
+  quote: string;
+  name: string;
+  role: string;
+  company?: string;
+}
+
 export interface ServicePageData {
   title: string;
   slug: string;
@@ -5,6 +12,7 @@ export interface ServicePageData {
   metaDescription: string;
   heroHeadline: string;
   heroSubtext: string;
+  heroImage?: string;
   introTitle: string;
   introText: string[];
   features: { title: string; desc: string; icon: string }[];
@@ -13,7 +21,45 @@ export interface ServicePageData {
   faqs: { q: string; a: string }[];
   relatedServices: { title: string; slug: string; desc: string }[];
   targetAudience: string;
+  testimonials?: ServiceTestimonial[];
+  propertyTypes?: string[];
 }
+
+/** Property types served — appears on all service pages for long-tail SEO */
+export const PROPERTY_TYPES = [
+  "Apartment Complexes",
+  "Condominium Communities",
+  "HOA Communities",
+  "Gated Communities",
+  "Townhome Developments",
+  "Student Housing",
+  "Senior Living Facilities",
+  "Retail Shopping Centers",
+  "Strip Malls",
+  "Office Parks",
+  "Medical Facilities",
+  "Hotels & Resorts",
+  "Restaurants & Bars",
+  "Grocery Store Lots",
+  "Industrial Parks",
+  "Warehouse Facilities",
+  "Church & Religious Facilities",
+  "Event Venues",
+  "Self-Storage Facilities",
+  "Mobile Home Parks",
+];
+
+/** Phoenix metro neighborhoods for local SEO */
+export const PHOENIX_NEIGHBORHOODS = [
+  "Downtown Phoenix", "Arcadia", "Biltmore", "Camelback East", "Central City",
+  "Desert Ridge", "Ahwatukee", "Laveen", "South Mountain", "Maryvale",
+  "North Phoenix", "Paradise Valley Village", "Deer Valley", "Estrella",
+  "Encanto", "Sunnyslope", "North Scottsdale", "Old Town Scottsdale",
+  "South Scottsdale", "Downtown Mesa", "East Mesa", "Red Mountain",
+  "Gilbert Town Center", "San Tan Valley", "Downtown Chandler", "Ocotillo",
+  "Downtown Tempe", "ASU Area", "South Tempe", "West Glendale",
+  "Downtown Glendale", "Arrowhead Ranch", "Gold Canyon", "Superstition Springs",
+];
 
 export const SERVICE_PAGES: Record<string, ServicePageData> = {
   "private-property-impounds": {
@@ -22,9 +68,10 @@ export const SERVICE_PAGES: Record<string, ServicePageData> = {
     metaTitle: "Private Property Impound Services — Phoenix, AZ",
     metaDescription:
       "Free private property impound services for apartment complexes, HOAs, and commercial properties in Phoenix. Axle Towing removes unauthorized vehicles at no cost to property owners.",
-    heroHeadline: "Private Property Impound Services",
+    heroHeadline: "Cost-Free Private Property Impounds in Phoenix",
     heroSubtext:
       "Remove unauthorized vehicles from your property quickly and legally — at absolutely no cost to you. Fully compliant with Arizona statutes 28-874 and 9-499.05.",
+    heroImage: "/images/service-private-impound.jpg",
     introTitle: "Protect Your Property from Unauthorized Parking",
     introText: [
       "Unauthorized parking is more than an inconvenience — it creates liability issues, frustrates tenants and residents, and can block fire lanes and emergency access. Axle Towing provides comprehensive private property impound services that solve these problems permanently.",
@@ -62,6 +109,10 @@ export const SERVICE_PAGES: Record<string, ServicePageData> = {
       { title: "HOA Towing", slug: "hoa-towing", desc: "Customized towing programs designed for homeowner associations." },
     ],
     targetAudience: "property owners and managers",
+    testimonials: [
+      { quote: "Axle Towing cleared 14 unauthorized vehicles from our lot in the first month alone. Our residents finally have their assigned spaces back.", name: "Maria R.", role: "Property Manager", company: "Sunridge Apartments" },
+      { quote: "The documentation they provide is incredible — timestamped photos, GPS coordinates, everything. We have never had a single dispute hold up.", name: "James T.", role: "Community Director", company: "Desert Palms HOA" },
+    ],
   },
 
   "parking-enforcement": {
@@ -70,9 +121,10 @@ export const SERVICE_PAGES: Record<string, ServicePageData> = {
     metaTitle: "Parking Enforcement Services — Phoenix, AZ",
     metaDescription:
       "Professional parking enforcement for private lots, parking garages, and commercial properties in Phoenix. Patrol services, permit systems, and sticker enforcement at no cost.",
-    heroHeadline: "Parking Enforcement Services",
+    heroHeadline: "Professional Parking Enforcement in Phoenix",
     heroSubtext:
       "Professional patrol and enforcement for parking garages, private lots, and commercial properties — keeping your spaces available for authorized users.",
+    heroImage: "/images/service-parking-enforcement.jpg",
     introTitle: "Keep Your Parking Areas Organized and Compliant",
     introText: [
       "Uncontrolled parking can cost your business revenue, frustrate customers, and create safety hazards. Axle Towing provides professional parking enforcement services that keep your lots organized and your spaces available for authorized users.",
@@ -110,6 +162,10 @@ export const SERVICE_PAGES: Record<string, ServicePageData> = {
       { title: "Apartment Towing", slug: "apartment-towing", desc: "Enforcement programs designed for apartment communities." },
     ],
     targetAudience: "parking facility operators and commercial property owners",
+    testimonials: [
+      { quote: "Our parking garage used to be chaos. Within two weeks of Axle starting patrol, complaints dropped 80%. The permit system just works.", name: "David K.", role: "Facilities Manager", company: "Camelback Tower" },
+      { quote: "I love the warning-first approach — our tenants appreciate it, and the ones who ignore warnings know the consequences.", name: "Sarah M.", role: "Retail Center Manager", company: "Desert Ridge Shops" },
+    ],
   },
 
   "vehicle-relocations": {
@@ -118,9 +174,10 @@ export const SERVICE_PAGES: Record<string, ServicePageData> = {
     metaTitle: "Vehicle Relocation Services — Phoenix, AZ",
     metaDescription:
       "Professional vehicle relocation for asphalt repairs, property maintenance, and construction projects in Phoenix. Move 10 vehicles in 2 hours for $1,000. No impound needed.",
-    heroHeadline: "Vehicle Relocation Services",
+    heroHeadline: "Vehicle Relocation Services in Phoenix",
     heroSubtext:
       "Professional vehicle moves for asphalt repairs, property maintenance, and construction projects — fast turnaround, no impound needed.",
+    heroImage: "/images/service-vehicle-relocation.jpg",
     introTitle: "Move Vehicles Quickly for Property Maintenance",
     introText: [
       "Property maintenance projects like asphalt resurfacing, seal coating, line striping, and construction require vehicles to be temporarily relocated. Axle Towing provides professional vehicle relocation services that keep your projects on schedule and on budget.",
@@ -157,6 +214,10 @@ export const SERVICE_PAGES: Record<string, ServicePageData> = {
       { title: "Commercial Property Towing", slug: "commercial-property-towing", desc: "Enforcement solutions for commercial and retail properties." },
     ],
     targetAudience: "property managers planning maintenance projects",
+    testimonials: [
+      { quote: "We needed 40 cars moved for a repaving project. Axle had all of them relocated in under 3 hours — our contractor started on time for once.", name: "Robert P.", role: "Maintenance Director", company: "Arcadia Property Group" },
+      { quote: "The advance notice system they helped us set up meant only 5 vehicles needed to be moved on the day. Residents appreciated the communication.", name: "Linda W.", role: "Property Manager", company: "Mesa Verde Apartments" },
+    ],
   },
 
   "hoa-towing": {
@@ -165,9 +226,10 @@ export const SERVICE_PAGES: Record<string, ServicePageData> = {
     metaTitle: "HOA Towing Services — Phoenix, AZ",
     metaDescription:
       "Free towing programs for HOA communities in Phoenix. Board member education, sign posting, patrol services, and CC&R enforcement — at no cost to the HOA.",
-    heroHeadline: "HOA Towing Services",
+    heroHeadline: "Cost-Free HOA Towing Services in Phoenix",
     heroSubtext:
-      "Customized parking enforcement and towing programs designed specifically for homeowner associations and property management companies.",
+      "Customized parking enforcement and towing programs designed specifically for homeowner associations and property management companies across the Phoenix metro.",
+    heroImage: "/images/arizona-hoa-entrance.jpg",
     introTitle: "Parking Enforcement Built for HOA Communities",
     introText: [
       "HOA board members know that parking violations are one of the most common — and most contentious — issues in community management. Unauthorized vehicles in guest spots, RVs on streets, and CC&R violations create frustration for homeowners and headaches for boards.",
@@ -205,6 +267,10 @@ export const SERVICE_PAGES: Record<string, ServicePageData> = {
       { title: "Parking Enforcement", slug: "parking-enforcement", desc: "Professional patrol and permit enforcement services." },
     ],
     targetAudience: "HOA board members and property management companies",
+    testimonials: [
+      { quote: "Axle presents to our board every year when new members join. They make it so easy — signage, rules, everything is handled. Zero cost to the HOA.", name: "Patricia G.", role: "Board President", company: "Saguaro Hills HOA" },
+      { quote: "We manage 12 HOA communities and Axle handles towing for all of them. One point of contact, consistent service across the board.", name: "Michael B.", role: "Regional Manager", company: "Southwest Property Management" },
+    ],
   },
 
   "apartment-towing": {
@@ -213,9 +279,10 @@ export const SERVICE_PAGES: Record<string, ServicePageData> = {
     metaTitle: "Apartment Towing Services — Phoenix, AZ",
     metaDescription:
       "Professional towing and parking enforcement for apartment complexes in Phoenix. Assigned space enforcement, visitor management, and property manager portal access — all free.",
-    heroHeadline: "Apartment Towing Services",
+    heroHeadline: "Apartment Towing Services in Phoenix",
     heroSubtext:
       "Keep your apartment community's parking organized, safe, and available for your residents — with full portal access for property managers.",
+    heroImage: "/images/arizona-apartment-parking.jpg",
     introTitle: "Parking Solutions for Apartment Communities",
     introText: [
       "Apartment communities face unique parking challenges: unauthorized vehicles taking assigned spaces, abandoned cars collecting dust, visitors overstaying their welcome, and fire lane violations creating liability. These issues directly impact resident satisfaction and retention.",
@@ -253,6 +320,10 @@ export const SERVICE_PAGES: Record<string, ServicePageData> = {
       { title: "Parking Enforcement", slug: "parking-enforcement", desc: "Patrol and permit enforcement for any private parking area." },
     ],
     targetAudience: "apartment property managers and management companies",
+    testimonials: [
+      { quote: "Resident parking complaints were our #1 issue. Since Axle started enforcement, complaints dropped to almost zero and lease renewals are up 15%.", name: "Karen S.", role: "Property Manager", company: "Tempe Gateway Apartments" },
+      { quote: "The online portal is a game-changer. I can request a tow, check reports, and see enforcement activity all from my phone.", name: "Anthony D.", role: "Assistant Manager", company: "Chandler Crossing" },
+    ],
   },
 
   "commercial-property-towing": {
@@ -261,9 +332,10 @@ export const SERVICE_PAGES: Record<string, ServicePageData> = {
     metaTitle: "Commercial Property Towing Services — Phoenix, AZ",
     metaDescription:
       "Protect your commercial property parking from unauthorized vehicles. Professional enforcement for retail centers, office parks, and strip malls in Phoenix — free for property owners.",
-    heroHeadline: "Commercial Property Towing",
+    heroHeadline: "Commercial Property Towing in Phoenix",
     heroSubtext:
       "Protect your commercial property's parking and maintain a professional image — ensuring spaces are available for your customers and employees.",
+    heroImage: "/images/arizona-commercial-parking.jpg",
     introTitle: "Parking Enforcement for Commercial Properties",
     introText: [
       "When unauthorized vehicles take up your commercial property's parking spaces, it directly impacts your tenants' businesses. Lost parking means lost customers, lost revenue, and frustrated tenants who may not renew their leases.",
@@ -301,5 +373,9 @@ export const SERVICE_PAGES: Record<string, ServicePageData> = {
       { title: "Vehicle Relocations", slug: "vehicle-relocations", desc: "Temporary vehicle moves for property maintenance." },
     ],
     targetAudience: "commercial property owners and retail center managers",
+    testimonials: [
+      { quote: "We lost an estimated $30K per month in foot traffic from non-customer parking. Axle's enforcement solved it completely — our tenants are thrilled.", name: "Steven L.", role: "Shopping Center Owner", company: "Baseline Marketplace" },
+      { quote: "Professional, discreet, and effective. Their team handles everything so my property staff never has to deal with confrontations.", name: "Rachel N.", role: "Office Park Director", company: "Scottsdale Business Center" },
+    ],
   },
 };

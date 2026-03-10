@@ -89,7 +89,10 @@ export const NAV_LINKS = [
   { label: "About", href: "/about" },
   { label: "Services", href: "/services" },
   { label: "Locations", href: "/#locations" },
+  { label: "FAQ", href: "/faq" },
+  { label: "Reviews", href: "/reviews" },
   { label: "Blog", href: "/blog" },
   { label: "Contact", href: "/contact" },
+  { label: "Locate Vehicle", href: "/locate-vehicle" },
   { label: "Portal", href: "/portal" },
 ];

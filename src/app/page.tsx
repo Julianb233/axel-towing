@@ -1,7 +1,9 @@
 import Link from "next/link";
+import Image from "next/image";
 import { COMPANY, SERVICES, SERVICE_AREAS } from "@/lib/constants";
 import AnimatedCounter from "@/components/AnimatedCounter";
 import { localBusinessSchema } from "@/lib/schema";
+import { IMAGES } from "@/lib/images";
 
 const ICONS: Record<string, React.ReactNode> = {
   shield: (
@@ -71,16 +73,19 @@ const BLOG_POSTS = [
     title: "Understanding Arizona's Private Property Towing Laws in 2025",
     excerpt: "A comprehensive guide to ARS 28-1104 and what property owners need to know about legal towing requirements, proper signage, and compliance.",
     slug: "/blog",
+    image: IMAGES.blog.parkingSign,
   },
   {
     title: "How to Reduce Unauthorized Parking at Your Apartment Complex",
     excerpt: "Five proven strategies that property managers use to eliminate parking violations and improve tenant satisfaction across the Phoenix metro.",
     slug: "/blog",
+    image: IMAGES.blog.fireLane,
   },
   {
     title: "The True Cost of Not Enforcing Your Parking Policy",
     excerpt: "Unauthorized parking costs Phoenix property owners thousands annually in lost revenue, liability exposure, and tenant turnover. Here is what you can do.",
     slug: "/blog",
+    image: IMAGES.blog.towTruckNight,
   },
 ];
 
@@ -98,27 +103,26 @@ export default function HomePage() {
         }}
       />
 
-      {/* ========== 1. HERO SECTION (full viewport) ========== */}
+      {/* ========== 1. HERO SECTION ========== */}
       <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-        <div
-          className="parallax-fixed absolute inset-0 z-0"
-          style={{ backgroundImage: `url('${COMPANY.heroImage}')` }}
-        />
+        <div className="absolute inset-0 z-0">
+          <Image src={IMAGES.hero.truck} alt="Axle Towing fleet of tow trucks" fill className="object-cover" priority />
+        </div>
+        {/* Lighter, more balanced overlay — shows the image better */}
         <div
           className="absolute inset-0 z-[1]"
-          style={{ background: "linear-gradient(135deg, rgba(12,113,195,0.85) 0%, rgba(26,26,46,0.9) 100%)" }}
+          style={{ background: "linear-gradient(160deg, rgba(30,107,184,0.7) 0%, rgba(27,42,63,0.78) 100%)" }}
         />
-        <div className="absolute inset-0 z-[2] grain-overlay" />
 
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-white py-32">
           <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold font-heading leading-tight mb-6 animate-fade-in-up">
             Phoenix&apos;s Most Trusted
             <br />
-            <span style={{ WebkitTextFillColor: "transparent", background: "linear-gradient(135deg, #2ea3f2, #6bbbf5)", WebkitBackgroundClip: "text", backgroundClip: "text" }}>
+            <span className="text-gradient" style={{ WebkitTextFillColor: "transparent", background: "linear-gradient(135deg, #ffffff, #93ccf7)", WebkitBackgroundClip: "text", backgroundClip: "text" }}>
               Private Property Towing
             </span>
           </h1>
-          <p className="text-lg sm:text-xl md:text-2xl text-blue-100 max-w-3xl mx-auto mb-10 animate-fade-in-up delay-200 leading-relaxed">
+          <p className="text-lg sm:text-xl md:text-2xl text-white/85 max-w-3xl mx-auto mb-10 animate-fade-in-up delay-200 leading-relaxed">
             Professional parking enforcement and vehicle management at zero cost to property owners.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center animate-fade-in-up delay-300">
@@ -143,7 +147,7 @@ export default function HomePage() {
           </div>
         </div>
         <div className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10">
-          <a href="#services" className="block animate-bounce text-white/70 hover:text-white transition-colors">
+          <a href="#services" className="block animate-bounce text-white/60 hover:text-white transition-colors">
             <svg className="w-8 h-8" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
             </svg>
@@ -151,27 +155,26 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ========== 2. SERVICES SECTION ========== */}
-      <section id="services" className="py-24 bg-blue-950 relative">
-        <div className="absolute inset-0 grain-overlay" />
+      {/* ========== 2. SERVICES SECTION — Light background ========== */}
+      <section id="services" className="py-24 bg-gray-50 relative">
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16 reveal">
-            <span className="text-cta font-semibold text-sm uppercase tracking-wider font-heading">What We Do</span>
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold font-heading text-white mt-3 mb-4">Our Services</h2>
-            <div className="mx-auto w-24 h-1 bg-gradient-to-r from-primary to-cta rounded-full mb-6" />
-            <p className="text-blue-200 text-lg max-w-2xl mx-auto">
+            <span className="text-primary font-semibold text-sm uppercase tracking-wider font-heading">What We Do</span>
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold font-heading mt-3 mb-4" style={{ color: '#1a202c' }}>Our Services</h2>
+            <div className="mx-auto w-24 h-1 bg-gradient-to-r from-blue-500 to-blue-300 rounded-full mb-6" />
+            <p className="text-gray-500 text-lg max-w-2xl mx-auto">
               Comprehensive private property towing solutions tailored for HOAs, apartment complexes, and commercial properties.
             </p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {SERVICE_CARDS.map((service, i) => (
               <Link key={service.title} href={`/services/${service.slug}`} className="glass-card rounded-2xl p-8 group cursor-pointer reveal" style={{ transitionDelay: `${i * 100}ms` }}>
-                <div className="w-16 h-16 rounded-xl bg-primary/20 text-cta flex items-center justify-center mb-5 group-hover:bg-cta/20 transition-colors">
+                <div className="w-16 h-16 rounded-xl bg-blue-50 text-blue-600 flex items-center justify-center mb-5 group-hover:bg-blue-600 group-hover:text-white transition-colors duration-300">
                   {ICONS[service.icon]}
                 </div>
-                <h3 className="text-xl font-bold font-heading text-white mb-3 group-hover:text-cta transition-colors">{service.title}</h3>
-                <p className="text-blue-200 leading-relaxed mb-4">{service.desc}</p>
-                <span className="inline-flex items-center text-cta font-semibold text-sm group-hover:gap-2 transition-all">
+                <h3 className="text-xl font-bold font-heading mb-3 group-hover:text-blue-600 transition-colors" style={{ color: '#1a202c' }}>{service.title}</h3>
+                <p className="text-gray-500 leading-relaxed mb-4">{service.desc}</p>
+                <span className="inline-flex items-center text-blue-600 font-semibold text-sm group-hover:gap-2 transition-all">
                   Learn More
                   <svg className="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
@@ -183,17 +186,18 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ========== 3. WHY CHOOSE US (parallax, red-tinted) ========== */}
-      <section className="relative py-32 overflow-hidden clip-diagonal-top">
-        <div className="parallax-fixed absolute inset-0 z-0" style={{ backgroundImage: `url('${COMPANY.heroImage}')` }} />
-        <div className="absolute inset-0 z-[1]" style={{ background: "linear-gradient(135deg, rgba(224,43,32,0.6) 0%, rgba(6,26,51,0.9) 60%)" }} />
-        <div className="absolute inset-0 z-[2] grain-overlay" />
+      {/* ========== 3. WHY CHOOSE US — Refined overlay ========== */}
+      <section className="relative py-32 overflow-hidden">
+        <div className="absolute inset-0 z-0">
+          <Image src={IMAGES.hero.parkingLot} alt="Phoenix parking lot" fill className="object-cover" />
+        </div>
+        <div className="absolute inset-0 z-[1]" style={{ background: "linear-gradient(160deg, rgba(27,42,63,0.88) 0%, rgba(30,107,184,0.7) 100%)" }} />
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16 reveal">
-            <span className="text-red-300 font-semibold text-sm uppercase tracking-wider font-heading">Why Us</span>
+            <span className="text-blue-300 font-semibold text-sm uppercase tracking-wider font-heading">Why Us</span>
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold font-heading text-white mt-3 mb-4">Why Choose Axle Towing?</h2>
-            <div className="mx-auto w-24 h-1 bg-gradient-to-r from-accent to-cta rounded-full mb-6" />
-            <p className="text-blue-100 text-lg max-w-2xl mx-auto leading-relaxed">
+            <div className="mx-auto w-24 h-1 bg-gradient-to-r from-blue-400 to-blue-200 rounded-full mb-6" />
+            <p className="text-white/80 text-lg max-w-2xl mx-auto leading-relaxed">
               We are not just another towing company. We are your dedicated parking enforcement partner, committed to protecting your property and keeping your tenants happy -- all at absolutely no cost to you.
             </p>
           </div>
@@ -204,7 +208,7 @@ export default function HomePage() {
               { end: 8, suffix: "", label: "Cities Served" },
               { end: 0, prefix: "$", suffix: "", label: "Cost to Property Owners" },
             ].map((counter, i) => (
-              <div key={counter.label} className="glass-card rounded-2xl p-8 reveal" style={{ transitionDelay: `${i * 150}ms` }}>
+              <div key={counter.label} className="rounded-2xl p-8 reveal bg-white/10 backdrop-blur-sm border border-white/15" style={{ transitionDelay: `${i * 150}ms` }}>
                 <AnimatedCounter end={counter.end} prefix={counter.prefix || ""} suffix={counter.suffix} label={counter.label} />
               </div>
             ))}
@@ -212,19 +216,19 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ========== 4. HOW IT WORKS ========== */}
+      {/* ========== 4. HOW IT WORKS — Clean white ========== */}
       <section className="py-24 bg-white relative">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16 reveal">
-            <span className="text-primary font-semibold text-sm uppercase tracking-wider font-heading">Simple Process</span>
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold font-heading text-blue-950 mt-3 mb-4">How It Works</h2>
-            <div className="mx-auto w-24 h-1 bg-gradient-to-r from-primary to-cta rounded-full mb-6" />
-            <p className="text-gray-600 text-lg max-w-2xl mx-auto">
+            <span className="text-blue-600 font-semibold text-sm uppercase tracking-wider font-heading">Simple Process</span>
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold font-heading mt-3 mb-4" style={{ color: '#1a202c' }}>How It Works</h2>
+            <div className="mx-auto w-24 h-1 bg-gradient-to-r from-blue-500 to-blue-300 rounded-full mb-6" />
+            <p className="text-gray-500 text-lg max-w-2xl mx-auto">
               Getting started is simple. Three easy steps and your parking problems are solved -- permanently.
             </p>
           </div>
           <div className="relative">
-            <div className="hidden md:block absolute top-16 left-[16.67%] right-[16.67%] h-0.5 bg-gradient-to-r from-primary via-cta to-primary" />
+            <div className="hidden md:block absolute top-16 left-[16.67%] right-[16.67%] h-0.5 bg-gradient-to-r from-blue-200 via-blue-400 to-blue-200" />
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12">
               {[
                 {
@@ -246,12 +250,12 @@ export default function HomePage() {
                 <div key={item.step} className="text-center reveal" style={{ transitionDelay: `${i * 200}ms` }}>
                   <div className="relative mx-auto mb-6">
                     <div className="w-32 h-32 mx-auto rounded-2xl glass-card-white border-glow-blue flex flex-col items-center justify-center gap-2 p-4">
-                      <div className="w-10 h-10 rounded-full bg-primary text-white flex items-center justify-center font-bold font-heading text-lg">{item.step}</div>
-                      <div className="text-primary">{item.icon}</div>
+                      <div className="w-10 h-10 rounded-full bg-blue-600 text-white flex items-center justify-center font-bold font-heading text-lg">{item.step}</div>
+                      <div className="text-blue-600">{item.icon}</div>
                     </div>
                   </div>
-                  <h3 className="text-xl font-bold font-heading text-blue-950 mb-3">{item.title}</h3>
-                  <p className="text-gray-600 leading-relaxed max-w-xs mx-auto">{item.desc}</p>
+                  <h3 className="text-xl font-bold font-heading mb-3" style={{ color: '#1a202c' }}>{item.title}</h3>
+                  <p className="text-gray-500 leading-relaxed max-w-xs mx-auto">{item.desc}</p>
                 </div>
               ))}
             </div>
@@ -259,33 +263,33 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ========== 5. TESTIMONIALS ========== */}
-      <section className="py-24 bg-blue-950 relative overflow-hidden">
-        <div className="absolute inset-0 grain-overlay" />
-        <div className="absolute top-0 left-1/3 w-96 h-96 bg-primary/10 rounded-full blur-3xl" />
-        <div className="absolute bottom-0 right-1/3 w-72 h-72 bg-cta/10 rounded-full blur-3xl" />
+      {/* ========== 5. TESTIMONIALS — Light, clean ========== */}
+      <section className="py-24 bg-gray-50 relative overflow-hidden">
+        {/* Subtle decorative blobs */}
+        <div className="absolute top-0 left-1/4 w-96 h-96 bg-blue-100 rounded-full blur-3xl opacity-40" />
+        <div className="absolute bottom-0 right-1/4 w-72 h-72 bg-blue-50 rounded-full blur-3xl opacity-60" />
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16 reveal">
-            <span className="text-cta font-semibold text-sm uppercase tracking-wider font-heading">Testimonials</span>
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold font-heading text-white mt-3 mb-4">Trusted by Property Managers</h2>
-            <div className="mx-auto w-24 h-1 bg-gradient-to-r from-primary to-cta rounded-full mb-6" />
-            <p className="text-blue-200/60 text-lg">See what our clients across the Phoenix metro have to say.</p>
+            <span className="text-blue-600 font-semibold text-sm uppercase tracking-wider font-heading">Testimonials</span>
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold font-heading mt-3 mb-4" style={{ color: '#1a202c' }}>Trusted by Property Managers</h2>
+            <div className="mx-auto w-24 h-1 bg-gradient-to-r from-blue-500 to-blue-300 rounded-full mb-6" />
+            <p className="text-gray-500 text-lg">See what our clients across the Phoenix metro have to say.</p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {TESTIMONIALS.map((t, i) => (
               <div key={t.name} className="glass-card rounded-2xl p-8 reveal" style={{ transitionDelay: `${i * 150}ms` }}>
                 <div className="flex gap-1 mb-5">
                   {[1, 2, 3, 4, 5].map((s) => (
-                    <svg key={s} className="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
+                    <svg key={s} className="w-5 h-5 text-amber-400" fill="currentColor" viewBox="0 0 20 20">
                       <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
                     </svg>
                   ))}
                 </div>
-                <p className="text-blue-100/80 leading-relaxed mb-6 italic">&ldquo;{t.quote}&rdquo;</p>
-                <div className="border-t border-white/10 pt-4">
-                  <div className="font-semibold text-white font-heading">{t.name}</div>
-                  <div className="text-sm text-blue-300">{t.role}</div>
-                  <div className="text-xs text-blue-400 mt-1">{t.type}</div>
+                <p className="text-gray-600 leading-relaxed mb-6 italic">&ldquo;{t.quote}&rdquo;</p>
+                <div className="border-t border-gray-100 pt-4">
+                  <div className="font-semibold font-heading" style={{ color: '#1a202c' }}>{t.name}</div>
+                  <div className="text-sm text-gray-500">{t.role}</div>
+                  <div className="text-xs text-blue-500 mt-1">{t.type}</div>
                 </div>
               </div>
             ))}
@@ -293,28 +297,28 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ========== 6. SERVICE AREAS ========== */}
+      {/* ========== 6. SERVICE AREAS — White ========== */}
       <section id="locations" className="py-24 bg-white relative">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16 reveal">
-            <span className="text-primary font-semibold text-sm uppercase tracking-wider font-heading">Coverage Area</span>
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold font-heading text-blue-950 mt-3 mb-4">Serving the Greater Phoenix Area</h2>
-            <div className="mx-auto w-24 h-1 bg-gradient-to-r from-primary to-cta rounded-full mb-6" />
-            <p className="text-gray-600 text-lg max-w-2xl mx-auto">
+            <span className="text-blue-600 font-semibold text-sm uppercase tracking-wider font-heading">Coverage Area</span>
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold font-heading mt-3 mb-4" style={{ color: '#1a202c' }}>Serving the Greater Phoenix Area</h2>
+            <div className="mx-auto w-24 h-1 bg-gradient-to-r from-blue-500 to-blue-300 rounded-full mb-6" />
+            <p className="text-gray-500 text-lg max-w-2xl mx-auto">
               We provide towing and parking enforcement services throughout the Phoenix metro, including these communities.
             </p>
           </div>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
             {SERVICE_AREAS.map((area, i) => (
               <Link key={area.slug} href={["phoenix", "scottsdale", "mesa"].includes(area.slug) ? `/locations/${area.slug}` : "/#locations"} className="glass-card-white rounded-2xl p-6 text-center group border-glow-blue reveal" style={{ transitionDelay: `${i * 80}ms` }}>
-                <div className="w-10 h-10 bg-blue-50 text-primary rounded-lg flex items-center justify-center mx-auto mb-3 group-hover:bg-primary group-hover:text-white transition-all duration-300">
+                <div className="w-10 h-10 bg-blue-50 text-blue-600 rounded-lg flex items-center justify-center mx-auto mb-3 group-hover:bg-blue-600 group-hover:text-white transition-all duration-300">
                   <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
                   </svg>
                 </div>
-                <div className="text-lg font-bold font-heading text-blue-950 group-hover:text-primary transition-colors mb-2">{area.name}</div>
+                <div className="text-lg font-bold font-heading group-hover:text-blue-600 transition-colors mb-2" style={{ color: '#1a202c' }}>{area.name}</div>
                 <p className="text-sm text-gray-500 leading-relaxed mb-3">{area.description}</p>
-                <span className="inline-flex items-center text-sm font-semibold text-primary opacity-0 group-hover:opacity-100 transition-opacity">
+                <span className="inline-flex items-center text-sm font-semibold text-blue-600 opacity-0 group-hover:opacity-100 transition-opacity">
                   Learn More
                   <svg className="w-3 h-3 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
@@ -326,48 +330,45 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ========== 7. CTA BANNER ========== */}
-      <section className="relative py-24 clip-diagonal-top overflow-hidden">
-        <div className="absolute inset-0 z-0" style={{ background: "linear-gradient(135deg, #e02b20 0%, #c42219 50%, #a81d14 100%)" }} />
-        <div className="absolute inset-0 z-[1] grain-overlay" />
+      {/* ========== 7. CTA BANNER — Bold red accent ========== */}
+      <section className="relative py-24 overflow-hidden">
+        <div className="absolute inset-0 z-0" style={{ background: "linear-gradient(135deg, #dc3a30 0%, #b52a22 50%, #8f2018 100%)" }} />
         <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-white reveal">
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold font-heading mb-4">Ready to Secure Your Property?</h2>
-          <p className="text-xl text-red-100 mb-10 max-w-2xl mx-auto">Get started with a free consultation. Our parking enforcement services cost you absolutely nothing.</p>
+          <p className="text-xl text-white/85 mb-10 max-w-2xl mx-auto">Get started with a free consultation. Our parking enforcement services cost you absolutely nothing.</p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <a href={`tel:${COMPANY.phone}`} className="bg-white text-red-600 font-bold font-heading px-10 py-4 rounded-lg text-lg uppercase tracking-wider hover:bg-blue-50 transition-colors hover:-translate-y-0.5 transform inline-flex items-center justify-center gap-2">
+            <a href={`tel:${COMPANY.phone}`} className="bg-white text-red-600 font-bold font-heading px-10 py-4 rounded-xl text-lg uppercase tracking-wider hover:bg-gray-50 transition-colors hover:-translate-y-0.5 transform inline-flex items-center justify-center gap-2 shadow-lg">
               <svg className="w-5 h-5" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
               </svg>
               Call {COMPANY.phone}
             </a>
-            <Link href="/contact" className="border-2 border-white text-white font-bold font-heading px-10 py-4 rounded-lg text-lg uppercase tracking-wider hover:bg-white/10 transition-colors hover:-translate-y-0.5 transform inline-flex items-center justify-center">
+            <Link href="/contact" className="border-2 border-white text-white font-bold font-heading px-10 py-4 rounded-xl text-lg uppercase tracking-wider hover:bg-white/10 transition-colors hover:-translate-y-0.5 transform inline-flex items-center justify-center">
               Get a Free Quote
             </Link>
           </div>
         </div>
       </section>
 
-      {/* ========== 8. BLOG PREVIEW ========== */}
-      <section className="py-24 bg-blue-50 relative">
+      {/* ========== 8. BLOG PREVIEW — Subtle blue tint ========== */}
+      <section className="py-24 bg-blue-50/50 relative">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16 reveal">
-            <span className="text-primary font-semibold text-sm uppercase tracking-wider font-heading">From Our Blog</span>
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold font-heading text-blue-950 mt-3 mb-4">Latest Insights</h2>
-            <div className="mx-auto w-24 h-1 bg-gradient-to-r from-primary to-cta rounded-full mb-6" />
-            <p className="text-gray-600 text-lg">Stay informed about parking enforcement, Arizona towing laws, and property management best practices.</p>
+            <span className="text-blue-600 font-semibold text-sm uppercase tracking-wider font-heading">From Our Blog</span>
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold font-heading mt-3 mb-4" style={{ color: '#1a202c' }}>Latest Insights</h2>
+            <div className="mx-auto w-24 h-1 bg-gradient-to-r from-blue-500 to-blue-300 rounded-full mb-6" />
+            <p className="text-gray-500 text-lg">Stay informed about parking enforcement, Arizona towing laws, and property management best practices.</p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {BLOG_POSTS.map((post, i) => (
-              <Link key={post.title} href={post.slug} className="glass-card-white rounded-2xl overflow-hidden group reveal" style={{ transitionDelay: `${i * 150}ms` }}>
-                <div className="h-48 bg-gradient-to-br from-primary to-blue-900 flex items-center justify-center">
-                  <svg className="w-16 h-16 text-white/20" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1} d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 01-2-2V7m2 13a2 2 0 002-2V9a2 2 0 00-2-2h-2m-4-3H9M7 16h6M7 8h6v4H7V8z" />
-                  </svg>
+              <Link key={post.title} href={post.slug} className="glass-card rounded-2xl overflow-hidden group reveal" style={{ transitionDelay: `${i * 150}ms` }}>
+                <div className="h-48 relative overflow-hidden">
+                  <Image src={post.image} alt={post.title} fill className="object-cover group-hover:scale-105 transition-transform duration-500" />
                 </div>
                 <div className="p-6">
-                  <h3 className="text-lg font-bold font-heading text-blue-950 mb-3 group-hover:text-primary transition-colors leading-snug">{post.title}</h3>
-                  <p className="text-gray-600 text-sm leading-relaxed mb-4">{post.excerpt}</p>
-                  <span className="inline-flex items-center text-sm font-semibold text-primary group-hover:gap-2 transition-all">
+                  <h3 className="text-lg font-bold font-heading mb-3 group-hover:text-blue-600 transition-colors leading-snug" style={{ color: '#1a202c' }}>{post.title}</h3>
+                  <p className="text-gray-500 text-sm leading-relaxed mb-4">{post.excerpt}</p>
+                  <span className="inline-flex items-center text-sm font-semibold text-blue-600 group-hover:gap-2 transition-all">
                     Read More
                     <svg className="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />

@@ -301,21 +301,10 @@ h1, h2, h3, h4, h5, h6 {
    SCROLL ANIMATIONS
    ======================================== */
 
-/* Progressive enhancement: content is visible by default.
-   Animations only activate once JS loads and adds .js-loaded to <body>. */
+/* Scroll animations — content always visible, animations are enhancement only */
 
 .animate-on-scroll {
-  transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
-}
-
-.js-loaded .animate-on-scroll {
-  opacity: 0;
-  transform: translateY(24px);
-}
-
-.js-loaded .animate-on-scroll.visible {
-  opacity: 1;
-  transform: translateY(0);
+  transition: opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1), transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .stagger-1 { transition-delay: 0.1s; }
@@ -323,47 +312,11 @@ h1, h2, h3, h4, h5, h6 {
 .stagger-3 { transition-delay: 0.3s; }
 .stagger-4 { transition-delay: 0.4s; }
 
-/* Reveal variants — gated behind .js-loaded for progressive enhancement */
-.reveal {
-  transition: all 0.7s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.js-loaded .reveal {
-  opacity: 0;
-  transform: translateY(24px);
-}
-
-.js-loaded .reveal.visible {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-.reveal-left {
-  transition: all 0.7s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.js-loaded .reveal-left {
-  opacity: 0;
-  transform: translateX(-30px);
-}
-
-.js-loaded .reveal-left.visible {
-  opacity: 1;
-  transform: translateX(0);
-}
-
+/* Reveal variants — always visible by default, no gating */
+.reveal,
+.reveal-left,
 .reveal-right {
-  transition: all 0.7s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.js-loaded .reveal-right {
-  opacity: 0;
-  transform: translateX(30px);
-}
-
-.js-loaded .reveal-right.visible {
-  opacity: 1;
-  transform: translateX(0);
+  transition: opacity 0.7s cubic-bezier(0.4, 0, 0.2, 1), transform 0.7s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 /* ========================================
