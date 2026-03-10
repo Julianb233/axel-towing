@@ -69,18 +69,19 @@ function KlarnaPricingCard() {
           </svg>
           <span className="text-sm font-bold text-amber-700">Launch Offer &mdash; Limited Time</span>
         </div>
-        <div className="flex items-baseline justify-center gap-1">
+        <div className="flex items-baseline justify-center gap-3">
+          <span className="text-2xl md:text-3xl font-bold text-gray-400 line-through">$10,000</span>
           <span className="text-6xl md:text-7xl font-bold font-heading" style={{ color: "#1a202c" }}>$7,500</span>
         </div>
-        <p className="text-gray-500 mt-2 text-sm">
-          one-time investment &mdash; delivers <strong className="text-gray-800">$2,500/mo</strong> in value with annual commitment
-        </p>
-        <div className="mt-4 inline-flex items-center gap-2 bg-green-50 rounded-lg px-4 py-2">
+        <div className="mt-3 inline-flex items-center gap-2 bg-green-50 rounded-lg px-4 py-2">
           <svg className="w-5 h-5 text-green-600" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24">
             <path strokeLinecap="round" strokeLinejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
           </svg>
-          <span className="text-sm font-semibold text-green-700">$30,000 in annual value &mdash; you pay just $7,500</span>
+          <span className="text-sm font-semibold text-green-700">You save $2,500 &mdash; launch discount applied</span>
         </div>
+        <p className="text-gray-500 mt-3 text-sm">
+          One-time investment &mdash; website, SEO, content, CRM &mdash; everything included
+        </p>
       </div>
 
       {/* What is Included */}
@@ -111,23 +112,58 @@ function KlarnaPricingCard() {
         </div>
       </div>
 
-      {/* Annual Value Breakdown */}
+      {/* Pricing Tiers */}
       <div className="bg-white px-8 md:px-12 py-8 border-t border-gray-100">
-        <h4 className="text-sm font-bold font-heading uppercase tracking-wider text-gray-500 mb-4">Annual Value Breakdown</h4>
-        <div className="space-y-3">
-          <div className="flex items-center justify-between py-2 border-b border-gray-100">
-            <span className="text-sm text-gray-600">Monthly value of services delivered</span>
-            <span className="font-bold text-gray-800">$2,500/mo</span>
+        <h4 className="text-sm font-bold font-heading uppercase tracking-wider text-gray-500 mb-5">Your Options</h4>
+        <div className="space-y-4">
+          {/* Tier 1: Website + SEO */}
+          <div className="rounded-xl border-2 border-blue-200 bg-blue-50/50 p-5">
+            <div className="flex items-start justify-between gap-3">
+              <div>
+                <div className="flex items-center gap-2 mb-1">
+                  <span className="text-xs font-bold bg-blue-600 text-white px-2 py-0.5 rounded-full uppercase tracking-wider">One-Time</span>
+                </div>
+                <h5 className="text-base font-bold font-heading text-gray-900">Website + SEO + Content</h5>
+                <p className="text-xs text-gray-600 mt-1">127-page website, 96 articles, 150+ keywords, CRM setup, Spanish pages &mdash; everything built and delivered.</p>
+              </div>
+              <div className="text-right shrink-0">
+                <div className="text-sm text-gray-400 line-through">$10,000</div>
+                <div className="text-2xl font-bold font-heading text-blue-700">$7,500</div>
+              </div>
+            </div>
           </div>
-          <div className="flex items-center justify-between py-2 border-b border-gray-100">
-            <span className="text-sm text-gray-600">Total annual value (12 months)</span>
-            <span className="font-bold text-gray-800">$30,000</span>
+          {/* Tier 2: Outreach Campaigns */}
+          <div className="rounded-xl border border-gray-200 bg-white p-5">
+            <div className="flex items-start justify-between gap-3">
+              <div>
+                <div className="flex items-center gap-2 mb-1">
+                  <span className="text-xs font-bold bg-amber-500 text-white px-2 py-0.5 rounded-full uppercase tracking-wider">Monthly Add-On</span>
+                </div>
+                <h5 className="text-base font-bold font-heading text-gray-900">Customized Outreach Campaigns</h5>
+                <p className="text-xs text-gray-600 mt-1">Done-for-you campaigns targeting property managers, HOAs, apartment complexes. Prospect lists, personalized email/SMS, appointment setting.</p>
+              </div>
+              <div className="text-right shrink-0">
+                <div className="text-sm text-gray-400 line-through">$4,500/mo</div>
+                <div className="text-2xl font-bold font-heading text-amber-600">$3,000<span className="text-sm font-normal text-gray-500">/mo</span></div>
+              </div>
+            </div>
           </div>
-          <div className="flex items-center justify-between py-3 bg-green-50 -mx-2 px-4 rounded-lg">
-            <span className="text-sm font-semibold text-green-800">Your investment today</span>
-            <span className="text-2xl font-bold font-heading text-green-700">$7,500</span>
+          {/* Tier 3: CRM & Automations */}
+          <div className="rounded-xl border border-gray-200 bg-white p-5">
+            <div className="flex items-start justify-between gap-3">
+              <div>
+                <div className="flex items-center gap-2 mb-1">
+                  <span className="text-xs font-bold bg-green-600 text-white px-2 py-0.5 rounded-full uppercase tracking-wider">Ongoing</span>
+                </div>
+                <h5 className="text-base font-bold font-heading text-gray-900">CRM &amp; Automations Only</h5>
+                <p className="text-xs text-gray-600 mt-1">GoHighLevel access, automated campaigns, AI receptionist, lead scoring, pipeline management, analytics, and technical support.</p>
+              </div>
+              <div className="text-right shrink-0">
+                <div className="text-2xl font-bold font-heading text-green-700">$500<span className="text-sm font-normal text-gray-500">/mo</span></div>
+              </div>
+            </div>
           </div>
-          <p className="text-xs text-gray-500 text-center pt-1">That is 75% off the total value of services you receive.</p>
+          <p className="text-xs text-gray-500 text-center pt-1">No lock-in. Run outreach as long as you want, then drop to $500/mo to keep your CRM and automations running.</p>
         </div>
       </div>
 
