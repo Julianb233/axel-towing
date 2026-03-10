@@ -7,6 +7,7 @@ import ScrollReveal from "@/components/ScrollReveal";
 import ScrollAnimator from "@/components/ScrollAnimator";
 import FloatingCTA from "@/components/FloatingCTA";
 import { COMPANY } from "@/lib/constants";
+import { organizationSchema } from "@/lib/schema";
 
 const openSans = Open_Sans({
   variable: "--font-open-sans",
@@ -39,10 +40,45 @@ export const metadata: Metadata = {
     "Axle Towing",
     "Apache Junction towing",
   ],
+  metadataBase: new URL(`https://${COMPANY.domain}`),
   openGraph: {
     type: "website",
     locale: "en_US",
     siteName: COMPANY.name,
+    title: `${COMPANY.name} — ${COMPANY.tagline}`,
+    description: COMPANY.description,
+    url: `https://${COMPANY.domain}`,
+    images: [
+      {
+        url: `/og?title=${encodeURIComponent(COMPANY.name)}&subtitle=${encodeURIComponent(COMPANY.tagline)}`,
+        width: 1200,
+        height: 630,
+        alt: COMPANY.name,
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: `${COMPANY.name} — ${COMPANY.tagline}`,
+    description: COMPANY.description,
+    images: [`/og?title=${encodeURIComponent(COMPANY.name)}&subtitle=${encodeURIComponent(COMPANY.tagline)}`],
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
+  alternates: {
+    canonical: `https://${COMPANY.domain}`,
+  },
+  verification: {
+    google: "GOOGLE_SEARCH_CONSOLE_VERIFICATION_CODE",
   },
 };
 
@@ -57,51 +93,7 @@ export default function RootLayout({
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
-            __html: JSON.stringify({
-              "@context": "https://schema.org",
-              "@type": "LocalBusiness",
-              "@id": `https://${COMPANY.domain}`,
-              name: COMPANY.name,
-              description: COMPANY.description,
-              url: `https://${COMPANY.domain}`,
-              telephone: COMPANY.phone,
-              email: COMPANY.email,
-              address: COMPANY.addresses.map((a) => ({
-                "@type": "PostalAddress",
-                streetAddress: a.street,
-                addressLocality: a.city,
-                addressRegion: a.state,
-                postalCode: a.zip,
-                addressCountry: "US",
-              })),
-              areaServed: [
-                "Phoenix, AZ",
-                "Scottsdale, AZ",
-                "Mesa, AZ",
-                "Glendale, AZ",
-                "Gilbert, AZ",
-                "Chandler, AZ",
-                "Tempe, AZ",
-                "Apache Junction, AZ",
-              ],
-              priceRange: "Free for property owners",
-              openingHoursSpecification: [
-                {
-                  "@type": "OpeningHoursSpecification",
-                  dayOfWeek: [
-                    "Monday",
-                    "Tuesday",
-                    "Wednesday",
-                    "Thursday",
-                    "Friday",
-                  ],
-                  opens: "09:00",
-                  closes: "17:00",
-                },
-              ],
-              image: COMPANY.logo,
-              sameAs: [],
-            }),
+            __html: JSON.stringify(organizationSchema()),
           }}
         />
       </head>

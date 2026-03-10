@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { COMPANY, SERVICES, SERVICE_AREAS } from "@/lib/constants";
 import AnimatedCounter from "@/components/AnimatedCounter";
+import { localBusinessSchema } from "@/lib/schema";
 
 const ICONS: Record<string, React.ReactNode> = {
   shield: (
@@ -86,6 +87,17 @@ const BLOG_POSTS = [
 export default function HomePage() {
   return (
     <>
+      {/* JSON-LD: LocalBusiness for both locations */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify([
+            localBusinessSchema("phoenix"),
+            localBusinessSchema("apache-junction"),
+          ]),
+        }}
+      />
+
       {/* ========== 1. HERO SECTION (full viewport) ========== */}
       <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
         <div
