@@ -14,7 +14,7 @@ export default function LocationPageTemplate({
         <div
           className="parallax-bg"
           style={{
-            backgroundImage: `url(/images/contact-phoenix.jpg)`,
+            backgroundImage: `url(${data.heroImage || "/images/contact-phoenix.jpg"})`,
           }}
         />
         <div className="absolute inset-0 z-[1]" style={{ background: "linear-gradient(160deg, rgba(27,42,63,0.85) 0%, rgba(30,107,184,0.65) 100%)" }} />
@@ -341,22 +341,27 @@ export default function LocationPageTemplate({
       </section>
 
       {/* CTA Banner */}
-      <section className="py-20 relative overflow-hidden" style={{ background: "linear-gradient(135deg, #dc3a30 0%, #b52a22 50%, #8f2018 100%)" }}>
+      <section className="py-20 relative overflow-hidden">
+        <div
+          className="parallax-bg"
+          style={{ backgroundImage: `url(/images/arizona-skyline-panoramic.jpg)` }}
+        />
+        <div className="absolute inset-0 z-[1]" style={{ background: "linear-gradient(160deg, rgba(15,31,54,0.92) 0%, rgba(27,42,63,0.88) 50%, rgba(30,107,184,0.75) 100%)" }} />
         <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <div className="reveal">
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
               Get Free Towing Service in {data.city}
             </h2>
-            <p className="text-white/85 text-lg mb-8 max-w-2xl mx-auto">
+            <p className="text-white/80 text-lg mb-8 max-w-2xl mx-auto">
               Contact us today for a free consultation. All our private property
               towing services in {data.city} are at zero cost to property
               owners.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <a href={`tel:${COMPANY.phone}`} className="bg-white text-red-600 font-bold font-heading px-8 py-4 rounded-xl text-lg uppercase tracking-wider hover:bg-gray-50 transition-colors hover:-translate-y-0.5 transform inline-flex items-center justify-center gap-2 shadow-lg">
+              <a href={`tel:${COMPANY.phone}`} className="btn-primary text-lg">
                 Call {COMPANY.phone}
               </a>
-              <Link href="/contact" className="border-2 border-white text-white font-bold font-heading px-8 py-4 rounded-xl text-lg uppercase tracking-wider hover:bg-white/10 transition-colors hover:-translate-y-0.5 transform inline-flex items-center justify-center">
+              <Link href="/contact" className="btn-secondary text-lg">
                 Request Free Quote
               </Link>
             </div>

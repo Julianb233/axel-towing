@@ -354,7 +354,7 @@ export default function MiVehiculoFueRemolcadoPage() {
       </section>
 
       {/* -- Banner de Emergencia -- */}
-      <section className="relative py-16 bg-gradient-to-r from-red-600 via-accent to-red-600 text-white overflow-hidden">
+      <section className="relative py-16 text-white overflow-hidden" style={{ background: "linear-gradient(160deg, rgba(15,31,54,1) 0%, rgba(27,42,63,0.95) 50%, rgba(30,107,184,0.9) 100%)" }}>
         <div className="absolute inset-0 grain-overlay" />
         <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center reveal">
           <div className="flex items-center justify-center gap-3 mb-4">
@@ -370,7 +370,7 @@ export default function MiVehiculoFueRemolcadoPage() {
           </p>
           <a
             href={`tel:${COMPANY.phone}`}
-            className="inline-flex items-center gap-3 bg-white text-red-600 font-bold px-10 py-4 rounded-xl text-xl hover:bg-gray-100 transition-colors shadow-lg font-heading tracking-wide"
+            className="btn-primary text-xl inline-flex items-center gap-3"
           >
             <svg className="w-6 h-6" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 002.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 01-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 00-1.091-.852H4.5A2.25 2.25 0 002.25 4.5v2.25z" />

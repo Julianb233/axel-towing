@@ -4,6 +4,7 @@ export interface LocationPageData {
   metaTitle: string;
   metaDescription: string;
   heroSubtext: string;
+  heroImage?: string;
   intro: string[];
   neighborhoods: string[];
   propertyTypes: string[];
@@ -22,6 +23,7 @@ export const LOCATION_PAGES: Record<string, LocationPageData> = {
       "Towing Services in Phoenix, AZ — Private Property Impounds & Parking Enforcement",
     metaDescription:
       "Axle Towing provides professional private property impound, parking enforcement, and vehicle relocation services throughout Phoenix, AZ. Free for property owners. Call 480-288-5526.",
+    heroImage: "/images/arizona-skyline-panoramic.jpg",
     heroSubtext:
       "Professional private property towing, parking enforcement, and vehicle relocation services throughout Arizona's capital city.",
     intro: [
@@ -105,6 +107,7 @@ export const LOCATION_PAGES: Record<string, LocationPageData> = {
       "Towing Services in Scottsdale, AZ — Premium Private Property Impounds & Parking Enforcement",
     metaDescription:
       "Premium private property towing and parking enforcement in Scottsdale, AZ. Axle Towing serves luxury HOAs, apartment complexes, and commercial properties at no cost. Call 480-288-5526.",
+    heroImage: "/images/arizona-commercial-parking.jpg",
     heroSubtext:
       "Premium private property towing and parking enforcement services for Scottsdale's upscale residential and commercial communities.",
     intro: [
@@ -183,6 +186,7 @@ export const LOCATION_PAGES: Record<string, LocationPageData> = {
       "Towing Services in Mesa, AZ — Private Property Impounds & Parking Enforcement",
     metaDescription:
       "Reliable private property towing and parking enforcement in Mesa, AZ. Axle Towing provides professional service for apartments, HOAs, and commercial properties. Free for owners. Call 480-288-5526.",
+    heroImage: "/images/arizona-mesa-residential.jpg",
     heroSubtext:
       "Reliable private property towing and parking enforcement for Mesa's rapidly growing residential and commercial communities.",
     intro: [
@@ -261,6 +265,7 @@ export const LOCATION_PAGES: Record<string, LocationPageData> = {
       "Towing Services in Tempe, AZ — Private Property Impounds & Parking Enforcement",
     metaDescription:
       "Professional private property towing and parking enforcement in Tempe, AZ. Axle Towing serves apartments near ASU, student housing, and commercial properties at no cost. Call 480-288-5526.",
+    heroImage: "/images/arizona-apartment-parking.jpg",
     heroSubtext:
       "Professional private property towing and parking enforcement for Tempe's vibrant college-town communities and growing commercial districts.",
     intro: [
@@ -341,6 +346,7 @@ export const LOCATION_PAGES: Record<string, LocationPageData> = {
       "Towing Services in Chandler, AZ — Private Property Impounds & Parking Enforcement",
     metaDescription:
       "Professional private property towing and parking enforcement in Chandler, AZ. Axle Towing serves tech corridor offices, apartments, and HOAs at no cost. Call 480-288-5526.",
+    heroImage: "/images/arizona-hoa-entrance.jpg",
     heroSubtext:
       "Dependable private property towing and parking enforcement for Chandler's booming tech corridor and expanding residential communities.",
     intro: [
@@ -421,6 +427,7 @@ export const LOCATION_PAGES: Record<string, LocationPageData> = {
       "Towing Services in Gilbert, AZ — Private Property Impounds & Parking Enforcement",
     metaDescription:
       "Professional private property towing and parking enforcement in Gilbert, AZ. Axle Towing serves HOAs, apartments, and commercial properties at no cost. Call 480-288-5526.",
+    heroImage: "/images/arizona-fire-lane.jpg",
     heroSubtext:
       "Trusted private property towing and parking enforcement for Gilbert's family-friendly communities and growing commercial areas.",
     intro: [
@@ -501,6 +508,7 @@ export const LOCATION_PAGES: Record<string, LocationPageData> = {
       "Towing Services in Glendale, AZ — Private Property Impounds & Parking Enforcement",
     metaDescription:
       "Professional private property towing and parking enforcement in Glendale, AZ. Axle Towing serves sports district properties, apartments, and HOAs at no cost. Call 480-288-5526.",
+    heroImage: "/images/arizona-tow-operator.jpg",
     heroSubtext:
       "Professional private property towing and parking enforcement for Glendale's sports and entertainment district and established residential communities.",
     intro: [
@@ -581,6 +589,7 @@ export const LOCATION_PAGES: Record<string, LocationPageData> = {
       "Towing Services in Apache Junction, AZ — Private Property Impounds & Parking Enforcement",
     metaDescription:
       "Local private property towing and parking enforcement in Apache Junction, AZ. Axle Towing's impound yard is located at 1151 W Apache Trail. Free for property owners. Call 480-288-5526.",
+    heroImage: "/images/arizona-impound-lot.jpg",
     heroSubtext:
       "Local private property towing, parking enforcement, and impound services from our Apache Junction yard at 1151 W. Apache Trail.",
     intro: [

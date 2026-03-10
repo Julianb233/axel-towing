@@ -109,31 +109,39 @@ export default function LocationsPage() {
 
       {/* CTA */}
       <section className="relative py-20 overflow-hidden">
+        <div className="absolute inset-0 z-0">
+          <Image
+            src="/images/arizona-skyline-panoramic.jpg"
+            alt="Phoenix Arizona skyline"
+            fill
+            className="object-cover"
+          />
+        </div>
         <div
-          className="absolute inset-0"
+          className="absolute inset-0 z-[1]"
           style={{
             background:
-              "linear-gradient(135deg, #dc3a30 0%, #b52a22 50%, #8f2018 100%)",
+              "linear-gradient(160deg, rgba(15,31,54,0.92) 0%, rgba(27,42,63,0.88) 50%, rgba(30,107,184,0.75) 100%)",
           }}
         />
         <div className="relative z-10 max-w-4xl mx-auto px-4 text-center text-white">
           <h2 className="text-3xl md:text-4xl font-bold font-heading mb-4">
             Don&apos;t See Your City?
           </h2>
-          <p className="text-white/85 text-lg mb-8 max-w-2xl mx-auto">
+          <p className="text-white/80 text-lg mb-8 max-w-2xl mx-auto">
             We serve the entire Phoenix metro area. Contact us to discuss towing
             services for your property — it&apos;s completely free.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a
               href={`tel:${COMPANY.phone}`}
-              className="bg-white text-red-600 font-bold font-heading px-8 py-4 rounded-lg text-lg hover:bg-gray-50 transition-colors"
+              className="btn-primary text-lg"
             >
               Call {COMPANY.phone}
             </a>
             <Link
               href="/contact"
-              className="border-2 border-white text-white font-bold font-heading px-8 py-4 rounded-lg text-lg hover:bg-white/10 transition-colors"
+              className="btn-secondary text-lg"
             >
               Request Free Quote
             </Link>

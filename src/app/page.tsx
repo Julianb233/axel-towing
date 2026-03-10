@@ -330,20 +330,23 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ========== 7. CTA BANNER — Bold red accent ========== */}
+      {/* ========== 7. CTA BANNER ========== */}
       <section className="relative py-24 overflow-hidden">
-        <div className="absolute inset-0 z-0" style={{ background: "linear-gradient(135deg, #dc3a30 0%, #b52a22 50%, #8f2018 100%)" }} />
+        <div className="absolute inset-0 z-0">
+          <Image src="/images/arizona-skyline-panoramic.jpg" alt="Phoenix Arizona skyline" fill className="object-cover" />
+        </div>
+        <div className="absolute inset-0 z-[1]" style={{ background: "linear-gradient(160deg, rgba(15,31,54,0.92) 0%, rgba(27,42,63,0.88) 50%, rgba(30,107,184,0.75) 100%)" }} />
         <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-white reveal">
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold font-heading mb-4">Ready to Secure Your Property?</h2>
-          <p className="text-xl text-white/85 mb-10 max-w-2xl mx-auto">Get started with a free consultation. Our parking enforcement services cost you absolutely nothing.</p>
+          <p className="text-xl text-white/80 mb-10 max-w-2xl mx-auto">Get started with a free consultation. Our parking enforcement services cost you absolutely nothing.</p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <a href={`tel:${COMPANY.phone}`} className="bg-white text-red-600 font-bold font-heading px-10 py-4 rounded-xl text-lg uppercase tracking-wider hover:bg-gray-50 transition-colors hover:-translate-y-0.5 transform inline-flex items-center justify-center gap-2 shadow-lg">
+            <a href={`tel:${COMPANY.phone}`} className="btn-primary text-lg inline-flex items-center gap-2">
               <svg className="w-5 h-5" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
               </svg>
               Call {COMPANY.phone}
             </a>
-            <Link href="/contact" className="border-2 border-white text-white font-bold font-heading px-10 py-4 rounded-xl text-lg uppercase tracking-wider hover:bg-white/10 transition-colors hover:-translate-y-0.5 transform inline-flex items-center justify-center">
+            <Link href="/contact" className="btn-secondary text-lg">
               Get a Free Quote
             </Link>
           </div>

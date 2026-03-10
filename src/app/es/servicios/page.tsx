@@ -182,27 +182,20 @@ export default function ServiciosPage() {
       </section>
 
       {/* ===== CTA BANNER ===== */}
-      <section className="relative py-20 md:py-24 overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-r from-red-600 via-red-600 to-red-500" />
+      <section className="relative py-20 md:py-24 overflow-hidden" style={{ background: "linear-gradient(160deg, rgba(15,31,54,0.95) 0%, rgba(27,42,63,0.92) 50%, rgba(30,107,184,0.85) 100%)" }}>
         <div className="absolute inset-0 grain-overlay" />
         <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="font-heading text-3xl md:text-4xl font-bold text-white mb-4 reveal">
             Comience Hoy &mdash; Sin Costo para Usted
           </h2>
-          <p className="text-red-100 text-lg mb-10 max-w-2xl mx-auto reveal delay-100">
+          <p className="text-white/80 text-lg mb-10 max-w-2xl mx-auto reveal delay-100">
             Nuestros servicios de remolque y control de estacionamiento son completamente gratuitos para propietarios y administradores. Dejenos manejar sus problemas de estacionamiento.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center reveal delay-200">
-            <a
-              href={`tel:${COMPANY.phone}`}
-              className="bg-white text-red-600 font-heading font-bold px-8 py-4 rounded-lg hover:bg-red-50 transition-all hover:-translate-y-1 hover:shadow-xl text-lg uppercase tracking-wide"
-            >
+            <a href={`tel:${COMPANY.phone}`} className="btn-primary text-lg">
               Llame {COMPANY.phone}
             </a>
-            <Link
-              href="/es/contacto"
-              className="border-2 border-white text-white font-heading font-bold px-8 py-4 rounded-lg hover:bg-white/10 transition-all hover:-translate-y-1 text-lg uppercase tracking-wide"
-            >
+            <Link href="/es/contacto" className="btn-secondary text-lg">
               Cotizacion Gratis
             </Link>
           </div>

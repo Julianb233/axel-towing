@@ -306,20 +306,23 @@ export default function ServicePageTemplate({ data }: { data: ServicePageData })
 
       {/* ===== CTA BANNER ===== */}
       <section className="relative py-20 md:py-24 overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-r from-red-600 via-red-600 to-red-500" />
-        <div className="absolute inset-0 grain-overlay" />
+        <div className="absolute inset-0 z-0">
+          <Image src="/images/arizona-skyline-panoramic.jpg" alt="Phoenix Arizona skyline" fill className="object-cover" />
+        </div>
+        <div className="absolute inset-0 z-[1]" style={{ background: "linear-gradient(160deg, rgba(15,31,54,0.92) 0%, rgba(27,42,63,0.88) 50%, rgba(30,107,184,0.75) 100%)" }} />
+        <div className="absolute inset-0 grain-overlay z-[2]" />
         <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="font-heading text-3xl md:text-4xl font-bold text-white mb-4 reveal">
-            Ready to Get Started?
+            Ready to Protect Your Property?
           </h2>
-          <p className="text-red-100 text-lg mb-10 max-w-2xl mx-auto reveal delay-100">
+          <p className="text-white/80 text-lg mb-10 max-w-2xl mx-auto reveal delay-100">
             Contact us today for a free consultation. Our {data.title.toLowerCase()} services are completely free for {data.targetAudience}.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center reveal delay-200">
-            <a href={`tel:${COMPANY.phone}`} className="bg-white text-red-600 font-heading font-bold px-8 py-4 rounded-lg hover:bg-red-50 transition-all hover:-translate-y-1 hover:shadow-xl text-lg uppercase tracking-wide">
+            <a href={`tel:${COMPANY.phone}`} className="btn-primary text-lg">
               Call {COMPANY.phone}
             </a>
-            <Link href="/contact" className="border-2 border-white text-white font-heading font-bold px-8 py-4 rounded-lg hover:bg-white/10 transition-all hover:-translate-y-1 text-lg uppercase tracking-wide">
+            <Link href="/contact" className="btn-secondary text-lg">
               Request Free Quote
             </Link>
           </div>
