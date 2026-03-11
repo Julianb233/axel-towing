@@ -1,683 +1,688 @@
-import type { Metadata } from "next";
-import Link from "next/link";
+"use client";
 
-export const metadata: Metadata = {
-  title: "Digital Growth Proposal — Axle Towing & Impound",
-  robots: "noindex, nofollow",
-};
+import { useEffect, useRef, useState } from "react";
 
-/* ── Data ────────────────────────────────────────────────────────────── */
+/* ── Real keyword data from Axle Towing Keyword Research (March 2026) ── */
+const keywordData = [
+  { keyword: "private property towing Phoenix", volume: "150-250", difficulty: "Medium", intent: "Buying", cpc: "$12-18", opportunity: "Core money keyword" },
+  { keyword: "HOA towing company Phoenix", volume: "30-60", difficulty: "Low", intent: "Buying", cpc: "$8-14", opportunity: "No competitor targeting" },
+  { keyword: "apartment towing company Phoenix", volume: "30-50", difficulty: "Low", intent: "Buying", cpc: "$10-15", opportunity: "No competitor targeting" },
+  { keyword: "parking enforcement company Phoenix", volume: "40-80", difficulty: "Low-Med", intent: "Buying", cpc: "$8-12", opportunity: "Wide open" },
+  { keyword: "how to get car towed from private property AZ", volume: "100-200", difficulty: "Low", intent: "Research", cpc: "$4-8", opportunity: "Content pillar" },
+  { keyword: "Arizona private property towing laws", volume: "80-150", difficulty: "Low-Med", intent: "Research", cpc: "$3-6", opportunity: "Authority builder" },
+  { keyword: "HOA parking enforcement rules Arizona", volume: "50-100", difficulty: "Low", intent: "Research", cpc: "$3-5", opportunity: "High-value content" },
+  { keyword: "can HOA tow my car Arizona", volume: "40-80", difficulty: "Low", intent: "Research", cpc: "$2-4", opportunity: "FAQ snippet" },
+  { keyword: "apartment parking rules Arizona", volume: "40-80", difficulty: "Low", intent: "Research", cpc: "$2-4", opportunity: "Tenant + PM traffic" },
+  { keyword: "vehicle relocation service Phoenix", volume: "15-30", difficulty: "Very Low", intent: "Buying", cpc: "$6-10", opportunity: "Zero competition" },
+  { keyword: "towing Scottsdale AZ", volume: "200-400", difficulty: "Medium", intent: "Buying", cpc: "$15-22", opportunity: "No competitor page" },
+  { keyword: "towing Gilbert AZ", volume: "100-200", difficulty: "Low", intent: "Buying", cpc: "$12-18", opportunity: "Almost no competition" },
+  { keyword: "towing Mesa AZ", volume: "200-400", difficulty: "Medium", intent: "Buying", cpc: "$14-20", opportunity: "Few competitor pages" },
+  { keyword: "commercial property towing Phoenix", volume: "20-40", difficulty: "Low", intent: "Buying", cpc: "$8-14", opportunity: "Wide open" },
+  { keyword: "private property impound fees Arizona", volume: "30-50", difficulty: "Low", intent: "Research", cpc: "$3-6", opportunity: "Price transparency" },
+  { keyword: "towing signage requirements Arizona", volume: "15-30", difficulty: "Very Low", intent: "Research", cpc: "$2-4", opportunity: "Compliance guide" },
+  { keyword: "parking enforcement Tempe AZ", volume: "15-25", difficulty: "Very Low", intent: "Buying", cpc: "$8-14", opportunity: "College town demand" },
+  { keyword: "how to set up HOA towing program", volume: "20-40", difficulty: "Very Low", intent: "Research", cpc: "$4-8", opportunity: "Setup guide for boards" },
+  { keyword: "abandoned vehicle apartment complex AZ", volume: "20-40", difficulty: "Low", intent: "Research", cpc: "$3-5", opportunity: "Abandonment guide" },
+  { keyword: "impound towing service Phoenix", volume: "40-70", difficulty: "Low-Med", intent: "Buying", cpc: "$10-16", opportunity: "Service-focused" },
+];
 
-const KEYWORD_CLUSTERS = [
+const sources = [
+  { id: 1, text: "Axle Towing Keyword Research, March 2026 -- search volume estimates based on industry benchmarks, SEMrush, and Ahrefs aggregates" },
+  { id: 2, text: "Competitor Analysis: Phoenix Private Property Towing Market, March 2026 -- 7 competitor website audits" },
+  { id: 3, text: "Kwik Tow: 20+ years in market, 4 yards, 263 Yelp reviews (1.2 stars), zero blog posts, zero city pages (kwiktow.com)" },
+  { id: 4, text: "Freeway Towing (phoenixtowtruck.com): 1,011 Google reviews, 4.7 stars, 2025 ACE Award, best digital presence in market" },
+  { id: 5, text: "Digital Presence Scorecard: Among PPI specialists, average digital maturity = 2.2/10. Kwik Tow = 2.8/10, Arizona Impound = 2.2/10" },
+  { id: 6, text: "Phoenix multifamily market: 22,100 units under construction, 23,000 delivered in past year (Matthews Q3 2025)" },
+  { id: 7, text: "All City Towing: 2,000+ private property accounts, shifted focus to police towing, not actively servicing PPI accounts" },
+  { id: 8, text: "Arizona Multihousing Association (AMA) -- Axle Towing and Kwik Tow both listed as industry partners" },
+  { id: 9, text: "Google AI Overviews now appear for ~40% of local service queries (Search Engine Journal 2025)" },
+  { id: 10, text: "Axle Towing site currently ranks page 4+ for target keywords -- zero organic search visibility" },
+  { id: 11, text: "Content Gap Analysis: Zero PPI competitors have active blogs, city pages, HOA guides, or property manager resources" },
+];
+
+function Src({ ids }: { ids: number[] }) {
+  return (
+    <span className="proposal-source" title={ids.map(id => sources.find(s => s.id === id)?.text).join("; ")}>
+      [{ids.join(",")}]
+    </span>
+  );
+}
+
+function useScrollReveal() {
+  const ref = useRef<HTMLDivElement>(null);
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => entries.forEach((e) => { if (e.isIntersecting) e.target.classList.add("visible"); }),
+      { threshold: 0.08, rootMargin: "0px 0px -30px 0px" }
+    );
+    ref.current?.querySelectorAll(".proposal-reveal").forEach((el) => observer.observe(el));
+    return () => observer.disconnect();
+  }, []);
+  return ref;
+}
+
+function DeliverableCard({ title, icon, brief, details, benefits, timeline, tools }: {
+  title: string; icon: string; brief: string; details: string; benefits: string[]; timeline: string; tools: string[];
+}) {
+  const [open, setOpen] = useState(false);
+  return (
+    <div className={`proposal-glass rounded-2xl overflow-hidden cursor-pointer transition-all duration-300 ${open ? "ring-2 ring-[#1e6bb8]/30 shadow-lg" : "hover:shadow-md hover:-translate-y-1"}`} onClick={() => setOpen(!open)}>
+      <div className="p-6">
+        <div className="flex items-start justify-between mb-3">
+          <div className="text-3xl">{icon}</div>
+          <div className={`text-xs font-bold px-3 py-1 rounded-full transition-all duration-300 ${open ? "bg-[#1e6bb8] text-white" : "bg-[#1e6bb8]/10 text-[#1e6bb8]"}`}>
+            {open ? "Close" : "View Details"}
+          </div>
+        </div>
+        <h3 className="font-bold text-[#1b2a3f] text-lg mb-2" style={{ fontFamily: "var(--font-display)" }}>{title}</h3>
+        <p className="text-sm text-[#4a5568] leading-relaxed">{brief}</p>
+      </div>
+      <div className={`proposal-card-expand ${open ? "open" : ""}`}>
+        <div className="px-6 pb-6 border-t border-[#1e6bb8]/10 pt-4">
+          <p className="text-sm text-[#1b2a3f] leading-relaxed mb-4">{details}</p>
+          <div className="mb-4">
+            <h4 className="text-xs font-bold text-[#1e6bb8] uppercase tracking-wider mb-2">Business Impact</h4>
+            <div className="space-y-1.5">
+              {benefits.map((b) => (
+                <div key={b} className="flex items-start gap-2 text-sm text-[#4a5568]">
+                  <span className="text-[#1e6bb8] mt-0.5 shrink-0">&#10003;</span>{b}
+                </div>
+              ))}
+            </div>
+          </div>
+          <div className="flex flex-wrap gap-3">
+            <div className="bg-[#1b2a3f]/5 rounded-lg px-3 py-1.5">
+              <span className="text-xs text-[#4a5568]">Timeline:</span>
+              <span className="text-xs font-bold text-[#1b2a3f] ml-1">{timeline}</span>
+            </div>
+            {tools.map((t) => (
+              <div key={t} className="bg-[#1e6bb8]/5 rounded-lg px-3 py-1.5">
+                <span className="text-xs font-medium text-[#1e6bb8]">{t}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+const deliverables = [
   {
-    cluster: "HOA Towing + [City]",
-    priority: "Highest",
-    difficulty: "Very Low (5-15)",
-    timeToRank: "1-3 months",
-    monthlySearches: "60-200",
-    revenueImpact: "Very High",
-    competition: "Zero competitors targeting this",
-    examples: [
-      "HOA towing service Phoenix",
-      "HOA parking enforcement Scottsdale",
-      "HOA towing company Chandler",
-      "HOA towing Gilbert AZ",
+    title: "88+ Page SEO-Optimized Website",
+    icon: "\u{1F310}",
+    brief: "Complete site rebuild with 42 blog articles, 23 location pages, 7 service pages, and full schema markup.",
+    details: "Your current site ranks on page 4+ for target keywords. We have already built 88 pages of optimized content covering every service, city, and topic your prospects search for. This includes dedicated pages for each Phoenix metro city, service-specific landing pages, and a comprehensive blog covering Arizona towing laws, HOA regulations, and property manager guides.",
+    benefits: [
+      "10-17x more content than any competitor in the market",
+      "City pages for Phoenix, Scottsdale, Mesa, Gilbert, Chandler, Tempe, Glendale, Apache Junction",
+      "Service pages targeting every high-intent keyword category",
+      "FAQPage, LocalBusiness, and Service schema on every page",
+      "Mobile-first, sub-2s load times (Next.js 16 + Vercel edge network)",
     ],
-    buyingIntent: [
-      { keyword: "HOA towing company Phoenix", vol: "30-60/mo", diff: "Low" },
-      { keyword: "HOA parking enforcement Phoenix", vol: "20-40/mo", diff: "Low" },
-      { keyword: "HOA towing Scottsdale", vol: "15-25/mo", diff: "Very Low" },
-      { keyword: "HOA towing Gilbert AZ", vol: "10-20/mo", diff: "Very Low" },
-    ],
-    researchIntent: [
-      { keyword: "HOA parking enforcement rules Arizona", vol: "50-100/mo", diff: "Low" },
-      { keyword: "can HOA tow my car Arizona", vol: "40-80/mo", diff: "Low" },
-      { keyword: "how to set up HOA towing program", vol: "20-40/mo", diff: "Very Low" },
-      { keyword: "HOA towing laws Arizona 2026", vol: "30-60/mo", diff: "Very Low" },
-    ],
+    timeline: "Built (ready for DNS transfer)",
+    tools: ["Next.js 16", "Tailwind CSS", "Vercel", "Schema.org"],
   },
   {
-    cluster: "Private Property Towing + [City]",
-    priority: "Highest",
-    difficulty: "Low (10-20)",
-    timeToRank: "2-4 months",
-    monthlySearches: "150-400",
-    revenueImpact: "High",
-    competition: "Thin pages from 2-3 competitors, no depth",
-    examples: [
-      "private property towing Phoenix",
-      "private property impound Scottsdale",
-      "private property towing Mesa AZ",
-      "private property towing Tempe",
+    title: "Content Marketing Engine",
+    icon: "\u{1F4DD}",
+    brief: "42 blog articles targeting high-intent keywords with zero competition. New articles monthly.",
+    details: "We produce 2-4 new articles per month targeting the exact questions property managers, HOA boards, and tenants are searching. Each article is structured for Google AI Overviews with FAQ schema, direct-answer formatting, and internal linking to service pages. Topics include Arizona towing law guides, HOA enforcement best practices, property manager setup guides, and city-specific content.",
+    benefits: [
+      "Capture research-intent traffic that converts to leads over time",
+      "Build topical authority that boosts all pages in search",
+      "Get cited by AI assistants (ChatGPT, Perplexity, Google AI Overviews)",
+      "Content is permanent virtual real estate -- works 24/7 unlike paid ads",
+      "Each article targets 3-5 long-tail keywords simultaneously",
     ],
-    buyingIntent: [
-      { keyword: "private property towing Phoenix", vol: "150-250/mo", diff: "Medium" },
-      { keyword: "private property impound Phoenix", vol: "80-120/mo", diff: "Low-Med" },
-      { keyword: "unauthorized vehicle removal Phoenix", vol: "20-40/mo", diff: "Low" },
-      { keyword: "private property towing company near me", vol: "40-60/mo", diff: "Medium" },
-    ],
-    researchIntent: [
-      { keyword: "how to get a car towed from private property AZ", vol: "100-200/mo", diff: "Low" },
-      { keyword: "Arizona private property towing laws", vol: "80-150/mo", diff: "Low-Med" },
-      { keyword: "how much does private property towing cost", vol: "40-80/mo", diff: "Low" },
-      { keyword: "private property towing signage requirements AZ", vol: "15-30/mo", diff: "Very Low" },
-    ],
+    timeline: "Ongoing (2-4/month)",
+    tools: ["SEO Research", "Schema Markup", "AI Optimization", "Analytics"],
   },
   {
-    cluster: "Apartment Towing + [City]",
-    priority: "High",
-    difficulty: "Very Low (5-15)",
-    timeToRank: "1-3 months",
-    monthlySearches: "50-200",
-    revenueImpact: "High",
-    competition: "Kwik Tow positions but has ZERO keyword-targeted pages",
-    examples: [
-      "apartment towing service Phoenix",
-      "apartment parking enforcement Mesa",
-      "apartment complex towing Tempe",
-      "multifamily parking enforcement",
+    title: "Local SEO Domination",
+    icon: "\u{1F4CD}",
+    brief: "Google Business Profile optimization for both yards, 50+ citation builds, and review strategy.",
+    details: "We optimize both your Apache Junction and Phoenix Google Business Profiles with proper categories, service descriptions, Q&A seeding, and weekly GBP posts. We build consistent citations across 50+ directories including Arizona Multihousing Association, BBB, Yelp, Towing.com, and local chambers of commerce. Plus a review strategy focused on collecting property manager reviews to build a 4.5+ star profile.",
+    benefits: [
+      "Appear in Google Map Pack for local towing searches",
+      "Consistent NAP across 50+ directories",
+      "Weekly GBP posts keep profiles active and boost visibility",
+      "Property manager review strategy separates you from competitor 1-2 star ratings",
+      "AMA and industry association listings boost authority signals",
     ],
-    buyingIntent: [
-      { keyword: "apartment towing company Phoenix", vol: "30-50/mo", diff: "Low" },
-      { keyword: "apartment parking enforcement Phoenix", vol: "20-30/mo", diff: "Low" },
-      { keyword: "property management towing service Phoenix", vol: "15-30/mo", diff: "Low" },
-      { keyword: "apartment towing Tempe AZ", vol: "10-20/mo", diff: "Very Low" },
-    ],
-    researchIntent: [
-      { keyword: "apartment parking rules Arizona", vol: "40-80/mo", diff: "Low" },
-      { keyword: "can apartment complex tow my car AZ", vol: "30-60/mo", diff: "Low" },
-      { keyword: "how to set up towing at apartment complex", vol: "15-30/mo", diff: "Very Low" },
-      { keyword: "abandoned vehicle apartment complex Arizona", vol: "20-40/mo", diff: "Low" },
-    ],
+    timeline: "Month 1-3 foundation, ongoing",
+    tools: ["Google Business", "BrightLocal", "AMA", "Yelp", "BBB"],
   },
   {
-    cluster: "Parking Enforcement + [City]",
-    priority: "High",
-    difficulty: "Low-Medium (15-25)",
-    timeToRank: "2-5 months",
-    monthlySearches: "80-200",
-    revenueImpact: "High",
-    competition: "phoenixparkingenforcement.com has domain-match advantage, but thin content",
-    examples: [
-      "parking enforcement company Phoenix",
-      "parking enforcement Scottsdale",
-      "parking lot enforcement Mesa",
-      "fire lane towing Phoenix",
+    title: "AI Search Optimization",
+    icon: "\u{1F916}",
+    brief: "Structured content that gets cited by Google AI Overviews, ChatGPT, and Perplexity.",
+    details: "Google AI Overviews now appear for ~40% of local service queries. Zero competitors in your market are optimized for this. We structure every page with direct-answer formatting, FAQ schema, numbered step-by-step processes, and authoritative citations to Arizona statutes (ARS 9-499.05). This makes Axle Towing the answer when property managers ask AI assistants for towing recommendations.",
+    benefits: [
+      "First-mover advantage -- no competitor is doing this",
+      "Get cited in Google AI Overviews for towing law questions",
+      "Appear in ChatGPT and Perplexity answers about Phoenix towing",
+      "Structured data helps Google understand your services precisely",
+      "Future-proof against the shift from traditional search to AI search",
     ],
-    buyingIntent: [
-      { keyword: "parking enforcement company Phoenix", vol: "40-80/mo", diff: "Low-Med" },
-      { keyword: "parking enforcement towing Phoenix", vol: "30-60/mo", diff: "Low" },
-      { keyword: "parking enforcement Scottsdale", vol: "20-40/mo", diff: "Low" },
-      { keyword: "fire lane towing Phoenix", vol: "10-20/mo", diff: "Very Low" },
-    ],
-    researchIntent: [
-      { keyword: "how to enforce parking on private property AZ", vol: "50-100/mo", diff: "Low" },
-      { keyword: "parking enforcement laws Arizona", vol: "30-60/mo", diff: "Low" },
-      { keyword: "fire lane parking enforcement rules AZ", vol: "20-40/mo", diff: "Very Low" },
-      { keyword: "cost of parking enforcement service", vol: "10-20/mo", diff: "Very Low" },
-    ],
+    timeline: "Built into all content",
+    tools: ["Schema.org", "FAQ Markup", "Structured Data", "ARS Citations"],
   },
   {
-    cluster: "Arizona Towing Laws (Authority)",
-    priority: "High",
-    difficulty: "Medium (20-35)",
-    timeToRank: "3-6 months",
-    monthlySearches: "200-500",
-    revenueImpact: "Medium (authority builder)",
-    competition: "Law firms have some content, towing companies have almost none",
-    examples: [
-      "Arizona private property towing laws",
-      "ARS towing regulations",
-      "Phoenix towing ordinance",
-      "Arizona impound laws",
+    title: "Competitive Intelligence & Reporting",
+    icon: "\u{1F4CA}",
+    brief: "Monthly reporting on rankings, traffic, leads, and competitor movements.",
+    details: "We track keyword rankings, organic traffic, lead form submissions, phone calls, and competitor content changes. Monthly reports show exactly where you stand vs. Kwik Tow, All City, Zip Tow, and others. We identify new keyword opportunities, content gaps to exploit, and ranking improvements.",
+    benefits: [
+      "Track ranking progress for all 50+ target keywords",
+      "Monitor competitor content and SEO changes",
+      "Measure organic traffic growth month-over-month",
+      "Track leads and calls from organic search",
+      "Identify new opportunities as the market evolves",
     ],
-    buyingIntent: [],
-    researchIntent: [
-      { keyword: "Arizona private property towing laws", vol: "80-150/mo", diff: "Low-Med" },
-      { keyword: "can you tow from private property in AZ", vol: "50-100/mo", diff: "Low" },
-      { keyword: "how long before a car is abandoned in AZ", vol: "30-60/mo", diff: "Low" },
-      { keyword: "Arizona towing fee limits", vol: "20-40/mo", diff: "Low" },
-    ],
+    timeline: "Monthly reports",
+    tools: ["Google Analytics", "Search Console", "Ahrefs", "Dashboard"],
   },
   {
-    cluster: "Commercial Property Towing",
-    priority: "Medium-High",
-    difficulty: "Low (10-20)",
-    timeToRank: "2-4 months",
-    monthlySearches: "40-100",
-    revenueImpact: "Medium-High",
-    competition: "Virtually no competitors targeting commercial specifically",
-    examples: [
-      "commercial property towing Phoenix",
-      "shopping center towing service",
-      "office complex parking enforcement",
-      "retail parking lot towing",
+    title: "CRM & Lead Nurturing System",
+    icon: "\u{1F4DE}",
+    brief: "Custom CRM to track property manager leads, automated follow-ups, and pipeline management.",
+    details: "We implement a CRM to track every property manager lead from first contact to signed contract. Automated follow-up sequences for new inquiries, quarterly check-in reminders for accounts on hold, and monthly service reports sent automatically. Multi-channel integration with LinkedIn, Instagram, and Facebook for HOA board outreach. AI voice agent for inbound/outbound calls.",
+    benefits: [
+      "Never lose a lead -- every inquiry tracked and followed up",
+      "Automated nurture sequences for long-cycle property manager deals",
+      "Quarterly calendar system to re-engage accounts on hold",
+      "AI voice agent handles after-hours calls as answering service",
+      "Pipeline tracking for new property acquisitions",
     ],
-    buyingIntent: [
-      { keyword: "commercial property towing Phoenix", vol: "20-40/mo", diff: "Low" },
-      { keyword: "shopping center towing Phoenix", vol: "10-15/mo", diff: "Very Low" },
-      { keyword: "office building towing service Phoenix", vol: "5-10/mo", diff: "Very Low" },
-    ],
-    researchIntent: [
-      { keyword: "how to enforce parking at commercial property", vol: "10-20/mo", diff: "Very Low" },
-      { keyword: "commercial property towing signage Arizona", vol: "10-15/mo", diff: "Very Low" },
-    ],
-  },
-  {
-    cluster: "Vehicle Relocation + [City]",
-    priority: "Medium",
-    difficulty: "Very Low (5-10)",
-    timeToRank: "1-2 months",
-    monthlySearches: "20-60",
-    revenueImpact: "Medium",
-    competition: "ZERO competitors creating content for this",
-    examples: [
-      "vehicle relocation service Phoenix",
-      "vehicle relocation for asphalt repair",
-      "parking lot repaving towing service",
-      "construction zone vehicle relocation",
-    ],
-    buyingIntent: [
-      { keyword: "vehicle relocation service Phoenix", vol: "15-30/mo", diff: "Very Low" },
-      { keyword: "car relocation towing Phoenix", vol: "10-20/mo", diff: "Very Low" },
-      { keyword: "parking lot repaving towing service", vol: "5-10/mo", diff: "Very Low" },
-    ],
-    researchIntent: [
-      { keyword: "how to move cars for parking lot repaving", vol: "20-40/mo", diff: "Very Low" },
-      { keyword: "vehicle relocation notice requirements AZ", vol: "10-20/mo", diff: "Very Low" },
-    ],
+    timeline: "Month 1-2 setup",
+    tools: ["Custom CRM", "AI Voice Agent", "Email Automation", "Calendar"],
   },
 ];
 
-const COMPETITORS = [
-  { name: "Kwik Tow", pages: 5, blog: 0, cityPages: 0, maturity: 2.8 },
-  { name: "Arizona Impound", pages: 8, blog: 0, cityPages: 2, maturity: 2.2 },
-  { name: "AZ Parking Enforcement", pages: 3, blog: 0, cityPages: 0, maturity: 1.8 },
-  { name: "Zip Tow", pages: 5, blog: 0, cityPages: 0, maturity: 4.4 },
-  { name: "All City Towing", pages: 8, blog: 0, cityPages: 8, maturity: 4.8 },
-  { name: "All Valley Impound", pages: 5, blog: 0, cityPages: 0, maturity: 1.6 },
+const articleExamples = [
+  {
+    title: "The Complete Guide to Arizona Private Property Towing Laws (2026)",
+    keywords: ["Arizona private property towing laws", "ARS towing laws private property", "is private property towing legal in Arizona"],
+    volume: "200-400/mo combined",
+    intent: "Research \u2192 Authority Builder",
+    description: "Comprehensive guide covering ARS 9-499.05, signage requirements, notification rules, and common gray areas. Structured with FAQ schema for AI Overview citations.",
+  },
+  {
+    title: "HOA Parking Enforcement in Arizona: Rules, Signs, and Towing Procedures",
+    keywords: ["HOA parking enforcement rules Arizona", "can HOA tow my car Arizona", "HOA towing laws Arizona"],
+    volume: "150-300/mo combined",
+    intent: "Research \u2192 Decision Stage",
+    description: "Targets both HOA board members looking to set up enforcement and residents wanting to understand their rights. Covers the 2023 legislation changes restricting HOA enforcement on public streets.",
+  },
+  {
+    title: "How to Set Up Parking Enforcement at Your Apartment Complex",
+    keywords: ["how to set up parking enforcement", "apartment parking enforcement best practices", "apartment complex towing laws Arizona"],
+    volume: "80-150/mo combined",
+    intent: "Decision Stage \u2192 Lead Gen",
+    description: "Step-by-step guide for property managers. Covers signage, notification procedures, resident communication, and choosing a towing partner. Positions Axle as the expert.",
+  },
+  {
+    title: "Private Property Towing Costs in Phoenix: What Property Managers Need to Know",
+    keywords: ["private property towing cost", "impound fees Arizona", "is towing free for property owners"],
+    volume: "100-200/mo combined",
+    intent: "Research \u2192 Conversion",
+    description: "Addresses the #1 question property managers have. Explains the no-cost-to-owner model, what vehicle owners pay, and how it compares to other enforcement options.",
+  },
+  {
+    title: "My Car Got Towed from My Apartment: What Are My Rights in Arizona?",
+    keywords: ["apartment towed my car", "tenant parking rights Arizona", "apartment towing without notice Arizona"],
+    volume: "100-200/mo combined",
+    intent: "Research \u2192 Brand Awareness",
+    description: "Targets the massive volume of resident/tenant searches. Builds brand awareness, drives backlinks, and positions Axle as a transparent, law-abiding company.",
+  },
+  {
+    title: "Parking Enforcement for Gilbert HOA Communities: A Complete Guide",
+    keywords: ["HOA towing Gilbert AZ", "parking enforcement Gilbert", "Gilbert HOA parking rules"],
+    volume: "30-60/mo combined",
+    intent: "City-Specific \u2192 Local Ranking",
+    description: "City-specific content targeting Gilbert's fast-growing HOA market. Virtually zero competition. Replicable template for Scottsdale, Mesa, Chandler, and Tempe.",
+  },
 ];
-
-const MILESTONES = [
-  { time: "Today", milestone: "Website Already Live", detail: "123+ pages deployed, 61 articles written, 24 location pages, 7 service pages, 5 Spanish pages, ROI calculator, vehicle locator, and more." },
-  { time: "Month 1-2", milestone: "SEO Foundation", detail: "Google Search Console configured, 50+ local citation submissions, keyword tracking live for 150+ terms, both Google Business Profiles optimized" },
-  { time: "Month 2-4", milestone: "Content Acceleration", detail: "30-60 new articles published targeting every keyword cluster, internal linking optimized, competitor gap closed" },
-  { time: "Month 4-6", milestone: "Results Phase", detail: "Long-tail keywords hitting page 1, first organic leads, map pack improvements, 10+ leads/month from organic" },
-  { time: "Month 6", milestone: "Performance Guarantee Checkpoint", detail: "If we haven't hit our guaranteed metrics, we keep working for free until we do." },
-  { time: "Month 7-12", milestone: "Market Dominance", detail: "50+ first-page rankings, 15-25 leads/month, recognized market authority, AI search visibility" },
-];
-
-const GUARANTEE_METRICS = [
-  { metric: "First-page keyword rankings", value: "15+" },
-  { metric: "Organic traffic increase from baseline", value: "200%+" },
-  { metric: "Map Pack placement (primary terms)", value: "Top 3" },
-  { metric: "Optimized articles published", value: "30+" },
-  { metric: "Google PageSpeed score", value: "90+" },
-  { metric: "Qualified leads per month", value: "10+" },
-];
-
-const WHATS_BUILT = [
-  { category: "Blog Articles", count: "61", detail: "SEO-optimized articles covering HOA towing, apartment enforcement, Arizona laws, property manager guides, and more" },
-  { category: "Location Pages", count: "24", detail: "City + neighborhood landing pages for Phoenix, Scottsdale, Mesa, Tempe, Chandler, Gilbert, Glendale, Apache Junction" },
-  { category: "Service Pages", count: "7", detail: "Dedicated pages for private property impounds, HOA towing, apartment towing, parking enforcement, commercial towing, vehicle relocation" },
-  { category: "Spanish Pages", count: "5", detail: "Full Spanish translations targeting the 40%+ Hispanic Phoenix market" },
-  { category: "Interactive Tools", count: "4", detail: "ROI calculator, vehicle locator, parking policy template generator, property manager portal" },
-  { category: "Resource Center", count: "4", detail: "Property manager guide, parking policy template, HOA enforcement checklist, FAQ" },
-];
-
-/* ── Page ─────────────────────────────────────────────────────────────── */
 
 export default function ProposalPage() {
+  const containerRef = useScrollReveal();
+
+  // Hide main site chrome on proposal page
+  useEffect(() => {
+    const selectors = ["header", "footer", "[class*='emergency']", "[class*='floating-cta']", "[class*='contact-widget']", "[class*='scroll-to-top']"];
+    const hidden: HTMLElement[] = [];
+    selectors.forEach((sel) => {
+      document.querySelectorAll(sel).forEach((el) => {
+        if (el instanceof HTMLElement) { el.style.display = "none"; hidden.push(el); }
+      });
+    });
+    const main = document.querySelector("main");
+    if (main) main.style.paddingBottom = "0";
+    return () => { hidden.forEach((el) => { el.style.display = ""; }); };
+  }, []);
+
   return (
-    <div className="min-h-screen bg-white">
-      {/* ── Cover ─── */}
-      <section className="relative min-h-[80vh] flex items-center bg-gradient-to-br from-blue-950 via-blue-900 to-blue-800 overflow-hidden">
-        <div className="absolute inset-0 grain-overlay" />
-        <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-blue-500/10 rounded-full blur-3xl -translate-y-1/2 translate-x-1/4" />
-        <div className="relative z-10 max-w-5xl mx-auto px-6 py-24 text-center hero-text">
-          <div className="inline-flex items-center bg-white/10 rounded-full px-4 py-1.5 text-blue-200 text-sm font-medium mb-8 backdrop-blur-sm border border-white/10">
-            Prepared for Axle Towing &amp; Impound &mdash; March 2026
+    <div ref={containerRef} data-proposal className="min-h-screen bg-white text-[#374151]" style={{ fontFamily: "var(--font-sans)" }}>
+      {/* ── Hero ── */}
+      <section className="relative min-h-[90vh] flex items-center justify-center overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-br from-[#0f1f36] via-[#1b2a3f] to-[#1e4a7a]" />
+        <div className="absolute top-20 left-10 w-64 h-64 bg-[#1e6bb8]/20 rounded-full blur-3xl proposal-float-orb" />
+        <div className="absolute bottom-20 right-10 w-80 h-80 bg-[#dc3a30]/10 rounded-full blur-3xl proposal-float-orb-slow" />
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-[#4a9ae0]/10 rounded-full blur-3xl" />
+        <div className="relative z-10 max-w-5xl mx-auto px-6 text-center">
+          <div className="inline-block mb-6 px-4 py-2 rounded-full bg-white/10 backdrop-blur-md border border-white/20">
+            <span className="text-[#4a9ae0] text-sm font-semibold tracking-wider uppercase">Custom SEO Proposal</span>
           </div>
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight font-heading">
-            Digital Growth Proposal
+          <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-white mb-6 leading-tight" style={{ fontFamily: "var(--font-display)" }}>
+            Dominate Phoenix Search<br />
+            <span className="bg-gradient-to-r from-[#4a9ae0] to-[#6db5f0] bg-clip-text text-transparent">Before Competitors Wake Up</span>
           </h1>
-          <p className="text-xl md:text-2xl text-blue-100 max-w-3xl mx-auto leading-relaxed mb-10">
-            Your competitors are years behind. With AI Acrobatics, Axle Towing is already ahead &mdash; 123 pages live, 61 articles published, and zero competitors even close.
+          <p className="text-lg md:text-xl text-white/80 max-w-3xl mx-auto mb-4 leading-relaxed">
+            Your competitors have a combined digital maturity score of <strong className="text-white">2.2 out of 10</strong>.<Src ids={[5]} /> The private property towing market in Phoenix is an open field. This proposal shows how Axle Towing claims it.
           </p>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-3xl mx-auto">
+          <p className="text-sm text-white/50 mb-8">Prepared for Axle Towing &amp; Impound | March 2026 | By AI Acrobatics</p>
+          <div className="flex flex-wrap justify-center gap-4">
+            <a href="#opportunity" className="inline-flex items-center gap-2 bg-[#dc3a30] text-white px-8 py-4 rounded-xl font-bold uppercase tracking-wide text-sm transition-all hover:-translate-y-1 hover:shadow-lg hover:shadow-[#dc3a30]/30" style={{ fontFamily: "var(--font-display)" }}>
+              See the Opportunity
+              <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 14l-7 7m0 0l-7-7m7 7V3" /></svg>
+            </a>
+            <a href="#deliverables" className="inline-flex items-center gap-2 bg-white/10 backdrop-blur border border-white/30 text-white px-8 py-4 rounded-xl font-bold uppercase tracking-wide text-sm transition-all hover:-translate-y-1 hover:bg-white/20" style={{ fontFamily: "var(--font-display)" }}>
+              View Deliverables
+            </a>
+          </div>
+        </div>
+      </section>
+
+      {/* ── Trust Metrics ── */}
+      <section className="py-12 bg-[#f8f9fb] border-b border-[#e2e6ee]">
+        <div className="max-w-6xl mx-auto px-6">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
             {[
-              { value: "123+", label: "Pages Already Live" },
-              { value: "61", label: "Articles Published" },
-              { value: "24", label: "Location Pages" },
-              { value: "0", label: "Competitor Blog Posts" },
-            ].map((stat) => (
-              <div key={stat.label} className="bg-white/10 backdrop-blur-sm rounded-xl p-4 border border-white/10">
-                <div className="text-2xl md:text-3xl font-bold text-white font-heading">{stat.value}</div>
-                <div className="text-blue-200 text-xs mt-1">{stat.label}</div>
+              { value: "88+", label: "Pages Built", sub: "Ready to deploy" },
+              { value: "42", label: "Blog Articles", sub: "Targeting 50+ keywords" },
+              { value: "23", label: "City Pages", sub: "Phoenix metro coverage" },
+              { value: "0", label: "Competitors Doing SEO", sub: "Among PPI specialists" },
+            ].map((m) => (
+              <div key={m.label} className="proposal-reveal">
+                <div className="text-3xl md:text-4xl font-bold text-[#1e6bb8]" style={{ fontFamily: "var(--font-display)" }}>{m.value}</div>
+                <div className="text-sm font-semibold text-[#1b2a3f] mt-1">{m.label}</div>
+                <div className="text-xs text-[#6b7685]">{m.sub}</div>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* ── What's Already Built ─── */}
-      <section className="py-20 bg-white">
-        <div className="max-w-5xl mx-auto px-6">
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-3 font-heading">What&apos;s Already Built</h2>
-          <p className="text-gray-600 text-lg mb-4 max-w-3xl">Your website isn&apos;t a concept &mdash; it&apos;s live right now. 123 pages of content that no competitor in Phoenix has anything close to.</p>
-          <p className="text-gray-600 text-lg mb-10 max-w-3xl">
-            <Link href="https://axel-towing.vercel.app" className="text-blue-600 font-bold hover:underline" target="_blank" rel="noopener noreferrer">Preview the live site &rarr;</Link>
-          </p>
-
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 mb-10">
-            {WHATS_BUILT.map((item) => (
-              <div key={item.category} className="rounded-xl border border-gray-200 p-6">
-                <div className="text-3xl font-bold text-blue-900 font-heading mb-1">{item.count}</div>
-                <h3 className="font-bold text-gray-900 mb-2">{item.category}</h3>
-                <p className="text-gray-600 text-sm">{item.detail}</p>
+      {/* ── The Opportunity ── */}
+      <section id="opportunity" className="py-20 px-6">
+        <div className="max-w-6xl mx-auto">
+          <div className="text-center mb-16 proposal-reveal">
+            <h2 className="text-3xl md:text-4xl font-bold text-[#1b2a3f] mb-4" style={{ fontFamily: "var(--font-display)" }}>
+              5 Revenue Leaks Costing Axle Towing New Accounts
+            </h2>
+            <p className="text-[#4a5568] max-w-2xl mx-auto">Every month, property managers search for towing partners online. Right now, they find your competitors instead.</p>
+          </div>
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {[
+              { num: "01", title: "Invisible in Search", desc: "Axle Towing ranks on page 4+ for every target keyword. Property managers searching \u2018private property towing Phoenix\u2019 never see you.", cite: [10] },
+              { num: "02", title: "Zero Content Authority", desc: "No blog, no educational resources, no guides for property managers. Kwik Tow has zero too -- but whoever publishes first wins.", cite: [11] },
+              { num: "03", title: "No City-Specific Pages", desc: "Searches for \u2018towing Gilbert AZ\u2019 or \u2018HOA towing Scottsdale\u2019 return nothing from Axle. You serve these cities but Google doesn\u2019t know it.", cite: [1] },
+              { num: "04", title: "Missing AI Search Entirely", desc: "40% of local queries now trigger AI Overviews. Zero towing companies in Phoenix are optimized for this. First mover takes it all.", cite: [9] },
+              { num: "05", title: "No Lead Capture System", desc: "No CRM, no follow-up automation, no nurture sequences. Property managers who don\u2019t sign immediately are lost forever.", cite: [2] },
+            ].map((leak, i) => (
+              <div key={leak.num} className={`proposal-reveal proposal-glass rounded-2xl p-6 ${i === 4 ? "md:col-span-2 lg:col-span-1" : ""}`} style={{ transitionDelay: `${i * 0.1}s` }}>
+                <div className="text-xs font-bold text-[#dc3a30] mb-3 tracking-wider">LEAK {leak.num}</div>
+                <h3 className="text-lg font-bold text-[#1b2a3f] mb-2" style={{ fontFamily: "var(--font-display)" }}>{leak.title}</h3>
+                <p className="text-sm text-[#4a5568] leading-relaxed">{leak.desc}<Src ids={leak.cite} /></p>
               </div>
             ))}
-          </div>
-
-          <div className="rounded-2xl bg-blue-50 border border-blue-100 p-6 md:p-8">
-            <h3 className="font-bold text-blue-900 mb-4 font-heading text-lg">Total Site Inventory: 123+ Pages</h3>
-            <div className="grid md:grid-cols-4 gap-6 text-sm">
-              <div>
-                <p className="font-bold text-gray-900 mb-2">Core Pages (12)</p>
-                <p className="text-gray-600">Home, About, Contact, Pricing, FAQ, Gallery, Reviews, Careers, Service Area, Compare, Privacy, Terms</p>
-              </div>
-              <div>
-                <p className="font-bold text-gray-900 mb-2">61 Blog Articles</p>
-                <p className="text-gray-600">Covering every keyword cluster: HOA towing, apartment enforcement, Arizona laws, fire lane compliance, property manager guides</p>
-              </div>
-              <div>
-                <p className="font-bold text-gray-900 mb-2">24 Location Pages</p>
-                <p className="text-gray-600">8 cities + 15 neighborhoods including Downtown Phoenix, Scottsdale, ASU Area, Desert Ridge, Old Town, and more</p>
-              </div>
-              <div>
-                <p className="font-bold text-gray-900 mb-2">Interactive Tools</p>
-                <p className="text-gray-600">ROI Calculator, Vehicle Locator, Parking Policy Template, Property Manager Portal, Get Quote form</p>
-              </div>
-            </div>
           </div>
         </div>
       </section>
 
-      {/* ── The Opportunity (reframed) ─── */}
-      <section className="py-20 bg-gray-50">
-        <div className="max-w-5xl mx-auto px-6">
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-3 font-heading">Your Competitors Are Years Behind</h2>
-          <p className="text-gray-600 text-lg mb-4 max-w-3xl">Every private property towing company in Phoenix is digitally stuck in 2005. No blogs, no SEO, no content strategy. The average digital maturity score is <strong>2.2 out of 10</strong>.</p>
-          <p className="text-gray-700 text-lg mb-10 max-w-3xl font-medium">By partnering with AI Acrobatics, Axle Towing is already <strong>far ahead of every competitor</strong> &mdash; before we even start the SEO campaign.</p>
-
-          {/* Competitor table */}
-          <div className="bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden mb-10">
-            <div className="overflow-x-auto">
-              <table className="w-full text-sm">
-                <thead>
-                  <tr className="bg-gray-50 border-b border-gray-100">
-                    <th className="text-left p-4 font-bold text-gray-900">Company</th>
-                    <th className="text-center p-4 font-bold text-gray-900">Total Pages</th>
-                    <th className="text-center p-4 font-bold text-gray-900">Blog Posts</th>
-                    <th className="text-center p-4 font-bold text-gray-900">City Pages</th>
-                    <th className="text-center p-4 font-bold text-gray-900">Digital Score</th>
+      {/* ── Competitive Gap ── */}
+      <section className="py-20 px-6 bg-[#0f1f36] text-white">
+        <div className="max-w-6xl mx-auto">
+          <div className="text-center mb-12 proposal-reveal">
+            <h2 className="text-3xl md:text-4xl font-bold mb-4" style={{ fontFamily: "var(--font-display)" }}>
+              Competitive Digital Scorecard
+            </h2>
+            <p className="text-white/70 max-w-2xl mx-auto">Your competitors built empires on handshakes. None of them have invested in digital. This is your window.<Src ids={[2, 5]} /></p>
+          </div>
+          <div className="proposal-reveal overflow-x-auto">
+            <table className="w-full text-sm">
+              <thead>
+                <tr className="border-b border-white/20">
+                  <th className="text-left py-3 px-4 text-white/60 font-medium">Company</th>
+                  <th className="text-center py-3 px-2 text-white/60 font-medium">Website</th>
+                  <th className="text-center py-3 px-2 text-white/60 font-medium">SEO</th>
+                  <th className="text-center py-3 px-2 text-white/60 font-medium">Content</th>
+                  <th className="text-center py-3 px-2 text-white/60 font-medium">Reviews</th>
+                  <th className="text-center py-3 px-2 text-white/60 font-medium">Overall</th>
+                </tr>
+              </thead>
+              <tbody>
+                {[
+                  { name: "Freeway Towing", note: "(general, not PPI)", website: 9, seo: 8, content: 6, reviews: 9, overall: "7.4" },
+                  { name: "All City Towing", note: "(police focus)", website: 7, seo: 6, content: 3, reviews: 3, overall: "4.8" },
+                  { name: "Zip Tow", note: "", website: 7, seo: 5, content: 4, reviews: 3, overall: "4.4" },
+                  { name: "Kwik Tow", note: "(main rival)", website: 5, seo: 3, content: 1, reviews: 2, overall: "2.8" },
+                  { name: "Arizona Impound", note: "", website: 3, seo: 2, content: 1, reviews: 4, overall: "2.2" },
+                  { name: "Axle Towing", note: "(current)", website: 3, seo: 1, content: 1, reviews: 3, overall: "1.8" },
+                  { name: "Axle Towing", note: "(with AI Acrobatics)", website: 9, seo: 9, content: 9, reviews: 5, overall: "8.2", highlight: true },
+                ].map((row) => (
+                  <tr key={row.name + row.note} className={`border-b border-white/10 ${row.highlight ? "bg-[#1e6bb8]/20" : ""}`}>
+                    <td className="py-3 px-4">
+                      <span className={`font-semibold ${row.highlight ? "text-[#4a9ae0]" : "text-white"}`}>{row.name}</span>
+                      {row.note && <span className="text-white/40 text-xs ml-1">{row.note}</span>}
+                    </td>
+                    {[row.website, row.seo, row.content, row.reviews].map((score, i) => (
+                      <td key={i} className="text-center py-3 px-2">
+                        <span className={`inline-block w-8 h-8 rounded-lg text-xs font-bold leading-8 ${
+                          score >= 8 ? "bg-green-500/20 text-green-400" :
+                          score >= 5 ? "bg-yellow-500/20 text-yellow-400" :
+                          score >= 3 ? "bg-orange-500/20 text-orange-400" :
+                          "bg-red-500/20 text-red-400"
+                        }`}>{score}</span>
+                      </td>
+                    ))}
+                    <td className="text-center py-3 px-2">
+                      <span className={`font-bold text-lg ${row.highlight ? "text-[#4a9ae0]" : "text-white"}`}>{row.overall}</span>
+                    </td>
                   </tr>
-                </thead>
-                <tbody>
-                  {COMPETITORS.map((c) => (
-                    <tr key={c.name} className="border-b border-gray-50">
-                      <td className="p-4 text-gray-700">{c.name}</td>
-                      <td className="p-4 text-center text-gray-600">{c.pages}</td>
-                      <td className="p-4 text-center text-red-500 font-bold">{c.blog}</td>
-                      <td className="p-4 text-center text-gray-600">{c.cityPages}</td>
-                      <td className="p-4 text-center text-gray-600">{c.maturity}/10</td>
-                    </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+          <p className="text-xs text-white/40 mt-4 text-center">Scores out of 10. Based on website audits of 7 Phoenix-area towing companies, March 2026.<Src ids={[2]} /></p>
+        </div>
+      </section>
+
+      {/* ── Search Intent & Buying Intent Map ── */}
+      <section className="py-20 px-6">
+        <div className="max-w-6xl mx-auto">
+          <div className="text-center mb-12 proposal-reveal">
+            <h2 className="text-3xl md:text-4xl font-bold text-[#1b2a3f] mb-4" style={{ fontFamily: "var(--font-display)" }}>
+              Search Intent &amp; Buying Intent Map
+            </h2>
+            <p className="text-[#4a5568] max-w-2xl mx-auto">Property managers go through 4 stages before choosing a towing partner. We capture them at every stage.<Src ids={[1]} /></p>
+          </div>
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-5">
+            {[
+              {
+                stage: "Awareness", color: "#4a9ae0", icon: "\u{1F50D}",
+                searches: ["Arizona towing laws", "HOA parking rules", "can apartment tow my car"],
+                volume: "500-1,000/mo", content: "Legal guides, FAQ articles, rights explainers", conversion: "Brand awareness + backlinks",
+              },
+              {
+                stage: "Research", color: "#1e6bb8", icon: "\u{1F4DA}",
+                searches: ["how to set up parking enforcement", "towing signage requirements AZ", "parking enforcement best practices"],
+                volume: "200-400/mo", content: "Property manager guides, checklists, compliance resources", conversion: "Email capture + authority",
+              },
+              {
+                stage: "Comparison", color: "#145a9c", icon: "\u2696\uFE0F",
+                searches: ["towing company for HOA", "parking enforcement company Phoenix", "how to choose towing partner"],
+                volume: "100-250/mo", content: "Comparison guides, evaluation checklists, case studies", conversion: "Lead generation",
+              },
+              {
+                stage: "Decision", color: "#dc3a30", icon: "\u{1F4B0}",
+                searches: ["private property towing Phoenix", "HOA towing Scottsdale", "apartment towing near me"],
+                volume: "300-600/mo", content: "Service pages, city pages, contact forms", conversion: "Direct leads + calls",
+              },
+            ].map((s, i) => (
+              <div key={s.stage} className="proposal-reveal rounded-2xl border border-[#e2e6ee] overflow-hidden" style={{ transitionDelay: `${i * 0.1}s` }}>
+                <div className="p-1" style={{ background: s.color }}>
+                  <div className="text-center text-white text-xs font-bold uppercase tracking-wider py-1">{s.stage}</div>
+                </div>
+                <div className="p-5 bg-white">
+                  <div className="text-2xl mb-3">{s.icon}</div>
+                  <div className="space-y-1.5 mb-4">
+                    {s.searches.map((q) => (
+                      <div key={q} className="text-xs bg-[#f8f9fb] rounded-lg px-3 py-1.5 text-[#4a5568] italic">&ldquo;{q}&rdquo;</div>
+                    ))}
+                  </div>
+                  <div className="text-xs text-[#6b7685] mb-1"><strong className="text-[#1b2a3f]">Volume:</strong> {s.volume}</div>
+                  <div className="text-xs text-[#6b7685] mb-1"><strong className="text-[#1b2a3f]">Content:</strong> {s.content}</div>
+                  <div className="text-xs text-[#6b7685]"><strong className="text-[#1b2a3f]">Goal:</strong> {s.conversion}</div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ── Article Examples ── */}
+      <section className="py-20 px-6 bg-[#f8f9fb]">
+        <div className="max-w-6xl mx-auto">
+          <div className="text-center mb-12 proposal-reveal">
+            <h2 className="text-3xl md:text-4xl font-bold text-[#1b2a3f] mb-4" style={{ fontFamily: "var(--font-display)" }}>
+              Sample Articles We Will Publish
+            </h2>
+            <p className="text-[#4a5568] max-w-2xl mx-auto">Each article targets specific keywords your competitors are ignoring. Here are 6 examples from the 42 already written.<Src ids={[1, 11]} /></p>
+          </div>
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {articleExamples.map((a, i) => (
+              <div key={a.title} className="proposal-reveal bg-white rounded-2xl border border-[#e2e6ee] p-6 hover:shadow-md hover:-translate-y-1 transition-all" style={{ transitionDelay: `${i * 0.08}s` }}>
+                <div className="text-xs font-bold text-[#dc3a30] uppercase tracking-wider mb-2">{a.intent}</div>
+                <h3 className="font-bold text-[#1b2a3f] text-base mb-3 leading-snug" style={{ fontFamily: "var(--font-display)" }}>{a.title}</h3>
+                <p className="text-sm text-[#4a5568] mb-4 leading-relaxed">{a.description}</p>
+                <div className="space-y-1.5 mb-3">
+                  {a.keywords.map((k) => (
+                    <span key={k} className="inline-block text-xs bg-[#1e6bb8]/8 text-[#1e6bb8] rounded-full px-2.5 py-0.5 mr-1.5 mb-1">{k}</span>
                   ))}
-                  <tr className="bg-blue-50 font-bold">
-                    <td className="p-4 text-blue-900">Axle Towing (Today)</td>
-                    <td className="p-4 text-center text-blue-900">123</td>
-                    <td className="p-4 text-center text-green-600">61</td>
-                    <td className="p-4 text-center text-blue-900">24</td>
-                    <td className="p-4 text-center text-green-600">9.2/10</td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
-          </div>
-
-          <div className="grid md:grid-cols-2 gap-6">
-            <div className="bg-white rounded-2xl p-6 border border-gray-100">
-              <h3 className="font-bold text-gray-900 mb-4 font-heading">Why Every Competitor Is Behind</h3>
-              <ul className="space-y-2 text-sm text-gray-600">
-                {[
-                  "Zero blogs — not a single competitor publishes content",
-                  "No property manager-focused landing pages",
-                  "No educational resources on Arizona towing laws",
-                  "No CRM or automated follow-up systems",
-                  "No AI search optimization (ChatGPT, Google AI)",
-                  "No case studies or measurable results",
-                  "No Spanish language content (40%+ Hispanic market)",
-                  "No interactive tools (ROI calculators, vehicle locators)",
-                ].map((item) => (
-                  <li key={item} className="flex items-start gap-2">
-                    <span className="text-red-500 mt-0.5 shrink-0">&#10007;</span>
-                    {item}
-                  </li>
-                ))}
-              </ul>
-            </div>
-            <div className="bg-white rounded-2xl p-6 border border-gray-100">
-              <h3 className="font-bold text-gray-900 mb-4 font-heading">Where Axle Towing Is Already</h3>
-              <ul className="space-y-2 text-sm text-gray-600">
-                {[
-                  "15x-25x more content than any competitor",
-                  "61 blog articles (competitors combined: 0)",
-                  "24 location pages covering 8 cities + 15 neighborhoods",
-                  "Full Schema.org markup for Google rich results",
-                  "AI search optimization for ChatGPT & Perplexity",
-                  "Spanish pages for 40%+ Hispanic Phoenix market",
-                  "CRM with automated lead nurture (worth $5,500)",
-                  "Property manager portal, ROI tools & vehicle locator",
-                ].map((item) => (
-                  <li key={item} className="flex items-start gap-2">
-                    <span className="text-green-600 mt-0.5 shrink-0">&#10003;</span>
-                    {item}
-                  </li>
-                ))}
-              </ul>
-            </div>
+                </div>
+                <div className="text-xs text-[#6b7685] font-medium">{a.volume} estimated search volume</div>
+              </div>
+            ))}
           </div>
         </div>
       </section>
 
-      {/* ── Investment Breakdown ─── */}
-      <section className="py-20 bg-white">
-        <div className="max-w-5xl mx-auto px-6">
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-3 font-heading">The Investment</h2>
-          <p className="text-gray-600 text-lg mb-10 max-w-2xl">Transparent pricing. No hidden fees. One new property account pays for months of digital growth.</p>
-
-          <div className="grid md:grid-cols-3 gap-6 mb-8">
-            <div className="rounded-2xl border-2 border-blue-600 p-8 relative">
-              <div className="absolute -top-3 left-6 bg-blue-600 text-white text-xs font-bold px-3 py-1 rounded-full">ONE-TIME</div>
-              <div className="text-4xl font-bold text-gray-900 font-heading mb-2">$7,500</div>
-              <h3 className="text-lg font-bold text-gray-900 mb-4">Website Build</h3>
-              <ul className="space-y-2 text-sm text-gray-600">
-                <li className="flex items-start gap-2"><span className="text-blue-600 mt-0.5">&#10003;</span> 123+ live pages deployed today</li>
-                <li className="flex items-start gap-2"><span className="text-blue-600 mt-0.5">&#10003;</span> 15 custom professional photos</li>
-                <li className="flex items-start gap-2"><span className="text-blue-600 mt-0.5">&#10003;</span> 24 location/neighborhood landing pages</li>
-                <li className="flex items-start gap-2"><span className="text-blue-600 mt-0.5">&#10003;</span> 61 blog articles written</li>
-                <li className="flex items-start gap-2"><span className="text-blue-600 mt-0.5">&#10003;</span> Schema.org markup on every page</li>
-                <li className="flex items-start gap-2"><span className="text-blue-600 mt-0.5">&#10003;</span> Spanish language pages (40%+ Hispanic market)</li>
-                <li className="flex items-start gap-2"><span className="text-blue-600 mt-0.5">&#10003;</span> Netflix/Uber-grade tech stack</li>
+      {/* ── Google Ads Strategy ── */}
+      <section className="py-20 px-6">
+        <div className="max-w-6xl mx-auto">
+          <div className="text-center mb-12 proposal-reveal">
+            <h2 className="text-3xl md:text-4xl font-bold text-[#1b2a3f] mb-4" style={{ fontFamily: "var(--font-display)" }}>
+              Google Ads Strategy
+            </h2>
+            <p className="text-[#4a5568] max-w-2xl mx-auto">SEO builds long-term traffic. Google Ads captures immediate demand while rankings grow.</p>
+          </div>
+          <div className="grid md:grid-cols-2 gap-8 mb-12">
+            <div className="proposal-reveal rounded-2xl border-2 border-[#dc3a30]/20 bg-[#fde8e6]/30 p-6">
+              <div className="text-xs font-bold text-[#dc3a30] uppercase tracking-wider mb-3">Current State</div>
+              <ul className="space-y-3 text-sm text-[#4a5568]">
+                <li className="flex gap-2"><span className="text-[#dc3a30] shrink-0">&times;</span> No Google Ads presence</li>
+                <li className="flex gap-2"><span className="text-[#dc3a30] shrink-0">&times;</span> Page 4+ organic rankings</li>
+                <li className="flex gap-2"><span className="text-[#dc3a30] shrink-0">&times;</span> Zero branded search volume</li>
+                <li className="flex gap-2"><span className="text-[#dc3a30] shrink-0">&times;</span> No landing pages for paid traffic</li>
+                <li className="flex gap-2"><span className="text-[#dc3a30] shrink-0">&times;</span> Competitors not running ads either</li>
               </ul>
             </div>
-            <div className="rounded-2xl border-2 border-blue-600 p-8 relative">
-              <div className="absolute -top-3 left-6 bg-blue-600 text-white text-xs font-bold px-3 py-1 rounded-full">MONTHLY</div>
-              <div className="text-4xl font-bold text-gray-900 font-heading mb-2">$3,000<span className="text-lg text-gray-500">/mo</span></div>
-              <h3 className="text-lg font-bold text-gray-900 mb-4">SEO &amp; Content (Growth)</h3>
-              <ul className="space-y-2 text-sm text-gray-600">
-                <li className="flex items-start gap-2"><span className="text-blue-600 mt-0.5">&#10003;</span> <strong>30 optimized articles per month</strong></li>
-                <li className="flex items-start gap-2"><span className="text-blue-600 mt-0.5">&#10003;</span> 150+ keyword tracking</li>
-                <li className="flex items-start gap-2"><span className="text-blue-600 mt-0.5">&#10003;</span> Google Business Profile management</li>
-                <li className="flex items-start gap-2"><span className="text-blue-600 mt-0.5">&#10003;</span> 50+ local citation submissions</li>
-                <li className="flex items-start gap-2"><span className="text-blue-600 mt-0.5">&#10003;</span> Link building outreach</li>
-                <li className="flex items-start gap-2"><span className="text-blue-600 mt-0.5">&#10003;</span> Monthly performance reports</li>
-                <li className="flex items-start gap-2"><span className="text-blue-600 mt-0.5">&#10003;</span> Competitor gap analysis</li>
-              </ul>
-              <div className="mt-4 pt-4 border-t border-gray-100">
-                <p className="text-xs text-gray-500">Also available: <strong>$1,500/mo</strong> for 10 articles/month (Starter plan)</p>
-              </div>
-            </div>
-            <div className="rounded-2xl border-2 border-green-600 p-8 relative bg-green-50/50">
-              <div className="absolute -top-3 left-6 bg-green-600 text-white text-xs font-bold px-3 py-1 rounded-full">INCLUDED</div>
-              <div className="text-4xl font-bold text-gray-900 font-heading mb-2">$0</div>
-              <h3 className="text-lg font-bold text-gray-900 mb-4">CRM System</h3>
-              <ul className="space-y-2 text-sm text-gray-600">
-                <li className="flex items-start gap-2"><span className="text-green-600 mt-0.5">&#10003;</span> GoHighLevel platform (<strong>worth $5,500 separately</strong>)</li>
-                <li className="flex items-start gap-2"><span className="text-green-600 mt-0.5">&#10003;</span> 7-stage lead pipeline</li>
-                <li className="flex items-start gap-2"><span className="text-green-600 mt-0.5">&#10003;</span> Automated follow-up sequences</li>
-                <li className="flex items-start gap-2"><span className="text-green-600 mt-0.5">&#10003;</span> Lead scoring system</li>
-                <li className="flex items-start gap-2"><span className="text-green-600 mt-0.5">&#10003;</span> Contract management</li>
-                <li className="flex items-start gap-2"><span className="text-green-600 mt-0.5">&#10003;</span> Review/reputation management</li>
-                <li className="flex items-start gap-2"><span className="text-green-600 mt-0.5">&#10003;</span> Full training included</li>
+            <div className="proposal-reveal rounded-2xl border-2 border-[#1e6bb8]/20 bg-[#deeefb]/30 p-6">
+              <div className="text-xs font-bold text-[#1e6bb8] uppercase tracking-wider mb-3">Target State (6 Months)</div>
+              <ul className="space-y-3 text-sm text-[#4a5568]">
+                <li className="flex gap-2"><span className="text-[#1e6bb8] shrink-0">&#10003;</span> Top 3 for core PPI keywords</li>
+                <li className="flex gap-2"><span className="text-[#1e6bb8] shrink-0">&#10003;</span> City pages ranking for 8 metros</li>
+                <li className="flex gap-2"><span className="text-[#1e6bb8] shrink-0">&#10003;</span> 10-20 AI Overview citations</li>
+                <li className="flex gap-2"><span className="text-[#1e6bb8] shrink-0">&#10003;</span> Google Ads capturing high-intent searches</li>
+                <li className="flex gap-2"><span className="text-[#1e6bb8] shrink-0">&#10003;</span> 25-50% increase in inbound inquiries</li>
               </ul>
             </div>
           </div>
-
-          {/* Tier comparison */}
-          <div className="rounded-2xl border border-gray-200 p-6 mb-12 bg-gray-50">
-            <h3 className="font-bold text-gray-900 mb-4 font-heading">Plan Comparison</h3>
-            <div className="overflow-x-auto">
-              <table className="w-full text-sm">
-                <thead>
-                  <tr className="border-b border-gray-200">
-                    <th className="text-left p-3 font-bold text-gray-900"></th>
-                    <th className="text-center p-3 font-bold text-gray-900">Starter ($1,500/mo)</th>
-                    <th className="text-center p-3 font-bold text-blue-900 bg-blue-50 rounded-t-lg">Growth ($3,000/mo)</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr className="border-b border-gray-100">
-                    <td className="p-3 text-gray-700">Articles per month</td>
-                    <td className="p-3 text-center text-gray-600">10</td>
-                    <td className="p-3 text-center font-bold text-blue-900 bg-blue-50">30</td>
-                  </tr>
-                  <tr className="border-b border-gray-100">
-                    <td className="p-3 text-gray-700">Year 1 total investment</td>
-                    <td className="p-3 text-center text-gray-600">$25,500</td>
-                    <td className="p-3 text-center font-bold text-blue-900 bg-blue-50">$43,500</td>
-                  </tr>
-                  <tr className="border-b border-gray-100">
-                    <td className="p-3 text-gray-700">Articles published (Year 1)</td>
-                    <td className="p-3 text-center text-gray-600">120+</td>
-                    <td className="p-3 text-center font-bold text-blue-900 bg-blue-50">360+</td>
-                  </tr>
-                  <tr className="border-b border-gray-100">
-                    <td className="p-3 text-gray-700">Time to page 1 (low-difficulty keywords)</td>
-                    <td className="p-3 text-center text-gray-600">3-6 months</td>
-                    <td className="p-3 text-center font-bold text-blue-900 bg-blue-50">1-3 months</td>
-                  </tr>
-                  <tr className="border-b border-gray-100">
-                    <td className="p-3 text-gray-700">Keyword tracking</td>
-                    <td className="p-3 text-center text-green-600">&#10003;</td>
-                    <td className="p-3 text-center text-green-600 bg-blue-50">&#10003;</td>
-                  </tr>
-                  <tr className="border-b border-gray-100">
-                    <td className="p-3 text-gray-700">Google Business Profile management</td>
-                    <td className="p-3 text-center text-green-600">&#10003;</td>
-                    <td className="p-3 text-center text-green-600 bg-blue-50">&#10003;</td>
-                  </tr>
-                  <tr>
-                    <td className="p-3 text-gray-700">Performance guarantee</td>
-                    <td className="p-3 text-center text-green-600">&#10003;</td>
-                    <td className="p-3 text-center text-green-600 bg-blue-50">&#10003;</td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
-          </div>
-
-          {/* ROI */}
-          <div className="rounded-2xl bg-gradient-to-br from-blue-950 to-blue-900 p-8 md:p-10 text-white">
-            <h3 className="text-2xl font-bold mb-6 font-heading text-white">Return on Investment</h3>
-            <div className="grid md:grid-cols-2 gap-8">
-              <div>
-                <p className="text-blue-100 mb-4">Conservative projections based on average private property towing account values:</p>
-                <ul className="space-y-3 text-sm">
-                  <li className="flex justify-between border-b border-white/10 pb-2"><span className="text-blue-200">New accounts from SEO (Year 1)</span><span className="font-bold">5-10</span></li>
-                  <li className="flex justify-between border-b border-white/10 pb-2"><span className="text-blue-200">Average annual value per account</span><span className="font-bold">$18,000-$36,000</span></li>
-                  <li className="flex justify-between border-b border-white/10 pb-2"><span className="text-blue-200">Additional annual revenue</span><span className="font-bold text-green-400">$90,000-$360,000</span></li>
-                  <li className="flex justify-between"><span className="text-blue-200">ROI on Growth plan ($43,500)</span><span className="font-bold text-green-400">207%-828%</span></li>
+          <div className="grid md:grid-cols-3 gap-6">
+            {[
+              { phase: "Phase 1: Foundation", period: "Month 1-2", items: ["Launch branded search campaigns", "Target high-intent PPI keywords", "Build dedicated landing pages with clear CTAs", "Set up conversion tracking (calls, forms)"] },
+              { phase: "Phase 2: Expansion", period: "Month 3-4", items: ["Add city-specific campaigns (Scottsdale, Mesa, Gilbert)", "Launch service-specific ad groups (HOA, apartment, commercial)", "A/B test ad copy and landing pages", "Implement retargeting for site visitors"] },
+              { phase: "Phase 3: Optimization", period: "Month 5-6", items: ["Shift budget toward highest-converting keywords", "Reduce CPA through Quality Score improvements", "As organic grows, reduce paid on ranking keywords", "Scale budget toward new opportunities"] },
+            ].map((p, i) => (
+              <div key={p.phase} className="proposal-reveal rounded-2xl border border-[#e2e6ee] p-6" style={{ transitionDelay: `${i * 0.1}s` }}>
+                <div className="text-xs font-bold text-[#1e6bb8] uppercase tracking-wider mb-1">{p.phase}</div>
+                <div className="text-xs text-[#6b7685] mb-4">{p.period}</div>
+                <ul className="space-y-2.5">
+                  {p.items.map((item) => (
+                    <li key={item} className="flex items-start gap-2 text-sm text-[#4a5568]">
+                      <span className="text-[#1e6bb8] mt-0.5 shrink-0 text-xs">&#9654;</span>{item}
+                    </li>
+                  ))}
                 </ul>
               </div>
-              <div className="bg-white/10 rounded-xl p-6 flex flex-col justify-center">
-                <p className="text-blue-100 text-sm mb-3">Break-even point:</p>
-                <div className="text-5xl font-bold font-heading mb-2 text-white">1-2</div>
-                <p className="text-blue-200 text-sm">new property accounts. That&apos;s it. Everything after that is pure profit.</p>
-              </div>
-            </div>
+            ))}
           </div>
         </div>
       </section>
 
-      {/* ── Keyword Analysis ─── */}
-      <section className="py-20 bg-gray-50">
-        <div className="max-w-5xl mx-auto px-6">
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-3 font-heading">Keyword &amp; Ranking Analysis</h2>
-          <p className="text-gray-600 text-lg mb-4 max-w-3xl">Every keyword cluster below represents real people in Phoenix searching for the exact services Axle Towing provides. We&apos;ve categorized them by <strong>buying intent</strong> (ready to hire) and <strong>research intent</strong> (learning, will hire soon).</p>
-          <p className="text-gray-600 text-lg mb-10 max-w-3xl">Total estimated monthly search volume across all target keywords: <strong className="text-blue-900">~5,955 searches/month</strong> in the Phoenix metro alone.</p>
+      {/* ── Keyword Gap Table ── */}
+      <section className="py-20 px-6 bg-[#0f1f36] text-white">
+        <div className="max-w-6xl mx-auto">
+          <div className="text-center mb-12 proposal-reveal">
+            <h2 className="text-3xl md:text-4xl font-bold mb-4" style={{ fontFamily: "var(--font-display)" }}>Keyword Opportunity Map</h2>
+            <p className="text-white/70 max-w-2xl mx-auto">20 high-value keywords we will target. Most have low to zero competition among PPI specialists.<Src ids={[1]} /></p>
+          </div>
+          <div className="proposal-reveal overflow-x-auto">
+            <table className="w-full text-xs md:text-sm">
+              <thead>
+                <tr className="border-b border-white/20">
+                  <th className="text-left py-2 px-3 text-white/60">Keyword</th>
+                  <th className="text-center py-2 px-2 text-white/60">Volume/mo</th>
+                  <th className="text-center py-2 px-2 text-white/60">Difficulty</th>
+                  <th className="text-center py-2 px-2 text-white/60 hidden md:table-cell">Intent</th>
+                  <th className="text-center py-2 px-2 text-white/60 hidden lg:table-cell">CPC</th>
+                  <th className="text-left py-2 px-3 text-white/60 hidden md:table-cell">Opportunity</th>
+                </tr>
+              </thead>
+              <tbody>
+                {keywordData.map((kw) => (
+                  <tr key={kw.keyword} className="border-b border-white/5 hover:bg-white/5 transition-colors">
+                    <td className="py-2 px-3 font-medium text-white">{kw.keyword}</td>
+                    <td className="text-center py-2 px-2 text-[#4a9ae0]">{kw.volume}</td>
+                    <td className="text-center py-2 px-2">
+                      <span className={`px-2 py-0.5 rounded-full text-xs font-medium ${
+                        kw.difficulty === "Very Low" ? "bg-green-500/20 text-green-400" :
+                        kw.difficulty === "Low" ? "bg-green-500/15 text-green-300" :
+                        kw.difficulty === "Low-Med" ? "bg-yellow-500/15 text-yellow-300" :
+                        "bg-orange-500/15 text-orange-300"
+                      }`}>{kw.difficulty}</span>
+                    </td>
+                    <td className="text-center py-2 px-2 text-white/70 hidden md:table-cell">{kw.intent}</td>
+                    <td className="text-center py-2 px-2 text-white/50 hidden lg:table-cell">{kw.cpc}</td>
+                    <td className="py-2 px-3 text-white/60 hidden md:table-cell">{kw.opportunity}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+          <p className="text-xs text-white/30 mt-4 text-center">Phoenix metro estimates. Volumes from SEMrush, Ahrefs, and industry benchmarks.<Src ids={[1]} /></p>
+        </div>
+      </section>
 
-          <div className="space-y-8">
-            {KEYWORD_CLUSTERS.map((cluster) => (
-              <div key={cluster.cluster} className="rounded-2xl border border-gray-200 overflow-hidden bg-white">
-                {/* Cluster header */}
-                <div className="bg-gray-50 p-6 border-b border-gray-200">
-                  <div className="flex flex-wrap items-center gap-3 mb-3">
-                    <h3 className="text-xl font-bold text-gray-900 font-heading">{cluster.cluster}</h3>
-                    <span className={`text-xs font-bold px-2.5 py-1 rounded-full ${cluster.priority === "Highest" ? "bg-red-100 text-red-700" : cluster.priority === "High" ? "bg-orange-100 text-orange-700" : "bg-blue-100 text-blue-700"}`}>
-                      {cluster.priority} Priority
-                    </span>
-                  </div>
-                  <div className="grid grid-cols-2 md:grid-cols-5 gap-4 text-sm">
-                    <div><span className="text-gray-500 block text-xs">Difficulty</span><span className="font-bold text-gray-900">{cluster.difficulty}</span></div>
-                    <div><span className="text-gray-500 block text-xs">Time to Rank</span><span className="font-bold text-green-700">{cluster.timeToRank}</span></div>
-                    <div><span className="text-gray-500 block text-xs">Monthly Searches</span><span className="font-bold text-gray-900">{cluster.monthlySearches}</span></div>
-                    <div><span className="text-gray-500 block text-xs">Revenue Impact</span><span className="font-bold text-gray-900">{cluster.revenueImpact}</span></div>
-                    <div className="col-span-2 md:col-span-1"><span className="text-gray-500 block text-xs">Competition</span><span className="font-bold text-green-700 text-xs">{cluster.competition}</span></div>
-                  </div>
+      {/* ── Sample Site Preview ── */}
+      <section className="py-20 px-6">
+        <div className="max-w-6xl mx-auto">
+          <div className="text-center mb-12 proposal-reveal">
+            <h2 className="text-3xl md:text-4xl font-bold text-[#1b2a3f] mb-4" style={{ fontFamily: "var(--font-display)" }}>Your New Website Is Already Built</h2>
+            <p className="text-[#4a5568] max-w-2xl mx-auto">88 pages. 42 blog articles. 23 city/neighborhood pages. Mobile-first. Schema markup on every page. Ready for DNS transfer.</p>
+          </div>
+          <div className="proposal-reveal rounded-2xl overflow-hidden border-2 border-[#e2e6ee] shadow-xl">
+            <div className="bg-[#1b2a3f] px-4 py-3 flex items-center gap-2">
+              <div className="flex gap-1.5">
+                <div className="w-3 h-3 rounded-full bg-[#dc3a30]" />
+                <div className="w-3 h-3 rounded-full bg-yellow-400" />
+                <div className="w-3 h-3 rounded-full bg-green-400" />
+              </div>
+              <div className="flex-1 text-center">
+                <span className="text-xs text-white/50 bg-white/10 rounded-full px-4 py-1">axel-towing.vercel.app</span>
+              </div>
+            </div>
+            <div className="relative bg-white" style={{ height: "600px" }}>
+              <iframe src="https://axel-towing.vercel.app" className="w-full h-full border-0" title="Axle Towing Website Preview" loading="lazy" />
+            </div>
+          </div>
+          <div className="text-center mt-6">
+            <a href="https://axel-towing.vercel.app" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 text-[#1e6bb8] font-semibold text-sm hover:underline">
+              Open full site in new tab
+              <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" /></svg>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      {/* ── ROI Projections ── */}
+      <section className="py-20 px-6 bg-[#f8f9fb]">
+        <div className="max-w-6xl mx-auto">
+          <div className="text-center mb-12 proposal-reveal">
+            <h2 className="text-3xl md:text-4xl font-bold text-[#1b2a3f] mb-4" style={{ fontFamily: "var(--font-display)" }}>Conservative Revenue Projections</h2>
+            <p className="text-[#4a5568] max-w-2xl mx-auto">Based on keyword volumes, industry conversion rates, and the competitive vacuum in this market.</p>
+          </div>
+          <div className="grid md:grid-cols-3 gap-6">
+            {[
+              { period: "Month 3-6", leads: "5-10 new inquiries/mo", accounts: "2-4 new accounts/mo", revenue: "+$3,000-6,000/mo", note: "Early rankings + Google Ads kick in. City pages and service pages start ranking." },
+              { period: "Month 6-9", leads: "15-25 new inquiries/mo", accounts: "5-8 new accounts/mo", revenue: "+$8,000-15,000/mo", note: "Content authority builds. Blog articles rank for informational queries. Map Pack visibility improves." },
+              { period: "Month 9-12", leads: "25-40 new inquiries/mo", accounts: "8-15 new accounts/mo", revenue: "+$15,000-30,000/mo", note: "Top 3 for core keywords. AI Overview citations. Brand recognition grows. Compounding effect." },
+            ].map((p, i) => (
+              <div key={p.period} className="proposal-reveal bg-white rounded-2xl border border-[#e2e6ee] p-6" style={{ transitionDelay: `${i * 0.1}s` }}>
+                <div className="text-xs font-bold text-[#1e6bb8] uppercase tracking-wider mb-4">{p.period}</div>
+                <div className="space-y-3 mb-4">
+                  <div><div className="text-xs text-[#6b7685]">New Inquiries</div><div className="text-lg font-bold text-[#1b2a3f]" style={{ fontFamily: "var(--font-display)" }}>{p.leads}</div></div>
+                  <div><div className="text-xs text-[#6b7685]">New Accounts Won</div><div className="text-lg font-bold text-[#1b2a3f]" style={{ fontFamily: "var(--font-display)" }}>{p.accounts}</div></div>
+                  <div><div className="text-xs text-[#6b7685]">Revenue Impact</div><div className="text-lg font-bold text-[#1e6bb8]" style={{ fontFamily: "var(--font-display)" }}>{p.revenue}</div></div>
                 </div>
-                {/* Keywords */}
-                <div className="p-6">
-                  <div className="grid md:grid-cols-2 gap-6">
-                    {cluster.buyingIntent.length > 0 && (
-                      <div>
-                        <h4 className="text-sm font-bold text-red-700 mb-3 uppercase tracking-wider flex items-center gap-2">
-                          <span className="w-2 h-2 bg-red-500 rounded-full" />
-                          Buying Intent (Ready to Hire)
-                        </h4>
-                        <div className="space-y-2">
-                          {cluster.buyingIntent.map((kw) => (
-                            <div key={kw.keyword} className="flex items-center justify-between bg-red-50/50 rounded-lg px-3 py-2 text-sm">
-                              <span className="text-gray-800 font-medium">&ldquo;{kw.keyword}&rdquo;</span>
-                              <div className="flex items-center gap-3 shrink-0">
-                                <span className="text-gray-500 text-xs">{kw.vol}</span>
-                                <span className="text-xs font-bold text-green-700 bg-green-50 px-2 py-0.5 rounded">{kw.diff}</span>
-                              </div>
-                            </div>
-                          ))}
-                        </div>
-                      </div>
-                    )}
-                    <div>
-                      <h4 className="text-sm font-bold text-blue-700 mb-3 uppercase tracking-wider flex items-center gap-2">
-                        <span className="w-2 h-2 bg-blue-500 rounded-full" />
-                        Research Intent (Learning Now, Hiring Soon)
-                      </h4>
-                      <div className="space-y-2">
-                        {cluster.researchIntent.map((kw) => (
-                          <div key={kw.keyword} className="flex items-center justify-between bg-blue-50/50 rounded-lg px-3 py-2 text-sm">
-                            <span className="text-gray-800 font-medium">&ldquo;{kw.keyword}&rdquo;</span>
-                            <div className="flex items-center gap-3 shrink-0">
-                              <span className="text-gray-500 text-xs">{kw.vol}</span>
-                              <span className="text-xs font-bold text-green-700 bg-green-50 px-2 py-0.5 rounded">{kw.diff}</span>
-                            </div>
-                          </div>
-                        ))}
-                      </div>
-                    </div>
-                  </div>
-                </div>
+                <p className="text-xs text-[#6b7685] leading-relaxed">{p.note}</p>
+              </div>
+            ))}
+          </div>
+          <p className="text-xs text-[#6b7685] text-center mt-6">Conservative estimates based on current keyword volumes, 2-3% visitor-to-lead conversion rate, and average account values.<Src ids={[1, 6]} /></p>
+        </div>
+      </section>
+
+      {/* ── Deliverables ── */}
+      <section id="deliverables" className="py-20 px-6">
+        <div className="max-w-6xl mx-auto">
+          <div className="text-center mb-12 proposal-reveal">
+            <h2 className="text-3xl md:text-4xl font-bold text-[#1b2a3f] mb-4" style={{ fontFamily: "var(--font-display)" }}>What You Get</h2>
+            <p className="text-[#4a5568] max-w-2xl mx-auto">Click any card to see the full breakdown of what is included, how it works, and the business impact.</p>
+          </div>
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {deliverables.map((d, i) => (
+              <div key={d.title} className="proposal-reveal" style={{ transitionDelay: `${i * 0.08}s` }}>
+                <DeliverableCard {...d} />
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* ── What Page 1 Means ─── */}
-      <section className="py-20 bg-gradient-to-br from-blue-950 via-blue-900 to-blue-800 text-white relative overflow-hidden">
-        <div className="absolute inset-0 grain-overlay" />
-        <div className="relative z-10 max-w-5xl mx-auto px-6 hero-text">
-          <h2 className="text-3xl md:text-4xl font-bold mb-3 font-heading text-white">What Page 1 Means for Axle Towing</h2>
-          <p className="text-blue-100 text-lg mb-10 max-w-3xl">Being on page 1 of Google isn&apos;t vanity &mdash; it&apos;s revenue. Here&apos;s what the numbers look like when Axle Towing dominates Phoenix search results.</p>
-
-          <div className="grid md:grid-cols-3 gap-6 mb-12">
-            <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 border border-white/10">
-              <div className="text-4xl font-bold font-heading mb-2 text-white">5,955</div>
-              <p className="text-blue-200 text-sm mb-3">monthly searches for your exact services in Phoenix</p>
-              <p className="text-blue-100/80 text-xs">People actively looking for private property towing, parking enforcement, HOA towing, apartment towing, and vehicle relocation right now.</p>
-            </div>
-            <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 border border-white/10">
-              <div className="text-4xl font-bold font-heading mb-2 text-white">28.5%</div>
-              <p className="text-blue-200 text-sm mb-3">average click-through rate for position #1</p>
-              <p className="text-blue-100/80 text-xs">The #1 result gets ~28.5% of all clicks. #2 gets ~15%. #3 gets ~11%. Below position 3, clicks drop dramatically. Page 2? Less than 1% of searchers ever go there.</p>
-            </div>
-            <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 border border-white/10">
-              <div className="text-4xl font-bold font-heading mb-2 text-white">$33</div>
-              <p className="text-blue-200 text-sm mb-3">cost per organic lead by Month 12</p>
-              <p className="text-blue-100/80 text-xs">Compare that to Google Ads for &ldquo;towing Phoenix&rdquo; at $15-25 per click (not per lead &mdash; per click). Organic SEO delivers leads that keep coming for free.</p>
-            </div>
+      {/* ── 12-Month Timeline ── */}
+      <section className="py-20 px-6 bg-[#0f1f36] text-white">
+        <div className="max-w-4xl mx-auto">
+          <div className="text-center mb-12 proposal-reveal">
+            <h2 className="text-3xl md:text-4xl font-bold mb-4" style={{ fontFamily: "var(--font-display)" }}>12-Month Execution Timeline</h2>
+            <p className="text-white/70">Phased rollout. Each month builds on the last.</p>
           </div>
-
-          <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-8 border border-white/10">
-            <h3 className="text-xl font-bold mb-6 font-heading text-white">The Math: What Ranking #1-3 Delivers</h3>
-            <div className="overflow-x-auto">
-              <table className="w-full text-sm">
-                <thead>
-                  <tr className="border-b border-white/10">
-                    <th className="text-left p-3 text-blue-200">Scenario</th>
-                    <th className="text-center p-3 text-blue-200">Monthly Searches Captured</th>
-                    <th className="text-center p-3 text-blue-200">Leads/Month (3% conv.)</th>
-                    <th className="text-center p-3 text-blue-200">New Accounts/Year (10% close)</th>
-                    <th className="text-center p-3 text-blue-200">Revenue Added</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr className="border-b border-white/5">
-                    <td className="p-3 font-medium">Top 3 for 20 keywords</td>
-                    <td className="p-3 text-center">~600 visits/mo</td>
-                    <td className="p-3 text-center">18</td>
-                    <td className="p-3 text-center">~22</td>
-                    <td className="p-3 text-center font-bold text-green-400">$396K-$792K</td>
-                  </tr>
-                  <tr className="border-b border-white/5">
-                    <td className="p-3 font-medium">Top 3 for 50 keywords</td>
-                    <td className="p-3 text-center">~1,500 visits/mo</td>
-                    <td className="p-3 text-center">45</td>
-                    <td className="p-3 text-center">~54</td>
-                    <td className="p-3 text-center font-bold text-green-400">$972K-$1.9M</td>
-                  </tr>
-                  <tr>
-                    <td className="p-3 font-medium">Market dominance (100+ keywords)</td>
-                    <td className="p-3 text-center">~3,000 visits/mo</td>
-                    <td className="p-3 text-center">90</td>
-                    <td className="p-3 text-center">~108</td>
-                    <td className="p-3 text-center font-bold text-green-400">$1.9M-$3.8M</td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
-            <p className="text-blue-200/60 text-xs mt-4">*Based on average account value of $18,000-$36,000/year. Actual results will vary based on close rate and account size.</p>
-          </div>
-        </div>
-      </section>
-
-      {/* ── The Plan to Get There ─── */}
-      <section className="py-20 bg-white">
-        <div className="max-w-5xl mx-auto px-6">
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-3 font-heading">The Plan to Page 1</h2>
-          <p className="text-gray-600 text-lg mb-10 max-w-3xl">Your website is already built and live. Here&apos;s the 6-12 month campaign to turn it into a lead generation machine.</p>
-
-          <div className="space-y-6">
-            {MILESTONES.map((m, i) => (
-              <div key={m.time} className="flex gap-6">
+          <div className="space-y-0">
+            {[
+              { month: "Month 1", title: "Launch & Foundation", items: ["DNS transfer + site goes live", "GBP optimization (both yards)", "Technical SEO audit + fixes", "CRM setup + lead tracking", "50+ citation submissions"] },
+              { month: "Month 2", title: "Content Velocity", items: ["4 new blog articles published", "Google Ads campaigns launched", "Service page optimization", "Review request system activated", "Weekly GBP posts begin"] },
+              { month: "Month 3-4", title: "Local Domination", items: ["8 city landing pages live and indexed", "8 more blog articles", "Google Ads expansion to city campaigns", "Local link building (AMA, chambers, paving partners)", "First ranking improvements visible"] },
+              { month: "Month 5-6", title: "Authority Building", items: ["20+ blog articles live", "AI Overview citations appearing", "Google Ads CPA optimization", "Case study content from early clients", "Map Pack visibility improving"] },
+              { month: "Month 7-9", title: "Compounding Growth", items: ["30+ blog articles live", "Top 10 for core keywords", "Retargeting campaigns active", "Content calendar continues (2-4/mo)", "Monthly reporting shows clear ROI"] },
+              { month: "Month 10-12", title: "Market Leadership", items: ["42+ articles, 88+ pages indexed", "Top 3 for primary keywords", "AI search citations across platforms", "Organic leads replacing paid dependence", "Clear digital market leader among PPI companies"] },
+            ].map((phase, i) => (
+              <div key={phase.month} className="proposal-reveal flex gap-4 md:gap-8" style={{ transitionDelay: `${i * 0.08}s` }}>
                 <div className="flex flex-col items-center">
-                  <div className={`w-10 h-10 rounded-full ${i === 0 ? "bg-green-600" : "bg-blue-600"} text-white flex items-center justify-center font-bold text-sm shrink-0`}>{i === 0 ? "✓" : i}</div>
-                  {i < MILESTONES.length - 1 && <div className="w-0.5 flex-1 bg-blue-200 mt-2" />}
+                  <div className="w-4 h-4 rounded-full bg-[#4a9ae0] shrink-0 mt-1" />
+                  {i < 5 && <div className="w-px flex-1 bg-white/20 my-1" />}
                 </div>
                 <div className="pb-8">
-                  <div className={`text-sm font-bold ${i === 0 ? "text-green-600" : "text-blue-600"} mb-1`}>{m.time}</div>
-                  <h3 className="text-lg font-bold text-gray-900 mb-1">{m.milestone}</h3>
-                  <p className="text-gray-600 text-sm">{m.detail}</p>
+                  <div className="text-xs font-bold text-[#4a9ae0] uppercase tracking-wider">{phase.month}</div>
+                  <h3 className="text-lg font-bold text-white mb-2" style={{ fontFamily: "var(--font-display)" }}>{phase.title}</h3>
+                  <ul className="space-y-1">
+                    {phase.items.map((item) => (
+                      <li key={item} className="text-sm text-white/70 flex items-start gap-2">
+                        <span className="text-[#4a9ae0] shrink-0 mt-0.5">&#8250;</span>{item}
+                      </li>
+                    ))}
+                  </ul>
                 </div>
               </div>
             ))}
@@ -685,146 +690,92 @@ export default function ProposalPage() {
         </div>
       </section>
 
-      {/* ── Why Phoenix = Easy Wins ─── */}
-      <section className="py-20 bg-gray-50">
-        <div className="max-w-5xl mx-auto px-6">
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-3 font-heading">Why Phoenix = Fast Rankings</h2>
-          <p className="text-gray-600 text-lg mb-10 max-w-3xl">Being physically located in Phoenix gives Axle Towing a massive advantage that out-of-market competitors can never replicate.</p>
+      {/* ── Why Now ── */}
+      <section className="py-20 px-6">
+        <div className="max-w-4xl mx-auto text-center">
+          <div className="proposal-reveal">
+            <h2 className="text-3xl md:text-4xl font-bold text-[#1b2a3f] mb-6" style={{ fontFamily: "var(--font-display)" }}>Why This Window Won&apos;t Stay Open</h2>
+            <div className="grid md:grid-cols-3 gap-6 text-left mb-12">
+              {[
+                { icon: "\u{1F3D7}\uFE0F", title: "22,100 New Units", desc: "Phoenix has 22,100 multifamily units under construction. Every new complex needs parking enforcement.", cite: [6] },
+                { icon: "\u{1F634}", title: "Competitors Are Asleep", desc: "Kwik Tow has zero blog posts. All City shifted to police towing. Arizona Impound's site was built in Dreamweaver.", cite: [3, 5, 7] },
+                { icon: "\u23F3", title: "First Mover Advantage", desc: "AI search is reshaping how people find services. The first towing company to optimize owns the market.", cite: [9] },
+              ].map((item) => (
+                <div key={item.title} className="proposal-glass rounded-2xl p-6">
+                  <div className="text-2xl mb-3">{item.icon}</div>
+                  <h3 className="font-bold text-[#1b2a3f] mb-2" style={{ fontFamily: "var(--font-display)" }}>{item.title}</h3>
+                  <p className="text-sm text-[#4a5568]">{item.desc}<Src ids={item.cite} /></p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
 
+      {/* ── 90-Day Guarantee ── */}
+      <section className="py-16 px-6 bg-[#f8f9fb]">
+        <div className="max-w-3xl mx-auto text-center proposal-reveal">
+          <h2 className="text-3xl md:text-4xl font-bold text-[#1b2a3f] mb-6" style={{ fontFamily: "var(--font-display)" }}>First 90 Days</h2>
+          <p className="text-[#4a5568] mb-6 leading-relaxed">
+            Within 90 days, Axle Towing will have: a fully optimized 88+ page website live and indexed, Google Business Profiles optimized for both locations, 50+ local citations submitted, 8+ new blog articles published, Google Ads campaigns running, CRM capturing and nurturing every lead, and measurable improvements in search visibility.
+          </p>
+          <p className="text-[#4a5568] leading-relaxed">
+            This isn&apos;t speculation. The website is already built. The content is already written. The keyword research is done. We just need the green light.
+          </p>
+        </div>
+      </section>
+
+      {/* ── Why Axle Wins ── */}
+      <section className="py-20 px-6">
+        <div className="max-w-4xl mx-auto">
+          <div className="text-center mb-12 proposal-reveal">
+            <h2 className="text-3xl md:text-4xl font-bold text-[#1b2a3f] mb-4" style={{ fontFamily: "var(--font-display)" }}>Why Axle Towing Wins This</h2>
+          </div>
           <div className="grid md:grid-cols-2 gap-6">
             {[
-              { title: "Two Physical Locations", desc: "Apache Junction + Phoenix yards create two Google Business Profile listings, doubling your visibility in the Map Pack across the entire metro." },
-              { title: "8-City Service Area", desc: "24 location pages covering Phoenix, Scottsdale, Mesa, Tempe, Chandler, Gilbert, Glendale, and Apache Junction — each one a ranking opportunity." },
-              { title: "Local Citations", desc: "50+ directory listings (Google, Yelp, BBB, Arizona Towing Association, AMA, 6 Chambers of Commerce) all pointing to your Phoenix addresses." },
-              { title: "Google's Local Preference", desc: "Google heavily favors local businesses in Map Pack results. A Phoenix-based towing company will ALWAYS outrank a national directory for 'towing Phoenix' searches." },
-              { title: "22,100 New Units Under Construction", desc: "Phoenix's multifamily construction boom means new apartment complexes coming online every month — each one a potential client searching for parking enforcement." },
-              { title: "3.43 Million Population Served", desc: "The Phoenix metro is the 5th largest in the US. That's 3.43 million people across 8 cities — all within your service area." },
-            ].map((item) => (
-              <div key={item.title} className="bg-white rounded-xl p-6 border border-gray-100">
-                <h3 className="font-bold text-gray-900 mb-2">{item.title}</h3>
-                <p className="text-gray-600 text-sm">{item.desc}</p>
+              { title: "5-Year Trajectory", desc: "You accomplished in 5 years what competitors took 10-20. Now add digital marketing to that operational excellence." },
+              { title: "Kwik Tow Is Declining", desc: "Ron Steele retired. New leadership lacks operational expertise. Properties are becoming available. Digital presence accelerates the shift." },
+              { title: "All City Abandoned PPI", desc: "2,000+ private property accounts they are not actively servicing. You are already picking up 5/month. SEO visibility multiplies that rate." },
+              { title: "Modern Fleet, Modern Brand", desc: "Newest trucks (2022+), AMA member, two yards. The brand foundation is strong. The only missing piece is digital visibility." },
+            ].map((adv, i) => (
+              <div key={adv.title} className="proposal-reveal flex gap-4" style={{ transitionDelay: `${i * 0.08}s` }}>
+                <div className="w-1 bg-gradient-to-b from-[#1e6bb8] to-[#dc3a30] rounded-full shrink-0" />
+                <div>
+                  <h3 className="font-bold text-[#1b2a3f] mb-1" style={{ fontFamily: "var(--font-display)" }}>{adv.title}</h3>
+                  <p className="text-sm text-[#4a5568] leading-relaxed">{adv.desc}</p>
+                </div>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* ── 6-Month Guarantee ─── */}
-      <section className="py-20 bg-gradient-to-br from-blue-950 via-blue-900 to-blue-800 text-white relative overflow-hidden">
-        <div className="absolute inset-0 grain-overlay" />
-        <div className="relative z-10 max-w-5xl mx-auto px-6 hero-text">
-          <h2 className="text-3xl md:text-4xl font-bold mb-3 font-heading text-white">6-Month Performance Guarantee</h2>
-          <p className="text-blue-100 text-lg mb-4 max-w-2xl">We put our money where our mouth is.</p>
-          <p className="text-xl md:text-2xl font-bold text-white mb-10 max-w-3xl">If we don&apos;t hit these metrics by Month 6, we keep working for free until you get the results you&apos;re looking for.</p>
-
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 mb-10">
-            {GUARANTEE_METRICS.map((g) => (
-              <div key={g.metric} className="rounded-xl border border-white/20 bg-white/10 backdrop-blur-sm p-6 text-center">
-                <div className="text-3xl font-bold text-white font-heading mb-2">{g.value}</div>
-                <p className="text-blue-200 text-sm">{g.metric}</p>
-              </div>
-            ))}
-          </div>
-
-          <div className="bg-white/10 rounded-2xl p-6 border border-white/10 text-center max-w-2xl mx-auto">
-            <p className="text-blue-100 text-sm mb-2">Minimum commitment</p>
-            <div className="text-3xl font-bold text-white font-heading mb-2">6 Months</div>
-            <p className="text-blue-200 text-sm">Results guaranteed or we work for free until they&apos;re delivered. No risk to you.</p>
-          </div>
+      {/* ── CTA ── */}
+      <section className="py-20 px-6 bg-gradient-to-br from-[#0f1f36] via-[#1b2a3f] to-[#1e4a7a] text-white">
+        <div className="max-w-3xl mx-auto text-center proposal-reveal">
+          <h2 className="text-3xl md:text-5xl font-bold mb-6" style={{ fontFamily: "var(--font-display)" }}>Ready to Own Phoenix Search?</h2>
+          <p className="text-lg text-white/80 mb-8 leading-relaxed">
+            88 pages built. 42 articles written. The research is done. Your competitors are still using Dreamweaver. Let&apos;s go.
+          </p>
+          <a href="tel:+16195090699" className="inline-flex items-center gap-3 bg-[#dc3a30] text-white px-10 py-5 rounded-xl font-bold uppercase tracking-wide text-base transition-all hover:-translate-y-1 hover:shadow-xl hover:shadow-[#dc3a30]/30 animate-pulse-glow" style={{ fontFamily: "var(--font-display)" }}>
+            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" /></svg>
+            Let&apos;s Talk
+          </a>
+          <p className="text-sm text-white/40 mt-6">Prepared by AI Acrobatics | March 2026</p>
         </div>
       </section>
 
-      {/* ── Year-End Targets ─── */}
-      <section className="py-20 bg-white">
-        <div className="max-w-5xl mx-auto px-6">
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-3 font-heading">Year-End Targets (Month 12)</h2>
-          <p className="text-gray-600 text-lg mb-10 max-w-2xl">Where Axle Towing will be after 12 months of execution.</p>
-
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
-            {[
-              { value: "50+", label: "First-page keyword rankings" },
-              { value: "2,000+", label: "Monthly organic visitors" },
-              { value: "15-25", label: "Qualified leads per month" },
-              { value: "10,000+", label: "Google Business Profile impressions/mo" },
-              { value: "Top 3", label: "Map pack rankings (primary terms)" },
-              { value: "180+", label: "Total articles published" },
-              { value: "+15-25pts", label: "Domain authority increase" },
-              { value: "60-75+", label: "Google reviews per location" },
-            ].map((stat) => (
-              <div key={stat.label} className="bg-gray-50 rounded-xl p-6 text-center border border-gray-100">
-                <div className="text-2xl font-bold text-blue-900 font-heading mb-1">{stat.value}</div>
-                <p className="text-gray-600 text-xs">{stat.label}</p>
+      {/* ── Sources ── */}
+      <section className="py-12 px-6 bg-[#f8f9fb] border-t border-[#e2e6ee]">
+        <div className="max-w-4xl mx-auto">
+          <h3 className="text-sm font-bold text-[#1b2a3f] mb-4 uppercase tracking-wider">Sources</h3>
+          <div className="grid md:grid-cols-2 gap-x-8 gap-y-2">
+            {sources.map((s) => (
+              <div key={s.id} className="text-xs text-[#6b7685] leading-relaxed">
+                <span className="text-[#1e6bb8] font-bold">[{s.id}]</span> {s.text}
               </div>
             ))}
           </div>
-        </div>
-      </section>
-
-      {/* ── Market Opportunity ─── */}
-      <section className="py-20 bg-gray-50">
-        <div className="max-w-5xl mx-auto px-6">
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-3 font-heading">The Market Opportunity</h2>
-          <p className="text-gray-600 text-lg mb-10 max-w-3xl">Phoenix&apos;s total addressable market for private property towing services is massive and growing &mdash; and nobody is competing for it online.</p>
-
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-10">
-            {[
-              { value: "7,100+", label: "HOA communities in Phoenix metro" },
-              { value: "7,580+", label: "Apartment complexes" },
-              { value: "12,700+", label: "Commercial properties" },
-              { value: "22,100", label: "New multifamily units under construction" },
-            ].map((stat) => (
-              <div key={stat.label} className="rounded-xl bg-white p-6 text-center border border-gray-100">
-                <div className="text-3xl font-bold text-blue-900 font-heading mb-1">{stat.value}</div>
-                <p className="text-gray-700 text-xs">{stat.label}</p>
-              </div>
-            ))}
-          </div>
-
-          <div className="rounded-2xl bg-gradient-to-r from-blue-950 to-blue-900 p-8 text-white">
-            <h3 className="text-2xl font-bold font-heading mb-4 text-white">Why This Opportunity Won&apos;t Last Forever</h3>
-            <div className="grid md:grid-cols-3 gap-6 text-sm">
-              <div>
-                <p className="text-blue-200 mb-2 font-bold">Competitors Will Wake Up</p>
-                <p className="text-blue-100/80">Right now, zero competitors have a blog or content strategy. That won&apos;t last. The first company to dominate search wins the market for years. That should be Axle Towing.</p>
-              </div>
-              <div>
-                <p className="text-blue-200 mb-2 font-bold">Generational Shift</p>
-                <p className="text-blue-100/80">Younger property managers search online. The old-guard relationship moats won&apos;t transfer to the next generation of decision-makers.</p>
-              </div>
-              <div>
-                <p className="text-blue-200 mb-2 font-bold">AI Search Revolution</p>
-                <p className="text-blue-100/80">When property managers ask ChatGPT &ldquo;who does private property towing in Scottsdale?&rdquo; &mdash; Axle Towing will be the answer.</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* ── CTA ─── */}
-      <section className="py-20 bg-gradient-to-br from-blue-950 via-blue-900 to-blue-800 text-white text-center relative overflow-hidden">
-        <div className="absolute inset-0 grain-overlay" />
-        <div className="relative z-10 max-w-3xl mx-auto px-6 hero-text">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4 font-heading text-white">Ready to Dominate Phoenix?</h2>
-          <p className="text-blue-100 text-lg mb-8">Your website is built. 123 pages are live. 61 articles published. The content advantage is already in place. Now it&apos;s time to turn it on.</p>
-          <div className="grid sm:grid-cols-3 gap-4 max-w-2xl mx-auto mb-8">
-            <div className="bg-white/10 rounded-xl p-4 border border-white/10">
-              <div className="text-2xl font-bold font-heading text-white">$7,500</div>
-              <div className="text-blue-200 text-xs">Website (built)</div>
-            </div>
-            <div className="bg-white/10 rounded-xl p-4 border border-white/10">
-              <div className="text-2xl font-bold font-heading text-white">$3,000/mo</div>
-              <div className="text-blue-200 text-xs">SEO &amp; Content (30 articles)</div>
-            </div>
-            <div className="bg-green-500/20 rounded-xl p-4 border border-green-400/20">
-              <div className="text-2xl font-bold font-heading text-white">$5,500 value</div>
-              <div className="text-green-200 text-xs">CRM System (included free)</div>
-            </div>
-          </div>
-          <p className="text-blue-200 text-sm mb-8">6-month guarantee &mdash; we deliver results or we work for free until we do.</p>
-          <Link href="/invoice" className="inline-flex items-center gap-2 bg-white text-blue-900 font-bold px-8 py-4 rounded-xl text-lg hover:bg-blue-50 transition-colors">
-            View Invoice &amp; Next Steps &rarr;
-          </Link>
-          <p className="text-blue-200/60 text-sm mt-8">Prepared by AI Acrobatics &mdash; Performance-Driven Digital Agency</p>
         </div>
       </section>
     </div>

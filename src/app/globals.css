@@ -762,3 +762,54 @@ body {
   border-color: rgba(30, 107, 184, 0.3);
   box-shadow: 0 0 12px rgba(30, 107, 184, 0.08);
 }
+
+/* ========================================
+   PROPOSAL PAGE STYLES
+   ======================================== */
+
+.proposal-glass {
+  background: rgba(30, 107, 184, 0.04);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(30, 107, 184, 0.12);
+}
+
+.proposal-reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.7s ease-out, transform 0.7s ease-out;
+}
+
+.proposal-reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.proposal-source {
+  font-size: 0.65rem;
+  vertical-align: super;
+  color: #1e6bb8;
+  cursor: help;
+  font-weight: 600;
+}
+
+.proposal-card-expand {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.5s ease-out, opacity 0.3s ease-out;
+  opacity: 0;
+}
+
+.proposal-card-expand.open {
+  max-height: 800px;
+  opacity: 1;
+}
+
+@keyframes proposal-float {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  33% { transform: translate(20px, -30px) scale(1.05); }
+  66% { transform: translate(-15px, 15px) scale(0.95); }
+}
+
+.proposal-float-orb { animation: proposal-float 12s ease-in-out infinite; }
+.proposal-float-orb-slow { animation: proposal-float 18s ease-in-out infinite reverse; }
