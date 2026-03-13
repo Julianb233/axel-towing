@@ -509,48 +509,6 @@ export default function ArticlePage() {
         </div>
       </article>
 
-      {/* Related Articles Bottom */}
-      <section className="py-20 bg-gray-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl font-bold text-gray-900 mb-10 text-center reveal">
-            More Articles You Might Like
-          </h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {RELATED_ARTICLES.map((article, index) => (
-              <Link
-                key={article.title}
-                href={
-                  article.slug === "#" ? "#" : `/blog/${article.slug}`
-                }
-                className="glass-card-white rounded-2xl overflow-hidden group reveal"
-                style={{ transitionDelay: `${index * 100}ms` }}
-              >
-                <div
-                  className={`h-40 bg-gradient-to-br ${article.gradient} relative overflow-hidden`}
-                >
-                  <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_30%,rgba(255,255,255,0.12),transparent_50%)]" />
-                  {article.slug === "#" && (
-                    <div className="absolute top-3 right-3 glass rounded-full px-3 py-1 text-xs text-white font-semibold">
-                      Coming Soon
-                    </div>
-                  )}
-                </div>
-                <div className="p-6">
-                  <span className="text-xs text-primary font-bold uppercase tracking-wider">
-                    {article.category}
-                  </span>
-                  <h3 className="text-lg font-bold text-gray-900 mt-1 group-hover:text-primary transition-colors leading-snug">
-                    {article.title}
-                  </h3>
-                  <span className="text-xs text-gray-600 mt-2 inline-block">
-                    {article.readTime} read
-                  </span>
-                </div>
-              </Link>
-            ))}
-          </div>
-        </div>
-      </section>
     </>
   );
 }
