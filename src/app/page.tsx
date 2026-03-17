@@ -2,7 +2,6 @@ import Link from "next/link";
 import Image from "next/image";
 import { COMPANY, SERVICES, SERVICE_AREAS } from "@/lib/constants";
 import AnimatedCounter from "@/components/AnimatedCounter";
-import HeroVideoButton from "@/components/HeroVideoButton";
 import { localBusinessSchema } from "@/lib/schema";
 import { IMAGES } from "@/lib/images";
 
@@ -134,10 +133,7 @@ export default function HomePage() {
               Call Now: {COMPANY.phone}
             </a>
           </div>
-          <div className="mt-8 animate-fade-in-up delay-400 flex justify-center">
-            <HeroVideoButton />
-          </div>
-          <div className="flex flex-wrap justify-center gap-4 md:gap-6 mt-16 animate-fade-in-up delay-500">
+          <div className="flex flex-wrap justify-center gap-4 md:gap-6 mt-16 animate-fade-in-up delay-400">
             {[
               { label: "Since 2021", icon: "\u{1F4C5}" },
               { label: "6+ Trucks", icon: "\u{1F69B}" },
