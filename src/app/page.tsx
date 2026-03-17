@@ -167,6 +167,50 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* ========== AVAILABILITY & OFFICE HOURS ========== */}
+      <section className="bg-gradient-to-r from-[#1B2A4A] to-[#1E6BB8] py-6">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 items-center">
+            {/* 24/7 Dispatch */}
+            <div className="flex items-center gap-4 justify-center md:justify-start">
+              <div className="w-14 h-14 rounded-full bg-green-500/20 border-2 border-green-400 flex items-center justify-center shrink-0">
+                <span className="relative flex h-4 w-4">
+                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75" />
+                  <span className="relative inline-flex rounded-full h-4 w-4 bg-green-500" />
+                </span>
+              </div>
+              <div>
+                <div className="text-white font-heading font-bold text-xl sm:text-2xl tracking-tight">
+                  24/7 Dispatch Available
+                </div>
+                <p className="text-blue-200 text-sm mt-0.5">
+                  Emergency towing and impound services around the clock
+                </p>
+              </div>
+            </div>
+
+            {/* Office Hours */}
+            <div className="flex items-center gap-4 justify-center md:justify-end">
+              <div className="w-14 h-14 rounded-full bg-white/10 border-2 border-white/30 flex items-center justify-center shrink-0">
+                <svg className="w-7 h-7 text-white" fill="none" stroke="currentColor" strokeWidth={1.5} viewBox="0 0 24 24">
+                  <circle cx="12" cy="12" r="10" />
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M12 6v6l4 2" />
+                </svg>
+              </div>
+              <div>
+                <div className="text-white font-heading font-bold text-lg sm:text-xl tracking-tight">
+                  Office Hours
+                </div>
+                <div className="text-blue-200 text-sm mt-0.5 space-y-0.5">
+                  <p>{COMPANY.hours.weekday}</p>
+                  <p>{COMPANY.hours.saturday} &middot; {COMPANY.hours.sunday}</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* ========== TRUST BADGE BAR ========== */}
       <section className="py-12 bg-white border-b border-gray-100">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
