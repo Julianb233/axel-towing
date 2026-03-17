@@ -23,6 +23,8 @@ export interface ServicePageData {
   targetAudience: string;
   testimonials?: ServiceTestimonial[];
   propertyTypes?: string[];
+  /** If true, this is a charged service (not free for property owners) */
+  isPaid?: boolean;
 }
 
 /** Property types served — appears on all service pages for long-tail SEO */
@@ -173,21 +175,21 @@ export const SERVICE_PAGES: Record<string, ServicePageData> = {
     slug: "vehicle-relocations",
     metaTitle: "Vehicle Relocation Services — Phoenix, AZ",
     metaDescription:
-      "Professional vehicle relocation for asphalt repairs, property maintenance, and construction projects in Phoenix. Move 10 vehicles in 2 hours for $1,000. No impound needed.",
+      "Professional vehicle relocation for asphalt repairs, property maintenance, and construction projects in Phoenix. Starting at ~$100/vehicle. Fast turnaround, no impound needed.",
     heroHeadline: "Vehicle Relocation Services in Phoenix",
     heroSubtext:
-      "Professional vehicle moves for asphalt repairs, property maintenance, and construction projects — fast turnaround, no impound needed.",
+      "Professional vehicle moves for asphalt repairs, property maintenance, and construction projects. Fast turnaround, no impound needed. This is a charged service.",
     heroImage: "/images/service-vehicle-relocation.jpg",
     introTitle: "Move Vehicles Quickly for Property Maintenance",
     introText: [
       "Property maintenance projects like asphalt resurfacing, seal coating, line striping, and construction require vehicles to be temporarily relocated. Axle Towing provides professional vehicle relocation services that keep your projects on schedule and on budget.",
-      "Unlike impound services, vehicle relocations simply move cars to another area on your property or a designated holding zone. No one gets towed to an impound lot — vehicles are just repositioned so work can proceed.",
-      "Our quick-turnaround pricing makes it easy: we can relocate 10 vehicles in approximately 2 hours for around $1,000. That is a fraction of the cost of project delays caused by vehicles blocking work areas.",
+      "Unlike our free impound and enforcement services, vehicle relocations are a charged service billed directly to the property owner. Vehicles are simply moved to another area on your property or a designated holding zone -- no one gets towed to an impound lot.",
+      "Our competitive pricing starts at approximately $100 per vehicle. Contact us for a custom quote based on the number of vehicles and project scope.",
     ],
     features: [
       { title: "Asphalt & Seal Coat Projects", desc: "We clear parking sections for asphalt resurfacing, seal coating, and line striping — moving vehicles phase by phase as contractors work.", icon: "road" },
       { title: "Construction Support", desc: "Clear staging areas, loading zones, and work zones for construction crews. We coordinate with your general contractor for seamless operations.", icon: "construction" },
-      { title: "Quick Turnaround", desc: "10 vehicles relocated in approximately 2 hours for around $1,000 — far cheaper than project delays or rescheduling contractors.", icon: "speed" },
+      { title: "Quick Turnaround", desc: "Fast vehicle relocation starting at ~$100/vehicle. Far cheaper than project delays or rescheduling contractors.", icon: "speed" },
       { title: "No Impound Required", desc: "Vehicles are moved on-site to available parking areas or temporary holding zones. No one's car goes to an impound lot.", icon: "move" },
     ],
     howItWorks: [
@@ -199,10 +201,10 @@ export const SERVICE_PAGES: Record<string, ServicePageData> = {
     benefits: [
       { title: "Stay on Schedule", desc: "Construction and maintenance projects run on tight timelines. Our relocation service ensures vehicles are out of the way when contractors arrive, preventing costly delays and rescheduling fees.", align: "left" },
       { title: "Resident-Friendly Approach", desc: "We are not impounding anyone's vehicle — just temporarily moving it. This approach keeps residents happy while ensuring maintenance work gets done on time.", align: "right" },
-      { title: "Cost-Effective Solution", desc: "At approximately $1,000 for 10 vehicles in 2 hours, our relocation service costs a fraction of what you would spend on project delays, rescheduled contractors, or extended crew time.", align: "left" },
+      { title: "Cost-Effective Solution", desc: "Our competitive per-vehicle pricing costs a fraction of what you would spend on project delays, rescheduled contractors, or extended crew time. Contact us for a custom quote.", align: "left" },
     ],
     faqs: [
-      { q: "How much does vehicle relocation cost?", a: "Our quick-turnaround pricing is approximately $1,000 for 10 vehicles relocated within 2 hours. Exact pricing depends on the number of vehicles and complexity of the project." },
+      { q: "How much does vehicle relocation cost?", a: "Pricing starts at approximately $100 per vehicle. The exact cost depends on the number of vehicles, project complexity, and timeline. Contact us for a custom quote." },
       { q: "Do vehicles go to an impound lot?", a: "No. Vehicle relocations move cars to another area on your property or a nearby designated zone. No one's vehicle is impounded." },
       { q: "How much advance notice do residents need?", a: "We recommend 48-72 hours of advance notice. We can help you create and distribute door hangers, windshield notices, and posted announcements." },
       { q: "What if a vehicle is locked or in park?", a: "Our drivers use wheel-lift and flatbed equipment to safely move vehicles regardless of their state. All vehicles are handled carefully and fully insured during the relocation." },
@@ -214,8 +216,9 @@ export const SERVICE_PAGES: Record<string, ServicePageData> = {
       { title: "Commercial Property Towing", slug: "commercial-property-towing", desc: "Enforcement solutions for commercial and retail properties." },
     ],
     targetAudience: "property managers planning maintenance projects",
+    isPaid: true,
     testimonials: [
-      { quote: "We needed 40 cars moved for a repaving project. Axle had all of them relocated in under 3 hours — our contractor started on time for once.", name: "Robert P.", role: "Maintenance Director", company: "Arcadia Property Group" },
+      { quote: "We needed 40 cars moved for a repaving project. Axle had all of them relocated in under 3 hours -- our contractor started on time for once.", name: "Robert P.", role: "Maintenance Director", company: "Arcadia Property Group" },
       { quote: "The advance notice system they helped us set up meant only 5 vehicles needed to be moved on the day. Residents appreciated the communication.", name: "Linda W.", role: "Property Manager", company: "Mesa Verde Apartments" },
     ],
   },

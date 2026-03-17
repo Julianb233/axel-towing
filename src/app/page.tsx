@@ -42,7 +42,6 @@ const ICONS: Record<string, React.ReactNode> = {
 const SERVICE_CARDS = [
   { icon: "shield", title: "Private Property Impounds", desc: "Remove unauthorized vehicles at zero cost to you", slug: "private-property-impounds" },
   { icon: "clipboard", title: "Parking Enforcement", desc: "Professional patrol for garages and private lots", slug: "parking-enforcement" },
-  { icon: "truck", title: "Vehicle Relocations", desc: "Fast vehicle moves for repairs and maintenance", slug: "vehicle-relocations" },
   { icon: "home", title: "HOA Towing", desc: "Custom towing programs for homeowner associations", slug: "hoa-towing" },
   { icon: "building", title: "Apartment Towing", desc: "Keep your complex parking organized", slug: "apartment-towing" },
   { icon: "store", title: "Commercial Property", desc: "Protect your commercial property from unauthorized parking", slug: "commercial-property-towing" },
@@ -262,6 +261,30 @@ export default function HomePage() {
               </Link>
             ))}
           </div>
+        </div>
+      </section>
+
+      {/* ========== PAID SERVICES CALLOUT ========== */}
+      <section className="py-12 bg-white border-b border-gray-100">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <Link href="/services/vehicle-relocations" className="group flex flex-col sm:flex-row items-center gap-6 glass-card-white rounded-2xl p-6 sm:p-8 border-2 border-amber-100 hover:border-amber-200 transition-all reveal">
+            <div className="w-16 h-16 rounded-xl bg-amber-50 text-amber-600 flex items-center justify-center shrink-0 group-hover:bg-amber-100 transition-colors">
+              {ICONS.truck}
+            </div>
+            <div className="flex-1 text-center sm:text-left">
+              <div className="flex items-center gap-2 justify-center sm:justify-start mb-1">
+                <h3 className="text-xl font-bold font-heading" style={{ color: '#1a202c' }}>Vehicle Relocations</h3>
+                <span className="inline-flex items-center bg-amber-100 text-amber-700 text-xs font-semibold px-2.5 py-0.5 rounded-full">Charged Service</span>
+              </div>
+              <p className="text-gray-700 leading-relaxed">Professional vehicle moves for asphalt repairs, property maintenance, and construction projects. Starting at ~$100/vehicle.</p>
+            </div>
+            <span className="inline-flex items-center text-amber-600 font-semibold text-sm group-hover:gap-2 transition-all shrink-0">
+              Get a Quote
+              <svg className="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+              </svg>
+            </span>
+          </Link>
         </div>
       </section>
 

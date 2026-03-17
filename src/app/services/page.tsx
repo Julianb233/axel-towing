@@ -1,11 +1,11 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
-import { COMPANY, SERVICES } from "@/lib/constants";
+import { COMPANY, SERVICES, PAID_SERVICES } from "@/lib/constants";
 
 export const metadata: Metadata = {
   title: "Our Services",
-  description: `${COMPANY.name} offers private property impounds, parking enforcement, vehicle relocations, HOA towing, apartment towing, and commercial property towing across Phoenix, AZ — all free for property owners.`,
+  description: `${COMPANY.name} offers private property impounds, parking enforcement, HOA towing, apartment towing, and commercial property towing across Phoenix, AZ -- free for property owners. Vehicle relocation services also available.`,
 };
 
 const STATS = [
@@ -67,20 +67,27 @@ export default function ServicesPage() {
             Our Services
           </h1>
           <p className="text-lg md:text-xl text-white/90 max-w-2xl leading-relaxed reveal delay-200">
-            From private property impounds to parking enforcement and vehicle
-            relocations, {COMPANY.name} provides comprehensive towing solutions
-            for every type of property &mdash; all at no cost to property owners.
+            From private property impounds to parking enforcement,{" "}
+            {COMPANY.name} provides comprehensive towing solutions for every
+            type of property. Most services are completely free for property
+            owners.
           </p>
         </div>
       </section>
 
-      {/* ===== SERVICES GRID ===== */}
+      {/* ===== FREE SERVICES GRID ===== */}
       <section className="py-20 md:py-28 relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-br from-blue-950 via-blue-900 to-blue-800" />
         <div className="absolute inset-0 grain-overlay" />
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="inline-flex items-center gap-2 bg-green-500/20 border border-green-400/30 rounded-full px-4 py-1.5 mb-6 mx-auto reveal" style={{ display: "flex", width: "fit-content", margin: "0 auto 1.5rem" }}>
+            <svg className="w-4 h-4 text-green-400" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+            </svg>
+            <span className="text-green-300 text-sm font-semibold tracking-wide">Free for Property Owners</span>
+          </div>
           <h2 className="font-heading text-3xl md:text-4xl font-bold text-white text-center mb-4 reveal">
-            Comprehensive Towing Solutions
+            No-Cost Towing &amp; Enforcement
           </h2>
           <p className="text-blue-100 text-center text-lg mb-12 max-w-2xl mx-auto reveal delay-100">
             Choose the service that fits your property type. Every program is customized and completely free for property owners.
@@ -104,6 +111,53 @@ export default function ServicesPage() {
                 </p>
                 <span className="inline-flex items-center text-sm font-semibold text-blue-300 group-hover:text-white transition-colors">
                   Learn More
+                  <svg className="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                  </svg>
+                </span>
+              </Link>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ===== PAID SERVICES SECTION ===== */}
+      <section className="py-20 md:py-28 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="inline-flex items-center gap-2 bg-amber-100 border border-amber-200 rounded-full px-4 py-1.5 mb-6 mx-auto reveal" style={{ display: "flex", width: "fit-content", margin: "0 auto 1.5rem" }}>
+            <svg className="w-4 h-4 text-amber-600" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" d="M12 6v12m-3-2.818l.879.659c1.171.879 3.07.879 4.242 0 1.172-.879 1.172-2.303 0-3.182C13.536 12.219 12.768 12 12 12c-.725 0-1.45-.22-2.003-.659-1.106-.879-1.106-2.303 0-3.182s2.9-.879 4.006 0l.415.33M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+            </svg>
+            <span className="text-amber-700 text-sm font-semibold tracking-wide">Charged Services</span>
+          </div>
+          <h2 className="font-heading text-3xl md:text-4xl font-bold text-blue-950 text-center mb-4 reveal">
+            Additional Services
+          </h2>
+          <p className="text-body-text text-center text-lg mb-12 max-w-2xl mx-auto reveal delay-100">
+            These services are billed directly to the property owner. Contact us for a custom quote.
+          </p>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {PAID_SERVICES.map((service, i) => (
+              <Link
+                key={service.slug}
+                href={`/services/${service.slug}`}
+                className="group glass-card-white rounded-2xl p-8 reveal border-2 border-amber-100 hover:border-amber-200 transition-all hover:-translate-y-1"
+                style={{ animationDelay: `${(i + 1) * 100}ms` }}
+              >
+                <div className="w-14 h-14 rounded-xl bg-amber-50 flex items-center justify-center mb-5 text-amber-600 group-hover:bg-amber-100 transition-colors">
+                  {SERVICE_ICONS[service.icon] || SERVICE_ICONS.truck}
+                </div>
+                <h3 className="font-heading text-xl font-bold text-blue-950 mb-3 group-hover:text-amber-700 transition-colors">
+                  {service.title}
+                </h3>
+                <p className="text-body-text text-sm leading-relaxed mb-3">
+                  {service.shortDesc}
+                </p>
+                <p className="text-amber-700 text-sm font-semibold mb-4">
+                  {service.pricing}
+                </p>
+                <span className="inline-flex items-center text-sm font-semibold text-amber-600 group-hover:text-amber-800 transition-colors">
+                  Get a Quote
                   <svg className="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                   </svg>

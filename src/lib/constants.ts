@@ -28,7 +28,7 @@ export const COMPANY = {
   domain: "axletowing.com",
   tagline: "Professional Towing & Parking Management",
   description:
-    "Axle Towing & Impound provides professional private property impound, parking enforcement, and vehicle relocation services across the Phoenix metro area at no cost to property owners.",
+    "Axle Towing & Impound provides professional private property impound and parking enforcement services across the Phoenix metro area at no cost to property owners.",
   logo: "https://e5cdia7uckj.exactdn.com/wp-content/uploads/2021/05/Axle-Towing-and-Impound-in-Arizona-Logo.png",
   heroImage:
     "https://e5cdia7uckj.exactdn.com/wp-content/uploads/2023/09/242A4356-Multiple-Trucks-new.jpg?strip=all",
@@ -43,8 +43,23 @@ export const SERVICE_AREAS = [
   { name: "Chandler", slug: "chandler", description: "Dependable vehicle relocation services in Chandler." },
   { name: "Tempe", slug: "tempe", description: "Expert towing services near ASU and throughout Tempe." },
   { name: "Apache Junction", slug: "apache-junction", description: "Reliable towing and impound services in Apache Junction." },
+  { name: "Peoria", slug: "peoria", description: "Professional parking enforcement and towing for Peoria properties." },
+  { name: "Surprise", slug: "surprise", description: "Fast-response private property towing services in Surprise." },
+  { name: "Avondale", slug: "avondale", description: "Dependable towing and parking enforcement for Avondale properties." },
+  { name: "Goodyear", slug: "goodyear", description: "Professional private property towing services across Goodyear." },
+  { name: "Buckeye", slug: "buckeye", description: "Reliable towing and parking enforcement for Buckeye's growing communities." },
+  { name: "Fountain Hills", slug: "fountain-hills", description: "Premium parking enforcement and towing in Fountain Hills." },
+  { name: "Queen Creek", slug: "queen-creek", description: "Professional towing services for Queen Creek's master-planned communities." },
+  { name: "Paradise Valley", slug: "paradise-valley", description: "Discreet, premium towing services for Paradise Valley's luxury properties." },
+  { name: "Cave Creek", slug: "cave-creek", description: "Reliable private property towing and enforcement in Cave Creek." },
+  { name: "Litchfield Park", slug: "litchfield-park", description: "Professional parking enforcement for Litchfield Park communities." },
+  { name: "Tolleson", slug: "tolleson", description: "Dependable towing and impound services in Tolleson." },
+  { name: "El Mirage", slug: "el-mirage", description: "Fast-response towing and parking enforcement in El Mirage." },
+  { name: "Sun City", slug: "sun-city", description: "Specialized parking enforcement for Sun City's retirement communities." },
+  { name: "Maricopa", slug: "maricopa", description: "Professional towing services for Maricopa's expanding residential areas." },
 ];
 
+/** Free services — no cost to property owners */
 export const SERVICES = [
   {
     title: "Private Property Impounds",
@@ -57,12 +72,6 @@ export const SERVICES = [
     slug: "parking-enforcement",
     shortDesc: "Professional patrol and enforcement for parking garages and private lots.",
     icon: "clipboard",
-  },
-  {
-    title: "Vehicle Relocations",
-    slug: "vehicle-relocations",
-    shortDesc: "Move vehicles for asphalt repairs, property maintenance, and construction.",
-    icon: "truck",
   },
   {
     title: "HOA Towing",
@@ -81,6 +90,17 @@ export const SERVICES = [
     slug: "commercial-property-towing",
     shortDesc: "Protect your commercial property from unauthorized parking.",
     icon: "store",
+  },
+];
+
+/** Paid services — charged to property owners */
+export const PAID_SERVICES = [
+  {
+    title: "Vehicle Relocations",
+    slug: "vehicle-relocations",
+    shortDesc: "Professional vehicle moves for asphalt repairs, property maintenance, and construction projects.",
+    icon: "truck",
+    pricing: "Starting at ~$100/vehicle",
   },
 ];
 

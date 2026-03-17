@@ -33,7 +33,7 @@ export default function ServicePageTemplate({ data }: { data: ServicePageData })
               Call Now: {COMPANY.phone}
             </a>
             <Link href="/contact" className="btn-secondary">
-              Request Free Quote
+              {data.isPaid ? "Get a Quote" : "Request Free Quote"}
             </Link>
           </div>
           {/* Response Time Guarantee Badge */}
@@ -88,7 +88,7 @@ export default function ServicePageTemplate({ data }: { data: ServicePageData })
             What&apos;s Included
           </h2>
           <p className="text-gray-700 text-center text-lg mb-12 max-w-2xl mx-auto reveal delay-100">
-            Everything you need for professional {data.title.toLowerCase()} — completely free for {data.targetAudience}.
+            Everything you need for professional {data.title.toLowerCase()}{data.isPaid ? "." : ` -- completely free for ${data.targetAudience}.`}
           </p>
           <div className={`grid grid-cols-1 md:grid-cols-2 ${data.features.length > 3 ? "lg:grid-cols-4" : "lg:grid-cols-3"} gap-6`}>
             {data.features.map((f, i) => (
@@ -342,7 +342,9 @@ export default function ServicePageTemplate({ data }: { data: ServicePageData })
             Ready to Protect Your Property?
           </h2>
           <p className="text-white/95 text-lg mb-10 max-w-2xl mx-auto reveal delay-100">
-            Contact us today for a free consultation. Our {data.title.toLowerCase()} services are completely free for {data.targetAudience}.
+            {data.isPaid
+              ? `Contact us today for a custom quote on our ${data.title.toLowerCase()} services.`
+              : `Contact us today for a free consultation. Our ${data.title.toLowerCase()} services are completely free for ${data.targetAudience}.`}
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center reveal delay-200">
             <a href={`tel:${COMPANY.phone}`} className="btn-primary text-lg">

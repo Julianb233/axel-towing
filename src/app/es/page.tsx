@@ -28,7 +28,6 @@ export const metadata: Metadata = {
 const SERVICE_CARDS_ES = [
   { title: "Remolque de Propiedad Privada", desc: "Retire vehiculos no autorizados sin costo para usted", slug: "private-property-impounds" },
   { title: "Control de Estacionamiento", desc: "Patrullaje profesional para garajes y lotes privados", slug: "parking-enforcement" },
-  { title: "Reubicacion de Vehiculos", desc: "Movimiento rapido de vehiculos para reparaciones y mantenimiento", slug: "vehicle-relocations" },
   { title: "Remolque para HOA", desc: "Programas de grua personalizados para asociaciones de propietarios", slug: "hoa-towing" },
   { title: "Remolque para Apartamentos", desc: "Mantenga organizado el estacionamiento de su complejo", slug: "apartment-towing" },
   { title: "Propiedad Comercial", desc: "Proteja su propiedad comercial del estacionamiento no autorizado", slug: "commercial-property-towing" },
