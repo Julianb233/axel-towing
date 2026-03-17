@@ -5,7 +5,7 @@ import { COMPANY } from "@/lib/constants";
 export const metadata: Metadata = {
   title: "Vehicle Relocation for Construction and Asphalt Projects: A Complete Guide",
   description:
-    "Learn how Phoenix construction and asphalt companies can relocate vehicles from work zones. Covers Arizona laws, coordination with property managers, and free vehicle relocation services.",
+    "Learn how Phoenix construction and asphalt companies can relocate vehicles from work zones. Covers Arizona laws, coordination with property managers, and professional vehicle relocation services.",
 };
 
 const RELATED_ARTICLES = [

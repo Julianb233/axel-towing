@@ -28,7 +28,7 @@ export const metadata: Metadata = {
 const SERVICE_CARDS_ES = [
   { title: "Remolque de Propiedad Privada", desc: "Retire vehiculos no autorizados sin costo para usted", slug: "private-property-impounds" },
   { title: "Control de Estacionamiento", desc: "Patrullaje profesional para garajes y lotes privados", slug: "parking-enforcement" },
-  { title: "Reubicacion de Vehiculos", desc: "Movimiento rapido de vehiculos para reparaciones y mantenimiento", slug: "vehicle-relocations" },
+  { title: "Reubicacion de Vehiculos", desc: "Servicio de pago para mover vehiculos durante proyectos de construccion y mantenimiento", slug: "vehicle-relocations", paid: true },
   { title: "Remolque para HOA", desc: "Programas de grua personalizados para asociaciones de propietarios", slug: "hoa-towing" },
   { title: "Remolque para Apartamentos", desc: "Mantenga organizado el estacionamiento de su complejo", slug: "apartment-towing" },
   { title: "Propiedad Comercial", desc: "Proteja su propiedad comercial del estacionamiento no autorizado", slug: "commercial-property-towing" },
@@ -128,7 +128,12 @@ export default function SpanishHomePage() {
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {SERVICE_CARDS_ES.map((service, i) => (
-              <Link key={service.title} href={`/services/${service.slug}`} className="glass-card rounded-2xl p-8 group cursor-pointer reveal" style={{ transitionDelay: `${i * 100}ms` }}>
+              <Link key={service.title} href={`/services/${service.slug}`} className="glass-card rounded-2xl p-8 group cursor-pointer reveal relative" style={{ transitionDelay: `${i * 100}ms` }}>
+                {"paid" in service && service.paid && (
+                  <span className="absolute top-4 right-4 bg-amber-500/20 border border-amber-400/30 text-amber-300 text-xs font-semibold px-2.5 py-1 rounded-full">
+                    Servicio de Pago
+                  </span>
+                )}
                 <h3 className="text-xl font-bold font-heading text-white mb-3 group-hover:text-cta transition-colors">{service.title}</h3>
                 <p className="text-blue-200 leading-relaxed mb-4">{service.desc}</p>
                 <span className="inline-flex items-center text-cta font-semibold text-sm group-hover:gap-2 transition-all">

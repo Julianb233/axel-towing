@@ -176,18 +176,18 @@ export const SERVICE_PAGES: Record<string, ServicePageData> = {
       "Professional vehicle relocation for asphalt repairs, property maintenance, and construction projects in Phoenix. Move 10 vehicles in 2 hours for $1,000. No impound needed.",
     heroHeadline: "Vehicle Relocation Services in Phoenix",
     heroSubtext:
-      "Professional vehicle moves for asphalt repairs, property maintenance, and construction projects — fast turnaround, no impound needed.",
+      "Professional vehicle moves for asphalt repairs, property maintenance, and construction projects. Fast turnaround, no impound needed. Pricing starts at ~$1,000 for 10 vehicles.",
     heroImage: "/images/service-vehicle-relocation.jpg",
     introTitle: "Move Vehicles Quickly for Property Maintenance",
     introText: [
       "Property maintenance projects like asphalt resurfacing, seal coating, line striping, and construction require vehicles to be temporarily relocated. Axle Towing provides professional vehicle relocation services that keep your projects on schedule and on budget.",
-      "Unlike impound services, vehicle relocations simply move cars to another area on your property or a designated holding zone. No one gets towed to an impound lot — vehicles are just repositioned so work can proceed.",
+      "Unlike our free enforcement services, vehicle relocations are a paid service charged to property owners. This covers the specialized crew, equipment, and coordination required to move multiple vehicles quickly and safely. No one gets towed to an impound lot — vehicles are just repositioned so work can proceed.",
       "Our quick-turnaround pricing makes it easy: we can relocate 10 vehicles in approximately 2 hours for around $1,000. That is a fraction of the cost of project delays caused by vehicles blocking work areas.",
     ],
     features: [
       { title: "Asphalt & Seal Coat Projects", desc: "We clear parking sections for asphalt resurfacing, seal coating, and line striping — moving vehicles phase by phase as contractors work.", icon: "road" },
       { title: "Construction Support", desc: "Clear staging areas, loading zones, and work zones for construction crews. We coordinate with your general contractor for seamless operations.", icon: "construction" },
-      { title: "Quick Turnaround", desc: "10 vehicles relocated in approximately 2 hours for around $1,000 — far cheaper than project delays or rescheduling contractors.", icon: "speed" },
+      { title: "Transparent Pricing", desc: "Approximately $1,000 for 10 vehicles relocated in 2 hours. Clear pricing upfront, far cheaper than project delays or rescheduling contractors.", icon: "speed" },
       { title: "No Impound Required", desc: "Vehicles are moved on-site to available parking areas or temporary holding zones. No one's car goes to an impound lot.", icon: "move" },
     ],
     howItWorks: [
