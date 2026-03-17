@@ -141,7 +141,7 @@ const STATS = [
   { value: 99, suffix: "%", label: "Satisfaction Rate" },
   { value: 500, suffix: "+", label: "Properties Served" },
   { value: 30, suffix: " Min", label: "Avg Response Time" },
-  { value: 5, suffix: "+", label: "Years Experience" },
+  { value: 30, suffix: "+", label: "Years Combined Experience" },
 ];
 
 function StarRating() {

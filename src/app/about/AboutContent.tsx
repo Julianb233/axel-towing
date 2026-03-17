@@ -158,7 +158,7 @@ export default function AboutContent() {
                 <p>
                   Starting from our Apache Junction location, we built a reputation for responsive
                   service, legal compliance, and genuine partnership with the communities we serve.
-                  Our founding team brought over 25 years of combined industry experience, applying
+                  Our founding team brought over 30 years of combined industry experience, applying
                   that knowledge to reimagine what a towing company could be.
                 </p>
                 <p>
