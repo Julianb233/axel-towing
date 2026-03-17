@@ -3,6 +3,7 @@
 import { useEffect, useRef } from "react";
 import Link from "next/link";
 import { COMPANY } from "@/lib/constants";
+import { JOB_POSITIONS } from "@/lib/jobs";
 
 /* ── Parallax Hook ── */
 function useParallax() {
@@ -200,43 +201,40 @@ export default function CareersContent() {
             </p>
           </div>
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-            {POSITIONS.map((pos, i) => (
-              <div
-                key={pos.title}
-                className={`reveal glass-card-white rounded-2xl p-8 shadow-md delay-${(i + 1) * 100}`}
+            {JOB_POSITIONS.map((pos, i) => (
+              <Link
+                key={pos.slug}
+                href={`/careers/${pos.slug}`}
+                className={`reveal glass-card-white rounded-2xl p-8 shadow-md delay-${(i + 1) * 100} group hover:shadow-lg transition-shadow`}
               >
                 <div className="flex items-start justify-between mb-4">
                   <div>
-                    <h3 className="text-xl font-bold text-blue-900 font-heading">{pos.title}</h3>
-                    <span className="inline-block mt-1 px-3 py-1 bg-primary/10 text-primary text-sm font-semibold rounded-full">
-                      {pos.type}
-                    </span>
+                    <h3 className="text-xl font-bold text-blue-900 font-heading group-hover:text-primary transition-colors">
+                      {pos.title}
+                    </h3>
+                    <div className="flex flex-wrap gap-2 mt-2">
+                      <span className="px-3 py-1 bg-primary/10 text-primary text-sm font-semibold rounded-full">
+                        {pos.type}
+                      </span>
+                      <span className="px-3 py-1 bg-gray-100 text-gray-600 text-sm rounded-full">
+                        {pos.department}
+                      </span>
+                      <span className="px-3 py-1 bg-green-50 text-green-700 text-sm font-medium rounded-full">
+                        {pos.payRange}
+                      </span>
+                    </div>
                   </div>
-                  <div className="w-10 h-10 rounded-lg bg-primary text-white flex items-center justify-center text-sm font-bold font-heading shrink-0">
-                    {String(i + 1).padStart(2, "0")}
+                  <div className="w-10 h-10 rounded-lg bg-primary text-white flex items-center justify-center shrink-0 group-hover:bg-cta transition-colors">
+                    <svg className="w-5 h-5" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
+                    </svg>
                   </div>
                 </div>
-                <p className="text-gray-600 mb-4 leading-relaxed">{pos.description}</p>
-                <h4 className="text-sm font-bold text-blue-900 uppercase tracking-wide mb-2">
-                  Requirements
-                </h4>
-                <ul className="text-gray-600 text-sm space-y-1.5">
-                  {pos.requirements.map((req) => (
-                    <li key={req} className="flex items-start gap-2">
-                      <svg
-                        className="w-4 h-4 text-primary shrink-0 mt-0.5"
-                        fill="none"
-                        stroke="currentColor"
-                        strokeWidth={2}
-                        viewBox="0 0 24 24"
-                      >
-                        <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12.75l6 6 9-13.5" />
-                      </svg>
-                      {req}
-                    </li>
-                  ))}
-                </ul>
-              </div>
+                <p className="text-gray-600 mb-4 leading-relaxed">{pos.description.slice(0, 180)}...</p>
+                <span className="text-primary font-semibold text-sm group-hover:underline">
+                  View Details &amp; Apply &rarr;
+                </span>
+              </Link>
             ))}
           </div>
         </div>
