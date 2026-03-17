@@ -662,4 +662,1719 @@ export const LOCATION_PAGES: Record<string, LocationPageData> = {
     ],
     address: "1151 W. Apache Trail, Apache Junction, AZ 85120",
   },
+  peoria: {
+    city: "Peoria",
+    slug: "peoria",
+    metaTitle:
+      "Towing Services in Peoria, AZ — Private Property Impounds & Parking Enforcement",
+    metaDescription:
+      "Professional private property towing and parking enforcement in Peoria, AZ. Axle Towing serves apartments, HOAs, and commercial properties at no cost. Call 480-288-5526.",
+    heroImage: "/images/arizona-commercial-parking.jpg",
+    heroSubtext:
+      "Professional private property towing and parking enforcement for Peoria's thriving residential communities and growing commercial districts.",
+    intro: [
+      "Peoria is one of the largest and fastest-growing cities in the Phoenix metro area, with a population approaching 190,000. Stretching from the urban core near Grand Avenue to the master-planned communities of Vistancia and Lake Pleasant, Peoria offers a diverse mix of residential, commercial, and recreational properties that all benefit from professional parking enforcement.",
+      "Axle Towing provides reliable, professional towing and parking enforcement services throughout Peoria. Whether you manage a large apartment complex along Bell Road, an HOA community in Vistancia, or a busy retail center near the P83 Entertainment District, we deliver consistent service tailored to your property's needs. We understand the unique mix of established neighborhoods and rapidly expanding developments that define Peoria.",
+      "Our Peoria services are completely free for property owners. We install ARS-compliant signage, patrol on your schedule, and remove unauthorized vehicles quickly and professionally. As one of the Valley's most desirable cities, Peoria properties deserve enforcement that maintains high community standards.",
+    ],
+    neighborhoods: [
+      "Vistancia",
+      "Lake Pleasant",
+      "P83 Entertainment District",
+      "Old Town Peoria",
+      "Westwing Mountain",
+      "Sunrise Mountain",
+      "Fletcher Heights",
+      "Bell Park",
+      "Terramar",
+      "Blackstone at Vistancia",
+    ],
+    propertyTypes: [
+      "Apartment Complexes",
+      "HOA Communities",
+      "Retail Centers",
+      "Office Parks",
+      "Medical Facilities",
+      "Restaurants",
+      "Mixed-Use Developments",
+      "Industrial Properties",
+    ],
+    localStats: [
+      { label: "Population", value: "190K+" },
+      { label: "HOA Communities", value: "600+" },
+      { label: "Apartment Units", value: "18K+" },
+      { label: "Response Time", value: "< 30 min" },
+    ],
+    testimonial: {
+      quote:
+        "We struggled with unauthorized parking in our Vistancia community for years. Axle Towing installed proper signage, set up a patrol schedule, and the problem was solved within weeks. Their portal makes reporting effortless.",
+      name: "Patricia H.",
+      role: "HOA President, Vistancia",
+    },
+    whyChooseUs: [
+      {
+        title: "Suburban Community Expertise",
+        description:
+          "Peoria's mix of master-planned communities and established neighborhoods requires enforcement that respects each area's character.",
+      },
+      {
+        title: "Wide Coverage Area",
+        description:
+          "From Lake Pleasant to Old Town, our team covers all of Peoria with consistent sub-30-minute response times.",
+      },
+      {
+        title: "Zero Cost to You",
+        description:
+          "All our services — signage, patrol, towing, and portal access — are completely free for Peoria property owners.",
+      },
+      {
+        title: "Growth-Ready Service",
+        description:
+          "As Peoria continues to expand north and west, we scale our services to match new developments as they come online.",
+      },
+    ],
+    cityFacts: [
+      "One of the fastest-growing cities in Arizona with nearly 190,000 residents",
+      "Home to the P83 Entertainment District, a major dining and nightlife corridor",
+      "Vistancia is one of the top-selling master-planned communities in the nation",
+      "Lake Pleasant Regional Park draws over a million visitors annually",
+      "Spring training home of the San Diego Padres and Seattle Mariners",
+    ],
+  },
+  surprise: {
+    city: "Surprise",
+    slug: "surprise",
+    metaTitle:
+      "Towing Services in Surprise, AZ — Private Property Impounds & Parking Enforcement",
+    metaDescription:
+      "Professional private property towing and parking enforcement in Surprise, AZ. Axle Towing serves HOAs, apartments, and commercial properties at no cost. Call 480-288-5526.",
+    heroImage: "/images/arizona-hoa-entrance.jpg",
+    heroSubtext:
+      "Fast-response private property towing and parking enforcement for Surprise's rapidly expanding residential and commercial communities.",
+    intro: [
+      "Surprise is one of the Phoenix metro area's fastest-growing cities, with a population exceeding 150,000 and new master-planned communities opening regularly. The city's explosive growth has brought thousands of new homes, apartment complexes, retail centers, and commercial properties — all of which need professional parking enforcement to maintain orderly communities.",
+      "From the established neighborhoods near the original town center to the sprawling developments of Surprise Farms, Marley Park, and Asante, Axle Towing provides reliable parking enforcement that keeps pace with the city's rapid expansion. We serve HOAs dealing with guest parking overflow, apartment communities managing tenant compliance, and commercial properties along Bell Road and Waddell Road.",
+      "Our Surprise services are completely free for property owners. We provide ARS-compliant signage installation, scheduled patrols, and prompt vehicle removal at no cost. As Surprise continues its remarkable growth trajectory, we are here to help property owners maintain the high standards their communities expect.",
+    ],
+    neighborhoods: [
+      "Surprise Farms",
+      "Marley Park",
+      "Asante",
+      "Sun Village",
+      "Desert Oasis",
+      "Arizona Traditions",
+      "Surprise City Center",
+      "Rancho Gabriela",
+      "Sierra Montana",
+      "Greer Ranch",
+    ],
+    propertyTypes: [
+      "HOA Communities",
+      "Apartment Complexes",
+      "Retail Centers",
+      "Medical Facilities",
+      "Office Buildings",
+      "Restaurants",
+      "Mixed-Use Developments",
+      "Senior Living Facilities",
+    ],
+    localStats: [
+      { label: "Population", value: "150K+" },
+      { label: "HOA Communities", value: "500+" },
+      { label: "Apartment Units", value: "12K+" },
+      { label: "Response Time", value: "< 30 min" },
+    ],
+    testimonial: {
+      quote:
+        "Our HOA was dealing with constant guest parking violations and abandoned vehicles. Axle Towing set everything up, handles all the enforcement, and it does not cost us a dime. Exactly the partner we needed.",
+      name: "Robert S.",
+      role: "HOA Board Member, Marley Park",
+    },
+    whyChooseUs: [
+      {
+        title: "Rapid-Growth Expertise",
+        description:
+          "We onboard new communities quickly as Surprise continues to expand, ensuring enforcement is in place before parking problems develop.",
+      },
+      {
+        title: "Master-Planned Community Focus",
+        description:
+          "Surprise has dozens of master-planned HOAs with strict CC&R requirements. We tailor our enforcement to match each community's specific rules.",
+      },
+      {
+        title: "Zero Cost to You",
+        description:
+          "All our services — signage, patrol, towing, and portal access — are completely free for Surprise property owners.",
+      },
+      {
+        title: "Reliable Response Times",
+        description:
+          "Despite Surprise's westward expansion, our strategic positioning ensures sub-30-minute response times across the city.",
+      },
+    ],
+    cityFacts: [
+      "One of the fastest-growing cities in the entire United States",
+      "Population has more than tripled since 2000 to over 150,000 residents",
+      "Spring training home of the Texas Rangers and Kansas City Royals",
+      "Marley Park is nationally recognized for its award-winning community design",
+      "Major retail and commercial growth along Bell Road and Waddell Road corridors",
+    ],
+  },
+  avondale: {
+    city: "Avondale",
+    slug: "avondale",
+    metaTitle:
+      "Towing Services in Avondale, AZ — Private Property Impounds & Parking Enforcement",
+    metaDescription:
+      "Dependable private property towing and parking enforcement in Avondale, AZ. Axle Towing serves apartments, HOAs, and commercial properties at no cost. Call 480-288-5526.",
+    heroImage: "/images/arizona-apartment-parking.jpg",
+    heroSubtext:
+      "Dependable private property towing and parking enforcement for Avondale's growing residential communities and commercial corridors.",
+    intro: [
+      "Avondale is a vibrant West Valley city with a population of approximately 90,000, known for its diverse community, strategic location along the I-10 corridor, and strong growth in both residential and commercial development. With Phoenix International Raceway (now Phoenix Raceway) drawing hundreds of thousands of visitors annually, Avondale properties face unique parking enforcement challenges.",
+      "Axle Towing provides professional towing and parking enforcement services throughout Avondale, from the established neighborhoods near the Agua Fria River to the newer developments south of I-10. We serve apartment communities along McDowell Road, HOAs in Coldwater Springs and Garden Lakes, and commercial properties throughout the city's growing retail corridors.",
+      "Our Avondale services are completely free for property owners. We install ARS-compliant signage, conduct regular patrols, and remove unauthorized vehicles promptly at no cost. Whether you manage a property near the raceway that deals with event-day overflow or a residential community that needs ongoing enforcement, Axle Towing delivers reliable results.",
+    ],
+    neighborhoods: [
+      "Coldwater Springs",
+      "Garden Lakes",
+      "Crystal Gardens",
+      "Avondale Civic Center",
+      "Westwind",
+      "Cashion",
+      "Dysart Road Corridor",
+      "Festival Foothills",
+      "Rio Paseo",
+      "Tres Rios",
+    ],
+    propertyTypes: [
+      "Apartment Complexes",
+      "HOA Communities",
+      "Retail Centers",
+      "Industrial Properties",
+      "Office Parks",
+      "Restaurants",
+      "Entertainment Venues",
+      "Mixed-Use Developments",
+    ],
+    localStats: [
+      { label: "Population", value: "90K+" },
+      { label: "HOA Communities", value: "250+" },
+      { label: "Apartment Units", value: "8K+" },
+      { label: "Response Time", value: "< 30 min" },
+    ],
+    testimonial: {
+      quote:
+        "Race weekends used to bring chaos to our apartment complex parking lot. Axle Towing put up proper signage and now enforces our lot during events and year-round. Professional, fast, and completely free.",
+      name: "Carlos M.",
+      role: "Property Manager, Avondale",
+    },
+    whyChooseUs: [
+      {
+        title: "Event-Day Expertise",
+        description:
+          "Phoenix Raceway events create massive parking overflow. We ramp up enforcement to protect nearby properties during race weekends and major events.",
+      },
+      {
+        title: "West Valley Coverage",
+        description:
+          "Our strategic West Valley positioning means fast response times throughout Avondale and the surrounding corridor.",
+      },
+      {
+        title: "Zero Cost to You",
+        description:
+          "All our services — signage, patrol, towing, and portal access — are completely free for Avondale property owners.",
+      },
+      {
+        title: "Bilingual Service",
+        description:
+          "Avondale's diverse community benefits from our bilingual team members who communicate clearly with all residents and stakeholders.",
+      },
+    ],
+    cityFacts: [
+      "Home to Phoenix Raceway, hosting major NASCAR and IndyCar events",
+      "Population of approximately 90,000 with continued strong growth",
+      "Strategically located along the I-10 corridor in the West Valley",
+      "Tres Rios Wetlands is one of the Valley's premier nature areas",
+      "Major commercial development along McDowell Road and Dysart Road corridors",
+    ],
+  },
+  goodyear: {
+    city: "Goodyear",
+    slug: "goodyear",
+    metaTitle:
+      "Towing Services in Goodyear, AZ — Private Property Impounds & Parking Enforcement",
+    metaDescription:
+      "Professional private property towing and parking enforcement in Goodyear, AZ. Axle Towing serves HOAs, apartments, and commercial properties at no cost. Call 480-288-5526.",
+    heroImage: "/images/arizona-mesa-residential.jpg",
+    heroSubtext:
+      "Professional private property towing and parking enforcement for Goodyear's rapidly growing master-planned communities and commercial developments.",
+    intro: [
+      "Goodyear is one of the fastest-growing cities in Arizona, with a population exceeding 105,000 and a reputation for exceptional master-planned communities, top-rated schools, and a thriving local economy. The city's rapid expansion has created a surge in new residential developments, commercial centers, and mixed-use properties that all need reliable parking enforcement.",
+      "From the award-winning Estrella community and Palm Valley to the Goodyear Ballpark District and the expanding commercial corridor along I-10, Axle Towing delivers professional parking enforcement tailored to each property's needs. We work with HOA boards managing CC&R compliance, apartment managers maintaining tenant parking order, and commercial property owners protecting their lots.",
+      "Our Goodyear services are completely free for property owners. We provide ARS-compliant signage installation, scheduled patrols, and prompt vehicle removal at no cost. Goodyear's rapid growth means parking challenges are evolving constantly, and we stay ahead of the curve to keep your property well-managed.",
+    ],
+    neighborhoods: [
+      "Estrella",
+      "Palm Valley",
+      "PebbleCreek",
+      "Canyon Trails",
+      "Goodyear Ballpark District",
+      "Wigwam",
+      "Centerra",
+      "Montecito",
+      "Sarival",
+      "Lomas Verdes",
+    ],
+    propertyTypes: [
+      "HOA Communities",
+      "Apartment Complexes",
+      "Retail Centers",
+      "Office Parks",
+      "Medical Facilities",
+      "Industrial Properties",
+      "Senior Living Facilities",
+      "Mixed-Use Developments",
+    ],
+    localStats: [
+      { label: "Population", value: "105K+" },
+      { label: "HOA Communities", value: "350+" },
+      { label: "Apartment Units", value: "10K+" },
+      { label: "Response Time", value: "< 30 min" },
+    ],
+    testimonial: {
+      quote:
+        "Estrella has strict community standards and Axle Towing understands that. They enforce our parking rules professionally and their online portal gives our board complete visibility. The best part — it costs us nothing.",
+      name: "Jennifer L.",
+      role: "HOA Board Member, Estrella",
+    },
+    whyChooseUs: [
+      {
+        title: "Master-Planned Community Specialists",
+        description:
+          "Goodyear is defined by its exceptional master-planned communities. We tailor enforcement programs to each community's CC&R requirements.",
+      },
+      {
+        title: "Rapid Onboarding",
+        description:
+          "New developments come online regularly in Goodyear. We onboard new properties quickly so enforcement is in place from day one.",
+      },
+      {
+        title: "Zero Cost to You",
+        description:
+          "All our services — signage, patrol, towing, and portal access — are completely free for Goodyear property owners.",
+      },
+      {
+        title: "Consistent Coverage",
+        description:
+          "From PebbleCreek to Canyon Trails, our strategic positioning ensures reliable response times across Goodyear's expanding footprint.",
+      },
+    ],
+    cityFacts: [
+      "One of the fastest-growing cities in Arizona with over 105,000 residents",
+      "Estrella is consistently ranked among the nation's top master-planned communities",
+      "Spring training home of the Cleveland Guardians and Cincinnati Reds",
+      "PebbleCreek is a premier 55+ active adult community",
+      "Major commercial and industrial growth along the I-10 and Loop 303 corridors",
+    ],
+  },
+  buckeye: {
+    city: "Buckeye",
+    slug: "buckeye",
+    metaTitle:
+      "Towing Services in Buckeye, AZ — Private Property Impounds & Parking Enforcement",
+    metaDescription:
+      "Reliable private property towing and parking enforcement in Buckeye, AZ. Axle Towing serves the Valley's fastest-growing city at no cost to property owners. Call 480-288-5526.",
+    heroImage: "/images/arizona-fire-lane.jpg",
+    heroSubtext:
+      "Reliable private property towing and parking enforcement for Buckeye — the fastest-growing city in the Phoenix metro area.",
+    intro: [
+      "Buckeye holds the distinction of being one of the fastest-growing cities in the entire United States, with a population exceeding 110,000 and tens of thousands of new homes planned across massive master-planned communities. This explosive growth brings new apartment complexes, retail centers, and commercial properties online at a pace that demands professional parking enforcement from day one.",
+      "From the sprawling Verrado and Tartesso communities to the established areas of Downtown Buckeye and Sun Valley Parkway, Axle Towing provides professional parking enforcement that grows with the city. We work with developers, property managers, and HOA boards to ensure enforcement infrastructure is in place as new communities open and mature.",
+      "Our Buckeye services are completely free for property owners. We install ARS-compliant signage, patrol on your schedule, and remove unauthorized vehicles promptly. As Buckeye continues its remarkable growth, having a professional towing partner who understands the challenges of rapidly expanding communities is essential.",
+    ],
+    neighborhoods: [
+      "Verrado",
+      "Tartesso",
+      "Festival Ranch",
+      "Sundance",
+      "Sienna Hills",
+      "Westpark",
+      "Downtown Buckeye",
+      "Sun Valley Parkway Area",
+      "Roosevelt",
+      "Buckeye Hills",
+    ],
+    propertyTypes: [
+      "HOA Communities",
+      "Apartment Complexes",
+      "Retail Centers",
+      "Office Parks",
+      "Industrial Properties",
+      "Restaurants",
+      "Senior Living Facilities",
+      "Mixed-Use Developments",
+    ],
+    localStats: [
+      { label: "Population", value: "110K+" },
+      { label: "HOA Communities", value: "300+" },
+      { label: "New Homes/Year", value: "5,000+" },
+      { label: "Response Time", value: "< 35 min" },
+    ],
+    testimonial: {
+      quote:
+        "Our community in Verrado was new and already dealing with unauthorized parking from construction crews and visitors. Axle Towing got signage up fast, started patrols, and the problem was handled. Great service at zero cost.",
+      name: "Mark D.",
+      role: "HOA Manager, Verrado",
+    },
+    whyChooseUs: [
+      {
+        title: "New Community Specialists",
+        description:
+          "We specialize in setting up enforcement for brand-new communities, getting signage and patrols in place before parking problems develop.",
+      },
+      {
+        title: "Scalable Service",
+        description:
+          "Buckeye's growth means your community will evolve. We scale our services as your property adds phases, units, or commercial tenants.",
+      },
+      {
+        title: "Zero Cost to You",
+        description:
+          "All our services — signage, patrol, towing, and portal access — are completely free for Buckeye property owners.",
+      },
+      {
+        title: "West Valley Commitment",
+        description:
+          "We are committed to serving the West Valley's growth corridor and maintaining reliable coverage as Buckeye expands westward.",
+      },
+    ],
+    cityFacts: [
+      "One of the fastest-growing cities in the entire United States",
+      "Population has more than quadrupled since 2010 to over 110,000 residents",
+      "Verrado is a nationally recognized master-planned community with a vibrant Main Street",
+      "Over 5,000 new homes built annually with tens of thousands more planned",
+      "Massive land area of over 600 square miles makes it geographically one of the largest cities in Arizona",
+    ],
+  },
+  "fountain-hills": {
+    city: "Fountain Hills",
+    slug: "fountain-hills",
+    metaTitle:
+      "Towing Services in Fountain Hills, AZ — Private Property Impounds & Parking Enforcement",
+    metaDescription:
+      "Premium private property towing and parking enforcement in Fountain Hills, AZ. Axle Towing serves HOAs, condos, and commercial properties at no cost. Call 480-288-5526.",
+    heroImage: "/images/arizona-skyline-panoramic.jpg",
+    heroSubtext:
+      "Premium private property towing and parking enforcement for Fountain Hills' scenic residential communities and charming town center.",
+    intro: [
+      "Fountain Hills is a picturesque community of approximately 25,000 residents, renowned for its world-famous fountain, stunning McDowell Mountain views, and high quality of life. Property owners in Fountain Hills expect a level of service that matches the community's premium character, and Axle Towing delivers exactly that with discreet, professional parking enforcement.",
+      "From the upscale communities along Saguaro Boulevard to the condominiums near the Town Center and the residential neighborhoods surrounding the famous fountain, we provide tailored enforcement that respects the quiet, refined atmosphere Fountain Hills is known for. Our team understands that enforcement in a close-knit community like Fountain Hills requires tact and professionalism.",
+      "Our Fountain Hills services are completely free for property owners. We install ARS-compliant signage that blends with your property's aesthetics, conduct unobtrusive patrols, and handle vehicle removals with discretion. Whether you manage an HOA community or a commercial property in the Town Center, Axle Towing protects your parking without disrupting your community.",
+    ],
+    neighborhoods: [
+      "Town Center",
+      "Firerock Country Club",
+      "Sunridge Canyon",
+      "Eagle Mountain",
+      "CopperWynd",
+      "Balera",
+      "Fountain Hills Boulevard Corridor",
+      "Saguaro Boulevard Area",
+      "Crestview",
+      "Panorama",
+    ],
+    propertyTypes: [
+      "HOA Communities",
+      "Condominium Complexes",
+      "Retail Properties",
+      "Medical Offices",
+      "Restaurants",
+      "Office Buildings",
+      "Country Club Properties",
+      "Mixed-Use Properties",
+    ],
+    localStats: [
+      { label: "Population", value: "25K+" },
+      { label: "HOA Communities", value: "150+" },
+      { label: "Avg. Home Value", value: "$600K+" },
+      { label: "Response Time", value: "< 30 min" },
+    ],
+    testimonial: {
+      quote:
+        "In Fountain Hills, we expect everything to be done with class. Axle Towing delivers exactly that — professional, quiet enforcement that maintains our community's standards. Their signage is compliant and tasteful, and the service is completely free.",
+      name: "Diane W.",
+      role: "HOA President, Firerock Country Club",
+    },
+    whyChooseUs: [
+      {
+        title: "Premium Community Standards",
+        description:
+          "We understand that Fountain Hills properties demand enforcement with discretion, professionalism, and attention to aesthetics.",
+      },
+      {
+        title: "Small-Town Sensitivity",
+        description:
+          "In a close-knit community, enforcement must be handled with care. Our team communicates clearly and treats every situation with respect.",
+      },
+      {
+        title: "Zero Cost to You",
+        description:
+          "All our services — signage, patrol, towing, and portal access — are completely free for Fountain Hills property owners.",
+      },
+      {
+        title: "Event Coverage",
+        description:
+          "The Fountain Hills Great Fair and other community events create parking surges. We provide extra coverage during peak periods.",
+      },
+    ],
+    cityFacts: [
+      "Home to one of the world's tallest fountains, shooting water up to 560 feet",
+      "Surrounded by the McDowell Mountain Regional Park and Preserve",
+      "Approximately 25,000 residents with a strong sense of community identity",
+      "The Fountain Hills Great Fair is one of the top-rated art festivals in the nation",
+      "Known as a quiet, upscale community with stunning desert and mountain views",
+    ],
+  },
+  "queen-creek": {
+    city: "Queen Creek",
+    slug: "queen-creek",
+    metaTitle:
+      "Towing Services in Queen Creek, AZ — Private Property Impounds & Parking Enforcement",
+    metaDescription:
+      "Professional private property towing and parking enforcement in Queen Creek, AZ. Axle Towing serves HOAs, apartments, and commercial properties at no cost. Call 480-288-5526.",
+    heroImage: "/images/arizona-hoa-entrance.jpg",
+    heroSubtext:
+      "Professional private property towing and parking enforcement for Queen Creek's family-oriented master-planned communities.",
+    intro: [
+      "Queen Creek is one of the most sought-after family communities in the Phoenix metro area, with a population exceeding 75,000 and a reputation for outstanding schools, equestrian-friendly neighborhoods, and a charming small-town feel. The town's rapid growth has brought new master-planned communities, apartment developments, and retail centers that need professional parking enforcement.",
+      "From the popular Sossaman Road corridor to the master-planned communities of Hastings Farms, Queen Creek Station, and Encanterra, Axle Towing provides professional enforcement that respects the family-oriented, community-driven character that makes Queen Creek special. We work closely with HOA boards and property managers to enforce parking rules while maintaining neighborly relations.",
+      "Our Queen Creek services are completely free for property owners. We install ARS-compliant signage, conduct scheduled patrols, and remove unauthorized vehicles at no cost. Queen Creek's commitment to maintaining high community standards aligns perfectly with our approach to professional, respectful enforcement.",
+    ],
+    neighborhoods: [
+      "Hastings Farms",
+      "Queen Creek Station",
+      "Encanterra",
+      "Cortina",
+      "Sossaman Estates",
+      "San Tan Heights",
+      "Morning Sun Farms",
+      "Mandalay",
+      "Meridian",
+      "Queen Creek Town Center",
+    ],
+    propertyTypes: [
+      "HOA Communities",
+      "Apartment Complexes",
+      "Equestrian Properties",
+      "Retail Centers",
+      "Office Buildings",
+      "Medical Facilities",
+      "Restaurants",
+      "Mixed-Use Developments",
+    ],
+    localStats: [
+      { label: "Population", value: "75K+" },
+      { label: "HOA Communities", value: "250+" },
+      { label: "Apartment Units", value: "6K+" },
+      { label: "Response Time", value: "< 30 min" },
+    ],
+    testimonial: {
+      quote:
+        "Queen Creek families expect well-maintained communities, and parking violations were becoming an issue. Axle Towing handled everything professionally and our neighborhood looks better than ever. Cannot beat free service.",
+      name: "Amanda K.",
+      role: "HOA Board Member, Hastings Farms",
+    },
+    whyChooseUs: [
+      {
+        title: "Family-Community Focus",
+        description:
+          "We understand Queen Creek's family-first culture and enforce with courtesy and respect that matches the community's values.",
+      },
+      {
+        title: "Rural-Suburban Expertise",
+        description:
+          "Queen Creek's unique mix of equestrian properties and suburban developments requires flexible enforcement — and we deliver.",
+      },
+      {
+        title: "Zero Cost to You",
+        description:
+          "All our services — signage, patrol, towing, and portal access — are completely free for Queen Creek property owners.",
+      },
+      {
+        title: "Growing With You",
+        description:
+          "As Queen Creek continues to add new communities and commercial areas, we expand our coverage to serve every corner of town.",
+      },
+    ],
+    cityFacts: [
+      "One of the fastest-growing towns in Arizona with over 75,000 residents",
+      "Known for its equestrian-friendly neighborhoods and agricultural heritage",
+      "Queen Creek Olive Mill and Schnepf Farms are beloved local attractions",
+      "Excellent school districts make it a top choice for families with children",
+      "Rapid commercial growth along Ellsworth Road and Rittenhouse Road corridors",
+    ],
+  },
+  "paradise-valley": {
+    city: "Paradise Valley",
+    slug: "paradise-valley",
+    metaTitle:
+      "Towing Services in Paradise Valley, AZ — Premium Private Property Impounds & Parking Enforcement",
+    metaDescription:
+      "Discreet, premium private property towing and parking enforcement in Paradise Valley, AZ. Axle Towing serves luxury estates, resorts, and commercial properties at no cost. Call 480-288-5526.",
+    heroImage: "/images/arizona-commercial-parking.jpg",
+    heroSubtext:
+      "Discreet, premium private property towing and parking enforcement for Paradise Valley's luxury estates, resorts, and exclusive communities.",
+    intro: [
+      "Paradise Valley is Arizona's wealthiest municipality, home to approximately 14,000 residents and some of the most exclusive real estate in the American Southwest. With sprawling luxury estates, world-class resorts like The Phoenician and Sanctuary on Camelback Mountain, and a commitment to preserving its serene residential character, Paradise Valley demands a towing partner that operates with the utmost discretion and professionalism.",
+      "Axle Towing provides premium parking enforcement services tailored to Paradise Valley's unique needs. Whether you manage a luxury resort dealing with valet overflow, a high-end commercial property along Lincoln Drive, or a residential estate community with strict access controls, our team handles enforcement with the white-glove approach your property requires.",
+      "Our Paradise Valley services are completely free for property owners. We install tasteful, ARS-compliant signage that complements your property's aesthetics, conduct discreet patrols, and handle vehicle removals with minimal disruption. In a community where privacy and presentation are paramount, Axle Towing is the trusted enforcement partner.",
+    ],
+    neighborhoods: [
+      "Lincoln Drive Corridor",
+      "Camelback Mountain Area",
+      "Mummy Mountain",
+      "Invergordon",
+      "Paradise Valley Ranchos",
+      "Clearwater Hills",
+      "Finisterre",
+      "Paradise Hills",
+      "Mountain Shadows",
+      "Royal Palm",
+    ],
+    propertyTypes: [
+      "Luxury Estates",
+      "Resort Properties",
+      "Boutique Commercial",
+      "Medical Plazas",
+      "Fine Dining Restaurants",
+      "Country Clubs",
+      "Condominium Complexes",
+      "Office Properties",
+    ],
+    localStats: [
+      { label: "Population", value: "14K+" },
+      { label: "Median Home Value", value: "$3M+" },
+      { label: "Resort Properties", value: "15+" },
+      { label: "Response Time", value: "< 25 min" },
+    ],
+    testimonial: {
+      quote:
+        "In Paradise Valley, everything must be done with the highest standards. Axle Towing provides exactly the level of service we require — discreet, professional, and effective. Our resort guests and residents never notice the enforcement, which is exactly how it should be.",
+      name: "Richard B.",
+      role: "Resort General Manager, Paradise Valley",
+    },
+    whyChooseUs: [
+      {
+        title: "White-Glove Service",
+        description:
+          "Paradise Valley properties demand enforcement that is invisible to residents and guests. Our team operates with complete discretion.",
+      },
+      {
+        title: "Resort & Estate Expertise",
+        description:
+          "We work with luxury resorts, country clubs, and estate communities that require the highest standards of professionalism.",
+      },
+      {
+        title: "Zero Cost to You",
+        description:
+          "All our services — signage, patrol, towing, and portal access — are completely free for Paradise Valley property owners.",
+      },
+      {
+        title: "Rapid Response",
+        description:
+          "Our central positioning ensures sub-25-minute response times throughout Paradise Valley, day or night.",
+      },
+    ],
+    cityFacts: [
+      "Wealthiest municipality in Arizona with a median home value exceeding $3 million",
+      "Home to world-renowned resorts including The Phoenician and Sanctuary on Camelback Mountain",
+      "Approximately 14,000 residents in an exclusively residential community",
+      "Strict zoning laws preserve the town's low-density, estate-style character",
+      "Surrounded by Camelback Mountain and Mummy Mountain, two of Phoenix's most iconic landmarks",
+    ],
+  },
+  "cave-creek": {
+    city: "Cave Creek",
+    slug: "cave-creek",
+    metaTitle:
+      "Towing Services in Cave Creek, AZ — Private Property Impounds & Parking Enforcement",
+    metaDescription:
+      "Reliable private property towing and parking enforcement in Cave Creek, AZ. Axle Towing serves commercial properties, restaurants, and communities at no cost. Call 480-288-5526.",
+    heroImage: "/images/arizona-tow-operator.jpg",
+    heroSubtext:
+      "Reliable private property towing and parking enforcement for Cave Creek's unique Western-themed commercial district and desert residential communities.",
+    intro: [
+      "Cave Creek is a distinctive desert community of approximately 5,000 residents known for its Western heritage, rustic charm, and vibrant commercial corridor along Cave Creek Road. While small in population, Cave Creek's popular restaurants, art galleries, saloons, and event venues draw visitors from across the Valley, creating significant parking challenges for local businesses and property owners.",
+      "Axle Towing provides professional parking enforcement tailored to Cave Creek's unique character. We serve the busy commercial properties along Cave Creek Road that deal with overflow parking during peak hours and events, the residential communities in the surrounding desert foothills, and the mixed-use properties that make this town a beloved Valley destination.",
+      "Our Cave Creek services are completely free for property owners. We install ARS-compliant signage that respects the town's Western aesthetic, conduct patrols on your schedule, and handle vehicle removals efficiently. In a town where character matters as much as compliance, Axle Towing delivers enforcement that fits right in.",
+    ],
+    neighborhoods: [
+      "Cave Creek Road Corridor",
+      "Spur Cross",
+      "Rancho Manana",
+      "Tatum Ranch",
+      "Black Mountain",
+      "Desert Hills",
+      "Carefree Highway Area",
+      "Saddleback Estates",
+      "Stagecoach Pass",
+      "Schoolhouse Road Area",
+    ],
+    propertyTypes: [
+      "Restaurants & Saloons",
+      "Art Galleries",
+      "Retail Properties",
+      "HOA Communities",
+      "Event Venues",
+      "Office Properties",
+      "Mixed-Use Properties",
+      "Equestrian Properties",
+    ],
+    localStats: [
+      { label: "Population", value: "5K+" },
+      { label: "Commercial Props", value: "200+" },
+      { label: "Annual Visitors", value: "500K+" },
+      { label: "Response Time", value: "< 30 min" },
+    ],
+    testimonial: {
+      quote:
+        "Our restaurant on Cave Creek Road was constantly dealing with non-patron parking. Axle Towing set up signage and now our lot is for our customers only. Professional service that costs us nothing — it is a no-brainer.",
+      name: "Bill T.",
+      role: "Restaurant Owner, Cave Creek",
+    },
+    whyChooseUs: [
+      {
+        title: "Small-Town Understanding",
+        description:
+          "We respect Cave Creek's unique Western character and enforce with an approach that fits the community — friendly but firm.",
+      },
+      {
+        title: "Tourism-Season Expertise",
+        description:
+          "Cave Creek's restaurants and venues draw heavy weekend and event crowds. We provide extra coverage during peak visitor periods.",
+      },
+      {
+        title: "Zero Cost to You",
+        description:
+          "All our services — signage, patrol, towing, and portal access — are completely free for Cave Creek property owners.",
+      },
+      {
+        title: "Nearby Coverage",
+        description:
+          "Our Scottsdale-area operations ensure fast response times to Cave Creek properties, typically under 30 minutes.",
+      },
+    ],
+    cityFacts: [
+      "Known as the 'Western town' of the Phoenix metro area with a rustic, frontier atmosphere",
+      "Approximately 5,000 residents with a strong community identity",
+      "Cave Creek Road is a popular dining and entertainment destination drawing Valley-wide visitors",
+      "Annual events like the Cave Creek Rodeo and Wild West Days create major parking demand",
+      "Surrounded by the Tonto National Forest and pristine Sonoran Desert landscapes",
+    ],
+  },
+  "litchfield-park": {
+    city: "Litchfield Park",
+    slug: "litchfield-park",
+    metaTitle:
+      "Towing Services in Litchfield Park, AZ — Private Property Impounds & Parking Enforcement",
+    metaDescription:
+      "Professional private property towing and parking enforcement in Litchfield Park, AZ. Axle Towing serves this charming West Valley community at no cost. Call 480-288-5526.",
+    heroImage: "/images/arizona-impound-lot.jpg",
+    heroSubtext:
+      "Professional private property towing and parking enforcement for Litchfield Park's charming residential communities and historic town center.",
+    intro: [
+      "Litchfield Park is one of the Phoenix metro area's most charming small cities, with approximately 7,000 residents and a rich history dating back to the Goodyear Tire & Rubber Company's cotton farms in the early 1900s. Today, this tight-knit community is known for its tree-lined streets, the historic Wigwam resort, and well-maintained residential neighborhoods that take pride in their appearance.",
+      "Axle Towing provides professional parking enforcement services that match Litchfield Park's high standards. We serve the residential communities surrounding the town center, the commercial properties along Litchfield Road, and the Wigwam resort area. Our enforcement approach is tailored to the community's character — professional, respectful, and effective.",
+      "Our Litchfield Park services are completely free for property owners. We install ARS-compliant signage, conduct regular patrols, and handle vehicle removals at no cost. In a community that values its quiet, well-maintained character, Axle Towing provides the kind of professional enforcement that keeps parking orderly without disrupting the neighborhood feel.",
+    ],
+    neighborhoods: [
+      "Village at Litchfield Park",
+      "Litchfield Greens",
+      "Litchfield Park Historic District",
+      "Wigwam Creek",
+      "Dreaming Summit",
+      "Litchfield Heights",
+      "Old Litchfield",
+      "Windmill Inn Area",
+      "Camelback Road Corridor",
+      "Palm Valley (Adjacent)",
+    ],
+    propertyTypes: [
+      "HOA Communities",
+      "Condominium Complexes",
+      "Resort Properties",
+      "Retail Properties",
+      "Office Buildings",
+      "Restaurants",
+      "Medical Offices",
+      "Mixed-Use Properties",
+    ],
+    localStats: [
+      { label: "Population", value: "7K+" },
+      { label: "HOA Communities", value: "50+" },
+      { label: "Avg. Home Value", value: "$450K+" },
+      { label: "Response Time", value: "< 30 min" },
+    ],
+    testimonial: {
+      quote:
+        "Litchfield Park is a special community and we needed a towing company that would treat it that way. Axle Towing is professional, discreet, and their service is completely free. Exactly what our HOA needed.",
+      name: "Sharon P.",
+      role: "HOA Board President, Village at Litchfield Park",
+    },
+    whyChooseUs: [
+      {
+        title: "Small-City Character",
+        description:
+          "We understand that Litchfield Park values its quiet, community-oriented character and we enforce accordingly — professionally and unobtrusively.",
+      },
+      {
+        title: "Historic Community Respect",
+        description:
+          "Our signage and enforcement approach respects the historic character and aesthetic standards that define Litchfield Park.",
+      },
+      {
+        title: "Zero Cost to You",
+        description:
+          "All our services — signage, patrol, towing, and portal access — are completely free for Litchfield Park property owners.",
+      },
+      {
+        title: "West Valley Access",
+        description:
+          "Located in the heart of the West Valley, Litchfield Park properties benefit from fast, reliable response times.",
+      },
+    ],
+    cityFacts: [
+      "Founded in 1916 as a company town for Goodyear Tire & Rubber Company",
+      "Home to the historic Wigwam resort, a landmark since the 1920s",
+      "Approximately 7,000 residents in a quiet, tree-lined community",
+      "Named one of the best small cities in Arizona for quality of life",
+      "Strong community identity with active civic engagement and neighborhood pride",
+    ],
+  },
+  tolleson: {
+    city: "Tolleson",
+    slug: "tolleson",
+    metaTitle:
+      "Towing Services in Tolleson, AZ — Private Property Impounds & Parking Enforcement",
+    metaDescription:
+      "Dependable private property towing and parking enforcement in Tolleson, AZ. Axle Towing serves apartments, commercial properties, and industrial lots at no cost. Call 480-288-5526.",
+    heroImage: "/images/arizona-fire-lane.jpg",
+    heroSubtext:
+      "Dependable private property towing and parking enforcement for Tolleson's residential neighborhoods and busy commercial-industrial corridor.",
+    intro: [
+      "Tolleson is a compact West Valley city of approximately 8,000 residents with a strong identity rooted in its agricultural heritage and close-knit community. Despite its small size, Tolleson sits at a strategic crossroads along the I-10 corridor, making it a hub for commercial and industrial activity that creates unique parking enforcement needs for property owners.",
+      "Axle Towing provides reliable parking enforcement throughout Tolleson, serving the residential neighborhoods south of Van Buren Street, the commercial properties along 91st Avenue, and the industrial lots that line the I-10 corridor. We understand that Tolleson's mix of residential and commercial properties requires enforcement that is both effective and respectful of the community.",
+      "Our Tolleson services are completely free for property owners. We install ARS-compliant signage, conduct regular patrols, and remove unauthorized vehicles at no cost. Whether you manage an apartment complex, a retail center, or an industrial property in Tolleson, Axle Towing provides dependable enforcement you can count on.",
+    ],
+    neighborhoods: [
+      "Downtown Tolleson",
+      "91st Avenue Corridor",
+      "Van Buren Street Area",
+      "Tolleson Union District",
+      "West Van Buren",
+      "Buckeye Road Area",
+      "Lower Buckeye Area",
+      "Tolleson Industrial Park",
+    ],
+    propertyTypes: [
+      "Apartment Complexes",
+      "Commercial Properties",
+      "Industrial Lots",
+      "Retail Centers",
+      "Restaurants",
+      "Office Buildings",
+      "Warehouses",
+      "Mixed-Use Properties",
+    ],
+    localStats: [
+      { label: "Population", value: "8K+" },
+      { label: "Commercial Props", value: "150+" },
+      { label: "Industrial Sites", value: "75+" },
+      { label: "Response Time", value: "< 30 min" },
+    ],
+    testimonial: {
+      quote:
+        "Our industrial property near I-10 had constant issues with unauthorized overnight parking. Axle Towing installed signage, started patrols, and the problem stopped almost immediately. Great service at no cost to us.",
+      name: "Ray G.",
+      role: "Industrial Property Manager, Tolleson",
+    },
+    whyChooseUs: [
+      {
+        title: "Industrial Property Expertise",
+        description:
+          "Tolleson's I-10 corridor has unique enforcement needs. We handle overnight parking, unauthorized truck parking, and lot security efficiently.",
+      },
+      {
+        title: "Community-Sized Service",
+        description:
+          "We give small communities like Tolleson the same professional service we deliver to Phoenix — because every property owner deserves reliable enforcement.",
+      },
+      {
+        title: "Zero Cost to You",
+        description:
+          "All our services — signage, patrol, towing, and portal access — are completely free for Tolleson property owners.",
+      },
+      {
+        title: "Strategic Location",
+        description:
+          "Tolleson's central West Valley position means fast response times from our team, typically under 30 minutes.",
+      },
+    ],
+    cityFacts: [
+      "One of the oldest communities in the West Valley, incorporated in 1929",
+      "Approximately 8,000 residents with a strong sense of community identity",
+      "Strategically located along the I-10 corridor with significant commercial activity",
+      "Known for its annual Tolleson Appreciation Day celebration",
+      "Major logistics and industrial hub serving the Greater Phoenix area",
+    ],
+  },
+  "el-mirage": {
+    city: "El Mirage",
+    slug: "el-mirage",
+    metaTitle:
+      "Towing Services in El Mirage, AZ — Private Property Impounds & Parking Enforcement",
+    metaDescription:
+      "Fast-response private property towing and parking enforcement in El Mirage, AZ. Axle Towing serves apartments, HOAs, and commercial properties at no cost. Call 480-288-5526.",
+    heroImage: "/images/arizona-apartment-parking.jpg",
+    heroSubtext:
+      "Fast-response private property towing and parking enforcement for El Mirage's growing residential and commercial communities.",
+    intro: [
+      "El Mirage is a growing West Valley community of approximately 36,000 residents that has seen significant development in recent years. With new residential neighborhoods, expanding commercial corridors, and a growing population, El Mirage property owners face increasing parking enforcement challenges that require professional management.",
+      "Axle Towing provides reliable parking enforcement throughout El Mirage, serving the apartment communities along Grand Avenue, the residential HOAs in the developing areas north and south of Thunderbird Road, and the commercial properties that serve the growing population. We deliver the same professional service to El Mirage that we provide across the entire Valley.",
+      "Our El Mirage services are completely free for property owners. We install ARS-compliant signage, conduct scheduled patrols, and remove unauthorized vehicles at no cost. As El Mirage continues to grow and attract new development, having professional parking enforcement in place is essential for maintaining orderly communities.",
+    ],
+    neighborhoods: [
+      "Grand Avenue Corridor",
+      "Thunderbird Road Area",
+      "El Mirage Town Center",
+      "Dysart Road Area",
+      "Verbena",
+      "Lupine",
+      "Thompson Ranch",
+      "Agua Fria Area",
+      "El Mirage Heights",
+      "Olive Avenue Corridor",
+    ],
+    propertyTypes: [
+      "Apartment Complexes",
+      "HOA Communities",
+      "Retail Centers",
+      "Commercial Properties",
+      "Restaurants",
+      "Office Buildings",
+      "Industrial Properties",
+      "Mixed-Use Developments",
+    ],
+    localStats: [
+      { label: "Population", value: "36K+" },
+      { label: "HOA Communities", value: "120+" },
+      { label: "Apartment Units", value: "4K+" },
+      { label: "Response Time", value: "< 30 min" },
+    ],
+    testimonial: {
+      quote:
+        "We manage an apartment community on Grand Avenue and unauthorized parking was a constant headache. Axle Towing got us set up fast, handles enforcement professionally, and it is completely free. Wish we had called them sooner.",
+      name: "Maria R.",
+      role: "Property Manager, El Mirage",
+    },
+    whyChooseUs: [
+      {
+        title: "Growing Community Partner",
+        description:
+          "As El Mirage grows, we grow with it — adding coverage and capacity to serve new developments as they come online.",
+      },
+      {
+        title: "West Valley Expertise",
+        description:
+          "Our deep knowledge of the West Valley means we understand El Mirage's unique positioning and serve it with local familiarity.",
+      },
+      {
+        title: "Zero Cost to You",
+        description:
+          "All our services — signage, patrol, towing, and portal access — are completely free for El Mirage property owners.",
+      },
+      {
+        title: "Fast Response",
+        description:
+          "Despite El Mirage's growing footprint, our West Valley operations ensure sub-30-minute response times across the city.",
+      },
+    ],
+    cityFacts: [
+      "Growing West Valley community with approximately 36,000 residents",
+      "Located along the historic Grand Avenue (US-60), one of the Valley's oldest corridors",
+      "Significant new residential development in recent years",
+      "Adjacent to Luke Air Force Base, which influences local activity and parking demand",
+      "Part of the rapidly developing Northwest Valley growth corridor",
+    ],
+  },
+  "sun-city": {
+    city: "Sun City",
+    slug: "sun-city",
+    metaTitle:
+      "Towing Services in Sun City, AZ — Private Property Impounds & Parking Enforcement",
+    metaDescription:
+      "Specialized private property towing and parking enforcement for Sun City, AZ retirement communities. Axle Towing serves HOAs and commercial properties at no cost. Call 480-288-5526.",
+    heroImage: "/images/arizona-mesa-residential.jpg",
+    heroSubtext:
+      "Specialized private property towing and parking enforcement for Sun City's premier active adult retirement community.",
+    intro: [
+      "Sun City is America's original active adult retirement community, home to approximately 39,000 residents who enjoy an unmatched quality of life with world-class recreation centers, golf courses, and community amenities. As a census-designated place governed by the Recreation Centers of Sun City and numerous HOAs, parking enforcement is essential for maintaining the orderly, well-kept character residents expect.",
+      "Axle Towing provides specialized parking enforcement tailored to Sun City's unique needs. We serve the many HOAs that manage parking around recreation centers and common areas, the commercial properties along Grand Avenue and Bell Road, and the medical facilities that serve Sun City's resident population. Our team understands the importance of respectful, clear communication when working in a retirement community.",
+      "Our Sun City services are completely free for property owners and community associations. We install ARS-compliant signage, conduct regular patrols, and remove unauthorized vehicles at no cost. Sun City's commitment to community standards and property maintenance aligns perfectly with our professional approach to parking enforcement.",
+    ],
+    neighborhoods: [
+      "Sun City Phase 1",
+      "Sun City Phase 2",
+      "Sun City Phase 3",
+      "Grand Avenue Corridor",
+      "Bell Road Commercial Area",
+      "Sun Bowl Plaza",
+      "Boswell Hospital Area",
+      "107th Avenue Corridor",
+      "Peoria Avenue Area",
+      "Sun City Country Club",
+    ],
+    propertyTypes: [
+      "HOA Communities",
+      "Recreation Centers",
+      "Shopping Centers",
+      "Medical Facilities",
+      "Restaurants",
+      "Golf Course Properties",
+      "Office Buildings",
+      "Assisted Living Facilities",
+    ],
+    localStats: [
+      { label: "Population", value: "39K+" },
+      { label: "HOA Communities", value: "250+" },
+      { label: "Recreation Centers", value: "7" },
+      { label: "Response Time", value: "< 30 min" },
+    ],
+    testimonial: {
+      quote:
+        "Our recreation center parking lot was always a problem during events and club meetings. Axle Towing put up clear signage and now handles enforcement professionally. The residents appreciate the orderly parking and it does not cost our association a cent.",
+      name: "Dorothy M.",
+      role: "Recreation Centers Board Member, Sun City",
+    },
+    whyChooseUs: [
+      {
+        title: "Retirement Community Specialists",
+        description:
+          "We understand the unique dynamics of active adult communities — respectful communication, clear signage, and patient enforcement.",
+      },
+      {
+        title: "Recreation Center Experience",
+        description:
+          "Sun City's seven recreation centers each have distinct parking challenges. We tailor enforcement to each facility's specific needs.",
+      },
+      {
+        title: "Zero Cost to You",
+        description:
+          "All our services — signage, patrol, towing, and portal access — are completely free for Sun City property owners and associations.",
+      },
+      {
+        title: "Seasonal Awareness",
+        description:
+          "Sun City's population increases significantly during winter months. We adjust patrol frequency to match seasonal demand.",
+      },
+    ],
+    cityFacts: [
+      "America's original active adult retirement community, opened in 1960 by Del Webb",
+      "Approximately 39,000 residents in an age-restricted (55+) community",
+      "Seven recreation centers with extensive amenities including pools, clubs, and sports facilities",
+      "Multiple golf courses and over 100 chartered clubs and organizations",
+      "Pioneered the concept of active adult retirement living that has been replicated worldwide",
+    ],
+  },
+  maricopa: {
+    city: "Maricopa",
+    slug: "maricopa",
+    metaTitle:
+      "Towing Services in Maricopa, AZ — Private Property Impounds & Parking Enforcement",
+    metaDescription:
+      "Professional private property towing and parking enforcement in Maricopa, AZ. Axle Towing serves this fast-growing city's HOAs, apartments, and commercial properties at no cost. Call 480-288-5526.",
+    heroImage: "/images/arizona-impound-lot.jpg",
+    heroSubtext:
+      "Professional private property towing and parking enforcement for Maricopa's booming master-planned communities and expanding commercial areas.",
+    intro: [
+      "Maricopa is one of Arizona's fastest-growing cities, with a population exceeding 60,000 and a seemingly endless pipeline of new residential development. Located south of the Phoenix metro core along the SR-347 corridor, Maricopa has transformed from a small agricultural town into a thriving suburban city anchored by master-planned communities like Province, Rancho El Dorado, and The Lakes at Rancho El Dorado.",
+      "Axle Towing provides professional parking enforcement services to Maricopa's expanding network of HOA communities, apartment complexes, and commercial properties. We understand the challenges of a fast-growing city where new neighborhoods and retail centers are coming online regularly, and where establishing enforcement infrastructure early is critical to maintaining community standards.",
+      "Our Maricopa services are completely free for property owners. We install ARS-compliant signage, conduct scheduled patrols, and remove unauthorized vehicles at no cost. As the southernmost city in our service area, we are committed to providing Maricopa property owners with the same professional, responsive service we deliver across the entire Valley.",
+    ],
+    neighborhoods: [
+      "Province",
+      "Rancho El Dorado",
+      "The Lakes at Rancho El Dorado",
+      "Tortosa",
+      "Cobblestone Farms",
+      "Glennwilde",
+      "Homestead",
+      "Alterra",
+      "Senita",
+      "Maricopa Town Center",
+    ],
+    propertyTypes: [
+      "HOA Communities",
+      "Apartment Complexes",
+      "Retail Centers",
+      "Office Buildings",
+      "Medical Facilities",
+      "Restaurants",
+      "Industrial Properties",
+      "Mixed-Use Developments",
+    ],
+    localStats: [
+      { label: "Population", value: "60K+" },
+      { label: "HOA Communities", value: "200+" },
+      { label: "New Homes/Year", value: "3,000+" },
+      { label: "Response Time", value: "< 40 min" },
+    ],
+    testimonial: {
+      quote:
+        "Maricopa is growing so fast that parking enforcement was an afterthought in our community. Axle Towing came in, set up everything, and now our HOA has professional enforcement at zero cost. They even handle the signage compliance.",
+      name: "Steven C.",
+      role: "HOA Manager, Province",
+    },
+    whyChooseUs: [
+      {
+        title: "Fast-Growth City Experience",
+        description:
+          "We specialize in serving rapidly growing communities like Maricopa where enforcement infrastructure needs to be established quickly.",
+      },
+      {
+        title: "HOA Partnership Approach",
+        description:
+          "Maricopa's communities are largely HOA-governed. We work closely with boards and management companies to enforce CC&R parking requirements.",
+      },
+      {
+        title: "Zero Cost to You",
+        description:
+          "All our services — signage, patrol, towing, and portal access — are completely free for Maricopa property owners.",
+      },
+      {
+        title: "Dedicated Coverage",
+        description:
+          "Despite Maricopa's distance from the Phoenix core, we maintain dedicated coverage to ensure reliable response times for every call.",
+      },
+    ],
+    cityFacts: [
+      "One of the fastest-growing cities in Arizona with over 60,000 residents",
+      "Population has grown from under 2,000 in 2000 to over 60,000 today",
+      "Province is one of the best-selling master-planned communities in the state",
+      "Located along the SR-347 corridor, approximately 35 miles south of central Phoenix",
+      "Named after Maricopa County, which in turn was named after the Maricopa people",
+    ],
+  },
+  anthem: {
+    city: "Anthem",
+    slug: "anthem",
+    metaTitle:
+      "Towing Services in Anthem, AZ — Private Property Impounds & Parking Enforcement",
+    metaDescription:
+      "Professional private property towing and parking enforcement in Anthem, AZ. Axle Towing serves HOA communities, commercial properties, and recreation centers at no cost. Call 480-288-5526.",
+    heroImage: "/images/arizona-fire-lane.jpg",
+    heroSubtext:
+      "Professional private property towing and parking enforcement for Anthem's master-planned HOA communities and commercial centers.",
+    intro: [
+      "Anthem is a sprawling master-planned community of approximately 28,000 residents nestled at the base of Daisy Mountain in north Phoenix. Developed primarily by Del Webb and Pulte Homes, Anthem is defined by its extensive HOA governance, with nearly every neighborhood operating under strict CC&Rs that include detailed parking regulations. The community's proximity to I-17 and its family-oriented design draw steady traffic that creates ongoing parking enforcement needs.",
+      "Axle Towing provides comprehensive parking enforcement services throughout Anthem, serving the numerous HOA communities, the Anthem Community Center, Outlet at Anthem shopping areas, and commercial properties along the Gavilan Peak Parkway corridor. We understand that Anthem residents value community standards and take pride in maintaining a clean, orderly appearance throughout the development.",
+      "Our Anthem services are completely free for property owners. We install ARS-compliant signage, conduct regular patrols, and remove unauthorized vehicles at no cost. Whether you manage an HOA community in Anthem Country Club, a retail property near the outlets, or a business along Daisy Mountain Drive, Axle Towing delivers reliable, professional enforcement.",
+    ],
+    neighborhoods: [
+      "Anthem Country Club",
+      "Anthem Parkside",
+      "Anthem Civic Center Area",
+      "Gavilan Peak",
+      "Boulder Creek",
+      "Meridian Hills",
+      "Anthem West",
+    ],
+    propertyTypes: [
+      "HOA Communities",
+      "Retail Centers",
+      "Recreation Facilities",
+      "Office Buildings",
+      "Medical Facilities",
+      "Restaurants",
+      "Shopping Centers",
+      "Mixed-Use Developments",
+    ],
+    localStats: [
+      { label: "Population", value: "28K+" },
+      { label: "HOA Communities", value: "50+" },
+      { label: "Master-Planned Areas", value: "10+" },
+      { label: "Response Time", value: "< 30 min" },
+    ],
+    testimonial: {
+      quote:
+        "Our HOA tried to handle parking enforcement internally for years. Axle Towing took over, installed proper signage, and now violations are down significantly. The best part is it costs our community nothing.",
+      name: "Linda M.",
+      role: "HOA Board President, Anthem Parkside",
+    },
+    whyChooseUs: [
+      {
+        title: "HOA Community Specialists",
+        description:
+          "Anthem's HOA-heavy landscape is our specialty. We work with boards and management companies to enforce CC&R parking rules consistently and fairly.",
+      },
+      {
+        title: "Master-Planned Community Experience",
+        description:
+          "We understand the unique enforcement needs of large master-planned developments where community standards and property values go hand in hand.",
+      },
+      {
+        title: "Zero Cost to You",
+        description:
+          "All our services — signage, patrol, towing, and portal access — are completely free for Anthem property owners.",
+      },
+      {
+        title: "North Valley Coverage",
+        description:
+          "Our dedicated north Valley coverage ensures fast response times to Anthem, typically under 30 minutes from dispatch.",
+      },
+    ],
+    cityFacts: [
+      "Master-planned community of approximately 28,000 residents at the base of Daisy Mountain",
+      "Developed starting in 1999 primarily by Del Webb and Pulte Homes",
+      "Home to the Anthem Community Center, one of the largest recreation complexes in the region",
+      "Located along the I-17 corridor approximately 34 miles north of downtown Phoenix",
+      "Features the Outlet at Anthem, a major regional shopping destination",
+    ],
+  },
+  "sun-city-west": {
+    city: "Sun City West",
+    slug: "sun-city-west",
+    metaTitle:
+      "Towing Services in Sun City West, AZ — Private Property Impounds & Parking Enforcement",
+    metaDescription:
+      "Trusted private property towing and parking enforcement in Sun City West, AZ. Axle Towing serves HOA communities, recreation centers, and commercial properties at no cost. Call 480-288-5526.",
+    heroImage: "/images/arizona-fire-lane.jpg",
+    heroSubtext:
+      "Trusted private property towing and parking enforcement for Sun City West's age-restricted communities and recreation facilities.",
+    intro: [
+      "Sun City West is an age-restricted retirement community of approximately 26,000 residents located in the northwest Valley adjacent to the original Sun City. Developed by the Del Webb Corporation starting in 1978, Sun City West operates under a comprehensive HOA structure managed by the Recreation Centers of Sun City West. The community's extensive amenities, including golf courses, recreation centers, and shopping plazas, all require professional parking management.",
+      "Axle Towing provides specialized parking enforcement services throughout Sun City West, serving the numerous HOA-governed neighborhoods, the recreation centers, commercial plazas along R.H. Johnson Boulevard, and medical facilities. We understand the unique needs of retirement communities where accessibility, clear signage, and respectful enforcement are paramount.",
+      "Our Sun City West services are completely free for property owners. We install ARS-compliant signage, conduct scheduled patrols, and remove unauthorized vehicles at no cost. From the Lizard Acres rec center parking lots to the commercial properties along Grand Avenue, Axle Towing ensures parking compliance throughout the community.",
+    ],
+    neighborhoods: [
+      "R.H. Johnson Recreation Area",
+      "Stardust Village",
+      "Trail Ridge",
+      "Deer Valley Estates",
+      "Corte Bella",
+      "Grand Avenue Corridor",
+      "Palm Ridge Area",
+      "Beardsley Road Area",
+    ],
+    propertyTypes: [
+      "HOA Communities",
+      "Recreation Centers",
+      "Shopping Plazas",
+      "Medical Facilities",
+      "Golf Course Properties",
+      "Restaurants",
+      "Office Buildings",
+      "Assisted Living Facilities",
+    ],
+    localStats: [
+      { label: "Population", value: "26K+" },
+      { label: "HOA Communities", value: "100+" },
+      { label: "Rec Centers", value: "4" },
+      { label: "Response Time", value: "< 30 min" },
+    ],
+    testimonial: {
+      quote:
+        "Our recreation center parking lots were constantly full of non-resident vehicles. Axle Towing set up enforcement and patrols, and now our residents actually have places to park. Exceptional service, zero cost.",
+      name: "Dorothy P.",
+      role: "Rec Center Board Member, Sun City West",
+    },
+    whyChooseUs: [
+      {
+        title: "Retirement Community Experts",
+        description:
+          "We specialize in age-restricted communities where respectful, clearly communicated enforcement and accessible signage are essential.",
+      },
+      {
+        title: "Recreation Facility Coverage",
+        description:
+          "Sun City West's extensive recreation centers need dedicated parking management. We keep lots available for residents who depend on them.",
+      },
+      {
+        title: "Zero Cost to You",
+        description:
+          "All our services — signage, patrol, towing, and portal access — are completely free for Sun City West property owners.",
+      },
+      {
+        title: "Consistent West Valley Service",
+        description:
+          "We maintain dedicated patrol coverage in the northwest Valley, ensuring reliable enforcement throughout Sun City West.",
+      },
+    ],
+    cityFacts: [
+      "Age-restricted (55+) retirement community of approximately 26,000 residents",
+      "Developed by Del Webb Corporation beginning in 1978",
+      "Managed by the Recreation Centers of Sun City West, one of the largest HOA organizations in Arizona",
+      "Features four major recreation centers and seven golf courses",
+      "Located adjacent to Luke Air Force Base and the original Sun City community",
+    ],
+  },
+  "san-tan-valley": {
+    city: "San Tan Valley",
+    slug: "san-tan-valley",
+    metaTitle:
+      "Towing Services in San Tan Valley, AZ — Private Property Impounds & Parking Enforcement",
+    metaDescription:
+      "Reliable private property towing and parking enforcement in San Tan Valley, AZ. Axle Towing serves HOAs, apartment complexes, and commercial centers at no cost. Call 480-288-5526.",
+    heroImage: "/images/arizona-fire-lane.jpg",
+    heroSubtext:
+      "Reliable private property towing and parking enforcement for San Tan Valley's fast-growing residential and commercial communities.",
+    intro: [
+      "San Tan Valley is one of the fastest-growing census-designated places in Arizona, with a population exceeding 100,000 residents in the southeastern Valley. Located in Pinal County south of Gilbert and Queen Creek, San Tan Valley has experienced explosive residential growth with massive master-planned communities like Johnson Ranch, Pecan Creek, and Circle Cross Ranch creating thousands of new homes and an ongoing need for professional parking enforcement.",
+      "Axle Towing delivers professional parking enforcement throughout San Tan Valley, serving the sprawling HOA communities, growing apartment complexes, and expanding retail centers along Hunt Highway and Ironwood Drive. We understand the challenges of a rapidly developing area where new neighborhoods and commercial properties come online regularly and enforcement infrastructure must be established early.",
+      "Our San Tan Valley services are completely free for property owners. We install ARS-compliant signage, conduct scheduled patrols, and remove unauthorized vehicles at no cost. As one of the fastest-expanding communities in our service area, San Tan Valley properties benefit from our experience in serving high-growth areas across the Phoenix metro.",
+    ],
+    neighborhoods: [
+      "Johnson Ranch",
+      "Pecan Creek",
+      "Circle Cross Ranch",
+      "Ironwood Crossing",
+      "Bella Via",
+      "Castlegate",
+      "Sorrento",
+      "Copper Basin",
+    ],
+    propertyTypes: [
+      "HOA Communities",
+      "Apartment Complexes",
+      "Retail Centers",
+      "Medical Facilities",
+      "Office Buildings",
+      "Restaurants",
+      "Shopping Plazas",
+      "Mixed-Use Developments",
+    ],
+    localStats: [
+      { label: "Population", value: "100K+" },
+      { label: "HOA Communities", value: "150+" },
+      { label: "New Homes/Year", value: "5,000+" },
+      { label: "Response Time", value: "< 30 min" },
+    ],
+    testimonial: {
+      quote:
+        "With all the new construction in San Tan Valley, unauthorized parking from workers and visitors was constant. Axle Towing set up professional enforcement for our entire HOA and solved the problem. No cost to our community at all.",
+      name: "Jason R.",
+      role: "HOA Manager, Johnson Ranch",
+    },
+    whyChooseUs: [
+      {
+        title: "High-Growth Area Specialists",
+        description:
+          "San Tan Valley's rapid expansion means new enforcement needs arise constantly. We scale our services to match the community's growth.",
+      },
+      {
+        title: "Construction Zone Management",
+        description:
+          "Active development creates temporary parking chaos. We help property owners establish enforcement during and after the construction phase.",
+      },
+      {
+        title: "Zero Cost to You",
+        description:
+          "All our services — signage, patrol, towing, and portal access — are completely free for San Tan Valley property owners.",
+      },
+      {
+        title: "Pinal County Coverage",
+        description:
+          "We provide dedicated coverage to San Tan Valley and the broader Pinal County area, ensuring consistent service despite the distance from central Phoenix.",
+      },
+    ],
+    cityFacts: [
+      "One of the fastest-growing communities in Arizona with over 100,000 residents",
+      "Census-designated place in Pinal County, south of Gilbert and Queen Creek",
+      "Home to major master-planned communities including Johnson Ranch and Pecan Creek",
+      "Located along the Hunt Highway corridor with significant commercial development",
+      "San Tan Mountain Regional Park provides over 10,000 acres of recreational space nearby",
+    ],
+  },
+  laveen: {
+    city: "Laveen",
+    slug: "laveen",
+    metaTitle:
+      "Towing Services in Laveen, AZ — Private Property Impounds & Parking Enforcement",
+    metaDescription:
+      "Professional private property towing and parking enforcement in Laveen, AZ. Axle Towing serves apartments, HOAs, and commercial properties at no cost. Call 480-288-5526.",
+    heroImage: "/images/arizona-fire-lane.jpg",
+    heroSubtext:
+      "Professional private property towing and parking enforcement for Laveen's growing residential neighborhoods and commercial areas.",
+    intro: [
+      "Laveen is a large, rapidly growing village within the City of Phoenix located in the southwest Valley. With a population approaching 50,000, Laveen has transformed from a quiet agricultural community into one of Phoenix's most active residential development zones. New master-planned communities, apartment complexes, and retail centers continue to sprout along the Baseline Road and Laveen Village corridors, creating significant demand for professional parking enforcement.",
+      "Axle Towing provides comprehensive parking enforcement throughout Laveen, serving the expanding HOA communities, apartment complexes near South Mountain, and commercial properties along the 51st Avenue and Baseline Road corridors. We recognize that Laveen's growth trajectory means property owners need enforcement partners who can respond to evolving needs as neighborhoods mature.",
+      "Our Laveen services are completely free for property owners. We install ARS-compliant signage, conduct regular patrols, and remove unauthorized vehicles at no cost. From the new residential developments near Rogers Ranch to the commercial centers along Dobbins Road, Axle Towing delivers dependable enforcement for every type of Laveen property.",
+    ],
+    neighborhoods: [
+      "Rogers Ranch",
+      "Laveen Meadows",
+      "Sierra Montana",
+      "Dobbins Crossing",
+      "Baseline Corridor",
+      "South Mountain Village",
+      "51st Avenue Area",
+      "Laveen Village Center",
+    ],
+    propertyTypes: [
+      "HOA Communities",
+      "Apartment Complexes",
+      "Retail Centers",
+      "Office Buildings",
+      "Restaurants",
+      "Medical Facilities",
+      "Industrial Properties",
+      "Mixed-Use Developments",
+    ],
+    localStats: [
+      { label: "Population", value: "50K+" },
+      { label: "HOA Communities", value: "80+" },
+      { label: "New Developments", value: "25+" },
+      { label: "Response Time", value: "< 30 min" },
+    ],
+    testimonial: {
+      quote:
+        "Laveen is growing so fast, our apartment complex was getting overrun with unauthorized parking from nearby construction sites. Axle Towing got us compliant signage and started patrols within a week. Problem solved, no bill.",
+      name: "Monica T.",
+      role: "Property Manager, Laveen Apartments",
+    },
+    whyChooseUs: [
+      {
+        title: "Southwest Phoenix Experts",
+        description:
+          "We know the Laveen area inside and out, from the new developments along Baseline to the established neighborhoods near South Mountain.",
+      },
+      {
+        title: "New Development Support",
+        description:
+          "As Laveen continues to grow, we help new communities establish enforcement from day one with professional signage and consistent patrols.",
+      },
+      {
+        title: "Zero Cost to You",
+        description:
+          "All our services — signage, patrol, towing, and portal access — are completely free for Laveen property owners.",
+      },
+      {
+        title: "Rapid Response",
+        description:
+          "Our south Phoenix coverage ensures fast response times to Laveen properties, typically under 30 minutes from dispatch.",
+      },
+    ],
+    cityFacts: [
+      "One of Phoenix's largest urban villages with a population approaching 50,000",
+      "Historically an agricultural community that has seen explosive residential growth since the 2000s",
+      "Located in southwest Phoenix near South Mountain Park, one of the largest municipal parks in the country",
+      "Home to the Laveen Civic Center and several new public schools serving the growing population",
+      "Named after the Laveen family who were early settlers and ranchers in the area",
+    ],
+  },
+  carefree: {
+    city: "Carefree",
+    slug: "carefree",
+    metaTitle:
+      "Towing Services in Carefree, AZ — Private Property Impounds & Parking Enforcement",
+    metaDescription:
+      "Premium private property towing and parking enforcement in Carefree, AZ. Axle Towing serves upscale HOAs, resorts, and commercial properties at no cost. Call 480-288-5526.",
+    heroImage: "/images/arizona-fire-lane.jpg",
+    heroSubtext:
+      "Premium private property towing and parking enforcement for Carefree's upscale residential estates and boutique commercial properties.",
+    intro: [
+      "Carefree is an affluent small town of approximately 4,000 residents located north of Cave Creek in the scenic Sonoran Desert foothills. Known for its upscale residential properties, world-class resorts, and charming town center featuring the iconic Carefree Sundial, the community attracts significant visitor traffic year-round. This combination of high-value properties and tourism creates specific parking enforcement needs that require a professional, discreet approach.",
+      "Axle Towing provides premium parking enforcement services throughout Carefree, serving the luxury HOA communities, resort properties, the Carefree Town Center retail area, and the galleries and restaurants along Easy Street and Ho Hum Road. We understand that enforcement in Carefree requires a polished, respectful approach that matches the community's upscale character.",
+      "Our Carefree services are completely free for property owners. We install ARS-compliant signage that complements property aesthetics, conduct discreet patrols, and remove unauthorized vehicles at no cost. Whether you manage a luxury HOA, a boutique resort, or a commercial property in downtown Carefree, Axle Towing delivers enforcement that protects your investment without disrupting the community atmosphere.",
+    ],
+    neighborhoods: [
+      "Carefree Town Center",
+      "Black Mountain Foothills",
+      "Carefree Ranch",
+      "Easy Street District",
+      "Desert Forest",
+      "The Boulders Area",
+      "Carefree Highlands",
+    ],
+    propertyTypes: [
+      "Luxury HOA Communities",
+      "Resort Properties",
+      "Boutique Retail",
+      "Restaurants & Galleries",
+      "Office Buildings",
+      "Medical Facilities",
+      "Event Venues",
+      "Gated Communities",
+    ],
+    localStats: [
+      { label: "Population", value: "4K+" },
+      { label: "Luxury Properties", value: "50+" },
+      { label: "Annual Visitors", value: "200K+" },
+      { label: "Response Time", value: "< 30 min" },
+    ],
+    testimonial: {
+      quote:
+        "Our boutique resort needed parking enforcement that matched our level of service. Axle Towing delivered exactly that: professional, discreet, and effective. Our guests are never inconvenienced and unauthorized vehicles are handled promptly.",
+      name: "Catherine W.",
+      role: "Resort General Manager, Carefree",
+    },
+    whyChooseUs: [
+      {
+        title: "Upscale Property Experience",
+        description:
+          "We understand that Carefree properties demand a refined approach to enforcement that protects property values and maintains community character.",
+      },
+      {
+        title: "Tourism-Area Management",
+        description:
+          "Carefree's popular town center and resort areas draw significant visitor traffic. We balance effective enforcement with a welcoming community atmosphere.",
+      },
+      {
+        title: "Zero Cost to You",
+        description:
+          "All our services — signage, patrol, towing, and portal access — are completely free for Carefree property owners.",
+      },
+      {
+        title: "Discreet Professional Service",
+        description:
+          "Our team operates with the professionalism and discretion that Carefree's luxury properties require, from signage design to vehicle removal.",
+      },
+    ],
+    cityFacts: [
+      "Affluent town of approximately 4,000 residents in the Sonoran Desert foothills north of Cave Creek",
+      "Home to the world's largest sundial, a 62-foot landmark in the town center",
+      "Known for its art galleries, boutique shops, and fine dining along Easy Street",
+      "The Boulders Resort and Spa is one of Arizona's premier luxury destinations",
+      "Founded in 1959 with the motto 'Carefree Living' and incorporated in 1984",
+    ],
+  },
+  "sun-lakes": {
+    city: "Sun Lakes",
+    slug: "sun-lakes",
+    metaTitle:
+      "Towing Services in Sun Lakes, AZ — Private Property Impounds & Parking Enforcement",
+    metaDescription:
+      "Reliable private property towing and parking enforcement in Sun Lakes, AZ. Axle Towing serves age-restricted communities and commercial properties at no cost. Call 480-288-5526.",
+    heroImage: "/images/arizona-fire-lane.jpg",
+    heroSubtext:
+      "Reliable private property towing and parking enforcement for Sun Lakes' age-restricted communities and neighborhood commercial areas.",
+    intro: [
+      "Sun Lakes is an age-restricted census-designated place of approximately 14,000 residents located south of Chandler along the Riggs Road corridor. Comprising several distinct communities including Sun Lakes, Cottonwood, Palo Verde, and Ironwood, the area is governed by multiple HOA associations that maintain strict community standards including parking regulations. The community's numerous recreation centers, golf courses, and commercial plazas all require consistent parking management.",
+      "Axle Towing provides professional parking enforcement throughout the Sun Lakes communities, serving the HOA neighborhoods, recreation center parking areas, commercial plazas along Riggs Road, and medical offices. We specialize in serving age-restricted communities where clear communication, accessible signage, and respectful enforcement are essential to maintaining quality of life.",
+      "Our Sun Lakes services are completely free for property owners. We install ARS-compliant signage, conduct scheduled patrols, and remove unauthorized vehicles at no cost. Whether you manage a community association in Cottonwood or a commercial property along Alma School Road, Axle Towing delivers dependable enforcement tailored to Sun Lakes' unique needs.",
+    ],
+    neighborhoods: [
+      "Sun Lakes Community",
+      "Cottonwood",
+      "Palo Verde",
+      "Ironwood",
+      "Oakwood",
+      "Riggs Road Corridor",
+      "Alma School Area",
+    ],
+    propertyTypes: [
+      "Age-Restricted HOAs",
+      "Recreation Centers",
+      "Golf Course Properties",
+      "Shopping Plazas",
+      "Medical Offices",
+      "Restaurants",
+      "Assisted Living Facilities",
+      "Community Centers",
+    ],
+    localStats: [
+      { label: "Population", value: "14K+" },
+      { label: "HOA Communities", value: "5" },
+      { label: "Golf Courses", value: "8" },
+      { label: "Response Time", value: "< 30 min" },
+    ],
+    testimonial: {
+      quote:
+        "Our Sun Lakes HOA was spending thousands on parking enforcement annually. Axle Towing took over the entire operation at zero cost and actually improved compliance. Wish we had found them sooner.",
+      name: "Robert K.",
+      role: "HOA Treasurer, Cottonwood Sun Lakes",
+    },
+    whyChooseUs: [
+      {
+        title: "Age-Restricted Community Specialists",
+        description:
+          "We understand the unique needs of 55+ communities where clear signage, respectful enforcement, and accessibility compliance are non-negotiable.",
+      },
+      {
+        title: "Multi-HOA Coordination",
+        description:
+          "Sun Lakes comprises several distinct HOA communities. We coordinate enforcement across all of them for seamless, consistent service.",
+      },
+      {
+        title: "Zero Cost to You",
+        description:
+          "All our services — signage, patrol, towing, and portal access — are completely free for Sun Lakes property owners.",
+      },
+      {
+        title: "Southeast Valley Reliability",
+        description:
+          "Our dedicated southeast Valley coverage ensures Sun Lakes communities receive consistent, timely enforcement whenever they need it.",
+      },
+    ],
+    cityFacts: [
+      "Age-restricted (55+) community of approximately 14,000 residents south of Chandler",
+      "Comprises five distinct HOA communities: Sun Lakes, Cottonwood, Palo Verde, Ironwood, and Oakwood",
+      "Features eight golf courses and multiple recreation centers within the community",
+      "Originally developed in the 1970s as a retirement destination in the southeast Valley",
+      "Located along the Riggs Road corridor near the intersection of Alma School Road and Riggs Road",
+    ],
+  },
+  waddell: {
+    city: "Waddell",
+    slug: "waddell",
+    metaTitle:
+      "Towing Services in Waddell, AZ — Private Property Impounds & Parking Enforcement",
+    metaDescription:
+      "Dependable private property towing and parking enforcement in Waddell, AZ. Axle Towing serves HOA communities, farms, and commercial properties at no cost. Call 480-288-5526.",
+    heroImage: "/images/arizona-fire-lane.jpg",
+    heroSubtext:
+      "Dependable private property towing and parking enforcement for Waddell's growing residential communities and rural-suburban properties.",
+    intro: [
+      "Waddell is a growing census-designated place in the northwest Valley, situated between Surprise and Peoria near the White Tank Mountains. Once a primarily agricultural area, Waddell has seen significant residential growth as master-planned communities expand westward from the Phoenix metro core. The mix of new HOA developments, established rural properties, and emerging commercial corridors creates diverse parking enforcement needs.",
+      "Axle Towing provides professional parking enforcement throughout Waddell, serving the new HOA communities along Waddell Road, the commercial properties near the intersection with Litchfield Road, and the growing mixed-use developments. We understand Waddell's transitional character, where suburban growth meets rural heritage, and we tailor our enforcement approach accordingly.",
+      "Our Waddell services are completely free for property owners. We install ARS-compliant signage, conduct regular patrols, and remove unauthorized vehicles at no cost. As Waddell continues its transformation from agricultural community to suburban destination, Axle Towing helps property owners establish the enforcement infrastructure needed to maintain property standards.",
+    ],
+    neighborhoods: [
+      "Waddell Road Corridor",
+      "Cortessa Community",
+      "White Tank Foothills",
+      "Litchfield Road Area",
+      "Cactus Road Area",
+      "Cotton Lane Area",
+      "Festival Foothills",
+    ],
+    propertyTypes: [
+      "HOA Communities",
+      "Rural Residential Properties",
+      "Commercial Properties",
+      "Retail Centers",
+      "Office Buildings",
+      "Restaurants",
+      "Agricultural Properties",
+      "Mixed-Use Developments",
+    ],
+    localStats: [
+      { label: "Population", value: "10K+" },
+      { label: "New HOA Communities", value: "15+" },
+      { label: "Growth Rate", value: "Top 10%" },
+      { label: "Response Time", value: "< 30 min" },
+    ],
+    testimonial: {
+      quote:
+        "Our new Waddell HOA needed parking enforcement from scratch. Axle Towing surveyed our community, installed all the signage, and started patrols within two weeks. The entire process was free and completely professional.",
+      name: "Mark D.",
+      role: "HOA President, Waddell Community",
+    },
+    whyChooseUs: [
+      {
+        title: "New Community Setup Experts",
+        description:
+          "Waddell's new developments need enforcement built from the ground up. We handle everything from signage surveys to patrol scheduling.",
+      },
+      {
+        title: "Rural-Suburban Flexibility",
+        description:
+          "We adapt our approach to Waddell's mix of established rural properties and new suburban developments, providing appropriate enforcement for each.",
+      },
+      {
+        title: "Zero Cost to You",
+        description:
+          "All our services — signage, patrol, towing, and portal access — are completely free for Waddell property owners.",
+      },
+      {
+        title: "West Valley Dedication",
+        description:
+          "Our strong west Valley presence ensures reliable coverage for Waddell properties, with response times typically under 30 minutes.",
+      },
+    ],
+    cityFacts: [
+      "Growing census-designated place in the northwest Valley near the White Tank Mountains",
+      "Located between Surprise and Peoria, experiencing rapid suburban growth",
+      "Historically an agricultural community now transitioning to residential development",
+      "Near White Tank Mountain Regional Park, the largest park in Maricopa County",
+      "Named after early settler and cattleman William Waddell who homesteaded in the area",
+    ],
+  },
+  "gold-canyon": {
+    city: "Gold Canyon",
+    slug: "gold-canyon",
+    metaTitle:
+      "Towing Services in Gold Canyon, AZ — Private Property Impounds & Parking Enforcement",
+    metaDescription:
+      "Professional private property towing and parking enforcement in Gold Canyon, AZ. Axle Towing serves HOAs, golf communities, and commercial properties at no cost. Call 480-288-5526.",
+    heroImage: "/images/arizona-fire-lane.jpg",
+    heroSubtext:
+      "Professional private property towing and parking enforcement for Gold Canyon's resort-style communities and desert foothill properties.",
+    intro: [
+      "Gold Canyon is a scenic census-designated place of approximately 11,000 residents located east of Apache Junction at the base of the Superstition Mountains. Known for its stunning desert landscapes, golf resort communities, and seasonal snowbird population, Gold Canyon experiences fluctuating parking demands throughout the year. The influx of winter visitors and tourist traffic to nearby attractions like the Superstition Mountains creates unique enforcement challenges for property owners.",
+      "Axle Towing provides professional parking enforcement throughout Gold Canyon, serving the resort-style HOA communities, the golf courses along Kings Ranch Road, commercial properties in the Gold Canyon area, and the various lodging facilities that serve visitors. We understand Gold Canyon's seasonal dynamics and adjust our enforcement approach to match the community's year-round needs.",
+      "Our Gold Canyon services are completely free for property owners. We install ARS-compliant signage, conduct regular patrols, and remove unauthorized vehicles at no cost. From the golf community parking lots to the trailhead overflow areas, Axle Towing ensures Gold Canyon properties maintain orderly parking year-round.",
+    ],
+    neighborhoods: [
+      "Superstition Mountain",
+      "Gold Canyon Golf Resort",
+      "Peralta Trails",
+      "Kings Ranch Road Area",
+      "Mountainbrook Village",
+      "Canyon Rim",
+      "Superstition Foothills",
+    ],
+    propertyTypes: [
+      "Golf Community HOAs",
+      "Resort Properties",
+      "Retail Centers",
+      "Restaurants",
+      "Lodging Facilities",
+      "Medical Offices",
+      "Trailhead Properties",
+      "Gated Communities",
+    ],
+    localStats: [
+      { label: "Population", value: "11K+" },
+      { label: "Golf Communities", value: "5+" },
+      { label: "Seasonal Pop. Increase", value: "40%+" },
+      { label: "Response Time", value: "< 30 min" },
+    ],
+    testimonial: {
+      quote:
+        "During snowbird season, our Gold Canyon community's parking lots were overwhelmed with visitor vehicles. Axle Towing implemented a professional enforcement plan that handles the seasonal surge perfectly. No cost to our HOA.",
+      name: "Patricia S.",
+      role: "HOA Manager, Superstition Mountain",
+    },
+    whyChooseUs: [
+      {
+        title: "Seasonal Community Experts",
+        description:
+          "Gold Canyon's snowbird population creates seasonal parking surges. We scale our enforcement to match demand throughout the year.",
+      },
+      {
+        title: "Resort-Quality Service",
+        description:
+          "Gold Canyon's upscale golf and resort communities deserve enforcement that reflects their standards. We deliver professional, courteous service every time.",
+      },
+      {
+        title: "Zero Cost to You",
+        description:
+          "All our services — signage, patrol, towing, and portal access — are completely free for Gold Canyon property owners.",
+      },
+      {
+        title: "East Valley Reach",
+        description:
+          "Our east Valley coverage extends to Gold Canyon, providing reliable enforcement despite the community's distance from central Phoenix.",
+      },
+    ],
+    cityFacts: [
+      "Scenic community of approximately 11,000 residents at the base of the Superstition Mountains",
+      "Experiences a significant seasonal population increase of 40% or more during winter months",
+      "Home to the Gold Canyon Golf Resort and several premier desert golf courses",
+      "Located along US Route 60 east of Apache Junction, gateway to the Superstition Wilderness",
+      "Named for the gold mining history of the Superstition Mountains and surrounding desert",
+    ],
+  },
 };
