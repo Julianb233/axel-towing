@@ -8,6 +8,7 @@ import ScrollAnimator from "@/components/ScrollAnimator";
 import FloatingCTA from "@/components/FloatingCTA";
 import ContactWidget from "@/components/ContactWidget";
 import EmergencyBanner from "@/components/EmergencyBanner";
+import PropertyManagerChatbot from "@/components/PropertyManagerChatbot";
 import { COMPANY } from "@/lib/constants";
 import { organizationSchema } from "@/lib/schema";
 
@@ -106,6 +107,7 @@ export default function RootLayout({
         <main className="pb-20 md:pb-0">{children}</main>
         <Footer />
         <ContactWidget />
+        <PropertyManagerChatbot />
         <FloatingCTA />
         <ScrollReveal />
         <ScrollAnimator />
