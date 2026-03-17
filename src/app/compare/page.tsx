@@ -25,7 +25,7 @@ const COMPARISON_ROWS = [
   { feature: "Response Time", axle: "< 30 minutes", industry: "45–90 minutes", axleWins: true },
   { feature: "Online Portal", axle: "Yes — Real-time tracking", industry: "Rare", axleWins: true },
   { feature: "Signage Included", axle: "Free installation", industry: "Often extra charge", axleWins: true },
-  { feature: "Coverage Area", axle: "8 cities, 2 yards", industry: "1–3 cities", axleWins: true },
+  { feature: "Coverage Area", axle: "30 cities, 2 yards", industry: "1–3 cities", axleWins: true },
   { feature: "24/7 Service", axle: "Yes", industry: "Limited hours", axleWins: true },
   { feature: "Photo Documentation", axle: "Every tow documented", industry: "Inconsistent", axleWins: true },
   { feature: "Monthly Reports", axle: "Detailed analytics", industry: "Basic or none", axleWins: true },
@@ -53,7 +53,7 @@ const DIFFERENTIATORS = [
   },
   {
     title: "Rapid Response Guarantee",
-    desc: "With 6+ trucks across 2 yards and 8 cities, we guarantee sub-30-minute response times. Industry average is 45–90 minutes — if they show up at all.",
+    desc: "With 6+ trucks across 2 yards and 30 cities, we guarantee sub-30-minute response times. Industry average is 45–90 minutes — if they show up at all.",
     icon: (
       <svg className="w-8 h-8" fill="none" stroke="currentColor" strokeWidth={1.5} viewBox="0 0 24 24">
         <path strokeLinecap="round" strokeLinejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z" />

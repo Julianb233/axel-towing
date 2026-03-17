@@ -154,7 +154,7 @@ export default function HomePage() {
             {[
               { label: "Since 2021", icon: "\u{1F4C5}" },
               { label: "6+ Trucks", icon: "\u{1F69B}" },
-              { label: "8 Cities Served", icon: "\u{1F4CD}" },
+              { label: "30 Cities Served", icon: "\u{1F4CD}" },
             ].map((stat) => (
               <div key={stat.label} className="glass rounded-2xl px-6 py-3 flex items-center gap-3 animate-float">
                 <span className="text-2xl">{stat.icon}</span>
@@ -294,7 +294,7 @@ export default function HomePage() {
             {[
               { end: 30, suffix: "+", label: "Years Combined Experience" },
               { end: 6, suffix: "+", label: "Tow Trucks" },
-              { end: 8, suffix: "", label: "Cities Served" },
+              { end: 30, suffix: "", label: "Cities Served" },
               { end: 0, prefix: "$", suffix: "", label: "Cost to Property Owners" },
             ].map((counter, i) => (
               <div key={counter.label} className="rounded-2xl p-5 sm:p-8 reveal bg-white/10 backdrop-blur-sm border border-white/15" style={{ transitionDelay: `${i * 150}ms` }}>
@@ -587,7 +587,7 @@ export default function HomePage() {
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
             {SERVICE_AREAS.map((area, i) => (
-              <Link key={area.slug} href={["phoenix", "scottsdale", "mesa"].includes(area.slug) ? `/locations/${area.slug}` : "/#locations"} className="glass-card-white rounded-2xl p-6 text-center group border-glow-blue reveal" style={{ transitionDelay: `${i * 80}ms` }}>
+              <Link key={area.slug} href={`/locations/${area.slug}`} className="glass-card-white rounded-2xl p-6 text-center group border-glow-blue reveal" style={{ transitionDelay: `${i * 80}ms` }}>
                 <div className="w-10 h-10 bg-blue-50 text-blue-600 rounded-lg flex items-center justify-center mx-auto mb-3 group-hover:bg-blue-600 group-hover:text-white transition-all duration-300">
                   <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />

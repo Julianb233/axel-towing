@@ -176,7 +176,7 @@ export default function AboutContent() {
                     { year: "2021", event: "Founded in Apache Junction, AZ" },
                     { year: "2022", event: "Expanded fleet to 4 trucks, 50+ properties" },
                     { year: "2023", event: "Launched digital property manager portal" },
-                    { year: "2024", event: "Grew to 6+ trucks, serving 8 cities" },
+                    { year: "2024", event: "Grew to 6+ trucks, serving 30 cities" },
                     { year: "2025", event: "Opened Phoenix location at 320 E. Pioneer St." },
                   ].map((item, i) => (
                     <div key={item.year} className="flex gap-4 items-start">
