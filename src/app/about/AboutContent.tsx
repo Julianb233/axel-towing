@@ -54,7 +54,7 @@ function useParallax() {
 }
 
 const STATS = [
-  { value: 5, suffix: "+", label: "Years of Service" },
+  { value: 30, suffix: "+", label: "Years Combined Experience" },
   { value: 6, suffix: "+", label: "Trucks in Our Fleet" },
   { value: 8, suffix: "", label: "Cities Served" },
   { value: 1000, suffix: "s+", label: "Properties Served" },
