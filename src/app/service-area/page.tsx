@@ -6,7 +6,7 @@ export const metadata: Metadata = {
   title:
     "Service Area — Greater Phoenix Metro Towing & Parking Enforcement | Axle Towing",
   description:
-    "Axle Towing & Impound serves the entire Greater Phoenix metro area with free private property towing and parking enforcement. Covering Phoenix, Scottsdale, Mesa, Tempe, Chandler, Gilbert, Glendale, and Apache Junction.",
+    "Axle Towing & Impound serves 29 cities across the Greater Phoenix metro area with free private property towing and parking enforcement. Covering Phoenix, Scottsdale, Mesa, Tempe, Chandler, Gilbert, Glendale, Peoria, Surprise, Goodyear, and more.",
 };
 
 const CITY_STATS: Record<
@@ -53,6 +53,116 @@ const CITY_STATS: Record<
     properties: "250+",
     response: "< 40 min",
   },
+  avondale: {
+    population: "90K+",
+    properties: "400+",
+    response: "< 35 min",
+  },
+  goodyear: {
+    population: "105K+",
+    properties: "450+",
+    response: "< 35 min",
+  },
+  "litchfield-park": {
+    population: "7K+",
+    properties: "80+",
+    response: "< 35 min",
+  },
+  buckeye: {
+    population: "115K+",
+    properties: "500+",
+    response: "< 40 min",
+  },
+  tolleson: {
+    population: "8K+",
+    properties: "100+",
+    response: "< 30 min",
+  },
+  "el-mirage": {
+    population: "40K+",
+    properties: "200+",
+    response: "< 35 min",
+  },
+  surprise: {
+    population: "155K+",
+    properties: "650+",
+    response: "< 35 min",
+  },
+  "queen-creek": {
+    population: "75K+",
+    properties: "350+",
+    response: "< 40 min",
+  },
+  "san-tan-valley": {
+    population: "110K+",
+    properties: "450+",
+    response: "< 40 min",
+  },
+  "gold-canyon": {
+    population: "12K+",
+    properties: "100+",
+    response: "< 45 min",
+  },
+  "fountain-hills": {
+    population: "25K+",
+    properties: "200+",
+    response: "< 35 min",
+  },
+  "paradise-valley": {
+    population: "14K+",
+    properties: "150+",
+    response: "< 25 min",
+  },
+  maricopa: {
+    population: "60K+",
+    properties: "300+",
+    response: "< 45 min",
+  },
+  "casa-grande": {
+    population: "60K+",
+    properties: "300+",
+    response: "< 50 min",
+  },
+  guadalupe: {
+    population: "6K+",
+    properties: "50+",
+    response: "< 25 min",
+  },
+  peoria: {
+    population: "190K+",
+    properties: "800+",
+    response: "< 30 min",
+  },
+  "cave-creek": {
+    population: "5K+",
+    properties: "60+",
+    response: "< 40 min",
+  },
+  carefree: {
+    population: "4K+",
+    properties: "50+",
+    response: "< 40 min",
+  },
+  "sun-city": {
+    population: "39K+",
+    properties: "300+",
+    response: "< 35 min",
+  },
+  "sun-city-west": {
+    population: "26K+",
+    properties: "200+",
+    response: "< 35 min",
+  },
+  anthem: {
+    population: "25K+",
+    properties: "200+",
+    response: "< 40 min",
+  },
+  youngtown: {
+    population: "7K+",
+    properties: "60+",
+    response: "< 35 min",
+  },
 };
 
 const MAP_PINS: { name: string; slug: string; top: string; left: string }[] = [
@@ -63,12 +173,20 @@ const MAP_PINS: { name: string; slug: string; top: string; left: string }[] = [
   { name: "Chandler", slug: "chandler", top: "62%", left: "52%" },
   { name: "Gilbert", slug: "gilbert", top: "65%", left: "65%" },
   { name: "Glendale", slug: "glendale", top: "30%", left: "28%" },
-  {
-    name: "Apache Junction",
-    slug: "apache-junction",
-    top: "45%",
-    left: "82%",
-  },
+  { name: "Apache Junction", slug: "apache-junction", top: "45%", left: "82%" },
+  { name: "Peoria", slug: "peoria", top: "25%", left: "32%" },
+  { name: "Surprise", slug: "surprise", top: "22%", left: "18%" },
+  { name: "Goodyear", slug: "goodyear", top: "50%", left: "15%" },
+  { name: "Avondale", slug: "avondale", top: "48%", left: "22%" },
+  { name: "Buckeye", slug: "buckeye", top: "52%", left: "5%" },
+  { name: "Fountain Hills", slug: "fountain-hills", top: "28%", left: "72%" },
+  { name: "Queen Creek", slug: "queen-creek", top: "72%", left: "72%" },
+  { name: "Maricopa", slug: "maricopa", top: "85%", left: "42%" },
+  { name: "Casa Grande", slug: "casa-grande", top: "92%", left: "35%" },
+  { name: "Paradise Valley", slug: "paradise-valley", top: "35%", left: "48%" },
+  { name: "Cave Creek", slug: "cave-creek", top: "18%", left: "48%" },
+  { name: "Sun City", slug: "sun-city", top: "28%", left: "22%" },
+  { name: "Anthem", slug: "anthem", top: "10%", left: "38%" },
 ];
 
 export default function ServiceAreaPage() {
@@ -107,7 +225,7 @@ export default function ServiceAreaPage() {
               <span className="text-gradient">Greater Phoenix Metro</span>
             </h1>
             <p className="text-lg md:text-xl text-blue-100 leading-relaxed mb-8">
-              Free private property towing and parking enforcement across 8
+              Free private property towing and parking enforcement across 29
               cities and over 3,000 square miles of the Valley of the Sun.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
@@ -127,9 +245,9 @@ export default function ServiceAreaPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
             {[
-              { value: "8", label: "Cities Covered" },
-              { value: "10,700+", label: "Properties Served" },
-              { value: "3.5M+", label: "Residents in Coverage" },
+              { value: "29", label: "Cities Covered" },
+              { value: "15,000+", label: "Properties Served" },
+              { value: "5M+", label: "Residents in Coverage" },
               { value: "< 30 min", label: "Average Response" },
             ].map((stat, index) => (
               <div

@@ -28,7 +28,7 @@ export const COMPANY = {
   domain: "axletowing.com",
   tagline: "Professional Towing & Parking Management",
   description:
-    "Axle Towing & Impound provides professional private property impound, parking enforcement, and vehicle relocation services across the Phoenix metro area at no cost to property owners.",
+    "Axle Towing & Impound provides professional private property impound and parking enforcement services across the Phoenix metro area at no cost to property owners. We also offer paid vehicle relocation services for construction and maintenance projects.",
   logo: "https://e5cdia7uckj.exactdn.com/wp-content/uploads/2021/05/Axle-Towing-and-Impound-in-Arizona-Logo.png",
   heroImage:
     "https://e5cdia7uckj.exactdn.com/wp-content/uploads/2023/09/242A4356-Multiple-Trucks-new.jpg?strip=all",
@@ -43,9 +43,31 @@ export const SERVICE_AREAS = [
   { name: "Chandler", slug: "chandler", description: "Dependable vehicle relocation services in Chandler." },
   { name: "Tempe", slug: "tempe", description: "Expert towing services near ASU and throughout Tempe." },
   { name: "Apache Junction", slug: "apache-junction", description: "Reliable towing and impound services in Apache Junction." },
+  { name: "Avondale", slug: "avondale", description: "Professional towing and parking enforcement for Avondale properties." },
+  { name: "Goodyear", slug: "goodyear", description: "Reliable private property towing services across Goodyear." },
+  { name: "Litchfield Park", slug: "litchfield-park", description: "Discreet parking enforcement for Litchfield Park communities." },
+  { name: "Buckeye", slug: "buckeye", description: "Fast-response towing services for Buckeye's growing communities." },
+  { name: "Tolleson", slug: "tolleson", description: "Dependable towing and enforcement for Tolleson industrial and residential properties." },
+  { name: "El Mirage", slug: "el-mirage", description: "Professional parking enforcement for El Mirage properties." },
+  { name: "Surprise", slug: "surprise", description: "Reliable towing and parking enforcement throughout Surprise." },
+  { name: "Queen Creek", slug: "queen-creek", description: "Professional parking enforcement for Queen Creek's growing communities." },
+  { name: "San Tan Valley", slug: "san-tan-valley", description: "Reliable private property towing across San Tan Valley." },
+  { name: "Gold Canyon", slug: "gold-canyon", description: "Local towing and parking enforcement for Gold Canyon properties." },
+  { name: "Fountain Hills", slug: "fountain-hills", description: "Professional towing services for Fountain Hills communities." },
+  { name: "Paradise Valley", slug: "paradise-valley", description: "Discreet parking enforcement for Paradise Valley luxury properties." },
+  { name: "Maricopa", slug: "maricopa", description: "Private property towing for Maricopa's master-planned communities." },
+  { name: "Casa Grande", slug: "casa-grande", description: "Reliable parking enforcement and towing in Casa Grande." },
+  { name: "Guadalupe", slug: "guadalupe", description: "Fast-response towing services for the Town of Guadalupe." },
+  { name: "Peoria", slug: "peoria", description: "Professional towing and parking enforcement for Peoria properties." },
+  { name: "Cave Creek", slug: "cave-creek", description: "Reliable towing services for Cave Creek's rural and residential properties." },
+  { name: "Carefree", slug: "carefree", description: "Discreet parking enforcement for Carefree's upscale communities." },
+  { name: "Sun City", slug: "sun-city", description: "Dependable parking enforcement for Sun City retirement communities." },
+  { name: "Sun City West", slug: "sun-city-west", description: "Professional towing services for Sun City West properties." },
+  { name: "Anthem", slug: "anthem", description: "Fast-response towing for Anthem's master-planned community." },
+  { name: "Youngtown", slug: "youngtown", description: "Reliable parking enforcement for the Town of Youngtown." },
 ];
 
-export const SERVICES = [
+export const FREE_SERVICES = [
   {
     title: "Private Property Impounds",
     slug: "private-property-impounds",
@@ -57,12 +79,6 @@ export const SERVICES = [
     slug: "parking-enforcement",
     shortDesc: "Professional patrol and enforcement for parking garages and private lots.",
     icon: "clipboard",
-  },
-  {
-    title: "Vehicle Relocations",
-    slug: "vehicle-relocations",
-    shortDesc: "Move vehicles for asphalt repairs, property maintenance, and construction.",
-    icon: "truck",
   },
   {
     title: "HOA Towing",
@@ -83,6 +99,18 @@ export const SERVICES = [
     icon: "store",
   },
 ];
+
+export const PAID_SERVICES = [
+  {
+    title: "Vehicle Relocations",
+    slug: "vehicle-relocations",
+    shortDesc: "Professional vehicle moves for asphalt repairs, construction, and property maintenance. Pricing starts at ~$1,000 for 10 vehicles.",
+    icon: "truck",
+  },
+];
+
+/** All services combined for sitemap/navigation */
+export const SERVICES = [...FREE_SERVICES, ...PAID_SERVICES];
 
 export const NAV_LINKS = [
   { label: "Home", href: "/" },
