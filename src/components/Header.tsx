@@ -127,7 +127,11 @@ export default function Header() {
               </div>
               <span className="hidden sm:inline text-white/30">|</span>
               <span className="hidden sm:inline text-white/60 text-xs uppercase tracking-wide">
-                24/7 Emergency Service
+                24/7/365 Dispatch
+              </span>
+              <span className="hidden lg:inline text-white/30">|</span>
+              <span className="hidden lg:inline text-white/50 text-xs tracking-wide">
+                Office: Mon-Fri 9am-5pm
               </span>
               <span className="hidden md:inline text-white/30">|</span>
               <TruckCount />

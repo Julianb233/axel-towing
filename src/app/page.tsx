@@ -123,9 +123,26 @@ export default function HomePage() {
               Private Property Towing
             </span>
           </h1>
-          <p className="text-lg sm:text-xl md:text-2xl text-white max-w-3xl mx-auto mb-10 animate-fade-in-up delay-200 leading-relaxed">
+          <p className="text-lg sm:text-xl md:text-2xl text-white max-w-3xl mx-auto mb-8 animate-fade-in-up delay-200 leading-relaxed">
             Professional parking enforcement and vehicle management at zero cost to property owners.
           </p>
+          {/* 24/7/365 Dispatch Availability Banner */}
+          <div className="mb-10 animate-fade-in-up delay-250 flex justify-center">
+            <div className="rounded-2xl px-6 sm:px-10 py-5 border-2 border-green-400/40 bg-green-500/15 backdrop-blur-md shadow-lg shadow-green-500/10">
+              <div className="flex items-center justify-center gap-3 mb-2">
+                <span className="relative flex h-3.5 w-3.5">
+                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75" />
+                  <span className="relative inline-flex rounded-full h-3.5 w-3.5 bg-green-500" />
+                </span>
+                <span className="font-heading font-bold text-white text-xl sm:text-2xl tracking-wide">24/7/365 Towing Dispatch</span>
+              </div>
+              <div className="flex flex-col sm:flex-row items-center justify-center gap-1 sm:gap-4 text-white/80 text-sm sm:text-base">
+                <span>Dispatch available around the clock</span>
+                <span className="hidden sm:inline text-white/40">|</span>
+                <span>Vehicle retrieval: Mon-Fri 9am-5pm</span>
+              </div>
+            </div>
+          </div>
           <div className="flex flex-col sm:flex-row gap-4 justify-center animate-fade-in-up delay-300">
             <Link href="/contact" className="btn-primary px-8 py-3">
               Get a Free Quote
