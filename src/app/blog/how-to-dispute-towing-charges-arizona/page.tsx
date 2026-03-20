@@ -152,8 +152,7 @@ export default function ArticlePage() {
                   You can also file a complaint with the Arizona Attorney
                   General&apos;s Consumer Protection Division, especially if
                   you believe the towing company engaged in deceptive or
-                  unfair business practices. The Better Business Bureau is
-                  another option for documenting your complaint publicly.
+                  unfair business practices.
                 </p>
 
                 <h2 className="text-2xl font-bold text-gray-900 mt-12 mb-4 reveal">

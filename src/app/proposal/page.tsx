@@ -142,7 +142,7 @@ const deliverables = [
     title: "Local SEO Domination",
     icon: "\u{1F4CD}",
     brief: "Google Business Profile optimization for both yards, 50+ citation builds, and review strategy.",
-    details: "We optimize both your Apache Junction and Phoenix Google Business Profiles with proper categories, service descriptions, Q&A seeding, and weekly GBP posts. We build consistent citations across 50+ directories including Arizona Multihousing Association, BBB, Yelp, Towing.com, and local chambers of commerce. Plus a review strategy focused on collecting property manager reviews to build a 4.5+ star profile.",
+    details: "We optimize both your Apache Junction and Phoenix Google Business Profiles with proper categories, service descriptions, Q&A seeding, and weekly GBP posts. We build consistent citations across 50+ directories including Arizona Multihousing Association, Yelp, Towing.com, and local chambers of commerce. Plus a review strategy focused on collecting property manager reviews to build a 4.5+ star profile.",
     benefits: [
       "Appear in Google Map Pack for local towing searches",
       "Consistent NAP across 50+ directories",
@@ -151,7 +151,7 @@ const deliverables = [
       "AMA and industry association listings boost authority signals",
     ],
     timeline: "Month 1-3 foundation, ongoing",
-    tools: ["Google Business", "BrightLocal", "AMA", "Yelp", "BBB"],
+    tools: ["Google Business", "BrightLocal", "AMA", "Yelp"],
   },
   {
     title: "AI Search Optimization",
