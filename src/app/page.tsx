@@ -41,7 +41,7 @@ const ICONS: Record<string, React.ReactNode> = {
 const SERVICE_CARDS = [
   { icon: "shield", title: "Private Property Impounds", desc: "Remove unauthorized vehicles at zero cost to you", slug: "private-property-impounds" },
   { icon: "clipboard", title: "Parking Enforcement", desc: "Professional patrol for garages and private lots", slug: "parking-enforcement" },
-  { icon: "truck", title: "Vehicle Relocations", desc: "Paid vehicle moves for construction and maintenance projects", slug: "vehicle-relocations", paid: true },
+  { icon: "truck", title: "Vehicle Relocations", desc: "Paid vehicle moves for repairs, maintenance, and property management", slug: "vehicle-relocations", paid: true },
   { icon: "home", title: "HOA Towing", desc: "Custom towing programs for homeowner associations", slug: "hoa-towing" },
   { icon: "building", title: "Apartment Towing", desc: "Keep your complex parking organized", slug: "apartment-towing" },
   { icon: "store", title: "Commercial Property", desc: "Protect your commercial property from unauthorized parking", slug: "commercial-property-towing" },
