@@ -22,7 +22,7 @@ export const LOCATION_PAGES: Record<string, LocationPageData> = {
     metaTitle:
       "Towing Services in Phoenix, AZ — Private Property Impounds & Parking Enforcement",
     metaDescription:
-      "Axle Towing provides professional private property impound, parking enforcement, and vehicle relocation services throughout Phoenix, AZ. Free for property owners. Call 480-288-5526.",
+      "Axle Towing provides free private property impound and parking enforcement services throughout Phoenix, AZ. Paid vehicle relocation also available. Call 480-288-5526.",
     heroImage: "/images/arizona-skyline-panoramic.jpg",
     heroSubtext:
       "Professional private property towing, parking enforcement, and vehicle relocation services throughout Arizona's capital city.",

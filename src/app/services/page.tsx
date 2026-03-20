@@ -1,11 +1,11 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
-import { COMPANY, SERVICES } from "@/lib/constants";
+import { COMPANY, FREE_SERVICES, PAID_SERVICES } from "@/lib/constants";
 
 export const metadata: Metadata = {
   title: "Our Services",
-  description: `${COMPANY.name} offers private property impounds, parking enforcement, vehicle relocations, HOA towing, apartment towing, and commercial property towing across Phoenix, AZ — all free for property owners.`,
+  description: `${COMPANY.name} offers free private property impounds, parking enforcement, HOA towing, apartment towing, and commercial property towing across Phoenix, AZ. We also provide paid vehicle relocation services for construction and maintenance projects.`,
 };
 
 const STATS = [
@@ -67,9 +67,10 @@ export default function ServicesPage() {
             Our Services
           </h1>
           <p className="text-lg md:text-xl text-white/90 max-w-2xl leading-relaxed reveal delay-200">
-            From private property impounds to parking enforcement and vehicle
-            relocations, {COMPANY.name} provides comprehensive towing solutions
-            for every type of property &mdash; all at no cost to property owners.
+            From private property impounds to parking enforcement,{" "}
+            {COMPANY.name} provides comprehensive towing solutions for every
+            type of property. Most services are completely free for property
+            owners.
           </p>
         </div>
       </section>
@@ -79,14 +80,19 @@ export default function ServicesPage() {
         <div className="absolute inset-0 bg-gradient-to-br from-blue-950 via-blue-900 to-blue-800" />
         <div className="absolute inset-0 grain-overlay" />
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center">
+            <div className="inline-block bg-green-500/20 border border-green-400/30 rounded-full px-4 py-1.5 mb-6 reveal">
+              <span className="text-green-300 text-sm font-semibold">$0 Cost to Property Owners</span>
+            </div>
+          </div>
           <h2 className="font-heading text-3xl md:text-4xl font-bold text-white text-center mb-4 reveal">
-            Comprehensive Towing Solutions
+            Free Towing &amp; Enforcement Services
           </h2>
           <p className="text-blue-100 text-center text-lg mb-12 max-w-2xl mx-auto reveal delay-100">
-            Choose the service that fits your property type. Every program is customized and completely free for property owners.
+            These services are completely free for property owners and managers. All costs are recovered through legally mandated impound fees.
           </p>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {SERVICES.map((service, i) => (
+            {FREE_SERVICES.map((service, i) => (
               <Link
                 key={service.slug}
                 href={`/services/${service.slug}`}
@@ -108,6 +114,54 @@ export default function ServicesPage() {
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                   </svg>
                 </span>
+              </Link>
+            ))}
+          </div>
+        </div>
+      </section>
+
+
+      {/* ===== PAID SERVICES SECTION ===== */}
+      <section className="py-20 md:py-28 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center">
+            <div className="inline-block bg-amber-50 border border-amber-200 rounded-full px-4 py-1.5 mb-6 reveal">
+              <span className="text-amber-700 text-sm font-semibold">Paid Service</span>
+            </div>
+          </div>
+          <h2 className="font-heading text-3xl md:text-4xl font-bold text-blue-950 text-center mb-4 reveal">
+            Vehicle Relocation Services
+          </h2>
+          <p className="text-body-text text-center text-lg mb-12 max-w-2xl mx-auto reveal delay-100">
+            Need vehicles moved for asphalt repairs, construction, or property maintenance? Our relocation service is charged to property owners at competitive rates.
+          </p>
+          <div className="max-w-2xl mx-auto">
+            {PAID_SERVICES.map((service, i) => (
+              <Link
+                key={service.slug}
+                href={`/services/${service.slug}`}
+                className="group glass-card-white rounded-2xl p-8 block border border-gray-200 hover:border-blue-300 hover:shadow-lg transition-all reveal"
+                style={{ animationDelay: `${(i + 1) * 100}ms` }}
+              >
+                <div className="flex items-start gap-6">
+                  <div className="w-14 h-14 rounded-xl bg-blue-50 flex items-center justify-center shrink-0 text-blue-600 group-hover:bg-blue-600 group-hover:text-white transition-colors">
+                    {SERVICE_ICONS[service.icon] || SERVICE_ICONS.truck}
+                  </div>
+                  <div className="flex-1">
+                    <h3 className="font-heading text-xl font-bold text-blue-950 mb-2 group-hover:text-blue-600 transition-colors">
+                      {service.title}
+                    </h3>
+                    <p className="text-body-text text-sm leading-relaxed mb-3">
+                      {service.shortDesc}
+                    </p>
+                    <span className="inline-flex items-center text-sm font-semibold text-blue-600 group-hover:gap-2 transition-all">
+                      Learn More &amp; Get a Quote
+                      <svg className="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                      </svg>
+                    </span>
+                  </div>
+                </div>
               </Link>
             ))}
           </div>
@@ -152,7 +206,7 @@ export default function ServicesPage() {
             Get Started Today &mdash; At No Cost to You
           </h2>
           <p className="text-white/95 text-lg mb-10 max-w-2xl mx-auto reveal delay-100">
-            Our towing and parking enforcement services are completely free for property owners and managers. Let us handle your parking problems.
+            Our towing and parking enforcement services are free for property owners and managers. Vehicle relocation services are available at competitive rates. Let us handle your parking problems.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center reveal delay-200">
             <a href={`tel:${COMPANY.phone}`} className="btn-primary text-lg">

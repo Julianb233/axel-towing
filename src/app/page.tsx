@@ -41,7 +41,7 @@ const ICONS: Record<string, React.ReactNode> = {
 const SERVICE_CARDS = [
   { icon: "shield", title: "Private Property Impounds", desc: "Remove unauthorized vehicles at zero cost to you", slug: "private-property-impounds" },
   { icon: "clipboard", title: "Parking Enforcement", desc: "Professional patrol for garages and private lots", slug: "parking-enforcement" },
-  { icon: "truck", title: "Vehicle Relocations", desc: "Fast vehicle moves for repairs and maintenance", slug: "vehicle-relocations" },
+  { icon: "truck", title: "Vehicle Relocations", desc: "Paid vehicle moves for construction and maintenance projects", slug: "vehicle-relocations", paid: true },
   { icon: "home", title: "HOA Towing", desc: "Custom towing programs for homeowner associations", slug: "hoa-towing" },
   { icon: "building", title: "Apartment Towing", desc: "Keep your complex parking organized", slug: "apartment-towing" },
   { icon: "store", title: "Commercial Property", desc: "Protect your commercial property from unauthorized parking", slug: "commercial-property-towing" },
@@ -235,7 +235,12 @@ export default function HomePage() {
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {SERVICE_CARDS.map((service, i) => (
-              <Link key={service.title} href={`/services/${service.slug}`} className="glass-card rounded-2xl p-8 group cursor-pointer reveal" style={{ transitionDelay: `${i * 100}ms` }}>
+              <Link key={service.title} href={`/services/${service.slug}`} className="glass-card rounded-2xl p-8 group cursor-pointer reveal relative" style={{ transitionDelay: `${i * 100}ms` }}>
+                {"paid" in service && service.paid && (
+                  <span className="absolute top-4 right-4 bg-amber-50 border border-amber-200 text-amber-700 text-xs font-semibold px-2.5 py-1 rounded-full">
+                    Paid Service
+                  </span>
+                )}
                 <div className="w-16 h-16 rounded-xl bg-blue-50 text-blue-600 flex items-center justify-center mb-5 group-hover:bg-blue-600 group-hover:text-white transition-colors duration-300">
                   {ICONS[service.icon]}
                 </div>

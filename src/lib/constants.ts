@@ -28,7 +28,7 @@ export const COMPANY = {
   domain: "axletowing.com",
   tagline: "Professional Towing & Parking Management",
   description:
-    "Axle Towing & Impound provides professional private property impound, parking enforcement, and vehicle relocation services across the Phoenix metro area at no cost to property owners.",
+    "Axle Towing & Impound provides professional private property impound and parking enforcement services across the Phoenix metro area at no cost to property owners. We also offer paid vehicle relocation services for construction and maintenance projects.",
   logo: "https://e5cdia7uckj.exactdn.com/wp-content/uploads/2021/05/Axle-Towing-and-Impound-in-Arizona-Logo.png",
   heroImage:
     "https://e5cdia7uckj.exactdn.com/wp-content/uploads/2023/09/242A4356-Multiple-Trucks-new.jpg?strip=all",
@@ -45,7 +45,7 @@ export const SERVICE_AREAS = [
   { name: "Apache Junction", slug: "apache-junction", description: "Reliable towing and impound services in Apache Junction." },
 ];
 
-export const SERVICES = [
+export const FREE_SERVICES = [
   {
     title: "Private Property Impounds",
     slug: "private-property-impounds",
@@ -57,12 +57,6 @@ export const SERVICES = [
     slug: "parking-enforcement",
     shortDesc: "Professional patrol and enforcement for parking garages and private lots.",
     icon: "clipboard",
-  },
-  {
-    title: "Vehicle Relocations",
-    slug: "vehicle-relocations",
-    shortDesc: "Move vehicles for asphalt repairs, property maintenance, and construction.",
-    icon: "truck",
   },
   {
     title: "HOA Towing",
@@ -83,6 +77,18 @@ export const SERVICES = [
     icon: "store",
   },
 ];
+
+export const PAID_SERVICES = [
+  {
+    title: "Vehicle Relocations",
+    slug: "vehicle-relocations",
+    shortDesc: "Professional vehicle moves for asphalt repairs, construction, and property maintenance. Pricing starts at ~$1,000 for 10 vehicles.",
+    icon: "truck",
+  },
+];
+
+/** All services combined for sitemap/navigation */
+export const SERVICES = [...FREE_SERVICES, ...PAID_SERVICES];
 
 export const NAV_LINKS = [
   { label: "Home", href: "/" },
