@@ -103,24 +103,8 @@ const VEHICLE_OWNER_FAQS = [
     a: `Our office hours are ${COMPANY.hours.weekday}, ${COMPANY.hours.saturday}, and ${COMPANY.hours.sunday}. Vehicle retrieval is available during these hours at both our Apache Junction and Phoenix locations. For emergencies, call ${COMPANY.phone}.`,
   },
   {
-    q: "What if I can\u2019t afford the fees?",
-    a: "We understand financial hardship. Please contact us directly to discuss your situation. While fees are set by state regulation, we can work with you on payment arrangements where possible. Call us and we\u2019ll do our best to help.",
-  },
-  {
-    q: "How long before my car is auctioned?",
-    a: "Under Arizona law, vehicles held in impound for an extended period may be subject to lien sale or auction. The specific timeline depends on the circumstances and vehicle value. We recommend retrieving your vehicle as soon as possible to minimize storage fees.",
-  },
-  {
-    q: "Can I dispute the tow?",
-    a: "Yes. If you believe your vehicle was towed in error, contact us with the details and we\u2019ll review the documentation. Every tow is photographically documented with timestamps and violation details. You may also have legal remedies under Arizona Revised Statutes.",
-  },
-  {
     q: "What if I was parked in a visitor spot?",
     a: "Visitor parking policies vary by property. If you believe you were parked in an authorized visitor area, contact us with your details and we\u2019ll review the tow documentation and the property\u2019s visitor parking policy. If the tow was made in error, we\u2019ll work to resolve it.",
-  },
-  {
-    q: "Who sets the impound rates?",
-    a: "Impound and storage rates are regulated by the State of Arizona and are set in accordance with Arizona Revised Statutes. These rates are not set by Axle Towing \u2014 we follow the state-mandated fee schedule. Rates are posted at our impound yards.",
   },
 ];
 
