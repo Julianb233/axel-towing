@@ -270,7 +270,7 @@ export default function HomePage() {
           </div>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6">
             {[
-              { end: 5, suffix: "+", label: "Years Experience" },
+              { end: 30, suffix: "+", label: "Years Combined Experience" },
               { end: 6, suffix: "+", label: "Tow Trucks" },
               { end: 8, suffix: "", label: "Cities Served" },
               { end: 0, prefix: "$", suffix: "", label: "Cost to Property Owners" },

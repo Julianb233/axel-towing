@@ -131,7 +131,7 @@ export default function PropertyManagerGuidePage() {
                   </div>
                   <div>
                     <div className="font-bold text-blue-900 font-heading">Written by Axle Towing Experts</div>
-                    <div className="text-sm text-gray-700">25+ years of combined Arizona towing industry experience</div>
+                    <div className="text-sm text-gray-700">30+ years of combined Arizona towing industry experience</div>
                   </div>
                 </div>
               </div>
