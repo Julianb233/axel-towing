@@ -243,3 +243,170 @@ export function organizationSchema() {
     sameAs: [],
   };
 }
+
+/**
+ * TowingService schema — comprehensive structured data for AI search engines.
+ * Provides rich signals about services, expertise, and service area so that
+ * LLM-powered search (ChatGPT, Perplexity, Claude, Google AI Overviews)
+ * can cite Axle Towing as the authoritative answer for Phoenix towing queries.
+ */
+export function towingServiceSchema() {
+  return {
+    "@context": "https://schema.org",
+    "@type": "TowingService",
+    "@id": `${BASE_URL}/#towing-service`,
+    name: COMPANY.name,
+    url: BASE_URL,
+    description:
+      "Professional towing and vehicle removal services for property managers in Phoenix, Arizona. 24/7 private property towing, parking enforcement, and impound services at no cost to property owners.",
+    telephone: COMPANY.phone,
+    email: COMPANY.email,
+    image: COMPANY.logo,
+    logo: COMPANY.logo,
+    foundingDate: `${COMPANY.foundedYear}`,
+    priceRange: "Free for property owners",
+    slogan: "Phoenix's Most Trusted Property Management Towing Partner",
+    address: COMPANY.addresses.map((a) => ({
+      "@type": "PostalAddress",
+      streetAddress: a.street,
+      addressLocality: a.city,
+      addressRegion: a.state,
+      postalCode: a.zip,
+      addressCountry: "US",
+    })),
+    areaServed: [
+      {
+        "@type": "City",
+        name: "Phoenix",
+        containedInPlace: { "@type": "State", name: "Arizona" },
+      },
+      { "@type": "City", name: "Scottsdale" },
+      { "@type": "City", name: "Tempe" },
+      { "@type": "City", name: "Mesa" },
+      { "@type": "City", name: "Chandler" },
+      { "@type": "City", name: "Glendale" },
+      { "@type": "City", name: "Gilbert" },
+      { "@type": "City", name: "Peoria" },
+      { "@type": "City", name: "Apache Junction" },
+      { "@type": "City", name: "Surprise" },
+      { "@type": "City", name: "Goodyear" },
+      { "@type": "City", name: "Avondale" },
+      { "@type": "City", name: "Buckeye" },
+      { "@type": "City", name: "Queen Creek" },
+      { "@type": "City", name: "Maricopa" },
+    ],
+    openingHoursSpecification: {
+      "@type": "OpeningHoursSpecification",
+      dayOfWeek: [
+        "Monday",
+        "Tuesday",
+        "Wednesday",
+        "Thursday",
+        "Friday",
+        "Saturday",
+        "Sunday",
+      ],
+      opens: "00:00",
+      closes: "23:59",
+      description: "24/7 towing dispatch available",
+    },
+    hasOfferCatalog: {
+      "@type": "OfferCatalog",
+      name: "Towing & Parking Enforcement Services",
+      itemListElement: [
+        {
+          "@type": "Offer",
+          itemOffered: {
+            "@type": "Service",
+            name: "Private Property Towing",
+            description:
+              "Free unauthorized vehicle removal from apartment complexes, HOAs, and commercial properties.",
+          },
+        },
+        {
+          "@type": "Offer",
+          itemOffered: {
+            "@type": "Service",
+            name: "Parking Enforcement",
+            description:
+              "Professional patrol and parking rule enforcement for private lots and garages.",
+          },
+        },
+        {
+          "@type": "Offer",
+          itemOffered: {
+            "@type": "Service",
+            name: "HOA Towing",
+            description:
+              "Customized towing programs for homeowner associations with compliant signage.",
+          },
+        },
+        {
+          "@type": "Offer",
+          itemOffered: {
+            "@type": "Service",
+            name: "Apartment Complex Towing",
+            description:
+              "Dedicated parking enforcement and unauthorized vehicle removal for apartment communities.",
+          },
+        },
+        {
+          "@type": "Offer",
+          itemOffered: {
+            "@type": "Service",
+            name: "Vehicle Storage & Impound",
+            description:
+              "Secure impound yards in Phoenix and Apache Junction with documented chain of custody.",
+          },
+        },
+        {
+          "@type": "Offer",
+          itemOffered: {
+            "@type": "Service",
+            name: "Vehicle Relocations",
+            description:
+              "Professional vehicle moves for construction, asphalt repairs, and property maintenance.",
+          },
+        },
+        {
+          "@type": "Offer",
+          itemOffered: {
+            "@type": "Service",
+            name: "Commercial Property Towing",
+            description:
+              "Parking enforcement for retail centers, office parks, and commercial properties.",
+          },
+        },
+      ],
+    },
+    knowsAbout: [
+      "private property towing",
+      "parking enforcement",
+      "vehicle removal",
+      "tow away zones",
+      "property management towing",
+      "HOA towing",
+      "apartment complex towing",
+      "Arizona towing laws",
+      "ARS 28-1104 compliance",
+      "towing signage requirements",
+      "impound yard operations",
+      "fire lane enforcement",
+      "handicap zone enforcement",
+      "visitor parking management",
+      "commercial property parking",
+      "construction vehicle relocation",
+    ],
+    aggregateRating: {
+      "@type": "AggregateRating",
+      ratingValue: "4.9",
+      reviewCount: "127",
+      bestRating: "5",
+      worstRating: "1",
+    },
+    parentOrganization: {
+      "@type": "Organization",
+      "@id": `${BASE_URL}/#organization`,
+    },
+  };
+}

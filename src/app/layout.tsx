@@ -10,7 +10,7 @@ import ContactWidget from "@/components/ContactWidget";
 import EmergencyBanner from "@/components/EmergencyBanner";
 import PropertyManagerChatbot from "@/components/PropertyManagerChatbot";
 import { COMPANY } from "@/lib/constants";
-import { organizationSchema } from "@/lib/schema";
+import { organizationSchema, towingServiceSchema } from "@/lib/schema";
 
 const openSans = Open_Sans({
   variable: "--font-open-sans",
@@ -97,6 +97,12 @@ export default function RootLayout({
           type="application/ld+json"
           dangerouslySetInnerHTML={{
             __html: JSON.stringify(organizationSchema()),
+          }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(towingServiceSchema()),
           }}
         />
       </head>
