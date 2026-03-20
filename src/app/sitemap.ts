@@ -1,6 +1,7 @@
 import type { MetadataRoute } from "next";
 import { SERVICES, SERVICE_AREAS } from "@/lib/constants";
 import { BLOG_SLUGS } from "@/lib/blog-slugs";
+import { NICHE_VERTICALS, NICHE_CITIES } from "@/lib/niche-data";
 
 const BASE_URL = "https://axletowing.com";
 
@@ -96,6 +97,25 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.7,
   }));
 
+  // Niche specialty pages (hub + vertical hubs + city pages)
+  const nichePages: MetadataRoute.Sitemap = [
+    { url: `${BASE_URL}/niche`, lastModified: now, changeFrequency: "monthly" as const, priority: 0.7 },
+    ...NICHE_VERTICALS.map((v) => ({
+      url: `${BASE_URL}/niche/${v.slug}`,
+      lastModified: now,
+      changeFrequency: "monthly" as const,
+      priority: 0.7,
+    })),
+    ...NICHE_VERTICALS.flatMap((v) =>
+      NICHE_CITIES.map((c) => ({
+        url: `${BASE_URL}/niche/${v.slug}/${c.slug}`,
+        lastModified: now,
+        changeFrequency: "monthly" as const,
+        priority: 0.7,
+      }))
+    ),
+  ];
+
   return [
     ...staticPages,
     ...spanishPages,
@@ -103,5 +123,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ...locationPages,
     ...neighborhoodPages,
     ...blogPages,
+    ...nichePages,
   ];
 }
