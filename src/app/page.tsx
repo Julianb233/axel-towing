@@ -2,7 +2,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { COMPANY, SERVICES, SERVICE_AREAS } from "@/lib/constants";
 import AnimatedCounter from "@/components/AnimatedCounter";
-import { localBusinessSchema } from "@/lib/schema";
+import { localBusinessSchema, towingServiceSchema } from "@/lib/schema";
 import { IMAGES } from "@/lib/images";
 
 const ICONS: Record<string, React.ReactNode> = {
@@ -100,6 +100,13 @@ export default function HomePage() {
             localBusinessSchema("phoenix"),
             localBusinessSchema("apache-junction"),
           ]),
+        }}
+      />
+      {/* JSON-LD: TowingService for AI search optimization */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(towingServiceSchema()),
         }}
       />
 
