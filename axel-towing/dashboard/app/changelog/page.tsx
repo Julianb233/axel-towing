@@ -16,6 +16,16 @@ interface ChangelogSection {
 
 const changelog: ChangelogSection[] = [
   {
+    date: "March 23, 2026 (Video Modal + Hero Enhancement)",
+    type: "completed",
+    entries: [
+      { text: "Added VideoModal component — accessible YouTube embed modal with keyboard support (Escape to close) and body scroll lock", category: "website" },
+      { text: "Added 'Watch How It Works' button to hero section — play button with glass styling, wires up to VideoModal (video ID swappable when Elliott provides footage)", category: "website" },
+      { text: "Extracted HeroButtons to client component — keeps homepage as a server component while enabling interactive modal state", category: "infrastructure" },
+      { text: "Confirmed all v2.0 roadmap phases (01–07) already implemented: response time badge, trust bar, newsletter, pricing page, gallery docs badge, dashboard preview, referral program, case studies with BeforeAfter slider, AggregateRating schema", category: "website" },
+    ],
+  },
+  {
     date: "March 23, 2026 (Dispatch API + Voice Agent)",
     type: "completed",
     entries: [
