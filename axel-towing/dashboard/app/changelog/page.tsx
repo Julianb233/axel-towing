@@ -16,6 +16,19 @@ interface ChangelogSection {
 
 const changelog: ChangelogSection[] = [
   {
+    date: "March 23, 2026 (Dispatch API + Voice Agent)",
+    type: "completed",
+    entries: [
+      { text: "Built dispatch API (POST /api/dispatch) — chatbot tow requests trigger multi-channel notifications in real time", category: "infrastructure" },
+      { text: "Email notifications via Resend to axletowing@gmail.com for every dispatch request — includes all request details and reference ID", category: "infrastructure" },
+      { text: "SMS notifications via Twilio to dispatch phone (480-288-5526) for immediate mobile alerting", category: "infrastructure" },
+      { text: "All dispatch requests persisted to Supabase database — enables full request history, tracking, and analytics", category: "infrastructure" },
+      { text: "Twilio warm transfer integrated into voice agent — callers can be transferred to live dispatcher mid-call without dropping", category: "infrastructure" },
+      { text: "Google Search Console verification metadata added to site layout — enables property ownership and SEO data access", category: "seo" },
+      { text: "TowBook API integration deferred to Phase 3 (pending client API credentials from Elliott)", category: "infrastructure" },
+    ],
+  },
+  {
     date: "March 22, 2026 (Driver & Staff SOP Handbook)",
     type: "completed",
     entries: [
