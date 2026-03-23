@@ -171,7 +171,7 @@ export default function SpanishHomePage() {
           </div>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
             {[
-              { end: 5, suffix: "+", label: "Anos de Experiencia" },
+              { end: 30, suffix: "+", label: "Anos de Experiencia Combinada" },
               { end: 6, suffix: "+", label: "Gruas" },
               { end: 8, suffix: "", label: "Ciudades" },
               { end: 0, prefix: "$", suffix: "", label: "Costo para Propietarios" },

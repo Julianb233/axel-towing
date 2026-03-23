@@ -157,7 +157,20 @@ export default function HomePage() {
               Call Now: {COMPANY.phone}
             </a>
           </div>
-          <div className="flex flex-wrap justify-center gap-4 md:gap-6 mt-16 animate-fade-in-up delay-400">
+          {/* 24/7/365 Dispatch Banner */}
+          <div className="mt-8 animate-fade-in-up delay-400 flex justify-center">
+            <div className="glass rounded-2xl px-8 py-4 border border-green-400/30 bg-green-500/10 backdrop-blur-sm">
+              <div className="flex items-center gap-3">
+                <span className="relative flex h-3 w-3">
+                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75" />
+                  <span className="relative inline-flex rounded-full h-3 w-3 bg-green-500" />
+                </span>
+                <span className="font-heading font-bold text-white text-lg tracking-wide">24/7/365 Dispatch Available</span>
+              </div>
+              <p className="text-white/80 text-sm mt-1">Vehicle retrieval: Mon-Fri 9am-5pm</p>
+            </div>
+          </div>
+          <div className="flex flex-wrap justify-center gap-4 md:gap-6 mt-16 animate-fade-in-up delay-500">
             {[
               { label: "Since 2021", icon: "\u{1F4C5}" },
               { label: "6+ Trucks", icon: "\u{1F69B}" },
@@ -191,7 +204,7 @@ export default function HomePage() {
       <section className="py-12 bg-white border-b border-gray-100">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <p className="text-center text-sm font-heading font-semibold uppercase tracking-wider text-gray-600 mb-8">Trusted By &amp; Affiliated With</p>
-          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-4">
+          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-4">
             {[
               {
                 label: "Arizona Multihousing Association",
