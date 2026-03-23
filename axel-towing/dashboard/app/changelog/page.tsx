@@ -16,6 +16,15 @@ interface ChangelogSection {
 
 const changelog: ChangelogSection[] = [
   {
+    date: "March 23, 2026 (Service Area Expansion — 38 Cities)",
+    type: "completed",
+    entries: [
+      { text: "Updated service area page city count from 29 → 38 to match actual SERVICE_AREAS list (hero text + stats counter)", category: "website" },
+      { text: "Added city stats (population, properties served, response time) for 10 previously missing cities: Gold Canyon, Laveen, Sun Lakes, Waddell, Ahwatukee, Casa Grande, Coolidge, New River, Rio Verde, San Tan Heights", category: "website" },
+      { text: "Action item PERS-283: 'Update website service area with all Phoenix metro cities' — resolved", category: "website" },
+    ],
+  },
+  {
     date: "March 23, 2026 (AI Citation Baseline Research)",
     type: "completed",
     entries: [

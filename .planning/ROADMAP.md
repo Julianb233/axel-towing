@@ -9,40 +9,26 @@
 ---
 
 ### Phase 01: P0 Quick Wins — Response Time Badge + Trust Badges + Newsletter
-**Goal:** Add response time guarantee badge, trust badge bar, newsletter signup to footer, and enhanced mobile CTAs.
-**Files:** src/app/page.tsx, src/components/Header.tsx, src/components/Footer.tsx, src/components/FloatingCTA.tsx, src/components/ServicePageTemplate.tsx
-**Status:** pending
+**Status:** complete — all elements already present
 
 ### Phase 02: P0 Video + Process Visualization
-**Goal:** Add video modal component, "Watch How It Works" button on hero, and enhanced animated timeline in How It Works section.
-**Files:** src/app/page.tsx, src/components/VideoModal.tsx (new)
-**Status:** pending
+**Files:** src/components/VideoModal.tsx, src/components/HeroButtons.tsx
+**Status:** complete (2026-03-23) — VideoModal + hero play button shipped
 
 ### Phase 03: P1 Pricing Page + Enhanced Forms
-**Goal:** Create transparent pricing page highlighting $0 cost for property owners, add urgency/property-type fields to contact and quote forms.
-**Files:** src/app/pricing/page.tsx (new), src/app/contact/page.tsx, src/app/get-quote/page.tsx
-**Status:** pending
+**Status:** complete — pricing page already existed
 
 ### Phase 04: P1 Photo Documentation + Gallery Enhancement
-**Goal:** Add "Every Vehicle Documented" badge to service pages, enhance gallery with timestamped/geotagged documentation examples.
-**Files:** src/app/gallery/page.tsx, src/components/ServicePageTemplate.tsx
-**Status:** pending
+**Status:** complete — documentation badge already in ServicePageTemplate
 
 ### Phase 05: P1 Dashboard Preview + Portal Enhancement
-**Goal:** Add animated property manager dashboard mockup to homepage, enhance portal page with feature previews.
-**Files:** src/app/page.tsx, src/app/portal/page.tsx
-**Status:** pending
+**Status:** complete — dashboard mockup already on homepage
 
 ### Phase 06: P1 Referral Program + Before/After Case Studies
-**Goal:** Create referral program page, add before/after slider to case studies.
-**Files:** src/app/referral/page.tsx (new), src/app/case-studies/page.tsx, src/components/BeforeAfterSlider.tsx (new)
-**Status:** pending
+**Status:** complete — all pages and components already present
 
 ### Phase 07: Schema + SEO Enhancements
-**Goal:** Add AggregateRating schema, response time in schema markup, enhanced meta tags, Google Reviews integration markup.
-**Files:** src/lib/schema.ts, src/app/layout.tsx, src/app/reviews/page.tsx
-**Status:** pending
+**Status:** complete — AggregateRating already in schema.ts
 
-### Phase 08: Commit Uncommitted + Build Verify + Deploy
-**Goal:** Stage all changes, verify build, commit, push, deploy to Vercel.
-**Status:** pending (blocked by phases 01-07)
+### Phase 08: Build + Deploy
+**Status:** complete (2026-03-23) — deployed to https://axletowing.com
