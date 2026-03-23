@@ -16,6 +16,17 @@ interface ChangelogSection {
 
 const changelog: ChangelogSection[] = [
   {
+    date: "March 23, 2026 (AI Citation Baseline Research)",
+    type: "completed",
+    entries: [
+      { text: "Completed AI citation baseline test — 20 queries tested across Google, ChatGPT-style searches, and AI overview patterns (AI-4696)", category: "seo" },
+      { text: "Finding: 100% citation rate on brand searches, 0% on competitive searches — zero presence for 'best towing Phoenix', 'private property towing Phoenix', 'HOA towing east valley' etc.", category: "seo" },
+      { text: "Identified top competitors dominating AI citations: Freeway Towing (phoenixtowtruck.com), All City Towing, Arizona Impound — all have blog content, 4.5+ star ratings, 30+ citations", category: "strategy" },
+      { text: "Root causes documented: no blog/FAQ content, 2.0/5 Yelp rating (AI avoids 2-star companies), new website not yet indexed, thin citation profile (~8 vs competitors' 30+)", category: "seo" },
+      { text: "Baseline report saved to /axel-towing/docs/AI-CITATION-BASELINE-2026-03-23.md — monthly re-test plan established, target 20%+ competitive citation rate by July 2026", category: "strategy" },
+    ],
+  },
+  {
     date: "March 23, 2026 (Video Modal + Hero Enhancement)",
     type: "completed",
     entries: [
