@@ -80,8 +80,9 @@ export const metadata: Metadata = {
   alternates: {
     canonical: `https://${COMPANY.domain}`,
   },
-  // TODO: Replace with real Google Search Console verification code
-  // verification: { google: "REAL_CODE_HERE" },
+  verification: {
+    google: "PENDING_GSC_VERIFICATION_CODE",
+  },
 };
 
 export default function RootLayout({
