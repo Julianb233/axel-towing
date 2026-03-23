@@ -153,6 +153,56 @@ const CITY_STATS: Record<
     properties: "400+",
     response: "< 40 min",
   },
+  "gold-canyon": {
+    population: "13K+",
+    properties: "100+",
+    response: "< 40 min",
+  },
+  laveen: {
+    population: "55K+",
+    properties: "220+",
+    response: "< 30 min",
+  },
+  "sun-lakes": {
+    population: "16K+",
+    properties: "130+",
+    response: "< 35 min",
+  },
+  waddell: {
+    population: "10K+",
+    properties: "80+",
+    response: "< 35 min",
+  },
+  ahwatukee: {
+    population: "80K+",
+    properties: "320+",
+    response: "< 30 min",
+  },
+  "casa-grande": {
+    population: "60K+",
+    properties: "230+",
+    response: "< 45 min",
+  },
+  coolidge: {
+    population: "14K+",
+    properties: "90+",
+    response: "< 50 min",
+  },
+  "new-river": {
+    population: "15K+",
+    properties: "100+",
+    response: "< 40 min",
+  },
+  "rio-verde": {
+    population: "3K+",
+    properties: "40+",
+    response: "< 45 min",
+  },
+  "san-tan-heights": {
+    population: "25K+",
+    properties: "150+",
+    response: "< 40 min",
+  },
 };
 
 const MAP_PINS: { name: string; slug: string; top: string; left: string }[] = [
@@ -215,7 +265,7 @@ export default function ServiceAreaPage() {
               <span className="text-gradient">Greater Phoenix Metro</span>
             </h1>
             <p className="text-lg md:text-xl text-blue-100 leading-relaxed mb-8">
-              Free private property towing and parking enforcement across 29
+              Free private property towing and parking enforcement across 38
               cities and over 3,000 square miles of the Valley of the Sun.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
@@ -235,7 +285,7 @@ export default function ServiceAreaPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
             {[
-              { value: "29", label: "Cities Covered" },
+              { value: "38", label: "Cities Covered" },
               { value: "15,000+", label: "Properties Served" },
               { value: "5M+", label: "Residents in Coverage" },
               { value: "< 30 min", label: "Average Response" },
