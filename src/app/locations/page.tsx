@@ -6,7 +6,7 @@ import { COMPANY, SERVICE_AREAS } from "@/lib/constants";
 export const metadata: Metadata = {
   title: "Service Areas — Towing Across the Phoenix Metro",
   description:
-    "Axle Towing provides private property towing and parking enforcement across 8 cities in the Greater Phoenix area. Find your city for local service details.",
+    "Axle Towing provides private property towing and parking enforcement across 38 cities in the Greater Phoenix area. Find your city for local service details.",
 };
 
 export default function LocationsPage() {
@@ -43,7 +43,7 @@ export default function LocationsPage() {
           </h1>
           <p className="text-lg md:text-xl text-white/95 max-w-2xl mx-auto">
             Professional private property towing and parking enforcement across
-            8 cities. Find your local service area below.
+            38 cities. Find your local service area below.
           </p>
         </div>
       </section>

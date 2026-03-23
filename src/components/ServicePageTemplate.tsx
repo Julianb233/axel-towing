@@ -302,7 +302,7 @@ export default function ServicePageTemplate({ data }: { data: ServicePageData })
             Serving the Greater Phoenix Metro Area
           </h2>
           <p className="text-body-text text-center text-lg mb-12 max-w-2xl mx-auto reveal delay-100">
-            We provide {data.title.toLowerCase()} services across 8 cities and 30+ neighborhoods in the Phoenix metro.
+            We provide {data.title.toLowerCase()} services across 38 cities and 45+ neighborhoods in the Phoenix metro.
           </p>
           {/* City cards */}
           <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 mb-10">

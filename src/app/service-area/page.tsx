@@ -6,7 +6,7 @@ export const metadata: Metadata = {
   title:
     "Service Area — Greater Phoenix Metro Towing & Parking Enforcement | Axle Towing",
   description:
-    "Axle Towing & Impound serves 29 cities across the Greater Phoenix metro area with free private property towing and parking enforcement. Covering Phoenix, Scottsdale, Mesa, Tempe, Chandler, Gilbert, Glendale, Peoria, Surprise, and more.",
+    "Axle Towing & Impound serves 38 cities across the Greater Phoenix metro area with free private property towing and parking enforcement. Covering Phoenix, Scottsdale, Mesa, Tempe, Chandler, Gilbert, Glendale, Peoria, Surprise, and more.",
 };
 
 const CITY_STATS: Record<

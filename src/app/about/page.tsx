@@ -1,11 +1,11 @@
 import { Metadata } from "next";
 import AboutContent from "./AboutContent";
-import { organizationSchema, breadcrumbSchema } from "@/lib/schema";
+import { organizationSchema, towingServiceSchema, breadcrumbSchema } from "@/lib/schema";
 
 export const metadata: Metadata = {
-  title: "About Us - Professional Towing Since 2021",
+  title: "About Axle Towing & Impound - Phoenix Private Property Towing Experts",
   description:
-    "Learn about Axle Towing & Impound, a family-owned Arizona towing company providing free private property towing, parking enforcement, and impound services across the Phoenix metro area since 2021.",
+    "Axle Towing & Impound is a Phoenix-based towing company founded in 2021, specializing in free private property towing, parking enforcement, and impound services for property managers across the Phoenix metro area. Two impound yards, 24/7 dispatch, sub-30-minute response.",
   alternates: {
     canonical: "https://axletowing.com/about",
   },
@@ -18,6 +18,12 @@ export default function AboutPage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{
           __html: JSON.stringify(organizationSchema()),
+        }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(towingServiceSchema()),
         }}
       />
       <script
