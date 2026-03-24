@@ -210,7 +210,7 @@ export default function ReviewsContent() {
               </div>
             </div>
 
-            {/* Write a Review CTA */}
+            {/* Leave a Review CTA */}
             <Link
               href="/reviews/leave-review"
               className="glass-card-white rounded-2xl px-8 py-5 flex items-center gap-3 shadow-md hover:shadow-lg transition-shadow group"
