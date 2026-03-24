@@ -61,6 +61,18 @@ const PARTNER_TYPES = [
     ),
     benefits: ["ARS-compliant programs", "Board-approved signage packages", "Transparent reporting dashboard"],
   },
+  {
+    title: "Mechanics & Auto Shops",
+    slug: "mechanics",
+    description:
+      "We tow vehicles to your shop for repairs. You refer property managers to us for enforcement. Cross-referral partnership that grows both businesses.",
+    icon: (
+      <svg className="w-8 h-8" fill="none" stroke="currentColor" strokeWidth={1.5} viewBox="0 0 24 24">
+        <path strokeLinecap="round" strokeLinejoin="round" d="M11.42 15.17l-5.1-5.1m0 0L3.07 12.9a1.5 1.5 0 002.12 2.12l2.72-2.72m0 0l5.1 5.1m0 0l2.72-2.72a1.5 1.5 0 00-2.12-2.12l-2.72 2.72m0 0L8.6 8.45m8.49 8.49L19.82 14a1.5 1.5 0 00-2.12-2.12l-2.72 2.72" />
+      </svg>
+    ),
+    benefits: ["Tow-to-shop vehicle delivery", "Cross-referral commissions", "24/7 emergency transport"],
+  },
 ];
 
 const WHY_PARTNER = [
@@ -160,7 +172,7 @@ export default function PartnersPage() {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {PARTNER_TYPES.map((partner, i) => (
               <Link
                 key={partner.slug}

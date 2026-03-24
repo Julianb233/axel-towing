@@ -28,6 +28,11 @@ type FilterTab = "all" | "comment" | "suggestion" | "reaction";
 
 const STORAGE_KEY = "axle-feedback-items";
 
+// The website API handles email + SMS + webhook notifications
+const NOTIFY_API_URL =
+  process.env.NEXT_PUBLIC_NOTIFY_API_URL ||
+  "https://axletowing.com/api/dashboard-notify";
+
 const relatedPages = [
   "General / No specific page",
   ...deliverables.map((d) => d.item),
@@ -86,7 +91,33 @@ export default function FeedbackPage() {
 
   const showToast = (msg: string) => {
     setToast(msg);
-    setTimeout(() => setToast(null), 2500);
+    setTimeout(() => setToast(null), 3500);
+  };
+
+  // ─── Notify Team (email + SMS + webhook via website API) ─────────────────
+
+  const notifyTeam = async (item: FeedbackItem) => {
+    try {
+      const res = await fetch(NOTIFY_API_URL, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          type: item.type,
+          text: item.text,
+          priority: item.priority,
+          relatedPage: item.page,
+          reaction: item.reaction || null,
+          createdAt: item.createdAt,
+        }),
+      });
+      if (res.ok) {
+        // Show a secondary toast confirming team was notified
+        setTimeout(() => showToast("Team notified via email & SMS"), 1200);
+      }
+    } catch {
+      // Notification failed silently — feedback is still saved locally
+      console.warn("Team notification failed — feedback saved locally only");
+    }
   };
 
   // ─── Actions ─────────────────────────────────────────────────────────────
@@ -105,6 +136,8 @@ export default function FeedbackPage() {
     persist([newItem, ...items]);
     setFormText("");
     showToast(formType === "comment" ? "Comment submitted!" : "Suggestion submitted!");
+    // Fire-and-forget notification to the team
+    notifyTeam(newItem);
   };
 
   const addReaction = (page: string, reaction: "up" | "down") => {
@@ -120,6 +153,8 @@ export default function FeedbackPage() {
     };
     persist([newItem, ...items]);
     showToast(reaction === "up" ? "Thanks for the thumbs up!" : "Noted -- we will improve this.");
+    // Fire-and-forget notification to the team
+    notifyTeam(newItem);
   };
 
   const deleteItem = (id: string) => {
