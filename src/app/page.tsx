@@ -477,6 +477,83 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* ========== 5.5 PARTNER WITH US ========== */}
+      <section className="py-24 bg-white relative">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16 reveal">
+            <span className="text-primary font-semibold text-sm uppercase tracking-wider font-heading">Partner Program</span>
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold font-heading mt-3 mb-4" style={{ color: '#1a202c' }}>Partner With Us</h2>
+            <div className="mx-auto w-24 h-1 bg-gradient-to-r from-blue-500 to-blue-300 rounded-full mb-6" />
+            <p className="text-gray-700 text-lg max-w-2xl mx-auto">
+              Join 200+ businesses earning referral commissions with Axle Towing. We partner with locksmiths, property managers, mechanics, and more.
+            </p>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {[
+              {
+                title: "Locksmiths",
+                desc: "Turn lock-out calls into referral revenue. Connect property managers with free parking enforcement and earn commissions on every sign-up.",
+                href: "/partners/locksmiths",
+                icon: (
+                  <svg className="w-8 h-8" fill="none" stroke="currentColor" strokeWidth={1.5} viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 5.25a3 3 0 013 3m3 0a6 6 0 01-7.029 5.912c-.563-.097-1.159.026-1.563.43L10.5 17.25H8.25v2.25H6v2.25H2.25v-2.818c0-.597.237-1.17.659-1.591l6.499-6.499c.404-.404.527-1 .43-1.563A6 6 0 1121.75 8.25z" />
+                  </svg>
+                ),
+              },
+              {
+                title: "Property Managers",
+                desc: "Eliminate unauthorized parking at zero cost. We handle signage, patrols, and impounds across your entire property portfolio.",
+                href: "/partners/property-managers",
+                icon: (
+                  <svg className="w-8 h-8" fill="none" stroke="currentColor" strokeWidth={1.5} viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M2.25 21h19.5m-18-18v18m10.5-18v18m6-13.5V21M6.75 6.75h.75m-.75 3h.75m-.75 3h.75m3-6h.75m-.75 3h.75m-.75 3h.75M6.75 21v-3.375c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21M3 3h12m-.75 4.5H21m-3.75 3H21m-3.75 3H21" />
+                  </svg>
+                ),
+              },
+              {
+                title: "Mechanics",
+                desc: "We tow vehicles to your shop for repairs. You refer property managers to us. A cross-referral partnership that grows both businesses.",
+                href: "/partners/mechanics",
+                icon: (
+                  <svg className="w-8 h-8" fill="none" stroke="currentColor" strokeWidth={1.5} viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M11.42 15.17l-5.1-5.1m0 0L3.07 12.9a1.5 1.5 0 002.12 2.12l2.72-2.72m0 0l5.1 5.1m0 0l2.72-2.72a1.5 1.5 0 00-2.12-2.12l-2.72 2.72m0 0L8.6 8.45m8.49 8.49L19.82 14a1.5 1.5 0 00-2.12-2.12l-2.72 2.72" />
+                  </svg>
+                ),
+              },
+            ].map((partner, i) => (
+              <Link
+                key={partner.title}
+                href={partner.href}
+                className="group glass-card-white rounded-2xl p-8 border border-gray-100 hover:border-blue-200 transition-all hover:-translate-y-1 hover:shadow-xl reveal"
+                style={{ transitionDelay: `${i * 100}ms` }}
+              >
+                <div className="w-14 h-14 rounded-xl bg-blue-50 flex items-center justify-center mb-5 text-blue-600 group-hover:bg-blue-600 group-hover:text-white transition-colors">
+                  {partner.icon}
+                </div>
+                <h3 className="font-heading text-xl font-bold mb-3 group-hover:text-blue-600 transition-colors" style={{ color: '#1a202c' }}>
+                  {partner.title}
+                </h3>
+                <p className="text-gray-600 text-sm leading-relaxed mb-5">{partner.desc}</p>
+                <span className="inline-flex items-center text-sm font-semibold text-blue-600 group-hover:gap-2 transition-all">
+                  Learn More
+                  <svg className="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                  </svg>
+                </span>
+              </Link>
+            ))}
+          </div>
+          <div className="text-center mt-10 reveal">
+            <Link href="/referral" className="btn-cta text-lg inline-flex items-center gap-2">
+              View Referral Program
+              <svg className="w-5 h-5" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
+              </svg>
+            </Link>
+          </div>
+        </div>
+      </section>
+
       {/* ========== 6. DASHBOARD PREVIEW ========== */}
       <section className="py-24 bg-white relative">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
