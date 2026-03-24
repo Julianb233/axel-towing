@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from 'react';
 import { COMPANY } from '@/lib/constants';
+import { trackPhoneClick } from '@/lib/analytics';
 
 export default function FloatingCTA() {
   const [showScrollTop, setShowScrollTop] = useState(false);
@@ -30,6 +31,7 @@ export default function FloatingCTA() {
           className="flex items-center justify-center gap-2 w-full py-3.5 rounded-xl text-white font-heading font-bold text-base tracking-wide transition-colors shadow-lg"
           style={{ background: 'var(--color-accent)' }}
           aria-label={`Call ${COMPANY.name} at ${COMPANY.phone}`}
+          onClick={() => trackPhoneClick(COMPANY.phone)}
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -53,6 +55,7 @@ export default function FloatingCTA() {
         href={phoneHref}
         className="floating-cta hidden md:flex"
         aria-label={`Call ${COMPANY.name} at ${COMPANY.phone}`}
+        onClick={() => trackPhoneClick(COMPANY.phone)}
       >
         <svg
           xmlns="http://www.w3.org/2000/svg"
