@@ -6,9 +6,11 @@ import Footer from "@/components/Footer";
 import ScrollReveal from "@/components/ScrollReveal";
 import ScrollAnimator from "@/components/ScrollAnimator";
 import FloatingCTA from "@/components/FloatingCTA";
+import FloatingCTAWidget from "@/components/FloatingCTAWidget";
 import ContactWidget from "@/components/ContactWidget";
 import EmergencyBanner from "@/components/EmergencyBanner";
 import PropertyManagerChatbot from "@/components/PropertyManagerChatbot";
+import ExitIntentPopup from "@/components/ExitIntentPopup";
 import { COMPANY } from "@/lib/constants";
 import { organizationSchema, towingServiceSchema, websiteSchema } from "@/lib/schema";
 
@@ -142,6 +144,8 @@ export default function RootLayout({
         <ContactWidget />
         <PropertyManagerChatbot />
         <FloatingCTA />
+        <FloatingCTAWidget />
+        <ExitIntentPopup />
         <ScrollReveal />
         <ScrollAnimator />
       </body>
