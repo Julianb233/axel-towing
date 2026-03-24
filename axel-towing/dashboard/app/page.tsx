@@ -157,6 +157,45 @@ export default function DashboardHome() {
         </div>
       </ScrollReveal>
 
+      {/* Latest Updates — March 24, 2026 */}
+      <ScrollReveal delay={50}>
+        <div className="mb-8">
+          <h2 className="text-sm font-semibold text-gray-500 uppercase tracking-wider mb-4">
+            Latest Updates &mdash; March 24, 2026
+          </h2>
+          <div className="bg-white rounded-2xl shadow-sm border border-gray-100 p-6 space-y-4">
+            <div className="flex items-start gap-3">
+              <span className="flex-shrink-0 mt-1 w-2 h-2 rounded-full bg-green-500" />
+              <div>
+                <p className="text-sm font-semibold text-gray-900">Spanish SEO Expansion Initiated</p>
+                <p className="text-xs text-gray-500 mt-0.5">Planning completed for 50+ Spanish pages targeting Phoenix Hispanic market. 5 pages already live. Phase 1-3 roadmap set.</p>
+              </div>
+            </div>
+            <div className="flex items-start gap-3">
+              <span className="flex-shrink-0 mt-1 w-2 h-2 rounded-full bg-blue-500" />
+              <div>
+                <p className="text-sm font-semibold text-gray-900">PR #27 Merged &mdash; FAQ Legal Content Removed</p>
+                <p className="text-xs text-gray-500 mt-0.5">Removed Arizona towing laws and payment dispute content from FAQ per Elliott&apos;s directive. Property Owner FAQs preserved.</p>
+              </div>
+            </div>
+            <div className="flex items-start gap-3">
+              <span className="flex-shrink-0 mt-1 w-2 h-2 rounded-full bg-purple-500" />
+              <div>
+                <p className="text-sm font-semibold text-gray-900">TowBook Integration Started</p>
+                <p className="text-xs text-gray-500 mt-0.5">Manager portal, online tow request form, and vehicle lookup page for property managers and vehicle owners.</p>
+              </div>
+            </div>
+            <div className="flex items-start gap-3">
+              <span className="flex-shrink-0 mt-1 w-2 h-2 rounded-full bg-red-500" />
+              <div>
+                <p className="text-sm font-semibold text-gray-900">19 Stale Remote Branches Cleaned Up</p>
+                <p className="text-xs text-gray-500 mt-0.5">Deleted merged feature branches from remote to keep the repository clean.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </ScrollReveal>
+
       {/* Dashboard Sections */}
       <ScrollReveal delay={100}>
         <div>
