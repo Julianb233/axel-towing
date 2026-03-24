@@ -17,7 +17,7 @@ export const calendarEvents: CalendarEvent[] = [
     startDate: "2026-03-01",
     endDate: "2026-03-15",
     status: "in-progress",
-    description: "120 pages published on Vercel, PageSpeed optimization, content structure built",
+    description: "120 pages published on Railway, PageSpeed optimization, content structure built",
   },
   {
     id: "mar-strategy-session",
@@ -51,10 +51,10 @@ export const calendarEvents: CalendarEvent[] = [
   // April 2026
   {
     id: "apr-dns-migration",
-    title: "Target DNS migration to Vercel",
+    title: "Target DNS migration to Railway",
     startDate: "2026-04-01",
     status: "critical",
-    description: "Critical milestone: connect axletowing.com domain to new Vercel site",
+    description: "Critical milestone: connect axletowing.com domain to new Railway site",
   },
   {
     id: "apr-google-workspace",

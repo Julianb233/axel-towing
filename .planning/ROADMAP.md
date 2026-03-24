@@ -30,5 +30,6 @@
 ### Phase 07: Schema + SEO Enhancements
 **Status:** complete — AggregateRating already in schema.ts
 
-### Phase 08: Build + Deploy
-**Status:** complete (2026-03-23) — deployed to https://axletowing.com
+### Phase 08: Build + Deploy to Railway
+**Goal:** Stage all changes, verify build, commit, push, deploy to Railway.
+**Status:** complete (2026-03-24) — migrated from Vercel to Railway

@@ -16,7 +16,7 @@ const tools = [
   { name: "Google Search Console", category: "Indexing & Search Data" },
   { name: "Google Analytics 4", category: "Traffic & Conversion" },
   { name: "Next.js", category: "Web Framework" },
-  { name: "Vercel", category: "Hosting & Deployment" },
+  { name: "Railway", category: "Hosting & Deployment" },
   { name: "GoHighLevel", category: "CRM & Automation" },
   { name: "AI Content Engine", category: "Content Creation" },
   { name: "Ahrefs", category: "Backlink Analysis" },

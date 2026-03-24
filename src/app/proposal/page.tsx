@@ -118,10 +118,10 @@ const deliverables = [
       "City pages for Phoenix, Scottsdale, Mesa, Gilbert, Chandler, Tempe, Glendale, Apache Junction",
       "Service pages targeting every high-intent keyword category",
       "FAQPage, LocalBusiness, and Service schema on every page",
-      "Mobile-first, sub-2s load times (Next.js 16 + Vercel edge network)",
+      "Mobile-first, sub-2s load times (Next.js 16 + Railway cloud hosting)",
     ],
     timeline: "Built (ready for DNS transfer)",
-    tools: ["Next.js 16", "Tailwind CSS", "Vercel", "Schema.org"],
+    tools: ["Next.js 16", "Tailwind CSS", "Railway", "Schema.org"],
   },
   {
     title: "Content Marketing Engine",
@@ -591,15 +591,15 @@ export default function ProposalPage() {
                 <div className="w-3 h-3 rounded-full bg-green-400" />
               </div>
               <div className="flex-1 text-center">
-                <span className="text-xs text-white/50 bg-white/10 rounded-full px-4 py-1">axel-towing.vercel.app</span>
+                <span className="text-xs text-white/50 bg-white/10 rounded-full px-4 py-1">axletowing.com</span>
               </div>
             </div>
             <div className="relative bg-white" style={{ height: "600px" }}>
-              <iframe src="https://axel-towing.vercel.app" className="w-full h-full border-0" title="Axle Towing Website Preview" loading="lazy" />
+              <iframe src="https://axletowing.com" className="w-full h-full border-0" title="Axle Towing Website Preview" loading="lazy" />
             </div>
           </div>
           <div className="text-center mt-6">
-            <a href="https://axel-towing.vercel.app" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 text-[#1e6bb8] font-semibold text-sm hover:underline">
+            <a href="https://axletowing.com" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 text-[#1e6bb8] font-semibold text-sm hover:underline">
               Open full site in new tab
               <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" /></svg>
             </a>

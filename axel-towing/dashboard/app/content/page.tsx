@@ -64,7 +64,7 @@ export default function ContentPage() {
           <h2 className="text-xl font-bold font-display text-gray-900 mb-6">90-Day Content Action Plan</h2>
           <div className="grid md:grid-cols-3 gap-6">
             {[
-              { month: "Month 1", title: "Migration & Foundation", items: ["Point DNS to Vercel", "Submit sitemap (120 pages)", "Publish 2 Priority 1 articles", "Submit to 10 directories"], active: true },
+              { month: "Month 1", title: "Migration & Foundation", items: ["Point DNS to Railway", "Submit sitemap (120 pages)", "Publish 2 Priority 1 articles", "Submit to 10 directories"], active: true },
               { month: "Month 2", title: "Content Velocity", items: ["Create 6 City x Service pages", "Publish 3 high-value blog posts", "Create parking sign template", "5 guest post outreach"], active: false },
               { month: "Month 3", title: "Authority Building", items: ["Update all service pages", "Publish impound lot map", "Pull updated SEMrush data", "Data-driven strategy review"], active: false },
             ].map((m, i) => (

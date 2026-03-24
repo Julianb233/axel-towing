@@ -99,11 +99,11 @@ export const actionItems: Array<{
 }> = [
   {
     id: 1,
-    title: "Point axletowing.com DNS to Vercel",
+    title: "Point axletowing.com DNS to Railway",
     priority: "urgent" as const,
     status: "pending" as const,
-    description: "This is the single most important action item. Until DNS is pointed to Vercel, the 120 pages we built cannot be indexed by Google. Every day of delay is lost ranking opportunity.",
-    instructions: "Step 1: Log into your domain registrar (GoDaddy, Namecheap, or wherever you bought axletowing.com). Step 2: Navigate to DNS settings (usually under 'Domain Management' or 'DNS Zone'). Step 3: Find the existing A record for '@' or 'axletowing.com'. Step 4: Change the value/IP to 76.76.21.21 (this is Vercel's IP). Step 5: If there's a CNAME record for 'www', point it to 'cname.vercel-dns.com'. Step 6: Save changes. DNS can take up to 48 hours to propagate, but usually works within 1-2 hours. If you're unsure which registrar you used, check your email for domain purchase receipts or call us at 480-288-5526 and we'll walk you through it screen-by-screen.",
+    description: "This is the single most important action item. Until DNS is pointed to Railway, the 120 pages we built cannot be indexed by Google. Every day of delay is lost ranking opportunity.",
+    instructions: "Step 1: Log into your domain registrar (GoDaddy, Namecheap, or wherever you bought axletowing.com). Step 2: Navigate to DNS settings (usually under 'Domain Management' or 'DNS Zone'). Step 3: Find the existing A record for '@' or 'axletowing.com'. Step 4: Add a CNAME record pointing to the Railway-provided domain (shown in Railway dashboard under Settings > Domains). Step 5: If there's a CNAME record for 'www', point it to the same Railway domain. Step 6: Save changes. DNS can take up to 48 hours to propagate, but usually works within 1-2 hours. If you're unsure which registrar you used, check your email for domain purchase receipts or call us at 480-288-5526 and we'll walk you through it screen-by-screen.",
   },
   {
     id: 2,
@@ -164,7 +164,7 @@ export const actionItems: Array<{
 ];
 
 export const suggestions = [
-  { id: 1, title: "Point axletowing.com DNS to Vercel", description: "CRITICAL -- This unlocks all SEO value. Until DNS is migrated, none of the 120 pages we built can be indexed by Google. Every day of delay is a lost ranking opportunity.", priority: "critical" as const },
+  { id: 1, title: "Point axletowing.com DNS to Railway", description: "CRITICAL -- This unlocks all SEO value. Until DNS is migrated, none of the 120 pages we built can be indexed by Google. Every day of delay is a lost ranking opportunity.", priority: "critical" as const },
   { id: 2, title: "Build tow cost calculator", description: "Competitor Freeway Towing drives 1,300 visits/month from their towing estimate calculator. An interactive tool would capture high-intent traffic and earn backlinks.", priority: "high" as const },
   { id: 3, title: "Target 'towing chandler az'", description: "480 searches/month with very low competition. We have a Chandler location page ready -- once indexed, this is a quick win for page 1 ranking.", priority: "high" as const },
   { id: 4, title: "Optimize homepage for 'phoenix towing'", description: "Currently at position 23 with 720 monthly searches. With targeted content optimization and backlink building, this can reach page 1 within 60 days.", priority: "high" as const },

@@ -105,7 +105,7 @@ export default function PlanPage() {
         </ScrollReveal>
         <ScrollReveal delay={100}>
           <PhaseCard number={2} title="Migration & Indexing" dateRange="Month 2-3 (Apr-May)" status="in-progress" progress={0} items={[
-            { text: "Point axletowing.com DNS to Vercel (NEEDS CLIENT ACTION)", status: "needs-action" },
+            { text: "Point axletowing.com DNS to Railway (NEEDS CLIENT ACTION)", status: "needs-action" },
             { text: "Submit sitemap (120 pages) to Google Search Console", status: "pending" },
             { text: "Set up Google Analytics 4 tracking", status: "pending" },
             { text: "Implement 301 redirects from old WordPress URLs", status: "pending" },

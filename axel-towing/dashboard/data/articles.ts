@@ -11,7 +11,7 @@ export interface Article {
   url: string; // Live blog post URL on the website
 }
 
-export const WEBSITE_BASE_URL = "https://website-inky-five-49.vercel.app";
+export const WEBSITE_BASE_URL = "https://axletowing.com";
 export const LOCAL_STORAGE_KEY = "axle-towing-article-approvals";
 
 const blogUrl = (slug: string) => `${WEBSITE_BASE_URL}/blog/${slug}`;
