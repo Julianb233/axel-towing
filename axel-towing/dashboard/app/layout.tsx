@@ -4,6 +4,7 @@ import "./globals.css";
 import Sidebar from "../components/Sidebar";
 import ClientProviders from "../components/ClientProviders";
 import ChatWidget from "../components/ChatWidget";
+import FloatingFeedbackButton from "../components/FloatingFeedbackButton";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -33,6 +34,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
             </div>
           </main>
           <ChatWidget />
+          <FloatingFeedbackButton />
         </ClientProviders>
       </body>
     </html>
