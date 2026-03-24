@@ -5,6 +5,7 @@ import Image from 'next/image';
 import { useState, useEffect, useCallback } from 'react';
 import { usePathname } from 'next/navigation';
 import { COMPANY, NAV_LINKS } from '@/lib/constants';
+import { trackPhoneClick } from '@/lib/analytics';
 
 function useTruckStatus() {
   const [status, setStatus] = useState({ trucks: 6, label: '6 Trucks Active' });
@@ -78,6 +79,7 @@ export default function Header() {
               <a
                 href={`tel:${COMPANY.phone}`}
                 className="flex items-center gap-1.5 text-white/95 hover:text-white transition-colors"
+                onClick={() => trackPhoneClick(COMPANY.phone)}
               >
                 <svg
                   className="w-3.5 h-3.5"
@@ -194,6 +196,7 @@ export default function Header() {
               className={`flex items-center gap-2 transition-colors text-sm font-medium ${
                 scrolled ? 'text-gray-600 hover:text-gray-900' : 'text-white/95 hover:text-white'
               }`}
+              onClick={() => trackPhoneClick(COMPANY.phone)}
             >
               <svg
                 className="w-4 h-4"
@@ -305,6 +308,7 @@ export default function Header() {
               <a
                 href={`tel:${COMPANY.phone}`}
                 className="flex items-center justify-center gap-2 text-white font-semibold text-lg"
+                onClick={() => trackPhoneClick(COMPANY.phone)}
               >
                 <svg
                   className="w-5 h-5 text-green-400"

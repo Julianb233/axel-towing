@@ -11,6 +11,8 @@ import ContactWidget from "@/components/ContactWidget";
 import EmergencyBanner from "@/components/EmergencyBanner";
 import PropertyManagerChatbot from "@/components/PropertyManagerChatbot";
 import ExitIntentPopup from "@/components/ExitIntentPopup";
+import GoogleAnalytics from "@/components/GoogleAnalytics";
+import { GoogleTagManagerScript, GoogleTagManagerNoScript } from "@/components/GoogleTagManager";
 import { COMPANY } from "@/lib/constants";
 import { organizationSchema, towingServiceSchema, websiteSchema } from "@/lib/schema";
 
@@ -94,7 +96,7 @@ export const metadata: Metadata = {
     canonical: `https://${COMPANY.domain}`,
   },
   verification: {
-    google: "PENDING_GSC_VERIFICATION_CODE",
+    google: process.env.NEXT_PUBLIC_GSC_VERIFICATION ?? "PENDING_GSC_VERIFICATION_CODE",
   },
 };
 
@@ -106,6 +108,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
+        <GoogleTagManagerScript />
         {/* Preconnect & DNS-prefetch for external resources */}
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
@@ -137,6 +140,8 @@ export default function RootLayout({
       <body
         className={`${openSans.variable} ${mohave.variable} antialiased`}
       >
+        <GoogleTagManagerNoScript />
+        <GoogleAnalytics />
         <EmergencyBanner />
         <Header />
         <main className="pb-20 md:pb-0">{children}</main>
