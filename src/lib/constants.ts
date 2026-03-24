@@ -130,6 +130,6 @@ export const NAV_LINKS = [
   { label: "Reviews", href: "/reviews" },
   { label: "Blog", href: "/blog" },
   { label: "Contact", href: "/contact" },
-  { label: "Locate Vehicle", href: "/locate-vehicle" },
-  { label: "Portal", href: "/portal" },
+  { label: "Vehicle Lookup", href: "/vehicle-lookup" },
+  { label: "Manager Portal", href: "/portal" },
 ];

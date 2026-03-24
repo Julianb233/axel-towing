@@ -8,7 +8,7 @@ const QUICK_LINKS = [
   { label: 'Blog & Resources', href: '/blog' },
   { label: 'Contact Us', href: '/contact' },
   { label: 'Property Manager Portal', href: '/portal' },
-  { label: 'Locate Vehicle', href: '/locate-vehicle' },
+  { label: 'Vehicle Lookup', href: '/vehicle-lookup' },
   { label: 'FAQ', href: '/faq' },
   { label: 'We Buy Cars', href: '/we-buy-cars' },
   { label: 'Careers', href: '/careers' },
@@ -117,6 +117,17 @@ export default function Footer() {
               <p className="text-sm text-white/80 leading-relaxed mb-6">
                 {COMPANY.description}
               </p>
+
+              {/* Hablamos Español badge */}
+              <Link
+                href="/es"
+                className="inline-flex items-center gap-2 mb-4 bg-amber-500/20 border border-amber-400/30 text-amber-300 text-sm font-semibold px-3 py-1.5 rounded-full hover:bg-amber-500/30 transition-colors"
+              >
+                <svg className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M10.5 21l5.25-11.25L21 21m-9-3h7.5M3 5.621a48.474 48.474 0 016-.371m0 0c1.12 0 2.233.038 3.334.114M9 5.25V3m3.334 2.364C11.176 10.658 7.69 15.08 3 17.502m9.334-12.138c.896.061 1.785.147 2.666.257m-4.589 8.495a18.023 18.023 0 01-3.827-5.802" />
+                </svg>
+                Hablamos Espa&ntilde;ol
+              </Link>
 
               {/* Social media icons */}
               <div className="flex items-center gap-3">

@@ -8,6 +8,10 @@ export const metadata: Metadata = {
     "Axle Towing & Impound is a Phoenix-based towing company founded in 2021, specializing in free private property towing, parking enforcement, and impound services for property managers across the Phoenix metro area. Two impound yards, 24/7 dispatch, sub-30-minute response.",
   alternates: {
     canonical: "https://axletowing.com/about",
+    languages: {
+      en: "https://axletowing.com/about",
+      es: "https://axletowing.com/es/nosotros",
+    },
   },
 };
 
