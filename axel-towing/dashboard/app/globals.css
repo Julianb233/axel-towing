@@ -154,3 +154,71 @@ tr:hover td { background: rgba(30, 107, 184, 0.02); }
 
 /* Safe area padding for iPhone notch / home indicator */
 .safe-area-bottom { padding-bottom: env(safe-area-inset-bottom, 0px); }
+
+/* ============================================
+   PRINT STYLES — SEO Report
+   ============================================ */
+
+@media print {
+  body {
+    background: white !important;
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+
+  /* Hide sidebar, mobile nav, chat widget */
+  aside, nav.lg\:hidden, nav:last-of-type,
+  [class*="ChatWidget"], .lg\:ml-64 > .fixed {
+    display: none !important;
+  }
+
+  /* Remove sidebar offset */
+  main, .lg\:ml-64 {
+    margin-left: 0 !important;
+    padding: 0 !important;
+  }
+
+  .max-w-6xl {
+    max-width: 100% !important;
+    padding: 0 1rem !important;
+  }
+
+  /* Glass cards: remove hover effects, keep borders */
+  .glass-card {
+    box-shadow: none !important;
+    transform: none !important;
+    border: 1px solid #e5e7eb !important;
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+
+  .glass-card:hover {
+    transform: none !important;
+    box-shadow: none !important;
+  }
+
+  /* Ensure all ScrollReveal items are visible */
+  [class*="opacity-0"] {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+
+  /* Page breaks */
+  .print\:break-inside-avoid {
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+
+  /* Reasonable margins */
+  @page {
+    margin: 0.5in;
+    size: letter;
+  }
+
+  /* Table readability */
+  table { font-size: 11px !important; }
+  th, td { padding: 4px 8px !important; }
+
+  /* Hide print button */
+  button { display: none !important; }
+}
