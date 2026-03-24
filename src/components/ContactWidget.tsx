@@ -3,6 +3,7 @@
 import { useState, FormEvent } from 'react';
 import Link from 'next/link';
 import { COMPANY } from '@/lib/constants';
+import { trackPhoneClick } from '@/lib/analytics';
 
 export default function ContactWidget() {
   const [isOpen, setIsOpen] = useState(false);
@@ -133,6 +134,7 @@ export default function ContactWidget() {
                 <a
                   href={phoneHref}
                   className="flex items-center gap-3 p-3 rounded-xl hover:bg-blue-50 transition-colors group"
+                  onClick={() => trackPhoneClick(COMPANY.phone)}
                 >
                   <div className="w-9 h-9 rounded-lg bg-green-50 text-green-600 flex items-center justify-center shrink-0 group-hover:bg-green-100 transition-colors">
                     <svg className="w-5 h-5" fill="none" stroke="currentColor" strokeWidth={1.5} viewBox="0 0 24 24">
