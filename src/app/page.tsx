@@ -2,6 +2,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { COMPANY, SERVICES, SERVICE_AREAS } from "@/lib/constants";
 import AnimatedCounter from "@/components/AnimatedCounter";
+import HomepageLeadCapture from "@/components/HomepageLeadCapture";
 import { localBusinessSchema, towingServiceSchema } from "@/lib/schema";
 import { IMAGES } from "@/lib/images";
 
@@ -438,6 +439,9 @@ export default function HomePage() {
           </div>
         </div>
       </section>
+
+      {/* ========== 4.5 LEAD CAPTURE — Multi-step form ========== */}
+      <HomepageLeadCapture />
 
       {/* ========== 5. TESTIMONIALS — Light, clean ========== */}
       <section className="py-24 bg-gray-50 relative overflow-hidden">

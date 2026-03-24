@@ -3,6 +3,16 @@ import Image from "next/image";
 import { COMPANY, SERVICE_AREAS } from "@/lib/constants";
 import { PROPERTY_TYPES, PHOENIX_NEIGHBORHOODS } from "@/lib/service-data";
 import type { ServicePageData } from "@/lib/service-data";
+import ServiceInlineForm from "@/components/ServiceInlineForm";
+
+const SERVICE_TYPE_MAP: Record<string, "property" | "relocation" | "enforcement"> = {
+  "apartment-towing": "property",
+  "hoa-towing": "property",
+  "commercial-property-towing": "property",
+  "vehicle-relocations": "relocation",
+  "parking-enforcement": "enforcement",
+  "private-property-impounds": "enforcement",
+};
 
 export default function ServicePageTemplate({ data }: { data: ServicePageData }) {
   return (
@@ -329,6 +339,12 @@ export default function ServicePageTemplate({ data }: { data: ServicePageData })
           </div>
         </div>
       </section>
+
+      {/* ===== GET STARTED INLINE FORM ===== */}
+      <ServiceInlineForm
+        serviceType={SERVICE_TYPE_MAP[data.slug] || "property"}
+        serviceTitle={data.title}
+      />
 
       {/* ===== CTA BANNER ===== */}
       <section className="relative py-20 md:py-24 overflow-hidden">
