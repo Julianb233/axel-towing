@@ -7,6 +7,14 @@ const data = LOCATION_PAGES["casa-grande"];
 export const metadata: Metadata = {
   title: data.metaTitle,
   description: data.metaDescription,
+  alternates: {
+    canonical: `https://axletowing.com/locations/casa-grande`,
+  },
+  openGraph: {
+    title: data.metaTitle,
+    description: data.metaDescription,
+    url: `https://axletowing.com/locations/casa-grande`,
+  },
 };
 
 export default function Page() {

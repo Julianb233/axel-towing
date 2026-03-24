@@ -8,9 +8,13 @@ const data = SERVICE_PAGES["commercial-property-towing"];
 export const metadata: Metadata = {
   title: data.metaTitle,
   description: data.metaDescription,
+  alternates: {
+    canonical: `https://axletowing.com/services/commercial-property-towing`,
+  },
   openGraph: {
     title: data.metaTitle,
     description: data.metaDescription,
+    url: `https://axletowing.com/services/commercial-property-towing`,
   },
 };
 

@@ -8,6 +8,15 @@ export const metadata: Metadata = {
   title: "Insights & Resources — Parking Management Blog",
   description:
     "Expert articles and guides on private property towing, parking enforcement, HOA management, and Arizona towing laws from Axle Towing & Impound.",
+  alternates: {
+    canonical: "https://axletowing.com/blog",
+  },
+  openGraph: {
+    title: "Insights & Resources — Parking Management Blog",
+    description:
+      "Expert articles and guides on private property towing, parking enforcement, HOA management, and Arizona towing laws from Axle Towing & Impound.",
+    url: "https://axletowing.com/blog",
+  },
 };
 
 // ---------------------------------------------------------------------------

@@ -113,7 +113,7 @@ export default function HomePage() {
       {/* ========== 1. HERO SECTION ========== */}
       <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0 z-0">
-          <Image src={IMAGES.hero.truck} alt="Axle Towing fleet of tow trucks" fill className="object-cover" priority />
+          <Image src={IMAGES.hero.truck} alt="Axle Towing fleet of tow trucks" fill className="object-cover" priority fetchPriority="high" />
         </div>
         {/* Lighter, more balanced overlay — shows the image better */}
         <div

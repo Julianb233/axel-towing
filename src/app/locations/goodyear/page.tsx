@@ -7,6 +7,14 @@ const data = LOCATION_PAGES["goodyear"];
 export const metadata: Metadata = {
   title: data.metaTitle,
   description: data.metaDescription,
+  alternates: {
+    canonical: `https://axletowing.com/locations/goodyear`,
+  },
+  openGraph: {
+    title: data.metaTitle,
+    description: data.metaDescription,
+    url: `https://axletowing.com/locations/goodyear`,
+  },
 };
 
 export default function Page() {

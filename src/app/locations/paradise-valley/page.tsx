@@ -7,6 +7,14 @@ const data = LOCATION_PAGES["paradise-valley"];
 export const metadata: Metadata = {
   title: data.metaTitle,
   description: data.metaDescription,
+  alternates: {
+    canonical: `https://axletowing.com/locations/paradise-valley`,
+  },
+  openGraph: {
+    title: data.metaTitle,
+    description: data.metaDescription,
+    url: `https://axletowing.com/locations/paradise-valley`,
+  },
 };
 
 export default function Page() {

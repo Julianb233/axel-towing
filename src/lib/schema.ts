@@ -3,6 +3,33 @@ import { COMPANY } from "./constants";
 const BASE_URL = `https://${COMPANY.domain}`;
 
 /**
+ * WebSite schema with SearchAction for sitelinks search box
+ */
+export function websiteSchema() {
+  return {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "@id": `${BASE_URL}/#website`,
+    name: COMPANY.name,
+    url: BASE_URL,
+    description: COMPANY.description,
+    publisher: {
+      "@type": "Organization",
+      "@id": `${BASE_URL}/#organization`,
+    },
+    potentialAction: {
+      "@type": "SearchAction",
+      target: {
+        "@type": "EntryPoint",
+        urlTemplate: `${BASE_URL}/blog?q={search_term_string}`,
+      },
+      "query-input": "required name=search_term_string",
+    },
+    inLanguage: ["en-US", "es"],
+  };
+}
+
+/**
  * LocalBusiness schema for a specific location
  */
 export function localBusinessSchema(location: "phoenix" | "apache-junction") {

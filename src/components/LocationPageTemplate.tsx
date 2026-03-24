@@ -1,6 +1,8 @@
 import Link from "next/link";
-import { COMPANY, SERVICES } from "@/lib/constants";
+import { COMPANY, SERVICES, SERVICE_AREAS } from "@/lib/constants";
+import { breadcrumbSchema } from "@/lib/schema";
 import type { LocationPageData } from "@/lib/location-data";
+import Breadcrumbs from "@/components/Breadcrumbs";
 
 export default function LocationPageTemplate({
   data,
@@ -9,6 +11,20 @@ export default function LocationPageTemplate({
 }) {
   return (
     <>
+      {/* Breadcrumb schema for this specific location */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(
+            breadcrumbSchema([
+              { name: "Home", url: "https://axletowing.com" },
+              { name: "Locations", url: "https://axletowing.com/locations" },
+              { name: data.city, url: `https://axletowing.com/locations/${data.slug}` },
+            ])
+          ),
+        }}
+      />
+
       {/* Parallax Hero */}
       <section className="parallax-container min-h-[55vh] flex items-center relative">
         <div
@@ -20,6 +36,11 @@ export default function LocationPageTemplate({
         <div className="absolute inset-0 z-[1]" style={{ background: "linear-gradient(160deg, rgba(27,42,63,0.85) 0%, rgba(30,107,184,0.65) 100%)" }} />
         <div className="hero-text relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 md:py-32 w-full">
           <div className="max-w-3xl">
+            <Breadcrumbs items={[
+              { label: "Home", href: "/" },
+              { label: "Locations", href: "/locations" },
+              { label: data.city },
+            ]} />
             <div className="inline-flex items-center glass rounded-full px-4 py-1.5 text-white text-sm font-medium mb-6">
               <svg
                 className="w-4 h-4 mr-1.5"
@@ -336,6 +357,38 @@ export default function LocationPageTemplate({
                 </p>
               </div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Nearby Locations — Internal Linking */}
+      <section className="py-20 bg-gray-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4 text-center reveal">
+            Nearby Service Areas
+          </h2>
+          <p className="text-gray-700 text-lg text-center mb-12 max-w-2xl mx-auto reveal">
+            We also provide towing and parking enforcement in these nearby cities.{" "}
+            <Link href="/service-area" className="text-brand-blue hover:underline font-semibold">
+              View all service areas &rarr;
+            </Link>
+          </p>
+          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4">
+            {SERVICE_AREAS.filter((area) => area.slug !== data.slug)
+              .slice(0, 10)
+              .map((area, index) => (
+                <Link
+                  key={area.slug}
+                  href={`/locations/${area.slug}`}
+                  className="group bg-white hover:bg-blue-50 rounded-xl p-4 text-center transition-colors border border-gray-100 hover:border-blue-200 reveal"
+                  style={{ transitionDelay: `${index * 50}ms` }}
+                >
+                  <p className="font-bold text-gray-900 group-hover:text-blue-600 transition-colors">
+                    {area.name}
+                  </p>
+                  <p className="text-xs text-gray-500 mt-1">Arizona</p>
+                </Link>
+              ))}
           </div>
         </div>
       </section>

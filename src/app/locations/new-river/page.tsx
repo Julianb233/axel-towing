@@ -7,6 +7,14 @@ const data = LOCATION_PAGES["new-river"];
 export const metadata: Metadata = {
   title: data.metaTitle,
   description: data.metaDescription,
+  alternates: {
+    canonical: `https://axletowing.com/locations/new-river`,
+  },
+  openGraph: {
+    title: data.metaTitle,
+    description: data.metaDescription,
+    url: `https://axletowing.com/locations/new-river`,
+  },
 };
 
 export default function Page() {

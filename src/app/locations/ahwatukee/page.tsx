@@ -7,6 +7,14 @@ const data = LOCATION_PAGES["ahwatukee"];
 export const metadata: Metadata = {
   title: data.metaTitle,
   description: data.metaDescription,
+  alternates: {
+    canonical: `https://axletowing.com/locations/ahwatukee`,
+  },
+  openGraph: {
+    title: data.metaTitle,
+    description: data.metaDescription,
+    url: `https://axletowing.com/locations/ahwatukee`,
+  },
 };
 
 export default function Page() {
