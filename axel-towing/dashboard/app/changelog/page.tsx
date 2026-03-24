@@ -16,6 +16,33 @@ interface ChangelogSection {
 
 const changelog: ChangelogSection[] = [
   {
+    date: "March 24, 2026 (Spanish SEO Expansion Initiated)",
+    type: "completed",
+    entries: [
+      { text: "Planning completed for 50+ Spanish pages targeting Phoenix Hispanic market (42% of city population)", category: "seo" },
+      { text: "5 Spanish pages already live (homepage, services, contact, FAQ, vehicle towed)", category: "seo" },
+      { text: "Phase 1: 5 core pages, Phase 2: 10 city pages, Phase 3: 10 blog posts planned", category: "seo" },
+    ],
+  },
+  {
+    date: "March 24, 2026 (PR #27 Merged \u2014 FAQ Legal Content Removed)",
+    type: "completed",
+    entries: [
+      { text: "Removed Arizona towing laws section from FAQ per Elliott's directive", category: "website" },
+      { text: "Removed payment arrangement and dispute guidance content", category: "website" },
+      { text: "Property Owner FAQs (14 entries) preserved unchanged", category: "website" },
+    ],
+  },
+  {
+    date: "March 24, 2026 (TowBook Integration Started)",
+    type: "completed",
+    entries: [
+      { text: "Manager portal page for property managers, HOA managers, apartment complexes", category: "infrastructure" },
+      { text: "Online tow request form for property managers", category: "infrastructure" },
+      { text: "Vehicle lookup page for vehicle owners", category: "infrastructure" },
+    ],
+  },
+  {
     date: "March 24, 2026 (Railway Migration)",
     type: "completed",
     entries: [

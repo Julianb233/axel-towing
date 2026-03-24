@@ -2,9 +2,9 @@ export const currentStats = {
   organicKeywords: 37,
   monthlyTraffic: 529,
   authorityScore: 17,
-  totalPages: 129,
-  blogArticles: 63,
-  locationPages: 43,
+  totalPages: 163,
+  blogArticles: 62,
+  locationPages: 38,
   servicePages: 7,
   utilityPages: 15,
   pageSpeed: 97,
@@ -76,9 +76,9 @@ export const servicePages = [
 ];
 
 export const deliverables = [
-  { item: "Web pages built and deployed", count: 120, icon: "globe" },
-  { item: "SEO blog articles published", count: 63, icon: "document" },
-  { item: "Location pages covering Phoenix metro", count: 35, icon: "map" },
+  { item: "Web pages built and deployed", count: 163, icon: "globe" },
+  { item: "SEO blog articles published", count: 62, icon: "document" },
+  { item: "Location pages covering Phoenix metro", count: 38, icon: "map" },
   { item: "Service pages with schema markup", count: 7, icon: "cog" },
   { item: "Strategy documents created", count: 12, icon: "clipboard" },
   { item: "Competitor analyses completed", count: 5, icon: "chart" },
@@ -86,7 +86,7 @@ export const deliverables = [
   { item: "Communication workflows built", count: 9, icon: "chat" },
   { item: "Partner referral segments identified", count: 5, icon: "users" },
   { item: "Hero background video added", count: 1, icon: "video" },
-  { item: "Spanish language pages", count: 3, icon: "globe" },
+  { item: "Spanish language pages", count: 5, icon: "globe" },
 ];
 
 export const actionItems: Array<{
