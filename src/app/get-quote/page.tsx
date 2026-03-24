@@ -8,6 +8,10 @@ export const metadata: Metadata = {
     "Request a free property assessment and parking enforcement quote from Axle Towing & Impound. Zero cost for property owners in the Phoenix metro area.",
   alternates: {
     canonical: "https://axletowing.com/get-quote",
+    languages: {
+      en: "https://axletowing.com/get-quote",
+      es: "https://axletowing.com/es/cotizacion",
+    },
   },
 };
 

@@ -80,6 +80,7 @@ export function localBusinessSchema(location: "phoenix" | "apache-junction") {
         name: "Phoenix Metro Area",
       },
     },
+    availableLanguage: ["English", "Spanish"],
     sameAs: [],
   };
 }
@@ -240,6 +241,7 @@ export function organizationSchema() {
       "Tempe, AZ",
       "Apache Junction, AZ",
     ],
+    availableLanguage: ["English", "Spanish"],
     sameAs: [],
   };
 }
