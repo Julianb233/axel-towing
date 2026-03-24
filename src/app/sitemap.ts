@@ -63,6 +63,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${BASE_URL}/es/preguntas-frecuentes`, lastModified: now, changeFrequency: "monthly", priority: 0.6 },
     { url: `${BASE_URL}/es/contacto`, lastModified: now, changeFrequency: "monthly", priority: 0.6 },
     { url: `${BASE_URL}/es/mi-vehiculo-fue-remolcado`, lastModified: now, changeFrequency: "monthly", priority: 0.6 },
+    { url: `${BASE_URL}/es/nosotros`, lastModified: now, changeFrequency: "monthly", priority: 0.6 },
+    { url: `${BASE_URL}/es/precios`, lastModified: now, changeFrequency: "monthly", priority: 0.6 },
+    { url: `${BASE_URL}/es/cotizacion`, lastModified: now, changeFrequency: "monthly", priority: 0.6 },
+    { url: `${BASE_URL}/es/ubicar-vehiculo`, lastModified: now, changeFrequency: "monthly", priority: 0.6 },
+    { url: `${BASE_URL}/es/area-de-servicio`, lastModified: now, changeFrequency: "monthly", priority: 0.6 },
   ];
 
   // Service pages
