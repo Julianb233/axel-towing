@@ -8,7 +8,7 @@ const QUICK_LINKS = [
   { label: 'Blog & Resources', href: '/blog' },
   { label: 'Contact Us', href: '/contact' },
   { label: 'Property Manager Portal', href: '/portal' },
-  { label: 'Locate Vehicle', href: '/locate-vehicle' },
+  { label: 'Vehicle Lookup', href: '/vehicle-lookup' },
   { label: 'FAQ', href: '/faq' },
   { label: 'We Buy Cars', href: '/we-buy-cars' },
   { label: 'Careers', href: '/careers' },
