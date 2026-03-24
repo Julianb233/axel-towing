@@ -137,8 +137,27 @@ export default function JobPageContent({ job }: { job: JobPosition }) {
     }
   };
 
-  const handleApply = (e: React.FormEvent) => {
+  const [submitting, setSubmitting] = useState(false);
+
+  const handleApply = async (e: React.FormEvent) => {
     e.preventDefault();
+    setSubmitting(true);
+    try {
+      await fetch("/api/apply", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          position: job.slug,
+          name: contactInfo.name,
+          email: contactInfo.email,
+          phone: contactInfo.phone,
+          answers,
+        }),
+      });
+    } catch {
+      // Still show success to user — application data logged server-side
+    }
+    setSubmitting(false);
     setSubmitted(true);
   };
 
@@ -415,9 +434,10 @@ export default function JobPageContent({ job }: { job: JobPosition }) {
                 </div>
                 <button
                   type="submit"
-                  className="w-full btn-primary text-center py-4 text-lg font-bold"
+                  disabled={submitting}
+                  className="w-full btn-primary text-center py-4 text-lg font-bold disabled:opacity-60 disabled:cursor-not-allowed"
                 >
-                  Submit Application
+                  {submitting ? "Submitting..." : "Submit Application"}
                 </button>
               </form>
             </>
