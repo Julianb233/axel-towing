@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import KlarnaButton from "@/components/KlarnaButton";
 
 export const metadata: Metadata = {
   title: "Invoice — AI Acrobatics for Axle Towing & Impound",
@@ -208,6 +209,39 @@ export default function InvoicePage() {
               </a>
             </div>
             <p className="text-gray-400 text-xs mt-3 text-center">Secure payments powered by Fanbasis. Accepts all major credit cards.</p>
+          </div>
+
+          {/* Klarna Pay Later Option */}
+          <div className="px-8 pb-8 print:hidden">
+            <div className="rounded-2xl border-2 border-[#FFB3C7] bg-[#FFF0F5] p-6">
+              <div className="flex items-center gap-3 mb-4">
+                {/* Klarna pink badge */}
+                <div className="bg-[#FFB3C7] text-[#1A0A0E] font-black text-lg px-3 py-1 rounded-lg leading-none select-none">
+                  K
+                </div>
+                <div>
+                  <h3 className="font-bold text-gray-900 text-base">Pay with Klarna — Buy Now, Pay Later</h3>
+                  <p className="text-gray-500 text-xs">Split your website build into 4 interest-free payments of $1,875</p>
+                </div>
+              </div>
+
+              <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 mb-5 text-center">
+                {["Today: $1,875", "30 days: $1,875", "60 days: $1,875", "90 days: $1,875"].map((label) => (
+                  <div key={label} className="bg-white rounded-xl px-3 py-2 border border-[#FFB3C7]/50">
+                    <p className="text-xs font-semibold text-gray-700">{label}</p>
+                  </div>
+                ))}
+              </div>
+
+              <div className="flex justify-center">
+                <KlarnaButton
+                  amount={subtotalOneTime}
+                  description={`Website Build — ${INVOICE.number}`}
+                  orderId={INVOICE.number}
+                  label={`Pay with Klarna — $${subtotalOneTime.toLocaleString()}`}
+                />
+              </div>
+            </div>
           </div>
 
           {/* Terms & Guarantee */}
