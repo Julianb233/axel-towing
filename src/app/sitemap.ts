@@ -2,6 +2,7 @@ import type { MetadataRoute } from "next";
 import { SERVICES, SERVICE_AREAS } from "@/lib/constants";
 import { BLOG_SLUGS } from "@/lib/blog-slugs";
 import { NICHE_VERTICALS, NICHE_CITIES } from "@/lib/niche-data";
+import { SPANISH_CITY_SLUGS } from "@/lib/spanish-location-data";
 
 const BASE_URL = "https://axletowing.com";
 
@@ -68,6 +69,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${BASE_URL}/es/cotizacion`, lastModified: now, changeFrequency: "monthly", priority: 0.6 },
     { url: `${BASE_URL}/es/ubicar-vehiculo`, lastModified: now, changeFrequency: "monthly", priority: 0.6 },
     { url: `${BASE_URL}/es/area-de-servicio`, lastModified: now, changeFrequency: "monthly", priority: 0.6 },
+    { url: `${BASE_URL}/es/ubicaciones`, lastModified: now, changeFrequency: "monthly", priority: 0.7 },
+    ...SPANISH_CITY_SLUGS.map((slug) => ({
+      url: `${BASE_URL}/es/ubicaciones/${slug}`,
+      lastModified: now,
+      changeFrequency: "monthly" as const,
+      priority: 0.7,
+    })),
   ];
 
   // Service pages
