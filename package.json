@@ -5,10 +5,18 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start"
+    "start": "next start",
+    "scrape:hoas": "npx tsx scripts/prospecting/scrape-hoas.ts",
+    "scrape:pms": "npx tsx scripts/prospecting/scrape-property-managers.ts",
+    "scrape:locksmiths": "npx tsx scripts/prospecting/scrape-locksmiths.ts",
+    "scrape:mechanics": "npx tsx scripts/prospecting/scrape-mechanics.ts",
+    "enrich": "npx tsx scripts/prospecting/enrich-leads.ts",
+    "export:csv": "npx tsx scripts/prospecting/export-csv.ts"
   },
   "dependencies": {
     "@supabase/supabase-js": "^2.99.3",
+    "cheerio": "^1.2.0",
+    "csv-stringify": "^6.7.0",
     "next": "16.1.6",
     "react": "19.2.3",
     "react-dom": "19.2.3",
@@ -21,6 +29,7 @@
     "@types/react": "^19",
     "@types/react-dom": "^19",
     "tailwindcss": "^4",
+    "tsx": "^4.21.0",
     "typescript": "5.9.3"
   }
 }
