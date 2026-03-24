@@ -4,8 +4,16 @@ import Image from "next/image";
 import { COMPANY, FREE_SERVICES, PAID_SERVICES } from "@/lib/constants";
 
 export const metadata: Metadata = {
-  title: "Our Services",
+  title: "Our Services — Free Private Property Towing & Parking Enforcement",
   description: `${COMPANY.name} offers free private property impounds, parking enforcement, HOA towing, apartment towing, and commercial property towing across Phoenix, AZ. We also provide paid vehicle relocation services for construction and maintenance projects.`,
+  alternates: {
+    canonical: "https://axletowing.com/services",
+  },
+  openGraph: {
+    title: "Our Services — Free Private Property Towing & Parking Enforcement",
+    description: `${COMPANY.name} offers free private property impounds, parking enforcement, HOA towing, apartment towing, and commercial property towing across Phoenix, AZ.`,
+    url: "https://axletowing.com/services",
+  },
 };
 
 const STATS = [

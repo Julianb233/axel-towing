@@ -7,6 +7,14 @@ const data = LOCATION_PAGES["phoenix"];
 export const metadata: Metadata = {
   title: data.metaTitle,
   description: data.metaDescription,
+  alternates: {
+    canonical: `https://axletowing.com/locations/phoenix`,
+  },
+  openGraph: {
+    title: data.metaTitle,
+    description: data.metaDescription,
+    url: `https://axletowing.com/locations/phoenix`,
+  },
 };
 
 export default function Page() {

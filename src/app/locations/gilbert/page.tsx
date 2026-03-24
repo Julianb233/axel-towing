@@ -7,6 +7,14 @@ const data = LOCATION_PAGES["gilbert"];
 export const metadata: Metadata = {
   title: data.metaTitle,
   description: data.metaDescription,
+  alternates: {
+    canonical: `https://axletowing.com/locations/gilbert`,
+  },
+  openGraph: {
+    title: data.metaTitle,
+    description: data.metaDescription,
+    url: `https://axletowing.com/locations/gilbert`,
+  },
 };
 
 export default function Page() {

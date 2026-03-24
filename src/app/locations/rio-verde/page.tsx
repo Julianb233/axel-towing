@@ -7,6 +7,14 @@ const data = LOCATION_PAGES["rio-verde"];
 export const metadata: Metadata = {
   title: data.metaTitle,
   description: data.metaDescription,
+  alternates: {
+    canonical: `https://axletowing.com/locations/rio-verde`,
+  },
+  openGraph: {
+    title: data.metaTitle,
+    description: data.metaDescription,
+    url: `https://axletowing.com/locations/rio-verde`,
+  },
 };
 
 export default function Page() {

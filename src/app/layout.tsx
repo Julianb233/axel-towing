@@ -10,7 +10,7 @@ import ContactWidget from "@/components/ContactWidget";
 import EmergencyBanner from "@/components/EmergencyBanner";
 import PropertyManagerChatbot from "@/components/PropertyManagerChatbot";
 import { COMPANY } from "@/lib/constants";
-import { organizationSchema, towingServiceSchema } from "@/lib/schema";
+import { organizationSchema, towingServiceSchema, websiteSchema } from "@/lib/schema";
 
 const openSans = Open_Sans({
   variable: "--font-open-sans",
@@ -104,6 +104,15 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
+        {/* Preconnect & DNS-prefetch for external resources */}
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        <link rel="preconnect" href="https://e5cdia7uckj.exactdn.com" />
+        <link rel="dns-prefetch" href="https://fonts.googleapis.com" />
+        <link rel="dns-prefetch" href="https://fonts.gstatic.com" />
+        <link rel="dns-prefetch" href="https://e5cdia7uckj.exactdn.com" />
+        <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
+        <link rel="dns-prefetch" href="https://www.google-analytics.com" />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
@@ -114,6 +123,12 @@ export default function RootLayout({
           type="application/ld+json"
           dangerouslySetInnerHTML={{
             __html: JSON.stringify(towingServiceSchema()),
+          }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(websiteSchema()),
           }}
         />
       </head>

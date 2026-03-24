@@ -7,6 +7,14 @@ const data = LOCATION_PAGES["peoria"];
 export const metadata: Metadata = {
   title: data.metaTitle,
   description: data.metaDescription,
+  alternates: {
+    canonical: `https://axletowing.com/locations/peoria`,
+  },
+  openGraph: {
+    title: data.metaTitle,
+    description: data.metaDescription,
+    url: `https://axletowing.com/locations/peoria`,
+  },
 };
 
 export default function Page() {

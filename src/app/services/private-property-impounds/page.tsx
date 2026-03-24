@@ -8,9 +8,13 @@ const data = SERVICE_PAGES["private-property-impounds"];
 export const metadata: Metadata = {
   title: data.metaTitle,
   description: data.metaDescription,
+  alternates: {
+    canonical: `https://axletowing.com/services/private-property-impounds`,
+  },
   openGraph: {
     title: data.metaTitle,
     description: data.metaDescription,
+    url: `https://axletowing.com/services/private-property-impounds`,
   },
 };
 

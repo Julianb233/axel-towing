@@ -7,6 +7,14 @@ const data = LOCATION_PAGES["queen-creek"];
 export const metadata: Metadata = {
   title: data.metaTitle,
   description: data.metaDescription,
+  alternates: {
+    canonical: `https://axletowing.com/locations/queen-creek`,
+  },
+  openGraph: {
+    title: data.metaTitle,
+    description: data.metaDescription,
+    url: `https://axletowing.com/locations/queen-creek`,
+  },
 };
 
 export default function Page() {

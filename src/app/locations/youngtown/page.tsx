@@ -7,6 +7,14 @@ const data = LOCATION_PAGES["youngtown"];
 export const metadata: Metadata = {
   title: data.metaTitle,
   description: data.metaDescription,
+  alternates: {
+    canonical: `https://axletowing.com/locations/youngtown`,
+  },
+  openGraph: {
+    title: data.metaTitle,
+    description: data.metaDescription,
+    url: `https://axletowing.com/locations/youngtown`,
+  },
 };
 
 export default function Page() {

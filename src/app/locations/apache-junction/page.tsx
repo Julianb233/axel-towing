@@ -7,6 +7,14 @@ const data = LOCATION_PAGES["apache-junction"];
 export const metadata: Metadata = {
   title: data.metaTitle,
   description: data.metaDescription,
+  alternates: {
+    canonical: `https://axletowing.com/locations/apache-junction`,
+  },
+  openGraph: {
+    title: data.metaTitle,
+    description: data.metaDescription,
+    url: `https://axletowing.com/locations/apache-junction`,
+  },
 };
 
 export default function Page() {

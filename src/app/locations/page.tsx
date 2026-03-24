@@ -7,6 +7,15 @@ export const metadata: Metadata = {
   title: "Service Areas — Towing Across the Phoenix Metro",
   description:
     "Axle Towing provides private property towing and parking enforcement across 38 cities in the Greater Phoenix area. Find your city for local service details.",
+  alternates: {
+    canonical: "https://axletowing.com/locations",
+  },
+  openGraph: {
+    title: "Service Areas — Towing Across 38+ Phoenix Metro Cities",
+    description:
+      "Axle Towing provides private property towing and parking enforcement across 38 cities in the Greater Phoenix area. Find your city for local service details.",
+    url: "https://axletowing.com/locations",
+  },
 };
 
 export default function LocationsPage() {
@@ -21,6 +30,7 @@ export default function LocationsPage() {
             fill
             className="object-cover"
             priority
+            fetchPriority="high"
           />
         </div>
         <div
