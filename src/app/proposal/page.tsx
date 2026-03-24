@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+import KlarnaButton from "@/components/KlarnaButton";
 
 /* ── Real keyword data from Axle Towing Keyword Research (March 2026) ── */
 const keywordData = [
@@ -762,6 +763,143 @@ export default function ProposalPage() {
             Let&apos;s Talk
           </a>
           <p className="text-sm text-white/40 mt-6">Prepared by AI Acrobatics | March 2026</p>
+        </div>
+      </section>
+
+      {/* ── Payment Options ── */}
+      <section id="payment" className="py-20 px-6 bg-[#f8f9fb]">
+        <div className="max-w-4xl mx-auto">
+          <div className="text-center mb-12 proposal-reveal">
+            <h2 className="text-3xl md:text-4xl font-bold text-[#1b2a3f] mb-4" style={{ fontFamily: "var(--font-display)" }}>
+              Get Started Today
+            </h2>
+            <p className="text-[#4a5568] max-w-2xl mx-auto">
+              Pay for the website build now and lock in your spot. SEO invoicing starts 30 days after your site goes live.
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-2 gap-8 mb-10">
+            {/* One-time website build */}
+            <div className="proposal-reveal bg-white rounded-2xl border-2 border-[#1e6bb8]/20 p-8 shadow-sm">
+              <div className="text-xs font-bold text-[#1e6bb8] uppercase tracking-wider mb-2">One-Time Payment</div>
+              <h3 className="text-2xl font-bold text-[#1b2a3f] mb-1" style={{ fontFamily: "var(--font-display)" }}>
+                Website Build
+              </h3>
+              <div className="text-4xl font-black text-[#1b2a3f] mb-1" style={{ fontFamily: "var(--font-display)" }}>$7,500</div>
+              <p className="text-sm text-[#6b7685] mb-6">123+ page Next.js site, 61 articles, 24 location pages, Schema markup</p>
+              <ul className="space-y-2 text-sm text-[#4a5568] mb-8">
+                {[
+                  "Custom-built 123+ page website",
+                  "61 SEO-optimized blog articles",
+                  "24 city & neighborhood pages",
+                  "7 service pages with Schema markup",
+                  "Vehicle locator & property manager portal",
+                  "Mobile-first, PageSpeed 90+",
+                  "DNS transfer & launch included",
+                ].map((item) => (
+                  <li key={item} className="flex items-start gap-2">
+                    <span className="text-[#1e6bb8] mt-0.5 shrink-0">&#10003;</span>
+                    {item}
+                  </li>
+                ))}
+              </ul>
+              <a
+                href="https://www.fanbasis.com/agency-checkout/Aiacrobatics/7pAz8"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="block w-full text-center bg-[#1e6bb8] text-white font-bold px-6 py-4 rounded-xl text-base hover:bg-[#145a9c] transition-colors shadow-md mb-3"
+              >
+                Pay $7,500 — Card / ACH
+              </a>
+              <p className="text-xs text-[#6b7685] text-center">Secure checkout via Fanbasis. All major cards accepted.</p>
+            </div>
+
+            {/* Monthly SEO plan */}
+            <div className="proposal-reveal bg-white rounded-2xl border-2 border-[#dc3a30]/20 p-8 shadow-sm" style={{ transitionDelay: "0.1s" }}>
+              <div className="text-xs font-bold text-[#dc3a30] uppercase tracking-wider mb-2">Recurring Monthly</div>
+              <h3 className="text-2xl font-bold text-[#1b2a3f] mb-1" style={{ fontFamily: "var(--font-display)" }}>
+                SEO &amp; Content Plan
+              </h3>
+              <div className="text-4xl font-black text-[#1b2a3f] mb-1" style={{ fontFamily: "var(--font-display)" }}>$3,000<span className="text-lg font-semibold text-[#6b7685]">/mo</span></div>
+              <p className="text-sm text-[#6b7685] mb-6">30 articles/month, 150+ keyword tracking, Google Business Profile management</p>
+              <ul className="space-y-2 text-sm text-[#4a5568] mb-8">
+                {[
+                  "30 optimized articles published monthly",
+                  "150+ keyword rank tracking",
+                  "Google Business Profile management",
+                  "50+ local citation submissions",
+                  "Link building outreach",
+                  "Competitor analysis & reporting",
+                  "GoHighLevel CRM — included free",
+                ].map((item) => (
+                  <li key={item} className="flex items-start gap-2">
+                    <span className="text-[#dc3a30] mt-0.5 shrink-0">&#10003;</span>
+                    {item}
+                  </li>
+                ))}
+              </ul>
+              <a
+                href="https://www.fanbasis.com/agency-checkout/Aiacrobatics/5RlGY"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="block w-full text-center bg-[#dc3a30] text-white font-bold px-6 py-4 rounded-xl text-base hover:bg-[#b83028] transition-colors shadow-md mb-3"
+              >
+                Start SEO Plan — $3,000/mo
+              </a>
+              <p className="text-xs text-[#6b7685] text-center">6-month minimum. Cancel with 30 days notice after term.</p>
+            </div>
+          </div>
+
+          {/* Klarna BNPL Option */}
+          <div className="proposal-reveal rounded-2xl border-2 border-[#FFB3C7] bg-[#FFF0F5] p-8 max-w-2xl mx-auto">
+            <div className="flex items-center gap-3 mb-4">
+              <div className="bg-[#FFB3C7] text-[#1A0A0E] font-black text-lg px-3 py-1 rounded-lg leading-none select-none">K</div>
+              <div>
+                <h3 className="font-bold text-gray-900 text-lg">Split Your Website Build with Klarna</h3>
+                <p className="text-[#6b7685] text-sm">Buy now, pay later — 4 interest-free payments of $1,875</p>
+              </div>
+            </div>
+
+            <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 mb-6 text-center">
+              {[
+                { label: "Today", amount: "$1,875" },
+                { label: "30 days", amount: "$1,875" },
+                { label: "60 days", amount: "$1,875" },
+                { label: "90 days", amount: "$1,875" },
+              ].map((payment) => (
+                <div key={payment.label} className="bg-white rounded-xl px-3 py-3 border border-[#FFB3C7]/50">
+                  <p className="text-xs text-[#6b7685] mb-0.5">{payment.label}</p>
+                  <p className="text-base font-bold text-[#1A0A0E]">{payment.amount}</p>
+                </div>
+              ))}
+            </div>
+
+            <div className="flex items-center gap-2 text-xs text-[#6b7685] bg-white rounded-xl px-4 py-3 border border-[#FFB3C7]/30 mb-6">
+              <svg className="w-4 h-4 text-[#1e6bb8] shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+              </svg>
+              No interest. No hidden fees. Approved instantly. Klarna handles billing — you keep your cashflow intact while the site gets built.
+            </div>
+
+            <div className="flex justify-center">
+              <KlarnaButton
+                amount={7500}
+                description="Website Build — Axle Towing & Impound"
+                orderId="PROP-2026-AXLE"
+                label="Pay with Klarna — 4 × $1,875"
+              />
+            </div>
+          </div>
+
+          {/* Bundle note */}
+          <div className="mt-8 text-center proposal-reveal">
+            <p className="text-sm text-[#6b7685]">
+              Questions about payment? Call or text <a href="tel:+16195090699" className="text-[#1e6bb8] font-semibold hover:underline">(619) 509-0699</a> or email <a href="mailto:julian@aiacrobatics.com" className="text-[#1e6bb8] font-semibold hover:underline">julian@aiacrobatics.com</a>
+            </p>
+            <p className="text-xs text-[#9aa3af] mt-2">
+              Full invoice with terms available at <a href="/invoice" className="underline hover:text-[#6b7685]">axletowing.com/invoice</a>
+            </p>
+          </div>
         </div>
       </section>
 
