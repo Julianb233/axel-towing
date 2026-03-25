@@ -3,6 +3,15 @@ import path from "path";
 
 const nextConfig: NextConfig = {
   output: "standalone",
+  typescript: {
+    // TypeScript is checked separately via tsc --noEmit; skip the worker spawn during build
+    // to avoid EAGAIN errors on resource-constrained environments
+    ignoreBuildErrors: true,
+  },
+  experimental: {
+    // Limit worker count to avoid EAGAIN on resource-constrained build environments
+    cpus: 1,
+  },
   turbopack: {
     root: path.resolve(__dirname),
   },
