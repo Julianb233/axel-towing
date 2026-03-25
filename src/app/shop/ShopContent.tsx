@@ -6,7 +6,7 @@ const PRODUCTS = [
   {
     id: 'mug',
     name: 'Custom Branded Mug',
-    costPrice: '$12.99',
+    costPrice: '$18.99',
     category: 'Drinkware',
     useCase: 'HOA Board Gifts · Office Welcome Kits',
     description:
@@ -27,7 +27,7 @@ const PRODUCTS = [
   {
     id: 'mousepad',
     name: 'Logo Mouse Pad',
-    costPrice: '$9.99',
+    costPrice: '$16.99',
     category: 'Office',
     useCase: 'Property Manager Offices · HOA Clubhouses',
     description:
@@ -44,7 +44,7 @@ const PRODUCTS = [
   {
     id: 'charger',
     name: 'Wireless Charging Pad',
-    costPrice: '$24.99',
+    costPrice: '$34.99',
     category: 'Tech',
     useCase: 'VIP Partner Gifts · Leasing Office Desks',
     description:
@@ -65,7 +65,7 @@ const PRODUCTS = [
   {
     id: 'candle',
     name: 'Branded Candle',
-    costPrice: '$14.99',
+    costPrice: '$22.99',
     category: 'Lifestyle',
     useCase: 'HOA Board Appreciation · Holiday Gifting',
     description:
@@ -86,7 +86,7 @@ const PRODUCTS = [
   {
     id: 'door-hanger',
     name: 'Parking Permit Door Hanger',
-    costPrice: '$0.99',
+    costPrice: '$12.99',
     category: 'Operational',
     useCase: 'HOA Parking Programs · Apartment Complexes',
     description:
@@ -108,7 +108,7 @@ const PRODUCTS = [
   {
     id: 'permit-tag',
     name: 'Parking Permit Hang Tag',
-    costPrice: '$1.49',
+    costPrice: '$24.99',
     category: 'Operational',
     useCase: 'Resident Parking Programs · Visitor Passes',
     description:
@@ -186,10 +186,10 @@ export default function ShopContent() {
                 </svg>
               </Link>
               <Link
-                href="/merchandise"
+                href="/shop/parking-permits"
                 className="inline-flex items-center justify-center gap-2 rounded-lg border border-white/20 bg-white/10 px-8 py-4 text-lg font-semibold text-white transition-colors hover:bg-white/20"
               >
-                View Full Catalog
+                Customize Parking Permits
               </Link>
             </div>
           </div>

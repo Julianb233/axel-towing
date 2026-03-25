@@ -5,12 +5,12 @@ import Link from 'next/link';
 import { useSearchParams } from 'next/navigation';
 
 const PRODUCTS = [
-  { id: 'mug', name: 'Custom Branded Mug', price: '$12.99', minQty: 10 },
-  { id: 'mousepad', name: 'Logo Mouse Pad', price: '$9.99', minQty: 10 },
-  { id: 'charger', name: 'Wireless Charging Pad', price: '$24.99', minQty: 10 },
-  { id: 'candle', name: 'Branded Candle', price: '$14.99', minQty: 10 },
-  { id: 'door-hanger', name: 'Parking Permit Door Hanger', price: '$0.99', minQty: 50 },
-  { id: 'permit-tag', name: 'Parking Permit Hang Tag', price: '$1.49', minQty: 25 },
+  { id: 'mug', name: 'Custom Branded Mug', price: '$18.99', minQty: 10 },
+  { id: 'mousepad', name: 'Logo Mouse Pad', price: '$16.99', minQty: 10 },
+  { id: 'charger', name: 'Wireless Charging Pad', price: '$34.99', minQty: 10 },
+  { id: 'candle', name: 'Branded Candle', price: '$22.99', minQty: 10 },
+  { id: 'door-hanger', name: 'Parking Permit Door Hanger', price: '$12.99', minQty: 50 },
+  { id: 'permit-tag', name: 'Parking Permit Hang Tag', price: '$24.99', minQty: 25 },
 ];
 
 function BulkOrderForm() {

@@ -1,7 +1,6 @@
 'use client';
 
 import { useState, FormEvent } from 'react';
-import Link from 'next/link';
 import { COMPANY } from '@/lib/constants';
 
 const MERCH_CATEGORIES = [
@@ -240,11 +239,11 @@ export default function MerchandiseContent() {
               remember who keeps their property running smoothly.
             </p>
             <div className="flex flex-col gap-4 sm:flex-row">
-              <Link
-                href="/shop"
+              <a
+                href="#order-form"
                 className="inline-flex items-center justify-center gap-2 rounded-lg bg-red-600 px-8 py-4 text-lg font-semibold text-white transition-colors hover:bg-red-700"
               >
-                Shop Printify Products
+                Request Custom Order
                 <svg className="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path
                     strokeLinecap="round"
@@ -253,12 +252,12 @@ export default function MerchandiseContent() {
                     d="M17 8l4 4m0 0l-4 4m4-4H3"
                   />
                 </svg>
-              </Link>
+              </a>
               <a
-                href="#order-form"
+                href="#pricing-tiers"
                 className="inline-flex items-center justify-center gap-2 rounded-lg border border-white/20 bg-white/10 px-8 py-4 text-lg font-semibold text-white transition-colors hover:bg-white/20"
               >
-                Request Custom Order
+                View Bulk Pricing
               </a>
             </div>
           </div>
