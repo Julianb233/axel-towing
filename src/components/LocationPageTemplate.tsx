@@ -25,6 +25,53 @@ export default function LocationPageTemplate({
         }}
       />
 
+      {/* LocalBusiness JSON-LD schema */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "LocalBusiness",
+            "name": "Axle Towing & Impound",
+            "telephone": "480-288-5526",
+            "url": `https://axletowing.com/locations/${data.slug}`,
+            "areaServed": data.city,
+            "address": {
+              "@type": "PostalAddress",
+              "streetAddress": "320 E. Pioneer St.",
+              "addressLocality": "Phoenix",
+              "addressRegion": "AZ",
+              "postalCode": "85040",
+              "addressCountry": "US",
+            },
+            "openingHours": "Mo-Su 00:00-23:59",
+            "priceRange": "Free for property owners",
+            "description": `Professional private property towing and parking enforcement services in ${data.city}, AZ. Available 24/7/365.`,
+          }),
+        }}
+      />
+
+      {/* FAQPage JSON-LD schema */}
+      {data.faqs && data.faqs.length > 0 && (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "FAQPage",
+              "mainEntity": data.faqs.map((faq) => ({
+                "@type": "Question",
+                "name": faq.question,
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": faq.answer,
+                },
+              })),
+            }),
+          }}
+        />
+      )}
+
       {/* Parallax Hero */}
       <section className="parallax-container min-h-[55vh] flex items-center relative">
         <div
@@ -392,6 +439,49 @@ export default function LocationPageTemplate({
           </div>
         </div>
       </section>
+
+      {/* FAQ Section */}
+      {data.faqs && data.faqs.length > 0 && (
+        <section className="py-20 bg-white">
+          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4 text-center reveal">
+              Frequently Asked Questions About Towing in {data.city}
+            </h2>
+            <p className="text-gray-700 text-lg text-center mb-12 max-w-2xl mx-auto reveal">
+              Get answers to the most common questions about private property
+              towing and parking enforcement in {data.city}, AZ.
+            </p>
+            <div className="space-y-4 reveal">
+              {data.faqs.map((faq, index) => (
+                <details
+                  key={index}
+                  className="group glass-card-white rounded-2xl border border-gray-100 overflow-hidden"
+                >
+                  <summary className="flex items-center justify-between gap-4 p-6 cursor-pointer list-none font-semibold text-gray-900 hover:text-brand-blue transition-colors">
+                    <span>{faq.question}</span>
+                    <svg
+                      className="w-5 h-5 text-brand-blue shrink-0 transition-transform duration-200 group-open:rotate-180"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M19 9l-7 7-7-7"
+                      />
+                    </svg>
+                  </summary>
+                  <div className="px-6 pb-6 text-gray-600 leading-relaxed border-t border-gray-100 pt-4">
+                    {faq.answer}
+                  </div>
+                </details>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
 
       {/* CTA Banner */}
       <section className="py-20 relative overflow-hidden">
