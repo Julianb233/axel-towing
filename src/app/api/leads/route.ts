@@ -1,7 +1,8 @@
-import { NextResponse } from "next/server";
-import { sendDispatchEmail } from "@/lib/dispatch-email";
-import { sendDispatchSms } from "@/lib/dispatch-sms";
-import { storeDispatchRequest } from "@/lib/supabase";
+import { NextResponse } from 'next/server';
+import { sendDispatchEmail } from '@/lib/dispatch-email';
+import { sendDispatchSms } from '@/lib/dispatch-sms';
+import { storeDispatchRequest } from '@/lib/supabase';
+import { syncLeadToGHL } from '@/lib/ghl';
 
 /**
  * POST /api/leads
@@ -18,15 +19,15 @@ export async function POST(req: Request) {
     const body = await req.json();
 
     // At minimum we need a name and one contact method
-    const name = body.name || body.contactName || "";
-    const email = body.email || "";
-    const phone = body.phone || "";
-    const source = body.source || "website";
+    const name = body.name || body.contactName || '';
+    const email = body.email || '';
+    const phone = body.phone || '';
+    const source = body.source || 'website';
 
     if (!name && !email && !phone) {
       return NextResponse.json(
-        { error: "At least one contact method is required" },
-        { status: 400 },
+        { error: 'At least one contact method is required' },
+        { status: 400 }
       );
     }
 
@@ -37,14 +38,15 @@ export async function POST(req: Request) {
       `NEW LEAD — ${source.toUpperCase()}`,
       ``,
       `Reference: ${referenceId}`,
-      `Name: ${name || "Not provided"}`,
-      `Email: ${email || "Not provided"}`,
-      `Phone: ${phone || "Not provided"}`,
+      `Name: ${name || 'Not provided'}`,
+      `Email: ${email || 'Not provided'}`,
+      `Phone: ${phone || 'Not provided'}`,
     ];
 
     if (body.propertyType) details.push(`Property Type: ${body.propertyType}`);
     if (body.propertyName) details.push(`Property Name: ${body.propertyName}`);
-    if (body.address || body.propertyAddress) details.push(`Address: ${body.address || body.propertyAddress}`);
+    if (body.address || body.propertyAddress)
+      details.push(`Address: ${body.address || body.propertyAddress}`);
     if (body.units || body.spaces) details.push(`Units/Spaces: ${body.units || body.spaces}`);
     if (body.timeline) details.push(`Timeline: ${body.timeline}`);
     if (body.need) details.push(`Need: ${body.need}`);
@@ -53,57 +55,81 @@ export async function POST(req: Request) {
     if (body.location) details.push(`Location: ${body.location}`);
 
     details.push(``);
-    details.push(`Submitted: ${new Date().toLocaleString("en-US", { timeZone: "America/Phoenix" })}`);
+    details.push(
+      `Submitted: ${new Date().toLocaleString('en-US', { timeZone: 'America/Phoenix' })}`
+    );
 
-    const emailBody = details.join("\n");
+    const emailBody = details.join('\n');
 
     // Log the lead
-    console.log("=== NEW LEAD ===");
+    console.log('=== NEW LEAD ===');
     console.log(emailBody);
-    console.log("=================");
+    console.log('=================');
 
-    // Send notifications in parallel
-    const [emailResult, smsResult, dbResult] = await Promise.allSettled([
+    // Send notifications and sync to CRM in parallel
+    const [emailResult, smsResult, dbResult, ghlResult] = await Promise.allSettled([
       sendDispatchEmail(
         referenceId,
         `New Lead from ${source} — ${name || email} [${referenceId}]`,
-        emailBody,
+        emailBody
       ),
       sendDispatchSms(
         referenceId,
-        `New Lead (${source}): ${name || "Unknown"}\n${phone || email || "No contact"}\nRef: ${referenceId}`,
+        `New Lead (${source}): ${name || 'Unknown'}\n${phone || email || 'No contact'}\nRef: ${referenceId}`
       ),
       storeDispatchRequest({
         reference_id: referenceId,
-        request_type: "lead",
+        request_type: 'lead',
         contact_name: name,
         contact_phone: phone,
         contact_email: email,
-        property_name: body.propertyName || body.propertyAddress || "",
-        property_address: body.address || body.propertyAddress || "",
+        property_name: body.propertyName || body.propertyAddress || '',
+        property_address: body.address || body.propertyAddress || '',
         urgent: false,
         request_data: body as Record<string, unknown>,
-        status: "pending",
+        status: 'pending',
+      }),
+      // Sync to GoHighLevel CRM
+      syncLeadToGHL({
+        name,
+        email,
+        phone,
+        propertyName: body.propertyName || body.propertyAddress,
+        propertyType: body.propertyType,
+        source,
+        timeline: body.timeline,
+        units: body.units || body.spaces,
+        address: body.address || body.propertyAddress,
+        referenceId,
+        rawData: body as Record<string, unknown>,
       }),
     ]);
 
     const results = {
-      email: emailResult.status === "fulfilled" ? (emailResult.value as { success: boolean }).success : false,
-      sms: smsResult.status === "fulfilled" ? (smsResult.value as { success: boolean }).success : false,
-      db: dbResult.status === "fulfilled" ? (dbResult.value as { success: boolean }).success : false,
+      email:
+        emailResult.status === 'fulfilled'
+          ? (emailResult.value as { success: boolean }).success
+          : false,
+      sms:
+        smsResult.status === 'fulfilled'
+          ? (smsResult.value as { success: boolean }).success
+          : false,
+      db:
+        dbResult.status === 'fulfilled' ? (dbResult.value as { success: boolean }).success : false,
+      ghl:
+        ghlResult.status === 'fulfilled'
+          ? (ghlResult.value as { success: boolean }).success
+          : false,
     };
-    console.log("Lead integrations:", results);
+    console.log('Lead integrations:', results);
 
     return NextResponse.json({
       success: true,
       referenceId,
-      message: "Lead received",
+      message: 'Lead received',
     });
   } catch (error) {
-    console.error("Lead API error:", error);
-    return NextResponse.json(
-      { error: "Internal server error" },
-      { status: 500 },
-    );
+    console.error('Lead API error:', error);
+    return NextResponse.json({ error: 'Internal server error' }, { status: 500 });
   }
 }
