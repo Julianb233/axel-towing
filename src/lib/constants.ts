@@ -70,6 +70,7 @@ export const SERVICE_AREAS = [
   { name: "Ahwatukee", slug: "ahwatukee", description: "Professional towing and parking enforcement for Ahwatukee's premier communities." },
   { name: "Casa Grande", slug: "casa-grande", description: "Reliable private property towing for Casa Grande's fast-growing communities." },
   { name: "Coolidge", slug: "coolidge", description: "Professional towing and parking enforcement services in Coolidge." },
+  { name: "Florence", slug: "florence", description: "Professional private property towing and parking enforcement for Florence and Pinal County." },
   { name: "New River", slug: "new-river", description: "Dependable towing and parking enforcement for New River's growing communities." },
   { name: "Rio Verde", slug: "rio-verde", description: "Premium parking enforcement and towing for Rio Verde's luxury communities." },
   { name: "San Tan Heights", slug: "san-tan-heights", description: "Professional towing and parking management for San Tan Heights." },

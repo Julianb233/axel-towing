@@ -1215,6 +1215,85 @@ export const LOCATION_PAGES: Record<string, LocationPageData> = {
       "Rapid commercial growth along Ellsworth Road and Rittenhouse Road corridors",
     ],
   },
+  florence: {
+    city: "Florence",
+    slug: "florence",
+    metaTitle:
+      "Towing Services in Florence, AZ — Private Property Impounds & Parking Enforcement",
+    metaDescription:
+      "Professional private property towing and parking enforcement in Florence, AZ. Axle Towing serves HOAs, apartments, and commercial properties in Pinal County at no cost. Call 480-288-5526.",
+    heroImage: "/images/arizona-commercial-parking.jpg",
+    heroSubtext:
+      "Professional private property towing and parking enforcement for Florence's historic downtown, HOA communities, and commercial properties.",
+    intro: [
+      "Florence is the seat of Pinal County and one of Arizona's oldest communities, with a rich history, a growing residential population, and a unique mix of government facilities, historic properties, and newer master-planned developments. Located approximately 60 miles southeast of Phoenix along US-79 and State Route 287, Florence serves as a regional hub for communities throughout central Pinal County.",
+      "From the historic downtown district and McFarland State Historic Park to the newer subdivisions east of town, Axle Towing provides professional parking enforcement and private property towing across all of Florence. We work closely with property managers, HOA boards, apartment complexes, and commercial property owners to maintain safe, well-managed parking environments throughout the ZIP codes 85132 and 85232.",
+      "Our Florence towing services are completely free for property owners. We install ARS-compliant signage, conduct scheduled patrols, and remove unauthorized vehicles at no cost. Whether you manage an HOA community, a commercial strip center, or an apartment complex, Axle Towing delivers fast, professional service backed by 30+ years of combined team experience.",
+    ],
+    neighborhoods: [
+      "Historic Downtown Florence",
+      "McFarland State Historic Park Area",
+      "Rancho Mirage",
+      "Florence Gardens",
+      "Bella Vista",
+      "Cottonwood Ranch",
+      "Hunt Highway Corridor",
+      "Central Florence",
+      "North Florence",
+      "South Florence",
+    ],
+    propertyTypes: [
+      "HOA Communities",
+      "Apartment Complexes",
+      "Commercial Properties",
+      "Government Facilities",
+      "Retail Centers",
+      "Office Buildings",
+      "Mixed-Use Developments",
+      "Industrial Properties",
+    ],
+    localStats: [
+      { label: "Population", value: "30K+" },
+      { label: "HOA Communities", value: "80+" },
+      { label: "Apartment Units", value: "2K+" },
+      { label: "Response Time", value: "< 50 min" },
+    ],
+    testimonial: {
+      quote:
+        "Florence is growing fast and managing parking in our community was becoming a real challenge. Axle Towing stepped in, got our signage compliant, and now we have consistent, professional enforcement. The free service model makes it a no-brainer.",
+      name: "David R.",
+      role: "HOA Board President, Cottonwood Ranch",
+    },
+    whyChooseUs: [
+      {
+        title: "Pinal County Expertise",
+        description:
+          "We understand the unique character of Pinal County communities and deliver enforcement that respects Florence's blend of historic and growing neighborhoods.",
+      },
+      {
+        title: "Full Compliance Coverage",
+        description:
+          "ARS-compliant signage, proper documentation, and state-mandated procedures for every tow in Florence and surrounding Pinal County communities.",
+      },
+      {
+        title: "Zero Cost to Property Owners",
+        description:
+          "All services — signage, patrol, towing, and portal access — are completely free for Florence property owners and HOA boards.",
+      },
+      {
+        title: "Serving Nearby Communities Too",
+        description:
+          "We also serve nearby Casa Grande, Coolidge, San Tan Valley, and Gold Canyon, making us the regional choice for Pinal County parking enforcement.",
+      },
+    ],
+    cityFacts: [
+      "Florence is the county seat of Pinal County, located approximately 60 miles southeast of Phoenix",
+      "ZIP codes 85132 and 85232 cover the Florence area and surrounding communities",
+      "Home to McFarland State Historic Park, preserving the history of Arizona's territorial period",
+      "Arizona State Prison Complex — Florence is one of the state's major correctional facility locations",
+      "Florence is one of Arizona's oldest incorporated towns, with a well-preserved historic downtown district",
+    ],
+  },
   "paradise-valley": {
     city: "Paradise Valley",
     slug: "paradise-valley",

@@ -210,6 +210,11 @@ const CITY_STATS: Record<
     properties: "150+",
     response: "< 40 min",
   },
+  florence: {
+    population: "30K+",
+    properties: "80+",
+    response: "< 50 min",
+  },
 };
 
 const MAP_PINS: { name: string; slug: string; top: string; left: string }[] = [
@@ -234,6 +239,7 @@ const MAP_PINS: { name: string; slug: string; top: string; left: string }[] = [
   { name: "Anthem", slug: "anthem", top: "10%", left: "38%" },
   { name: "El Mirage", slug: "el-mirage", top: "32%", left: "18%" },
   { name: "Maricopa", slug: "maricopa", top: "85%", left: "40%" },
+  { name: "Florence", slug: "florence", top: "90%", left: "58%" },
 ];
 
 export default function ServiceAreaPage() {
