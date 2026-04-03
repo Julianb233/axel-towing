@@ -1,45 +1,75 @@
-# Axle Towing & Impound — Website
+# Axle Towing — Monorepo
 
-Next.js 16 website for Axle Towing & Impound, deployed on Railway.
+Private property towing company in Phoenix, AZ. This monorepo contains the public website, client dashboard, and shared operational tooling.
 
-## Getting Started
+## Structure
 
+```
+website/        Main marketing site — axletowing.com (Next.js 16, Vercel)
+dashboard/      Client portal dashboard — axle-towing-portal.vercel.app (Next.js 14, Vercel)
+docs/           Strategy docs, research, citation reports
+scripts/        Automation scripts (email setup, SEMrush, GHL, GBP)
+.github/        CI/CD workflows
+```
+
+## Quick Start
+
+### Website
 ```bash
+cd website
+cp .env.example .env.local   # fill in values
 npm install
-npm run dev
+npm run dev                   # http://localhost:3000
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser.
-
-## Deployment (Railway)
-
-The site is deployed on Railway using Nixpacks with Next.js standalone output.
-
+### Dashboard
 ```bash
-# Quick deploy
-./deploy.sh
-
-# Manual
-npm run build
-railway up --detach
+cd dashboard
+cp .env.example .env.local   # fill in values
+npm install
+npm run dev                   # http://localhost:3001
 ```
 
-### Railway Configuration
+## Deployments
 
-- `railway.toml` — Railway service config (start command, health check, port)
-- `nixpacks.toml` — Build configuration (Node 20, npm ci, standalone output)
-- Health check: `/api/health`
-- Port: 3000
+| App | URL | Platform | Project ID |
+|-----|-----|----------|------------|
+| Website | [axletowing.com](https://axletowing.com) | Vercel | `prj_uBSTE2rWwZFGjWhCaJoPmKUnsUre` |
+| Dashboard | [axle-towing-portal.vercel.app](https://axle-towing-portal.vercel.app) | Vercel | `prj_jFmt0eBOf1l9uka9uKtlU0WsM3rC` |
 
-### Environment Variables
+### Deploy Website
+```bash
+cd website
+npx vercel build --prod --token "$VERCEL_TOKEN"
+npx vercel deploy --prebuilt --prod --yes --token "$VERCEL_TOKEN"
+```
 
-Copy `.env.example` to `.env.local` for local development. Set the same variables in Railway dashboard for production.
+### Deploy Dashboard
+```bash
+cd dashboard
+npx vercel build --prod --token "$VERCEL_TOKEN"
+npx vercel deploy --prebuilt --prod --yes --token "$VERCEL_TOKEN"
+```
+
+## CI/CD
+
+GitHub Actions runs on every push/PR to `main`:
+- Website: TypeScript check + build
+- Dashboard: Lint + TypeScript check + build
+
+## Client Info
+
+- **Client:** Elliott (Axle Towing & Impound)
+- **Phone:** +18057602314
+- **Email:** axletowing@gmail.com
+- **Linear Project:** Axel Towing — SEO + Automation
 
 ## Tech Stack
 
-- Next.js 16 (App Router, standalone output)
-- Tailwind CSS 4
-- Supabase (dispatch storage)
-- Resend (email notifications)
-- Twilio (SMS dispatch)
-- Railway (hosting)
+| Component | Website | Dashboard |
+|-----------|---------|-----------|
+| Framework | Next.js 16 | Next.js 14 |
+| React | 19 | 18 |
+| Styling | Tailwind CSS 4 | Tailwind CSS 3 |
+| Database | Supabase | Supabase |
+| Hosting | Vercel | Vercel |
