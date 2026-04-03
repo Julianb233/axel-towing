@@ -1,45 +1,60 @@
-# Axle Towing & Impound — Website
+# Axle Towing — Website
 
-Next.js 16 website for Axle Towing & Impound, deployed on Railway.
+Main marketing website for Axle Towing, a private property towing company in Phoenix, AZ.
 
-## Getting Started
+**Live URL:** https://axletowing.com
+
+## Features
+
+- 65+ SEO-optimized blog posts (English & Spanish)
+- 30+ location pages covering Phoenix metro area
+- Service pages: impound, vehicle relocation, parking enforcement
+- Lead capture forms with dispatch integration
+- Google Analytics, Tag Manager, reCAPTCHA
+- Supabase for dispatch request storage
+- Twilio for SMS notifications
+- Resend for email notifications
+
+## Setup
 
 ```bash
+cp .env.example .env.local  # fill in values
 npm install
 npm run dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser.
+## Stack
 
-## Deployment (Railway)
+- Next.js 16 (App Router)
+- React 19
+- Tailwind CSS 4
+- Supabase
+- Twilio (SMS)
+- Resend (email)
+- Google reCAPTCHA v3
 
-The site is deployed on Railway using Nixpacks with Next.js standalone output.
+## Deploy
+
+Site is hosted on Vercel (previously Railway — railway.toml and nixpacks.toml are legacy configs).
 
 ```bash
-# Quick deploy
-./deploy.sh
-
-# Manual
-npm run build
-railway up --detach
+npx vercel build --prod --token "$VERCEL_TOKEN"
+npx vercel deploy --prebuilt --prod --yes --token "$VERCEL_TOKEN"
 ```
 
-### Railway Configuration
+Vercel project: `axel-towing` (`prj_uBSTE2rWwZFGjWhCaJoPmKUnsUre`)
 
-- `railway.toml` — Railway service config (start command, health check, port)
-- `nixpacks.toml` — Build configuration (Node 20, npm ci, standalone output)
-- Health check: `/api/health`
-- Port: 3000
+## Prospecting Scripts
 
-### Environment Variables
+```bash
+npm run scrape:hoas       # Scrape HOA contacts
+npm run scrape:pms        # Scrape property managers
+npm run scrape:locksmiths # Scrape locksmiths
+npm run scrape:mechanics  # Scrape mechanics
+npm run enrich            # Enrich lead data
+npm run export:csv        # Export to CSV
+```
 
-Copy `.env.example` to `.env.local` for local development. Set the same variables in Railway dashboard for production.
+## Environment Variables
 
-## Tech Stack
-
-- Next.js 16 (App Router, standalone output)
-- Tailwind CSS 4
-- Supabase (dispatch storage)
-- Resend (email notifications)
-- Twilio (SMS dispatch)
-- Railway (hosting)
+Copy `.env.example` to `.env.local` for local development. See `.env.example` for all required variables.
