@@ -1,3 +1,13 @@
+/** TowBook integration URLs */
+export const TOWBOOK = {
+  /** Staff login — dispatch, driver tracking, billing */
+  staffLogin: "https://app.towbook.com",
+  /** Manager portal — property managers, HOA boards */
+  managerPortal: "https://manager.towbook.com",
+  /** Public vehicle lookup — customers enter license plate to find vehicle */
+  vehicleLookup: "https://axletowing7900.towbook.net",
+};
+
 export const COMPANY = {
   name: "Axle Towing & Impound",
   phone: "480-288-5526",

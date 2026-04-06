@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import Image from 'next/image';
-import { COMPANY, SERVICES, SERVICE_AREAS } from '@/lib/constants';
+import { COMPANY, SERVICES, SERVICE_AREAS, TOWBOOK } from '@/lib/constants';
 
 const QUICK_LINKS = [
   { label: 'Home', href: '/' },
