@@ -2,7 +2,7 @@
 
 import { useEffect, useRef, useState, FormEvent } from "react";
 import Link from "next/link";
-import { COMPANY } from "@/lib/constants";
+import { COMPANY, TOWBOOK } from "@/lib/constants";
 
 /* ── Parallax Hook ── */
 function useParallax() {
@@ -18,9 +18,9 @@ function useParallax() {
   return ref;
 }
 
-/* ── TowBook Login URLs ── */
-const TOWBOOK_LOGIN_URL = "https://app.towbook.com";
-const TOWBOOK_MANAGER_URL = "https://manager.towbook.com";
+/* ── TowBook Login URLs (from centralized constants) ── */
+const TOWBOOK_LOGIN_URL = TOWBOOK.staffLogin;
+const TOWBOOK_MANAGER_URL = TOWBOOK.managerPortal;
 
 /* ── Manager Login Cards ── */
 const MANAGER_LOGINS = [
@@ -108,10 +108,10 @@ const PORTAL_OPTIONS = [
   {
     title: "Vehicle Lookup",
     subtitle: "Vehicle Owners",
-    desc: "Check if your vehicle was towed and get instructions for retrieval.",
-    href: "/vehicle-lookup",
-    external: false,
-    cta: "Locate My Vehicle",
+    desc: "Enter your license plate number to check if your vehicle was towed and find its location.",
+    href: TOWBOOK.vehicleLookup,
+    external: true,
+    cta: "Look Up Vehicle",
     icon: (
       <svg className="w-8 h-8" fill="none" stroke="currentColor" strokeWidth={1.5} viewBox="0 0 24 24">
         <path strokeLinecap="round" strokeLinejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z" />
