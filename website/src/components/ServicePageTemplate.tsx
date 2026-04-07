@@ -20,7 +20,7 @@ export default function ServicePageTemplate({ data }: { data: ServicePageData })
       {/* ===== PARALLAX HERO ===== */}
       <section className="relative min-h-[60vh] flex items-center overflow-hidden">
         <div className="absolute inset-0 z-0">
-          <Image src={data.heroImage || COMPANY.heroImage} alt={data.heroHeadline} fill className="object-cover" priority fetchPriority="high" />
+          <Image src={data.heroImage || COMPANY.heroImage} alt={data.heroHeadline} fill className="object-cover" priority fetchPriority="high" sizes="100vw" />
         </div>
         <div className="absolute inset-0" style={{ background: "linear-gradient(160deg, rgba(27,42,63,0.88) 0%, rgba(30,107,184,0.7) 100%)" }} />
         <div className="hero-text relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 md:py-32 w-full">
@@ -349,7 +349,7 @@ export default function ServicePageTemplate({ data }: { data: ServicePageData })
       {/* ===== CTA BANNER ===== */}
       <section className="relative py-20 md:py-24 overflow-hidden">
         <div className="absolute inset-0 z-0">
-          <Image src="/images/arizona-skyline-panoramic.jpg" alt="Phoenix Arizona skyline" fill className="object-cover" loading="lazy" />
+          <Image src="/images/arizona-skyline-panoramic.jpg" alt="Phoenix Arizona skyline" fill className="object-cover" loading="lazy" sizes="100vw" />
         </div>
         <div className="absolute inset-0 z-[1]" style={{ background: "linear-gradient(160deg, rgba(15,31,54,0.92) 0%, rgba(27,42,63,0.88) 50%, rgba(30,107,184,0.75) 100%)" }} />
         <div className="absolute inset-0 grain-overlay z-[2]" />

@@ -114,7 +114,7 @@ export default function HomePage() {
       {/* ========== 1. HERO SECTION ========== */}
       <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0 z-0">
-          <Image src={IMAGES.hero.truck} alt="Axle Towing fleet of tow trucks" fill className="object-cover" priority fetchPriority="high" />
+          <Image src={IMAGES.hero.truck} alt="Axle Towing fleet of tow trucks" fill className="object-cover" priority fetchPriority="high" sizes="100vw" />
         </div>
         {/* Lighter, more balanced overlay — shows the image better */}
         <div
@@ -299,7 +299,7 @@ export default function HomePage() {
       {/* ========== 3. WHY CHOOSE US — Refined overlay ========== */}
       <section className="relative py-32 overflow-hidden">
         <div className="absolute inset-0 z-0">
-          <Image src={IMAGES.hero.parkingLot} alt="Phoenix parking lot" fill className="object-cover" />
+          <Image src={IMAGES.hero.parkingLot} alt="Phoenix parking lot" fill className="object-cover" loading="lazy" sizes="100vw" />
         </div>
         <div className="absolute inset-0 z-[1]" style={{ background: "linear-gradient(160deg, rgba(27,42,63,0.88) 0%, rgba(30,107,184,0.7) 100%)" }} />
         <div className="hero-text relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -711,7 +711,7 @@ export default function HomePage() {
       {/* ========== 7. CTA BANNER ========== */}
       <section className="relative py-24 overflow-hidden">
         <div className="absolute inset-0 z-0">
-          <Image src="/images/arizona-skyline-panoramic.jpg" alt="Phoenix Arizona skyline" fill className="object-cover" />
+          <Image src="/images/arizona-skyline-panoramic.jpg" alt="Phoenix Arizona skyline" fill className="object-cover" loading="lazy" sizes="100vw" />
         </div>
         <div className="absolute inset-0 z-[1]" style={{ background: "linear-gradient(160deg, rgba(15,31,54,0.92) 0%, rgba(27,42,63,0.88) 50%, rgba(30,107,184,0.75) 100%)" }} />
         <div className="hero-text relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-white reveal">
@@ -744,7 +744,7 @@ export default function HomePage() {
             {BLOG_POSTS.map((post, i) => (
               <Link key={post.title} href={post.slug} className="glass-card rounded-2xl overflow-hidden group reveal" style={{ transitionDelay: `${i * 150}ms` }}>
                 <div className="h-48 relative overflow-hidden">
-                  <Image src={post.image} alt={post.title} fill className="object-cover group-hover:scale-105 transition-transform duration-500" />
+                  <Image src={post.image} alt={post.title} fill className="object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" sizes="(max-width: 768px) 100vw, 33vw" />
                 </div>
                 <div className="p-6">
                   <h3 className="text-lg font-bold font-heading mb-3 group-hover:text-blue-600 transition-colors leading-snug" style={{ color: '#1a202c' }}>{post.title}</h3>
