@@ -20,7 +20,7 @@ function useParallax() {
 
 /* ── TowBook Login URLs ── */
 const TOWBOOK_LOGIN_URL = "https://app.towbook.com";
-const TOWBOOK_MANAGER_URL = "https://manager.towbook.com";
+const TOWBOOK_MANAGER_URL = "https://app.towbook.com";
 
 /* ── Manager Login Cards ── */
 const MANAGER_LOGINS = [
@@ -108,9 +108,9 @@ const PORTAL_OPTIONS = [
   {
     title: "Vehicle Lookup",
     subtitle: "Vehicle Owners",
-    desc: "Check if your vehicle was towed and get instructions for retrieval.",
-    href: "/vehicle-lookup",
-    external: false,
+    desc: "Check if your vehicle was towed by entering your license plate on the TowBook portal.",
+    href: "https://axletowing7900.towbook.net",
+    external: true,
     cta: "Locate My Vehicle",
     icon: (
       <svg className="w-8 h-8" fill="none" stroke="currentColor" strokeWidth={1.5} viewBox="0 0 24 24">

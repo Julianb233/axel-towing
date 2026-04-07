@@ -22,10 +22,40 @@ function useParallax() {
 export default function ContactContent() {
   const parallaxRef = useParallax();
   const [submitted, setSubmitted] = useState(false);
+  const [submitting, setSubmitting] = useState(false);
+  const [error, setError] = useState("");
 
-  function handleSubmit(e: FormEvent) {
+  async function handleSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
-    setSubmitted(true);
+    setSubmitting(true);
+    setError("");
+
+    const form = e.currentTarget;
+    const formData = new FormData(form);
+
+    try {
+      const res = await fetch("/api/leads", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          name: formData.get("name"),
+          email: formData.get("email"),
+          phone: formData.get("phone"),
+          propertyType: formData.get("propertyType"),
+          timeline: formData.get("timeline"),
+          spaces: formData.get("spaces"),
+          message: formData.get("message"),
+          source: "contact-form",
+        }),
+      });
+
+      if (!res.ok) throw new Error("Failed to submit");
+      setSubmitted(true);
+    } catch {
+      setError("Something went wrong. Please call us at " + COMPANY.phone + " instead.");
+    } finally {
+      setSubmitting(false);
+    }
   }
 
   return (
@@ -88,6 +118,7 @@ export default function ContactContent() {
                         Full Name *
                       </label>
                       <input
+                        name="name"
                         type="text"
                         required
                         className="w-full border border-gray-300 rounded-lg px-4 py-3 focus:ring-2 focus:ring-primary focus:border-primary outline-none transition bg-white"
@@ -100,6 +131,7 @@ export default function ContactContent() {
                           Email *
                         </label>
                         <input
+                          name="email"
                           type="email"
                           required
                           className="w-full border border-gray-300 rounded-lg px-4 py-3 focus:ring-2 focus:ring-primary focus:border-primary outline-none transition bg-white"
@@ -111,6 +143,7 @@ export default function ContactContent() {
                           Phone
                         </label>
                         <input
+                          name="phone"
                           type="tel"
                           className="w-full border border-gray-300 rounded-lg px-4 py-3 focus:ring-2 focus:ring-primary focus:border-primary outline-none transition bg-white"
                           placeholder="(480) 555-1234"
@@ -122,6 +155,7 @@ export default function ContactContent() {
                         Property Type *
                       </label>
                       <select
+                        name="propertyType"
                         required
                         className="w-full border border-gray-300 rounded-lg px-4 py-3 focus:ring-2 focus:ring-primary focus:border-primary outline-none transition bg-white"
                       >
@@ -139,6 +173,7 @@ export default function ContactContent() {
                           How soon do you need service? *
                         </label>
                         <select
+                          name="timeline"
                           required
                           className="w-full border border-gray-300 rounded-lg px-4 py-3 focus:ring-2 focus:ring-primary focus:border-primary outline-none transition bg-white"
                         >
@@ -153,6 +188,7 @@ export default function ContactContent() {
                           Estimated parking spaces
                         </label>
                         <input
+                          name="spaces"
                           type="number"
                           min={1}
                           className="w-full border border-gray-300 rounded-lg px-4 py-3 focus:ring-2 focus:ring-primary focus:border-primary outline-none transition bg-white"
@@ -165,13 +201,23 @@ export default function ContactContent() {
                         Message
                       </label>
                       <textarea
+                        name="message"
                         rows={4}
                         className="w-full border border-gray-300 rounded-lg px-4 py-3 focus:ring-2 focus:ring-primary focus:border-primary outline-none transition resize-none bg-white"
                         placeholder="Tell us about your property and parking challenges..."
                       />
                     </div>
-                    <button type="submit" className="btn-primary w-full text-center justify-center">
-                      Submit Request
+                    {error && (
+                      <div className="p-3 bg-red-50 border border-red-200 rounded-lg text-red-700 text-sm">
+                        {error}
+                      </div>
+                    )}
+                    <button
+                      type="submit"
+                      disabled={submitting}
+                      className="btn-primary w-full text-center justify-center disabled:opacity-60"
+                    >
+                      {submitting ? "Submitting..." : "Submit Request"}
                     </button>
                   </form>
                 )}
