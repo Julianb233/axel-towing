@@ -168,7 +168,7 @@ export default function ReferralPage() {
     <>
       {/* Hero */}
       <section className="parallax-container relative min-h-[60vh] flex items-center text-white overflow-hidden">
-        <div ref={parallaxRef} className="parallax-bg" style={{ backgroundImage: "url(/images/hero-parking-lot.jpg)" }} />
+        <div ref={parallaxRef} className="parallax-bg" style={{ backgroundImage: "url(/images/optimized/axle-towing-hero-parking-lot-phoenix-az.webp)" }} />
         <div className="absolute inset-0 z-[1]" style={{ background: "linear-gradient(160deg, rgba(15,31,54,0.92) 0%, rgba(30,107,184,0.75) 100%)" }} />
         <div className="absolute inset-0 grain-overlay z-[2]" />
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 md:py-32 w-full">

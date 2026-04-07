@@ -135,7 +135,7 @@ export default function LocksmithPartnersPage() {
       {/* ===== HERO ===== */}
       <section
         className="parallax-fixed relative min-h-[60vh] flex items-center"
-        style={{ backgroundImage: `url(/images/hero-parking-lot.jpg)` }}
+        style={{ backgroundImage: `url(/images/optimized/axle-towing-hero-parking-lot-phoenix-az.webp)` }}
       >
         <div className="absolute inset-0 bg-gradient-to-br from-blue-950/95 via-blue-900/80 to-primary/60" />
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 md:py-32 w-full">
