@@ -3,6 +3,7 @@ import { sendDispatchEmail } from '@/lib/dispatch-email';
 import { sendDispatchSms } from '@/lib/dispatch-sms';
 import { storeDispatchRequest } from '@/lib/supabase';
 import { syncLeadToGHL } from '@/lib/ghl';
+import { calculateLeadScore, estimateMonthlyValue } from '@/lib/lead-scoring';
 
 /**
  * POST /api/leads
@@ -12,7 +13,8 @@ import { syncLeadToGHL } from '@/lib/ghl';
  * - Homepage multi-step form
  * - Service page inline forms
  *
- * Sends notifications via email + SMS and stores in Supabase.
+ * Sends notifications via email + SMS, stores in Supabase, syncs to GHL,
+ * calculates lead score, and auto-enrolls into drip sequences.
  */
 export async function POST(req: Request) {
   try {
@@ -32,6 +34,19 @@ export async function POST(req: Request) {
     }
 
     const referenceId = `LEAD-${Date.now().toString(36).toUpperCase()}-${Math.random().toString(36).substring(2, 6).toUpperCase()}`;
+
+    // Calculate lead score
+    const leadScore = calculateLeadScore({
+      source,
+      propertyType: body.propertyType,
+      units: body.units ? Number(body.units) : undefined,
+      hasPhoneCalled: source === 'phone',
+      timeline: body.timeline,
+    });
+    const monthlyValue = estimateMonthlyValue({
+      propertyType: body.propertyType,
+      units: body.units ? Number(body.units) : undefined,
+    });
 
     // Build a human-readable summary
     const details: string[] = [
@@ -54,6 +69,8 @@ export async function POST(req: Request) {
     if (body.vehicleDetails) details.push(`Vehicle Details: ${body.vehicleDetails}`);
     if (body.location) details.push(`Location: ${body.location}`);
 
+    details.push(`Lead Score: ${leadScore.totalScore} (${leadScore.tier})`);
+    details.push(`Est. Monthly Value: $${monthlyValue.toLocaleString()}`);
     details.push(``);
     details.push(
       `Submitted: ${new Date().toLocaleString('en-US', { timeZone: 'America/Phoenix' })}`
@@ -75,7 +92,7 @@ export async function POST(req: Request) {
       ),
       sendDispatchSms(
         referenceId,
-        `New Lead (${source}): ${name || 'Unknown'}\n${phone || email || 'No contact'}\nRef: ${referenceId}`
+        `New Lead (${source}): ${name || 'Unknown'}\n${phone || email || 'No contact'}\nScore: ${leadScore.totalScore} (${leadScore.tier})\nRef: ${referenceId}`
       ),
       storeDispatchRequest({
         reference_id: referenceId,
@@ -123,10 +140,38 @@ export async function POST(req: Request) {
     };
     console.log('Lead integrations:', results);
 
+    // Auto-enroll into drip sequence if email is provided
+    if (email) {
+      try {
+        const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 'https://axletowing.com';
+        await fetch(`${baseUrl}/api/drip`, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            email,
+            name: name || '',
+            sequenceType: 'new-lead-nurture',
+            metadata: {
+              propertyName: body.propertyName || body.propertyAddress || '',
+              source,
+              referenceId,
+              leadScore: String(leadScore.totalScore),
+            },
+          }),
+        });
+        console.log(`[leads] Auto-enrolled ${email} into new-lead-nurture drip`);
+      } catch (dripError) {
+        console.warn('[leads] Drip auto-enrollment failed:', dripError);
+      }
+    }
+
     return NextResponse.json({
       success: true,
       referenceId,
       message: 'Lead received',
+      leadScore: leadScore.totalScore,
+      leadTier: leadScore.tier,
+      estimatedMonthlyValue: monthlyValue,
     });
   } catch (error) {
     console.error('Lead API error:', error);

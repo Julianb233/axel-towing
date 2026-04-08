@@ -52,9 +52,11 @@ export async function POST(req: Request) {
     const validStages: PipelineStage[] = [
       'new-lead',
       'contacted',
-      'demo-scheduled',
+      'consultation-scheduled',
       'proposal-sent',
+      'negotiation',
       'won',
+      'active-account',
       'lost',
     ];
 
@@ -71,7 +73,6 @@ export async function POST(req: Request) {
     }
 
     // In production, this would update GHL via the API and persist to DB
-    // For now, return the simulated updated contact
     const updatedContact = {
       ...contact,
       stage,
