@@ -1,0 +1,12 @@
+{
+  "project": "axle-towing",
+  "version": "2.0",
+  "milestone": "Outbound Marketing & Automation",
+  "created": "2026-04-09",
+  "linearTeam": "AI",
+  "linearLabels": ["paid-active", "axle-towing"],
+  "linearIssues": ["AI-7427", "AI-7428", "AI-7429", "AI-7430", "AI-7431", "AI-7432", "AI-7433", "AI-7434", "AI-7435", "AI-7436", "AI-7437", "AI-7438", "AI-7439", "AI-7440"],
+  "stitchProjectId": "12363110404051190167",
+  "domain": "axletowing.com",
+  "vercelProjectId": "prj_uBSTE2rWwZFGjWhCaJoPmKUnsUre"
+}
