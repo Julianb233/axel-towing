@@ -16,24 +16,20 @@ interface ChangelogGroup {
 
 const changelog: ChangelogGroup[] = [
   {
-    date: "April 2, 2026 (Google Business Profile Verification Research — AI-6659)",
+    date: "April 8, 2026 (TowBook Vehicle Lookup Integration Spec — AI-2171)",
     type: "completed",
     entries: [
       {
-        text: "Researched GBP listing status for both locations — Apache Junction listing confirmed across Yelp, Yahoo Local, Loc8NearMe, BBB, and AZ Chamber; Phoenix listing appears to have less presence in directories",
-        category: "seo",
-      },
-      {
-        text: "Created comprehensive GBP Verification Action Plan with step-by-step instructions for Elliott to claim/verify both locations, including video verification tips specific to towing companies",
+        text: "Researched TowBook (TOBO) API availability — confirmed no public REST API exists; vehicle lookup is a hosted portal at axletowing7900.towbook.net",
         category: "strategy",
       },
       {
-        text: "Identified GSC-first verification strategy — Google Search Console verification is coded into the website (layout.tsx) but not yet activated; verifying GSC first may unlock instant GBP verification",
-        category: "seo",
+        text: "Documented current integration: /vehicle-lookup page already links to TowBook portal; /locate-vehicle has a non-functional dummy form that should be consolidated",
+        category: "website",
       },
       {
-        text: "Drafted ready-to-send iMessage for Julian to send Elliott requesting GBP access check, claim initiation, and Manager access grant for julian@aiacrobatics.com",
-        category: "strategy",
+        text: "Created TOWBOOK-INTEGRATION-SPEC.md with three integration options (external link, iframe embed, hybrid), action items for client, and implementation plan for AI-2176",
+        category: "infrastructure",
       },
     ],
   },
