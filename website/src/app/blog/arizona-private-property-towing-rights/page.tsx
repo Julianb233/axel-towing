@@ -26,11 +26,11 @@ const RELATED_ARTICLES = [
     gradient: "from-blue-400 via-cyan-600 to-blue-800",
   },
   {
-    slug: "tenant-rights-when-car-is-towed-arizona",
+    slug: "arizona-fire-lane-towing-laws",
     title:
-      "Tenant Rights When Your Car Is Towed in Arizona: What the Law Says",
+      "Arizona Fire Lane Laws: When You Can (and Must) Tow Violators",
     category: "Arizona Towing Laws",
-    readTime: "8 min",
+    readTime: "7 min",
     gradient: "from-indigo-500 via-purple-600 to-indigo-800",
   },
 ];

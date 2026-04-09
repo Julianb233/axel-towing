@@ -18,11 +18,11 @@ const RELATED_ARTICLES = [
     gradient: "from-blue-600 via-blue-800 to-blue-950",
   },
   {
-    slug: "arizona-impound-fees-what-to-expect",
+    slug: "arizona-towing-laws-ars-28-3511-explained",
     title:
-      "Arizona Impound Fees: What Property Owners and Vehicle Owners Should Know",
+      "Arizona Towing Laws: ARS 28-3511 Explained in Plain English",
     category: "Arizona Towing Laws",
-    readTime: "8 min",
+    readTime: "10 min",
     gradient: "from-blue-400 via-cyan-600 to-blue-800",
   },
   {

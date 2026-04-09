@@ -18,9 +18,9 @@ const RELATED_ARTICLES = [
     gradient: "from-blue-600 via-blue-800 to-blue-950",
   },
   {
-    slug: "arizona-impound-fees-what-to-expect",
+    slug: "arizona-vehicle-lien-laws-towing-companies",
     title:
-      "Arizona Impound Fees: What Property Owners and Vehicle Owners Should Know",
+      "Arizona Vehicle Lien Laws for Towing Companies: A Legal Overview",
     category: "Arizona Towing Laws",
     readTime: "8 min",
     gradient: "from-blue-400 via-cyan-600 to-blue-800",
