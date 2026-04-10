@@ -16,6 +16,32 @@ interface ChangelogGroup {
 
 const changelog: ChangelogGroup[] = [
   {
+    date: "April 9, 2026 (Vehicle-Owner Content Cleanup & Deploy — AI-7507, AI-7509, AI-7510)",
+    type: "completed",
+    entries: [
+      {
+        text: "Removed all vehicle-owner-resources blog articles (12+ English pages, 4 Spanish pages) — these targeted car owners rather than property managers, diluting SEO focus and brand positioning",
+        category: "seo",
+      },
+      {
+        text: "Removed 'Vehicle Owner Resources' category from blog page — blog now shows 5 focused categories for property managers, HOAs, and commercial properties",
+        category: "website",
+      },
+      {
+        text: "Cleaned up sitemap.xml — removed deleted article URLs so Google indexes only live, relevant content",
+        category: "seo",
+      },
+      {
+        text: "Updated internal links across 6 remaining articles that previously pointed to deleted vehicle-owner content",
+        category: "website",
+      },
+      {
+        text: "Verified live deployment — all deleted pages correctly return 404, blog and Spanish blog display correctly",
+        category: "infrastructure",
+      },
+    ],
+  },
+  {
     date: "April 2, 2026 (Google Business Profile Verification Research — AI-6659)",
     type: "completed",
     entries: [
