@@ -28,7 +28,6 @@ type CategoryKey =
   | 'arizona-towing-laws'
   | 'hoa-resources'
   | 'commercial-apartment'
-  | 'vehicle-owner-resources'
   | 'safety-community';
 
 interface Category {
@@ -64,12 +63,6 @@ const CATEGORIES: Category[] = [
     textColor: 'text-purple-700',
   },
   {
-    key: 'vehicle-owner-resources',
-    label: 'Vehicle Owner Resources',
-    color: 'bg-red-100',
-    textColor: 'text-red-700',
-  },
-  {
     key: 'safety-community',
     label: 'Safety & Community',
     color: 'bg-teal-100',
@@ -78,7 +71,7 @@ const CATEGORIES: Category[] = [
 ];
 
 // ---------------------------------------------------------------------------
-// Article data — 62 articles (2 existing + 60 new)
+// Article data — 47 articles (vehicle-owner articles removed per AI-7507)
 // ---------------------------------------------------------------------------
 
 interface Article {
@@ -230,15 +223,6 @@ const ARTICLES: Article[] = [
       'How ADA and Arizona law apply to handicap parking enforcement on private property, including signage and towing authority.',
   },
   {
-    slug: 'arizona-impound-fees-what-to-expect',
-    title: 'Arizona Impound Fees: What to Expect',
-    category: 'arizona-towing-laws',
-    readTime: '6 min',
-    gradient: 'from-amber-500 via-yellow-700 to-amber-900',
-    description:
-      'A transparent breakdown of Arizona impound fee limits, storage charges, and what the law allows towing companies to charge.',
-  },
-  {
     slug: 'arizona-tow-truck-regulations',
     title: 'Arizona Tow Truck Regulations',
     category: 'arizona-towing-laws',
@@ -264,33 +248,6 @@ const ARTICLES: Article[] = [
     gradient: 'from-amber-600 via-yellow-800 to-amber-950',
     description:
       'How Phoenix municipal codes interact with state towing law, and what property managers need to know about city-specific rules.',
-  },
-  {
-    slug: 'can-my-car-be-towed-without-warning',
-    title: 'Can My Car Be Towed Without Warning?',
-    category: 'arizona-towing-laws',
-    readTime: '5 min',
-    gradient: 'from-red-600 via-rose-700 to-red-900',
-    description:
-      'When Arizona law allows towing without prior notice, and when advance warning is required.',
-  },
-  {
-    slug: 'how-to-dispute-towing-charges-arizona',
-    title: 'How to Dispute Towing Charges in Arizona',
-    category: 'arizona-towing-laws',
-    readTime: '7 min',
-    gradient: 'from-orange-500 via-red-600 to-orange-800',
-    description:
-      'Step-by-step guide to disputing a tow or impound charges you believe are unfair or unlawful in Arizona.',
-  },
-  {
-    slug: 'towed-vehicle-auction-process-arizona',
-    title: 'The Towed Vehicle Auction Process in Arizona',
-    category: 'arizona-towing-laws',
-    readTime: '6 min',
-    gradient: 'from-yellow-700 via-amber-800 to-yellow-950',
-    description:
-      'How unclaimed vehicles move from impound to auction under Arizona law, including timelines and owner rights.',
   },
 
   // ── HOA Resources (12 articles) ────────────────────────────────────────
@@ -513,80 +470,6 @@ const ARTICLES: Article[] = [
       'How professional parking enforcement protects accessible spaces and ensures ADA compliance on private property.',
   },
 
-  // ── Vehicle Owner Resources (8 articles) ───────────────────────────────
-  {
-    slug: 'what-to-do-when-car-towed-phoenix',
-    title: 'What to Do When Your Car Gets Towed in Phoenix',
-    category: 'vehicle-owner-resources',
-    readTime: '6 min',
-    gradient: 'from-red-500 via-rose-600 to-red-800',
-    description:
-      'Step-by-step guide for vehicle owners on what to do immediately after discovering your car has been towed in Phoenix.',
-  },
-  {
-    slug: 'how-to-retrieve-impounded-vehicle-arizona',
-    title: 'How to Retrieve an Impounded Vehicle in Arizona',
-    category: 'vehicle-owner-resources',
-    readTime: '7 min',
-    gradient: 'from-rose-500 via-red-600 to-rose-800',
-    description:
-      'Everything you need to bring, where to go, and how to get your impounded vehicle back as quickly as possible.',
-  },
-  {
-    slug: 'understanding-towing-fees-arizona',
-    title: 'Understanding Towing Fees in Arizona',
-    category: 'vehicle-owner-resources',
-    readTime: '5 min',
-    gradient: 'from-red-600 via-rose-700 to-red-900',
-    description:
-      'A clear breakdown of what towing fees you can expect, what the legal maximums are, and how to dispute unfair charges.',
-  },
-  {
-    slug: 'tenant-rights-when-car-is-towed-arizona',
-    title: 'Tenant Rights When Your Car Is Towed in Arizona',
-    category: 'vehicle-owner-resources',
-    readTime: '7 min',
-    gradient: 'from-rose-600 via-pink-700 to-rose-900',
-    description:
-      'What apartment and HOA residents need to know about their rights when their vehicle is towed from their own community.',
-  },
-  {
-    slug: 'vehicle-towed-from-apartment-rights',
-    title: 'Vehicle Towed from Apartment: Know Your Rights',
-    category: 'vehicle-owner-resources',
-    readTime: '6 min',
-    gradient: 'from-red-500 via-rose-600 to-red-800',
-    description:
-      'Your rights when a vehicle is towed from an apartment complex, including wrongful tow protections under Arizona law.',
-  },
-  {
-    slug: 'personal-belongings-towed-vehicle-arizona',
-    title: 'Personal Belongings in a Towed Vehicle: Arizona Rights',
-    category: 'vehicle-owner-resources',
-    readTime: '5 min',
-    gradient: 'from-pink-500 via-rose-600 to-pink-800',
-    description:
-      'Arizona law requires impound lots to allow access to personal belongings. Know your rights and the process.',
-  },
-  {
-    slug: 'rental-car-towed-private-property',
-    title: 'Rental Car Towed from Private Property',
-    category: 'vehicle-owner-resources',
-    readTime: '5 min',
-    gradient: 'from-red-600 via-orange-700 to-red-900',
-    description:
-      'What happens when a rental car gets towed, who is responsible for fees, and how to handle the situation.',
-  },
-  {
-    slug: 'avoiding-private-property-towing-tips',
-    title: 'Tips for Avoiding Private Property Towing',
-    category: 'vehicle-owner-resources',
-    readTime: '4 min',
-    gradient: 'from-rose-500 via-red-600 to-rose-800',
-    description:
-      'Simple steps drivers can take to avoid getting towed from private property in Arizona.',
-  },
-
   // ── Safety & Community (8 articles) ────────────────────────────────────
   {
     slug: 'fire-lane-safety-why-it-matters',
@@ -672,24 +555,6 @@ const ARTICLES: Article[] = [
       'Compare the top private property towing companies in Phoenix by coverage, response time, cost, and services offered.',
   },
   {
-    slug: 'impound-fees-phoenix-cost-guide',
-    title: 'How Much Does It Cost to Get Your Car Out of Impound in Phoenix?',
-    category: 'vehicle-owner-resources',
-    readTime: '10 min',
-    gradient: 'from-red-600 via-red-800 to-red-950',
-    description:
-      'Complete 2026 guide to Phoenix impound fees: tow charges, daily storage, admin fees, and your legal rights.',
-  },
-  {
-    slug: 'car-towed-phoenix-what-to-do',
-    title: "Car Towed in Phoenix? Here's Exactly What to Do",
-    category: 'vehicle-owner-resources',
-    readTime: '9 min',
-    gradient: 'from-orange-600 via-red-700 to-orange-900',
-    description:
-      'Step-by-step guide to recovering your vehicle after a tow in Phoenix. Act fast — storage fees accumulate daily.',
-  },
-  {
     slug: 'arizona-private-property-towing-laws-complete-guide',
     title: 'Arizona Private Property Towing Laws: Complete 2026 Guide',
     category: 'arizona-towing-laws',
@@ -715,24 +580,6 @@ const ARTICLES: Article[] = [
     gradient: 'from-green-600 via-emerald-700 to-green-900',
     description:
       'Download free Arizona-compliant towing authorization sign templates. Includes size, language, and placement requirements.',
-  },
-  {
-    slug: 'predatory-towing-phoenix-how-to-spot-it',
-    title: 'Predatory Towing in Phoenix: How to Spot It',
-    category: 'arizona-towing-laws',
-    readTime: '11 min',
-    gradient: 'from-red-700 via-rose-800 to-red-950',
-    description:
-      'Learn to identify predatory towing practices in Phoenix and what Arizona law says about unethical enforcement.',
-  },
-  {
-    slug: 'phoenix-impound-lots-tow-yards-complete-map',
-    title: 'Complete Map of Phoenix Impound Lots & Tow Yards (2026)',
-    category: 'vehicle-owner-resources',
-    readTime: '8 min',
-    gradient: 'from-slate-600 via-blue-700 to-slate-900',
-    description:
-      'Directory of all major impound lots and tow yards serving the Phoenix metro area with addresses and contact info.',
   },
   {
     slug: 'private-property-towing-scottsdale-az-guide',
@@ -823,15 +670,6 @@ const ARTICLES: Article[] = [
     gradient: 'from-blue-700 via-indigo-800 to-blue-950',
     description:
       'A step-by-step 7-day action plan for property managers to launch professional parking enforcement quickly.',
-  },
-  {
-    slug: 'car-towed-asu-tempe-student-guide',
-    title: 'Car Towed Near ASU? Student Guide to Getting It Back',
-    category: 'vehicle-owner-resources',
-    readTime: '8 min',
-    gradient: 'from-red-800 via-rose-900 to-red-950',
-    description:
-      'ASU students: quick guide to recovering your towed vehicle in Tempe. Know your rights and save money.',
   },
   {
     slug: 'apartment-complex-losing-money-without-parking-enforcement',

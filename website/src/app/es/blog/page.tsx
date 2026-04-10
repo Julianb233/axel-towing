@@ -44,36 +44,6 @@ const ARTICLES_ES: ArticleES[] = [
     date: '24 de marzo, 2026',
   },
   {
-    slug: 'como-recuperar-vehiculo-del-corralon-arizona',
-    title: 'Como Recuperar Tu Vehiculo del Corralon en Arizona',
-    description:
-      'Todo lo que necesita saber: documentos requeridos, tarifas, horarios y pasos para recuperar su carro del corralon en Arizona.',
-    category: 'Guias para Conductores',
-    readTime: '9 min',
-    gradient: 'from-red-600 via-red-800 to-red-950',
-    date: '24 de marzo, 2026',
-  },
-  {
-    slug: 'derechos-conductores-cuando-remolcan-auto-arizona',
-    title: 'Derechos de los Conductores Cuando Remolcan Tu Auto en Arizona',
-    description:
-      'Conozca sus derechos legales cuando su vehiculo es remolcado en Arizona. Informacion sobre la ley ARS en espanol para conductores.',
-    category: 'Derechos y Leyes',
-    readTime: '7 min',
-    gradient: 'from-amber-500 via-orange-600 to-amber-800',
-    date: '24 de marzo, 2026',
-  },
-  {
-    slug: 'guia-estacionamiento-inquilinos-apartamentos-phoenix',
-    title: 'Guia de Estacionamiento para Inquilinos de Apartamentos en Phoenix',
-    description:
-      'Entienda las reglas de estacionamiento en complejos de apartamentos, que pasa si parcan su carro en lugar incorrecto, y como evitar que remolquen su vehiculo.',
-    category: 'Para Inquilinos',
-    readTime: '7 min',
-    gradient: 'from-emerald-600 via-green-700 to-emerald-900',
-    date: '24 de marzo, 2026',
-  },
-  {
     slug: 'servicio-grua-gratis-para-propietarios-como-funciona',
     title: 'Servicio de Grua Gratis para Propietarios — Como Funciona',
     description:
@@ -111,16 +81,6 @@ const ARTICLES_ES: ArticleES[] = [
     category: 'Para Propietarios',
     readTime: '8 min',
     gradient: 'from-purple-600 via-violet-700 to-purple-900',
-    date: '24 de marzo, 2026',
-  },
-  {
-    slug: 'cuanto-cuesta-grua-arizona-guia-precios-2026',
-    title: 'Cuanto Cuesta una Grua en Arizona? Guia de Precios 2026',
-    description:
-      'Desglose completo de las tarifas de grua en Arizona: que factores afectan el precio, servicios gratuitos vs pagados, y que esperar al pagar.',
-    category: 'Guias para Conductores',
-    readTime: '6 min',
-    gradient: 'from-teal-600 via-emerald-700 to-teal-900',
     date: '24 de marzo, 2026',
   },
   {

@@ -193,14 +193,10 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
     ...[
       'que-hacer-cuando-tu-auto-se-descompone-en-phoenix',
-      'como-recuperar-vehiculo-del-corralon-arizona',
-      'derechos-conductores-cuando-remolcan-auto-arizona',
-      'guia-estacionamiento-inquilinos-apartamentos-phoenix',
       'servicio-grua-gratis-para-propietarios-como-funciona',
       'que-hacer-despues-accidente-auto-arizona',
       'temporada-de-monsones-protege-tu-auto-phoenix',
       'guia-administradores-propiedad-programa-remolque-espanol',
-      'cuanto-cuesta-grua-arizona-guia-precios-2026',
       'vehiculos-abandonados-propiedad-privada-que-hacer',
     ].map((slug) => ({
       url: `${BASE_URL}/es/blog/${slug}`,

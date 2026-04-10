@@ -26,11 +26,11 @@ const RELATED_ARTICLES = [
     gradient: "from-blue-400 via-cyan-600 to-blue-800",
   },
   {
-    slug: "arizona-impound-fees-what-to-expect",
+    slug: "arizona-private-property-towing-rights",
     title:
-      "Arizona Impound Fees: What Property Owners and Vehicle Owners Should Know",
+      "Your Rights: Arizona Private Property Towing Laws for Property Owners",
     category: "Arizona Towing Laws",
-    readTime: "8 min",
+    readTime: "9 min",
     gradient: "from-indigo-500 via-purple-600 to-indigo-800",
   },
 ];
