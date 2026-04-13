@@ -1,0 +1,31 @@
+Workflow: PM Nurture -- 21 Day
+Type: Email
+Step: 1 of 9
+Day: 1
+Subject A: Free parking enforcement for {{contact.company_name}}?
+Subject B: Unauthorized parking at {{contact.company_name}} — we can help
+From: elliott@axletowing.com
+From Name: Elliott -- Axle Towing
+Tag Trigger: nurture-active
+
+--- EMAIL BODY ---
+
+Hi {{contact.first_name}},
+
+I'm Elliott with Axle Towing & Impound. I work with property managers and HOA boards across the Phoenix metro to handle unauthorized parking and vehicle removal — fast, compliant, and at zero cost to the property.
+
+Here's what we offer property accounts:
+
+- Free towing enforcement — no cost to your property or HOA budget
+- Response typically within 60 minutes, 24/7/365
+- Fully compliant with ARS Chapter 28 — we handle the paperwork and documentation
+- One point of contact — my direct cell, not a call center
+
+We service 38+ cities across the Valley and have 30+ years of combined team experience.
+
+Would you be open to a 15-minute call this week to see if it's a fit for {{contact.company_name}}?
+
+Elliott
+Axle Towing & Impound
+(480) 288-5526
+axletowing.com
