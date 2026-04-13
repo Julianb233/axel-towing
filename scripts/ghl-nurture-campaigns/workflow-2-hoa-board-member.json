@@ -1,0 +1,26 @@
+{
+  "name": "Nurture - HOA Board Member (25-Day Email Sequence)",
+  "description": "5-email personalized sequence for HOA board members. Addresses liability, compliance, and resident complaints.",
+  "task": "AI-7461",
+  "trigger": {"type": "tag_added", "tag": "hoa-board-member"},
+  "steps": [
+    {"order": 1, "action": "add_tag", "tag": "nurture-active"},
+    {"order": 2, "action": "send_email", "delay": "0 minutes", "template": "Nurture - HOA - Email 1", "subject": "HOA board members in {{contact.city}} - are parking violations becoming a liability?", "from": "elliott@axletowing.com", "template_file": "hoa-email-1.html", "notes": "Day 0"},
+    {"order": 3, "action": "wait", "delay": "4 days"},
+    {"order": 4, "action": "send_email", "template": "Nurture - HOA - Email 2", "subject": "The 3 most common HOA towing mistakes (and how to avoid them)", "from": "elliott@axletowing.com", "template_file": "hoa-email-2.html", "notes": "Day 4"},
+    {"order": 5, "action": "wait", "delay": "5 days", "notes": "Day 9"},
+    {"order": 6, "action": "send_email", "template": "Nurture - HOA - Email 3", "subject": "{{contact.company_name}} - what happens when residents complain?", "from": "elliott@axletowing.com", "template_file": "hoa-email-3.html", "notes": "Day 9"},
+    {"order": 7, "action": "wait", "delay": "7 days", "notes": "Day 16"},
+    {"order": 8, "action": "send_email", "template": "Nurture - HOA - Email 4", "subject": "HOA boards who switched to Axle Towing say this most", "from": "elliott@axletowing.com", "template_file": "hoa-email-4.html", "notes": "Day 16"},
+    {"order": 9, "action": "wait", "delay": "9 days", "notes": "Day 25"},
+    {"order": 10, "action": "send_email", "template": "Nurture - HOA - Email 5", "subject": "Before I move on - one last thought for {{contact.company_name}}", "from": "elliott@axletowing.com", "template_file": "hoa-email-5.html", "notes": "Day 25"},
+    {"order": 11, "action": "remove_tag", "tag": "nurture-active"},
+    {"order": 12, "action": "add_tag", "tag": "nurture-completed"}
+  ],
+  "stop_conditions": [
+    {"type": "reply_received", "action": "move_to_stage", "stage": "Engaged"},
+    {"type": "tag_added", "tag": "call-booked", "action": "pause_sequence"},
+    {"type": "tag_added", "tag": "do-not-contact", "action": "end_sequence"}
+  ],
+  "send_window": {"email": "8:00-17:00 Mon-Fri America/Phoenix"}
+}

@@ -1,0 +1,39 @@
+{
+  "name": "Nurture - Cold Outreach (21-Day Multi-Channel)",
+  "description": "5-touch multi-channel sequence for new cold prospects. Email + SMS + voicemail over 21 days.",
+  "task": "AI-7461",
+  "trigger": {
+    "type": "pipeline_stage_changed",
+    "pipeline": "Property Accounts",
+    "stage": "New Lead"
+  },
+  "steps": [
+    {"order": 1, "action": "add_tag", "tag": "nurture-active", "notes": "Mark contact as in active nurture sequence"},
+    {"order": 2, "action": "add_tag", "tag": "cold-prospect"},
+    {"order": 3, "action": "send_email", "delay": "0 minutes", "template": "Nurture - Cold - Email 1 - Introduction", "subject": "Unauthorized parking at {{contact.company_name}}?", "from": "elliott@axletowing.com", "template_file": "cold-email-1.html", "notes": "Day 0 - Introduction + value prop"},
+    {"order": 4, "action": "wait", "delay": "2 days"},
+    {"order": 5, "action": "send_sms", "template": "Nurture - Cold - SMS 1", "message": "Hi {{contact.first_name}}, this is Elliott from Axle Towing. Did you get my email about unauthorized parking enforcement for {{contact.company_name}}? Happy to answer any questions - just reply here.", "notes": "Day 2 (155 chars)"},
+    {"order": 6, "action": "wait", "delay": "3 days", "notes": "Day 5"},
+    {"order": 7, "action": "send_email", "template": "Nurture - Cold - Email 2 - Social Proof", "subject": "How Pinnacle Ridge HOA eliminated parking complaints in 30 days", "from": "elliott@axletowing.com", "template_file": "cold-email-2.html", "notes": "Day 5"},
+    {"order": 8, "action": "wait", "delay": "3 days", "notes": "Day 8"},
+    {"order": 9, "action": "drop_voicemail", "script": "general-prospect", "notes": "Day 8 - Ringless voicemail Script A", "send_window": "10:00-12:00 Tue-Thu America/Phoenix"},
+    {"order": 10, "action": "wait", "delay": "6 days", "notes": "Day 14"},
+    {"order": 11, "action": "send_email", "template": "Nurture - Cold - Email 3 - Last Chance", "subject": "Last note from me - special offer for new accounts", "from": "elliott@axletowing.com", "template_file": "cold-email-3.html", "notes": "Day 14"},
+    {"order": 12, "action": "wait", "delay": "7 days", "notes": "Day 21"},
+    {"order": 13, "action": "send_sms", "template": "Nurture - Cold - SMS 2 - Breakup", "message": "Hey {{contact.first_name}} - Elliott from Axle Towing. I'll stop reaching out after this. If unauthorized parking ever becomes a headache at {{contact.company_name}}, we're here. 480-288-5526.", "notes": "Day 21 (157 chars)"},
+    {"order": 14, "action": "wait", "delay": "1 days"},
+    {"order": 15, "action": "remove_tag", "tag": "nurture-active"},
+    {"order": 16, "action": "add_tag", "tag": "nurture-completed"},
+    {"order": 17, "action": "move_pipeline_stage", "pipeline": "Property Accounts", "stage": "On Hold", "notes": "Move to On Hold if no response"}
+  ],
+  "stop_conditions": [
+    {"type": "reply_received", "action": "move_to_stage", "stage": "Engaged"},
+    {"type": "tag_added", "tag": "call-booked", "action": "pause_sequence"},
+    {"type": "tag_added", "tag": "do-not-contact", "action": "end_sequence"}
+  ],
+  "send_window": {
+    "email": "8:00-17:00 Mon-Fri America/Phoenix",
+    "sms": "9:00-16:00 Mon-Fri America/Phoenix",
+    "voicemail": "10:00-12:00 Tue-Thu America/Phoenix"
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "name": "Nurture - Contract Renewal Reminder (53-Day)",
+  "description": "3-email + SMS sequence triggered 60 days before contract renewal.",
+  "task": "AI-7461",
+  "trigger": {"type": "custom_field_date", "field": "Contract Renewal Date", "condition": "60 days before"},
+  "steps": [
+    {"order": 1, "action": "add_tag", "tag": "renewal-pending"},
+    {"order": 2, "action": "send_email", "delay": "0 minutes", "template": "Nurture - Renewal - Email 1", "subject": "Your Axle Towing agreement renews in 60 days - a note from Elliott", "from": "elliott@axletowing.com", "template_file": "renewal-email-1.html", "notes": "60 days out"},
+    {"order": 3, "action": "wait", "delay": "30 days"},
+    {"order": 4, "action": "send_email", "template": "Nurture - Renewal - Email 2", "subject": "30 days out - {{contact.company_name}} renewal", "from": "elliott@axletowing.com", "template_file": "renewal-email-2.html", "notes": "30 days out"},
+    {"order": 5, "action": "send_sms", "template": "Nurture - Renewal - SMS", "message": "{{contact.first_name}}, your Axle Towing service agreement renews in 30 days. Let's connect to review - reply or call 480-288-5526.", "notes": "130 chars"},
+    {"order": 6, "action": "wait", "delay": "23 days", "notes": "7 days before renewal"},
+    {"order": 7, "action": "send_email", "template": "Nurture - Renewal - Email 3", "subject": "Final reminder - agreement renewal next week", "from": "elliott@axletowing.com", "template_file": "renewal-email-3.html", "notes": "7 days out"},
+    {"order": 8, "action": "wait", "delay": "7 days"},
+    {"order": 9, "action": "remove_tag", "tag": "renewal-pending"},
+    {"order": 10, "action": "add_tag", "tag": "renewal-processed"}
+  ],
+  "stop_conditions": [
+    {"type": "reply_received", "action": "add_tag", "tag": "renewal-engaged"},
+    {"type": "tag_added", "tag": "do-not-contact", "action": "end_sequence"}
+  ],
+  "send_window": {"email": "8:00-17:00 Mon-Fri America/Phoenix", "sms": "9:00-16:00 Mon-Fri America/Phoenix"}
+}
