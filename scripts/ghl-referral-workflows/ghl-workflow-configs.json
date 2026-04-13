@@ -1,0 +1,575 @@
+{
+  "_meta": {
+    "version": "1.0.0",
+    "generated": "2026-04-13T03:48:07.359Z",
+    "task": "AI-7460",
+    "description": "Axle Towing - 6 Referral Partner Email Workflows for GoHighLevel",
+    "instructions": [
+      "1. Go to GHL > Automation > Workflows",
+      "2. Create a new workflow for each entry below",
+      "3. Set the trigger as specified",
+      "4. Add each step in order",
+      "5. Copy email body text from the \"body\" field",
+      "6. Test with a test contact before activating"
+    ]
+  },
+  "workflows": {
+    "locksmith": {
+      "name": "Referral Outreach: Locksmith",
+      "trigger": {
+        "type": "TAG_ADDED",
+        "tag": "referral-locksmith"
+      },
+      "steps": [
+        {
+          "type": "ADD_TAG",
+          "tag": "sequence-active",
+          "description": "Mark contact as in active sequence"
+        },
+        {
+          "type": "SEND_EMAIL",
+          "step": 1,
+          "subjectA": "Towing + locksmith referral partnership in Phoenix",
+          "subjectB": "We send each other customers - interested?",
+          "body": "Hi {{contact.first_name}},\n\nI'm Elliott with Axle Towing & Impound. We handle 24/7 towing, private property impounds, and roadside services across the Phoenix metro.\n\nHere's why I'm reaching out:\n\nOur dispatchers regularly field calls from people who are locked out of their vehicle and also need a tow. We don't do locksmith work - we need someone to refer them to. And I suspect you sometimes have lockout customers whose car is also dead or damaged and needs a tow.\n\nI'd love to set up a referral partnership:\n  - You refer lockout-plus-tow situations to us\n  - We refer lockout-only situations to you\n  - We both pick up the phone for each other's referrals, fast\n\nNo contracts, no fees. Just a reliable mutual referral arrangement between two local businesses.\n\nWorth a quick call?\n\nElliott\nAxle Towing & Impound\n(480) 288-5526 | axletowing.com",
+          "from": "elliott@axletowing.com",
+          "description": "Email 1: Day 0"
+        },
+        {
+          "type": "WAIT",
+          "duration": 6,
+          "unit": "days",
+          "description": "Wait 6 days before next email"
+        },
+        {
+          "type": "SEND_EMAIL",
+          "step": 2,
+          "subjectA": "One more idea for our referral partnership",
+          "subjectB": "Co-branded emergency cards - free for you",
+          "body": "Hi {{contact.first_name}},\n\nFollowing up on the referral partnership idea.\n\nOne thing we do with some of our locksmith partners: co-branded emergency cards. It's a small card with both our numbers on it - Axle Towing for impounds and towing, {{contact.company_name}} for lockouts.\n\nWe distribute them at our tow sites, at property manager offices, and through our HOA accounts. Some of our locksmith partners have gotten 5-10 referral calls per month just from the cards.\n\nWe'd cover the printing cost. All you'd need to do is agree to prioritize calls that come from us, and return the favor when you have a tow situation.\n\nWe have accounts at apartment complexes and HOAs across Phoenix where residents need locksmith services periodically. Being the recommended locksmith for those properties has real value.\n\nIs a 10-minute call this week worth it?\n\nElliott\nAxle Towing & Impound\n(480) 288-5526",
+          "from": "elliott@axletowing.com",
+          "description": "Email 2: Day 6"
+        },
+        {
+          "type": "WAIT",
+          "duration": 9,
+          "unit": "days",
+          "description": "Wait 9 days before next email"
+        },
+        {
+          "type": "SEND_EMAIL",
+          "step": 3,
+          "subjectA": "Last note - locksmith referral partnership",
+          "subjectB": "Leaving the door open",
+          "body": "Hi {{contact.first_name}},\n\nLast note from me on the referral partnership.\n\nSimple offer: we refer our lockout customers to you, you refer your tow customers to us. If you're open to it, I can also have co-branded emergency cards printed for your customers at no cost to you.\n\nIf the timing ever works, here's my direct line: (480) 288-5526.\n\nI'll check back in a few months. In the meantime - if you ever need a reliable tow company in the Phoenix metro for a customer referral, we're available 24/7.\n\nElliott\nAxle Towing & Impound\naxletowing.com",
+          "from": "elliott@axletowing.com",
+          "description": "Email 3: Day 15"
+        },
+        {
+          "type": "REMOVE_TAG",
+          "tag": "sequence-active",
+          "description": "Remove active sequence tag"
+        },
+        {
+          "type": "ADD_TAG",
+          "tag": "sequence-completed",
+          "description": "Mark sequence as completed"
+        }
+      ],
+      "stopCondition": {
+        "type": "TAG_ADDED",
+        "tag": "sequence-replied",
+        "description": "Stop if contact replies to any email"
+      }
+    },
+    "rideshare": {
+      "name": "Referral Outreach: Rideshare",
+      "trigger": {
+        "type": "TAG_ADDED",
+        "tag": "referral-rideshare"
+      },
+      "steps": [
+        {
+          "type": "ADD_TAG",
+          "tag": "sequence-active",
+          "description": "Mark contact as in active sequence"
+        },
+        {
+          "type": "SEND_EMAIL",
+          "step": 1,
+          "subjectA": "Earn extra cash reporting parking violations in Phoenix",
+          "subjectB": "Side income for rideshare drivers - parking referrals",
+          "body": "Hi {{contact.first_name}},\n\nI'm Elliott with Axle Towing. We handle parking enforcement for apartment complexes, HOAs, and commercial properties across Phoenix.\n\nHere's why I'm reaching out to rideshare drivers specifically: you're on the road all day, every day. You see parking problems that property managers don't even know about - abandoned vehicles, cars parked in fire lanes, unauthorized vehicles in resident spots.\n\nI want to set up a simple referral program:\n\n- You spot a property with a parking problem (or a property manager complaining about parking)\n- You send us the property name and contact info\n- If it turns into a contract, you get a referral bonus\n\nYou're already driving past these properties. This is just an easy way to pick up extra income while you do it.\n\nInterested? I can explain the details in a 5-minute call.\n\nElliott\nAxle Towing\n(480) 288-5526 | axletowing.com",
+          "from": "elliott@axletowing.com",
+          "description": "Email 1: Day 0"
+        },
+        {
+          "type": "WAIT",
+          "duration": 4,
+          "unit": "days",
+          "description": "Wait 4 days before next email"
+        },
+        {
+          "type": "SEND_EMAIL",
+          "step": 2,
+          "subjectA": "How the parking referral program works",
+          "subjectB": "Re: Earn extra cash reporting parking violations",
+          "body": "Hi {{contact.first_name}},\n\nQuick follow-up on the referral program.\n\nHere's exactly how it works:\n\n1. You notice a property with parking issues (cars in fire lanes, abandoned vehicles, no enforcement signage, etc.)\n2. You text or email us the property name and address\n3. We reach out to the property manager\n4. If they sign a parking enforcement contract, you earn a referral bonus\n\nWhat to look for:\n- Apartment complexes with cars parked on curbs or grass\n- HOA communities with no towing signage\n- Commercial lots with unauthorized overnight parking\n- Properties where you pick up riders who complain about parking\n\nNo commitment, no minimum. Just send leads when you see them.\n\nWant in? Text me at (480) 288-5526.\n\nElliott",
+          "from": "elliott@axletowing.com",
+          "description": "Email 2: Day 4"
+        },
+        {
+          "type": "WAIT",
+          "duration": 6,
+          "unit": "days",
+          "description": "Wait 6 days before next email"
+        },
+        {
+          "type": "SEND_EMAIL",
+          "step": 3,
+          "subjectA": "Standing offer - parking referral bonuses",
+          "subjectB": "Quick reminder - earn referral bonuses",
+          "body": "Hi {{contact.first_name}},\n\nNo pressure on this. Just want you to know the offer stands whenever you're interested.\n\nIf you ever notice a property with a parking problem and want to earn a referral bonus, text the property name and address to (480) 288-5526.\n\nThat's it. We handle everything from there.\n\nElliott\nAxle Towing\n(480) 288-5526\naxletowing.com",
+          "from": "elliott@axletowing.com",
+          "description": "Email 3: Day 10"
+        },
+        {
+          "type": "REMOVE_TAG",
+          "tag": "sequence-active",
+          "description": "Remove active sequence tag"
+        },
+        {
+          "type": "ADD_TAG",
+          "tag": "sequence-completed",
+          "description": "Mark sequence as completed"
+        }
+      ],
+      "stopCondition": {
+        "type": "TAG_ADDED",
+        "tag": "sequence-replied",
+        "description": "Stop if contact replies to any email"
+      }
+    },
+    "parking_permit": {
+      "name": "Referral Outreach: Parking Permit",
+      "trigger": {
+        "type": "TAG_ADDED",
+        "tag": "referral-parking-permit"
+      },
+      "steps": [
+        {
+          "type": "ADD_TAG",
+          "tag": "sequence-active",
+          "description": "Mark contact as in active sequence"
+        },
+        {
+          "type": "SEND_EMAIL",
+          "step": 1,
+          "subjectA": "Enforcement partner for your parking permit clients",
+          "subjectB": "Complete parking solution - permits + enforcement",
+          "body": "Hi {{contact.first_name}},\n\nI'm Elliott with Axle Towing. We provide private property towing and parking enforcement across the Phoenix metro area.\n\nI'm reaching out because your clients - the properties using your parking permit system - likely need enforcement to go along with it. Permits only work if unauthorized vehicles actually get towed.\n\nI'd like to propose a partnership:\n\n- When your clients need enforcement to back up their permit system, you refer them to us\n- We handle all towing, signage compliance, and enforcement patrols\n- Your clients get a complete parking solution: permits from you, enforcement from us\n- We can offer your clients preferred pricing as part of the partnership\n\nThis makes your permit system more valuable to property managers because they get the full package.\n\nWould you be open to a call this week to discuss how we can work together?\n\nElliott\nAxle Towing\n(480) 288-5526 | axletowing.com",
+          "from": "elliott@axletowing.com",
+          "description": "Email 1: Day 0"
+        },
+        {
+          "type": "WAIT",
+          "duration": 4,
+          "unit": "days",
+          "description": "Wait 4 days before next email"
+        },
+        {
+          "type": "SEND_EMAIL",
+          "step": 2,
+          "subjectA": "Partnership details - enforcement for your permit clients",
+          "subjectB": "Re: Enforcement partner for your parking permit clients",
+          "body": "Hi {{contact.first_name}},\n\nFollowing up on the enforcement partnership idea.\n\nHere's what we bring to the table for your clients:\n\n- 24/7 towing enforcement (not just business hours)\n- 30-minute average response time across Phoenix metro\n- Full Arizona signage compliance (we handle the legal requirements)\n- Monthly enforcement reports for each property\n- Zero cost to the property - tow fees cover our service\n- Dedicated account manager (not a call center)\n\nFor your business, the benefit is simple: properties that have enforcement are more likely to keep their permit system long-term. We make your product stickier.\n\nSome of our partners co-present to property managers - \"here's your complete parking solution.\" Happy to discuss that approach.\n\nElliott\n(480) 288-5526",
+          "from": "elliott@axletowing.com",
+          "description": "Email 2: Day 4"
+        },
+        {
+          "type": "WAIT",
+          "duration": 6,
+          "unit": "days",
+          "description": "Wait 6 days before next email"
+        },
+        {
+          "type": "SEND_EMAIL",
+          "step": 3,
+          "subjectA": "Open door for parking enforcement referrals",
+          "subjectB": "Last note - enforcement partnership",
+          "body": "Hi {{contact.first_name}},\n\nLast note on this. If the timing isn't right for a formal partnership, no problem.\n\nBut if any of your clients ever ask about towing enforcement to go with their permit system, I'd appreciate the referral:\n\nElliott - Axle Towing\n(480) 288-5526 | axletowing.com\n\nWe serve all of Phoenix metro and can usually start enforcement within a week of signing.\n\nElliott",
+          "from": "elliott@axletowing.com",
+          "description": "Email 3: Day 10"
+        },
+        {
+          "type": "REMOVE_TAG",
+          "tag": "sequence-active",
+          "description": "Remove active sequence tag"
+        },
+        {
+          "type": "ADD_TAG",
+          "tag": "sequence-completed",
+          "description": "Mark sequence as completed"
+        }
+      ],
+      "stopCondition": {
+        "type": "TAG_ADDED",
+        "tag": "sequence-replied",
+        "description": "Stop if contact replies to any email"
+      }
+    },
+    "mechanic": {
+      "name": "Referral Outreach: Mechanic",
+      "trigger": {
+        "type": "TAG_ADDED",
+        "tag": "referral-mechanic"
+      },
+      "steps": [
+        {
+          "type": "ADD_TAG",
+          "tag": "sequence-active",
+          "description": "Mark contact as in active sequence"
+        },
+        {
+          "type": "SEND_EMAIL",
+          "step": 1,
+          "subjectA": "Referral partnership idea - towing + auto repair",
+          "subjectB": "Quick idea: we send each other customers",
+          "body": "Hi {{contact.first_name}},\n\nI'm Elliott with Axle Towing & Impound. We're a local, owner-operated towing company serving the Phoenix metro - 24/7, licensed and insured.\n\nI'm reaching out with a simple idea: a mutual referral partnership.\n\nHere's how it works:\n- When one of your customers needs a private property tow, impound pickup, or lockout service, you send them to us.\n- When we tow a vehicle with mechanical issues (busted engine, flat left on side of road, breakdown on the 101), we recommend your shop to the vehicle owner.\n\nNo money changes hands. Just a handshake partnership where we point our customers to each other.\n\nWe tow hundreds of vehicles per month across Phoenix. A lot of those drivers need mechanical work done. Right now, we have no repair shop to send them to in your area.\n\nWorth a quick call to see if it makes sense?\n\nElliott\nAxle Towing & Impound\n(480) 288-5526 | axletowing.com",
+          "from": "elliott@axletowing.com",
+          "description": "Email 1: Day 0"
+        },
+        {
+          "type": "WAIT",
+          "duration": 5,
+          "unit": "days",
+          "description": "Wait 5 days before next email"
+        },
+        {
+          "type": "SEND_EMAIL",
+          "step": 2,
+          "subjectA": "The specifics on our referral partnership",
+          "subjectB": "What our mechanic partners say",
+          "body": "Hi {{contact.first_name}},\n\nFollowing up on my note about a referral partnership between {{contact.company_name}} and Axle Towing.\n\nA few specifics on how this works in practice:\n\nWhen you refer to us:\n  - Your customers get priority dispatch (we always pick up for referred customers)\n  - We'll send you a text confirmation when the job is completed\n  - Your name goes on their file so we know they came from {{contact.company_name}}\n\nWhen we refer to you:\n  - We'll hand your business card to the vehicle owner at the tow site\n  - We can include your shop info in our post-tow text to the customer\n  - For customers who are on the side of the road with a mechanical issue, you'd be our first recommendation in your area\n\nWe do a lot of breakdown tows from the I-10, US-60, and Loop 101 corridors. Customers in those situations are actively looking for a mechanic they can trust.\n\nIf volume warrants it, we're also open to a small referral fee for converted customers either direction.\n\nWould a 10-minute phone call work this week?\n\nElliott\nAxle Towing & Impound\n(480) 288-5526",
+          "from": "elliott@axletowing.com",
+          "description": "Email 2: Day 5"
+        },
+        {
+          "type": "WAIT",
+          "duration": 9,
+          "unit": "days",
+          "description": "Wait 9 days before next email"
+        },
+        {
+          "type": "SEND_EMAIL",
+          "step": 3,
+          "subjectA": "Last note - towing + repair referral partnership",
+          "subjectB": "Closing the loop on this",
+          "body": "Hi {{contact.first_name}},\n\nLast note from me on the referral partnership idea.\n\nThe short version: we send breakdown customers to mechanics we trust, and mechanics who send impound/tow customers to us get priority service for their referrals.\n\nIf {{contact.company_name}} would be a good fit for your area of Phoenix, I'd love to make it official.\n\nDirect line: (480) 288-5526\n\nNo pressure - if the timing isn't right, no worries. I'll reach back out in a few months.\n\nElliott\nAxle Towing & Impound\naxletowing.com",
+          "from": "elliott@axletowing.com",
+          "description": "Email 3: Day 14"
+        },
+        {
+          "type": "REMOVE_TAG",
+          "tag": "sequence-active",
+          "description": "Remove active sequence tag"
+        },
+        {
+          "type": "ADD_TAG",
+          "tag": "sequence-completed",
+          "description": "Mark sequence as completed"
+        }
+      ],
+      "stopCondition": {
+        "type": "TAG_ADDED",
+        "tag": "sequence-replied",
+        "description": "Stop if contact replies to any email"
+      }
+    },
+    "moving": {
+      "name": "Referral Outreach: Moving",
+      "trigger": {
+        "type": "TAG_ADDED",
+        "tag": "referral-moving"
+      },
+      "steps": [
+        {
+          "type": "ADD_TAG",
+          "tag": "sequence-active",
+          "description": "Mark contact as in active sequence"
+        },
+        {
+          "type": "SEND_EMAIL",
+          "step": 1,
+          "subjectA": "Clearing parking for your moving crews",
+          "subjectB": "Vehicle relocation for moving companies",
+          "body": "Hi {{contact.first_name}},\n\nI'm Elliott with Axle Towing. We handle vehicle relocation and parking enforcement for properties across the Phoenix metro area.\n\nI know one of the headaches on moving day is getting vehicles out of the way so your truck can access the loading zone. Residents don't move their cars, visitor spots are full, or the property doesn't enforce their own parking rules.\n\nWe can help with that:\n\n- Coordinate with the property manager to clear vehicles before your crew arrives\n- Handle same-day vehicle relocations when cars are blocking access\n- Ensure your truck has the space it needs to load/unload efficiently\n\nI'd also like to set up a mutual referral arrangement. You're at apartment complexes and HOAs every week. If a property manager ever mentions parking problems, send them our way. We'll do the same when our property clients need a moving company recommendation.\n\nInterested in discussing?\n\nElliott\nAxle Towing\n(480) 288-5526 | axletowing.com",
+          "from": "elliott@axletowing.com",
+          "description": "Email 1: Day 0"
+        },
+        {
+          "type": "WAIT",
+          "duration": 4,
+          "unit": "days",
+          "description": "Wait 4 days before next email"
+        },
+        {
+          "type": "SEND_EMAIL",
+          "step": 2,
+          "subjectA": "How we help on moving day",
+          "subjectB": "Re: Clearing parking for your moving crews",
+          "body": "Hi {{contact.first_name}},\n\nQuick follow-up. Here's how this works in practice:\n\nFor your moving jobs:\n- You give us the address and move date\n- We coordinate with the property to clear the parking area\n- Vehicles are relocated before your crew arrives\n- If any stragglers show up during the move, we handle it\n\nFor referrals:\n- You mention parking problems to property managers? Send them our way\n- We mention moving needs to our property clients? We send them yours\n- No formal contract needed - just two companies helping each other\n\nWe already work with several apartment complexes and HOAs in the area. Happy to share which properties we serve in case there's overlap.\n\nElliott\n(480) 288-5526",
+          "from": "elliott@axletowing.com",
+          "description": "Email 2: Day 4"
+        },
+        {
+          "type": "WAIT",
+          "duration": 6,
+          "unit": "days",
+          "description": "Wait 6 days before next email"
+        },
+        {
+          "type": "SEND_EMAIL",
+          "step": 3,
+          "subjectA": "Moving day parking - keep us in mind",
+          "subjectB": "Standing offer - vehicle clearing for movers",
+          "body": "Hi {{contact.first_name}},\n\nLast note. If you ever have a move where parking is going to be a problem, give us a call. We can clear vehicles quickly so your crew isn't sitting around waiting.\n\nElliott - Axle Towing\n(480) 288-5526\naxletowing.com\n\nAnd if a property manager ever asks you about parking enforcement, we'd appreciate the introduction.\n\nElliott",
+          "from": "elliott@axletowing.com",
+          "description": "Email 3: Day 10"
+        },
+        {
+          "type": "REMOVE_TAG",
+          "tag": "sequence-active",
+          "description": "Remove active sequence tag"
+        },
+        {
+          "type": "ADD_TAG",
+          "tag": "sequence-completed",
+          "description": "Mark sequence as completed"
+        }
+      ],
+      "stopCondition": {
+        "type": "TAG_ADDED",
+        "tag": "sequence-replied",
+        "description": "Stop if contact replies to any email"
+      }
+    },
+    "contractor": {
+      "name": "Referral Outreach: Contractor",
+      "trigger": {
+        "type": "TAG_ADDED",
+        "tag": "referral-contractor"
+      },
+      "steps": [
+        {
+          "type": "ADD_TAG",
+          "tag": "sequence-active",
+          "description": "Mark contact as in active sequence"
+        },
+        {
+          "type": "SEND_EMAIL",
+          "step": 1,
+          "subjectA": "Vehicle relocation for your job sites",
+          "subjectB": "Clear cars before your crew arrives",
+          "body": "Hi {{contact.first_name}},\n\nI'm Elliott with Axle Towing. We specialize in vehicle relocations for property maintenance - clearing cars out of the way so contractors can get to work.\n\nI know one of the biggest delays on exterior painting and renovation jobs is vehicles parked too close to the building. Residents don't read notices, visitor cars sit there all day, and your crew loses hours waiting.\n\nWe handle that:\n\n- Coordinate with the property manager on vehicle notices\n- Show up before your crew to relocate vehicles from the work zone\n- Handle any vehicles that show up during the job\n- Professional, insured, and licensed in all of Phoenix metro\n\nWould it make sense to set up a referral arrangement? When you have a job that needs vehicles cleared, you call us. We show up, handle it, and your crew works uninterrupted.\n\nHappy to discuss over a quick call.\n\nElliott\nAxle Towing\n(480) 288-5526 | axletowing.com",
+          "from": "elliott@axletowing.com",
+          "description": "Email 1: Day 0"
+        },
+        {
+          "type": "WAIT",
+          "duration": 4,
+          "unit": "days",
+          "description": "Wait 4 days before next email"
+        },
+        {
+          "type": "SEND_EMAIL",
+          "step": 2,
+          "subjectA": "What our contractor partners value most",
+          "subjectB": "Re: Vehicle relocation for your job sites",
+          "body": "Hi {{contact.first_name}},\n\nFollowing up on the vehicle relocation partnership.\n\nHere's what our contractor partners tell us they value:\n\n1. We show up BEFORE their crew - no one's waiting on us\n2. We handle the property manager coordination on notices\n3. We deal with angry vehicle owners so the contractor doesn't have to\n4. 30-minute response if a straggler shows up mid-job\n5. One call to us saves hours of crew downtime\n\nWe've handled jobs where 10-15 vehicles needed to be moved in a couple hours so the contractor could start on time.\n\nIf you do regular work at apartment complexes or HOAs, this could save you a lot of headaches. And we're always happy to refer our property clients to reliable contractors when they need exterior work done.\n\nElliott\n(480) 288-5526",
+          "from": "elliott@axletowing.com",
+          "description": "Email 2: Day 4"
+        },
+        {
+          "type": "WAIT",
+          "duration": 6,
+          "unit": "days",
+          "description": "Wait 6 days before next email"
+        },
+        {
+          "type": "SEND_EMAIL",
+          "step": 3,
+          "subjectA": "Need vehicles moved for a job? Call us",
+          "subjectB": "Standing offer - vehicle clearing for contractors",
+          "body": "Hi {{contact.first_name}},\n\nLast follow-up. If vehicle relocation doesn't come up often on your jobs, no worries.\n\nBut next time you're on a job and cars are in the way, save my number:\n\nElliott - Axle Towing\n(480) 288-5526\naxletowing.com\n\nWe can usually have vehicles cleared within an hour of your call. And if any of your property clients need parking enforcement, we'd welcome the referral.\n\nElliott",
+          "from": "elliott@axletowing.com",
+          "description": "Email 3: Day 10"
+        },
+        {
+          "type": "REMOVE_TAG",
+          "tag": "sequence-active",
+          "description": "Remove active sequence tag"
+        },
+        {
+          "type": "ADD_TAG",
+          "tag": "sequence-completed",
+          "description": "Mark sequence as completed"
+        }
+      ],
+      "stopCondition": {
+        "type": "TAG_ADDED",
+        "tag": "sequence-replied",
+        "description": "Stop if contact replies to any email"
+      }
+    },
+    "reply_stop": {
+      "name": "Referral Sequence: Reply Stop",
+      "trigger": {
+        "type": "EMAIL_REPLY",
+        "condition": "Contact has tag: sequence-active"
+      },
+      "steps": [
+        {
+          "type": "REMOVE_TAG",
+          "tag": "sequence-active",
+          "description": "Stop the sequence"
+        },
+        {
+          "type": "ADD_TAG",
+          "tag": "sequence-replied",
+          "description": "Mark as replied"
+        },
+        {
+          "type": "CREATE_TASK",
+          "title": "Reply received from {{contact.first_name}} {{contact.last_name}} - follow up within 24 hrs",
+          "assignTo": "elliott@axletowing.com",
+          "description": "Manual follow-up required"
+        },
+        {
+          "type": "SEND_SMS",
+          "to": "4802885526",
+          "message": "Referral prospect {{contact.first_name}} {{contact.last_name}} replied. Check GHL.",
+          "description": "Notify Elliott via SMS"
+        }
+      ]
+    },
+    "partner_onboarding": {
+      "name": "Referral Partner Onboarding",
+      "trigger": {
+        "type": "TAG_ADDED",
+        "tag": "partner-active"
+      },
+      "steps": [
+        {
+          "type": "MOVE_PIPELINE",
+          "pipeline": "Referral Partner Pipeline",
+          "stage": "Active Partner",
+          "description": "Move to Active Partner stage"
+        },
+        {
+          "type": "SEND_EMAIL",
+          "subject": "Welcome to the Axle Towing partner network",
+          "body": "Hi {{contact.first_name}},\n\nGreat talking - looking forward to working together.\n\nHere's how to reach us when you have a referral:\nDirect dispatch: (480) 288-5526 (24/7 - always answered)\nEmail: elliott@axletowing.com\n\nWhen you refer someone to us, just let them know Axle Towing is your trusted towing partner. If it helps, tell them to mention {{contact.first_name}} when they call - we'll give them priority dispatch.\n\nI'll have partner materials sent over within the week.\n\nIn the meantime, our website is axletowing.com if any of your customers want to learn more.\n\nThanks again - let's build something good here.\n\nElliott\nAxle Towing & Impound\n(480) 288-5526",
+          "from": "elliott@axletowing.com",
+          "description": "Send welcome email"
+        },
+        {
+          "type": "CREATE_TASK",
+          "title": "Mail co-branded cards to {{contact.first_name}} {{contact.last_name}} within 5 days",
+          "assignTo": "elliott@axletowing.com",
+          "dueIn": 5,
+          "dueUnit": "days",
+          "description": "Ensure cards are mailed"
+        },
+        {
+          "type": "WAIT",
+          "duration": 30,
+          "unit": "days",
+          "description": "Wait 30 days for first check-in"
+        },
+        {
+          "type": "CREATE_TASK",
+          "title": "30-day partner check-in: {{contact.first_name}} {{contact.last_name}}",
+          "assignTo": "elliott@axletowing.com",
+          "description": "Monthly partner relationship maintenance"
+        }
+      ]
+    }
+  },
+  "pipeline": {
+    "name": "Referral Partner Pipeline",
+    "stages": [
+      "New Contact",
+      "Sequence Active",
+      "Replied - Qualifying",
+      "Call Booked",
+      "Partnership Discussion",
+      "Partner Confirmed",
+      "Active Partner",
+      "Not Interested",
+      "Dormant - Re-engage"
+    ]
+  },
+  "tags": [
+    "referral-locksmith",
+    "referral-rideshare",
+    "referral-parking-permit",
+    "referral-mechanic",
+    "referral-moving",
+    "referral-contractor",
+    "sequence-active",
+    "sequence-replied",
+    "sequence-completed",
+    "partner-active",
+    "partner-referred-in",
+    "partner-referred-out"
+  ],
+  "customFields": [
+    {
+      "name": "Partner Type",
+      "type": "SINGLE_OPTIONS",
+      "options": [
+        "Locksmith",
+        "Rideshare",
+        "Parking Permit",
+        "Mechanic",
+        "Moving Company",
+        "Contractor",
+        "Other"
+      ]
+    },
+    {
+      "name": "Referrals Sent to Partner",
+      "type": "NUMERICAL"
+    },
+    {
+      "name": "Referrals Received from Partner",
+      "type": "NUMERICAL"
+    },
+    {
+      "name": "Last Referral Date",
+      "type": "DATE"
+    },
+    {
+      "name": "Partnership Start Date",
+      "type": "DATE"
+    },
+    {
+      "name": "Co-Branded Cards Sent",
+      "type": "SINGLE_OPTIONS",
+      "options": [
+        "Yes",
+        "No"
+      ]
+    },
+    {
+      "name": "Partner Priority",
+      "type": "SINGLE_OPTIONS",
+      "options": [
+        "High",
+        "Medium",
+        "Low"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,58 @@
+{
+  "name": "Referral - Partner Onboarding",
+  "description": "Onboards confirmed referral partners: sends welcome email, creates tasks for co-branded cards, schedules 30-day check-in.",
+  "trigger": {
+    "type": "tag_added",
+    "tag": "partner-active"
+  },
+  "steps": [
+    {
+      "order": 1,
+      "action": "update_pipeline_stage",
+      "pipeline": "Referral Partner Pipeline",
+      "stage": "Partner Confirmed"
+    },
+    {
+      "order": 2,
+      "action": "send_email",
+      "delay": "0 minutes",
+      "template": "Referral - Partner Welcome",
+      "subject": "Welcome to the Axle Towing partner network",
+      "from": "elliott@axletowing.com",
+      "template_file": "partner-welcome.html"
+    },
+    {
+      "order": 3,
+      "action": "create_task",
+      "task_title": "Mail co-branded cards to {{contact.first_name}} at {{contact.company_name}}",
+      "task_body": "New referral partner confirmed. Print and mail co-branded emergency cards within 5 business days. Include Axle Towing dispatch number and partner business info.",
+      "assign_to": "elliott@axletowing.com",
+      "due_in": "5 days"
+    },
+    {
+      "order": 4,
+      "action": "update_custom_field",
+      "field": "partnership_start_date",
+      "value": "{{current_date}}"
+    },
+    {
+      "order": 5,
+      "action": "wait",
+      "delay": "30 days"
+    },
+    {
+      "order": 6,
+      "action": "create_task",
+      "task_title": "30-day check-in with partner {{contact.first_name}} at {{contact.company_name}}",
+      "task_body": "Partnership is 30 days old. Check in on referral activity, ask about any issues, and confirm the partnership is working for both sides.",
+      "assign_to": "elliott@axletowing.com",
+      "due_in": "3 days"
+    },
+    {
+      "order": 7,
+      "action": "update_pipeline_stage",
+      "pipeline": "Referral Partner Pipeline",
+      "stage": "Active Partner"
+    }
+  ]
+}

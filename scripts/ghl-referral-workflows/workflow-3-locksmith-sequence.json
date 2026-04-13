@@ -1,0 +1,66 @@
+{
+  "name": "Referral - Locksmith Cold Outreach Sequence",
+  "description": "3-email sequence for locksmith referral partners. Days 1, 6, 15.",
+  "trigger": {
+    "type": "tag_added",
+    "tag": "referral-locksmith"
+  },
+  "steps": [
+    {
+      "order": 1,
+      "action": "add_tag",
+      "tag": "sequence-active"
+    },
+    {
+      "order": 2,
+      "action": "send_email",
+      "delay": "0 minutes",
+      "template": "Referral - Locksmith - Email 1 - Partnership Introduction",
+      "subject_a": "Towing + locksmith referral partnership in Phoenix",
+      "subject_b": "We send each other customers - interested?",
+      "from": "elliott@axletowing.com",
+      "template_file": "locksmith-email-1.html"
+    },
+    {
+      "order": 3,
+      "action": "wait",
+      "delay": "6 days"
+    },
+    {
+      "order": 4,
+      "action": "send_email",
+      "template": "Referral - Locksmith - Email 2 - Co-Brand Offer",
+      "subject_a": "One more idea for our referral partnership",
+      "subject_b": "Co-branded emergency cards - free for you",
+      "from": "elliott@axletowing.com",
+      "template_file": "locksmith-email-2.html"
+    },
+    {
+      "order": 5,
+      "action": "wait",
+      "delay": "9 days",
+      "notes": "Day 15 from sequence start"
+    },
+    {
+      "order": 6,
+      "action": "send_email",
+      "template": "Referral - Locksmith - Email 3 - Final Touch",
+      "subject_a": "Last note - locksmith referral partnership",
+      "subject_b": "Leaving the door open",
+      "from": "elliott@axletowing.com",
+      "template_file": "locksmith-email-3.html"
+    },
+    {
+      "order": 7,
+      "action": "remove_tag",
+      "tag": "sequence-active"
+    },
+    {
+      "order": 8,
+      "action": "add_tag",
+      "tag": "sequence-completed"
+    }
+  ],
+  "stop_on_reply": true,
+  "best_send_time": "Tuesday-Wednesday, 9-11 AM America/Phoenix"
+}

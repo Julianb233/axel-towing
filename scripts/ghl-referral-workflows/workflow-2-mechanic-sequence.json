@@ -1,0 +1,66 @@
+{
+  "name": "Referral - Mechanic Cold Outreach Sequence",
+  "description": "3-email sequence for auto mechanic referral partners. Days 1, 5, 14.",
+  "trigger": {
+    "type": "tag_added",
+    "tag": "referral-mechanic"
+  },
+  "steps": [
+    {
+      "order": 1,
+      "action": "add_tag",
+      "tag": "sequence-active"
+    },
+    {
+      "order": 2,
+      "action": "send_email",
+      "delay": "0 minutes",
+      "template": "Referral - Mechanic - Email 1 - Partnership Introduction",
+      "subject_a": "Referral partnership idea - towing + auto repair",
+      "subject_b": "Quick idea: we send each other customers",
+      "from": "elliott@axletowing.com",
+      "template_file": "mechanic-email-1.html"
+    },
+    {
+      "order": 3,
+      "action": "wait",
+      "delay": "5 days"
+    },
+    {
+      "order": 4,
+      "action": "send_email",
+      "template": "Referral - Mechanic - Email 2 - Value & Specifics",
+      "subject_a": "The specifics on our referral partnership",
+      "subject_b": "What our mechanic partners say",
+      "from": "elliott@axletowing.com",
+      "template_file": "mechanic-email-2.html"
+    },
+    {
+      "order": 5,
+      "action": "wait",
+      "delay": "9 days",
+      "notes": "Day 14 from sequence start"
+    },
+    {
+      "order": 6,
+      "action": "send_email",
+      "template": "Referral - Mechanic - Email 3 - Final Touch",
+      "subject_a": "Last note - towing + repair referral partnership",
+      "subject_b": "Closing the loop on this",
+      "from": "elliott@axletowing.com",
+      "template_file": "mechanic-email-3.html"
+    },
+    {
+      "order": 7,
+      "action": "remove_tag",
+      "tag": "sequence-active"
+    },
+    {
+      "order": 8,
+      "action": "add_tag",
+      "tag": "sequence-completed"
+    }
+  ],
+  "stop_on_reply": true,
+  "best_send_time": "Monday-Tuesday, 8-10 AM America/Phoenix"
+}
