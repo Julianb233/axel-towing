@@ -1,0 +1,80 @@
+{
+  "name": "Referral: Uber/Lyft Driver Referral Program",
+  "trigger": {
+    "type": "TAG_ADDED",
+    "tag": "referral-uber",
+    "description": "Fires when a rideshare driver contact is tagged for referral outreach"
+  },
+  "steps": [
+    {
+      "type": "ADD_TAG",
+      "tag": "referral-uber-active",
+      "description": "Mark contact as in active Uber/Lyft referral sequence"
+    },
+    {
+      "type": "SEND_EMAIL",
+      "step": 1,
+      "subject": "Earn extra cash reporting parking violations in Phoenix",
+      "body": "Hi {{contact.first_name}},\n\nI'm Elliott with Axle Towing. We work with property managers across the Phoenix metro to handle unauthorized parking, and I'm reaching out because rideshare drivers like you are in a unique position to help.\n\nYou're already driving through apartment complexes, shopping centers, and commercial lots every day. When you spot parking problems -- vehicles blocking fire lanes, cars parked in restricted zones, lots full of unauthorized vehicles overnight -- that's exactly the kind of thing property managers pay us to handle.\n\nWe have a referral program that pays a bonus for every property that signs up for enforcement based on your tip. No selling required. Just let us know what you see.\n\nInterested in hearing more about how it works?\n\nElliott\nAxle Towing\n480-288-5526 | info@axletowing.com\naxletowing.com",
+      "from": "elliott@axletowing.com",
+      "fromName": "Elliott - Axle Towing",
+      "description": "Day 0 - Introduce referral program for rideshare drivers"
+    },
+    {
+      "type": "WAIT",
+      "duration": 4,
+      "unit": "days",
+      "description": "Wait 4 days before follow-up"
+    },
+    {
+      "type": "SEND_EMAIL",
+      "step": 2,
+      "subject": "Re: Earn extra cash reporting parking violations in Phoenix",
+      "body": "Hi {{contact.first_name}},\n\nFollowing up on the parking referral program I mentioned. Here's how it works in 4 simple steps:\n\n1. You spot a property with a parking problem while driving\n2. Text us the property name and address\n3. We reach out to the property manager and pitch enforcement\n4. If they sign up, you get a referral bonus\n\nWhat to look for:\n- Apartment complexes with cars parked along curbs or in visitor spots long-term\n- HOA communities with no signage or enforcement\n- Commercial lots with overnight vehicles that shouldn't be there\n- Any property where you hear residents complaining about parking\n\nYou're already driving through {{contact.city}} every day. This is just about keeping your eyes open and sending a quick text when you see something.\n\nWant to give it a shot?\n\nElliott\nAxle Towing\n480-288-5526 | info@axletowing.com\naxletowing.com",
+      "from": "elliott@axletowing.com",
+      "fromName": "Elliott - Axle Towing",
+      "description": "Day 4 - Explain how the referral program works step by step"
+    },
+    {
+      "type": "WAIT",
+      "duration": 6,
+      "unit": "days",
+      "description": "Wait 6 days before final follow-up"
+    },
+    {
+      "type": "SEND_EMAIL",
+      "step": 3,
+      "subject": "Standing offer - parking referral bonuses",
+      "body": "Hi {{contact.first_name}},\n\nLast note from me. No pressure at all -- I just wanted to make sure the offer is on your radar.\n\nAny time you see a property in {{contact.city}} or anywhere in the Phoenix metro that looks like it has a parking problem, just text the property name and address to 480-288-5526. If it turns into a signed account, you get a referral bonus.\n\nThe offer doesn't expire. Whenever you're ready, we're here.\n\nElliott\nAxle Towing\n480-288-5526 | info@axletowing.com\naxletowing.com",
+      "from": "elliott@axletowing.com",
+      "fromName": "Elliott - Axle Towing",
+      "description": "Day 10 - Final low-pressure reminder with standing offer"
+    },
+    {
+      "type": "WAIT",
+      "duration": 1,
+      "unit": "days",
+      "description": "Buffer before cleanup"
+    },
+    {
+      "type": "REMOVE_TAG",
+      "tag": "referral-uber-active",
+      "description": "Remove active sequence tag"
+    },
+    {
+      "type": "ADD_TAG",
+      "tag": "referral-uber-completed",
+      "description": "Mark Uber/Lyft referral sequence completed"
+    }
+  ],
+  "stopCondition": {
+    "type": "TAG_ADDED",
+    "tag": "sequence-replied",
+    "description": "Stop if contact replies"
+  },
+  "sendingWindow": {
+    "emails": "Mon-Fri 9:00 AM - 12:00 PM"
+  },
+  "duration": "11 days",
+  "touchpoints": "3 emails"
+}

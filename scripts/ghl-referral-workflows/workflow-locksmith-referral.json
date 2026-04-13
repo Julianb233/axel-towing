@@ -1,0 +1,80 @@
+{
+  "name": "Referral: Locksmith Partner Intro Sequence",
+  "trigger": {
+    "type": "TAG_ADDED",
+    "tag": "referral-locksmith",
+    "description": "Fires when a locksmith contact is tagged for referral outreach"
+  },
+  "steps": [
+    {
+      "type": "ADD_TAG",
+      "tag": "referral-locksmith-active",
+      "description": "Mark contact as in active locksmith referral sequence"
+    },
+    {
+      "type": "SEND_EMAIL",
+      "step": 1,
+      "subject": "Referral partnership between our companies?",
+      "body": "Hi {{contact.first_name}},\n\nI'm Elliott with Axle Towing here in {{contact.city}}. I came across {{contact.company_name}} and wanted to reach out because locksmiths and towing companies run into each other's customers all the time.\n\nWhen you're on a lockout call and the vehicle also needs a tow, or when we're on a roadside call and the driver needs a locksmith -- it makes sense to have a go-to partner to refer.\n\nI'd like to propose a simple mutual referral arrangement. No contracts, no fees. Just two local companies sending each other business when the situation fits.\n\nWould you be open to a quick call or text to see if this makes sense for both of us?\n\nElliott\nAxle Towing\n480-288-5526 | info@axletowing.com\naxletowing.com",
+      "from": "elliott@axletowing.com",
+      "fromName": "Elliott - Axle Towing",
+      "description": "Day 0 - Initial intro proposing mutual referral partnership"
+    },
+    {
+      "type": "WAIT",
+      "duration": 4,
+      "unit": "days",
+      "description": "Wait 4 days before follow-up"
+    },
+    {
+      "type": "SEND_EMAIL",
+      "step": 2,
+      "subject": "Re: Referral partnership between our companies?",
+      "body": "Hi {{contact.first_name}},\n\nJust circling back on my note about a referral partnership between Axle Towing and {{contact.company_name}}.\n\nOther partners have told us the simplest approach works best -- keep a few of each other's cards in the trucks and make intros on-site when the situation comes up. No tracking systems or complicated processes.\n\nOn our end, we cover the entire Phoenix metro with a 30-minute average response time, so your referrals would get fast, reliable service. We'd love to return the favor whenever our customers need locksmith help in {{contact.city}} or anywhere nearby.\n\nWorth a quick conversation?\n\nElliott\nAxle Towing\n480-288-5526 | info@axletowing.com\naxletowing.com",
+      "from": "elliott@axletowing.com",
+      "fromName": "Elliott - Axle Towing",
+      "description": "Day 4 - Follow-up with specifics on how partnerships work"
+    },
+    {
+      "type": "WAIT",
+      "duration": 6,
+      "unit": "days",
+      "description": "Wait 6 days before final follow-up"
+    },
+    {
+      "type": "SEND_EMAIL",
+      "step": 3,
+      "subject": "Quick note - towing referrals",
+      "body": "Hi {{contact.first_name}},\n\nLast note from me on this. I know you're busy running {{contact.company_name}}, so I'll keep it short.\n\nIf you ever have a customer who needs a tow, we'd appreciate the referral. And we're happy to return the favor -- when our customers need a locksmith in {{contact.city}}, we'd send them your way.\n\nNo need to reply if the timing isn't right. Just keep us in mind.\n\nElliott\nAxle Towing\n480-288-5526 | info@axletowing.com\naxletowing.com",
+      "from": "elliott@axletowing.com",
+      "fromName": "Elliott - Axle Towing",
+      "description": "Day 10 - Final friendly follow-up, low pressure"
+    },
+    {
+      "type": "WAIT",
+      "duration": 1,
+      "unit": "days",
+      "description": "Buffer before cleanup"
+    },
+    {
+      "type": "REMOVE_TAG",
+      "tag": "referral-locksmith-active",
+      "description": "Remove active sequence tag"
+    },
+    {
+      "type": "ADD_TAG",
+      "tag": "referral-locksmith-completed",
+      "description": "Mark locksmith referral sequence completed"
+    }
+  ],
+  "stopCondition": {
+    "type": "TAG_ADDED",
+    "tag": "sequence-replied",
+    "description": "Stop if contact replies"
+  },
+  "sendingWindow": {
+    "emails": "Tue-Thu 9:00 AM - 11:00 AM"
+  },
+  "duration": "11 days",
+  "touchpoints": "3 emails"
+}
