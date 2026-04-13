@@ -11,6 +11,7 @@ import ContactWidget from "@/components/ContactWidget";
 import EmergencyBanner from "@/components/EmergencyBanner";
 import PropertyManagerChatbot from "@/components/PropertyManagerChatbot";
 import ExitIntentPopup from "@/components/ExitIntentPopup";
+import GHLChatWidget from "@/components/GHLChatWidget";
 import GoogleAnalytics from "@/components/GoogleAnalytics";
 import { GoogleTagManagerScript, GoogleTagManagerNoScript } from "@/components/GoogleTagManager";
 import { COMPANY } from "@/lib/constants";
@@ -151,6 +152,7 @@ export default function RootLayout({
         <FloatingCTA />
         <FloatingCTAWidget />
         <ExitIntentPopup />
+        <GHLChatWidget />
         <ScrollReveal />
         <ScrollAnimator />
       </body>
