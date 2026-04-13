@@ -12,7 +12,7 @@ See: .planning/PROJECT.md (updated 2026-04-09)
 Phase: Not started (run /gsd:create-roadmap)
 Plan: —
 Status: Defining requirements
-Last activity: 2026-04-09 — Milestone v2.0 started, 14 Linear tasks created (AI-7427 to AI-7440)
+Last activity: 2026-04-12 — AI-7459: Elliott template approval workflow built (3 GHL workflow configs, setup script, test script, 5 email/SMS templates)
 
 ## Milestone v2.0 Summary
 
@@ -37,8 +37,18 @@ Last activity: 2026-04-09 — Milestone v2.0 started, 14 Linear tasks created (A
 | AI-7439 | Create Instagram Account + First Month Content | Medium |
 | AI-7440 | Complete Social Media Design Templates in Stitch | Medium |
 
+## Recently Completed
+
+- **AI-7459**: Elliott Template Approval Workflow (2026-04-12)
+  - 3 GHL workflow configs: approval request, revision handling, campaign activation
+  - Setup script: creates 9 tags, test contact, prints GHL UI instructions
+  - Test script: end-to-end workflow validation with tag assertions
+  - 5 templates: approval request email, confirmation email, revision email, 2 SMS templates
+  - Workflow flow: needs-elliott-approval → approval-pending → elliott-approved → templates-approved → campaign-active
+  - Escalation: auto-escalate after 5 days of no response
+
 ## Blockers
 
-- GHL not yet configured — critical dependency for 5+ tasks
-- Elliott approval needed on outreach templates before activation
-- Hitesh DNS/email verification pending
+- GHL not yet configured — critical dependency for 5+ tasks (AI-7455)
+- DNS/email verification pending (blocked on Mike, Elliott's DNS admin)
+- A2P 10DLC registration not submitted (needs EIN from Elliott)

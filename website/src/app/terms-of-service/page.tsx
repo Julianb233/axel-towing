@@ -15,7 +15,7 @@ export default function TermsOfServicePage() {
         <div className="absolute inset-0 grain-overlay" />
         <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <h1 className="text-4xl md:text-5xl font-bold text-white mb-4 font-heading">Terms of Service</h1>
-          <p className="text-white/90 text-lg">Last updated: March 9, 2026</p>
+          <p className="text-white/90 text-lg">Last updated: April 12, 2026</p>
         </div>
       </section>
 
@@ -132,6 +132,36 @@ export default function TermsOfServicePage() {
             credentials are confidential and must not be shared. You are responsible for all
             activities that occur under your account. We reserve the right to suspend or terminate
             portal access for any violation of these Terms.
+          </p>
+
+
+          <h2 className="text-2xl font-bold text-blue-900 font-heading">SMS/Text Messaging Terms</h2>
+          <p className="text-gray-600 leading-relaxed">
+            By providing your phone number and opting in to receive text messages from{" "}
+            {COMPANY.name}, you agree to the following terms:
+          </p>
+          <h3 className="text-xl font-bold text-blue-900 font-heading">Consent</h3>
+          <p className="text-gray-600 leading-relaxed">
+            By checking the SMS consent box on any form on this website, you consent to receive
+            text messages from {COMPANY.name} at the phone number provided. Consent is not a
+            condition of purchase or service.
+          </p>
+          <h3 className="text-xl font-bold text-blue-900 font-heading">Message Frequency</h3>
+          <p className="text-gray-600 leading-relaxed">
+            Message frequency varies. You may receive up to 5 messages per month for service-related
+            communications. Marketing messages, if opted in, will not exceed 4 per month.
+          </p>
+          <h3 className="text-xl font-bold text-blue-900 font-heading">Opt-Out</h3>
+          <p className="text-gray-600 leading-relaxed">
+            You can opt out at any time by replying <strong>STOP</strong> to any message.
+            Reply <strong>HELP</strong> for assistance.
+          </p>
+          <h3 className="text-xl font-bold text-blue-900 font-heading">Costs and Carrier Liability</h3>
+          <p className="text-gray-600 leading-relaxed">
+            Message and data rates may apply. Carriers are not liable for delayed or undelivered messages.
+            Your phone number and opt-in consent data will not be shared with third parties for marketing
+            purposes. See our{" "}
+            <Link href="/privacy-policy" className="text-primary hover:underline">Privacy Policy</Link>.
           </p>
 
           <h2 className="text-2xl font-bold text-blue-900 font-heading">Limitation of Liability</h2>

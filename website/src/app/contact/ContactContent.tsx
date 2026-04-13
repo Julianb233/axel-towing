@@ -2,6 +2,7 @@
 
 import { useEffect, useRef, useState, FormEvent } from "react";
 import Image from "next/image";
+import Link from "next/link";
 import { COMPANY, SERVICE_AREAS } from "@/lib/constants";
 import { IMAGES } from "@/lib/images";
 
@@ -46,6 +47,8 @@ export default function ContactContent() {
           spaces: formData.get("spaces"),
           message: formData.get("message"),
           source: "contact-form",
+          smsConsent: formData.get("smsConsent") === "on",
+          marketingConsent: formData.get("marketingConsent") === "on",
         }),
       });
 
@@ -206,6 +209,41 @@ export default function ContactContent() {
                         className="w-full border border-gray-300 rounded-lg px-4 py-3 focus:ring-2 focus:ring-primary focus:border-primary outline-none transition resize-none bg-white"
                         placeholder="Tell us about your property and parking challenges..."
                       />
+                    </div>
+
+                    {/* SMS Consent Checkboxes (A2P 10DLC Compliance) */}
+                    <div className="space-y-3 border-t border-gray-200 pt-4">
+                      <label className="flex items-start gap-3 cursor-pointer group">
+                        <input
+                          name="smsConsent"
+                          type="checkbox"
+                          className="mt-1 h-4 w-4 rounded border-gray-300 text-primary focus:ring-primary shrink-0"
+                        />
+                        <span className="text-xs text-gray-500 leading-relaxed">
+                          I consent to receive SMS/text messages from {COMPANY.name} regarding my
+                          service inquiry. Message frequency varies. Message and data rates may apply.
+                          Reply STOP to opt out at any time. Reply HELP for help. View our{" "}
+                          <Link href="/privacy-policy" className="text-primary hover:underline">
+                            Privacy Policy
+                          </Link>{" "}
+                          and{" "}
+                          <Link href="/terms-of-service" className="text-primary hover:underline">
+                            Terms of Service
+                          </Link>.
+                        </span>
+                      </label>
+                      <label className="flex items-start gap-3 cursor-pointer group">
+                        <input
+                          name="marketingConsent"
+                          type="checkbox"
+                          className="mt-1 h-4 w-4 rounded border-gray-300 text-primary focus:ring-primary shrink-0"
+                        />
+                        <span className="text-xs text-gray-500 leading-relaxed">
+                          I consent to receive marketing text messages about special offers, discounts,
+                          and service updates from {COMPANY.name}. This is optional and not required
+                          to receive service.
+                        </span>
+                      </label>
                     </div>
                     {error && (
                       <div className="p-3 bg-red-50 border border-red-200 rounded-lg text-red-700 text-sm">

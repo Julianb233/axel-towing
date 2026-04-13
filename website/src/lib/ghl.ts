@@ -74,6 +74,8 @@ function buildTags(params: {
   propertyType?: string;
   urgency?: string;
   timeline?: string;
+  smsConsent?: boolean;
+  marketingConsent?: boolean;
 }): string[] {
   const tags: string[] = [];
 
@@ -124,6 +126,17 @@ function buildTags(params: {
   // Active sequence
   tags.push('seq-new-lead-nurture');
 
+  // A2P 10DLC SMS consent tags (used by GHL workflow guards)
+  if (params.smsConsent) {
+    tags.push('sms-consent-web');
+  }
+  if (params.marketingConsent) {
+    tags.push('sms-marketing-consent');
+  }
+  if (!params.smsConsent && !params.marketingConsent) {
+    tags.push('no-sms');
+  }
+
   return tags;
 }
 
@@ -142,6 +155,8 @@ export async function createGHLContact(params: {
   units?: string | number;
   address?: string;
   notes?: string;
+  smsConsent?: boolean;
+  marketingConsent?: boolean;
 }): Promise<{ success: boolean; contactId?: string; error?: string }> {
   const apiKey = process.env.GHL_API_KEY;
   const locationId = process.env.GHL_LOCATION_ID;
@@ -157,6 +172,8 @@ export async function createGHLContact(params: {
       source: params.source,
       propertyType: params.propertyType,
       timeline: params.timeline,
+      smsConsent: params.smsConsent,
+      marketingConsent: params.marketingConsent,
     });
 
     // Build custom fields for Axle Towing-specific data
@@ -324,8 +341,10 @@ export async function syncLeadToGHL(params: {
   address?: string;
   referenceId?: string;
   rawData?: Record<string, unknown>;
+  smsConsent?: boolean;
+  marketingConsent?: boolean;
 }): Promise<{ success: boolean; contactId?: string; error?: string }> {
-  // Step 1: Create contact
+  // Step 1: Create contact (includes SMS consent tags)
   const contactResult = await createGHLContact(params);
 
   if (!contactResult.success || !contactResult.contactId) {
@@ -345,6 +364,8 @@ export async function syncLeadToGHL(params: {
   if (params.units) noteLines.push(`Units/Spaces: ${params.units}`);
   if (params.address) noteLines.push(`Address: ${params.address}`);
   if (params.timeline) noteLines.push(`Timeline: ${params.timeline}`);
+  noteLines.push(`SMS Consent: ${params.smsConsent ? 'YES' : 'NO'}`);
+  if (params.marketingConsent) noteLines.push(`Marketing SMS Consent: YES`);
 
   await addGHLNote(contactId, noteLines.join('\n'));
 
