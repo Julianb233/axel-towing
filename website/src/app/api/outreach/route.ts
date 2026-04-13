@@ -1,15 +1,21 @@
 import { NextRequest, NextResponse } from "next/server";
-import type { OutreachEntry, OutreachStatus, OutreachPlatform } from "@/lib/data/social-outreach";
+import type { OutreachPlatform, OutreachStatus } from "@/lib/data/social-outreach";
+import { createClient } from "@supabase/supabase-js";
 
 /**
- * In-memory outreach log (persists for the lifetime of the server process).
- * For a production implementation, replace with a database-backed store.
+ * Get Supabase client for outreach activities.
+ * Returns null if credentials are not configured.
  */
-const outreachLog: OutreachEntry[] = [];
+function getSupabase() {
+  const url = process.env.SUPABASE_URL || process.env.NEXT_PUBLIC_SUPABASE_URL;
+  const key = process.env.SUPABASE_SERVICE_KEY || process.env.SUPABASE_SERVICE_ROLE_KEY;
+  if (!url || !key) return null;
+  return createClient(url, key);
+}
 
 /**
  * POST /api/outreach
- * Log a new outreach activity entry.
+ * Log a new outreach activity entry to Supabase.
  *
  * Body: { name, company, platform, templateId, status, notes? }
  */
@@ -52,21 +58,38 @@ export async function POST(req: NextRequest) {
       );
     }
 
-    const entry: OutreachEntry = {
-      id: `${Date.now()}-${Math.random().toString(36).slice(2, 8)}`,
-      name,
-      company,
-      platform,
-      templateId,
-      status,
-      notes: notes ?? undefined,
-      sentAt: new Date().toISOString(),
-      updatedAt: new Date().toISOString(),
-    };
+    const supabase = getSupabase();
+    if (!supabase) {
+      console.warn("[Outreach] Supabase not configured — cannot store outreach activity");
+      return NextResponse.json(
+        { error: "Database not configured" },
+        { status: 503 }
+      );
+    }
 
-    outreachLog.push(entry);
+    const { data, error } = await supabase
+      .from("outreach_activities")
+      .insert({
+        contact_name: name,
+        company,
+        platform,
+        template_id: templateId,
+        status,
+        notes: notes ?? null,
+        sent_at: new Date().toISOString(),
+      })
+      .select()
+      .single();
 
-    return NextResponse.json({ success: true, entry }, { status: 201 });
+    if (error) {
+      console.error("[Outreach] Supabase insert error:", error.message);
+      return NextResponse.json(
+        { error: `Database error: ${error.message}` },
+        { status: 500 }
+      );
+    }
+
+    return NextResponse.json({ success: true, entry: data }, { status: 201 });
   } catch {
     return NextResponse.json({ error: "Invalid request body" }, { status: 400 });
   }
@@ -74,26 +97,58 @@ export async function POST(req: NextRequest) {
 
 /**
  * GET /api/outreach
- * Return a summary of the outreach log.
+ * Return a summary of outreach activities from Supabase.
  */
 export async function GET() {
-  const summary = {
-    total: outreachLog.length,
-    byStat: {
-      sent: outreachLog.filter((e) => e.status === "sent").length,
-      replied: outreachLog.filter((e) => e.status === "replied").length,
-      interested: outreachLog.filter((e) => e.status === "interested").length,
-      not_interested: outreachLog.filter((e) => e.status === "not_interested").length,
-      converted: outreachLog.filter((e) => e.status === "converted").length,
-      no_response: outreachLog.filter((e) => e.status === "no_response").length,
-    },
-    byPlatform: {
-      linkedin: outreachLog.filter((e) => e.platform === "linkedin").length,
-      instagram: outreachLog.filter((e) => e.platform === "instagram").length,
-      facebook: outreachLog.filter((e) => e.platform === "facebook").length,
-    },
-    recentEntries: outreachLog.slice(-20).reverse(),
-  };
+  const supabase = getSupabase();
+  if (!supabase) {
+    return NextResponse.json({
+      total: 0,
+      byStatus: {},
+      byPlatform: {},
+      recentEntries: [],
+      error: "Database not configured",
+    });
+  }
 
-  return NextResponse.json(summary);
+  try {
+    // Get recent entries
+    const { data: entries, error } = await supabase
+      .from("outreach_activities")
+      .select("*")
+      .order("sent_at", { ascending: false })
+      .limit(50);
+
+    if (error) {
+      console.error("[Outreach] Supabase query error:", error.message);
+      return NextResponse.json(
+        { error: `Database error: ${error.message}` },
+        { status: 500 }
+      );
+    }
+
+    const allEntries = entries || [];
+
+    // Count by status
+    const byStatus: Record<string, number> = {};
+    const byPlatform: Record<string, number> = {};
+
+    for (const entry of allEntries) {
+      byStatus[entry.status] = (byStatus[entry.status] || 0) + 1;
+      byPlatform[entry.platform] = (byPlatform[entry.platform] || 0) + 1;
+    }
+
+    return NextResponse.json({
+      total: allEntries.length,
+      byStatus,
+      byPlatform,
+      recentEntries: allEntries.slice(0, 20),
+    });
+  } catch (error) {
+    console.error("[Outreach] Error fetching outreach data:", error);
+    return NextResponse.json(
+      { error: "Failed to fetch outreach data" },
+      { status: 500 }
+    );
+  }
 }
