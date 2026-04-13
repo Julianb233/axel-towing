@@ -1,0 +1,94 @@
+{
+  "_meta": {
+    "version": "1.0.0",
+    "generated": "2026-04-13T04:00:00.000Z",
+    "task": "AI-7459",
+    "description": "Axle Towing - Contact Activation Workflow (post-approval campaign enrollment)",
+    "instructions": [
+      "1. Go to GHL > Automation > Workflows > + Create Workflow",
+      "2. Name: 'Approval Activation — Start Campaign'",
+      "3. Trigger: Contact Tag Added = 'templates-approved'",
+      "4. Add each step in order below",
+      "5. Set workflow status to ACTIVE",
+      "6. This workflow fires AFTER Elliott approves templates via the approval workflow"
+    ],
+    "purpose": "When templates are approved by Elliott (tag 'templates-approved' is added), this workflow moves the contact into the active campaign pipeline. It adds the 'campaign-active' tag and notifies the team that campaigns are ready to go live.",
+    "dependsOn": [
+      "AI-7459 (Template Approval Workflow — must be created first)",
+      "AI-7455 (GHL sub-account setup)"
+    ]
+  },
+  "workflow": {
+    "name": "Approval Activation — Start Campaign",
+    "status": "ACTIVE",
+    "description": "Post-approval workflow. When Elliott approves templates (templates-approved tag), this moves the associated contacts into active campaigns. Pairs with the 'Template Approval — Elliott Review' workflow.",
+    "linearTask": "AI-7459",
+    "trigger": {
+      "type": "TAG_ADDED",
+      "tag": "templates-approved"
+    },
+    "steps": [
+      {
+        "order": 1,
+        "type": "ADD_TAG",
+        "tag": "campaign-active",
+        "description": "Mark contact/batch as campaign-active — campaigns can now fire"
+      },
+      {
+        "order": 2,
+        "type": "REMOVE_TAG",
+        "tag": "templates-approved",
+        "description": "Clear the templates-approved trigger tag (prevent re-triggering)"
+      },
+      {
+        "order": 3,
+        "type": "IF_ELSE",
+        "condition": {
+          "type": "TAG_EXISTS",
+          "tag": "nurture-active",
+          "description": "Check if this is a nurture campaign batch"
+        },
+        "if_true": [
+          {
+            "type": "MOVE_PIPELINE_STAGE",
+            "pipeline": "Lead Nurture Pipeline",
+            "stage": "Contacted",
+            "description": "Move to Contacted stage — nurture sequences will pick up from here"
+          }
+        ],
+        "if_false": [
+          {
+            "type": "ADD_TAG",
+            "tag": "ready-for-enrollment",
+            "description": "Generic ready-for-enrollment tag for non-nurture campaigns"
+          }
+        ]
+      },
+      {
+        "order": 4,
+        "type": "SEND_INTERNAL_NOTIFICATION",
+        "channel": "email",
+        "to": "julian@aiacrobatics.com",
+        "subject": "Axle Towing: Templates approved — campaigns activated",
+        "body": "Elliott approved the template batch. Campaigns for {{contact.company_name}} are now set to ACTIVE. The following workflows can be switched from DRAFT to ACTIVE:\n\n- PM Nurture 21-Day Sequence\n- Referral Partner Sequences (6 types)\n- Cold Outreach Sequences\n- Re-engagement Campaigns\n\nConfirm in GHL > Automation > Workflows that the relevant workflows are now ACTIVE.",
+        "description": "Notify Julian that templates are approved and campaigns can go live"
+      },
+      {
+        "order": 5,
+        "type": "SEND_EMAIL",
+        "to": "elliott@axletowing.com",
+        "from": "dispatch@axletowing.com",
+        "fromName": "Axle Towing Automation",
+        "subject": "Campaigns activated — here's what's running",
+        "body": "Hi Elliott,\n\nYour approved templates are now live. Here's a quick summary of what's active:\n\n- Email outreach sequences: ACTIVE (sending Mon-Fri 8 AM - 5 PM)\n- Referral partner intros: ACTIVE (sending Tue-Thu 9 AM - 11 AM)\n- SMS messages: ON HOLD until A2P 10DLC registration confirms\n\nAll workflows have auto-stop rules — if anyone replies or asks to be removed, the sequence stops immediately.\n\nYou'll get monthly reports showing who's been contacted and response rates.\n\nQuestions? Call or text (619) 509-0699 anytime.\n\nAI Acrobatics Team",
+        "description": "Confirmation email to Elliott that campaigns are live"
+      }
+    ]
+  },
+  "verification": {
+    "totalSteps": 5,
+    "trigger": "templates-approved tag added (by approval workflow)",
+    "expectedOutcome": "Contact gets campaign-active tag, team notified, Elliott confirmed",
+    "pairsWith": "Template Approval — Elliott Review workflow"
+  }
+}
