@@ -2,7 +2,7 @@ import { NextResponse } from 'next/server';
 import { sendDispatchEmail } from '@/lib/dispatch-email';
 import { sendDispatchSms } from '@/lib/dispatch-sms';
 import { storeDispatchRequest } from '@/lib/supabase';
-import { syncLeadToGHL } from '@/lib/ghl';
+import { syncLeadToGHL, sendLeadToGHLWebhook } from '@/lib/ghl';
 
 /**
  * POST /api/leads
@@ -66,8 +66,23 @@ export async function POST(req: Request) {
     console.log(emailBody);
     console.log('=================');
 
+    // Common GHL params shared across REST API sync and webhook sync
+    const ghlParams = {
+      name,
+      email,
+      phone,
+      propertyName: body.propertyName || body.propertyAddress,
+      propertyType: body.propertyType,
+      source,
+      timeline: body.timeline,
+      units: body.units || body.spaces,
+      address: body.address || body.propertyAddress,
+      message: body.message || '',
+      referenceId,
+    };
+
     // Send notifications and sync to CRM in parallel
-    const [emailResult, smsResult, dbResult, ghlResult] = await Promise.allSettled([
+    const [emailResult, smsResult, dbResult, ghlResult, ghlWebhookResult] = await Promise.allSettled([
       sendDispatchEmail(
         referenceId,
         `New Lead from ${source} — ${name || email} [${referenceId}]`,
@@ -89,20 +104,14 @@ export async function POST(req: Request) {
         request_data: body as Record<string, unknown>,
         status: 'pending',
       }),
-      // Sync to GoHighLevel CRM
+      // Primary GHL sync: REST API (creates contact + opportunity in pipeline)
       syncLeadToGHL({
-        name,
-        email,
-        phone,
-        propertyName: body.propertyName || body.propertyAddress,
-        propertyType: body.propertyType,
-        source,
-        timeline: body.timeline,
-        units: body.units || body.spaces,
-        address: body.address || body.propertyAddress,
-        referenceId,
+        ...ghlParams,
         rawData: body as Record<string, unknown>,
       }),
+      // Secondary GHL sync: Inbound webhook (triggers GHL workflows directly)
+      // Only fires if GHL_WEBHOOK_URL is configured — optional supplement to REST API
+      sendLeadToGHLWebhook(ghlParams),
     ]);
 
     const results = {
@@ -119,6 +128,10 @@ export async function POST(req: Request) {
       ghl:
         ghlResult.status === 'fulfilled'
           ? (ghlResult.value as { success: boolean }).success
+          : false,
+      ghlWebhook:
+        ghlWebhookResult.status === 'fulfilled'
+          ? (ghlWebhookResult.value as { success: boolean }).success
           : false,
     };
     console.log('Lead integrations:', results);

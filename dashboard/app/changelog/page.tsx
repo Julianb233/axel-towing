@@ -16,6 +16,24 @@ interface ChangelogGroup {
 
 const changelog: ChangelogGroup[] = [
   {
+    date: "April 13, 2026 (GHL Chat Widget + Lead Form → GHL Pipeline — AI-7464, AI-7462)",
+    type: "completed",
+    entries: [
+      {
+        text: "GHL chat widget embedded in site layout via GHLChatWidget component — loads from widgets.leadconnectorhq.com, requires NEXT_PUBLIC_GHL_CHAT_WIDGET_ID env var (get widget ID from GHL > Sites > Chat Widget after configuring in dashboard)",
+        category: "website",
+      },
+      {
+        text: "Lead form → GHL pipeline connection confirmed and enhanced: contact form already posts to /api/leads which calls syncLeadToGHL (creates contact + pipeline opportunity); added message field passthrough to GHL notes",
+        category: "infrastructure",
+      },
+      {
+        text: "Added GHL inbound webhook support as secondary sync path — set GHL_WEBHOOK_URL env var to trigger GHL workflows directly from form submissions (optional supplement to REST API sync)",
+        category: "infrastructure",
+      },
+    ],
+  },
+  {
     date: "April 12, 2026 (A2P 10DLC SMS Compliance + GHL Automation Workflows — AI-7457, AI-7459, AI-7460, AI-7461)",
     type: "completed",
     entries: [

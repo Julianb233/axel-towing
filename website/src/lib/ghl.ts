@@ -322,6 +322,7 @@ export async function syncLeadToGHL(params: {
   timeline?: string;
   units?: string | number;
   address?: string;
+  message?: string;
   referenceId?: string;
   rawData?: Record<string, unknown>;
 }): Promise<{ success: boolean; contactId?: string; error?: string }> {
@@ -345,6 +346,7 @@ export async function syncLeadToGHL(params: {
   if (params.units) noteLines.push(`Units/Spaces: ${params.units}`);
   if (params.address) noteLines.push(`Address: ${params.address}`);
   if (params.timeline) noteLines.push(`Timeline: ${params.timeline}`);
+  if (params.message) noteLines.push(`\nMessage:\n${params.message}`);
 
   await addGHLNote(contactId, noteLines.join('\n'));
 
@@ -360,6 +362,80 @@ export async function syncLeadToGHL(params: {
   });
 
   return { success: true, contactId };
+}
+
+/**
+ * Send lead data to a GHL inbound webhook.
+ *
+ * This is an alternative/supplementary sync path alongside the REST API.
+ * GHL inbound webhooks can trigger workflows directly without needing API keys.
+ *
+ * To set up:
+ * 1. In GHL: Automation > Workflows > Create Workflow
+ * 2. Add trigger: "Inbound Webhook"
+ * 3. Copy the webhook URL and set GHL_WEBHOOK_URL in environment variables
+ * 4. Map fields in the workflow as needed (name, email, phone, etc.)
+ *
+ * Format: https://services.leadconnectorhq.com/hooks/WEBHOOK_ID
+ */
+export async function sendLeadToGHLWebhook(params: {
+  name?: string;
+  email?: string;
+  phone?: string;
+  propertyName?: string;
+  propertyType?: string;
+  source?: string;
+  timeline?: string;
+  units?: string | number;
+  address?: string;
+  message?: string;
+  referenceId?: string;
+}): Promise<{ success: boolean; error?: string }> {
+  const webhookUrl = process.env.GHL_WEBHOOK_URL;
+
+  if (!webhookUrl) {
+    // Not an error — webhook is optional. REST API is the primary path.
+    return { success: false, error: 'GHL_WEBHOOK_URL not configured (optional)' };
+  }
+
+  try {
+    const payload = {
+      // Standard fields GHL workflows expect
+      firstName: params.name?.split(' ')[0] || '',
+      lastName: params.name?.split(' ').slice(1).join(' ') || '',
+      full_name: params.name || '',
+      email: params.email || '',
+      phone: params.phone || '',
+      // Axle Towing-specific fields
+      property_name: params.propertyName || '',
+      property_type: params.propertyType || '',
+      source: params.source || 'website',
+      timeline: params.timeline || '',
+      parking_spaces: params.units ? String(params.units) : '',
+      address: params.address || '',
+      message: params.message || '',
+      reference_id: params.referenceId || '',
+      submitted_at: new Date().toISOString(),
+    };
+
+    const response = await fetch(webhookUrl, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(payload),
+    });
+
+    if (!response.ok) {
+      const errorText = await response.text();
+      console.error(`[GHL Webhook] Failed: ${response.status} ${errorText}`);
+      return { success: false, error: `Webhook error: ${response.status}` };
+    }
+
+    console.log(`[GHL Webhook] Lead sent: ${params.referenceId}`);
+    return { success: true };
+  } catch (error) {
+    console.error('[GHL Webhook] Error:', error);
+    return { success: false, error: String(error) };
+  }
 }
 
 /**
