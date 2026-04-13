@@ -1,0 +1,28 @@
+Sequence: hoa-board-member
+Step: 5
+Day: 25
+Type: EMAIL
+Subject: Before I move on - one last thought for {{contact.company_name}}
+
+--- CONTENT ---
+
+Hi {{contact.first_name}},
+
+I'm going to wrap up my outreach here, but I wanted to leave you with something concrete.
+
+What an Axle Towing HOA account includes:
+
+- Written service agreement with response time guarantees
+- Free ARS-compliant signage consultation
+- 24/7 dispatch (real people, real phone)
+- Full documentation on every tow
+- Monthly tow activity report for your records
+- Dedicated contact - Elliott's direct cell
+
+If parking enforcement is ever a board agenda item, save this email.
+
+480-288-5526 | axletowing.com
+
+I'll leave the door open.
+
+Elliott

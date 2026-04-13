@@ -24,6 +24,10 @@ export async function POST(req: Request) {
     const phone = body.phone || '';
     const source = body.source || 'website';
 
+    // A2P 10DLC / TCPA consent tracking
+    const smsConsent = body.smsConsent === true;
+    const marketingConsent = body.marketingConsent === true;
+
     if (!name && !email && !phone) {
       return NextResponse.json(
         { error: 'At least one contact method is required' },
@@ -53,6 +57,8 @@ export async function POST(req: Request) {
     if (body.serviceTitle) details.push(`Service: ${body.serviceTitle}`);
     if (body.vehicleDetails) details.push(`Vehicle Details: ${body.vehicleDetails}`);
     if (body.location) details.push(`Location: ${body.location}`);
+    if (smsConsent) details.push(`SMS Consent: YES (service messages)`);
+    if (marketingConsent) details.push(`Marketing SMS Consent: YES`);
 
     details.push(``);
     details.push(
@@ -86,7 +92,7 @@ export async function POST(req: Request) {
         property_name: body.propertyName || body.propertyAddress || '',
         property_address: body.address || body.propertyAddress || '',
         urgent: false,
-        request_data: body as Record<string, unknown>,
+        request_data: { ...body, smsConsent, marketingConsent } as Record<string, unknown>,
         status: 'pending',
       }),
       // Sync to GoHighLevel CRM
@@ -102,6 +108,8 @@ export async function POST(req: Request) {
         address: body.address || body.propertyAddress,
         referenceId,
         rawData: body as Record<string, unknown>,
+        smsConsent,
+        marketingConsent,
       }),
     ]);
 

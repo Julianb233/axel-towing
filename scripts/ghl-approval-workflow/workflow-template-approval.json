@@ -1,0 +1,226 @@
+{
+  "_meta": {
+    "version": "1.0.0",
+    "generated": "2026-04-12T20:55:00.000Z",
+    "task": "AI-7459",
+    "description": "Axle Towing - Elliott Template Approval Workflow for GoHighLevel",
+    "instructions": [
+      "1. Go to GHL > Automation > Workflows > Create New Workflow",
+      "2. Name: 'Template Approval -- Elliott Review'",
+      "3. Trigger: Tag Added = 'needs-elliott-approval'",
+      "4. Add each step in order (see steps array)",
+      "5. Set workflow status to ACTIVE (this is an internal ops workflow)",
+      "6. Test with a test contact tagged 'needs-elliott-approval'",
+      "7. Verify Elliott receives the notification email at elliott@axletowing.com"
+    ],
+    "purpose": "Ensures all outreach templates (nurture campaigns, referral sequences, cold outreach) are reviewed and approved by Elliott before activation. Templates stay in DRAFT until Elliott tags the contact with 'elliott-approved'.",
+    "dependsOn": [
+      "AI-7455 (GHL sub-account setup)",
+      "AI-7461 (PM Nurture 21-Day - templates need approval)",
+      "AI-7460 (Referral Partner Sequences - templates need approval)"
+    ]
+  },
+  "workflow": {
+    "name": "Template Approval -- Elliott Review",
+    "status": "ACTIVE",
+    "description": "Internal ops workflow. When a template batch is ready for review, tag the internal contact 'needs-elliott-approval'. Elliott receives a notification email with review instructions and a summary. He approves by tagging 'elliott-approved' or rejects by tagging 'elliott-revision-needed'.",
+    "linearTask": "AI-7459",
+    "trigger": {
+      "type": "TAG_ADDED",
+      "tag": "needs-elliott-approval"
+    },
+    "steps": [
+      {
+        "type": "ADD_TAG",
+        "tag": "approval-pending",
+        "description": "Mark batch as pending approval"
+      },
+      {
+        "type": "SEND_EMAIL",
+        "step": 1,
+        "subject": "ACTION REQUIRED: Outreach templates ready for your review",
+        "body": "Hi Elliott,\n\nA new batch of outreach templates is ready for your review before we activate them.\n\n--- WHAT NEEDS REVIEW ---\n\nTemplate Batch: {{contact.notes}}\nTotal Templates: See the attached summary below\nSubmitted: {{contact.date_created}}\n\n--- HOW TO REVIEW ---\n\n1. Open the template files shared with you (Google Drive link in your email or check GHL > Marketing > Templates)\n2. Review each email/SMS for:\n   - Accuracy of claims (response times, service areas, pricing)\n   - Tone and professionalism\n   - Legal compliance (no guarantees, proper disclaimers)\n   - Contact info is correct (480-288-5526, axletowing.com)\n3. If APPROVED: Reply to this email with \"APPROVED\" or text AI Acrobatics team\n4. If CHANGES NEEDED: Reply with your specific edits or call (619) 509-0699\n\n--- TEMPLATE CATEGORIES ---\n\n- PM Nurture 21-Day Sequence (7 emails + 2 SMS)\n- Referral Partner Sequences (6 partner types x 3 emails each)\n- Cold Outreach Sequences\n- Re-engagement Campaigns\n\n--- IMPORTANT ---\n\n- NO templates will be sent to real contacts until you approve\n- All workflows are in DRAFT mode\n- SMS messages are also blocked until A2P 10DLC registration completes\n- You can request changes at any time -- we'll update and resubmit\n\nThanks,\nAI Acrobatics Team\n(619) 509-0699 | julian@aiacrobatics.com",
+        "from": "dispatch@axletowing.com",
+        "fromName": "Axle Towing Automation",
+        "to": "elliott@axletowing.com",
+        "description": "Notification email to Elliott with review instructions"
+      },
+      {
+        "type": "SEND_INTERNAL_NOTIFICATION",
+        "step": 2,
+        "channel": "email",
+        "to": "elliott@axletowing.com",
+        "subject": "GHL Templates Awaiting Your Approval",
+        "body": "New template batch submitted for review. Check your email for the full summary and review instructions.",
+        "description": "GHL internal notification to Elliott"
+      },
+      {
+        "type": "WAIT",
+        "duration": 2,
+        "unit": "days",
+        "description": "Wait 2 days for initial review"
+      },
+      {
+        "type": "IF_ELSE",
+        "condition": {
+          "type": "TAG_EXISTS",
+          "tag": "elliott-approved",
+          "description": "Check if Elliott has approved"
+        },
+        "if_true": [
+          {
+            "type": "ADD_TAG",
+            "tag": "templates-approved",
+            "description": "Mark templates as approved"
+          },
+          {
+            "type": "REMOVE_TAG",
+            "tag": "approval-pending",
+            "description": "Clear pending status"
+          },
+          {
+            "type": "REMOVE_TAG",
+            "tag": "needs-elliott-approval",
+            "description": "Clear approval request trigger"
+          },
+          {
+            "type": "SEND_EMAIL",
+            "subject": "Templates APPROVED -- activating workflows",
+            "body": "Hi Elliott,\n\nThanks for reviewing the templates. They've been marked as approved and we'll begin activating the workflows.\n\nNext steps:\n1. Email workflows will be set to ACTIVE\n2. SMS steps remain DISABLED until A2P 10DLC is confirmed\n3. You'll receive a confirmation once workflows are live\n\nIf you need to pause anything, just reply to this email or text (619) 509-0699.\n\nAI Acrobatics Team",
+            "from": "dispatch@axletowing.com",
+            "fromName": "Axle Towing Automation",
+            "to": "elliott@axletowing.com",
+            "description": "Approval confirmation to Elliott"
+          }
+        ],
+        "if_false": [
+          {
+            "type": "SEND_EMAIL",
+            "subject": "Friendly reminder: outreach templates still need your review",
+            "body": "Hi Elliott,\n\nJust a quick reminder -- the outreach templates we submitted are still awaiting your review.\n\nNo templates will go out until you approve them, so there's no rush -- but we want to make sure they don't slip through the cracks.\n\nReply APPROVED to greenlight them, or let us know if you need changes.\n\nThanks,\nAI Acrobatics Team\n(619) 509-0699",
+            "from": "dispatch@axletowing.com",
+            "fromName": "Axle Towing Automation",
+            "to": "elliott@axletowing.com",
+            "description": "Day 2 reminder if not yet approved"
+          },
+          {
+            "type": "WAIT",
+            "duration": 3,
+            "unit": "days",
+            "description": "Wait 3 more days (Day 5 total)"
+          },
+          {
+            "type": "IF_ELSE",
+            "condition": {
+              "type": "TAG_EXISTS",
+              "tag": "elliott-approved"
+            },
+            "if_true": [
+              {
+                "type": "ADD_TAG",
+                "tag": "templates-approved",
+                "description": "Mark templates as approved (late approval)"
+              },
+              {
+                "type": "REMOVE_TAG",
+                "tag": "approval-pending",
+                "description": "Clear pending status"
+              },
+              {
+                "type": "REMOVE_TAG",
+                "tag": "needs-elliott-approval",
+                "description": "Clear approval request trigger"
+              }
+            ],
+            "if_false": [
+              {
+                "type": "ADD_TAG",
+                "tag": "approval-escalate",
+                "description": "Escalate -- no response after 5 days"
+              },
+              {
+                "type": "SEND_EMAIL",
+                "subject": "Final reminder: templates need your sign-off",
+                "body": "Hi Elliott,\n\nThis is the final automated reminder about the outreach templates awaiting review.\n\nOur team will follow up directly to make sure everything is on track. The templates will remain in DRAFT until we hear from you.\n\nReply APPROVED or call us at (619) 509-0699.\n\nAI Acrobatics Team",
+                "from": "dispatch@axletowing.com",
+                "fromName": "Axle Towing Automation",
+                "to": "elliott@axletowing.com",
+                "description": "Day 5 final reminder + escalation tag"
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "stopConditions": [
+      {
+        "type": "TAG_ADDED",
+        "tag": "elliott-approved",
+        "description": "Stop workflow when Elliott approves"
+      },
+      {
+        "type": "TAG_ADDED",
+        "tag": "approval-cancelled",
+        "description": "Stop if approval request is cancelled"
+      }
+    ]
+  },
+  "revisionWorkflow": {
+    "name": "Template Revision -- Elliott Feedback",
+    "status": "ACTIVE",
+    "description": "When Elliott tags 'elliott-revision-needed', notify the AI Acrobatics team to make changes and resubmit.",
+    "trigger": {
+      "type": "TAG_ADDED",
+      "tag": "elliott-revision-needed"
+    },
+    "steps": [
+      {
+        "type": "REMOVE_TAG",
+        "tag": "approval-pending",
+        "description": "Clear pending status"
+      },
+      {
+        "type": "ADD_TAG",
+        "tag": "revision-in-progress",
+        "description": "Mark as revision in progress"
+      },
+      {
+        "type": "SEND_EMAIL",
+        "subject": "Template revision requested by Elliott",
+        "body": "Elliott has requested changes to the outreach templates.\n\nCheck the contact notes in GHL for Elliott's specific feedback.\n\nAction required:\n1. Review Elliott's feedback\n2. Update the template files\n3. Resubmit by removing 'elliott-revision-needed' and adding 'needs-elliott-approval'\n\nContact: {{contact.notes}}",
+        "from": "dispatch@axletowing.com",
+        "fromName": "Axle Towing Automation",
+        "to": "julian@aiacrobatics.com",
+        "description": "Notify AI Acrobatics team of revision request"
+      },
+      {
+        "type": "SEND_EMAIL",
+        "subject": "Got it -- we'll update the templates",
+        "body": "Hi Elliott,\n\nThanks for the feedback. We'll make the requested changes and resubmit the templates for your review.\n\nYou'll receive a new review notification once the updates are ready.\n\nAI Acrobatics Team\n(619) 509-0699",
+        "from": "dispatch@axletowing.com",
+        "fromName": "Axle Towing Automation",
+        "to": "elliott@axletowing.com",
+        "description": "Acknowledge revision request to Elliott"
+      }
+    ]
+  },
+  "tags": [
+    "needs-elliott-approval",
+    "approval-pending",
+    "elliott-approved",
+    "elliott-revision-needed",
+    "templates-approved",
+    "approval-escalate",
+    "approval-cancelled"
+  ],
+  "verification": {
+    "totalWorkflows": 2,
+    "approvalWorkflowSteps": 8,
+    "revisionWorkflowSteps": 4,
+    "notificationEmails": 5,
+    "approvalFlow": "needs-elliott-approval -> approval-pending -> elliott-approved -> templates-approved",
+    "revisionFlow": "elliott-revision-needed -> revision-in-progress -> needs-elliott-approval (resubmit)",
+    "escalationTrigger": "No response after 5 days -> approval-escalate tag",
+    "reminderSchedule": ["Day 0: Initial notification", "Day 2: First reminder", "Day 5: Final reminder + escalation"]
+  }
+}

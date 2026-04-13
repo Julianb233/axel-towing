@@ -1,0 +1,7 @@
+SMS Template: cold-followup-day2
+Use Case: Cold follow-up Day 2
+Characters: 156
+
+--- MESSAGE ---
+
+Hi {{contact.first_name}}, this is Elliott from Axle Towing. Did you get my email about parking enforcement for {{contact.company_name}}? Happy to chat - just reply here.

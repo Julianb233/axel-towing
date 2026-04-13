@@ -1,0 +1,74 @@
+{
+  "name": "Nurture: Re-Engagement (On Hold Accounts)",
+  "trigger": {
+    "type": "PIPELINE_STAGE_CHANGE",
+    "pipeline": "Lead Nurture Pipeline",
+    "stage": "On Hold",
+    "delay": "30 days",
+    "description": "Contact in On Hold stage for 30+ days"
+  },
+  "steps": [
+    {
+      "type": "ADD_TAG",
+      "tag": "nurture-active",
+      "description": "Mark contact as in active nurture sequence"
+    },
+    {
+      "type": "SEND_EMAIL",
+      "step": 1,
+      "subject": "Checking in - it's been a while, {{contact.first_name}}",
+      "body": "Hi {{contact.first_name}},\n\nIt's Elliott from Axle Towing. I know we haven't connected in a while, and I wanted to reach out personally.\n\nI've been thinking about {{contact.company_name}} and wondering how parking enforcement has been going since we last spoke. If we dropped the ball on follow-up - that's on me, and I'm sorry. We've made changes internally to make sure that doesn't happen anymore.\n\nIf you found a solution that's working great, I'm genuinely glad. But if things have been inconsistent, slow, or just a hassle - I'd like to earn another shot.\n\nNo pitch. Just a quick conversation to catch up.\n\nWould you be open to 10 minutes this week?\n\nElliott\n480-288-5526",
+      "from": "elliott@axletowing.com",
+      "fromName": "Elliott - Axle Towing",
+      "description": "Email 1: Day 0"
+    },
+    {
+      "type": "WAIT",
+      "duration": 7,
+      "unit": "days",
+      "description": "Wait 7 days (Day 7)"
+    },
+    {
+      "type": "SEND_EMAIL",
+      "step": 2,
+      "subject": "What's changed at Axle Towing since we last connected",
+      "body": "Hi {{contact.first_name}},\n\nI wanted to share a few things that have changed since we last worked together (or since we spoke):\n\nWhat's new:\n\n- 24/7 dispatch with real staff - no more voicemail during off-hours\n- Online documentation portal for every tow - you can pull reports anytime\n- Dedicated account rep assigned to each property - same person, every time\n- Formal service agreements with written response time guarantees\n\nThe version of Axle Towing you may have experienced before is different from what we are today.\n\nIf you're open to it, I'd love to show you what that looks like for {{contact.company_name}} specifically.\n\nElliott",
+      "from": "elliott@axletowing.com",
+      "fromName": "Elliott - Axle Towing",
+      "description": "Email 2: Day 7"
+    },
+    {
+      "type": "WAIT",
+      "duration": 7,
+      "unit": "days",
+      "description": "Wait 7 days (Day 14)"
+    },
+    {
+      "type": "SEND_SMS",
+      "step": 3,
+      "body": "Hi {{contact.first_name}}, Elliott from Axle Towing. I sent a couple of emails - didn't want to let this slip. If you ever want to reconnect about {{contact.company_name}}, I'm here. 480-288-5526.",
+      "description": "SMS 3: Day 14"
+    },
+    {
+      "type": "REMOVE_TAG",
+      "tag": "nurture-active",
+      "description": "Remove active nurture tag"
+    },
+    {
+      "type": "ADD_TAG",
+      "tag": "nurture-completed",
+      "description": "Mark nurture sequence as completed"
+    }
+  ],
+  "stopCondition": {
+    "type": "TAG_ADDED",
+    "tag": "nurture-replied",
+    "description": "Stop if contact replies"
+  },
+  "sendingWindow": {
+    "emails": "Mon-Fri 8:00 AM - 5:00 PM",
+    "sms": "Mon-Fri 9:00 AM - 4:00 PM"
+  },
+  "duration": "14 days",
+  "touchpoints": "2 emails + 1 SMS = 3 touches"
+}

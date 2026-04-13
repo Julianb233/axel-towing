@@ -15,7 +15,7 @@ export default function PrivacyPolicyPage() {
         <div className="absolute inset-0 grain-overlay" />
         <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <h1 className="text-4xl md:text-5xl font-bold text-white mb-4 font-heading">Privacy Policy</h1>
-          <p className="text-white/90 text-lg">Last updated: March 9, 2026</p>
+          <p className="text-white/90 text-lg">Last updated: April 12, 2026</p>
         </div>
       </section>
 
@@ -100,6 +100,29 @@ export default function PrivacyPolicyPage() {
             <li>Analyze website usage and improve user experience</li>
             <li>Protect against fraud, unauthorized access, and illegal activity</li>
           </ul>
+
+
+          <h2 className="text-2xl font-bold text-blue-900 font-heading">SMS/Text Messaging</h2>
+          <p className="text-gray-600 leading-relaxed">
+            When you provide your phone number and consent to receive text messages from {COMPANY.name},
+            we may send you SMS or MMS messages related to:
+          </p>
+          <ul className="text-gray-600 space-y-2">
+            <li>Service updates and appointment confirmations</li>
+            <li>Responses to your inquiries about towing or parking enforcement services</li>
+            <li>Follow-up communications related to your property management needs</li>
+            <li>Promotional offers and special discounts (only if you have opted in to marketing messages)</li>
+          </ul>
+          <p className="text-gray-600 leading-relaxed">
+            <strong>Message frequency varies.</strong> Message and data rates may apply. You can opt out
+            of text messages at any time by replying <strong>STOP</strong> to any message. Reply{" "}
+            <strong>HELP</strong> for assistance.
+          </p>
+          <p className="text-gray-600 leading-relaxed font-semibold">
+            No mobile information will be shared with third parties or affiliates for marketing or
+            promotional purposes. All other categories listed above exclude text messaging originator
+            opt-in data and consent, which will not be shared with any third parties.
+          </p>
 
           <h2 className="text-2xl font-bold text-blue-900 font-heading">Third-Party Services</h2>
           <p className="text-gray-600 leading-relaxed">
