@@ -1,0 +1,7 @@
+Sequence: cold-outreach
+Step: 7
+Day: 22
+Type: PIPELINE_MOVE
+
+--- CONTENT ---
+

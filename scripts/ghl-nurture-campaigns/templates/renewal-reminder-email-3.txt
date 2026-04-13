@@ -1,0 +1,17 @@
+Sequence: renewal-reminder
+Step: 3
+Day: -7
+Type: EMAIL
+Subject: Final reminder - agreement renewal next week
+
+--- CONTENT ---
+
+Hi {{contact.first_name}},
+
+One week out on your service agreement renewal for {{contact.company_name}}.
+
+If I don't hear back, I'll assume we're continuing as-is and will send over the renewal docs for signature. But if anything needs to change, now's the time.
+
+Call or text me directly: 480-288-5526
+
+Elliott
