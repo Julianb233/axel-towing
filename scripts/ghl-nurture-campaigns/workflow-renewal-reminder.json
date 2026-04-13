@@ -1,0 +1,58 @@
+{
+  "name": "Nurture: Contract Renewal Reminder",
+  "trigger": {
+    "type": "CUSTOM_FIELD_DATE",
+    "field": "Contract Renewal Date",
+    "offset": "-60 days",
+    "description": "Fires 60 days before contract renewal date"
+  },
+  "steps": [
+    {
+      "type": "SEND_EMAIL",
+      "step": 1,
+      "subject": "Your Axle Towing agreement renews in 60 days - a note from Elliott",
+      "body": "Hi {{contact.first_name}},\n\nYour service agreement for {{contact.company_name}} renews on {{custom.contract_renewal_date}}. I wanted to give you plenty of heads-up and the chance to discuss any changes before then.\n\nA few things I'd like to cover when we reconnect:\n\n- Review of this year's tow activity\n- Any changes to your property or enforcement needs\n- Updated rate schedule for the coming year\n- Adding any new properties to your account\n\nCan we find 20 minutes in the next few weeks?\n\nElliott",
+      "from": "elliott@axletowing.com",
+      "fromName": "Elliott - Axle Towing",
+      "description": "Renewal email 1: 60 days out"
+    },
+    {
+      "type": "WAIT",
+      "duration": 30,
+      "unit": "days",
+      "description": "Wait 30 days (now 30 days before renewal)"
+    },
+    {
+      "type": "SEND_EMAIL",
+      "step": 2,
+      "subject": "30 days out - {{contact.company_name}} renewal",
+      "body": "Hi {{contact.first_name}},\n\nQuick reminder that your service agreement renews in 30 days.\n\nI want to make this renewal easy. If nothing has changed and you're happy with service, we can handle the paperwork in under 10 minutes.\n\nIf you have questions, concerns, or want to discuss adding properties - I'm a call or text away.\n\n480-288-5526\n\nElliott",
+      "from": "elliott@axletowing.com",
+      "fromName": "Elliott - Axle Towing",
+      "description": "Renewal email 2: 30 days out"
+    },
+    {
+      "type": "SEND_SMS",
+      "step": 3,
+      "body": "{{contact.first_name}}, your Axle Towing service agreement renews in 30 days. Let's connect to review - reply or call 480-288-5526.",
+      "description": "Renewal SMS reminder: 30 days out"
+    },
+    {
+      "type": "WAIT",
+      "duration": 23,
+      "unit": "days",
+      "description": "Wait 23 days (now 7 days before renewal)"
+    },
+    {
+      "type": "SEND_EMAIL",
+      "step": 4,
+      "subject": "Final reminder - agreement renewal next week",
+      "body": "Hi {{contact.first_name}},\n\nOne week out on your service agreement renewal for {{contact.company_name}}.\n\nIf I don't hear back, I'll assume we're continuing as-is and will send over the renewal docs for signature. But if anything needs to change, now's the time.\n\nCall or text me directly: 480-288-5526\n\nElliott",
+      "from": "elliott@axletowing.com",
+      "fromName": "Elliott - Axle Towing",
+      "description": "Renewal email 3: 7 days out"
+    }
+  ],
+  "duration": "53 days (60 to 7 days before renewal)",
+  "touchpoints": "3 emails + 1 SMS = 4 touches"
+}

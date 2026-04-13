@@ -1,0 +1,29 @@
+Sequence: hoa-board-member
+Step: 3
+Day: 9
+Type: EMAIL
+Subject: {{contact.company_name}} - what happens when residents complain?
+
+--- CONTENT ---
+
+Hi {{contact.first_name}},
+
+One scenario we hear constantly from HOA boards:
+
+A resident gets towed. They're upset. They call the board. The board has no documentation to show them. The resident threatens to sue. The board scrambles.
+
+This doesn't have to happen.
+
+When Axle Towing handles enforcement for your property, every tow comes with a full documentation packet you can share with any complaining resident instantly:
+
+- Photo of the vehicle in the violation zone
+- Sign visible in the same photo
+- Date, time, and location of the tow
+- ARS statute that applies
+- Tow company license number
+
+When a resident sees that packet, the conversation is over. They were parked in violation. It's documented. The board did its job.
+
+Is this the kind of backup you'd want behind your parking enforcement?
+
+Elliott

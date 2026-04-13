@@ -1,0 +1,24 @@
+Sequence: hoa-board-member
+Step: 4
+Day: 16
+Type: EMAIL
+Subject: HOA boards who switched to Axle Towing say this most
+
+--- CONTENT ---
+
+Hi {{contact.first_name}},
+
+When I ask HOA board chairs what changed after they switched to us, the most common answer is: "I stopped getting calls."
+
+Not that parking violations disappeared - those still happen. But when they do:
+
+- Residents call us, not the board
+- We handle it
+- You get a notification, not a crisis
+
+We've worked with boards managing everything from 50-unit condos to 400-unit master-planned communities. The setup takes less than a week.
+
+If you're still with your current provider and things are fine - great. But if parking enforcement is still eating board meeting time or generating resident drama, I'd like to show you a different way.
+
+Elliott
+Axle Towing & Impound

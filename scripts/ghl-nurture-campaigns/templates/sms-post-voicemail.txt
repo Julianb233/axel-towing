@@ -1,0 +1,7 @@
+SMS Template: post-voicemail
+Use Case: Post-voicemail follow-up
+Characters: 149
+
+--- MESSAGE ---
+
+Hi {{contact.first_name}}, Elliott from Axle Towing. I left you a voicemail - just wanted to make sure it didn't get buried. My direct cell: 480-288-5526.
