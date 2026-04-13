@@ -1,0 +1,82 @@
+{
+  "name": "Referral - HOA PM Cold Outreach Sequence",
+  "description": "4-email sequence for HOA property manager referral partners. Days 1, 4, 10, 21.",
+  "trigger": {
+    "type": "tag_added",
+    "tag": "referral-hoa-pm"
+  },
+  "steps": [
+    {
+      "order": 1,
+      "action": "add_tag",
+      "tag": "sequence-active",
+      "notes": "Mark contact as in active sequence to prevent double-enrollment"
+    },
+    {
+      "order": 2,
+      "action": "send_email",
+      "delay": "0 minutes",
+      "template": "Referral - HOA PM - Email 1 - Partnership Introduction",
+      "subject_a": "Towing & parking enforcement partner for your managed communities",
+      "subject_b": "How we help property managers eliminate parking complaints",
+      "from": "elliott@axletowing.com",
+      "template_file": "hoa-pm-email-1.html"
+    },
+    {
+      "order": 3,
+      "action": "wait",
+      "delay": "4 days"
+    },
+    {
+      "order": 4,
+      "action": "send_email",
+      "template": "Referral - HOA PM - Email 2 - Differentiation",
+      "subject_a": "What property managers tell us they value most",
+      "subject_b": "The 5 things that set our parking enforcement apart",
+      "from": "elliott@axletowing.com",
+      "template_file": "hoa-pm-email-2.html"
+    },
+    {
+      "order": 5,
+      "action": "wait",
+      "delay": "6 days",
+      "notes": "Day 10 from sequence start"
+    },
+    {
+      "order": 6,
+      "action": "send_email",
+      "template": "Referral - HOA PM - Email 3 - Case Study",
+      "subject_a": "How we helped a 300-unit complex reduce parking complaints by 90%",
+      "subject_b": "Real results from a Phoenix metro HOA like yours",
+      "from": "elliott@axletowing.com",
+      "template_file": "hoa-pm-email-3.html"
+    },
+    {
+      "order": 7,
+      "action": "wait",
+      "delay": "11 days",
+      "notes": "Day 21 from sequence start"
+    },
+    {
+      "order": 8,
+      "action": "send_email",
+      "template": "Referral - HOA PM - Email 4 - Final Touch",
+      "subject_a": "Last note - parking enforcement for {{contact.company_name}}",
+      "subject_b": "Closing the loop (and leaving the door open)",
+      "from": "elliott@axletowing.com",
+      "template_file": "hoa-pm-email-4.html"
+    },
+    {
+      "order": 9,
+      "action": "remove_tag",
+      "tag": "sequence-active"
+    },
+    {
+      "order": 10,
+      "action": "add_tag",
+      "tag": "sequence-completed"
+    }
+  ],
+  "stop_on_reply": true,
+  "best_send_time": "Tuesday-Thursday, 9-11 AM America/Phoenix"
+}

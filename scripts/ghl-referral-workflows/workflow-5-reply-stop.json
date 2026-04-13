@@ -1,0 +1,43 @@
+{
+  "name": "Referral - Sequence Stop (Reply Detection)",
+  "description": "Stops active sequences when a prospect replies to any email. Creates follow-up task and notifies Elliott.",
+  "trigger": {
+    "type": "email_reply_received",
+    "condition": "contact has tag 'sequence-active'"
+  },
+  "steps": [
+    {
+      "order": 1,
+      "action": "remove_tag",
+      "tag": "sequence-active",
+      "notes": "This stops all active workflows that check for sequence-active tag"
+    },
+    {
+      "order": 2,
+      "action": "add_tag",
+      "tag": "sequence-replied"
+    },
+    {
+      "order": 3,
+      "action": "create_task",
+      "task_title": "Reply received from {{contact.first_name}} {{contact.last_name}} - follow up manually",
+      "task_body": "Referral prospect {{contact.first_name}} at {{contact.company_name}} replied to outreach email. Follow up within 24 hours. Check their reply in Conversations.",
+      "assign_to": "elliott@axletowing.com",
+      "due_in": "1 day"
+    },
+    {
+      "order": 4,
+      "action": "send_sms",
+      "to": "+18057602314",
+      "message": "Referral prospect {{contact.first_name}} {{contact.last_name}} ({{contact.company_name}}) replied to your outreach email. Check GHL Conversations to follow up.",
+      "notes": "SMS notification to Elliott"
+    },
+    {
+      "order": 5,
+      "action": "update_pipeline_stage",
+      "pipeline": "Referral Partner Pipeline",
+      "stage": "Replied - Qualifying",
+      "notes": "Move contact to qualifying stage for manual follow-up"
+    }
+  ]
+}

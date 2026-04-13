@@ -1,0 +1,13 @@
+{
+  "name": "Nurture - Referral Thank-You",
+  "description": "Instant thank-you trigger when a contact refers a new account.",
+  "task": "AI-7461",
+  "trigger": {"type": "tag_added", "tag": "referred-us"},
+  "steps": [
+    {"order": 1, "action": "send_email", "delay": "0 minutes", "template": "Nurture - Referral - Thank You", "subject": "Thank you, {{contact.first_name}} - a small token of appreciation", "from": "elliott@axletowing.com", "template_file": "referral-thank-you.html"},
+    {"order": 2, "action": "send_sms", "delay": "30 minutes", "template": "Nurture - Referral - SMS", "message": "{{contact.first_name}} - thanks for the referral! I really appreciate it. I'm going to take great care of them. Anything I can do for you? - Elliott", "notes": "147 chars"},
+    {"order": 3, "action": "add_tag", "tag": "referral-thanked"}
+  ],
+  "stop_conditions": [],
+  "send_window": {"email": "8:00-17:00 Mon-Fri America/Phoenix", "sms": "9:00-16:00 Mon-Fri America/Phoenix"}
+}

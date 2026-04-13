@@ -1,0 +1,26 @@
+{
+  "name": "Nurture - Property Manager (28-Day Email Sequence)",
+  "description": "5-email personalized sequence for property managers. Portfolio value, time savings, dispute handling.",
+  "task": "AI-7461",
+  "trigger": {"type": "tag_added", "tag": "property-manager"},
+  "steps": [
+    {"order": 1, "action": "add_tag", "tag": "nurture-active"},
+    {"order": 2, "action": "send_email", "delay": "0 minutes", "template": "Nurture - PM - Email 1", "subject": "Managing multiple Phoenix-area properties? One towing partner for all of them.", "from": "elliott@axletowing.com", "template_file": "pm-email-1.html", "notes": "Day 0"},
+    {"order": 3, "action": "wait", "delay": "5 days"},
+    {"order": 4, "action": "send_email", "template": "Nurture - PM - Email 2", "subject": "The #1 complaint property managers have about towing companies", "from": "elliott@axletowing.com", "template_file": "pm-email-2.html", "notes": "Day 5"},
+    {"order": 5, "action": "wait", "delay": "6 days", "notes": "Day 11"},
+    {"order": 6, "action": "send_email", "template": "Nurture - PM - Email 3", "subject": "How we handle tenant parking disputes so you don't have to", "from": "elliott@axletowing.com", "template_file": "pm-email-3.html", "notes": "Day 11"},
+    {"order": 7, "action": "wait", "delay": "7 days", "notes": "Day 18"},
+    {"order": 8, "action": "send_email", "template": "Nurture - PM - Email 4", "subject": "{{contact.first_name}} - a question about your current towing setup", "from": "elliott@axletowing.com", "template_file": "pm-email-4.html", "notes": "Day 18"},
+    {"order": 9, "action": "wait", "delay": "10 days", "notes": "Day 28"},
+    {"order": 10, "action": "send_email", "template": "Nurture - PM - Email 5", "subject": "Portfolio partnership offer - closing this out", "from": "elliott@axletowing.com", "template_file": "pm-email-5.html", "notes": "Day 28"},
+    {"order": 11, "action": "remove_tag", "tag": "nurture-active"},
+    {"order": 12, "action": "add_tag", "tag": "nurture-completed"}
+  ],
+  "stop_conditions": [
+    {"type": "reply_received", "action": "move_to_stage", "stage": "Engaged"},
+    {"type": "tag_added", "tag": "call-booked", "action": "pause_sequence"},
+    {"type": "tag_added", "tag": "do-not-contact", "action": "end_sequence"}
+  ],
+  "send_window": {"email": "8:00-17:00 Mon-Fri America/Phoenix"}
+}

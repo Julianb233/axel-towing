@@ -1,0 +1,65 @@
+{
+  "name": "Referral - Paving Company Outreach Sequence",
+  "description": "2-email + call task sequence for paving company partners. Days 1, 7, 14.",
+  "trigger": {
+    "type": "tag_added",
+    "tag": "referral-paving"
+  },
+  "steps": [
+    {
+      "order": 1,
+      "action": "add_tag",
+      "tag": "sequence-active"
+    },
+    {
+      "order": 2,
+      "action": "send_email",
+      "delay": "0 minutes",
+      "template": "Referral - Paving - Email 1 - Partnership Introduction",
+      "subject_a": "Vehicle relocation partner for your Phoenix paving jobs",
+      "subject_b": "We clear the lot before your crew arrives",
+      "from": "elliott@axletowing.com",
+      "template_file": "paving-email-1.html"
+    },
+    {
+      "order": 3,
+      "action": "wait",
+      "delay": "7 days"
+    },
+    {
+      "order": 4,
+      "action": "send_email",
+      "template": "Referral - Paving - Email 2 - Follow Up",
+      "subject_a": "Following up - vehicle relocation for {{contact.company_name}}",
+      "subject_b": "Do you have any parking lot jobs coming up?",
+      "from": "elliott@axletowing.com",
+      "template_file": "paving-email-2.html"
+    },
+    {
+      "order": 5,
+      "action": "wait",
+      "delay": "7 days",
+      "notes": "Day 14 from sequence start"
+    },
+    {
+      "order": 6,
+      "action": "create_task",
+      "task_title": "Call {{contact.first_name}} {{contact.last_name}} at {{contact.company_name}}",
+      "task_body": "Paving company follow-up call. Check if they have upcoming parking lot jobs needing vehicle relocation.",
+      "assign_to": "elliott@axletowing.com",
+      "due_in": "1 day"
+    },
+    {
+      "order": 7,
+      "action": "remove_tag",
+      "tag": "sequence-active"
+    },
+    {
+      "order": 8,
+      "action": "add_tag",
+      "tag": "sequence-completed"
+    }
+  ],
+  "stop_on_reply": true,
+  "best_send_time": "Monday-Wednesday, 7:30-9 AM America/Phoenix"
+}

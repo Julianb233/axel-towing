@@ -1,0 +1,27 @@
+{
+  "name": "Nurture - Re-Engagement (Dormant Accounts)",
+  "description": "3-touch sequence to win back accounts that went on hold. Elliott's #1 pain point.",
+  "task": "AI-7461",
+  "trigger": {"type": "tag_added", "tag": "on-hold", "condition": "contact in On Hold stage 30+ days"},
+  "steps": [
+    {"order": 1, "action": "add_tag", "tag": "nurture-active"},
+    {"order": 2, "action": "add_tag", "tag": "re-engagement"},
+    {"order": 3, "action": "send_email", "delay": "0 minutes", "template": "Nurture - Re-Engage - Email 1", "subject": "Checking in - it's been a while, {{contact.first_name}}", "from": "elliott@axletowing.com", "template_file": "reengage-email-1.html", "notes": "Day 0"},
+    {"order": 4, "action": "wait", "delay": "7 days"},
+    {"order": 5, "action": "send_email", "template": "Nurture - Re-Engage - Email 2", "subject": "What's changed at Axle Towing since we last connected", "from": "elliott@axletowing.com", "template_file": "reengage-email-2.html", "notes": "Day 7"},
+    {"order": 6, "action": "wait", "delay": "7 days", "notes": "Day 14"},
+    {"order": 7, "action": "send_sms", "template": "Nurture - Re-Engage - SMS", "message": "Hi {{contact.first_name}}, Elliott from Axle Towing. I sent a couple of emails - didn't want to let this slip. If you ever want to reconnect about {{contact.company_name}}, I'm here. 480-288-5526.", "notes": "Day 14 (159 chars)"},
+    {"order": 8, "action": "drop_voicemail", "script": "re-engagement", "notes": "Day 14 - Script C", "send_window": "10:00-12:00 Tue-Thu America/Phoenix"},
+    {"order": 9, "action": "remove_tag", "tag": "nurture-active"},
+    {"order": 10, "action": "add_tag", "tag": "re-engagement-completed"}
+  ],
+  "stop_conditions": [
+    {"type": "reply_received", "action": "move_to_stage", "stage": "Engaged"},
+    {"type": "tag_added", "tag": "call-booked", "action": "pause_sequence"},
+    {"type": "tag_added", "tag": "do-not-contact", "action": "end_sequence"}
+  ],
+  "send_window": {
+    "email": "8:00-17:00 Mon-Fri America/Phoenix",
+    "sms": "9:00-16:00 Mon-Fri America/Phoenix"
+  }
+}

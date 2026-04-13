@@ -1,0 +1,16 @@
+{
+  "name": "Nurture - Retention (Quarterly Check-In)",
+  "description": "Recurring quarterly touchpoint for active accounts. Reduces churn.",
+  "task": "AI-7461",
+  "trigger": {"type": "tag_added", "tag": "active-account", "recurrence": "every 90 days"},
+  "steps": [
+    {"order": 1, "action": "send_email", "delay": "0 minutes", "template": "Nurture - Retention - Quarterly", "subject": "Quarterly check-in - {{contact.company_name}} account update", "from": "elliott@axletowing.com", "template_file": "retention-quarterly.html"},
+    {"order": 2, "action": "wait", "delay": "2 days"},
+    {"order": 3, "action": "send_sms", "template": "Nurture - Retention - SMS", "message": "Hi {{contact.first_name}}, just checking in on your account. Everything running smoothly? Any changes I should know about? - Elliott, 480-288-5526.", "notes": "144 chars"}
+  ],
+  "stop_conditions": [
+    {"type": "tag_added", "tag": "do-not-contact", "action": "end_sequence"},
+    {"type": "tag_removed", "tag": "active-account", "action": "end_sequence"}
+  ],
+  "send_window": {"email": "8:00-17:00 Mon-Fri America/Phoenix", "sms": "9:00-16:00 Mon-Fri America/Phoenix"}
+}

@@ -1,0 +1,85 @@
+{
+  "_meta": {
+    "version": "1.0.0",
+    "generated": "2026-04-13T04:00:00.000Z",
+    "task": "AI-7461",
+    "description": "Axle Towing - 7 Nurture Campaign Workflows for GoHighLevel",
+    "source_doc": "docs/NURTURE-CAMPAIGN-SEQUENCES.md",
+    "instructions": [
+      "1. Go to GHL > Automation > Workflows",
+      "2. Create a new workflow for each entry below",
+      "3. Set the trigger as specified (tag or pipeline stage)",
+      "4. Add each step in order with the correct delays",
+      "5. Set send windows per the timing specified",
+      "6. Configure stop conditions (reply detection, tag-based)",
+      "7. Import email templates from the templates/ directory",
+      "8. Test each workflow with a test contact before activating"
+    ]
+  },
+  "pipeline_setup": {
+    "name": "Property Accounts",
+    "stages": [
+      {"name": "New Lead", "description": "Freshly scraped, not yet contacted"},
+      {"name": "Contacted", "description": "Email 1 sent, awaiting response"},
+      {"name": "Engaged", "description": "Responded or opened 2+ emails"},
+      {"name": "Call Booked", "description": "Meeting scheduled"},
+      {"name": "Proposal Sent", "description": "Service agreement sent"},
+      {"name": "Active Account", "description": "Signed and onboarded"},
+      {"name": "On Hold", "description": "Ghosted or temporarily paused"},
+      {"name": "Closed Lost", "description": "Hard no - do not contact"},
+      {"name": "Referred", "description": "Sent referral"}
+    ]
+  },
+  "tags_required": [
+    "nurture-active", "nurture-completed", "cold-prospect",
+    "hoa-board-member", "property-manager", "apartment-manager",
+    "commercial-owner", "active-account", "on-hold", "engaged",
+    "call-booked", "referred-us", "referral-thanked", "do-not-contact",
+    "re-engagement", "re-engagement-completed",
+    "renewal-pending", "renewal-processed", "renewal-engaged"
+  ],
+  "custom_fields_required": [
+    {"name": "Property Name", "type": "text"},
+    {"name": "Property Type", "type": "dropdown", "options": ["HOA", "Apartment", "Commercial", "Other"]},
+    {"name": "Number of Properties", "type": "number"},
+    {"name": "Contract Renewal Date", "type": "date"},
+    {"name": "Last Tow Date", "type": "date"},
+    {"name": "Referred By", "type": "contact_link"},
+    {"name": "Notes - Elliott", "type": "textarea"}
+  ],
+  "workflows": {
+    "cold_outreach": {"file": "workflow-1-cold-outreach.json", "trigger": "Pipeline: New Lead", "touches": 5, "channels": ["email","sms","voicemail"], "duration": "21 days"},
+    "hoa_board_member": {"file": "workflow-2-hoa-board-member.json", "trigger": "Tag: hoa-board-member", "touches": 5, "channels": ["email"], "duration": "25 days"},
+    "property_manager": {"file": "workflow-3-property-manager.json", "trigger": "Tag: property-manager", "touches": 5, "channels": ["email"], "duration": "28 days"},
+    "re_engagement": {"file": "workflow-4-re-engagement.json", "trigger": "Tag: on-hold (30+ days)", "touches": 4, "channels": ["email","sms","voicemail"], "duration": "14 days"},
+    "retention_quarterly": {"file": "workflow-5-retention-quarterly.json", "trigger": "Tag: active-account (90-day)", "touches": 2, "channels": ["email","sms"], "duration": "Recurring"},
+    "renewal_reminder": {"file": "workflow-6-renewal-reminder.json", "trigger": "Custom field: 60 days before renewal", "touches": 4, "channels": ["email","sms"], "duration": "53 days"},
+    "referral_thank_you": {"file": "workflow-7-referral-thank-you.json", "trigger": "Tag: referred-us", "touches": 2, "channels": ["email","sms"], "duration": "Instant"}
+  },
+  "voicemail_scripts": {
+    "general-prospect": {
+      "duration": "55 seconds",
+      "script": "Hi {{contact.first_name}}, this is Elliott calling from Axle Towing and Impound here in the Phoenix metro. I sent you an email earlier this week about unauthorized parking enforcement for your property - I just wanted to put a voice to the name. We work with HOA boards and property managers across 38 cities in the Phoenix area. No cost to the property, full ARS compliance, 24/7 dispatch. If this is something worth a quick conversation, just call or text me back at 480-288-5526. That's my direct cell. Hope to connect soon - have a great day."
+    },
+    "hoa-board-member": {
+      "duration": "52 seconds",
+      "script": "Hi {{contact.first_name}}, this is Elliott from Axle Towing. I know your time as a board member is valuable, so I'll be quick. We specialize in parking enforcement for HOA communities across Phoenix, Scottsdale, Chandler, and Gilbert. We're fully Arizona licensed, we document every tow so your board is protected, and we handle resident calls so you don't have to. I sent you an email this week with more detail - but if you'd rather just talk, my direct cell is 480-288-5526. No pressure, just want to make sure you have options. Have a good one."
+    },
+    "re-engagement": {
+      "duration": "58 seconds",
+      "script": "Hi {{contact.first_name}}, this is Elliott from Axle Towing. I know it's been a while since we've connected, and I just wanted to reach out personally. I'll be honest - I think we dropped the ball on staying in touch, and that's on me. We've made some real changes to how we manage accounts, and I'd like the chance to show you what that looks like. If you're happy with your current setup, completely understand. But if parking enforcement has been a headache, I'd love 10 minutes to reconnect. Call or text me at 480-288-5526. That's my direct cell, available any time. Thanks, {{contact.first_name}}. Talk soon."
+    }
+  },
+  "sms_templates": {
+    "cold_followup_day2": {"message": "Hi {{contact.first_name}}, this is Elliott from Axle Towing. Did you get my email about unauthorized parking enforcement for {{contact.company_name}}? Happy to answer any questions - just reply here.", "chars": 155},
+    "breakup_day21": {"message": "Hey {{contact.first_name}} - Elliott from Axle Towing. I'll stop reaching out after this. If unauthorized parking ever becomes a headache at {{contact.company_name}}, we're here. 480-288-5526.", "chars": 157},
+    "post_voicemail": {"message": "Hi {{contact.first_name}}, Elliott from Axle Towing. I left you a voicemail - just wanted to make sure it didn't get buried. My direct cell: 480-288-5526.", "chars": 149},
+    "pre_call_warmup": {"message": "{{contact.first_name}} - quick question: how many unauthorized vehicles do you typically deal with per month? Just trying to understand your situation before our call.", "chars": 158},
+    "meeting_confirmation": {"message": "Hi {{contact.first_name}}, confirming our call tomorrow at [TIME]. Elliott from Axle Towing. Call me directly at 480-288-5526 if anything changes.", "chars": 143},
+    "post_call": {"message": "{{contact.first_name}}, great talking to you today. I'll send over the service agreement details by end of day. Let me know if you have questions - 480-288-5526.", "chars": 158},
+    "re_engagement": {"message": "Hi {{contact.first_name}}, Elliott from Axle Towing. I sent a couple of emails - didn't want to let this slip. If you ever want to reconnect about {{contact.company_name}}, I'm here. 480-288-5526.", "chars": 159},
+    "renewal_reminder": {"message": "{{contact.first_name}}, your Axle Towing service agreement renews in 30 days. Let's connect to review - reply or call 480-288-5526.", "chars": 130},
+    "quarterly_checkin": {"message": "Hi {{contact.first_name}}, just checking in on your account. Everything running smoothly? Any changes I should know about? - Elliott, 480-288-5526.", "chars": 144},
+    "referral_thankyou": {"message": "{{contact.first_name}} - thanks for the referral! I really appreciate it. I'm going to take great care of them. Anything I can do for you? - Elliott", "chars": 147}
+  }
+}
