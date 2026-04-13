@@ -1,14 +1,16 @@
 /**
  * GoHighLevel (GHL) CRM Integration
  *
- * Sends leads and contacts to GHL via their REST API.
+ * Sends leads and contacts to GHL via their REST API (v1).
  * GHL is included free in the Axle Towing package.
  *
  * API Docs: https://highlevel.stoplight.io/docs/integrations/
  *
  * Environment variables needed:
- *   GHL_API_KEY     — Location API key from GHL (Settings > API Keys)
- *   GHL_LOCATION_ID — Location ID from GHL (Settings > Business Profile)
+ *   GHL_API_KEY            — Location API key from GHL (Settings > API Keys)
+ *   GHL_LOCATION_ID        — Location ID from GHL (Settings > Business Profile)
+ *   GHL_PIPELINE_ID        — Pipeline ID for lead tracking (optional)
+ *   GHL_STAGE_NEW_LEAD_ID  — Stage ID for "New Lead" stage (optional)
  */
 
 const GHL_BASE_URL = 'https://rest.gohighlevel.com/v1';
@@ -79,6 +81,7 @@ function buildTags(params: {
   if (params.source) {
     const sourceMap: Record<string, string> = {
       'homepage-lead-capture': 'src-website-form',
+      'contact-form': 'src-website-form',
       'service-page': 'src-website-form',
       'inline-form': 'src-website-form',
       'exit-intent': 'src-website-form',
@@ -242,6 +245,8 @@ export async function addGHLNote(
 /**
  * Create an opportunity (pipeline deal) in GHL for a qualified lead.
  * Requires GHL_PIPELINE_ID and GHL_STAGE_NEW_LEAD_ID to be configured.
+ *
+ * GHL v1 API: POST /pipelines/{pipelineId}/opportunities
  */
 export async function createGHLOpportunity(params: {
   contactId: string;
@@ -255,6 +260,7 @@ export async function createGHLOpportunity(params: {
 
   if (!apiKey || !pipelineId || !stageId) {
     // Pipeline IDs are optional — contact creation is the primary action
+    console.warn('[GHL] GHL_PIPELINE_ID or GHL_STAGE_NEW_LEAD_ID not set — skipping opportunity');
     return { success: false, error: 'GHL pipeline config not set' };
   }
 
@@ -269,14 +275,18 @@ export async function createGHLOpportunity(params: {
       source: 'Website',
     };
 
-    const response = await fetch(`${GHL_BASE_URL}/pipelines/opportunities`, {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-        Authorization: `Bearer ${apiKey}`,
-      },
-      body: JSON.stringify(opportunity),
-    });
+    // GHL v1: POST /pipelines/{pipelineId}/opportunities
+    const response = await fetch(
+      `${GHL_BASE_URL}/pipelines/${pipelineId}/opportunities`,
+      {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          Authorization: `Bearer ${apiKey}`,
+        },
+        body: JSON.stringify(opportunity),
+      }
+    );
 
     if (!response.ok) {
       const errorText = await response.text();
@@ -350,4 +360,47 @@ export async function syncLeadToGHL(params: {
   });
 
   return { success: true, contactId };
+}
+
+/**
+ * Fetch pipeline info from GHL to auto-discover pipeline/stage IDs.
+ * Useful for setup verification — call from /api/health or admin tooling.
+ *
+ * GHL v1 API: GET /pipelines
+ */
+export async function getGHLPipelines(): Promise<{
+  success: boolean;
+  pipelines?: Array<{
+    id: string;
+    name: string;
+    stages: Array<{ id: string; name: string }>;
+  }>;
+  error?: string;
+}> {
+  const apiKey = process.env.GHL_API_KEY;
+  if (!apiKey) {
+    return { success: false, error: 'GHL_API_KEY not configured' };
+  }
+
+  try {
+    const response = await fetch(`${GHL_BASE_URL}/pipelines`, {
+      headers: { Authorization: `Bearer ${apiKey}` },
+    });
+
+    if (!response.ok) {
+      return { success: false, error: `GHL API error: ${response.status}` };
+    }
+
+    const data = (await response.json()) as {
+      pipelines?: Array<{
+        id: string;
+        name: string;
+        stages: Array<{ id: string; name: string }>;
+      }>;
+    };
+
+    return { success: true, pipelines: data.pipelines || [] };
+  } catch (error) {
+    return { success: false, error: String(error) };
+  }
 }
