@@ -16,6 +16,44 @@ interface ChangelogGroup {
 
 const changelog: ChangelogGroup[] = [
   {
+    date: "April 12, 2026 (A2P 10DLC SMS Compliance + GHL Automation Workflows — AI-7457, AI-7459, AI-7460, AI-7461)",
+    type: "completed",
+    entries: [
+      {
+        text: "A2P 10DLC brand registration guide created with pre-filled Axle Towing business info, campaign details, and step-by-step GHL Trust Center walkthrough — awaiting EIN from Elliott to submit",
+        category: "strategy",
+      },
+      {
+        text: "TCPA-compliant SMS consent added to all lead capture forms — reusable SMSConsentCheckbox component with separate service/marketing opt-ins, linked to Privacy Policy and Terms",
+        category: "website",
+      },
+      {
+        text: "Privacy Policy updated with SMS/Text Messaging section — message types, frequency disclosure, STOP/HELP instructions, and carrier data non-sharing clause required by mobile carriers",
+        category: "website",
+      },
+      {
+        text: "Terms of Service updated with SMS/Text Messaging Terms — consent, frequency caps (5/mo service, 4/mo marketing), opt-out, costs, and carrier liability",
+        category: "website",
+      },
+      {
+        text: "Leads API updated to capture smsConsent flag — GHL contacts tagged with sms-consent-web or no-sms for workflow guards; Supabase migration for sms_consent_log audit trail",
+        category: "infrastructure",
+      },
+      {
+        text: "Elliott template approval workflow built — 2 GHL workflows (approval + revision), 4 branded email templates, auto-reminders at 2 and 5 days, escalation after 5 days",
+        category: "strategy",
+      },
+      {
+        text: "21-day nurture campaign workflows built — 7 sequences (PM, HOA, commercial, cold outreach, referral, re-engagement, post-service) with branded email/SMS templates and GHL configs",
+        category: "strategy",
+      },
+      {
+        text: "6 referral partner email workflows built — locksmith, Uber/Lyft, parking permit, mechanic, mover, painter sequences with 18 branded HTML templates and partner-specific sending windows",
+        category: "strategy",
+      },
+    ],
+  },
+  {
     date: "April 9, 2026 (Vehicle-Owner Content Cleanup & Deploy — AI-7507, AI-7509, AI-7510)",
     type: "completed",
     entries: [
