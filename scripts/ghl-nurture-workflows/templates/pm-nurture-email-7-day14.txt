@@ -1,0 +1,33 @@
+Workflow: PM Nurture -- 21 Day
+Type: Email
+Step: 7 of 9
+Day: 14
+Subject A: The 3 most common concerns about switching towing companies
+Subject B: "What if residents complain?" — and other common questions
+From: elliott@axletowing.com
+From Name: Elliott -- Axle Towing
+Tag Trigger: nurture-active
+
+--- EMAIL BODY ---
+
+Hi {{contact.first_name}},
+
+I've talked to a lot of property managers who want better parking enforcement but hesitate to make a change. Here are the three concerns I hear most — and how we address them:
+
+1. "What if residents complain about the towing?"
+
+Every tow comes with a full documentation packet: photo of the vehicle in violation, signage visible in frame, timestamp, and the ARS statute that applies. When a resident sees that packet, the conversation is over. They were parked in violation. It's documented.
+
+2. "We already have a towing company — switching is a hassle."
+
+Our onboarding takes less than a week. We review your current signage, ensure ARS compliance, and start enforcement. Most managers tell us the transition was the easiest part.
+
+3. "How do I know you'll actually show up?"
+
+Every Axle Towing account gets my direct cell number. Not a dispatcher, not a call center — Elliott's cell. If I don't pick up within 30 minutes, something is genuinely wrong. In three years, that hasn't happened.
+
+If any of these concerns have been holding you back, I'm happy to address them directly on a quick call.
+
+Elliott
+Axle Towing & Impound
+(480) 288-5526 | axletowing.com
