@@ -2,6 +2,7 @@
 
 import { useState, FormEvent } from 'react';
 import FormConfirmation from './FormConfirmation';
+import SMSConsentCheckbox from './SMSConsentCheckbox';
 
 type ServiceType = 'property' | 'relocation' | 'enforcement';
 
@@ -134,6 +135,8 @@ export default function ServiceInlineForm({ serviceType, serviceTitle }: Service
                   </div>
                 ))}
               </div>
+              {/* SMS Consent -- TCPA / A2P 10DLC compliance (AI-7457) */}
+              <SMSConsentCheckbox compact />
               <div className="pt-2">
                 <button
                   type="submit"
