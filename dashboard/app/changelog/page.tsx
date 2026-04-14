@@ -16,6 +16,32 @@ interface ChangelogGroup {
 
 const changelog: ChangelogGroup[] = [
   {
+    date: "April 13, 2026 (Cold Outreach Domain Setup & Email Sequences — AI-7458)",
+    type: "completed",
+    entries: [
+      {
+        text: "Created cold outreach domain setup guide (docs/COLD-OUTREACH-DOMAIN-SETUP.md) with 3 domain recommendations, full DNS setup instructions (SPF, DKIM, DMARC), Google Workspace + Instantly.ai infrastructure plan",
+        category: "strategy",
+      },
+      {
+        text: "Designed 21-day email warmup schedule with daily send limits, ramp-up plan, and deliverability monitoring targets (bounce < 3%, spam < 0.1%, open rate > 40%)",
+        category: "strategy",
+      },
+      {
+        text: "Created 5 cold email sequences (docs/COLD-EMAIL-SEQUENCES.md): Property Manager Introduction, HOA Board Member Outreach, Apartment Complex Manager, Commercial Property Owner, and Post-Event Follow-Up",
+        category: "content",
+      },
+      {
+        text: "Each sequence includes 3 emails with A/B subject line variants, merge field personalization ({{first_name}}, {{company_name}}, {{property_type}}, {{city}}), and Phoenix metro context",
+        category: "content",
+      },
+      {
+        text: "Included full CAN-SPAM compliance guide, sending limits, opt-out management procedures, and implementation checklist with weekly milestones",
+        category: "strategy",
+      },
+    ],
+  },
+  {
     date: "April 13, 2026 (Job Application Pages Enhanced — Careers Pipeline)",
     type: "completed",
     entries: [
