@@ -16,6 +16,58 @@ interface ChangelogGroup {
 
 const changelog: ChangelogGroup[] = [
   {
+    date: "April 14, 2026 (GHL Hiring Pipeline + Chat Widget Verification + Blocker Follow-Ups — AI-7798, AI-7464)",
+    type: "completed",
+    entries: [
+      {
+        text: "Built 9-stage hiring pipeline in GHL via API: Application Received → Phone Screen Scheduled → Phone Screen Complete → Interview Scheduled → Interview Complete → Offer Extended → Offer Accepted → Rejection → 30-Day Check-In (Pipeline ID: 6Zm0sPdNK2xnPE9d5Vds)",
+        category: "infrastructure",
+      },
+      {
+        text: "Verified all 10 hiring custom fields in GHL (applied_position, interview_date, interview_time, phone_screen_date/time, calendly_link, pay_rate, start_date, hire_date, interviewer_name)",
+        category: "infrastructure",
+      },
+      {
+        text: "Verified GHL chat widget is LIVE on axletowing.com — bubble appears on all pages, opens 'How Can We Help?' with Call Now + Quick Quote. Browserbase screenshot confirms working deployment",
+        category: "website",
+      },
+      {
+        text: "Full site health check via Browserbase: homepage, services, blog (68 articles), and careers pages all loading correctly with no visual issues",
+        category: "website",
+      },
+      {
+        text: "Followed up on all 10 blocked Axle Towing tasks: notified Julian (GHL credentials, gws auth), Hitesh (GHL login fix — AI-7861 created), and Elliott (social media credentials for Facebook/Instagram/LinkedIn)",
+        category: "strategy",
+      },
+      {
+        text: "Added status comments to 4 blocked Linear issues (AI-7464, AI-7465, AI-7468, AI-7473) documenting exactly what's needed to unblock each one",
+        category: "strategy",
+      },
+    ],
+  },
+  {
+    date: "April 13, 2026 (Month 1 Social Media Content Calendar & Templates — AI-7466, AI-7430)",
+    type: "completed",
+    entries: [
+      {
+        text: "Created 4-week social media content calendar with 36 ready-to-post entries across LinkedIn, Facebook, and Instagram — 3 posts/week per platform with full captions, hashtags, image descriptions, and posting times",
+        category: "content",
+      },
+      {
+        text: "Built 12 LinkedIn post templates: 4 educational (signage compliance, documentation mistakes, HOA legal authority, new board member guide), 4 social proof (testimonials, case studies, portfolio success), 4 CTA (free assessment, seasonal urgency, PM appeal, management company partnership)",
+        category: "content",
+      },
+      {
+        text: "Built 12 Instagram caption templates: 4 'Did You Know?' educational posts (signage carousel, checklist, liability, zero-cost explainer), 4 service highlight/behind-the-scenes (assessments, day-in-the-life, meet Elliott, fleet), 4 CTA stories/reels (free assessment, results reel, checklist, 3-step guide)",
+        category: "content",
+      },
+      {
+        text: "All content aligned with brand voice (professional, approachable, B2B property manager audience), zero-cost value proposition, Phoenix metro focus — no specific pricing mentioned per Elliott's directive",
+        category: "strategy",
+      },
+    ],
+  },
+  {
     date: "April 13, 2026 (Cold Outreach Domain Setup & Email Sequences — AI-7458)",
     type: "completed",
     entries: [
