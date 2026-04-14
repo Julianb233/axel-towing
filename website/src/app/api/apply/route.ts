@@ -1,6 +1,8 @@
 import { NextResponse } from "next/server";
 import { Resend } from "resend";
 import { JOB_POSITIONS } from "@/lib/jobs";
+import { createGHLContact, addGHLNote } from "@/lib/ghl";
+import { storeJobApplication } from "@/lib/supabase";
 
 const resendApiKey = process.env.RESEND_API_KEY;
 const HIRING_EMAIL = process.env.HIRING_EMAIL || "axletowing@gmail.com";
@@ -11,6 +13,7 @@ interface ApplicationPayload {
   name: string;
   email: string;
   phone: string;
+  message?: string;
   answers: Record<string, string>;
 }
 
@@ -36,6 +39,7 @@ function computeLeadScore(position: string, answers: Record<string, string>): nu
       if (q.id === "driving-record" && val === "clean") score += 10;
       if (q.id === "availability" && val === "flexible") score += 10;
       if (q.id === "license" && val === "yes") score += 5;
+      if (q.id === "preferred-shift" && val === "either") score += 5;
     }
 
     if (position === "sales-representative") {
@@ -82,6 +86,12 @@ function buildEmailBody(data: ApplicationPayload, score: number): string {
     }
   }
 
+  if (data.message) {
+    lines.push(``);
+    lines.push(`--- Applicant Message ---`);
+    lines.push(data.message);
+  }
+
   lines.push(``);
   lines.push(`Lead Score: ${score}/100 (${label})`);
   lines.push(`Submitted: ${new Date().toLocaleString("en-US", { timeZone: "America/Phoenix" })}`);
@@ -104,7 +114,10 @@ export async function POST(req: Request) {
     const job = JOB_POSITIONS.find((j) => j.slug === body.position);
     const subject = `[${label}] New Application: ${job?.title || body.position} — ${body.name}`;
 
-    // Send email notification
+    // Generate a reference ID for tracking
+    const refId = `APP-${Date.now()}-${Math.random().toString(36).slice(2, 7).toUpperCase()}`;
+
+    // 1. Send email notification to Elliott
     if (resendApiKey) {
       const resend = new Resend(resendApiKey);
       const { error } = await resend.emails.send({
@@ -121,10 +134,56 @@ export async function POST(req: Request) {
       console.log(emailBody);
     }
 
+    // 2. Store in Supabase for tracking
+    await storeJobApplication({
+      reference_id: refId,
+      position: body.position,
+      contact_name: body.name,
+      contact_email: body.email,
+      contact_phone: body.phone,
+      message: body.message,
+      answers: body.answers || {},
+      lead_score: score,
+      score_label: label,
+      referral_source: body.answers?.["referral-source"],
+      status: "new",
+    }).catch((err) => {
+      console.error("Supabase storage error:", err);
+    });
+
+    // 3. Sync to GHL CRM with hiring-specific context
+    const ghlResult = await createGHLContact({
+      name: body.name,
+      email: body.email,
+      phone: body.phone,
+      source: "careers-page",
+    }).catch((err) => {
+      console.error("GHL contact sync error:", err);
+      return { success: false, contactId: undefined };
+    });
+
+    // If GHL contact created, add tags and a detailed note
+    if (ghlResult?.success && ghlResult.contactId) {
+      // Add a note with the full application details
+      await addGHLNote(
+        ghlResult.contactId,
+        [
+          `JOB APPLICATION — ${label} (Score: ${score}/100)`,
+          `Reference: ${refId}`,
+          `Position: ${job?.title || body.position}`,
+          ``,
+          emailBody,
+        ].join("\n"),
+      ).catch((err) => {
+        console.error("GHL note error:", err);
+      });
+    }
+
     return NextResponse.json({
       success: true,
       score,
       label,
+      referenceId: refId,
     });
   } catch (err) {
     console.error("Application API error:", err);

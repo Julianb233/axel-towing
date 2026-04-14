@@ -16,6 +16,106 @@ interface ChangelogGroup {
 
 const changelog: ChangelogGroup[] = [
   {
+    date: "April 13, 2026 (Job Application Pages Enhanced — Careers Pipeline)",
+    type: "completed",
+    entries: [
+      {
+        text: "Enhanced pre-qualification questions for Tow Truck Driver (added preferred shift, referral source tracking) and Sales Representative (added work arrangement preference, referral source)",
+        category: "website",
+      },
+      {
+        text: "Added optional cover letter/message field to application form so candidates can share why they're interested",
+        category: "website",
+      },
+      {
+        text: "Connected job applications to GoHighLevel CRM — new applicants auto-sync as contacts with hiring tags and detailed notes",
+        category: "infrastructure",
+      },
+      {
+        text: "Added Supabase storage for all applications with lead scoring, referral source tracking, and pipeline status",
+        category: "infrastructure",
+      },
+      {
+        text: "Removed specific dollar pricing from job listings per Elliott's directive — now shows 'Competitive pay' instead",
+        category: "website",
+      },
+      {
+        text: "Improved thank-you page after submission with 48-hour review commitment and Elliott's contact number for urgent inquiries",
+        category: "website",
+      },
+    ],
+  },
+  {
+    date: "April 14, 2026 (Branded Social Media Design Templates — AI-7466)",
+    type: "completed",
+    entries: [
+      {
+        text: "Created Stitch design system for Axle Towing brand — Navy (#1B2A3F), Red (#DC2626), Montserrat headlines, Source Sans 3 body, with full brand guidelines and social media dimensions",
+        category: "content",
+      },
+      {
+        text: "Generated 6 branded social media templates: 2 Instagram posts (1080x1080), 1 Instagram Story (1080x1920), 1 Facebook post (1200x630), 2 LinkedIn posts (1200x627)",
+        category: "content",
+      },
+      {
+        text: "Template types: 'Did You Know?' educational post, service highlights (3 benefits), free assessment CTA story, testimonial/social proof, HOA compliance B2B, partner referral outreach",
+        category: "strategy",
+      },
+      {
+        text: "Saved template inventory with screen IDs and preview URLs to .stitch/social-media-templates.json for future reference and iteration",
+        category: "infrastructure",
+      },
+    ],
+  },
+  {
+    date: "April 13, 2026 (9-Stage Hiring Pipeline Setup — AI-7471)",
+    type: "completed",
+    entries: [
+      {
+        text: "Created GHL hiring pipeline setup script (scripts/setup-hiring-pipeline.ts) that verifies pipeline, creates custom fields, and outputs env vars",
+        category: "infrastructure",
+      },
+      {
+        text: "Created 9 custom fields in GHL for hiring workflow: applied_position, interview_time, phone_screen_date/time, calendly_link, pay_rate, start_date, hire_date, interviewer_name",
+        category: "infrastructure",
+      },
+      {
+        text: "Wrote manual setup runbook (docs/GHL-HIRING-PIPELINE-SETUP.md) with step-by-step instructions for creating the 9-stage pipeline in GHL UI",
+        category: "strategy",
+      },
+      {
+        text: "Documented all 12 hiring tags, 8 GHL workflows, and env var configuration needed to complete the pipeline setup",
+        category: "strategy",
+      },
+    ],
+  },
+  {
+    date: "April 13, 2026 (GHL Workflow Infrastructure — Nurture, Referral & Approval Sequences — AI-7461, AI-7460, AI-7459)",
+    type: "completed",
+    entries: [
+      {
+        text: "Created 35 GHL tags for workflow routing: sequence triggers (seq-cold-outreach, seq-hoa-board-member, seq-property-manager, etc.), 8 referral partner sequence tags, stage/status tags, priority tags, source tags, and behavioral tags",
+        category: "infrastructure",
+      },
+      {
+        text: "Created 10 GHL custom fields for contact personalization: Property Name, Property Type, Number of Properties, Contract Renewal Date, Last Tow Date, Referred By, Referral Partner Category, Service Area, Notes — Elliott, Sequence Status",
+        category: "infrastructure",
+      },
+      {
+        text: "Deployment script (scripts/deploy-ghl-workflows.ts) created — provisions all tags and custom fields via GHL v1 API, verifies pipeline configuration, supports --dry-run mode",
+        category: "infrastructure",
+      },
+      {
+        text: "Comprehensive workflow deployment runbook (docs/GHL-WORKFLOW-DEPLOYMENT-RUNBOOK.md) — 15 workflows with copy-paste-ready email templates, SMS templates, trigger configs, delay timings, and testing checklist for manual GHL UI setup",
+        category: "strategy",
+      },
+      {
+        text: "Workflow coverage: 7 nurture sequences (cold outreach, HOA board, property manager, re-engagement, quarterly retention, renewal reminder, referral thank-you) + 8 referral partner outreach sequences (locksmiths, Uber/Lyft, parking permit, mechanics, movers, painters, HOA PMs, paving)",
+        category: "strategy",
+      },
+    ],
+  },
+  {
     date: "April 13, 2026 (GHL Chat Widget + Lead Form → GHL Pipeline — AI-7464, AI-7462)",
     type: "completed",
     entries: [

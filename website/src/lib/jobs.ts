@@ -29,7 +29,7 @@ export const JOB_POSITIONS: JobPosition[] = [
     type: "Full-time",
     department: "Operations",
     location: "Phoenix Metro Area, AZ",
-    payRange: "$18-$26/hr + overtime",
+    payRange: "Competitive pay + overtime",
     description:
       `Join ${COMPANY.name} as a Tow Truck Driver and become the backbone of our operation. You will operate flatbed and wheel-lift tow trucks for private property impounds and vehicle relocations across the Phoenix metro area. Every call is an opportunity to represent our company with professionalism and care.`,
     responsibilities: [
@@ -135,6 +135,32 @@ export const JOB_POSITIONS: JobPosition[] = [
         ],
         required: true,
       },
+      {
+        id: "preferred-shift",
+        question: "What shift do you prefer?",
+        type: "radio",
+        options: [
+          { label: "Days", value: "days", qualified: true },
+          { label: "Nights", value: "nights", qualified: true },
+          { label: "Either", value: "either", qualified: true },
+        ],
+        required: true,
+      },
+      {
+        id: "referral-source",
+        question: "How did you hear about this position?",
+        type: "select",
+        options: [
+          { label: "Axle Towing Website", value: "website", qualified: true },
+          { label: "Indeed", value: "indeed", qualified: true },
+          { label: "Employee Referral", value: "referral", qualified: true },
+          { label: "Social Media", value: "social-media", qualified: true },
+          { label: "Google Search", value: "google", qualified: true },
+          { label: "Drive-by / Saw Our Trucks", value: "drive-by", qualified: true },
+          { label: "Other", value: "other", qualified: true },
+        ],
+        required: true,
+      },
     ],
   },
   {
@@ -143,7 +169,7 @@ export const JOB_POSITIONS: JobPosition[] = [
     type: "Full-time",
     department: "Business Development",
     location: "Phoenix Metro Area, AZ",
-    payRange: "$45K-$65K base + commission",
+    payRange: "Base + uncapped commission",
     description:
       `Drive growth for ${COMPANY.name} by building relationships with property managers, HOAs, apartment complexes, and commercial property owners across the Phoenix metro area. You will be the first point of contact for new business, presenting our zero-cost towing and parking enforcement solutions to decision-makers. This is a hunter role with uncapped commission potential.`,
     responsibilities: [
@@ -247,6 +273,32 @@ export const JOB_POSITIONS: JobPosition[] = [
         ],
         required: true,
       },
+      {
+        id: "work-arrangement",
+        question: "What is your preferred work arrangement?",
+        type: "radio",
+        options: [
+          { label: "Full-time", value: "full-time", qualified: true },
+          { label: "Part-time", value: "part-time", qualified: true },
+          { label: "Contract", value: "contract", qualified: true },
+        ],
+        required: true,
+      },
+      {
+        id: "referral-source",
+        question: "How did you hear about this position?",
+        type: "select",
+        options: [
+          { label: "Axle Towing Website", value: "website", qualified: true },
+          { label: "Indeed", value: "indeed", qualified: true },
+          { label: "Employee Referral", value: "referral", qualified: true },
+          { label: "Social Media", value: "social-media", qualified: true },
+          { label: "Google Search", value: "google", qualified: true },
+          { label: "Drive-by / Saw Our Trucks", value: "drive-by", qualified: true },
+          { label: "Other", value: "other", qualified: true },
+        ],
+        required: true,
+      },
     ],
   },
 ];
@@ -284,7 +336,7 @@ export function jobPostingSchema(job: JobPosition) {
       currency: "USD",
       value: {
         "@type": "QuantitativeValue",
-        value: job.payRange,
+        value: "Competitive",
         unitText: job.type === "Full-time" ? "YEAR" : "HOUR",
       },
     },

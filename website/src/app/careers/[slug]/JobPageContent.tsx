@@ -110,7 +110,7 @@ export default function JobPageContent({ job }: { job: JobPosition }) {
   const parallaxRef = useParallax();
   const [answers, setAnswers] = useState<Record<string, string>>({});
   const [step, setStep] = useState<"qualify" | "disqualified" | "apply">("qualify");
-  const [contactInfo, setContactInfo] = useState({ name: "", email: "", phone: "" });
+  const [contactInfo, setContactInfo] = useState({ name: "", email: "", phone: "", message: "" });
   const [submitted, setSubmitted] = useState(false);
 
   const setAnswer = (id: string, val: string) => {
@@ -151,6 +151,7 @@ export default function JobPageContent({ job }: { job: JobPosition }) {
           name: contactInfo.name,
           email: contactInfo.email,
           phone: contactInfo.phone,
+          message: contactInfo.message,
           answers,
         }),
       });
@@ -293,10 +294,19 @@ export default function JobPageContent({ job }: { job: JobPosition }) {
                   <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12.75l6 6 9-13.5" />
                 </svg>
               </div>
-              <h2 className="text-3xl font-bold text-white mb-4 font-heading">Application Received!</h2>
-              <p className="text-white/90 text-lg mb-8">
-                Thank you for your interest in joining {COMPANY.name}. We will review your application and
-                contact you within 2-3 business days.
+              <h2 className="text-3xl font-bold text-white mb-4 font-heading">Thank You for Applying!</h2>
+              <p className="text-white/90 text-lg mb-4">
+                Thank you for applying to {COMPANY.name}! We review all applications within 48 hours.
+              </p>
+              <p className="text-white/80 text-base mb-4">
+                If you&rsquo;re a strong match, we&rsquo;ll reach out for a phone screen. We take every
+                application seriously and appreciate your interest in joining our team.
+              </p>
+              <p className="text-white/70 text-sm mb-8">
+                For urgent inquiries, call us at{" "}
+                <a href={`tel:${COMPANY.phone}`} className="text-cta hover:underline font-semibold">
+                  {COMPANY.phone}
+                </a>
               </p>
               <Link href="/careers" className="btn-primary">
                 View Other Positions
@@ -415,8 +425,21 @@ export default function JobPageContent({ job }: { job: JobPosition }) {
                   />
                 </div>
                 <div>
+                  <label htmlFor="message" className="block text-sm font-medium text-white/95 mb-2">
+                    Brief Message / Cover Letter (Optional)
+                  </label>
+                  <textarea
+                    id="message"
+                    value={contactInfo.message}
+                    onChange={(e) => setContactInfo((p) => ({ ...p, message: e.target.value }))}
+                    rows={4}
+                    className="w-full px-4 py-3 rounded-lg bg-white/10 border border-white/20 text-white placeholder-white/40 focus:outline-none focus:ring-2 focus:ring-cta focus:border-transparent resize-none"
+                    placeholder="Tell us why you're interested in this position, or share anything else you'd like us to know..."
+                  />
+                </div>
+                <div>
                   <label htmlFor="resume" className="block text-sm font-medium text-white/95 mb-2">
-                    Upload Resume
+                    Upload Resume (Optional)
                   </label>
                   <div className="w-full px-4 py-8 rounded-lg border-2 border-dashed border-white/20 text-center text-white/40 hover:border-white/40 transition-colors cursor-pointer">
                     <svg
