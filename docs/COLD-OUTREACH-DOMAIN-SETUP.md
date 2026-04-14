@@ -3,494 +3,324 @@
 ## Axle Towing & Impound — Dedicated Cold Email Infrastructure
 
 **Linear:** AI-7458
-**Created:** 2026-04-13
-**Owner:** Elliott / Axle Towing
-**Purpose:** Protect axletowing.com domain reputation by using a separate domain for cold outbound campaigns
+**Last Updated:** 2026-04-13
 
 ---
 
-## Why a Separate Domain?
+## Table of Contents
 
-Cold email outreach carries inherent reputation risk. Even well-crafted campaigns generate spam complaints, bounces, and unsubscribes. If these hit your primary domain (axletowing.com), you risk:
-
-- Google/Microsoft throttling or blocking your domain
-- Existing business email (elliott@, brian@, tori@, chris@) landing in spam
-- Damaged sender reputation that takes months to rebuild
-- Inbound leads from the website going to spam folders
-
-A dedicated outreach domain absorbs all cold email reputation risk while keeping axletowing.com pristine for inbound communication.
-
----
-
-## 1. Recommended Domain Options
-
-Purchase one or more of the following. All should clearly relate to the Axle Towing brand so recipients recognize the sender as legitimate.
-
-| Domain | Availability | Notes |
-|--------|-------------|-------|
-| **axletowingaz.com** | Check GoDaddy/Namecheap | Best option — brand name + state identifier. Professional, recognizable. |
-| **axleservices.com** | Check GoDaddy/Namecheap | Broader positioning. Works if expanding beyond towing. |
-| **getaxletowing.com** | Check GoDaddy/Namecheap | Action-oriented. Good for CTAs in emails. |
-
-### Purchase Recommendations
-
-- **Registrar:** Namecheap or Cloudflare Registrar (cheaper than GoDaddy, better DNS management)
-- **Cost:** ~$10-15/year per domain
-- **Buy 2 domains** if budget allows — rotate between them to further protect reputation
-- **Domain age matters:** Register domains ASAP, even before you start sending. Older domains have better deliverability.
-
-### Sender Addresses to Create
-
-For each cold domain, create these mailboxes:
-
-| Address | Purpose | Used For |
-|---------|---------|----------|
-| `elliott@axletowingaz.com` | Primary cold outreach | Property manager sequences |
-| `brian@axletowingaz.com` | Secondary sender | HOA board member sequences |
-| `partnerships@axletowingaz.com` | General outreach | Commercial property sequences |
-
-**Rule:** Never use more than 3 sending addresses per domain for cold email.
+1. [Domain Recommendations](#1-domain-recommendations)
+2. [DNS Configuration](#2-dns-configuration)
+3. [Recommended Stack](#3-recommended-stack)
+4. [21-Day Warmup Schedule](#4-21-day-warmup-schedule)
+5. [Steady-State Volume](#5-steady-state-volume)
+6. [Deliverability Targets](#6-deliverability-targets)
+7. [CAN-SPAM Compliance Checklist](#7-can-spam-compliance-checklist)
+8. [4-Week Implementation Checklist](#8-4-week-implementation-checklist)
 
 ---
 
-## 2. DNS Setup for the Cold Domain
+## 1. Domain Recommendations
 
-These records must be configured at the domain registrar's DNS management panel.
+Cold outreach domains must be **separate** from the primary business domain (axletowing.com). This protects the main domain's sender reputation and keeps transactional/marketing email unaffected if a cold domain gets flagged.
 
-### 2A. MX Records (Email Receiving)
+| Domain | Purpose | Registrar | Est. Cost |
+|--------|---------|-----------|-----------|
+| **axletowingaz.com** | Primary cold outreach — geographic variant | Namecheap or Google Domains | ~$12/yr |
+| **axleservices.com** | Secondary — broader brand variant | Namecheap or Google Domains | ~$12/yr |
+| **getaxletowing.com** | Tertiary — action-oriented variant | Namecheap or Google Domains | ~$12/yr |
 
-If using Google Workspace:
+### Domain Selection Rationale
 
-```
-Type    Name    Value                       Priority    TTL
--------------------------------------------------------------------
-MX      @       aspmx.l.google.com          1           3600
-MX      @       alt1.aspmx.l.google.com     5           3600
-MX      @       alt2.aspmx.l.google.com     5           3600
-MX      @       alt3.aspmx.l.google.com     10          3600
-MX      @       alt4.aspmx.l.google.com     10          3600
-```
+- **axletowingaz.com** — Closest to the real brand. Arizona context builds local trust. Best for property manager outreach where credibility matters most.
+- **axleservices.com** — Slightly broader. Good for commercial property owners and HOA board members who may not immediately associate "towing" with their needs.
+- **getaxletowing.com** — Action-oriented CTA domain. Works well for follow-up sequences and re-engagement campaigns.
 
-If using Instantly.ai's built-in SMTP (recommended for simplicity):
+### Registration Rules
 
-```
-# No MX records needed — Instantly handles sending infrastructure
-# Only add MX if you need to RECEIVE email on this domain
-```
-
-### 2B. SPF Record (Sender Policy Framework)
-
-SPF tells receiving mail servers which IPs are authorized to send email on behalf of your domain.
-
-**If using Google Workspace only:**
-
-```
-Type    Name    Value                                   TTL
-----------------------------------------------------------------------
-TXT     @       v=spf1 include:_spf.google.com ~all     3600
-```
-
-**If using Google Workspace + Instantly.ai:**
-
-```
-Type    Name    Value                                                           TTL
----------------------------------------------------------------------------------------------
-TXT     @       v=spf1 include:_spf.google.com include:_spf.instantly.ai ~all   3600
-```
-
-**If using Instantly.ai only:**
-
-```
-Type    Name    Value                                       TTL
-----------------------------------------------------------------------
-TXT     @       v=spf1 include:_spf.instantly.ai ~all       3600
-```
-
-### 2C. DKIM Record (DomainKeys Identified Mail)
-
-DKIM cryptographically signs each email so receivers can verify it was not tampered with.
-
-**Google Workspace DKIM:**
-
-1. Go to Google Workspace Admin > Apps > Gmail > Authenticate email
-2. Select your cold domain
-3. Click "Generate new record"
-4. Copy the DKIM value Google provides
-
-```
-Type    Name                    Value                           TTL
-------------------------------------------------------------------------
-TXT     google._domainkey       v=DKIM1; k=rsa; p=[DKIM_KEY]    3600
-```
-
-**Instantly.ai DKIM:**
-
-Instantly provides DKIM records during account setup. Add the records they provide:
-
-```
-Type    Name                        Value                           TTL
-----------------------------------------------------------------------------
-TXT     instantly._domainkey        [VALUE FROM INSTANTLY SETUP]     3600
-```
-
-### 2D. DMARC Record (Domain-based Message Authentication)
-
-DMARC tells receiving servers what to do when SPF/DKIM checks fail.
-
-**Start with monitoring mode (p=none) during warmup, then escalate:**
-
-**Week 1-3 (Warmup period):**
-
-```
-Type    Name    Value                                                               TTL
-----------------------------------------------------------------------------------------------
-TXT     _dmarc  v=DMARC1; p=none; rua=mailto:dmarc@axletowingaz.com; pct=100       3600
-```
-
-**Week 4+ (After warmup, tighten policy):**
-
-```
-Type    Name    Value                                                                   TTL
---------------------------------------------------------------------------------------------------
-TXT     _dmarc  v=DMARC1; p=quarantine; rua=mailto:dmarc@axletowingaz.com; pct=100     3600
-```
-
-### 2E. Custom Tracking Domain (for Instantly.ai or cold email platform)
-
-Most cold email tools require a custom tracking domain for open/click tracking:
-
-```
-Type    Name    Value                               TTL
---------------------------------------------------------------
-CNAME   track   custom.instantly.ai                  3600
-```
-
-### DNS Verification Checklist
-
-After adding all records, verify with these tools:
-
-- **MX Toolbox:** https://mxtoolbox.com/SuperTool.aspx — enter `axletowingaz.com` and test SPF, DKIM, DMARC
-- **Mail Tester:** https://mail-tester.com — send a test email and get a deliverability score (aim for 9+/10)
-- **DNS Checker:** https://dnschecker.org — verify global propagation (allow 24-48 hours)
+- Register all 3 domains on the **same day**
+- Enable **WHOIS privacy** on all domains
+- Set auto-renew to ON
+- Do NOT point these to the main website — they exist solely for email sending
+- Create a simple landing page on each (one-page with company name, phone, and a "Learn More" link to axletowing.com) to appear legitimate to email providers
 
 ---
 
-## 3. Email Infrastructure Options
+## 2. DNS Configuration
 
-### Option A: Google Workspace (Recommended for Credibility)
+Each cold outreach domain needs 4 DNS record types configured correctly **before** any emails are sent.
 
-**Cost:** $7.20/user/month (Business Starter)
-**Setup time:** 1 hour
+### SPF Record
 
-**Advantages:**
-- Highest sender credibility — Google IPs are trusted
-- Full Gmail interface for managing replies
-- Calendar integration for booking meetings
-- Google Meet for property assessments
+Authorizes Google Workspace and Instantly.ai to send on behalf of the domain.
 
-**Setup steps:**
+| Domain | Record Type | Host | Value |
+|--------|------------|------|-------|
+| axletowingaz.com | TXT | @ | `v=spf1 include:_spf.google.com include:sendgrid.net ~all` |
+| axleservices.com | TXT | @ | `v=spf1 include:_spf.google.com include:sendgrid.net ~all` |
+| getaxletowing.com | TXT | @ | `v=spf1 include:_spf.google.com include:sendgrid.net ~all` |
 
-1. Go to https://workspace.google.com → Start free trial
-2. Add your cold domain (axletowingaz.com)
-3. Verify domain ownership via DNS TXT record
-4. Add MX records (see Section 2A)
-5. Create user accounts (elliott@, brian@, partnerships@)
-6. Enable DKIM in Admin > Apps > Gmail > Authenticate email
-7. Add SPF and DMARC records
-8. **Important:** Do NOT connect Google Workspace directly to Instantly. Use app passwords or SMTP relay.
+**Note:** Instantly.ai uses SendGrid infrastructure. If they change providers, update the `include:` directive accordingly.
 
-**Monthly cost for 3 mailboxes:** ~$21.60
+### DKIM Record
 
-### Option B: Instantly.ai Built-in SMTP (Simplest Setup)
+Generated per-domain when you connect to Google Workspace and Instantly.ai. Both platforms provide their own DKIM keys during setup.
 
-**Cost:** Included with Instantly subscription
-**Setup time:** 30 minutes
+| Domain | Record Type | Host | Value |
+|--------|------------|------|-------|
+| All 3 | TXT | `google._domainkey` | *(Generated by Google Workspace admin — unique per domain)* |
+| All 3 | CNAME | `s1._domainkey` | *(Generated by Instantly.ai during domain connection)* |
+| All 3 | CNAME | `s2._domainkey` | *(Generated by Instantly.ai during domain connection)* |
 
-**Advantages:**
-- No separate email provider needed
-- Built-in warmup, sending, and tracking
-- Automatic rotation between mailboxes
+### DMARC Record
 
-**Disadvantages:**
-- Lower sender reputation than Google
-- No Gmail interface for managing replies (use Instantly dashboard)
-- Some prospects may not recognize the sending infrastructure
+Starts in monitoring mode, then tightens after warmup completes.
 
-### Option C: Google Workspace + Instantly.ai (Best of Both Worlds — Recommended)
+| Phase | Record Type | Host | Value |
+|-------|------------|------|-------|
+| Warmup (Days 1-21) | TXT | `_dmarc` | `v=DMARC1; p=none; rua=mailto:dmarc@axletowingaz.com` |
+| Steady-State (Day 22+) | TXT | `_dmarc` | `v=DMARC1; p=quarantine; rua=mailto:dmarc@axletowingaz.com; pct=100` |
 
-**Cost:** Google Workspace ($21.60/mo) + Instantly ($30/mo) = ~$52/month
-**Setup time:** 2 hours
+**Apply the same DMARC records to all 3 domains**, changing the `rua` email to match each domain.
 
-**How it works:**
-1. Google Workspace provides the mailboxes and sender reputation
-2. Instantly.ai connects via IMAP/SMTP to manage sending, warmup, and sequences
-3. Replies land in Gmail for easy management
-4. Instantly handles warmup, scheduling, and deliverability optimization
+### Custom Tracking Domain
 
-**This is the recommended setup for Axle Towing.**
+Required for Instantly.ai link tracking. Without this, tracking links use Instantly's shared domain, which hurts deliverability.
+
+| Domain | Record Type | Host | Value |
+|--------|------------|------|-------|
+| axletowingaz.com | CNAME | `track` | `custom.instantly.ai` |
+| axleservices.com | CNAME | `track` | `custom.instantly.ai` |
+| getaxletowing.com | CNAME | `track` | `custom.instantly.ai` |
+
+This enables tracking URLs like `track.axletowingaz.com/...` instead of generic Instantly links.
 
 ---
 
-## 4. Email Warmup Plan (14-21 Days)
+## 3. Recommended Stack
 
-Email warmup is mandatory before sending any cold emails. New domains have zero reputation — sending cold emails immediately will land in spam and potentially blacklist the domain.
+### Google Workspace + Instantly.ai
 
-### What is Email Warmup?
+| Service | Plan | Monthly Cost | Purpose |
+|---------|------|-------------|---------|
+| Google Workspace Business Starter | 3 mailboxes x $7/mo | $21/mo | Sending infrastructure (Gmail SMTP) |
+| Instantly.ai Growth Plan | 1 account | $30/mo | Campaign management, warmup, analytics |
+| Domain registration | 3 domains | ~$3/mo (amortized) | Cold outreach domains |
+| **Total** | | **~$54/mo** | |
 
-Warmup tools send and receive emails between a network of real mailboxes, automatically opening them, replying, and marking them as "not spam." This builds positive engagement signals with email providers (Gmail, Outlook, Yahoo) so they learn to trust your domain.
+### Mailbox Setup
 
-### Warmup Tool: Instantly.ai (Recommended)
+Create one mailbox per cold domain on Google Workspace:
 
-**Cost:** $30/month (Growth plan — includes warmup + sending for 1,000 contacts)
-**Alternative tools:** Lemwarm ($29/mo), Warmbox ($15/mo), Mailreach ($25/mo)
+| Email Address | Domain | Display Name | Role |
+|---------------|--------|-------------|------|
+| elliott@axletowingaz.com | axletowingaz.com | Elliott — Axle Towing | Primary sender |
+| brian@axleservices.com | axleservices.com | Brian — Axle Towing | Secondary sender |
+| team@getaxletowing.com | getaxletowing.com | Axle Towing Team | Tertiary sender |
 
-### 21-Day Warmup Schedule
+### Why This Stack
 
-**Phase 1: Foundation (Days 1-7)**
-
-| Day | Warmup Emails/Day | Cold Emails/Day | Total Daily | Notes |
-|-----|-------------------|-----------------|-------------|-------|
-| 1 | 5 | 0 | 5 | Warmup only — no cold sending |
-| 2 | 8 | 0 | 8 | Warmup only |
-| 3 | 12 | 0 | 12 | Warmup only |
-| 4 | 15 | 0 | 15 | Warmup only |
-| 5 | 20 | 0 | 20 | Warmup only |
-| 6 | 25 | 0 | 25 | Warmup only |
-| 7 | 30 | 0 | 30 | Warmup only — check deliverability score |
-
-**Phase 2: Soft Launch (Days 8-14)**
-
-| Day | Warmup Emails/Day | Cold Emails/Day | Total Daily | Notes |
-|-----|-------------------|-----------------|-------------|-------|
-| 8 | 30 | 5 | 35 | First cold emails — send to warmest leads only |
-| 9 | 30 | 8 | 38 | Monitor bounce rate (must stay under 3%) |
-| 10 | 30 | 10 | 40 | Monitor spam complaint rate (must stay under 0.1%) |
-| 11 | 30 | 12 | 42 | |
-| 12 | 30 | 15 | 45 | |
-| 13 | 30 | 18 | 48 | |
-| 14 | 30 | 20 | 50 | End of week 2 — review all metrics |
-
-**Phase 3: Ramp-Up (Days 15-21)**
-
-| Day | Warmup Emails/Day | Cold Emails/Day | Total Daily | Notes |
-|-----|-------------------|-----------------|-------------|-------|
-| 15 | 25 | 25 | 50 | Begin reducing warmup as cold volume increases |
-| 16 | 25 | 30 | 55 | |
-| 17 | 20 | 35 | 55 | |
-| 18 | 20 | 40 | 60 | |
-| 19 | 15 | 40 | 55 | |
-| 20 | 15 | 45 | 60 | |
-| 21 | 15 | 50 | 65 | Warmup complete — full sending capacity |
-
-### Post-Warmup Steady State
-
-After the 21-day warmup, maintain these limits per mailbox:
-
-| Metric | Limit | Why |
-|--------|-------|-----|
-| Cold emails per mailbox per day | 40-50 | Higher volumes trigger spam filters |
-| Total emails per mailbox per day (cold + warmup) | 60-70 | Google Workspace soft limit |
-| Warmup emails per day (ongoing) | 10-15 | Never stop warmup entirely |
-| Time between sends | 3-5 minutes | Avoid burst sending patterns |
-| Sending window | 8am-5pm recipient timezone | Business hours only |
-
-### With 3 Mailboxes at Steady State
-
-| Metric | Per Mailbox | Total (3 Mailboxes) |
-|--------|-------------|---------------------|
-| Cold emails/day | 45 | 135 |
-| Cold emails/week | 225 | 675 |
-| Cold emails/month | ~900 | ~2,700 |
-| New prospects contacted/month | ~900 | ~2,700 |
-
-This is sufficient for the 500-lead database described in `DECISION-MAKER-SCRAPING-STRATEGY.md`. The full database can be contacted within 1-2 months with follow-up sequences.
+- **Google Workspace** provides the highest-reputation SMTP infrastructure. Gmail IPs have strong baseline deliverability.
+- **Instantly.ai** handles warmup automation, campaign sequencing, A/B testing, reply detection, and analytics — all in one tool.
+- **Separate from GHL:** GoHighLevel CRM handles inbound leads and pipeline management. Cold outreach lives in Instantly to keep domains isolated and avoid polluting the main CRM sender reputation.
 
 ---
 
-## 5. Sending Limits and Ramp-Up Rules
+## 4. 21-Day Warmup Schedule
 
-### Hard Limits (Never Exceed)
+Warmup gradually increases sending volume so email providers build trust in the new domains. **Do not skip or accelerate this process.**
 
-| Rule | Limit | Consequence of Violation |
-|------|-------|--------------------------|
-| Daily send per mailbox | 50 cold emails | Domain blacklisting |
-| Bounce rate | < 3% | ESP flags your domain |
-| Spam complaint rate | < 0.1% | Google blocks your domain |
-| Unsubscribe rate | < 1% per campaign | Indicates poor targeting |
-| Daily new domain connections | 50 per mailbox | Throttling by email providers |
+Instantly.ai has built-in warmup that sends real emails between Instantly users. Enable it on Day 1 for all 3 mailboxes.
 
-### Ramp-Up Rules
+### Phase 1: Foundation (Days 1-7)
 
-1. **Never jump sending volume.** Increase by no more than 5-10 emails/day.
-2. **Monitor after every increase.** If bounce rate spikes, pause and clean your list.
-3. **Split sends across the day.** Do not send 50 emails in 30 minutes.
-4. **Rotate mailboxes.** Each prospect should receive emails from only one mailbox throughout a sequence.
-5. **Weekend sending:** Avoid sending on Saturday/Sunday. B2B emails perform best Tuesday-Thursday.
-6. **Holiday sending:** Pause campaigns during major holidays (Thanksgiving week, Christmas-New Year, July 4th week).
+| Day | Emails per Mailbox | Total (3 mailboxes) | Activity |
+|-----|-------------------|---------------------|----------|
+| 1 | 2 | 6 | Enable Instantly warmup. Send 2 manual emails to known contacts per mailbox. |
+| 2 | 3 | 9 | Continue warmup. Reply to any warmup responses. |
+| 3 | 5 | 15 | Warmup + manual sends to friendly contacts. |
+| 4 | 5 | 15 | Monitor inbox placement via Instantly dashboard. |
+| 5 | 8 | 24 | Increase warmup volume in Instantly settings. |
+| 6 | 10 | 30 | Check spam folder rates — must be < 5%. |
+| 7 | 10 | 30 | End of Week 1. Review deliverability metrics. |
 
-### Deliverability Monitoring
+**Week 1 Target:** ~129 total emails sent. Zero spam complaints. Inbox placement > 90%.
 
-Check these metrics weekly:
+### Phase 2: Ramp (Days 8-14)
 
-| Tool | What to Check | Target |
-|------|---------------|--------|
-| Instantly.ai dashboard | Open rate | > 40% |
-| Instantly.ai dashboard | Reply rate | > 3% |
-| Instantly.ai dashboard | Bounce rate | < 3% |
-| Instantly.ai dashboard | Spam complaint rate | < 0.1% |
-| Google Postmaster Tools | Domain reputation | High or Medium |
-| MX Toolbox | Blacklist check | No listings |
-| Mail Tester | Spam score | 9+/10 |
+| Day | Emails per Mailbox | Total (3 mailboxes) | Activity |
+|-----|-------------------|---------------------|----------|
+| 8 | 15 | 45 | Begin first cold campaign — Sequence 1 (Property Manager Intro), 5 new prospects per mailbox. |
+| 9 | 15 | 45 | Continue campaign + warmup running in parallel. |
+| 10 | 20 | 60 | Increase to 10 new prospects per mailbox. |
+| 11 | 20 | 60 | Monitor reply rates and bounce rates. |
+| 12 | 25 | 75 | Add Sequence 2 (HOA Board Member) on one mailbox. |
+| 13 | 25 | 75 | Rotate sequences across mailboxes. |
+| 14 | 30 | 90 | End of Week 2. Review all metrics. Pause if bounce > 5%. |
 
-**If any metric goes red:**
+**Week 2 Target:** ~450 total emails sent. Bounce rate < 3%. Open rate > 35%.
 
-1. **Pause all cold sending immediately**
-2. Increase warmup volume back to 30/day per mailbox
-3. Clean your email list — remove bounced addresses
-4. Review email content for spam trigger words
-5. Wait 3-5 days before resuming at 50% previous volume
+### Phase 3: Scale (Days 15-21)
 
----
+| Day | Emails per Mailbox | Total (3 mailboxes) | Activity |
+|-----|-------------------|---------------------|----------|
+| 15 | 30 | 90 | All 5 sequences active. Distribute across mailboxes. |
+| 16 | 30 | 90 | A/B test subject lines on Sequence 1. |
+| 17 | 30 | 90 | Review which sequences get best reply rates. |
+| 18 | 30 | 90 | Disable warmup emails — real volume is sufficient. |
+| 19 | 30 | 90 | Fine-tune sending schedule (best hours: 8-10am, 1-3pm MST). |
+| 20 | 30 | 90 | Prepare for steady-state volume. |
+| 21 | 30 | 90 | **Warmup complete.** All domains established. |
 
-## 6. Cold Email Compliance (CAN-SPAM)
-
-All cold emails from the outreach domain must comply with the CAN-SPAM Act (15 U.S.C. 7701). Violations carry penalties of up to $51,744 per email.
-
-### Required Elements in Every Cold Email
-
-1. **Accurate "From" information**
-   - From name: `Elliott at Axle Towing` or `Elliott | Axle Towing`
-   - From address: `elliott@axletowingaz.com`
-   - Never impersonate another person or company
-
-2. **Honest subject lines**
-   - Must accurately reflect email content
-   - OK: "Parking enforcement for {{company_name}}"
-   - NOT OK: "Re: Our conversation" (implies prior relationship)
-   - NOT OK: "Urgent: Your property" (false urgency)
-
-3. **Physical mailing address**
-   - Required in every email footer
-   - Use: `Axle Towing & Impound | 320 E. Pioneer St, Phoenix AZ 85040`
-
-4. **One-click unsubscribe**
-   - Must be present and functional in every email
-   - Instantly.ai adds this automatically — never disable it
-   - Must honor unsubscribe requests within 10 business days
-
-5. **Commercial email identification**
-   - While B2B cold email has broader latitude, include this disclaimer:
-   - _"You're receiving this because we believe your property may benefit from professional parking enforcement. Unsubscribe below to opt out."_
-
-### Opt-Out Management
-
-- **Instantly.ai auto-suppresses** contacts who unsubscribe — verify this is working monthly
-- **Maintain a master suppression list** in Google Sheets — anyone who says "not interested," "remove me," or "stop emailing" goes on this list permanently
-- **Cross-reference suppression list** before importing new contacts to any campaign
-- **Never email someone who has opted out,** even from a different sequence or mailbox
-
-### Arizona-Specific Compliance
-
-- Arizona does not have a separate state spam law — federal CAN-SPAM governs
-- Arizona Consumer Fraud Act (ARS 44-1521) requires all marketing to be truthful
-- Do not promise specific response times, coverage areas, or service levels you cannot guarantee
-
-### What NOT to Do
-
-| Action | Risk |
-|--------|------|
-| Buy pre-scraped email lists from brokers | High bounce rates, spam traps, instant blacklisting |
-| Send from axletowing.com (primary domain) | Ruins your main email deliverability |
-| Use deceptive subject lines | CAN-SPAM violation, $51,744 per email |
-| Skip unsubscribe links | CAN-SPAM violation |
-| Ignore bounce-backs | Domain reputation damage |
-| Send more than 50 cold emails/day per mailbox | ESP throttling and blocking |
-| Send during nights/weekends | Low engagement tanks your sender score |
+**Week 3 Target:** ~630 total emails sent. Bounce rate < 2%. Open rate > 40%.
 
 ---
 
-## 7. Implementation Checklist
+## 5. Steady-State Volume
 
-### Week 1: Domain and Infrastructure
+After the 21-day warmup, maintain consistent daily volume. Sudden spikes trigger spam filters.
 
-- [ ] Purchase cold domain (axletowingaz.com recommended)
-- [ ] Set up DNS records (SPF, DKIM, DMARC) per Section 2
-- [ ] Create Google Workspace account with 3 mailboxes
-- [ ] Sign up for Instantly.ai Growth plan ($30/month)
-- [ ] Connect Google Workspace mailboxes to Instantly via IMAP/SMTP
-- [ ] Set up custom tracking domain (track.axletowingaz.com)
-- [ ] Verify all DNS records with MX Toolbox
-- [ ] Send test email to mail-tester.com — target 9+/10 score
-- [ ] Enable Google Postmaster Tools for the cold domain
+### Daily Sending Limits
 
-### Week 2: Warmup Begins
+| Mailbox | Max per Day | Recommended per Day | Notes |
+|---------|------------|--------------------:|-------|
+| elliott@axletowingaz.com | 50 | 30 | Primary — highest volume |
+| brian@axleservices.com | 50 | 30 | Secondary |
+| team@getaxletowing.com | 50 | 30 | Tertiary |
+| **Total** | **150** | **90** | Across all 3 mailboxes |
 
-- [ ] Start Instantly.ai warmup at 5 emails/day per mailbox
-- [ ] Follow the 21-day warmup schedule (Section 4)
-- [ ] Monitor deliverability daily during warmup
-- [ ] Prepare email sequences (see `COLD-EMAIL-SEQUENCES.md`)
-- [ ] Import and clean lead database from Apollo.io/Hunter.io
+### Monthly Volume
 
-### Week 3: Soft Launch
+| Metric | Volume |
+|--------|--------|
+| Daily sends (working days) | ~90 emails |
+| Working days per month | ~22 |
+| **Monthly cold emails** | **~1,980** |
+| Follow-up emails (sequences) | ~720 |
+| **Total monthly volume** | **~2,700** |
 
-- [ ] Begin sending 5-10 cold emails/day per mailbox (Day 8 of warmup)
-- [ ] Target highest-scored leads first (score 8-10 from scraping strategy)
-- [ ] Monitor bounce rate, open rate, reply rate daily
-- [ ] Respond to all replies within 4 hours during business hours
+### Sending Schedule
 
-### Week 4: Full Launch
+- **Days:** Monday through Friday only (no weekends)
+- **Hours:** 8:00 AM - 11:00 AM MST and 1:00 PM - 3:00 PM MST
+- **Spacing:** Minimum 3 minutes between sends per mailbox
+- **Randomization:** Enable Instantly's random delay (1-5 min) to appear human
 
-- [ ] Complete warmup schedule (Day 21)
-- [ ] Ramp to 40-50 cold emails/day per mailbox
-- [ ] Launch all 5 sequences from `COLD-EMAIL-SEQUENCES.md`
-- [ ] Set up weekly reporting dashboard in Instantly
-- [ ] Forward hot replies to GoHighLevel for pipeline tracking
+### Volume Scaling Rules
 
-### Ongoing Monthly
-
-- [ ] Review deliverability metrics weekly
-- [ ] Clean email list monthly (remove bounces, update contacts)
-- [ ] Check blacklist status monthly (MX Toolbox)
-- [ ] Update suppression list with all opt-outs
-- [ ] Refresh email copy quarterly (subject lines, body content)
-- [ ] Rotate mailbox senders if one shows declining metrics
+- Never increase daily volume by more than 20% week-over-week
+- If bounce rate exceeds 3%, reduce volume by 50% for 5 days
+- If spam complaints exceed 0.1%, pause all campaigns for 48 hours and investigate
+- Add a 4th mailbox/domain before exceeding 40 emails/day per mailbox
 
 ---
 
-## 8. Cost Summary
+## 6. Deliverability Targets
 
-| Item | Monthly Cost | Notes |
-|------|-------------|-------|
-| Cold domain (axletowingaz.com) | ~$1/month | ~$12/year via Namecheap |
-| Google Workspace (3 mailboxes) | $21.60 | Business Starter @ $7.20/user |
-| Instantly.ai (Growth plan) | $30 | Warmup + sending + analytics |
-| **Total** | **~$53/month** | |
+Monitor these metrics weekly in Instantly.ai dashboard. Any metric outside target requires immediate action.
 
-### Expected ROI
+| Metric | Target | Red Flag | Action if Red |
+|--------|--------|----------|---------------|
+| **Bounce Rate** | < 3% | > 5% | Clean list immediately. Verify all emails with NeverBounce before sending. |
+| **Spam Complaint Rate** | < 0.1% | > 0.3% | Pause campaigns. Review email copy for spam triggers. Check unsubscribe link. |
+| **Open Rate** | > 40% | < 25% | Test new subject lines. Check inbox placement with mail-tester.com. |
+| **Reply Rate** | > 3% | < 1% | Rewrite email copy. Improve personalization. Check prospect targeting. |
+| **Unsubscribe Rate** | < 1% | > 2% | Review targeting — may be reaching wrong audience. |
+| **Inbox Placement** | > 95% | < 85% | Check DNS records. Review DMARC reports. Reduce volume. |
 
-- **Monthly cold email volume:** ~2,700 emails (3 mailboxes x ~900 each)
-- **Expected reply rate:** 3-5% = 81-135 replies/month
-- **Expected meeting rate:** 20-30% of replies = 16-40 meetings/month
-- **Expected close rate:** 15-25% of meetings = 3-10 new contracts/month
-- **Lifetime value per contract:** Property managers typically stay 2+ years
+### Weekly Health Check
 
-One signed property management contract likely covers 6+ months of cold email infrastructure costs.
+Every Monday morning, verify:
 
----
-
-## 9. Forwarding Replies to Primary Domain
-
-Set up email forwarding so replies to cold outreach mailboxes are visible in your main workflow:
-
-1. In Google Workspace Admin for axletowingaz.com:
-   - Go to Gmail > Routing
-   - Add rule: Forward a copy of all incoming mail to `elliott.axletowing@gmail.com`
-2. In GoHighLevel:
-   - Add `elliott@axletowingaz.com` as an additional connected email
-   - Tag inbound from cold domain as `source-cold-outreach`
-
-This ensures no reply gets lost while keeping the sending infrastructure separate.
+1. All 3 domains have valid SPF, DKIM, DMARC (use mxtoolbox.com)
+2. Bounce rate is under 3% for each mailbox
+3. No domains appear on blacklists (check mxtoolbox.com/blacklists)
+4. Instantly warmup score is green for all mailboxes
+5. Reply detection is working (replies should auto-pause sequences)
 
 ---
 
-_Guide created: 2026-04-13 | Linear: AI-7458 | Next step: Purchase domain and begin DNS setup_
+## 7. CAN-SPAM Compliance Checklist
+
+All cold emails must comply with the CAN-SPAM Act (15 USC 7701). Non-compliance carries penalties of up to $51,744 per email.
+
+### Required in Every Email
+
+- [ ] **Accurate "From" header** — Sender name and email match a real person at Axle Towing
+- [ ] **Non-deceptive subject line** — Subject accurately reflects the email content
+- [ ] **Physical mailing address** — Include: 320 E. Pioneer St, Phoenix AZ 85040
+- [ ] **Clear unsubscribe mechanism** — One-click unsubscribe link (Instantly provides this automatically)
+- [ ] **Identify as advertisement** — Email must be identifiable as a solicitation (first email in sequence only; replies are exempt)
+- [ ] **Honor opt-outs within 10 business days** — Instantly handles this automatically when unsubscribe link is clicked
+
+### Prohibited
+
+- [ ] Do NOT use harvested email addresses (purchased lists from unknown sources)
+- [ ] Do NOT use misleading header information
+- [ ] Do NOT send to addresses that have opted out
+- [ ] Do NOT use deceptive subject lines (e.g., "Re:" or "Fwd:" on initial outreach)
+- [ ] Do NOT remove or obscure the unsubscribe link
+
+### Arizona-Specific Notes
+
+- Arizona does not have a state-level anti-spam law beyond CAN-SPAM
+- B2B cold email to business addresses is legal under CAN-SPAM as long as all requirements are met
+- Property manager and HOA board member emails sourced from public directories, LinkedIn, and property management company websites are permissible
+
+---
+
+## 8. 4-Week Implementation Checklist
+
+### Week 1: Infrastructure Setup
+
+- [ ] Register 3 cold outreach domains (axletowingaz.com, axleservices.com, getaxletowing.com)
+- [ ] Enable WHOIS privacy on all domains
+- [ ] Set up Google Workspace Business Starter for all 3 domains
+- [ ] Create mailboxes: elliott@axletowingaz.com, brian@axleservices.com, team@getaxletowing.com
+- [ ] Configure SPF records on all 3 domains
+- [ ] Configure DKIM records (Google Workspace + Instantly)
+- [ ] Configure DMARC records (monitoring mode: p=none)
+- [ ] Set up custom tracking CNAME records for Instantly
+- [ ] Create simple landing pages on each domain
+- [ ] Sign up for Instantly.ai Growth plan
+- [ ] Connect all 3 mailboxes to Instantly
+- [ ] Enable warmup on all mailboxes in Instantly
+- [ ] Verify DNS propagation with mxtoolbox.com
+
+### Week 2: Warmup + List Building
+
+- [ ] Warmup running on all 3 mailboxes (automated by Instantly)
+- [ ] Send 5-10 manual emails per mailbox to known contacts
+- [ ] Build prospect list: 200 property managers in Phoenix metro
+- [ ] Build prospect list: 100 HOA board members in Phoenix metro
+- [ ] Build prospect list: 100 apartment complex managers in Phoenix metro
+- [ ] Verify all email addresses with NeverBounce or ZeroBounce (remove invalid)
+- [ ] Write and load all 5 email sequences into Instantly
+- [ ] Set up A/B subject line variants for Sequence 1
+- [ ] Configure sending schedule (M-F, 8-11am and 1-3pm MST)
+- [ ] Monitor warmup metrics daily
+
+### Week 3: Campaign Launch
+
+- [ ] Launch Sequence 1 (Property Manager Intro) — 5 new prospects/day per mailbox
+- [ ] Monitor bounce rate daily (must stay < 3%)
+- [ ] Monitor open rate (target > 35%)
+- [ ] Launch Sequence 2 (HOA Board Member) on Day 12
+- [ ] Increase to 10 new prospects/day per mailbox
+- [ ] Review and respond to all replies within 4 hours
+- [ ] Log all positive replies in GoHighLevel CRM as leads
+- [ ] Adjust subject lines based on A/B test results
+- [ ] Ramp to 20 new prospects/day per mailbox by end of week
+
+### Week 4: Full Scale + Optimization
+
+- [ ] All 5 sequences active and distributed across mailboxes
+- [ ] Disable warmup (real volume is sufficient)
+- [ ] Tighten DMARC to quarantine mode (p=quarantine)
+- [ ] Hit steady-state: ~90 emails/day across 3 mailboxes
+- [ ] Weekly deliverability audit (mxtoolbox.com blacklist check)
+- [ ] First campaign performance review — identify best-performing sequence
+- [ ] Build next month's prospect lists (refresh 200+ contacts)
+- [ ] Document reply rate, meeting rate, and conversion metrics
+- [ ] Set up Instantly-to-GHL webhook for auto-creating leads on reply
+- [ ] Establish weekly Monday health check routine
