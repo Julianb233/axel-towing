@@ -24,11 +24,11 @@ const changelog: ChangelogGroup[] = [
         category: "infrastructure",
       },
       {
-        text: "Submitted optimized 24/7 hours for Apache Junction location (Mon–Fri) — pending Google review, ~10 min approval window. Sat/Sun coming next pass",
+        text: "Apache Junction GBP listing — Mon–Fri now showing 'Open 24 hours' (Google approved hours edit). Optimized brand-aligned description and 4 secondary categories (Auto wrecker, Parking lot, Property maintenance, Automobile storage facility) pending Google review",
         category: "seo",
       },
       {
-        text: "Submitted optimized brand-aligned business description for Apache Junction listing emphasizing private property towing, HOA enforcement, and 30+ years combined team experience — pending Google review",
+        text: "Phoenix GBP listing — Mon–Fri now showing 'Open 24 hours', Phoenix-specific 750-character description live, and 4 secondary categories (Auto wrecker, Parking lot, Property maintenance, Automobile storage facility) pending Google review. Description for Phoenix auto-approved on first submission",
         category: "seo",
       },
       {
