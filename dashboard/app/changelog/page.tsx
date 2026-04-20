@@ -16,80 +16,32 @@ interface ChangelogGroup {
 
 const changelog: ChangelogGroup[] = [
   {
-    date: "April 14, 2026 (GHL Hiring Pipeline + Chat Widget Verification + Blocker Follow-Ups — AI-7798, AI-7464)",
+    date: "April 20, 2026 (Google Business Profile Optimization Started)",
     type: "completed",
     entries: [
       {
-        text: "Built 9-stage hiring pipeline in GHL via API: Application Received → Phone Screen Scheduled → Phone Screen Complete → Interview Scheduled → Interview Complete → Offer Extended → Offer Accepted → Rejection → 30-Day Check-In (Pipeline ID: 6Zm0sPdNK2xnPE9d5Vds)",
+        text: "Accepted both Google Business Profile manager invitations on the agency account (Apache Junction + Phoenix locations) — both listings now editable and 100% verified",
         category: "infrastructure",
       },
       {
-        text: "Verified all 10 hiring custom fields in GHL (applied_position, interview_date, interview_time, phone_screen_date/time, calendly_link, pay_rate, start_date, hire_date, interviewer_name)",
+        text: "Submitted optimized 24/7 hours for Apache Junction location (Mon–Fri) — pending Google review, ~10 min approval window. Sat/Sun coming next pass",
+        category: "seo",
+      },
+      {
+        text: "Submitted optimized brand-aligned business description for Apache Junction listing emphasizing private property towing, HOA enforcement, and 30+ years combined team experience — pending Google review",
+        category: "seo",
+      },
+      {
+        text: "Built and shipped two client-facing dashboards: April monthly progress report and Google Business Profile optimization pack with copy-paste-ready descriptions, services, 25 Q&A entries, 12 GBP posts, photo plan, and 2026 best-practices research addendum",
+        category: "strategy",
+      },
+      {
+        text: "Filed 4 Linear tickets for outstanding GHL/automation blockers (EPP/DNS, A2P 10DLC EIN, Railway env vars, 14 GHL workflows) with assignees and due dates",
         category: "infrastructure",
       },
       {
-        text: "Verified GHL chat widget is LIVE on axletowing.com — bubble appears on all pages, opens 'How Can We Help?' with Call Now + Quick Quote. Browserbase screenshot confirms working deployment",
-        category: "website",
-      },
-      {
-        text: "Full site health check via Browserbase: homepage, services, blog (68 articles), and careers pages all loading correctly with no visual issues",
-        category: "website",
-      },
-      {
-        text: "Followed up on all 10 blocked Axle Towing tasks: notified Julian (GHL credentials, gws auth), Hitesh (GHL login fix — AI-7861 created), and Elliott (social media credentials for Facebook/Instagram/LinkedIn)",
-        category: "strategy",
-      },
-      {
-        text: "Added status comments to 4 blocked Linear issues (AI-7464, AI-7465, AI-7468, AI-7473) documenting exactly what's needed to unblock each one",
-        category: "strategy",
-      },
-    ],
-  },
-  {
-    date: "April 13, 2026 (Month 1 Social Media Content Calendar & Templates — AI-7466, AI-7430)",
-    type: "completed",
-    entries: [
-      {
-        text: "Created 4-week social media content calendar with 36 ready-to-post entries across LinkedIn, Facebook, and Instagram — 3 posts/week per platform with full captions, hashtags, image descriptions, and posting times",
-        category: "content",
-      },
-      {
-        text: "Built 12 LinkedIn post templates: 4 educational (signage compliance, documentation mistakes, HOA legal authority, new board member guide), 4 social proof (testimonials, case studies, portfolio success), 4 CTA (free assessment, seasonal urgency, PM appeal, management company partnership)",
-        category: "content",
-      },
-      {
-        text: "Built 12 Instagram caption templates: 4 'Did You Know?' educational posts (signage carousel, checklist, liability, zero-cost explainer), 4 service highlight/behind-the-scenes (assessments, day-in-the-life, meet Elliott, fleet), 4 CTA stories/reels (free assessment, results reel, checklist, 3-step guide)",
-        category: "content",
-      },
-      {
-        text: "All content aligned with brand voice (professional, approachable, B2B property manager audience), zero-cost value proposition, Phoenix metro focus — no specific pricing mentioned per Elliott's directive",
-        category: "strategy",
-      },
-    ],
-  },
-  {
-    date: "April 13, 2026 (Cold Outreach Domain Setup & Email Sequences — AI-7458)",
-    type: "completed",
-    entries: [
-      {
-        text: "Created cold outreach domain setup guide (docs/COLD-OUTREACH-DOMAIN-SETUP.md) with 3 domain recommendations, full DNS setup instructions (SPF, DKIM, DMARC), Google Workspace + Instantly.ai infrastructure plan",
-        category: "strategy",
-      },
-      {
-        text: "Designed 21-day email warmup schedule with daily send limits, ramp-up plan, and deliverability monitoring targets (bounce < 3%, spam < 0.1%, open rate > 40%)",
-        category: "strategy",
-      },
-      {
-        text: "Created 5 cold email sequences (docs/COLD-EMAIL-SEQUENCES.md): Property Manager Introduction, HOA Board Member Outreach, Apartment Complex Manager, Commercial Property Owner, and Post-Event Follow-Up",
-        category: "content",
-      },
-      {
-        text: "Each sequence includes 3 emails with A/B subject line variants, merge field personalization ({{first_name}}, {{company_name}}, {{property_type}}, {{city}}), and Phoenix metro context",
-        category: "content",
-      },
-      {
-        text: "Included full CAN-SPAM compliance guide, sending limits, opt-out management procedures, and implementation checklist with weekly milestones",
-        category: "strategy",
+        text: "Connected the axle-towing-portal Vercel project to the Julianb233/axel-towing GitHub repo so dashboard pushes auto-deploy from main",
+        category: "infrastructure",
       },
     ],
   },
