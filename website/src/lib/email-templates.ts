@@ -373,7 +373,7 @@ const locksmithPartner: EmailTemplate[] = [
   {
     sequenceType: "locksmith-partner",
     dayOffset: 5,
-    subject: "Refer a tow, earn a commission — here's the process",
+    subject: "Refer a tow, earn a commission - here's the process",
     getHtml: (vars) =>
       emailWrapper(
         `
@@ -595,7 +595,7 @@ const vehicleRetrieval: EmailTemplate[] = [
   {
     sequenceType: "vehicle-retrieval",
     dayOffset: 0,
-    subject: "Your vehicle has been towed — here's how to retrieve it",
+    subject: "Your vehicle has been towed - here's how to retrieve it",
     getHtml: (vars) =>
       emailWrapper(
         `
@@ -653,7 +653,7 @@ const vehicleRetrieval: EmailTemplate[] = [
   {
     sequenceType: "vehicle-retrieval",
     dayOffset: 1,
-    subject: "Reminder: Retrieve your vehicle — gate directions & payment info",
+    subject: "Reminder: Retrieve your vehicle - gate directions & payment info",
     getHtml: (vars) =>
       emailWrapper(
         `

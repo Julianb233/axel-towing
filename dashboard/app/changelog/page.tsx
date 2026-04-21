@@ -16,6 +16,28 @@ interface ChangelogGroup {
 
 const changelog: ChangelogGroup[] = [
   {
+    date: "April 21, 2026 (GHL wiring closeout — AI-8344 / AI-8428)",
+    type: "completed",
+    entries: [
+      {
+        text: "Generated paste-ready artifacts for 5 built GHL email workflows (nurture-pm-inbound, referral-locksmith, referral-mechanic, transactional-vehicle-retrieval, cold-pm-introduction shell). All merge fields translated from JS-style ${vars.foo} to GHL tokens {{contact.foo}} so the Automation Builder can accept them as-is. Sheets live in axel-towing/.planning/bussit/ghl-paste-sheets/",
+        category: "infrastructure",
+      },
+      {
+        text: "Identified the real blocker: mandatory 2FA on the GHL agency-owner account routes codes to Julian's inbox, so an autonomous agent cannot log in. Browserbase login attempts (Worker G Apr 20, Worker I Apr 21) confirmed this gate, so the work was pivoted to human-in-the-loop paste. Created AI-8428 as a P3 follow-up (assigned to Julian, due 2026-04-28) with 20-minute click-path",
+        category: "strategy",
+      },
+      {
+        text: "Normalized 3 em-dash characters in website/src/lib/email-templates.ts subject lines to ASCII per fleet email rule, preventing mojibake in clients that don't negotiate UTF-8 correctly. Bodies retain UTF-8 as designed",
+        category: "infrastructure",
+      },
+      {
+        text: "Posted close-out comment on AI-8344 with the 2FA root cause, the artifact list, and the handoff path. Existing blockers (AI-8363..AI-8371 copy approvals, AI-8372 prod env var gap) remain independent",
+        category: "strategy",
+      },
+    ],
+  },
+  {
     date: "April 20, 2026 (GHL Automation Engine — plumbing complete, AI-8344)",
     type: "completed",
     entries: [
