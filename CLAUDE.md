@@ -33,7 +33,7 @@
 | Website | Vercel (ai-acrobatics team, project `axel-towing`) | axletowing.com |
 | Dashboard (standalone) | Vercel (ai-acrobatics team, project `ppp-portal`) | axle-towing-portal.vercel.app |
 | PPP (multi-tenant client portal) | portal.aiacrobatics.com/axel-towing | Deliverables, feed, action items — always-live |
-| CRM | GoHighLevel | Sub-account (setup in progress) |
+| CRM | GoHighLevel | Sub-account wired — see Integrations below |
 | Email | Google Workspace | elliott@, brian@, tori@, chris@ (DNS not configured) |
 | Domain Registrar | eNom/LiquidWeb (NOT GoDaddy) | Mike controls DNS |
 
@@ -105,7 +105,7 @@ Edit `dashboard/app/changelog/page.tsx` and add a new entry at the TOP of the `c
 
 ### 3. Notify Julian
 
-Send session report via iMessage to +16284803615 with specific deliverables, URLs, and Linear IDs.
+Send session report via iMessage to +16195090699 (Julian) with specific deliverables, URLs, and Linear IDs. Never send session reports to any client number.
 
 ## SEO Strategy
 
@@ -115,10 +115,36 @@ Send session report via iMessage to +16284803615 with specific deliverables, URL
 - **Blog categories:** Property Management, Arizona Towing Laws, HOA Resources, Commercial & Apartment Towing, Safety & Community
 - **Removed:** Vehicle Owner Resources (removed April 2026 — diluted brand positioning)
 
+## Integrations
+
+### GoHighLevel (CRM — wired, paid-active)
+
+- **Sub-account:** Axle Towing & Impound (location ID in `website/.env.local` as `GHL_LOCATION_ID`; mirrored in Vercel prod env)
+- **API:** `https://services.leadconnectorhq.com` — Bearer token in `GHL_API_KEY`, `Version: 2021-07-28`
+- **Provisioning state (2026-04-20, Worker G):**
+  - 23 custom fields (stable set) incl. Property Name, Property Type, HOA Name, Event Name, Referral Source, Lead Source, Rideshare Platform, Last Tow Count 90d, Partnership Start Date, etc.
+  - 65 tags covering cold/inbound/referral/source/stage categories plus 14 sequence-completion tags
+  - 3 pipelines: Hiring, **Property Account** (9 stages — the primary lead pipeline), Referral Partner
+  - 0 workflows in `Automation > Workflows` — clean slate; 14 planned per `docs/ghl-workflows/MANIFEST.md`
+- **Inbound webhook:** `GHL_WEBHOOK_URL` env var points at a GHL inbound workflow trigger. The website's `/api/leads` route calls both `syncLeadToGHL` (REST) and `sendLeadToGHLWebhook` (webhook). Worker G verified the sub-account API directly (contact create + delete successful) but observed that prod `/api/leads` accepts without syncing — tracked as **AI-8372** (Vercel prod env var gap; Hitesh assigned).
+- **Workflow-wiring drop-in:** `docs/ghl-workflows/WIRING-CHECKLIST.md` — merge-field translation, node-by-node click-path for all 14 workflows. Paired with the existing `GHL-WORKFLOW-DEPLOYMENT-RUNBOOK.md`.
+- **Workflow status (AI-8344 + sub-issues AI-8363..AI-8371):**
+  - 0/14 wired in UI (blocked on Stagehand quota + Elliott copy approval for 9 of them)
+  - 5 BUILT (HTML ready in `website/src/lib/email-templates.ts`): nurture-pm-inbound, referral-locksmith, referral-mechanic, transactional-vehicle-retrieval, cold-pm-introduction (shell only)
+  - 9 NEEDS-COPY-EDIT (tracked in AI-8363 through AI-8371)
+- **Activation policy:** cold outbound workflows DRAFT ONLY until Elliott signs off on copy per-iteration. Transactional vehicle-retrieval requires DNS (Mike) + a separate sender identity.
+
+### Other integrations
+- **Email:** Google Workspace (elliott@, brian@, tori@, chris@). DNS not configured — blocked on Mike (eNom records).
+- **Website CMS:** Supabase (jrirksdiklqwsaatbhvg - Dashboard Daddy)
+- **SMS / Dispatch:** Twilio
+- **Transactional email:** Resend
+- **SEO data:** SEMrush (daily snapshots in `data/semrush/`)
+
 ## Current Blockers
 
 - **Email/DNS:** Google Workspace DNS not configured — blocked on Mike (Elliott's DNS admin) updating eNom records
-- **GHL:** Sub-account, A2P 10DLC, workflows, chat widget, voice AI — all in Linear backlog
+- **GHL:** Vercel prod env vars missing (AI-8372, Hitesh). Cold email copy approval from Elliott (AI-8363..AI-8371). A2P 10DLC, chat widget, voice AI — all in Linear backlog
 - **Telegram:** Client group not yet created
 
 ## Brand
