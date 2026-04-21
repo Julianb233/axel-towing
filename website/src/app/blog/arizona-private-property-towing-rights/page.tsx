@@ -10,14 +10,6 @@ export const metadata: Metadata = {
 
 const RELATED_ARTICLES = [
   {
-    slug: "arizona-towing-laws-ars-28-3511-explained",
-    title:
-      "Arizona Towing Laws: ARS 28-3511 Explained in Plain English",
-    category: "Arizona Towing Laws",
-    readTime: "10 min",
-    gradient: "from-blue-600 via-blue-800 to-blue-950",
-  },
-  {
     slug: "arizona-abandoned-vehicle-laws",
     title:
       "Arizona Abandoned Vehicle Laws: Timelines, Procedures, and Your Rights",

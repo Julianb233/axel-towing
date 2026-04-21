@@ -10,14 +10,6 @@ export const metadata: Metadata = {
 
 const RELATED_ARTICLES = [
   {
-    slug: "arizona-towing-laws-ars-28-3511-explained",
-    title:
-      "Arizona Towing Laws: ARS 28-3511 Explained in Plain English",
-    category: "Arizona Towing Laws",
-    readTime: "10 min",
-    gradient: "from-blue-600 via-blue-800 to-blue-950",
-  },
-  {
     slug: "phoenix-city-code-parking-enforcement",
     title:
       "Phoenix City Code SEC 36-144: Parking Enforcement Rules Decoded",

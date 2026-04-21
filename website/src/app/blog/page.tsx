@@ -176,16 +176,7 @@ const ARTICLES: Article[] = [
       'Is your apartment community struggling with parking chaos? Here are the telltale signs it is time to bring in professional enforcement.',
   },
 
-  // ── Arizona Towing Laws (12 articles) ──────────────────────────────────
-  {
-    slug: 'arizona-towing-laws-ars-28-3511-explained',
-    title: 'Arizona Towing Laws: ARS 28-3511 Explained',
-    category: 'arizona-towing-laws',
-    readTime: '6 min',
-    gradient: 'from-amber-500 via-yellow-600 to-amber-800',
-    description:
-      "A plain-language breakdown of Arizona's private property towing statute and what property owners need to know to stay compliant.",
-  },
+  // ── Arizona Towing Laws (property-manager-safe only) ──────────────────
   {
     slug: 'arizona-private-property-towing-rights',
     title: 'Arizona Private Property Towing Rights',
@@ -546,33 +537,6 @@ const ARTICLES: Article[] = [
 
   // ── City & Specialty Guides (MDX articles) ─────────────────────────────
   {
-    slug: 'best-private-property-towing-companies-phoenix',
-    title: 'Best Private Property Towing Companies in Phoenix (2026 Comparison)',
-    category: 'property-management',
-    readTime: '12 min',
-    gradient: 'from-blue-600 via-blue-800 to-blue-950',
-    description:
-      'Compare the top private property towing companies in Phoenix by coverage, response time, cost, and services offered.',
-  },
-  {
-    slug: 'arizona-private-property-towing-laws-complete-guide',
-    title: 'Arizona Private Property Towing Laws: Complete 2026 Guide',
-    category: 'arizona-towing-laws',
-    readTime: '14 min',
-    gradient: 'from-amber-600 via-orange-700 to-amber-900',
-    description:
-      'Complete guide to ARS private property towing statutes — signage requirements, impound procedures, fees, and property owner rights.',
-  },
-  {
-    slug: 'arizona-hb-2269-towing-signage-requirements',
-    title: 'Arizona HB 2269: New Towing Signage Requirements for 2026',
-    category: 'arizona-towing-laws',
-    readTime: '8 min',
-    gradient: 'from-yellow-600 via-amber-700 to-yellow-900',
-    description:
-      'What property owners and managers need to know about Arizona HB 2269 and updated towing sign compliance requirements.',
-  },
-  {
     slug: 'arizona-parking-sign-templates-ars-9-499-05',
     title: 'Free Arizona Parking Sign Templates (ARS 9-499.05 Compliant)',
     category: 'property-management',
@@ -706,6 +670,44 @@ const ARTICLES: Article[] = [
     gradient: 'from-sky-600 via-blue-700 to-sky-900',
     description:
       'Prepare your apartment complex for move-in season with a solid parking enforcement plan for 2026.',
+  },
+
+  // ── Property Manager SEO Articles (April 2026) ─────────────────────────
+  {
+    slug: 'hoa-parking-enforcement-best-practices-arizona',
+    title: 'HOA Parking Enforcement Best Practices in Arizona: A Complete Guide',
+    category: 'hoa-resources',
+    readTime: '12 min',
+    gradient: 'from-emerald-600 via-teal-700 to-emerald-900',
+    description:
+      'Everything Arizona HOA boards need to know about parking enforcement — ARS 33-1818, signage, procedures, towing partnerships, and board responsibilities.',
+  },
+  {
+    slug: 'apartment-complex-towing-policy-template',
+    title: 'How to Create an Effective Apartment Complex Towing Policy [Free Template]',
+    category: 'property-management',
+    readTime: '11 min',
+    gradient: 'from-blue-700 via-indigo-800 to-blue-950',
+    description:
+      'Step-by-step guide to creating an apartment towing policy with a free template. Covers signage, tenant notification, guest parking, and legal requirements.',
+  },
+  {
+    slug: 'commercial-property-parking-management-phoenix',
+    title: 'Commercial Property Parking Management in Phoenix: Solutions That Work',
+    category: 'commercial-apartment',
+    readTime: '12 min',
+    gradient: 'from-purple-700 via-violet-800 to-purple-950',
+    description:
+      'Practical parking management solutions for Phoenix retail centers, office buildings, and mixed-use properties at zero cost.',
+  },
+  {
+    slug: 'property-manager-guide-choosing-towing-company',
+    title: "Property Manager's Guide to Choosing the Right Towing Company in Arizona",
+    category: 'property-management',
+    readTime: '13 min',
+    gradient: 'from-slate-600 via-blue-700 to-slate-900',
+    description:
+      'What to look for, red flags to avoid, and questions to ask when selecting a towing partner for your Arizona property.',
   },
 ];
 

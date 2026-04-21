@@ -18,14 +18,6 @@ const RELATED_ARTICLES = [
     gradient: "from-blue-600 via-blue-800 to-blue-950",
   },
   {
-    slug: "arizona-towing-laws-ars-28-3511-explained",
-    title:
-      "Arizona Towing Laws: ARS 28-3511 Explained in Plain English",
-    category: "Arizona Towing Laws",
-    readTime: "10 min",
-    gradient: "from-blue-400 via-cyan-600 to-blue-800",
-  },
-  {
     slug: "arizona-tow-truck-regulations",
     title:
       "Arizona Tow Truck Regulations: Licensing, Insurance, and Compliance",

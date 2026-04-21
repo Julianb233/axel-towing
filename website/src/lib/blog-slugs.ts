@@ -11,7 +11,6 @@ export const BLOG_SLUGS = [
   'arizona-fire-lane-towing-laws',
   'arizona-handicap-parking-laws-private-property',
   'arizona-private-property-towing-rights',
-  'arizona-towing-laws-ars-28-3511-explained',
   'arizona-tow-truck-regulations',
   'arizona-vehicle-lien-laws-towing-companies',
   'church-parking-lot-enforcement',
@@ -56,10 +55,7 @@ export const BLOG_SLUGS = [
   // MDX content articles (dynamic route)
   'apartment-complex-losing-money-without-parking-enforcement',
   'apartment-towing-mesa-az-guide',
-  'arizona-hb-2269-towing-signage-requirements',
   'arizona-parking-sign-templates-ars-9-499-05',
-  'arizona-private-property-towing-laws-complete-guide',
-  'best-private-property-towing-companies-phoenix',
   'commercial-property-towing-phoenix-guide',
   'hoa-board-member-first-90-days-parking-enforcement',
   'hoa-towing-chandler-az-guide',
@@ -98,4 +94,9 @@ export const BLOG_SLUGS = [
   'abandoned-vehicle-title-process-arizona',
   'commercial-property-abandoned-vehicle-removal-phoenix',
   'abandoned-rv-removal-arizona',
+  // Property manager SEO articles (April 2026)
+  'hoa-parking-enforcement-best-practices-arizona',
+  'apartment-complex-towing-policy-template',
+  'commercial-property-parking-management-phoenix',
+  'property-manager-guide-choosing-towing-company',
 ];
