@@ -16,6 +16,32 @@ interface ChangelogGroup {
 
 const changelog: ChangelogGroup[] = [
   {
+    date: "April 20, 2026 (Elliott Meeting Follow-ups — website tightened)",
+    type: "completed",
+    entries: [
+      {
+        text: "Pricing page cleanup — removed 'Money order / Cashier's check' from accepted payments (not actually accepted), and stripped the three agency-services marketing sections: 'What Being on Page 1 of Google Means for You', 'Your ROI at a Glance', and 'Your Digital Growth Investment' pricing card. Pricing page now serves tow-release customers only",
+        category: "website",
+      },
+      {
+        text: "Added 'Abandoned Vehicle Removal' as a dedicated service card on /services, linking to the existing abandoned-vehicle blog hub. Elliott flagged this as a top property-owner search intent",
+        category: "website",
+      },
+      {
+        text: "Removed three blog articles per Elliott: competitor comparison 'Best Private Property Towing Companies in Phoenix', 'Arizona Private Property Towing Laws: Complete 2026 Guide', and 'Arizona HB 2269: New Towing Signage Requirements'. Also removed the orphan 'Arizona Towing Laws: ARS 28-3511 Explained' page",
+        category: "content",
+      },
+      {
+        text: "Sibling link sweep — scrubbed every broken internal link pointing at the four removed articles. Cleaned 8 MDX articles (related-reading bullets + inline 'see our guide' sentences) and 6 blog route files (relatedPosts arrays). Zero broken internal links to any deleted slug remain",
+        category: "content",
+      },
+      {
+        text: "Live-verified on axletowing.com: all four deleted article URLs return 404; /pricing no longer contains marketing content; /services shows the new Abandoned Vehicle Removal card linking to the blog hub",
+        category: "infrastructure",
+      },
+    ],
+  },
+  {
     date: "April 20, 2026 (Google Business Profile Optimization Started)",
     type: "completed",
     entries: [
