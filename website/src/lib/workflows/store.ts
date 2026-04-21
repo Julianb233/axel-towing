@@ -241,8 +241,8 @@ export async function getWorkflowStats(): Promise<WorkflowStats> {
 
     return {
       totalEnrollments: enrollments.length,
-      activeEnrollments: enrollments.filter((e) => e.status === "active").length,
-      completedEnrollments: enrollments.filter((e) => e.status === "completed").length,
+      activeEnrollments: enrollments.filter((e: { status: string }) => e.status === "active").length,
+      completedEnrollments: enrollments.filter((e: { status: string }) => e.status === "completed").length,
       emailsSent,
       smsSent,
       failedSteps,
