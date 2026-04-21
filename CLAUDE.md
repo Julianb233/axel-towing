@@ -31,7 +31,8 @@
 | Component | Platform | URL |
 |-----------|----------|-----|
 | Website | Vercel (ai-acrobatics team, project `axel-towing`) | axletowing.com |
-| Dashboard/Portal | Vercel (ai-acrobatics team) | axel-towing-portal.vercel.app |
+| Dashboard (standalone) | Vercel (ai-acrobatics team, project `ppp-portal`) | axle-towing-portal.vercel.app |
+| PPP (multi-tenant client portal) | portal.aiacrobatics.com/axel-towing | Deliverables, feed, action items — always-live |
 | CRM | GoHighLevel | Sub-account (setup in progress) |
 | Email | Google Workspace | elliott@, brian@, tori@, chris@ (DNS not configured) |
 | Domain Registrar | eNom/LiquidWeb (NOT GoDaddy) | Mike controls DNS |
