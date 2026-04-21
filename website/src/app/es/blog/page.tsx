@@ -34,6 +34,206 @@ interface ArticleES {
 
 const ARTICLES_ES: ArticleES[] = [
   {
+    slug: 'remocion-vehiculos-abandonados-phoenix-metro',
+    title: 'Remocion de Vehiculos Abandonados en el Area Metro de Phoenix',
+    description:
+      'Remocion profesional de vehiculos abandonados en mas de 30 ciudades del area metro de Phoenix. Gratis para duenos de propiedad, servicio el mismo dia, con despacho 24/7.',
+    category: 'Vehiculos Abandonados',
+    readTime: '8 min',
+    gradient: 'from-blue-600 via-blue-800 to-blue-950',
+    date: '20 de abril, 2026',
+  },
+  {
+    slug: 'remocion-rv-abandonado-arizona',
+    title: 'Remocion de RV Abandonado en Arizona',
+    description:
+      'Remocion gratis de RV, bote y trailer abandonado en Arizona. Remolque de vehiculos de gran tamano para duenos de propiedad, HOAs y propiedades comerciales.',
+    category: 'Vehiculos Abandonados',
+    readTime: '8 min',
+    gradient: 'from-amber-500 via-orange-600 to-amber-800',
+    date: '20 de abril, 2026',
+  },
+  {
+    slug: 'derechos-propiedad-privada-vehiculos-abandonados-arizona',
+    title: 'Vehiculo Abandonado en Propiedad Privada Arizona: Sus Derechos',
+    description:
+      'Conozca sus derechos cuando hay un vehiculo abandonado en su propiedad privada en Arizona. Proceso legal, ARS 28-3511, senalizacion requerida y remolque gratis.',
+    category: 'Derechos y Leyes',
+    readTime: '10 min',
+    gradient: 'from-amber-600 via-orange-700 to-amber-900',
+    date: '20 de abril, 2026',
+  },
+  {
+    slug: 'proceso-titulo-vehiculo-abandonado-arizona',
+    title: 'Proceso de Titulo para Vehiculo Abandonado en Arizona',
+    description:
+      'Como obtener titulo para un vehiculo abandonado en Arizona a traves de ADOT. Proceso de gravamen de mecanico, documentos requeridos y plazos.',
+    category: 'Derechos y Leyes',
+    readTime: '9 min',
+    gradient: 'from-indigo-500 via-purple-600 to-indigo-800',
+    date: '20 de abril, 2026',
+  },
+  {
+    slug: 'remocion-vehiculos-abandonados-propiedad-privada-arizona',
+    title: 'Como Remover Vehiculos Abandonados de Propiedad Privada en Arizona',
+    description:
+      'Guia paso a paso para remover legalmente vehiculos abandonados de propiedad privada en Arizona. Avisos requeridos, plazos y servicios gratuitos.',
+    category: 'Derechos y Leyes',
+    readTime: '8 min',
+    gradient: 'from-emerald-600 via-green-700 to-emerald-900',
+    date: '20 de abril, 2026',
+  },
+  {
+    slug: 'vehiculos-abandonados-phoenix-az',
+    title: 'Remocion de Vehiculos Abandonados en Phoenix, AZ',
+    description:
+      'Remocion gratis de vehiculos abandonados en Phoenix, Arizona. Servicio de grua el mismo dia para duenos de propiedad, HOAs y complejos de apartamentos.',
+    category: 'Vehiculos Abandonados',
+    readTime: '10 min',
+    gradient: 'from-blue-700 via-blue-800 to-blue-950',
+    date: '20 de abril, 2026',
+  },
+  {
+    slug: 'vehiculos-abandonados-mesa-az',
+    title: 'Remocion de Vehiculos Abandonados en Mesa, AZ',
+    description:
+      'Remocion gratis de vehiculos abandonados en Mesa, Arizona. Servicio el mismo dia para duenos de propiedad, HOAs y complejos de apartamentos.',
+    category: 'Vehiculos Abandonados',
+    readTime: '10 min',
+    gradient: 'from-red-600 via-red-700 to-red-900',
+    date: '20 de abril, 2026',
+  },
+  {
+    slug: 'vehiculos-abandonados-chandler-az',
+    title: 'Remocion de Vehiculos Abandonados en Chandler, AZ',
+    description:
+      'Remocion gratis de vehiculos abandonados en Chandler, Arizona. Servicio para HOAs, apartamentos y propiedades comerciales.',
+    category: 'Vehiculos Abandonados',
+    readTime: '10 min',
+    gradient: 'from-cyan-600 via-blue-700 to-cyan-900',
+    date: '20 de abril, 2026',
+  },
+  {
+    slug: 'vehiculos-abandonados-gilbert-az',
+    title: 'Remocion de Vehiculos Abandonados en Gilbert, AZ',
+    description:
+      'Remocion gratis de vehiculos abandonados en Gilbert, Arizona. Servicio el mismo dia para comunidades planificadas, HOAs y apartamentos.',
+    category: 'Vehiculos Abandonados',
+    readTime: '10 min',
+    gradient: 'from-emerald-500 via-teal-700 to-emerald-900',
+    date: '20 de abril, 2026',
+  },
+  {
+    slug: 'vehiculos-abandonados-scottsdale-az',
+    title: 'Remocion de Vehiculos Abandonados en Scottsdale, AZ',
+    description:
+      'Remocion gratis de vehiculos abandonados en Scottsdale, Arizona. Servicio profesional para propiedades de lujo y comunidades HOA.',
+    category: 'Vehiculos Abandonados',
+    readTime: '10 min',
+    gradient: 'from-yellow-600 via-amber-700 to-yellow-900',
+    date: '20 de abril, 2026',
+  },
+  {
+    slug: 'vehiculos-abandonados-tempe-az',
+    title: 'Remocion de Vehiculos Abandonados en Tempe, AZ',
+    description:
+      'Remocion gratis de vehiculos abandonados en Tempe, Arizona. Servicio para la zona de ASU, complejos de apartamentos y propiedades comerciales.',
+    category: 'Vehiculos Abandonados',
+    readTime: '10 min',
+    gradient: 'from-rose-600 via-pink-700 to-rose-900',
+    date: '20 de abril, 2026',
+  },
+  {
+    slug: 'vehiculos-abandonados-glendale-az',
+    title: 'Remocion de Vehiculos Abandonados en Glendale, AZ',
+    description:
+      'Remocion gratis de vehiculos abandonados en Glendale, Arizona. Servicio para Westgate, comunidades HOA y apartamentos.',
+    category: 'Vehiculos Abandonados',
+    readTime: '10 min',
+    gradient: 'from-purple-600 via-violet-700 to-purple-900',
+    date: '20 de abril, 2026',
+  },
+  {
+    slug: 'vehiculos-abandonados-peoria-az',
+    title: 'Remocion de Vehiculos Abandonados en Peoria, AZ',
+    description:
+      'Remocion gratis de vehiculos abandonados en Peoria, Arizona. Servicio desde el nucleo urbano hasta Lake Pleasant.',
+    category: 'Vehiculos Abandonados',
+    readTime: '10 min',
+    gradient: 'from-sky-600 via-blue-700 to-sky-900',
+    date: '20 de abril, 2026',
+  },
+  {
+    slug: 'vehiculos-abandonados-surprise-az',
+    title: 'Remocion de Vehiculos Abandonados en Surprise, AZ',
+    description:
+      'Remocion gratis de vehiculos abandonados en Surprise, Arizona. Servicio para comunidades planificadas en la Loop 303.',
+    category: 'Vehiculos Abandonados',
+    readTime: '10 min',
+    gradient: 'from-orange-600 via-red-700 to-orange-900',
+    date: '20 de abril, 2026',
+  },
+  {
+    slug: 'vehiculos-abandonados-goodyear-az',
+    title: 'Remocion de Vehiculos Abandonados en Goodyear, AZ',
+    description:
+      'Remocion gratis de vehiculos abandonados en Goodyear, Arizona. Servicio para Estrella Mountain Ranch, PebbleCreek y el corredor I-10.',
+    category: 'Vehiculos Abandonados',
+    readTime: '10 min',
+    gradient: 'from-lime-600 via-green-700 to-lime-900',
+    date: '20 de abril, 2026',
+  },
+  {
+    slug: 'vehiculos-abandonados-buckeye-az',
+    title: 'Remocion de Vehiculos Abandonados en Buckeye, AZ',
+    description:
+      'Remocion gratis de vehiculos abandonados en Buckeye, Arizona. Servicio para Verrado, Sundance y comunidades HOA en crecimiento.',
+    category: 'Vehiculos Abandonados',
+    readTime: '10 min',
+    gradient: 'from-teal-600 via-cyan-700 to-teal-900',
+    date: '20 de abril, 2026',
+  },
+  {
+    slug: 'vehiculos-abandonados-avondale-az',
+    title: 'Remocion de Vehiculos Abandonados en Avondale, AZ',
+    description:
+      'Remocion gratis de vehiculos abandonados en Avondale, Arizona. Servicio para propiedades cerca del Phoenix Raceway y McDowell Road.',
+    category: 'Vehiculos Abandonados',
+    readTime: '10 min',
+    gradient: 'from-fuchsia-600 via-purple-700 to-fuchsia-900',
+    date: '20 de abril, 2026',
+  },
+  {
+    slug: 'vehiculos-abandonados-queen-creek-az',
+    title: 'Remocion de Vehiculos Abandonados en Queen Creek, AZ',
+    description:
+      'Remocion gratis de vehiculos abandonados en Queen Creek, Arizona. Servicio para comunidades planificadas y centros comerciales.',
+    category: 'Vehiculos Abandonados',
+    readTime: '10 min',
+    gradient: 'from-stone-600 via-zinc-700 to-stone-900',
+    date: '20 de abril, 2026',
+  },
+  {
+    slug: 'vehiculos-abandonados-casa-grande-az',
+    title: 'Remocion de Vehiculos Abandonados en Casa Grande, AZ',
+    description:
+      'Remocion gratis de vehiculos abandonados en Casa Grande, Arizona. Servicio para administradores de apartamentos y HOAs en Pinal County.',
+    category: 'Vehiculos Abandonados',
+    readTime: '10 min',
+    gradient: 'from-amber-700 via-yellow-800 to-amber-950',
+    date: '20 de abril, 2026',
+  },
+  {
+    slug: 'vehiculos-abandonados-maricopa-az',
+    title: 'Remocion de Vehiculos Abandonados en Maricopa, AZ',
+    description:
+      'Remocion gratis de vehiculos abandonados en Maricopa, Arizona. Servicio para Province, Rancho El Dorado y comunidades HOA.',
+    category: 'Vehiculos Abandonados',
+    readTime: '10 min',
+    gradient: 'from-indigo-600 via-blue-700 to-indigo-900',
+    date: '20 de abril, 2026',
+  },
+  {
     slug: 'que-hacer-cuando-tu-auto-se-descompone-en-phoenix',
     title: 'Que Hacer Cuando Tu Auto Se Descompone en Phoenix',
     description:
@@ -101,6 +301,7 @@ const CATEGORY_COLORS: Record<string, { bg: string; text: string }> = {
   'Para Inquilinos': { bg: 'bg-emerald-100', text: 'text-emerald-700' },
   'Para Propietarios': { bg: 'bg-purple-100', text: 'text-purple-700' },
   'Seguridad Vial': { bg: 'bg-cyan-100', text: 'text-cyan-700' },
+  'Vehiculos Abandonados': { bg: 'bg-red-100', text: 'text-red-700' },
 };
 
 export default function SpanishBlogIndex() {
