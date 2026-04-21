@@ -16,6 +16,32 @@ interface ChangelogGroup {
 
 const changelog: ChangelogGroup[] = [
   {
+    date: "April 20, 2026 (GHL Automation Engine — plumbing complete, AI-8344)",
+    type: "completed",
+    entries: [
+      {
+        text: "GoHighLevel sub-account fully provisioned via API: added 5 custom fields (Event Name, Last Tow Count 90d, HOA Name, Referral Source, Lead Source dropdown, Rideshare Platform dropdown) bringing total to 23. Added 27 missing tags covering cold outbound, inbound, referral partners, source segmentation, sequence-completion markers — total now 65 tags",
+        category: "infrastructure",
+      },
+      {
+        text: "Verified Property Account Pipeline has all 9 stages required for the lead journey (New Lead -> Contacted -> Engaged -> Call Booked -> Proposal Sent -> Active Account -> On Hold -> Closed Lost -> Referred). No pipeline changes needed",
+        category: "infrastructure",
+      },
+      {
+        text: "Built docs/ghl-workflows/WIRING-CHECKLIST.md — drop-in click-path for wiring all 14 email workflows in GHL Automation Builder. Includes merge-field translation table (JS ${vars.foo} -> GHL {{contact.foo}}), trigger specs, node-by-node sequence for each workflow, known GHL gotchas",
+        category: "infrastructure",
+      },
+      {
+        text: "Opened 9 Linear sub-issues (AI-8363 through AI-8371) tracking each workflow that needs Elliott copy approval before GHL wiring. Each has the source copy location, trigger tag, and acceptance criteria",
+        category: "strategy",
+      },
+      {
+        text: "Identified a silent failure in production /api/leads — endpoint returns HTTP 200 with referenceId but the contact never lands in GHL. Root cause: Vercel prod env vars missing GHL_*. Escalated as AI-8372 (P2, Hitesh) with reproduction steps and suggested fix",
+        category: "infrastructure",
+      },
+    ],
+  },
+  {
     date: "April 20, 2026 (Elliott Meeting Follow-ups — website tightened)",
     type: "completed",
     entries: [
