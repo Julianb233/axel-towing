@@ -64,6 +64,17 @@ const nextConfig: NextConfig = {
   },
   async redirects() {
     return [
+      // Legacy /employment URL (external backlinks / old search index) -> /careers
+      {
+        source: "/employment",
+        destination: "/careers",
+        permanent: true,
+      },
+      {
+        source: "/employment/:path*",
+        destination: "/careers",
+        permanent: true,
+      },
       // Removed merchandise pages -> partners page (corporate gifting context)
       {
         source: "/merchandise",

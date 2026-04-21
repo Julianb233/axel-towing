@@ -94,9 +94,4 @@ export const BLOG_SLUGS = [
   'abandoned-vehicle-title-process-arizona',
   'commercial-property-abandoned-vehicle-removal-phoenix',
   'abandoned-rv-removal-arizona',
-  // Property manager SEO articles (April 2026)
-  'hoa-parking-enforcement-best-practices-arizona',
-  'apartment-complex-towing-policy-template',
-  'commercial-property-parking-management-phoenix',
-  'property-manager-guide-choosing-towing-company',
 ];
