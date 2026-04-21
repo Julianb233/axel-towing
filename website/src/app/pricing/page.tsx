@@ -69,7 +69,7 @@ export default function PricingPage() {
               </span>
             </h1>
             <p className="text-lg sm:text-xl md:text-2xl text-white/95 max-w-3xl mx-auto mb-10 leading-relaxed">
-              Professional parking enforcement, patrol, signage, and vehicle removal -- all completely free. No hidden fees. No contracts.
+              Professional parking enforcement, patrol, signage, and vehicle removal &mdash; all completely free. No hidden fees. No contracts.
             </p>
           </div>
         </div>
