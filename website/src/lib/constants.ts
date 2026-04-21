@@ -29,9 +29,8 @@ export const COMPANY = {
   tagline: "Professional Towing & Parking Management",
   description:
     "Axle Towing & Impound provides professional private property impound and parking enforcement services across the Phoenix metro area at no cost to property owners. We also offer paid vehicle relocation services for construction and maintenance projects.",
-  logo: "https://e5cdia7uckj.exactdn.com/wp-content/uploads/2021/05/Axle-Towing-and-Impound-in-Arizona-Logo.png",
-  heroImage:
-    "https://e5cdia7uckj.exactdn.com/wp-content/uploads/2023/09/242A4356-Multiple-Trucks-new.jpg?strip=all",
+  logo: "/images/axle-towing-logo.png",
+  heroImage: "/images/hero-tow-truck.jpg",
 };
 
 export const SERVICE_AREAS = [

@@ -75,7 +75,7 @@ export async function GET(request: Request) {
         >
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
-            src="https://e5cdia7uckj.exactdn.com/wp-content/uploads/2021/05/Axle-Towing-and-Impound-in-Arizona-Logo.png"
+            src="https://axletowing.com/images/axle-towing-logo.png"
             alt="Axle Towing"
             width={180}
             height={180}

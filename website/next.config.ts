@@ -16,12 +16,7 @@ const nextConfig: NextConfig = {
     root: path.resolve(__dirname),
   },
   images: {
-    remotePatterns: [
-      {
-        protocol: "https",
-        hostname: "e5cdia7uckj.exactdn.com",
-      },
-    ],
+    remotePatterns: [],
   },
   async headers() {
     return [
