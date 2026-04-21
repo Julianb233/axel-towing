@@ -30,8 +30,8 @@ const PERMIT_TYPES = [
   {
     id: 'hang-tag' as PermitType,
     name: 'Parking Permit Hang Tag',
-    price: '$24.99',
-    priceNote: 'per unit (min 25)',
+    price: 'Request Quote',
+    priceNote: 'min 25 units',
     description:
       'Durable vinyl hang tags for vehicle windshields. UV-resistant, tamper-evident, pre-punched for rearview mirror attachment.',
     features: ['Durable vinyl material', 'UV-resistant printing', 'Pre-punched hang hole', 'Sequential numbering', 'Custom property branding'],
@@ -50,8 +50,8 @@ const PERMIT_TYPES = [
   {
     id: 'door-hanger' as PermitType,
     name: 'Parking Permit Door Hanger',
-    price: '$12.99',
-    priceNote: 'per unit (min 50)',
+    price: 'Request Quote',
+    priceNote: 'min 50 units',
     description:
       'Heavy cardstock door hangers with parking permit fields. Perforated tear-off section for easy enforcement. Dual-branded with Axle Towing and your property logo.',
     features: ['Heavy cardstock construction', 'Perforated tear-off section', 'Permit field areas', 'Dual-branded design', 'Bulk pricing available'],
@@ -105,7 +105,7 @@ function ParkingPermitForm() {
 
   const selectedPermit = PERMIT_TYPES.find((p) => p.id === formData.permitType)!;
   const minQty = selectedPermit.minQty;
-  const totalPrice = (formData.quantity * parseFloat(selectedPermit.price.replace('$', ''))).toFixed(2);
+  // Pricing shown only in post-submit quote; never on page per Elliott's directive.
 
   async function handleSubmit(e: FormEvent) {
     e.preventDefault();
@@ -118,16 +118,16 @@ function ParkingPermitForm() {
 
     setSubmitting(true);
     try {
-      const response = await fetch('/api/leads', {
+      const response = await fetch('/api/printify/quote', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
-          source: 'parking-permits',
+          type: 'parking-permit',
+          propertyName: formData.propertyName,
+          propertyAddress: formData.propertyAddress,
           contactName: formData.contactName,
           email: formData.email,
           phone: formData.phone,
-          propertyName: formData.propertyName,
-          propertyAddress: formData.propertyAddress,
           permitType: formData.permitType,
           numberingStyle: formData.numberingStyle,
           startNumber: formData.startNumber,
@@ -151,7 +151,7 @@ function ParkingPermitForm() {
         throw new Error(data.error || 'Failed to submit order.');
       }
 
-      setOrderId(data.referenceId || data.orderId || '');
+      setOrderId(data.orderId || '');
       setSubmitted(true);
     } catch (err) {
       setError(err instanceof Error ? err.message : 'Failed to submit. Please try again.');
@@ -180,10 +180,10 @@ function ParkingPermitForm() {
           </p>
           <div className="flex flex-col gap-3 sm:flex-row sm:justify-center">
             <Link
-              href="/"
+              href="/shop"
               className="rounded-lg bg-red-600 px-6 py-3 font-semibold text-white transition-colors hover:bg-red-700"
             >
-              Back to Home
+              Back to Shop
             </Link>
             <Link
               href="/contact"
@@ -496,11 +496,13 @@ function ParkingPermitForm() {
           </div>
           <div className="flex flex-col justify-center rounded-xl border border-red-500/20 bg-red-600/10 p-4">
             <div className="text-xs font-semibold uppercase tracking-wider text-red-400">
-              Estimated Total
+              Your Quote
             </div>
-            <div className="mt-1 text-3xl font-bold text-white">${totalPrice}</div>
+            <div className="mt-1 text-lg font-bold text-white">
+              We will email pricing
+            </div>
             <div className="mt-0.5 text-xs text-white/50">
-              {formData.quantity} × {selectedPermit.price} per unit
+              Tailored to {formData.quantity} units and your property branding
             </div>
           </div>
         </div>
@@ -618,10 +620,10 @@ function ParkingPermitForm() {
           )}
         </button>
         <Link
-          href="/"
+          href="/shop"
           className="inline-flex items-center justify-center gap-2 rounded-lg border border-white/20 px-8 py-4 text-lg font-semibold text-white transition-colors hover:bg-white/10"
         >
-          Back to Home
+          Back to Shop
         </Link>
       </div>
 
@@ -648,13 +650,13 @@ export default function ParkingPermitsContent() {
         />
         <div className="relative z-10 mx-auto w-full max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
           <Link
-            href="/"
+            href="/shop"
             className="mb-6 inline-flex items-center gap-2 text-sm text-white/60 transition-colors hover:text-white"
           >
             <svg className="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
             </svg>
-            Back to Home
+            Back to Shop
           </Link>
           <div className="max-w-3xl">
             <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-red-500/30 bg-red-600/20 px-4 py-1.5">
