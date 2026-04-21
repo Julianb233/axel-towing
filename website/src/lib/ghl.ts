@@ -1,19 +1,34 @@
 /**
  * GoHighLevel (GHL) CRM Integration
  *
- * Sends leads and contacts to GHL via their REST API (v1).
- * GHL is included free in the Axle Towing package.
+ * Sends leads and contacts to GHL via the v2 "services.leadconnectorhq.com"
+ * API (LeadConnector). Uses Private Integration Tokens (pit-*) as Bearer auth.
  *
  * API Docs: https://highlevel.stoplight.io/docs/integrations/
  *
  * Environment variables needed:
- *   GHL_API_KEY            — Location API key from GHL (Settings > API Keys)
+ *   GHL_API_KEY            — Private Integration Token (pit-...) with scopes for
+ *                            contacts.write, contacts.readonly, opportunities.write,
+ *                            opportunities.readonly, locations.readonly
  *   GHL_LOCATION_ID        — Location ID from GHL (Settings > Business Profile)
  *   GHL_PIPELINE_ID        — Pipeline ID for lead tracking (optional)
  *   GHL_STAGE_NEW_LEAD_ID  — Stage ID for "New Lead" stage (optional)
+ *
+ * Historical: this module previously hit the v1 REST API
+ * (rest.gohighlevel.com/v1) which is incompatible with PIT tokens. See AI-8372.
  */
 
-const GHL_BASE_URL = 'https://rest.gohighlevel.com/v1';
+const GHL_BASE_URL = 'https://services.leadconnectorhq.com';
+const GHL_API_VERSION = '2021-07-28';
+
+function ghlHeaders(apiKey: string): HeadersInit {
+  return {
+    'Content-Type': 'application/json',
+    Authorization: `Bearer ${apiKey}`,
+    Version: GHL_API_VERSION,
+    Accept: 'application/json',
+  };
+}
 
 interface GHLContact {
   firstName?: string;
@@ -28,7 +43,10 @@ interface GHLContact {
   website?: string;
   tags?: string[];
   source?: string;
-  customField?: Record<string, string>;
+  locationId?: string;
+  // v2 API custom fields are [{ id, field_value }] — contact-creation flow
+  // records property details in a Note instead of custom fields, since field
+  // IDs aren't mapped into this module yet.
 }
 
 interface GHLContactResponse {
@@ -44,9 +62,10 @@ interface GHLContactResponse {
 }
 
 interface GHLOpportunity {
+  locationId: string;
   pipelineId: string;
-  stageId: string;
-  title: string;
+  pipelineStageId: string;
+  name: string;
   contactId: string;
   status?: 'open' | 'won' | 'lost' | 'abandoned';
   monetaryValue?: number;
@@ -159,12 +178,6 @@ export async function createGHLContact(params: {
       timeline: params.timeline,
     });
 
-    // Build custom fields for Axle Towing-specific data
-    const customField: Record<string, string> = {};
-    if (params.propertyName) customField['Property Name'] = params.propertyName;
-    if (params.propertyType) customField['Property Type'] = params.propertyType;
-    if (params.units) customField['Number of Units'] = String(params.units);
-
     const contact: GHLContact = {
       firstName,
       lastName,
@@ -174,7 +187,7 @@ export async function createGHLContact(params: {
       address1: params.address,
       tags,
       source: 'Website',
-      customField,
+      locationId,
     };
 
     // Remove undefined fields
@@ -184,17 +197,30 @@ export async function createGHLContact(params: {
       }
     });
 
-    const response = await fetch(`${GHL_BASE_URL}/contacts`, {
+    const response = await fetch(`${GHL_BASE_URL}/contacts/`, {
       method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-        Authorization: `Bearer ${apiKey}`,
-      },
+      headers: ghlHeaders(apiKey),
       body: JSON.stringify(contact),
     });
 
+    // v2 API returns 200 for duplicates (existing contact) or 201 for new; both
+    // include a `contact` object with `id`. Treat 4xx non-dup as failure.
     if (!response.ok) {
       const errorText = await response.text();
+      // 400 with "duplicated contacts" includes meta.contactId — recover gracefully
+      try {
+        const errJson = JSON.parse(errorText) as {
+          message?: string;
+          meta?: { contactId?: string };
+        };
+        const dupId = errJson?.meta?.contactId;
+        if (dupId) {
+          console.log(`[GHL] Duplicate contact, reusing id ${dupId}`);
+          return { success: true, contactId: dupId };
+        }
+      } catch {
+        /* fallthrough */
+      }
       console.error(`[GHL] Failed to create contact: ${response.status} ${errorText}`);
       return { success: false, error: `GHL API error: ${response.status}` };
     }
@@ -223,16 +249,18 @@ export async function addGHLNote(
   }
 
   try {
-    const response = await fetch(`${GHL_BASE_URL}/contacts/${contactId}/notes`, {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-        Authorization: `Bearer ${apiKey}`,
-      },
-      body: JSON.stringify({ body: note }),
-    });
+    const response = await fetch(
+      `${GHL_BASE_URL}/contacts/${contactId}/notes`,
+      {
+        method: 'POST',
+        headers: ghlHeaders(apiKey),
+        body: JSON.stringify({ body: note }),
+      }
+    );
 
     if (!response.ok) {
+      const errorText = await response.text();
+      console.error(`[GHL] addGHLNote failed: ${response.status} ${errorText}`);
       return { success: false, error: `GHL API error: ${response.status}` };
     }
 
@@ -255,38 +283,36 @@ export async function createGHLOpportunity(params: {
   estimatedValue?: number;
 }): Promise<{ success: boolean; opportunityId?: string; error?: string }> {
   const apiKey = process.env.GHL_API_KEY;
+  const locationId = process.env.GHL_LOCATION_ID;
   const pipelineId = process.env.GHL_PIPELINE_ID;
   const stageId = process.env.GHL_STAGE_NEW_LEAD_ID;
 
-  if (!apiKey || !pipelineId || !stageId) {
+  if (!apiKey || !locationId || !pipelineId || !stageId) {
     // Pipeline IDs are optional — contact creation is the primary action
-    console.warn('[GHL] GHL_PIPELINE_ID or GHL_STAGE_NEW_LEAD_ID not set — skipping opportunity');
+    console.warn(
+      '[GHL] GHL_LOCATION_ID / GHL_PIPELINE_ID / GHL_STAGE_NEW_LEAD_ID not set — skipping opportunity'
+    );
     return { success: false, error: 'GHL pipeline config not set' };
   }
 
   try {
     const opportunity: GHLOpportunity = {
+      locationId,
       pipelineId,
-      stageId,
-      title: params.title,
+      pipelineStageId: stageId,
+      name: params.title,
       contactId: params.contactId,
       status: 'open',
       monetaryValue: params.estimatedValue,
       source: 'Website',
     };
 
-    // GHL v1: POST /pipelines/{pipelineId}/opportunities
-    const response = await fetch(
-      `${GHL_BASE_URL}/pipelines/${pipelineId}/opportunities`,
-      {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-          Authorization: `Bearer ${apiKey}`,
-        },
-        body: JSON.stringify(opportunity),
-      }
-    );
+    // v2: POST /opportunities/
+    const response = await fetch(`${GHL_BASE_URL}/opportunities/`, {
+      method: 'POST',
+      headers: ghlHeaders(apiKey),
+      body: JSON.stringify(opportunity),
+    });
 
     if (!response.ok) {
       const errorText = await response.text();
@@ -454,16 +480,20 @@ export async function getGHLPipelines(): Promise<{
   error?: string;
 }> {
   const apiKey = process.env.GHL_API_KEY;
-  if (!apiKey) {
-    return { success: false, error: 'GHL_API_KEY not configured' };
+  const locationId = process.env.GHL_LOCATION_ID;
+  if (!apiKey || !locationId) {
+    return { success: false, error: 'GHL_API_KEY or GHL_LOCATION_ID not configured' };
   }
 
   try {
-    const response = await fetch(`${GHL_BASE_URL}/pipelines`, {
-      headers: { Authorization: `Bearer ${apiKey}` },
-    });
+    const response = await fetch(
+      `${GHL_BASE_URL}/opportunities/pipelines?locationId=${encodeURIComponent(locationId)}`,
+      { headers: ghlHeaders(apiKey) }
+    );
 
     if (!response.ok) {
+      const errorText = await response.text();
+      console.error(`[GHL] getGHLPipelines failed: ${response.status} ${errorText}`);
       return { success: false, error: `GHL API error: ${response.status}` };
     }
 
