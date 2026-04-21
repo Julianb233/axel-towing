@@ -124,6 +124,27 @@ export default function ServicesPage() {
                 </span>
               </Link>
             ))}
+            <Link
+              href="/blog/abandoned-vehicle-removal-private-property-arizona"
+              className="group rounded-2xl p-8 reveal bg-white/10 backdrop-blur-sm border border-white/15 hover:bg-white/15 transition-all hover:-translate-y-1"
+              style={{ animationDelay: `${(FREE_SERVICES.length + 1) * 100}ms` }}
+            >
+              <div className="w-14 h-14 rounded-xl bg-white/15 flex items-center justify-center mb-5 text-blue-200 group-hover:bg-white/25 transition-colors">
+                {SERVICE_ICONS.truck}
+              </div>
+              <h3 className="font-heading text-xl font-bold text-white mb-3 group-hover:text-blue-200 transition-colors">
+                Abandoned Vehicle Removal
+              </h3>
+              <p className="text-blue-100 text-sm leading-relaxed mb-4">
+                Remove abandoned vehicles from private property across Phoenix metro at no cost to property owners.
+              </p>
+              <span className="inline-flex items-center text-sm font-semibold text-blue-300 group-hover:text-white transition-colors">
+                Learn More
+                <svg className="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                </svg>
+              </span>
+            </Link>
           </div>
         </div>
       </section>
