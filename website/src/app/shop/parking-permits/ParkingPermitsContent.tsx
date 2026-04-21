@@ -118,16 +118,16 @@ function ParkingPermitForm() {
 
     setSubmitting(true);
     try {
-      const response = await fetch('/api/printify/quote', {
+      const response = await fetch('/api/leads', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
-          type: 'parking-permit',
-          propertyName: formData.propertyName,
-          propertyAddress: formData.propertyAddress,
+          source: 'parking-permits',
           contactName: formData.contactName,
           email: formData.email,
           phone: formData.phone,
+          propertyName: formData.propertyName,
+          propertyAddress: formData.propertyAddress,
           permitType: formData.permitType,
           numberingStyle: formData.numberingStyle,
           startNumber: formData.startNumber,
@@ -151,7 +151,7 @@ function ParkingPermitForm() {
         throw new Error(data.error || 'Failed to submit order.');
       }
 
-      setOrderId(data.orderId || '');
+      setOrderId(data.referenceId || data.orderId || '');
       setSubmitted(true);
     } catch (err) {
       setError(err instanceof Error ? err.message : 'Failed to submit. Please try again.');
@@ -180,10 +180,10 @@ function ParkingPermitForm() {
           </p>
           <div className="flex flex-col gap-3 sm:flex-row sm:justify-center">
             <Link
-              href="/shop"
+              href="/"
               className="rounded-lg bg-red-600 px-6 py-3 font-semibold text-white transition-colors hover:bg-red-700"
             >
-              Back to Shop
+              Back to Home
             </Link>
             <Link
               href="/contact"
@@ -618,10 +618,10 @@ function ParkingPermitForm() {
           )}
         </button>
         <Link
-          href="/shop"
+          href="/"
           className="inline-flex items-center justify-center gap-2 rounded-lg border border-white/20 px-8 py-4 text-lg font-semibold text-white transition-colors hover:bg-white/10"
         >
-          Back to Shop
+          Back to Home
         </Link>
       </div>
 
@@ -648,13 +648,13 @@ export default function ParkingPermitsContent() {
         />
         <div className="relative z-10 mx-auto w-full max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
           <Link
-            href="/shop"
+            href="/"
             className="mb-6 inline-flex items-center gap-2 text-sm text-white/60 transition-colors hover:text-white"
           >
             <svg className="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
             </svg>
-            Back to Shop
+            Back to Home
           </Link>
           <div className="max-w-3xl">
             <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-red-500/30 bg-red-600/20 px-4 py-1.5">

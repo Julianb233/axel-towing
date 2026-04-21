@@ -27,7 +27,6 @@ export default function ParkingPermitsPage() {
           __html: JSON.stringify(
             breadcrumbSchema([
               { name: 'Home', url: 'https://axletowing.com' },
-              { name: 'Shop', url: 'https://axletowing.com/shop' },
               { name: 'Parking Permits', url: 'https://axletowing.com/shop/parking-permits' },
             ])
           ),

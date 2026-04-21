@@ -62,6 +62,37 @@ const nextConfig: NextConfig = {
       },
     ];
   },
+  async redirects() {
+    return [
+      // Removed merchandise pages -> partners page (corporate gifting context)
+      {
+        source: "/merchandise",
+        destination: "/partners",
+        permanent: true,
+      },
+      {
+        source: "/merchandise/:path*",
+        destination: "/partners",
+        permanent: true,
+      },
+      // Removed shop storefront + bulk order -> parking permits (only remaining shop product)
+      {
+        source: "/shop",
+        destination: "/shop/parking-permits",
+        permanent: true,
+      },
+      {
+        source: "/shop/bulk-order",
+        destination: "/shop/parking-permits",
+        permanent: true,
+      },
+      {
+        source: "/shop/bulk-order/:path*",
+        destination: "/shop/parking-permits",
+        permanent: true,
+      },
+    ];
+  },
 };
 
 export default nextConfig;
