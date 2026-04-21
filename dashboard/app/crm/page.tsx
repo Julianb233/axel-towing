@@ -121,7 +121,7 @@ const SETUP_STEPS = [
       "✓ /api/leads endpoint built with email + SMS + Supabase storage",
       "✓ GHL sync library created (src/lib/ghl.ts)",
       "✓ /api/leads updated to sync leads to GHL via API",
-      "Pending: Add GHL_API_KEY + GHL_LOCATION_ID to Railway environment variables",
+      "Pending: Add GHL API Key + Location ID to the website environment configuration",
       "Pending: Test form-to-GHL flow end-to-end",
       "Pending: Add UTM parameter tracking to form submissions",
     ],
@@ -268,7 +268,7 @@ export default function CRMPage() {
         <div className="bg-white rounded-2xl border border-slate-200 shadow-sm overflow-hidden">
           <div className="px-6 py-5 border-b border-slate-100">
             <h2 className="text-lg font-bold text-slate-800">Environment Variables Required</h2>
-            <p className="text-sm text-slate-500 mt-1">Add these to Railway (website) to activate GHL sync</p>
+            <p className="text-sm text-slate-500 mt-1">Add these to the website environment configuration to activate GHL sync</p>
           </div>
           <div className="overflow-x-auto">
             <table className="w-full text-sm">
@@ -443,7 +443,7 @@ export default function CRMPage() {
                 <div>
                   <div className="font-semibold text-amber-800 text-sm">Action Required to Activate</div>
                   <div className="text-sm text-amber-700 mt-1">
-                    The GHL sync code is live on the website. To activate it, add <code className="bg-amber-100 px-1 rounded text-xs font-mono">GHL_API_KEY</code> and <code className="bg-amber-100 px-1 rounded text-xs font-mono">GHL_LOCATION_ID</code> to Railway environment variables. Until then, leads are still captured via email + SMS + Supabase.
+                    The GHL sync code is live on the website. To activate it, add the <code className="bg-amber-100 px-1 rounded text-xs font-mono">GHL API Key</code> and <code className="bg-amber-100 px-1 rounded text-xs font-mono">GHL Location ID</code> to the website environment configuration. Until then, leads are still captured via email, SMS, and our database.
                   </div>
                 </div>
               </div>

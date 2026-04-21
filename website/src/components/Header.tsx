@@ -8,7 +8,9 @@ import { COMPANY, NAV_LINKS } from '@/lib/constants';
 import { trackPhoneClick } from '@/lib/analytics';
 
 function useTruckStatus() {
-  const [status, setStatus] = useState({ trucks: 6, label: '6 Trucks Active' });
+  // null until hydrated so SSR and first paint render nothing (avoids the
+  // 6 -> 3 -> 2 flicker when the clock-based label mounts on the client).
+  const [status, setStatus] = useState<{ trucks: number; label: string } | null>(null);
 
   useEffect(() => {
     function update() {
@@ -30,10 +32,11 @@ function useTruckStatus() {
 }
 
 function TruckCount() {
-  const { label } = useTruckStatus();
+  const status = useTruckStatus();
+  if (!status) return null;
   return (
     <span className="hidden md:inline text-white/60 text-xs uppercase tracking-wide">
-      {label}
+      {status.label}
     </span>
   );
 }
@@ -158,7 +161,7 @@ export default function Header() {
           </Link>
 
           {/* Desktop nav links */}
-          <div className="hidden lg:flex items-center gap-1">
+          <div className="hidden lg:flex items-center gap-0 xl:gap-1">
             {NAV_LINKS.map((link) => {
               const isActive =
                 pathname === link.href ||
@@ -168,7 +171,7 @@ export default function Header() {
                 <Link
                   key={link.href}
                   href={link.href}
-                  className={`relative px-4 py-2 text-sm font-medium tracking-wide transition-colors duration-300 group ${
+                  className={`relative px-2.5 xl:px-4 py-2 text-sm font-medium tracking-wide whitespace-nowrap transition-colors duration-300 group ${
                     scrolled
                       ? (isActive ? 'text-blue-700' : 'text-gray-600 hover:text-gray-900')
                       : (isActive ? 'text-white' : 'text-white/90 hover:text-white')
@@ -177,7 +180,7 @@ export default function Header() {
                   {link.label}
                   {/* Active / hover underline animation */}
                   <span
-                    className={`absolute bottom-0 left-4 right-4 h-0.5 rounded-full transition-all duration-300 ${
+                    className={`absolute bottom-0 left-2.5 right-2.5 xl:left-4 xl:right-4 h-0.5 rounded-full transition-all duration-300 ${
                       isActive
                         ? 'bg-blue-600 scale-x-100'
                         : `${scrolled ? 'bg-gray-400' : 'bg-white/50'} scale-x-0 group-hover:scale-x-100`
@@ -190,16 +193,16 @@ export default function Header() {
           </div>
 
           {/* Desktop CTA area */}
-          <div className="hidden lg:flex items-center gap-3">
+          <div className="hidden lg:flex items-center gap-2 xl:gap-3 shrink-0">
             <a
               href={`tel:${COMPANY.phone}`}
-              className={`flex items-center gap-2 transition-colors text-sm font-medium ${
+              className={`flex items-center gap-1.5 xl:gap-2 whitespace-nowrap transition-colors text-sm font-medium ${
                 scrolled ? 'text-gray-600 hover:text-gray-900' : 'text-white/95 hover:text-white'
               }`}
               onClick={() => trackPhoneClick(COMPANY.phone)}
             >
               <svg
-                className="w-4 h-4"
+                className="w-4 h-4 shrink-0"
                 fill="none"
                 viewBox="0 0 24 24"
                 stroke="currentColor"
@@ -211,10 +214,11 @@ export default function Header() {
                   d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"
                 />
               </svg>
-              {COMPANY.phone}
+              <span className="whitespace-nowrap">{COMPANY.phone}</span>
             </a>
-            <Link href="/contact" className="btn-primary !py-2.5 !px-6 !text-sm">
-              Get a Free Quote
+            <Link href="/contact" className="btn-primary !py-2.5 !px-4 xl:!px-6 !text-sm whitespace-nowrap">
+              <span className="xl:hidden">Get Quote</span>
+              <span className="hidden xl:inline">Get a Free Quote</span>
             </Link>
           </div>
 

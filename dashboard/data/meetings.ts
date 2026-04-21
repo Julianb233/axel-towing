@@ -57,7 +57,7 @@ export const meetings: Meeting[] = [
       { decision: "Create 61 blog posts tailored to local Phoenix metro areas", status: "implemented", linkedDeliverable: "Blog Content" },
       { decision: "Integrate TowBook for vehicle lookups", status: "implemented", linkedDeliverable: "TowBook Integration" },
       { decision: "Build affiliate links for parking permits (MyParkingPermit.com)", status: "pending" },
-      { decision: "Set up print-on-demand merchandise (mugs, mouse pads, etc.)", status: "implemented", linkedDeliverable: "Merch Store" },
+      { decision: "Set up print-on-demand merchandise (mugs, mouse pads, etc.)", status: "deferred" },
     ],
     actionItems: [
       { item: "Research Arizona towing laws and positioning strategies", owner: "agency", status: "done" },

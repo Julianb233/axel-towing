@@ -58,18 +58,14 @@ const quickLinks = [
     bg: "bg-red-50",
     border: "border-red-100",
   },
-  {
-    title: "Merch Store",
-    description: "Branded merchandise catalog and bulk order options.",
-    href: "/merch",
-    icon: "M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z",
-    color: "text-teal-600",
-    bg: "bg-teal-50",
-    border: "border-teal-100",
-  },
 ];
 
 const recentUpdates = [
+  {
+    date: "Apr 20",
+    text: "Post-meeting cleanup: branded merchandise section removed from the website, storage-fee card removed from pricing, and 20 abandoned-vehicle articles sent to Elliott for approval",
+    category: "website",
+  },
   {
     date: "Mar 29",
     text: "Removed specific pricing from Vehicle Relocation pages, deleted 8 towing law blog articles per Elliott's request, cleaned all cross-references",

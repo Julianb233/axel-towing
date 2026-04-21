@@ -15,7 +15,6 @@ Client-facing portal for Elliott's towing business. Shows project progress, SEO 
 | `/crm` | CRM pipeline view |
 | `/invoicing` | Invoice management |
 | `/meetings` | Meeting notes and recordings |
-| `/merch` | Merchandise catalog |
 | `/needs` | "What We Need From You" action items |
 | `/services` | Services overview |
 

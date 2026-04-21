@@ -91,8 +91,8 @@ export default function PricingPage() {
 
           <div className="reveal">
             <div className="glass-card rounded-2xl overflow-hidden shadow-lg">
-              {/* Header Row */}
-              <div className="grid grid-cols-3 bg-gradient-to-r from-blue-900 to-blue-700 text-white">
+              {/* Header Row - hidden on <sm because each row becomes a stacked card */}
+              <div className="hidden sm:grid grid-cols-3 bg-gradient-to-r from-blue-900 to-blue-700 text-white">
                 <div className="p-5 md:p-6 font-heading font-bold text-sm md:text-base uppercase tracking-wider">
                   Feature
                 </div>
@@ -106,23 +106,48 @@ export default function PricingPage() {
                 </div>
               </div>
 
+              {/* Mobile-only summary header (<sm) */}
+              <div className="sm:hidden bg-gradient-to-r from-blue-900 to-blue-700 text-white p-5 text-center">
+                <div className="text-xs uppercase tracking-wider text-blue-200 mb-2">Axle Towing vs. Industry Average</div>
+                <div className="flex items-center justify-center gap-4">
+                  <div>
+                    <div className="text-xs uppercase tracking-wider text-blue-200">Axle</div>
+                    <div className="text-xl font-bold font-heading text-green-400">$0<span className="text-xs text-green-300 font-normal">/mo</span></div>
+                  </div>
+                  <div className="text-white/40 text-xl">vs</div>
+                  <div>
+                    <div className="text-xs uppercase tracking-wider text-blue-200">Industry</div>
+                    <div className="text-xl font-bold font-heading text-red-300">$200-500<span className="text-xs text-red-200 font-normal">/mo</span></div>
+                  </div>
+                </div>
+              </div>
+
               {/* Rows */}
               {COMPARISON_ROWS.map((row, i) => (
                 <div
                   key={row.feature}
-                  className={`grid grid-cols-3 items-center ${i % 2 === 0 ? "bg-white" : "bg-blue-50/50"} ${i < COMPARISON_ROWS.length - 1 ? "border-b border-gray-100" : ""}`}
+                  className={`block sm:grid sm:grid-cols-3 sm:items-center ${i % 2 === 0 ? "bg-white" : "bg-blue-50/50"} ${i < COMPARISON_ROWS.length - 1 ? "border-b border-gray-100" : ""}`}
                 >
-                  <div className="p-4 md:p-5 text-sm md:text-base font-semibold text-gray-800">{row.feature}</div>
-                  <div className="p-4 md:p-5 text-center border-l border-gray-100">
-                    <span className="inline-flex items-center gap-1.5 text-green-700 font-semibold text-sm md:text-base">
+                  {/* Feature label */}
+                  <div className="p-4 md:p-5 text-sm md:text-base font-semibold text-gray-800">
+                    {row.feature}
+                  </div>
+
+                  {/* Axle column */}
+                  <div className="px-4 pb-3 sm:p-4 md:p-5 sm:text-center sm:border-l sm:border-gray-100 flex items-center justify-between sm:block">
+                    <span className="sm:hidden text-xs uppercase tracking-wider text-gray-500">Axle</span>
+                    <span className="inline-flex items-center gap-1.5 text-green-700 font-semibold text-sm md:text-base text-right sm:text-center">
                       <svg className="w-4 h-4 md:w-5 md:h-5 text-green-500 shrink-0" fill="none" stroke="currentColor" strokeWidth={2.5} viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12.75l6 6 9-13.5" />
                       </svg>
                       {row.axle}
                     </span>
                   </div>
-                  <div className="p-4 md:p-5 text-center border-l border-gray-100">
-                    <span className="text-gray-700 text-sm md:text-base">{row.industry}</span>
+
+                  {/* Industry column */}
+                  <div className="px-4 pb-4 sm:p-4 md:p-5 sm:text-center sm:border-l sm:border-gray-100 flex items-center justify-between sm:block">
+                    <span className="sm:hidden text-xs uppercase tracking-wider text-gray-500">Industry</span>
+                    <span className="text-gray-700 text-sm md:text-base text-right sm:text-center">{row.industry}</span>
                   </div>
                 </div>
               ))}
@@ -159,69 +184,6 @@ export default function PricingPage() {
                 <h3 className="text-sm font-bold font-heading" style={{ color: "#1a202c" }}>{feat.label}</h3>
               </div>
             ))}
-          </div>
-        </div>
-      </section>
-
-      {/* ── Vehicle Owners: Retrieving Your Car ── */}
-      <section className="py-24 bg-gray-50 relative">
-        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16 reveal">
-            <span className="text-accent font-semibold text-sm uppercase tracking-wider font-heading">Vehicle Owners</span>
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold font-heading mt-3 mb-4" style={{ color: "#1a202c" }}>
-              Retrieving Your Vehicle
-            </h2>
-            <div className="mx-auto w-24 h-1 bg-gradient-to-r from-red-400 to-red-300 rounded-full mb-6" />
-            <p className="text-gray-700 text-lg max-w-2xl mx-auto">
-              If your vehicle was towed, here is what you need to know about payment and the pickup process.
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 reveal">
-            {/* Accepted Payment */}
-            <div className="glass-card rounded-2xl p-8 shadow-md">
-              <div className="w-12 h-12 bg-blue-50 text-primary rounded-xl flex items-center justify-center mb-5">
-                <svg className="w-6 h-6" fill="none" stroke="currentColor" strokeWidth={1.5} viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M2.25 8.25h19.5M2.25 9h19.5m-16.5 5.25h6m-6 2.25h3m-3.75 3h15a2.25 2.25 0 002.25-2.25V6.75A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25v10.5A2.25 2.25 0 004.5 19.5z" />
-                </svg>
-              </div>
-              <h3 className="text-xl font-bold font-heading mb-4" style={{ color: "#1a202c" }}>Accepted Payments</h3>
-              <ul className="space-y-3 text-sm text-gray-600">
-                {["Cash", "Visa / Mastercard / Discover", "Debit cards"].map((m) => (
-                  <li key={m} className="flex items-center gap-2">
-                    <svg className="w-4 h-4 text-green-500 shrink-0" fill="none" stroke="currentColor" strokeWidth={2.5} viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12.75l6 6 9-13.5" />
-                    </svg>
-                    {m}
-                  </li>
-                ))}
-              </ul>
-            </div>
-
-            {/* What to Bring */}
-            <div className="glass-card rounded-2xl p-8 shadow-md">
-              <div className="w-12 h-12 bg-purple-50 text-purple-600 rounded-xl flex items-center justify-center mb-5">
-                <svg className="w-6 h-6" fill="none" stroke="currentColor" strokeWidth={1.5} viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z" />
-                </svg>
-              </div>
-              <h3 className="text-xl font-bold font-heading mb-4" style={{ color: "#1a202c" }}>What to Bring</h3>
-              <ul className="space-y-3 text-sm text-gray-600">
-                {[
-                  "Valid government-issued photo ID",
-                  "Vehicle registration or title",
-                  "Proof of insurance",
-                  "Payment for applicable fees",
-                ].map((item) => (
-                  <li key={item} className="flex items-start gap-2">
-                    <svg className="w-4 h-4 text-primary shrink-0 mt-0.5" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" d="M12 9v3.75m9-.75a9 9 0 11-18 0 9 9 0 0118 0zm-9 3.75h.008v.008H12v-.008z" />
-                    </svg>
-                    {item}
-                  </li>
-                ))}
-              </ul>
-            </div>
           </div>
         </div>
       </section>
@@ -291,6 +253,92 @@ export default function PricingPage() {
               </div>
             ))}
           </div>
+        </div>
+      </section>
+
+      {/* ── Vehicle Owner Info (collapsed by default) ──
+         Kept on the page for SEO + AZ ARS disclosure compliance, but collapsed
+         so the page primarily addresses property owners. */}
+      <section className="py-16 bg-white border-t border-gray-100">
+        <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+          <details className="group glass-card-white rounded-2xl border border-gray-200 shadow-sm overflow-hidden">
+            <summary className="flex items-center justify-between cursor-pointer list-none p-6 hover:bg-gray-50 transition-colors">
+              <div className="flex items-center gap-3">
+                <div className="w-10 h-10 rounded-xl bg-blue-50 text-primary flex items-center justify-center shrink-0">
+                  <svg className="w-5 h-5" fill="none" stroke="currentColor" strokeWidth={1.8} viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M12 9v3.75m9-.75a9 9 0 11-18 0 9 9 0 0118 0zm-9 3.75h.008v.008H12v-.008z" />
+                  </svg>
+                </div>
+                <div className="text-left">
+                  <h2 className="text-base sm:text-lg font-bold font-heading" style={{ color: "#1a202c" }}>
+                    I had my vehicle towed -- what do I do?
+                  </h2>
+                  <p className="text-sm text-gray-600">Pickup instructions, payment, and what to bring.</p>
+                </div>
+              </div>
+              <svg
+                className="w-5 h-5 text-gray-500 transition-transform group-open:rotate-180 shrink-0 ml-3"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth={2}
+                viewBox="0 0 24 24"
+              >
+                <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
+              </svg>
+            </summary>
+
+            <div className="px-6 pb-6 pt-2 border-t border-gray-100">
+              <p className="text-sm text-gray-700 mb-6 mt-4">
+                If your vehicle was towed, here is what you need to know about payment and the pickup process.
+              </p>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                {/* Accepted Payment */}
+                <div className="rounded-xl bg-gray-50 p-5 border border-gray-100">
+                  <div className="w-10 h-10 bg-blue-50 text-primary rounded-lg flex items-center justify-center mb-3">
+                    <svg className="w-5 h-5" fill="none" stroke="currentColor" strokeWidth={1.5} viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M2.25 8.25h19.5M2.25 9h19.5m-16.5 5.25h6m-6 2.25h3m-3.75 3h15a2.25 2.25 0 002.25-2.25V6.75A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25v10.5A2.25 2.25 0 004.5 19.5z" />
+                    </svg>
+                  </div>
+                  <h3 className="text-base font-bold font-heading mb-3" style={{ color: "#1a202c" }}>Accepted Payments</h3>
+                  <ul className="space-y-2 text-sm text-gray-600">
+                    {["Cash", "Visa / Mastercard / Discover", "Debit cards"].map((m) => (
+                      <li key={m} className="flex items-center gap-2">
+                        <svg className="w-4 h-4 text-green-500 shrink-0" fill="none" stroke="currentColor" strokeWidth={2.5} viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12.75l6 6 9-13.5" />
+                        </svg>
+                        {m}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+
+                {/* What to Bring */}
+                <div className="rounded-xl bg-gray-50 p-5 border border-gray-100">
+                  <div className="w-10 h-10 bg-purple-50 text-purple-600 rounded-lg flex items-center justify-center mb-3">
+                    <svg className="w-5 h-5" fill="none" stroke="currentColor" strokeWidth={1.5} viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z" />
+                    </svg>
+                  </div>
+                  <h3 className="text-base font-bold font-heading mb-3" style={{ color: "#1a202c" }}>What to Bring</h3>
+                  <ul className="space-y-2 text-sm text-gray-600">
+                    {[
+                      "Valid government-issued photo ID",
+                      "Vehicle registration or title",
+                      "Proof of insurance",
+                      "Payment for applicable fees",
+                    ].map((item) => (
+                      <li key={item} className="flex items-start gap-2">
+                        <svg className="w-4 h-4 text-primary shrink-0 mt-0.5" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" d="M12 9v3.75m9-.75a9 9 0 11-18 0 9 9 0 0118 0zm-9 3.75h.008v.008H12v-.008z" />
+                        </svg>
+                        {item}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </details>
         </div>
       </section>
     </>

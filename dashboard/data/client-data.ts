@@ -78,9 +78,9 @@ export const recentActivity: ActivityEntry[] = [
   },
   {
     date: "Mar 24",
-    title: "CRM & merch store pages launched",
+    title: "CRM dashboard launched",
     type: "feature",
-    description: "GoHighLevel CRM dashboard and print-on-demand merchandise store added to portal.",
+    description: "GoHighLevel CRM dashboard added to portal.",
   },
   {
     date: "Mar 17",

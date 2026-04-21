@@ -32,11 +32,11 @@ const changelog: ChangelogGroup[] = [
         category: "content",
       },
       {
-        text: "Sibling link sweep — scrubbed every broken internal link pointing at the four removed articles. Cleaned 8 MDX articles (related-reading bullets + inline 'see our guide' sentences) and 6 blog route files (relatedPosts arrays). Zero broken internal links to any deleted slug remain",
+        text: "Related-page cleanup — scrubbed every broken internal link pointing at the four removed articles. Cleaned 8 related articles (related-reading bullets and inline 'see our guide' sentences) and 6 blog landing pages. Zero broken internal links to any deleted article remain",
         category: "content",
       },
       {
-        text: "Live-verified on axletowing.com: all four deleted article URLs return 404; /pricing no longer contains marketing content; /services shows the new Abandoned Vehicle Removal card linking to the blog hub",
+        text: "Live-verified on axletowing.com: all four deleted article URLs now show the standard not-found page; /pricing no longer contains marketing content; /services shows the new Abandoned Vehicle Removal card linking to the blog hub",
         category: "infrastructure",
       },
     ],
@@ -62,7 +62,7 @@ const changelog: ChangelogGroup[] = [
         category: "strategy",
       },
       {
-        text: "Filed 4 Linear tickets for outstanding GHL/automation blockers (EPP/DNS, A2P 10DLC EIN, Railway env vars, 14 GHL workflows) with assignees and due dates",
+        text: "Filed 4 project tickets for outstanding CRM and automation items (domain transfer code and DNS, SMS business registration documents, environment configuration on the website host, and 14 CRM workflows) with assignees and due dates",
         category: "infrastructure",
       },
       {
@@ -190,11 +190,11 @@ const changelog: ChangelogGroup[] = [
     ],
   },
   {
-    date: "April 12, 2026 (A2P 10DLC SMS Compliance + GHL Automation Workflows — AI-7457, AI-7459, AI-7460, AI-7461)",
+    date: "April 12, 2026 (SMS Business Registration + CRM Automation Workflows)",
     type: "completed",
     entries: [
       {
-        text: "A2P 10DLC brand registration guide created with pre-filled Axle Towing business info, campaign details, and step-by-step GHL Trust Center walkthrough — awaiting EIN from Elliott to submit",
+        text: "SMS business registration guide created with pre-filled Axle Towing business info, campaign details, and step-by-step CRM walkthrough — awaiting business tax ID (EIN) from Elliott to submit",
         category: "strategy",
       },
       {
@@ -248,7 +248,7 @@ const changelog: ChangelogGroup[] = [
         category: "website",
       },
       {
-        text: "Verified live deployment — all deleted pages correctly return 404, blog and Spanish blog display correctly",
+        text: "Verified live deployment — all deleted pages now show the standard not-found page, and the blog and Spanish blog display correctly",
         category: "infrastructure",
       },
     ],
@@ -392,7 +392,7 @@ const changelog: ChangelogGroup[] = [
         category: "dashboard",
       },
       {
-        text: "Two environment variables needed to activate GHL sync: GHL_API_KEY and GHL_LOCATION_ID (add to Railway) — leads still captured via email/SMS/Supabase until then",
+        text: "Two connection keys needed to activate CRM sync (GHL API key and Location ID — add to the website's environment configuration) — leads are still captured via email, SMS, and our database until then",
         category: "infrastructure",
       },
     ],
