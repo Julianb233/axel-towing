@@ -129,19 +129,23 @@ export default function Footer() {
                 Hablamos Espa&ntilde;ol
               </Link>
 
-              {/* Social media icons */}
-              <div className="flex items-center gap-3">
-                {SOCIAL_LINKS.map((social) => (
-                  <a
-                    key={social.label}
-                    href={social.href}
-                    aria-label={social.label}
-                    className="p-2.5 rounded-lg text-white/80 hover:text-white bg-white/5 hover:bg-white/10 border border-white/10 transition-colors"
-                  >
-                    {social.icon}
-                  </a>
-                ))}
-              </div>
+              {/* Social media icons — hidden until real URLs are configured (all were href="#") */}
+              {SOCIAL_LINKS.some((s) => s.href && s.href !== '#') && (
+                <div className="flex items-center gap-3">
+                  {SOCIAL_LINKS.filter((s) => s.href && s.href !== '#').map((social) => (
+                    <a
+                      key={social.label}
+                      href={social.href}
+                      aria-label={social.label}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="p-2.5 rounded-lg text-white/80 hover:text-white bg-white/5 hover:bg-white/10 border border-white/10 transition-colors"
+                    >
+                      {social.icon}
+                    </a>
+                  ))}
+                </div>
+              )}
             </div>
 
             {/* Column 2: Services */}
