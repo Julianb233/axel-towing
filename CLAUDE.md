@@ -30,15 +30,15 @@
 
 | Component | Platform | URL |
 |-----------|----------|-----|
-| Website | Railway | axletowing.com |
+| Website | Vercel (ai-acrobatics team, project `axel-towing`) | axletowing.com |
 | Dashboard/Portal | Vercel (ai-acrobatics team) | axel-towing-portal.vercel.app |
 | CRM | GoHighLevel | Sub-account (setup in progress) |
 | Email | Google Workspace | elliott@, brian@, tori@, chris@ (DNS not configured) |
 | Domain Registrar | eNom/LiquidWeb (NOT GoDaddy) | Mike controls DNS |
 
 ### Website Tech
-- Next.js 14 (App Router), Tailwind CSS, Supabase, Resend, Twilio
-- Deployed on Railway via GitHub auto-deploy from `main`
+- Next.js 16 (App Router, Turbopack), Tailwind CSS, Supabase, Resend, Twilio
+- Deployed on **Vercel** via GitHub auto-deploy from `main`. `website/railway.toml` is a legacy artifact — ignore it.
 
 ### Dashboard Tech
 - Next.js, Tailwind, Framer Motion, Anthropic SDK, Supabase, jsPDF
@@ -46,7 +46,10 @@
 
 ## Deployment
 
-**Website (Railway):** Pushes to `main` auto-deploy.
+**Website (Vercel):** Pushes to `main` auto-deploy. Manual:
+```bash
+cd website && npx vercel build --prod && npx vercel deploy --prebuilt --prod --yes --scope ai-acrobatics
+```
 
 **Dashboard (Vercel):**
 ```bash
@@ -101,7 +104,7 @@ Edit `dashboard/app/changelog/page.tsx` and add a new entry at the TOP of the `c
 
 ### 3. Notify Julian
 
-Send session report via iMessage to +16195095099 with specific deliverables, URLs, and Linear IDs.
+Send session report via iMessage to +16284803615 with specific deliverables, URLs, and Linear IDs.
 
 ## SEO Strategy
 
