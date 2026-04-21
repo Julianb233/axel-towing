@@ -282,31 +282,9 @@ export default function PartnersPage() {
         </div>
       </section>
 
-      {/* ===== CTA BANNER ===== */}
-      <section className="relative py-20 md:py-24 overflow-hidden">
-        <div className="absolute inset-0 z-0 bg-gradient-to-br from-blue-950 via-blue-900 to-blue-800" />
-        <div className="absolute inset-0 grain-overlay z-[1]" />
-        <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="font-heading text-3xl md:text-4xl font-bold text-white mb-4 reveal">
-            Ready to Partner With Us?
-          </h2>
-          <p className="text-white/95 text-lg mb-10 max-w-2xl mx-auto reveal delay-100">
-            Join the growing network of Phoenix businesses that trust {COMPANY.name} for towing
-            and parking enforcement. Get started with a quick call or contact form.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center reveal delay-200">
-            <a href={`tel:${COMPANY.phone}`} className="btn-primary text-lg inline-flex items-center gap-2">
-              <svg className="w-5 h-5" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 002.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 01-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 00-1.091-.852H4.5A2.25 2.25 0 002.25 4.5v2.25z" />
-              </svg>
-              Call {COMPANY.phone}
-            </a>
-            <Link href="/contact" className="btn-secondary text-lg">
-              Contact Us
-            </Link>
-          </div>
-        </div>
-      </section>
+      {/* K-11: in-page "Ready to Partner With Us?" CTA removed — the global
+          Footer CTA ("Ready to Protect Your Property?") renders immediately
+          after this page, so keeping both stacked two identical CTAs. */}
     </>
   );
 }

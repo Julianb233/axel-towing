@@ -12,13 +12,12 @@ export function NewsletterForm() {
 
     setStatus('loading');
     try {
-      const res = await fetch('/api/leads', {
+      const res = await fetch('/api/newsletter', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
           email,
-          source: 'newsletter',
-          name: '',
+          source: 'footer-newsletter',
         }),
       });
       if (res.ok) {

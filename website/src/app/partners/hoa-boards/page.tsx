@@ -169,11 +169,30 @@ export default function HOABoardsPage() {
           <h1 className="font-heading text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 reveal">
             HOA Board <span className="text-blue-300">Towing Programs</span>
           </h1>
-          <p className="text-lg md:text-xl text-white/90 max-w-2xl leading-relaxed reveal delay-200">
+          <p className="text-lg md:text-xl text-white/90 max-w-2xl leading-relaxed reveal delay-200 mb-8">
             Customized parking enforcement built for homeowner associations. We handle the
             compliance, signage, patrols, and reporting &mdash; your board approves it, and
             your community benefits. All at zero cost to the HOA.
           </p>
+          {/* Robert-2 / K-3: Board Packet — downloadable, no form required. */}
+          <div className="flex flex-col sm:flex-row gap-4 reveal delay-300">
+            <a
+              href="/downloads/axle-towing-hoa-board-packet.pdf"
+              className="btn-primary inline-flex items-center gap-2"
+              download
+            >
+              <svg className="w-5 h-5" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" d="M3 16.5v2.25A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75V16.5M16.5 12L12 16.5m0 0L7.5 12m4.5 4.5V3" />
+              </svg>
+              Download Board Packet (PDF)
+            </a>
+            <a
+              href="#hoa-inquiry-form"
+              className="btn-secondary inline-flex items-center gap-2"
+            >
+              Or request an emailed version
+            </a>
+          </div>
         </div>
       </section>
 
@@ -297,7 +316,7 @@ export default function HOABoardsPage() {
       </section>
 
       {/* ===== PARTNERSHIP INQUIRY FORM ===== */}
-      <section className="py-20 md:py-28 bg-white">
+      <section id="hoa-inquiry-form" className="py-20 md:py-28 bg-white scroll-mt-24">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12 reveal">
             <span className="text-primary font-semibold text-sm uppercase tracking-wider font-heading">

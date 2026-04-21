@@ -1,6 +1,14 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import { COMPANY, SERVICES, SERVICE_AREAS } from '@/lib/constants';
+import { NewsletterForm } from '@/components/NewsletterForm';
+
+/**
+ * Cities that have real /locations/<slug> pages. All other service areas
+ * fall back to /service-area (the full "30+ cities served" hub page)
+ * instead of a dead homepage anchor. Origin: K-14 footer prune.
+ */
+const CITIES_WITH_PAGES = ['phoenix', 'scottsdale', 'mesa'] as const;
 
 const QUICK_LINKS = [
   { label: 'Home', href: '/' },
@@ -165,23 +173,32 @@ export default function Footer() {
                     </Link>
                   </li>
                 ))}
+                {/* K-3: inbound link for orphaned /shop/parking-permits */}
+                <li>
+                  <Link
+                    href="/shop/parking-permits"
+                    className="text-white/80 hover:text-white/95 transition-colors inline-flex items-center gap-1.5 group"
+                  >
+                    <span className="w-0 h-0.5 bg-cta rounded-full transition-all duration-300 group-hover:w-3" />
+                    Parking Permits
+                  </Link>
+                </li>
               </ul>
             </div>
 
-            {/* Column 3: Locations */}
+            {/* Column 3: Locations — only cities with real /locations/<slug> pages.
+                 Other 30+ metro cities roll up into the /service-area hub link (K-14). */}
             <div>
               <h3 className="text-white font-bold mb-5 font-heading text-lg uppercase tracking-wider">
                 Locations
               </h3>
               <ul className="space-y-3 text-sm">
-                {SERVICE_AREAS.map((area) => (
+                {SERVICE_AREAS.filter((area) =>
+                  (CITIES_WITH_PAGES as readonly string[]).includes(area.slug),
+                ).map((area) => (
                   <li key={area.slug}>
                     <Link
-                      href={
-                        ['phoenix', 'scottsdale', 'mesa'].includes(area.slug)
-                          ? `/locations/${area.slug}`
-                          : '/#locations'
-                      }
+                      href={`/locations/${area.slug}`}
                       className="text-white/80 hover:text-white/95 transition-colors inline-flex items-center gap-1.5 group"
                     >
                       <span className="w-0 h-0.5 bg-cta rounded-full transition-all duration-300 group-hover:w-3" />
@@ -189,6 +206,15 @@ export default function Footer() {
                     </Link>
                   </li>
                 ))}
+                <li className="pt-1">
+                  <Link
+                    href="/service-area"
+                    className="text-blue-300 hover:text-blue-200 font-medium transition-colors inline-flex items-center gap-1.5 group"
+                  >
+                    <span className="w-0 h-0.5 bg-cta rounded-full transition-all duration-300 group-hover:w-3" />
+                    + {SERVICE_AREAS.length - CITIES_WITH_PAGES.length} more Phoenix-metro cities
+                  </Link>
+                </li>
               </ul>
             </div>
 
@@ -290,7 +316,7 @@ export default function Footer() {
             </div>
           </div>
 
-          {/* Newsletter Signup */}
+          {/* Newsletter Signup — K-22: wired to /api/newsletter via NewsletterForm */}
           <div className="border-t border-white/10 mt-12 pt-10 pb-2">
             <div className="max-w-xl mx-auto text-center">
               <h3 className="text-white font-bold font-heading text-lg mb-2">
@@ -299,26 +325,44 @@ export default function Footer() {
               <p className="text-white/80 text-sm mb-5">
                 Join property managers across Phoenix who get our best tips on parking enforcement, towing compliance, and tenant satisfaction.
               </p>
-              <form
-                action="#"
-                method="POST"
-                className="flex flex-col sm:flex-row gap-3"
-              >
-                <input
-                  type="email"
-                  name="email"
-                  placeholder="Enter your email address"
-                  required
-                  className="flex-1 px-4 py-3 rounded-lg bg-white/10 border border-white/15 text-white placeholder-white/40 text-sm focus:outline-none focus:border-amber-400/60 focus:ring-1 focus:ring-amber-400/30 transition-colors"
-                />
-                <button
-                  type="submit"
-                  className="px-6 py-3 rounded-lg bg-amber-500 hover:bg-amber-400 text-white font-heading font-bold text-sm tracking-wide transition-colors whitespace-nowrap"
-                >
-                  Subscribe
-                </button>
-              </form>
+              <NewsletterForm />
               <p className="text-white/30 text-xs mt-3">No spam. Unsubscribe anytime.</p>
+            </div>
+          </div>
+
+          {/* Trust Row — Robert-5: license/insurance/BBB signals. No fabricated numbers. */}
+          <div className="border-t border-white/10 mt-10 pt-8">
+            <div className="flex flex-wrap justify-center items-center gap-x-8 gap-y-4 text-white/70 text-xs sm:text-sm">
+              {COMPANY.license && (
+                <span className="inline-flex items-center gap-2">
+                  <svg className="w-4 h-4 text-blue-300 shrink-0" fill="none" stroke="currentColor" strokeWidth={1.75} viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12c0 1.268-.63 2.39-1.593 3.068a3.745 3.745 0 01-1.043 3.296 3.745 3.745 0 01-3.296 1.043A3.745 3.745 0 0112 21c-1.268 0-2.39-.63-3.068-1.593a3.746 3.746 0 01-3.296-1.043 3.745 3.745 0 01-1.043-3.296A3.745 3.745 0 013 12c0-1.268.63-2.39 1.593-3.068a3.745 3.745 0 011.043-3.296 3.746 3.746 0 013.296-1.043A3.746 3.746 0 0112 3c1.268 0 2.39.63 3.068 1.593a3.746 3.746 0 013.296 1.043 3.746 3.746 0 011.043 3.296A3.745 3.745 0 0121 12z" />
+                  </svg>
+                  AZ Tow Operator License: {COMPANY.license}
+                </span>
+              )}
+              {/* TODO: Elliott to provide AZ Tow Operator license# — then set COMPANY.license in constants.ts and this line renders. */}
+              <span className="inline-flex items-center gap-2">
+                <svg className="w-4 h-4 text-green-300 shrink-0" fill="none" stroke="currentColor" strokeWidth={1.75} viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z" />
+                </svg>
+                Insured &amp; Bonded
+              </span>
+              {COMPANY.bbbAccredited && (
+                <span className="inline-flex items-center gap-2">
+                  <svg className="w-4 h-4 text-amber-300 shrink-0" fill="none" stroke="currentColor" strokeWidth={1.75} viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M11.48 3.499a.562.562 0 011.04 0l2.125 5.111a.563.563 0 00.475.345l5.518.442c.499.04.701.663.321.988l-4.204 3.602a.563.563 0 00-.182.557l1.285 5.385a.562.562 0 01-.84.61l-4.725-2.885a.563.563 0 00-.586 0L6.982 20.54a.562.562 0 01-.84-.61l1.285-5.386a.562.562 0 00-.182-.557l-4.204-3.602a.563.563 0 01.321-.988l5.518-.442a.563.563 0 00.475-.345L11.48 3.5z" />
+                  </svg>
+                  BBB Accredited
+                </span>
+              )}
+              {/* TODO: Confirm BBB accreditation with Elliott — then set COMPANY.bbbAccredited = true in constants.ts. */}
+              <span className="inline-flex items-center gap-2">
+                <svg className="w-4 h-4 text-blue-300 shrink-0" fill="none" stroke="currentColor" strokeWidth={1.75} viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M11.48 3.499a.562.562 0 011.04 0l2.125 5.111a.563.563 0 00.475.345l5.518.442c.499.04.701.663.321.988l-4.204 3.602a.563.563 0 00-.182.557l1.285 5.385a.562.562 0 01-.84.61l-4.725-2.885a.563.563 0 00-.586 0L6.982 20.54a.562.562 0 01-.84-.61l1.285-5.386a.562.562 0 00-.182-.557l-4.204-3.602a.563.563 0 01.321-.988l5.518-.442a.563.563 0 00.475-.345L11.48 3.5z" />
+                </svg>
+                Veteran Owned
+              </span>
             </div>
           </div>
 
