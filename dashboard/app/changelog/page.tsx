@@ -50,11 +50,11 @@ const changelog: ChangelogGroup[] = [
         category: "infrastructure",
       },
       {
-        text: "Apache Junction GBP listing — Mon–Fri now showing 'Open 24 hours' (Google approved hours edit). Optimized brand-aligned description and 4 secondary categories (Auto wrecker, Parking lot, Property maintenance, Automobile storage facility) pending Google review",
+        text: "Apache Junction GBP listing — main business hours set to Mon-Fri 9am-5pm (office/impound retrieval window), matching actual staffed availability. 24/7 dispatch messaging lives in the business description to avoid the suspension risk of claiming 24h main hours when phones aren't physically answered at 2am. Optimized brand-aligned description and 4 secondary categories (Auto wrecker, Parking lot, Property maintenance, Automobile storage facility) pending Google review",
         category: "seo",
       },
       {
-        text: "Phoenix GBP listing — Mon–Fri now showing 'Open 24 hours', Phoenix-specific 750-character description live, and 4 secondary categories (Auto wrecker, Parking lot, Property maintenance, Automobile storage facility) pending Google review. Description for Phoenix auto-approved on first submission",
+        text: "Phoenix GBP listing — same hours structure (Mon-Fri 9am-5pm main), Phoenix-specific 750-character description live and auto-approved on first submission, 4 secondary categories pending",
         category: "seo",
       },
       {
