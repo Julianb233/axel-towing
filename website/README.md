@@ -35,7 +35,7 @@ npm run dev
 
 ## Deploy
 
-Site is hosted on Vercel (previously Railway — railway.toml and nixpacks.toml are legacy configs).
+Site is hosted on **Vercel** (project `axel-towing`, team `ai-acrobatics`). Deploys auto-trigger from pushes to `main`.
 
 ```bash
 npx vercel build --prod --token "$VERCEL_TOKEN"

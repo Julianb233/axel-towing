@@ -119,10 +119,10 @@ const deliverables = [
       "City pages for Phoenix, Scottsdale, Mesa, Gilbert, Chandler, Tempe, Glendale, Apache Junction",
       "Service pages targeting every high-intent keyword category",
       "FAQPage, LocalBusiness, and Service schema on every page",
-      "Mobile-first, sub-2s load times (Next.js 16 + Railway cloud hosting)",
+      "Mobile-first, sub-2s load times (Next.js 16 on Vercel edge network)",
     ],
     timeline: "Built (ready for DNS transfer)",
-    tools: ["Next.js 16", "Tailwind CSS", "Railway", "Schema.org"],
+    tools: ["Next.js 16", "Tailwind CSS", "Vercel", "Schema.org"],
   },
   {
     title: "Content Marketing Engine",
