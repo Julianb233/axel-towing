@@ -1,11 +1,41 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import { COMPANY } from "@/lib/constants";
+
+const HERO_IMAGE = "/images/optimized/axle-towing-hoa-entrance-arizona-towing-service.webp";
+const HERO_IMAGE_URL = "https://axletowing.com" + HERO_IMAGE;
+const HERO_ALT = "Removing abandoned vehicles from private property in Arizona — Axle Towing signage";
+const CANONICAL = "https://axletowing.com/blog/abandoned-vehicle-removal-private-property-arizona";
+const ES_URL = "https://axletowing.com/es/blog/remocion-vehiculos-abandonados-propiedad-privada-arizona";
+const PUBLISHED = "2026-03-09T00:00:00.000Z";
+const MODIFIED = "2026-04-20T00:00:00.000Z";
 
 export const metadata: Metadata = {
   title: "How to Remove Abandoned Vehicles from Private Property in Arizona",
   description:
     "Step-by-step guide to legally removing abandoned vehicles from private property in Arizona. Learn about ARS 28-4801, required notices, timelines, and free removal services.",
+  alternates: {
+    canonical: CANONICAL,
+    languages: { en: CANONICAL, es: ES_URL },
+  },
+  openGraph: {
+    title: "How to Remove Abandoned Vehicles from Private Property in Arizona",
+    description:
+      "Step-by-step guide to legally removing abandoned vehicles from private property in Arizona. Learn about ARS 28-4801, required notices, timelines, and free removal services.",
+    url: CANONICAL,
+    type: "article",
+    publishedTime: PUBLISHED,
+    authors: ["Axle Towing & Impound"],
+    images: [{ url: HERO_IMAGE_URL, width: 1200, height: 630, alt: HERO_ALT }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "How to Remove Abandoned Vehicles from Private Property in Arizona",
+    description:
+      "Step-by-step guide to legally removing abandoned vehicles from private property in Arizona.",
+    images: [HERO_IMAGE_URL],
+  },
 };
 
 const RELATED_ARTICLES = [
@@ -36,8 +66,22 @@ const RELATED_ARTICLES = [
 ];
 
 export default function ArticlePage() {
+  const articleSchema = {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    headline: "How to Remove Abandoned Vehicles from Private Property in Arizona",
+    description:
+      "Step-by-step guide to legally removing abandoned vehicles from private property in Arizona. Learn about ARS 28-4801, required notices, timelines, and free removal services.",
+    image: HERO_IMAGE_URL,
+    datePublished: PUBLISHED,
+    dateModified: MODIFIED,
+    author: { "@type": "Organization", name: "Axle Towing & Impound", url: "https://axletowing.com" },
+    publisher: { "@type": "Organization", name: "Axle Towing & Impound", logo: { "@type": "ImageObject", url: "https://axletowing.com/images/axle-towing-logo.png" } },
+    mainEntityOfPage: CANONICAL,
+  };
   return (
     <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify([articleSchema]) }} />
       {/* Parallax Hero */}
       <section className="parallax-container min-h-[45vh] flex items-end relative">
         <div className="absolute inset-0 bg-gradient-to-br from-blue-950 via-blue-900 to-blue-800 z-0" />
@@ -61,6 +105,15 @@ export default function ArticlePage() {
             How to Remove Abandoned Vehicles from{" "}
             <span className="text-gradient">Private Property in Arizona</span>
           </h1>
+        </div>
+      </section>
+
+      {/* Hero Image */}
+      <section className="bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-8">
+          <div className="relative aspect-[16/9] w-full overflow-hidden rounded-2xl shadow-lg">
+            <Image src={HERO_IMAGE} alt={HERO_ALT} fill sizes="(max-width: 1280px) 100vw, 1280px" className="object-cover" />
+          </div>
         </div>
       </section>
 

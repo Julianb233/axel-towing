@@ -1,13 +1,39 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import { COMPANY } from "@/lib/constants";
+
+const HERO_IMAGE = "/images/optimized/axle-towing-hoa-entrance-arizona-towing-service.webp";
+const HERO_IMAGE_URL = "https://axletowing.com" + HERO_IMAGE;
+const HERO_ALT = "Private property towing signage at an Arizona HOA entrance — Axle Towing";
+const CANONICAL = "https://axletowing.com/blog/abandoned-vehicle-private-property-rights-arizona";
+const ES_URL = "https://axletowing.com/es/blog/derechos-propiedad-privada-vehiculos-abandonados-arizona";
+const PUBLISHED = "2026-04-08T00:00:00.000Z";
+const MODIFIED = "2026-04-20T00:00:00.000Z";
 
 export const metadata: Metadata = {
   title: "Abandoned Vehicle on Private Property Arizona: Your Rights",
   description: "Know your rights when an abandoned vehicle is on your private property in Arizona. Legal removal process, ARS 28-3511, signage requirements, and free towing.",
   keywords: "abandoned vehicle private property arizona, private property towing rights, abandoned car my property",
-  alternates: { canonical: "https://axletowing.com/blog/abandoned-vehicle-private-property-rights-arizona" },
-  openGraph: { title: "Abandoned Vehicle on Private Property Arizona: Your Rights", description: "Know your rights when an abandoned vehicle is on your private property in Arizona. Legal removal process, ARS 28-3511, signage requirements, and free towing.", url: "https://axletowing.com/blog/abandoned-vehicle-private-property-rights-arizona", type: "article" },
+  alternates: {
+    canonical: CANONICAL,
+    languages: { en: CANONICAL, es: ES_URL },
+  },
+  openGraph: {
+    title: "Abandoned Vehicle on Private Property Arizona: Your Rights",
+    description: "Know your rights when an abandoned vehicle is on your private property in Arizona. Legal removal process, ARS 28-3511, signage requirements, and free towing.",
+    url: CANONICAL,
+    type: "article",
+    publishedTime: PUBLISHED,
+    authors: ["Axle Towing & Impound"],
+    images: [{ url: HERO_IMAGE_URL, width: 1200, height: 630, alt: HERO_ALT }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Abandoned Vehicle on Private Property Arizona: Your Rights",
+    description: "Know your rights when an abandoned vehicle is on your private property in Arizona.",
+    images: [HERO_IMAGE_URL],
+  },
 };
 
 const FAQS = [
@@ -24,9 +50,21 @@ const RELATED = [
 
 export default function Page() {
   const faqSchema = { "@context": "https://schema.org", "@type": "FAQPage", mainEntity: FAQS.map((f) => ({ "@type": "Question", name: f.question, acceptedAnswer: { "@type": "Answer", text: f.answer } })) };
+  const articleSchema = {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    headline: "Abandoned Vehicle on Private Property Arizona: Your Rights",
+    description: "Know your rights when an abandoned vehicle is on your private property in Arizona. Legal removal process, ARS 28-3511, signage requirements, and free towing.",
+    image: HERO_IMAGE_URL,
+    datePublished: PUBLISHED,
+    dateModified: MODIFIED,
+    author: { "@type": "Organization", name: "Axle Towing & Impound", url: "https://axletowing.com" },
+    publisher: { "@type": "Organization", name: "Axle Towing & Impound", logo: { "@type": "ImageObject", url: "https://axletowing.com/images/axle-towing-logo.png" } },
+    mainEntityOfPage: CANONICAL,
+  };
   return (
     <>
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify([faqSchema, articleSchema]) }} />
       <section className="parallax-container min-h-[45vh] flex items-end relative">
         <div className="absolute inset-0 bg-gradient-to-br from-blue-950 via-blue-900 to-blue-800 z-0" />
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_left,rgba(224,43,32,0.15),transparent_60%)] z-[1]" />
@@ -39,6 +77,13 @@ export default function Page() {
             <span className="text-sm text-blue-200/60">April 8, 2026</span>
           </div>
           <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white leading-tight max-w-4xl">Abandoned Vehicle on Private Property Arizona: <span className="text-gradient">Your Rights</span></h1>
+        </div>
+      </section>
+      <section className="bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-8">
+          <div className="relative aspect-[16/9] w-full overflow-hidden rounded-2xl shadow-lg">
+            <Image src={HERO_IMAGE} alt={HERO_ALT} fill sizes="(max-width: 1280px) 100vw, 1280px" className="object-cover" />
+          </div>
         </div>
       </section>
       <article className="py-16 bg-white">

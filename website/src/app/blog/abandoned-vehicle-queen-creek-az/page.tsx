@@ -1,13 +1,39 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import { COMPANY } from "@/lib/constants";
+
+const HERO_IMAGE = "/images/optimized/axle-towing-hoa-entrance-arizona-towing-service.webp";
+const HERO_IMAGE_URL = "https://axletowing.com" + HERO_IMAGE;
+const HERO_ALT = "HOA entrance with Axle Towing private-property signage — Queen Creek abandoned vehicle removal";
+const CANONICAL = "https://axletowing.com/blog/abandoned-vehicle-queen-creek-az";
+const ES_URL = "https://axletowing.com/es/blog/vehiculos-abandonados-queen-creek-az";
+const PUBLISHED = "2026-04-08T00:00:00.000Z";
+const MODIFIED = "2026-04-20T00:00:00.000Z";
 
 export const metadata: Metadata = {
   title: "Abandoned Vehicle Removal in Queen Creek, AZ | Free Service",
   description: "Free abandoned vehicle removal in Queen Creek, Arizona. Same-day towing service for property owners, HOAs, and apartment complexes. Call Axle Towing: 480-288-5526.",
   keywords: "abandoned vehicle queen creek, abandoned car queen creek az, vehicle removal queen creek, towing queen creek arizona",
-  alternates: { canonical: "https://axletowing.com/blog/abandoned-vehicle-queen-creek-az" },
-  openGraph: { title: "Abandoned Vehicle Removal in Queen Creek, AZ", description: "Free abandoned vehicle removal for Queen Creek property owners. Same-day service.", url: "https://axletowing.com/blog/abandoned-vehicle-queen-creek-az", type: "article" },
+  alternates: {
+    canonical: CANONICAL,
+    languages: { en: CANONICAL, es: ES_URL },
+  },
+  openGraph: {
+    title: "Abandoned Vehicle Removal in Queen Creek, AZ",
+    description: "Free abandoned vehicle removal for Queen Creek property owners. Same-day service.",
+    url: CANONICAL,
+    type: "article",
+    publishedTime: PUBLISHED,
+    authors: ["Axle Towing & Impound"],
+    images: [{ url: HERO_IMAGE_URL, width: 1200, height: 630, alt: HERO_ALT }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Abandoned Vehicle Removal in Queen Creek, AZ",
+    description: "Free abandoned vehicle removal for Queen Creek property owners. Same-day service.",
+    images: [HERO_IMAGE_URL],
+  },
 };
 
 const FAQS = [
@@ -34,9 +60,21 @@ const RELATED = [
 export default function Page() {
   const faqSchema = { "@context": "https://schema.org", "@type": "FAQPage", mainEntity: FAQS.map((f) => ({ "@type": "Question", name: f.question, acceptedAnswer: { "@type": "Answer", text: f.answer } })) };
   const localBiz = { "@context": "https://schema.org", "@type": ["LocalBusiness", "TowingService"], name: COMPANY.name, telephone: COMPANY.phone, url: `https://${COMPANY.domain}`, areaServed: { "@type": "City", name: "Queen Creek", containedInPlace: { "@type": "State", name: "Arizona" } }, priceRange: "Free for property owners" };
+  const articleSchema = {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    headline: "Abandoned Vehicle Removal in Queen Creek, AZ | Free Service",
+    description: "Free abandoned vehicle removal in Queen Creek, Arizona. Same-day towing service for property owners, HOAs, and apartment complexes. Call Axle Towing: 480-288-5526.",
+    image: HERO_IMAGE_URL,
+    datePublished: PUBLISHED,
+    dateModified: MODIFIED,
+    author: { "@type": "Organization", name: "Axle Towing & Impound", url: "https://axletowing.com" },
+    publisher: { "@type": "Organization", name: "Axle Towing & Impound", logo: { "@type": "ImageObject", url: "https://axletowing.com/images/axle-towing-logo.png" } },
+    mainEntityOfPage: CANONICAL,
+  };
   return (
     <>
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify([faqSchema, localBiz]) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify([faqSchema, localBiz, articleSchema]) }} />
       <section className="parallax-container min-h-[45vh] flex items-end relative">
         <div className="absolute inset-0 bg-gradient-to-br from-blue-950 via-blue-900 to-blue-800 z-0" />
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_left,rgba(224,43,32,0.15),transparent_60%)] z-[1]" />
@@ -49,6 +87,13 @@ export default function Page() {
             <span className="text-sm text-blue-200/60">April 8, 2026</span>
           </div>
           <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white leading-tight max-w-4xl">Abandoned Vehicle Removal <span className="text-gradient">in Queen Creek, AZ</span></h1>
+        </div>
+      </section>
+      <section className="bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-8">
+          <div className="relative aspect-[16/9] w-full overflow-hidden rounded-2xl shadow-lg">
+            <Image src={HERO_IMAGE} alt={HERO_ALT} fill sizes="(max-width: 1280px) 100vw, 1280px" className="object-cover" />
+          </div>
         </div>
       </section>
       <article className="py-16 bg-white">
