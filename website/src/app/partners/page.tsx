@@ -243,64 +243,6 @@ export default function PartnersPage() {
         </div>
       </section>
 
-      {/* ===== CORPORATE GIFTING CALLOUT ===== */}
-      <section className="py-16 md:py-20 bg-white border-t border-gray-100">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="rounded-3xl bg-gradient-to-br from-[#1B2A3F] via-[#1a3055] to-[#0f1e30] p-10 md:p-14 flex flex-col md:flex-row items-center gap-10 reveal">
-            <div className="flex-1 min-w-0">
-              <span className="inline-block text-red-400 text-sm font-bold uppercase tracking-widest font-heading mb-4">
-                Partner Appreciation
-              </span>
-              <h2 className="font-heading text-3xl md:text-4xl font-bold text-white mb-4">
-                Branded Merchandise &amp; Corporate Gifting
-              </h2>
-              <p className="text-white/80 text-lg leading-relaxed mb-6">
-                Strengthen your relationships with HOA board members and property management
-                partners through co-branded merchandise. From apparel to car accessories &mdash;
-                print-on-demand with no inventory required. Bulk discounts available for 25+ units.
-              </p>
-              <ul className="space-y-2 mb-8">
-                {[
-                  "Co-branded apparel, hats &amp; keychains",
-                  "HOA Partner Pack: 20% off on 50–99 units",
-                  "Corporate Bulk: 30% off on 100+ units",
-                  "Ships direct to recipients across Phoenix metro",
-                ].map((item) => (
-                  <li key={item} className="flex items-center gap-3 text-white/85 text-sm">
-                    <svg className="h-4 w-4 flex-shrink-0 text-green-400" fill="currentColor" viewBox="0 0 20 20">
-                      <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-                    </svg>
-                    <span dangerouslySetInnerHTML={{ __html: item }} />
-                  </li>
-                ))}
-              </ul>
-              <Link
-                href="/merchandise"
-                className="inline-flex items-center gap-2 rounded-lg bg-red-600 px-7 py-3.5 text-base font-bold text-white transition-colors hover:bg-red-700"
-              >
-                View Merchandise Catalog
-                <svg className="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                </svg>
-              </Link>
-            </div>
-            <div className="flex-shrink-0 grid grid-cols-2 gap-4 w-full md:w-64">
-              {[
-                { label: "Apparel", icon: "👕" },
-                { label: "Car Accessories", icon: "🚗" },
-                { label: "Keychains", icon: "🔑" },
-                { label: "Office Items", icon: "🖊️" },
-              ].map((item) => (
-                <div key={item.label} className="rounded-xl bg-white/10 border border-white/15 p-4 text-center">
-                  <div className="text-3xl mb-2">{item.icon}</div>
-                  <div className="text-white text-xs font-semibold">{item.label}</div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
-
       {/* ===== HOW IT WORKS ===== */}
       <section className="py-20 md:py-28 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

@@ -418,38 +418,11 @@ export default function PricingPage() {
             </h2>
             <div className="mx-auto w-24 h-1 bg-gradient-to-r from-red-400 to-red-300 rounded-full mb-6" />
             <p className="text-gray-700 text-lg max-w-2xl mx-auto">
-              If your vehicle was towed, here is what you need to know about storage fees, payment, and the pickup process.
+              If your vehicle was towed, here is what you need to know about payment and the pickup process.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 reveal">
-            {/* Storage Fees */}
-            <div className="glass-card rounded-2xl p-8 shadow-md">
-              <div className="w-12 h-12 bg-amber-50 text-amber-600 rounded-xl flex items-center justify-center mb-5">
-                <svg className="w-6 h-6" fill="none" stroke="currentColor" strokeWidth={1.5} viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M12 6v12m-3-2.818l.879.659c1.171.879 3.07.879 4.242 0 1.172-.879 1.172-2.303 0-3.182C13.536 12.219 12.768 12 12 12c-.725 0-1.45-.22-2.003-.659-1.106-.879-1.106-2.303 0-3.182s2.9-.879 4.006 0l.415.33M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-                </svg>
-              </div>
-              <h3 className="text-xl font-bold font-heading mb-4" style={{ color: "#1a202c" }}>Storage Fees</h3>
-              <div className="space-y-3 text-sm text-gray-600">
-                <div className="flex justify-between items-center py-2 border-b border-gray-100">
-                  <span>First 72 hours</span>
-                  <span className="font-bold text-green-700">No charge</span>
-                </div>
-                <div className="flex justify-between items-center py-2 border-b border-gray-100">
-                  <span>After 72 hours</span>
-                  <span className="font-bold text-gray-800">$15 / day</span>
-                </div>
-                <div className="flex justify-between items-center py-2 border-b border-gray-100">
-                  <span>Tow / Recovery fee</span>
-                  <span className="font-bold text-gray-800">Per ARS schedule</span>
-                </div>
-                <p className="text-xs text-gray-600 pt-2">
-                  All fees comply with Arizona Revised Statutes (ARS) 28-1104 and 28-1108.
-                </p>
-              </div>
-            </div>
-
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 reveal">
             {/* Accepted Payment */}
             <div className="glass-card rounded-2xl p-8 shadow-md">
               <div className="w-12 h-12 bg-blue-50 text-primary rounded-xl flex items-center justify-center mb-5">

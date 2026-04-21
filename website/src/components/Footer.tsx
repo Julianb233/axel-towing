@@ -13,7 +13,6 @@ const QUICK_LINKS = [
   { label: 'We Buy Cars', href: '/we-buy-cars' },
   { label: 'Careers', href: '/careers' },
   { label: 'Referral Program', href: '/referral' },
-  { label: 'Branded Merchandise', href: '/merchandise' },
   { label: 'Pricing', href: '/pricing' },
   { label: 'Privacy Policy', href: '/privacy-policy' },
   { label: 'Terms of Service', href: '/terms-of-service' },
