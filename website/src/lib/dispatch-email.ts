@@ -1,7 +1,7 @@
 import { Resend } from "resend";
 
 const resendApiKey = process.env.RESEND_API_KEY;
-const DISPATCH_EMAIL = process.env.DISPATCH_EMAIL || "elliott.axletowing@gmail.com";
+const DISPATCH_EMAIL = process.env.DISPATCH_EMAIL || "info@axletowing.com";
 const FROM_EMAIL = process.env.FROM_EMAIL || "dispatch@axletowing.com";
 
 /**
