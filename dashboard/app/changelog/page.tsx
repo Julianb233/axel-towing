@@ -16,6 +16,28 @@ interface ChangelogGroup {
 
 const changelog: ChangelogGroup[] = [
   {
+    date: "April 21, 2026 (Website outage resolved - DNS migration)",
+    type: "completed",
+    entries: [
+      {
+        text: "Restored axletowing.com after a ~90 minute outage. Mike moved nameservers from LiquidWeb to GoDaddy earlier today to enable the Google Workspace email records, but the move did not carry over the Vercel A record and www CNAME. GoDaddy populated the new zone with default parking records, which is why the site briefly served a parked-domain page while Google search still pointed there.",
+        category: "infrastructure",
+      },
+      {
+        text: "Fix: A record for axletowing.com set back to 76.76.21.21 (Vercel) and www CNAME restored. Vercel auto-issued a fresh Let's Encrypt TLS certificate within seconds of the DNS flip. Verified end-to-end: HTTP 200, Vercel cache HIT, valid cert, real site content.",
+        category: "infrastructure",
+      },
+      {
+        text: "Email was never affected during the outage. The MX, SPF, DKIM and DMARC records that Hitesh set up during the migration were preserved and continued to function for admin@ and info@axletowing.com throughout.",
+        category: "infrastructure",
+      },
+      {
+        text: "Google search results and Google Business Profile click-throughs will refresh within about an hour as the cached page is replaced with the restored site.",
+        category: "seo",
+      },
+    ],
+  },
+  {
     date: "April 21, 2026 (GHL wiring closeout — AI-8344 / AI-8428)",
     type: "completed",
     entries: [
