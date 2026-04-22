@@ -1,11 +1,7 @@
 export const COMPANY = {
   name: "Axle Towing & Impound",
   phone: "480-288-5526",
-  // TODO(AI-6661): revert to "info@axletowing.com" once Mike flips the MX
-  // records to Google Workspace. Currently the @axletowing.com mail host
-  // (LiquidWeb 67.43.6.179) is dead, so every mailto: was silently
-  // dropping inbound mail. Route to Elliott's Gmail tonight as a bridge.
-  email: "elliott.axletowing@gmail.com",
+  email: "info@axletowing.com",
   address: "Phoenix, AZ",
   addresses: [
     {
