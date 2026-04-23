@@ -16,6 +16,32 @@ interface ChangelogGroup {
 
 const changelog: ChangelogGroup[] = [
   {
+    date: "April 23, 2026 (Lead form to GHL sync fixed - AI-8372)",
+    type: "completed",
+    entries: [
+      {
+        text: "Fixed a silent bug where form submissions on axletowing.com were accepted but never reached GoHighLevel. The website was calling the deprecated GHL v1 REST API (rest.gohighlevel.com/v1) which is incompatible with the Private Integration Tokens (pit-*) the Axle sub-account uses. Requests returned 401 inside Promise.allSettled and the outer response still came back as a success, so the frontend looked healthy while leads disappeared.",
+        category: "infrastructure",
+      },
+      {
+        text: "PR #62 merged to main, Vercel redeployed in 57s. Switched the base URL to services.leadconnectorhq.com, added the Version: 2021-07-28 header, updated contact/opportunity payloads to the v2 schema, and added graceful recovery for duplicate-contact 400s.",
+        category: "website",
+      },
+      {
+        text: "Live-verified end to end: POST /api/leads returned a referenceId, and the matching contact appeared in the Axle GHL sub-account within 2 seconds with the correct tags (src-website-form, type-apartment, stage-new-lead, priority-cold, seq-new-lead-nurture). Test contact deleted after verification.",
+        category: "website",
+      },
+      {
+        text: "Sibling sweep: the workflow engine (website/src/lib/workflows/engine.ts) had the same v1 API bug on its tag add/remove calls. Would have silently 401'd on every nurture step once the 14 automations activate. Switched to v2 POST/DELETE /contacts/{id}/tags endpoints and verified against the live sub-account.",
+        category: "infrastructure",
+      },
+      {
+        text: "Replied to Elliott confirming info@axletowing.com is live (verified via probe delivery, zero bounce) so he can send his yes/no on the 9 cold/nurture email automation sequences he has been blocking on.",
+        category: "strategy",
+      },
+    ],
+  },
+  {
     date: "April 21, 2026 (Website outage resolved - DNS migration)",
     type: "completed",
     entries: [
