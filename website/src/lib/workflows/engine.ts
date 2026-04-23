@@ -41,18 +41,25 @@ function getResend(): Resend | null {
   return resend;
 }
 
-const GHL_BASE = "https://rest.gohighlevel.com/v1";
+const GHL_BASE = "https://services.leadconnectorhq.com";
+const GHL_API_VERSION = "2021-07-28";
+
+function ghlHeaders(apiKey: string): HeadersInit {
+  return {
+    Authorization: `Bearer ${apiKey}`,
+    Version: GHL_API_VERSION,
+    "Content-Type": "application/json",
+    Accept: "application/json",
+  };
+}
 
 async function ghlAddTag(contactId: string, tag: string): Promise<void> {
   const apiKey = process.env.GHL_API_KEY;
   if (!apiKey) return;
 
-  await fetch(`${GHL_BASE}/contacts/${contactId}`, {
-    method: "PUT",
-    headers: {
-      Authorization: `Bearer ${apiKey}`,
-      "Content-Type": "application/json",
-    },
+  await fetch(`${GHL_BASE}/contacts/${contactId}/tags`, {
+    method: "POST",
+    headers: ghlHeaders(apiKey),
     body: JSON.stringify({ tags: [tag] }),
   });
 }
@@ -61,24 +68,10 @@ async function ghlRemoveTag(contactId: string, tag: string): Promise<void> {
   const apiKey = process.env.GHL_API_KEY;
   if (!apiKey) return;
 
-  // GHL v1 doesn't have a direct remove-tag endpoint.
-  // Fetch current tags, remove the one we want, and update.
-  const res = await fetch(`${GHL_BASE}/contacts/${contactId}`, {
-    headers: { Authorization: `Bearer ${apiKey}` },
-  });
-  if (!res.ok) return;
-
-  const data = (await res.json()) as { contact?: { tags?: string[] } };
-  const currentTags = data.contact?.tags || [];
-  const newTags = currentTags.filter((t: string) => t !== tag);
-
-  await fetch(`${GHL_BASE}/contacts/${contactId}`, {
-    method: "PUT",
-    headers: {
-      Authorization: `Bearer ${apiKey}`,
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify({ tags: newTags }),
+  await fetch(`${GHL_BASE}/contacts/${contactId}/tags`, {
+    method: "DELETE",
+    headers: ghlHeaders(apiKey),
+    body: JSON.stringify({ tags: [tag] }),
   });
 }
 
