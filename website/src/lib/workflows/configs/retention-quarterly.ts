@@ -9,7 +9,7 @@ export const retentionQuarterly: WorkflowConfig = {
     tag: "seq-retention-quarterly",
     excludeTags: ["do-not-contact"],
   },
-  fromEmail: "elliott@axletowing.com",
+  fromEmail: "info@axletowing.com",
   fromName: "Elliott — Axle Towing",
   enabled: true,
   steps: [

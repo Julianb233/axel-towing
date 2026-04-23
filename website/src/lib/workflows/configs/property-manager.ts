@@ -9,7 +9,7 @@ export const propertyManager: WorkflowConfig = {
     tag: "seq-property-manager",
     excludeTags: ["do-not-contact"],
   },
-  fromEmail: "elliott@axletowing.com",
+  fromEmail: "info@axletowing.com",
   fromName: "Elliott — Axle Towing",
   enabled: true,
   steps: [

@@ -9,7 +9,7 @@ export const referralPaving: WorkflowConfig = {
     tag: "seq-referral-paving",
     excludeTags: ["do-not-contact"],
   },
-  fromEmail: "elliott@axletowing.com",
+  fromEmail: "info@axletowing.com",
   fromName: "Elliott — Axle Towing",
   enabled: true,
   steps: [

@@ -281,11 +281,11 @@ Axle's GHL already references `GHL_PIPELINE_ID` and `GHL_STAGE_NEW_LEAD_ID` env 
 
 ### Sender Identity
 
-- Cold outreach: use a dedicated sender (e.g. `elliott@axletowing.com`) for deliverability separation.
-- Transactional (vehicle retrieval): use `dispatch@axletowing.com` or `impound@axletowing.com`.
-- Nurture/referral: `elliott@axletowing.com` is fine.
+- Cold outreach: `info@axletowing.com` (verified live 2026-04-23). `elliott@axletowing.com` was never provisioned — confirmed with SMTP probe returning `550 5.1.1 address not found`. If Elliott wants a dedicated sender later, add as a Workspace user or alias.
+- Transactional (vehicle retrieval): use `dispatch@axletowing.com` or `impound@axletowing.com` (not yet provisioned).
+- Nurture/referral: `info@axletowing.com`.
 
-**Blocker:** Elliott's Google Workspace DNS is not yet configured. Until `elliott@axletowing.com` resolves, all workflows above should queue against a placeholder sender and get swapped in once Hitesh finishes DNS.
+**Status (2026-04-23):** MX/SPF/DKIM/DMARC all clean on `axletowing.com`. Workspace mailboxes `admin@` and `info@` are live with password `Axletowing2026$` (Elliott was texted creds 2026-04-21). All 16 workflow configs + engine.ts fallback updated to use `info@axletowing.com`.
 
 ---
 

@@ -278,7 +278,7 @@ async function executeStep(
         }
 
         const rendered = renderEmail(workflowStep.email, contact);
-        const fromEmail = workflow.fromEmail || "elliott@axletowing.com";
+        const fromEmail = workflow.fromEmail || "info@axletowing.com";
         const fromName = workflow.fromName || "Elliott — Axle Towing";
 
         const { data, error } = await r.emails.send({

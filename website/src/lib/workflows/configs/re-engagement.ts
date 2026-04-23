@@ -9,7 +9,7 @@ export const reEngagement: WorkflowConfig = {
     tag: "seq-re-engagement",
     excludeTags: ["do-not-contact"],
   },
-  fromEmail: "elliott@axletowing.com",
+  fromEmail: "info@axletowing.com",
   fromName: "Elliott — Axle Towing",
   enabled: true,
   steps: [

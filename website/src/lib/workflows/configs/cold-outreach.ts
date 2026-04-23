@@ -9,7 +9,7 @@ export const coldOutreach: WorkflowConfig = {
     tag: "seq-cold-outreach",
     excludeTags: ["do-not-contact"],
   },
-  fromEmail: "elliott@axletowing.com",
+  fromEmail: "info@axletowing.com",
   fromName: "Elliott — Axle Towing",
   enabled: true,
   steps: [
@@ -102,7 +102,7 @@ For accounts that sign this month, we're including:
 
 If the timing isn't right, no worries — save my number for when your current situation changes.
 
-480-288-5526 | elliott@axletowing.com
+480-288-5526 | info@axletowing.com
 
 Elliott
 Axle Towing & Impound`,

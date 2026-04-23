@@ -9,7 +9,7 @@ export const hoaBoardMember: WorkflowConfig = {
     tag: "seq-hoa-board-member",
     excludeTags: ["do-not-contact"],
   },
-  fromEmail: "elliott@axletowing.com",
+  fromEmail: "info@axletowing.com",
   fromName: "Elliott — Axle Towing",
   enabled: true,
   steps: [

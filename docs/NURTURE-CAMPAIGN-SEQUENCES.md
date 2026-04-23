@@ -129,7 +129,7 @@ For accounts that sign this month, we're including:
 
 If the timing isn't right, no worries — save my number for when your current situation changes.
 
-480-288-5526 | elliott@axletowing.com
+480-288-5526 | info@axletowing.com
 
 Elliott
 Axle Towing & Impound
@@ -815,7 +815,7 @@ _(Approx. 58 seconds)_
 ### Email Sending Best Practices in GHL
 
 - **From Name:** Elliott — Axle Towing
-- **From Email:** elliott@axletowing.com (configure in GHL email settings)
+- **From Email:** info@axletowing.com (configure in GHL email settings). Note: elliott@ mailbox is NOT provisioned — using info@ which is live and monitored. Re-address later if Elliott wants a dedicated sender.
 - **Unsubscribe Footer:** Required — GHL adds this automatically; do not suppress
 - **Sending Window:** Set email sends to 8 AM–5 PM Mon–Fri in GHL workflow settings
 - **SMS Window:** 9 AM–4 PM Mon–Fri to stay within TCPA safe harbor

@@ -9,7 +9,7 @@ export const referralPainter: WorkflowConfig = {
     tag: "seq-referral-painter",
     excludeTags: ["do-not-contact"],
   },
-  fromEmail: "elliott@axletowing.com",
+  fromEmail: "info@axletowing.com",
   fromName: "Elliott — Axle Towing",
   enabled: true,
   steps: [
