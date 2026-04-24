@@ -1,0 +1,31 @@
+Workflow: PM Nurture -- 21 Day
+Type: Email
+Step: 8 of 9
+Day: 17
+Subject A: Limited enforcement capacity in {{contact.city}} — heads up
+Subject B: We have room for 3 more property accounts this month
+From: elliott@axletowing.com
+From Name: Elliott -- Axle Towing
+Tag Trigger: nurture-active
+
+--- EMAIL BODY ---
+
+Hi {{contact.first_name}},
+
+Quick heads up — we're currently onboarding new property accounts in {{contact.city}} and we have room for 3 more this month.
+
+We deliberately limit the number of properties per service area so our response times stay under 60 minutes. Once we're at capacity in an area, new accounts go on a waitlist.
+
+For accounts that sign this month, we're including:
+
+- Free parking violation notice templates (Arizona-compliant)
+- Free signage consultation — we'll tell you exactly what signs you need per ARS requirements
+- Priority response guarantee in writing
+- Monthly tow activity report for your records
+
+If the timing isn't right, no worries — save my number for when your current situation changes.
+
+(480) 288-5526 | elliott@axletowing.com
+
+Elliott
+Axle Towing & Impound
