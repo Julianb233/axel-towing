@@ -81,6 +81,7 @@ export default function Footer() {
             className="object-cover"
             sizes="100vw"
             quality={85}
+            loading="lazy"
           />
         </div>
         <div className="absolute inset-0 z-[1]" style={{ background: 'linear-gradient(160deg, rgba(15,31,54,0.92) 0%, rgba(27,42,63,0.88) 50%, rgba(30,107,184,0.75) 100%)' }} />

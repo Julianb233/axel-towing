@@ -9,6 +9,18 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "https://axletowing.com/faq",
   },
+  openGraph: {
+    title: "FAQ - Frequently Asked Questions About Towing in Phoenix AZ",
+    description:
+      "Frequently asked questions about private property towing, parking enforcement, Arizona towing laws, and Axle Towing & Impound services for property managers and vehicle owners in Phoenix, Arizona.",
+    url: "https://axletowing.com/faq",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "FAQ - Frequently Asked Questions About Towing in Phoenix AZ",
+    description:
+      "Frequently asked questions about private property towing, parking enforcement, Arizona towing laws, and Axle Towing & Impound services for property managers and vehicle owners in Phoenix, Arizona.",
+  },
 };
 
 /** Inline FAQ data for structured data (must match FAQContent) */
