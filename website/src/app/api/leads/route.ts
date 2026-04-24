@@ -23,6 +23,7 @@ export async function POST(req: Request) {
     const email = body.email || '';
     const phone = body.phone || '';
     const source = body.source || 'website';
+    const smsConsent = body.smsConsent === true;
 
     if (!name && !email && !phone) {
       return NextResponse.json(
@@ -53,6 +54,7 @@ export async function POST(req: Request) {
     if (body.serviceTitle) details.push(`Service: ${body.serviceTitle}`);
     if (body.vehicleDetails) details.push(`Vehicle Details: ${body.vehicleDetails}`);
     if (body.location) details.push(`Location: ${body.location}`);
+    details.push(`SMS Consent: ${smsConsent ? 'YES' : 'NO'}`);
 
     details.push(``);
     details.push(
@@ -101,7 +103,7 @@ export async function POST(req: Request) {
         property_name: body.propertyName || body.propertyAddress || '',
         property_address: body.address || body.propertyAddress || '',
         urgent: false,
-        request_data: body as Record<string, unknown>,
+        request_data: { ...body, smsConsent } as Record<string, unknown>,
         status: 'pending',
       }),
       // Primary GHL sync: REST API (creates contact + opportunity in pipeline)

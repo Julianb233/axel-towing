@@ -2,6 +2,7 @@
 
 import { useState, FormEvent } from 'react';
 import FormConfirmation from './FormConfirmation';
+import SMSConsentCheckbox from './SMSConsentCheckbox';
 
 const STEPS = [
   { label: 'Property Type', number: 1 },
@@ -44,7 +45,7 @@ export default function HomepageLeadCapture() {
       await fetch('/api/leads', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ ...formData, source: 'homepage-lead-capture' }),
+        body: JSON.stringify({ ...formData, smsConsent: (document.querySelector('input[name=smsConsent]') as HTMLInputElement)?.checked || false, source: 'homepage-lead-capture' }),
       });
       setSubmitted(true);
     } catch {
@@ -258,6 +259,8 @@ export default function HomepageLeadCapture() {
                         />
                       </div>
                     </div>
+                    {/* SMS Consent -- TCPA / A2P 10DLC compliance (AI-7457) */}
+                    <SMSConsentCheckbox compact />
                     <div className="flex gap-3 pt-2">
                       <button
                         type="button"
