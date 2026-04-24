@@ -1,0 +1,80 @@
+{
+  "name": "Referral: Painter/Contractor Partner Sequence",
+  "trigger": {
+    "type": "TAG_ADDED",
+    "tag": "referral-painter",
+    "description": "Fires when a painter/contractor contact is tagged for referral outreach"
+  },
+  "steps": [
+    {
+      "type": "ADD_TAG",
+      "tag": "referral-painter-active",
+      "description": "Mark contact as in active painter referral sequence"
+    },
+    {
+      "type": "SEND_EMAIL",
+      "step": 1,
+      "subject": "Vehicle relocation for your job sites",
+      "body": "Hi {{contact.first_name}},\n\nI'm Elliott with Axle Towing. I'm reaching out to {{contact.company_name}} because exterior painting and contracting jobs have a consistent challenge -- vehicles parked right where your crew needs to work.\n\nWe specialize in vehicle relocation for job sites. Before your crew arrives, we can coordinate with the property to post notices and clear any vehicles blocking your work area. If someone parks in the way mid-job, we handle that too.\n\nYour crew gets full access to the work area from day one. No delays, no awkward conversations with vehicle owners, no wasted labor hours.\n\nWould it be helpful to have a towing partner on call for your exterior jobs?\n\nElliott\nAxle Towing\n480-288-5526 | info@axletowing.com\naxletowing.com",
+      "from": "elliott@axletowing.com",
+      "fromName": "Elliott - Axle Towing",
+      "description": "Day 0 - Introduce vehicle relocation for contractor job sites"
+    },
+    {
+      "type": "WAIT",
+      "duration": 4,
+      "unit": "days",
+      "description": "Wait 4 days before follow-up"
+    },
+    {
+      "type": "SEND_EMAIL",
+      "step": 2,
+      "subject": "Re: Vehicle relocation for your job sites",
+      "body": "Hi {{contact.first_name}},\n\nFollowing up on the vehicle relocation idea for {{contact.company_name}}'s job sites. Here's what other contractors have told us they value most:\n\n1. Advance coordination -- we work with the property to post proper legal notice before your start date\n2. Same-day response -- if vehicles show up mid-job, we're there within the hour\n3. Full documentation -- photos, timestamps, and reports for the property manager\n4. No cost to you -- towing fees are collected from the vehicle owner, not your company\n5. AZ compliance -- proper signage and process so there are no legal issues\n\nWe've handled jobs where 10-15 vehicles needed to be relocated from a work zone. It's what we do.\n\nWorth a quick conversation about your upcoming {{contact.city}} projects?\n\nElliott\nAxle Towing\n480-288-5526 | info@axletowing.com\naxletowing.com",
+      "from": "elliott@axletowing.com",
+      "fromName": "Elliott - Axle Towing",
+      "description": "Day 4 - Detail what contractors value about the service"
+    },
+    {
+      "type": "WAIT",
+      "duration": 6,
+      "unit": "days",
+      "description": "Wait 6 days before final follow-up"
+    },
+    {
+      "type": "SEND_EMAIL",
+      "step": 3,
+      "subject": "Need vehicles moved for a job? Call us",
+      "body": "Hi {{contact.first_name}},\n\nLast note from me. Next time {{contact.company_name}} has an exterior job and vehicles are in the way, save our number -- 480-288-5526.\n\nWe can typically clear a work zone within an hour of getting the call, anywhere in {{contact.city}} and the greater Phoenix metro.\n\nAnd if you work with property managers who need ongoing parking enforcement, we welcome those referrals too.\n\nElliott\nAxle Towing\n480-288-5526 | info@axletowing.com\naxletowing.com",
+      "from": "elliott@axletowing.com",
+      "fromName": "Elliott - Axle Towing",
+      "description": "Day 10 - Final low-pressure follow-up with standing offer"
+    },
+    {
+      "type": "WAIT",
+      "duration": 1,
+      "unit": "days",
+      "description": "Buffer before cleanup"
+    },
+    {
+      "type": "REMOVE_TAG",
+      "tag": "referral-painter-active",
+      "description": "Remove active sequence tag"
+    },
+    {
+      "type": "ADD_TAG",
+      "tag": "referral-painter-completed",
+      "description": "Mark painter referral sequence completed"
+    }
+  ],
+  "stopCondition": {
+    "type": "TAG_ADDED",
+    "tag": "sequence-replied",
+    "description": "Stop if contact replies"
+  },
+  "sendingWindow": {
+    "emails": "Mon-Wed 7:30 AM - 9:00 AM"
+  },
+  "duration": "11 days",
+  "touchpoints": "3 emails"
+}

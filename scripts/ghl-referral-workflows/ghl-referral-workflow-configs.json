@@ -1,0 +1,72 @@
+{
+  "description": "GHL Referral Partner Email Workflow Configurations for Axle Towing",
+  "status": "DRAFT - Pending Elliott approval",
+  "linearIssue": "AI-7460",
+  "dependencies": [
+    "AI-7455 (GHL sub-account setup)",
+    "AI-7456 (DNS/email sending domain)"
+  ],
+  "workflows": [
+    {
+      "file": "workflow-locksmith-referral.json",
+      "name": "Referral: Locksmith Partner Intro Sequence",
+      "triggerTag": "referral-locksmith",
+      "emails": 3,
+      "duration": "11 days"
+    },
+    {
+      "file": "workflow-uber-referral.json",
+      "name": "Referral: Uber/Lyft Driver Referral Program",
+      "triggerTag": "referral-uber",
+      "emails": 3,
+      "duration": "11 days"
+    },
+    {
+      "file": "workflow-parking-permit-referral.json",
+      "name": "Referral: Parking Permit Company Partnership",
+      "triggerTag": "referral-parking-permit",
+      "emails": 3,
+      "duration": "11 days"
+    },
+    {
+      "file": "workflow-mechanic-referral.json",
+      "name": "Referral: Mechanic/Auto Shop Partner Sequence",
+      "triggerTag": "referral-mechanic",
+      "emails": 3,
+      "duration": "11 days"
+    },
+    {
+      "file": "workflow-mover-referral.json",
+      "name": "Referral: Moving Company Partner Sequence",
+      "triggerTag": "referral-mover",
+      "emails": 3,
+      "duration": "11 days"
+    },
+    {
+      "file": "workflow-painter-referral.json",
+      "name": "Referral: Painter/Contractor Partner Sequence",
+      "triggerTag": "referral-painter",
+      "emails": 3,
+      "duration": "11 days"
+    }
+  ],
+  "ghlMergeFields": {
+    "{{contact.first_name}}": "Contact's first name",
+    "{{contact.company_name}}": "Contact's company/business name",
+    "{{contact.city}}": "Contact's city",
+    "{{unsubscribe_url}}": "GHL auto-generated unsubscribe link"
+  },
+  "sender": {
+    "email": "elliott@axletowing.com",
+    "name": "Elliott - Axle Towing"
+  },
+  "stopConditions": [
+    "Tag: sequence-replied",
+    "Tag: do-not-contact"
+  ],
+  "notes": [
+    "All workflows in DRAFT status - requires Elliott approval before activation",
+    "Email sending domain must be verified (AI-7456) before workflows can send",
+    "Each workflow uses tag-based triggering for easy CRM automation"
+  ]
+}

@@ -1,0 +1,80 @@
+{
+  "name": "Referral: Mechanic/Auto Shop Partner Sequence",
+  "trigger": {
+    "type": "TAG_ADDED",
+    "tag": "referral-mechanic",
+    "description": "Fires when a mechanic/auto shop contact is tagged for referral outreach"
+  },
+  "steps": [
+    {
+      "type": "ADD_TAG",
+      "tag": "referral-mechanic-active",
+      "description": "Mark contact as in active mechanic referral sequence"
+    },
+    {
+      "type": "SEND_EMAIL",
+      "step": 1,
+      "subject": "Towing partner for your shop?",
+      "body": "Hi {{contact.first_name}},\n\nI'm Elliott with Axle Towing here in the Phoenix area. I wanted to reach out to {{contact.company_name}} because towing companies and auto shops are natural partners.\n\nWhen your customers break down and need a tow to the shop, or when we tow a vehicle and the driver asks us where to take it for repairs -- it makes sense to have each other on speed dial.\n\nI'd like to set up a simple mutual referral arrangement. We send our customers to {{contact.company_name}} for repairs, and you send your customers to us when they need a tow. No contracts, no fees. Just leave a few cards at each other's shops and make the referral when it fits.\n\nSound like something that could work?\n\nElliott\nAxle Towing\n480-288-5526 | info@axletowing.com\naxletowing.com",
+      "from": "elliott@axletowing.com",
+      "fromName": "Elliott - Axle Towing",
+      "description": "Day 0 - Initial intro proposing mutual referral"
+    },
+    {
+      "type": "WAIT",
+      "duration": 4,
+      "unit": "days",
+      "description": "Wait 4 days before follow-up"
+    },
+    {
+      "type": "SEND_EMAIL",
+      "step": 2,
+      "subject": "Re: Towing partner for your shop?",
+      "body": "Hi {{contact.first_name}},\n\nFollowing up on the towing partnership idea for {{contact.company_name}}. Wanted to share what we offer so you know what your customers would get:\n\n- 30-minute average response time across the Phoenix metro\n- Priority dispatch for partner shop referrals\n- Both flatbed and wheel-lift trucks for any vehicle type\n- 24/7 availability, including weekends and holidays\n- Real-time text updates with ETA for your customer\n\nWhen your customer calls needing a tow to {{contact.company_name}} in {{contact.city}}, we get them there fast and treat them right -- because they're your customer and that reflects on both of us.\n\nWorth a quick chat to set this up?\n\nElliott\nAxle Towing\n480-288-5526 | info@axletowing.com\naxletowing.com",
+      "from": "elliott@axletowing.com",
+      "fromName": "Elliott - Axle Towing",
+      "description": "Day 4 - Follow-up with service details and capabilities"
+    },
+    {
+      "type": "WAIT",
+      "duration": 6,
+      "unit": "days",
+      "description": "Wait 6 days before final follow-up"
+    },
+    {
+      "type": "SEND_EMAIL",
+      "step": 3,
+      "subject": "Towing referral - standing offer",
+      "body": "Hi {{contact.first_name}},\n\nLast note from me. If a customer ever calls {{contact.company_name}} needing a tow, just save our number -- 480-288-5526. We'll respond within 30 minutes and deliver them right to your shop.\n\nAnd on our end, when someone asks us for a mechanic recommendation in {{contact.city}}, we'll send them your way.\n\nNo need to reply. The offer stands whenever it makes sense.\n\nElliott\nAxle Towing\n480-288-5526 | info@axletowing.com\naxletowing.com",
+      "from": "elliott@axletowing.com",
+      "fromName": "Elliott - Axle Towing",
+      "description": "Day 10 - Final low-pressure follow-up with standing offer"
+    },
+    {
+      "type": "WAIT",
+      "duration": 1,
+      "unit": "days",
+      "description": "Buffer before cleanup"
+    },
+    {
+      "type": "REMOVE_TAG",
+      "tag": "referral-mechanic-active",
+      "description": "Remove active sequence tag"
+    },
+    {
+      "type": "ADD_TAG",
+      "tag": "referral-mechanic-completed",
+      "description": "Mark mechanic referral sequence completed"
+    }
+  ],
+  "stopCondition": {
+    "type": "TAG_ADDED",
+    "tag": "sequence-replied",
+    "description": "Stop if contact replies"
+  },
+  "sendingWindow": {
+    "emails": "Mon-Tue 8:00 AM - 10:00 AM"
+  },
+  "duration": "11 days",
+  "touchpoints": "3 emails"
+}

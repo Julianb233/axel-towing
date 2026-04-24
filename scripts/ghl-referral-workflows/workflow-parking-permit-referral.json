@@ -1,0 +1,80 @@
+{
+  "name": "Referral: Parking Permit Company Partnership",
+  "trigger": {
+    "type": "TAG_ADDED",
+    "tag": "referral-parking-permit",
+    "description": "Fires when a parking permit company contact is tagged for referral outreach"
+  },
+  "steps": [
+    {
+      "type": "ADD_TAG",
+      "tag": "referral-parking-permit-active",
+      "description": "Mark contact as in active parking permit referral sequence"
+    },
+    {
+      "type": "SEND_EMAIL",
+      "step": 1,
+      "subject": "Enforcement partner for your parking permit clients",
+      "body": "Hi {{contact.first_name}},\n\nI'm Elliott with Axle Towing. We provide parking enforcement across the Phoenix metro, and I'm reaching out because {{contact.company_name}} and Axle Towing are a natural fit.\n\nParking permits only work when there's enforcement behind them. When your clients issue permits but nobody is towing unauthorized vehicles, the permits lose their teeth and your clients get frustrated.\n\nWe'd like to be your enforcement partner. For any property you manage permits for, we can handle the towing side -- with preferred pricing for your referrals. Your clients get a complete parking solution, and you get to offer enforcement as part of your service without adding headcount.\n\nWould you be open to discussing a partnership?\n\nElliott\nAxle Towing\n480-288-5526 | info@axletowing.com\naxletowing.com",
+      "from": "elliott@axletowing.com",
+      "fromName": "Elliott - Axle Towing",
+      "description": "Day 0 - Introduce enforcement partnership for permit companies"
+    },
+    {
+      "type": "WAIT",
+      "duration": 4,
+      "unit": "days",
+      "description": "Wait 4 days before follow-up"
+    },
+    {
+      "type": "SEND_EMAIL",
+      "step": 2,
+      "subject": "Re: Enforcement partner for your parking permit clients",
+      "body": "Hi {{contact.first_name}},\n\nFollowing up on the enforcement partnership idea. Here's what we bring to the table for {{contact.company_name}}'s clients:\n\n- 24/7 enforcement availability, including weekends and holidays\n- 30-minute average response time across the Phoenix metro\n- Full AZ compliance -- proper signage, documentation, and legal process\n- Monthly enforcement reports for property managers\n- Zero cost to the property -- towing fees are collected from violators\n- Dedicated account manager for your referred properties\n\nWe've seen this work well with other permit companies. You handle the permits and access control, we handle the enforcement. Property managers get a complete solution from two trusted partners.\n\nWorth a 15-minute call to explore?\n\nElliott\nAxle Towing\n480-288-5526 | info@axletowing.com\naxletowing.com",
+      "from": "elliott@axletowing.com",
+      "fromName": "Elliott - Axle Towing",
+      "description": "Day 4 - Detail what Axle brings as enforcement partner"
+    },
+    {
+      "type": "WAIT",
+      "duration": 6,
+      "unit": "days",
+      "description": "Wait 6 days before final follow-up"
+    },
+    {
+      "type": "SEND_EMAIL",
+      "step": 3,
+      "subject": "Open door for parking enforcement referrals",
+      "body": "Hi {{contact.first_name}},\n\nLast note from me on this. If {{contact.company_name}} ever has a client that needs enforcement behind their parking permits, we'd love the referral.\n\nWe serve the entire Phoenix metro -- {{contact.city}} and beyond -- and can typically start enforcement within a week of signing.\n\nNo need to reply now. Just keep us in mind when the need comes up.\n\nElliott\nAxle Towing\n480-288-5526 | info@axletowing.com\naxletowing.com",
+      "from": "elliott@axletowing.com",
+      "fromName": "Elliott - Axle Towing",
+      "description": "Day 10 - Final low-pressure follow-up"
+    },
+    {
+      "type": "WAIT",
+      "duration": 1,
+      "unit": "days",
+      "description": "Buffer before cleanup"
+    },
+    {
+      "type": "REMOVE_TAG",
+      "tag": "referral-parking-permit-active",
+      "description": "Remove active sequence tag"
+    },
+    {
+      "type": "ADD_TAG",
+      "tag": "referral-parking-permit-completed",
+      "description": "Mark parking permit referral sequence completed"
+    }
+  ],
+  "stopCondition": {
+    "type": "TAG_ADDED",
+    "tag": "sequence-replied",
+    "description": "Stop if contact replies"
+  },
+  "sendingWindow": {
+    "emails": "Tue-Thu 9:00 AM - 11:00 AM"
+  },
+  "duration": "11 days",
+  "touchpoints": "3 emails"
+}

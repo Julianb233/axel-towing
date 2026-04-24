@@ -1,0 +1,80 @@
+{
+  "name": "Referral: Moving Company Partner Sequence",
+  "trigger": {
+    "type": "TAG_ADDED",
+    "tag": "referral-mover",
+    "description": "Fires when a moving company contact is tagged for referral outreach"
+  },
+  "steps": [
+    {
+      "type": "ADD_TAG",
+      "tag": "referral-mover-active",
+      "description": "Mark contact as in active mover referral sequence"
+    },
+    {
+      "type": "SEND_EMAIL",
+      "step": 1,
+      "subject": "Clearing parking for your moving crews",
+      "body": "Hi {{contact.first_name}},\n\nI'm Elliott with Axle Towing. I'm reaching out to {{contact.company_name}} because moving companies and towing companies can solve a common headache together -- parking on moving day.\n\nYour crews show up to a job and the loading zone is blocked. Cars are parked where the truck needs to be. Residents didn't move their vehicles despite the notice. Sound familiar?\n\nWe can clear vehicles before your crew arrives. Same-day relocations for unauthorized vehicles in the way of your trucks. We handle the parking problem so your team can focus on the move.\n\nOn the flip side, we'd love to refer our customers to {{contact.company_name}} when they mention they need movers. Mutual referrals, no contracts.\n\nInterested in connecting?\n\nElliott\nAxle Towing\n480-288-5526 | info@axletowing.com\naxletowing.com",
+      "from": "elliott@axletowing.com",
+      "fromName": "Elliott - Axle Towing",
+      "description": "Day 0 - Introduce parking clearing service for moving companies"
+    },
+    {
+      "type": "WAIT",
+      "duration": 4,
+      "unit": "days",
+      "description": "Wait 4 days before follow-up"
+    },
+    {
+      "type": "SEND_EMAIL",
+      "step": 2,
+      "subject": "Re: Clearing parking for your moving crews",
+      "body": "Hi {{contact.first_name}},\n\nFollowing up on how Axle Towing can help {{contact.company_name}} with moving day parking. Here's how it works:\n\n1. You give us the address and date of the move\n2. We coordinate with the property to post proper notice\n3. On moving day, we relocate any vehicles blocking your access\n4. If stragglers show up during the move, we handle them too\n\nNo more delayed starts because the loading zone is full. No more crews standing around waiting for parking to clear.\n\nWe cover all of {{contact.city}} and the greater Phoenix metro. And we're happy to refer our customers to {{contact.company_name}} whenever someone mentions they're moving.\n\nWorth a quick call?\n\nElliott\nAxle Towing\n480-288-5526 | info@axletowing.com\naxletowing.com",
+      "from": "elliott@axletowing.com",
+      "fromName": "Elliott - Axle Towing",
+      "description": "Day 4 - Detail the moving day parking process"
+    },
+    {
+      "type": "WAIT",
+      "duration": 6,
+      "unit": "days",
+      "description": "Wait 6 days before final follow-up"
+    },
+    {
+      "type": "SEND_EMAIL",
+      "step": 3,
+      "subject": "Moving day parking - keep us in mind",
+      "body": "Hi {{contact.first_name}},\n\nLast note from me. Next time {{contact.company_name}} has a job where parking is going to be a problem, give us a call. We'll clear the way so your crew can get right to work.\n\n480-288-5526 -- save the number for when you need it.\n\nAnd we appreciate any referrals when your customers or property managers mention they need towing or parking enforcement. We'll always return the favor.\n\nElliott\nAxle Towing\n480-288-5526 | info@axletowing.com\naxletowing.com",
+      "from": "elliott@axletowing.com",
+      "fromName": "Elliott - Axle Towing",
+      "description": "Day 10 - Final low-pressure follow-up"
+    },
+    {
+      "type": "WAIT",
+      "duration": 1,
+      "unit": "days",
+      "description": "Buffer before cleanup"
+    },
+    {
+      "type": "REMOVE_TAG",
+      "tag": "referral-mover-active",
+      "description": "Remove active sequence tag"
+    },
+    {
+      "type": "ADD_TAG",
+      "tag": "referral-mover-completed",
+      "description": "Mark mover referral sequence completed"
+    }
+  ],
+  "stopCondition": {
+    "type": "TAG_ADDED",
+    "tag": "sequence-replied",
+    "description": "Stop if contact replies"
+  },
+  "sendingWindow": {
+    "emails": "Mon-Fri 9:00 AM - 11:00 AM"
+  },
+  "duration": "11 days",
+  "touchpoints": "3 emails"
+}
