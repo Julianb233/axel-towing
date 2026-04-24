@@ -173,21 +173,21 @@ export const SERVICE_PAGES: Record<string, ServicePageData> = {
     slug: "vehicle-relocations",
     metaTitle: "Vehicle Relocation Services — Phoenix, AZ",
     metaDescription:
-      "Professional vehicle relocation for asphalt repairs, property maintenance, and construction projects in Phoenix. Move 10 vehicles in 2 hours for $1,000. No impound needed.",
+      "Professional vehicle relocation for asphalt repairs, property maintenance, and construction projects in Phoenix. Fast turnaround, no impound needed. Call for a custom quote.",
     heroHeadline: "Vehicle Relocation Services in Phoenix",
     heroSubtext:
-      "Professional vehicle moves for asphalt repairs, property maintenance, and construction projects. Fast turnaround, no impound needed. Pricing starts at ~$1,000 for 10 vehicles.",
+      "Professional vehicle moves for asphalt repairs, property maintenance, and construction projects. Fast turnaround, no impound needed. Call for a custom quote tailored to your project.",
     heroImage: "/images/service-vehicle-relocation.jpg",
     introTitle: "Move Vehicles Quickly for Property Maintenance",
     introText: [
       "Property maintenance projects like asphalt resurfacing, seal coating, line striping, and construction require vehicles to be temporarily relocated. Axle Towing provides professional vehicle relocation services that keep your projects on schedule and on budget.",
       "Unlike our free enforcement services, vehicle relocations are a paid service charged to property owners. This covers the specialized crew, equipment, and coordination required to move multiple vehicles quickly and safely. No one gets towed to an impound lot — vehicles are just repositioned so work can proceed.",
-      "Our quick-turnaround pricing makes it easy: we can relocate 10 vehicles in approximately 2 hours for around $1,000. That is a fraction of the cost of project delays caused by vehicles blocking work areas.",
+      "Our crews are built for quick turnaround — we can typically relocate around 10 vehicles in about 2 hours. Pricing is custom based on the scope of your project and is a fraction of the cost of project delays caused by vehicles blocking work areas.",
     ],
     features: [
       { title: "Asphalt & Seal Coat Projects", desc: "We clear parking sections for asphalt resurfacing, seal coating, and line striping — moving vehicles phase by phase as contractors work.", icon: "road" },
       { title: "Construction Support", desc: "Clear staging areas, loading zones, and work zones for construction crews. We coordinate with your general contractor for seamless operations.", icon: "construction" },
-      { title: "Transparent Pricing", desc: "Approximately $1,000 for 10 vehicles relocated in 2 hours. Clear pricing upfront, far cheaper than project delays or rescheduling contractors.", icon: "speed" },
+      { title: "Custom Project Quotes", desc: "Clear, custom pricing based on the number of vehicles and scope of the project — always cheaper than delays or rescheduling contractors.", icon: "speed" },
       { title: "No Impound Required", desc: "Vehicles are moved on-site to available parking areas or temporary holding zones. No one's car goes to an impound lot.", icon: "move" },
     ],
     howItWorks: [
@@ -199,10 +199,10 @@ export const SERVICE_PAGES: Record<string, ServicePageData> = {
     benefits: [
       { title: "Stay on Schedule", desc: "Construction and maintenance projects run on tight timelines. Our relocation service ensures vehicles are out of the way when contractors arrive, preventing costly delays and rescheduling fees.", align: "left" },
       { title: "Resident-Friendly Approach", desc: "We are not impounding anyone's vehicle — just temporarily moving it. This approach keeps residents happy while ensuring maintenance work gets done on time.", align: "right" },
-      { title: "Cost-Effective Solution", desc: "At approximately $1,000 for 10 vehicles in 2 hours, our relocation service costs a fraction of what you would spend on project delays, rescheduled contractors, or extended crew time.", align: "left" },
+      { title: "Cost-Effective Solution", desc: "Our relocation service costs a fraction of what you would spend on project delays, rescheduled contractors, or extended crew time. Contact us for a quote tailored to your project.", align: "left" },
     ],
     faqs: [
-      { q: "How much does vehicle relocation cost?", a: "Our quick-turnaround pricing is approximately $1,000 for 10 vehicles relocated within 2 hours. Exact pricing depends on the number of vehicles and complexity of the project." },
+      { q: "How much does vehicle relocation cost?", a: "Pricing is custom for each project, based on the number of vehicles, timeline, and complexity. Call us for a quick, no-obligation quote." },
       { q: "Do vehicles go to an impound lot?", a: "No. Vehicle relocations move cars to another area on your property or a nearby designated zone. No one's vehicle is impounded." },
       { q: "How much advance notice do residents need?", a: "We recommend 48-72 hours of advance notice. We can help you create and distribute door hangers, windshield notices, and posted announcements." },
       { q: "What if a vehicle is locked or in park?", a: "Our drivers use wheel-lift and flatbed equipment to safely move vehicles regardless of their state. All vehicles are handled carefully and fully insured during the relocation." },

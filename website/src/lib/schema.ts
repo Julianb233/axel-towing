@@ -113,21 +113,16 @@ export function localBusinessSchema(location: "phoenix" | "apache-junction") {
 }
 
 /**
- * AggregateRating schema for review pages
+ * AggregateRating schema for review pages.
+ *
+ * Intentionally returns null: the business owner asked us to remove
+ * hardcoded rating claims from the site until Google Reviews can be
+ * read live from the GBP. Returning null keeps call sites stable
+ * (they can bail out if no rating is available) without emitting
+ * inaccurate structured data.
  */
 export function aggregateRatingSchema() {
-  return {
-    "@context": "https://schema.org",
-    "@type": "AggregateRating",
-    itemReviewed: {
-      "@type": "LocalBusiness",
-      name: "Axle Towing & Impound",
-    },
-    ratingValue: "4.9",
-    reviewCount: "127",
-    bestRating: "5",
-    worstRating: "1",
-  };
+  return null;
 }
 
 /**
@@ -426,13 +421,6 @@ export function towingServiceSchema() {
       "commercial property parking",
       "construction vehicle relocation",
     ],
-    aggregateRating: {
-      "@type": "AggregateRating",
-      ratingValue: "4.9",
-      reviewCount: "127",
-      bestRating: "5",
-      worstRating: "1",
-    },
     parentOrganization: {
       "@type": "Organization",
       "@id": `${BASE_URL}/#organization`,

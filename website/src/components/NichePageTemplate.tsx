@@ -108,7 +108,7 @@ export default function NichePageTemplate({ vertical, city }: NichePageTemplateP
               { value: city.population, label: `${city.name} Population` },
               { value: "30 min", label: "Avg Response Time" },
               { value: "24/7", label: "Dispatch Available" },
-              { value: "4.9/5", label: "Customer Rating" },
+              { value: "40+", label: "Phoenix Metro Cities Served" },
             ].map((stat, index) => (
               <div
                 key={stat.label}

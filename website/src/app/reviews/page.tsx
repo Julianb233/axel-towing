@@ -5,7 +5,7 @@ import { aggregateRatingSchema } from "@/lib/schema";
 export const metadata: Metadata = {
   title: "Reviews — What Phoenix Property Managers Say About Axle Towing",
   description:
-    "Read testimonials from property managers, HOA boards, and property owners who trust Axle Towing & Impound for parking enforcement in Phoenix, AZ. 4.9-star rated.",
+    "Read testimonials from property managers, HOA boards, and property owners who trust Axle Towing & Impound for parking enforcement in Phoenix, AZ.",
   alternates: {
     canonical: "https://axletowing.com/reviews",
   },
@@ -18,14 +18,17 @@ export const metadata: Metadata = {
 };
 
 export default function ReviewsPage() {
+  const ratingSchema = aggregateRatingSchema();
   return (
     <>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify(aggregateRatingSchema()),
-        }}
-      />
+      {ratingSchema && (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(ratingSchema),
+          }}
+        />
+      )}
       <ReviewsContent />
     </>
   );

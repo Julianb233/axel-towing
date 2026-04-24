@@ -15,8 +15,8 @@ const PLATFORMS = [
     color: "#4285F4",
     bgGradient: "from-blue-500/10 to-blue-600/5",
     borderHover: "hover:border-blue-400/30",
-    rating: "4.9",
-    reviewCount: "127",
+    rating: "",
+    reviewCount: "",
     icon: (
       <svg className="w-10 h-10" viewBox="0 0 24 24" fill="none">
         <path
@@ -33,8 +33,8 @@ const PLATFORMS = [
     color: "#D32323",
     bgGradient: "from-red-500/10 to-red-600/5",
     borderHover: "hover:border-red-400/30",
-    rating: "4.8",
-    reviewCount: "45",
+    rating: "",
+    reviewCount: "",
     icon: (
       <svg className="w-10 h-10" viewBox="0 0 24 24" fill="#D32323">
         <path d="M20.16 12.594l-4.995 1.433c-.96.276-1.74-.8-1.176-1.63l2.826-4.14c.564-.83 1.893-.486 1.998.517l.347 3.82c.07.67-.33 1.276-1 1.5zm-8.842 5.58l.816-5.19c.15-.97 1.46-1.16 1.88-.272l2.1 4.44c.42.888-.265 1.864-1.028 1.468l-3.088-1.62c-.51-.268-.78-.826-.68-1.4zM6.72 17.294l3.592-3.77c.67-.702 1.83-.138 1.66.81l-.834 4.63c-.17.94-1.35 1.2-1.778.39l-1.73-3.27c-.285-.54-.17-1.2.29-1.6zm-1.4-5.326l5.21-.06c.97-.01 1.38 1.24.59 1.8l-3.96 2.8c-.79.56-1.82-.16-1.55-1.08l1.08-3.54c.18-.59.63-.92 1.23-.92zm2.13-6.254l2.16 4.73c.4.884-.42 1.844-1.24 1.444L3.48 9.41c-.82-.4-.74-1.62.12-1.89l3.83-1.2c.57-.18 1.2.06 1.5.6zm5.22-.8c.01-1.04 1.32-1.47 1.97-.646l3.26 4.11c.65.82.07 2.01-.87 1.79l-4.82-1.13c-.63-.15-1.06-.73-1.03-1.37l.13-1.37c.02-.46.12-.93.36-1.38z" />
@@ -48,8 +48,8 @@ const PLATFORMS = [
     color: "#1877F2",
     bgGradient: "from-blue-600/10 to-blue-700/5",
     borderHover: "hover:border-blue-500/30",
-    rating: "4.9",
-    reviewCount: "38",
+    rating: "",
+    reviewCount: "",
     icon: (
       <svg className="w-10 h-10" viewBox="0 0 24 24" fill="#1877F2">
         <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" />
@@ -193,15 +193,19 @@ function PlatformCards() {
                   <div className="font-bold text-blue-900 text-xl font-heading">
                     {p.name}
                   </div>
-                  <div className="flex items-center justify-center gap-2 mt-2">
-                    <span className="text-2xl font-bold text-blue-900 font-heading">
-                      {p.rating}
-                    </span>
-                    <StarRow />
-                  </div>
-                  <div className="text-sm text-gray-500 mt-1">
-                    {p.reviewCount} reviews
-                  </div>
+                  {p.rating && (
+                    <div className="flex items-center justify-center gap-2 mt-2">
+                      <span className="text-2xl font-bold text-blue-900 font-heading">
+                        {p.rating}
+                      </span>
+                      <StarRow />
+                    </div>
+                  )}
+                  {p.reviewCount && (
+                    <div className="text-sm text-gray-500 mt-1">
+                      {p.reviewCount} reviews
+                    </div>
+                  )}
                 </div>
                 <div
                   className="mt-auto w-full text-center py-3 rounded-xl font-semibold text-white transition-all group-hover:opacity-90"
