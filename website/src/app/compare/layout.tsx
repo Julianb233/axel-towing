@@ -16,7 +16,14 @@ export const metadata: Metadata = {
     title: "Why Choose Axle Towing — Compare Our Services",
     description:
       "See how Axle Towing & Impound compares to the industry average. Zero cost, sub-30-minute response, and no contracts.",
+    url: "https://axletowing.com/compare",
     type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Why Choose Axle Towing — Compare Our Services",
+    description:
+      "See how Axle Towing & Impound compares to the industry average. Zero cost, sub-30-minute response, and no contracts.",
   },
 };
 

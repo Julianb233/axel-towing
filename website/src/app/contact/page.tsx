@@ -9,6 +9,18 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "https://axletowing.com/contact",
   },
+  openGraph: {
+    title: "Contact Us - Get a Free Property Assessment",
+    description:
+      "Contact Axle Towing & Impound for free private property towing and parking enforcement in the Phoenix metro area. Call 480-288-5526 or request a free property assessment online.",
+    url: "https://axletowing.com/contact",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Contact Us - Get a Free Property Assessment",
+    description:
+      "Contact Axle Towing & Impound for free private property towing and parking enforcement in the Phoenix metro area. Call 480-288-5526 or request a free property assessment online.",
+  },
 };
 
 export default function ContactPage() {
