@@ -1,0 +1,6 @@
+Voicemail Script: C - Re-Engagement (Former Account)
+Duration: ~58 seconds
+
+--- SCRIPT ---
+
+Hi {{contact.first_name}}, this is Elliott from Axle Towing. I know it's been a while since we've connected, and I just wanted to reach out personally. I'll be honest - I think we dropped the ball on staying in touch, and that's on me. We've made some real changes to how we manage accounts, and I'd like the chance to show you what that looks like. If you're happy with your current setup, completely understand. But if parking enforcement has been a headache, I'd love 10 minutes to reconnect. Call or text me at 480-288-5526. That's my direct cell, available any time. Thanks, {{contact.first_name}}. Talk soon.

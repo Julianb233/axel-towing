@@ -1,0 +1,6 @@
+Voicemail Script: B - HOA Board Member
+Duration: ~52 seconds
+
+--- SCRIPT ---
+
+Hi {{contact.first_name}}, this is Elliott from Axle Towing. I know your time as a board member is valuable, so I'll be quick. We specialize in parking enforcement for HOA communities across Phoenix, Scottsdale, Chandler, and Gilbert. We're fully Arizona licensed, we document every tow so your board is protected, and we handle resident calls so you don't have to. I sent you an email this week with more detail - but if you'd rather just talk, my direct cell is 480-288-5526. No pressure, just want to make sure you have options. Have a good one.

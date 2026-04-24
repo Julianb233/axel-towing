@@ -1,0 +1,19 @@
+Sequence: renewal-reminder
+Step: 2
+Day: -30
+Type: EMAIL
+Subject: 30 days out - {{contact.company_name}} renewal
+
+--- CONTENT ---
+
+Hi {{contact.first_name}},
+
+Quick reminder that your service agreement renews in 30 days.
+
+I want to make this renewal easy. If nothing has changed and you're happy with service, we can handle the paperwork in under 10 minutes.
+
+If you have questions, concerns, or want to discuss adding properties - I'm a call or text away.
+
+480-288-5526
+
+Elliott

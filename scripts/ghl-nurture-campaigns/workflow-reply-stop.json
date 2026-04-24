@@ -1,0 +1,38 @@
+{
+  "name": "Nurture: Reply Detection & Sequence Stop",
+  "trigger": {
+    "type": "EMAIL_REPLY",
+    "condition": "Contact has tag: nurture-active",
+    "description": "Any reply from a contact in an active nurture sequence"
+  },
+  "steps": [
+    {
+      "type": "REMOVE_TAG",
+      "tag": "nurture-active",
+      "description": "Stop the active sequence"
+    },
+    {
+      "type": "ADD_TAG",
+      "tag": "nurture-replied",
+      "description": "Mark as replied"
+    },
+    {
+      "type": "MOVE_PIPELINE_STAGE",
+      "pipeline": "Lead Nurture Pipeline",
+      "stage": "Engaged",
+      "description": "Move to Engaged stage"
+    },
+    {
+      "type": "CREATE_TASK",
+      "title": "Reply received from {{contact.first_name}} {{contact.last_name}} - follow up within 24 hrs",
+      "assignTo": "elliott@axletowing.com",
+      "description": "Manual follow-up task for Elliott"
+    },
+    {
+      "type": "SEND_SMS",
+      "to": "4802885526",
+      "body": "Nurture prospect {{contact.first_name}} {{contact.last_name}} replied to your email. Check GHL inbox.",
+      "description": "Notify Elliott via SMS"
+    }
+  ]
+}

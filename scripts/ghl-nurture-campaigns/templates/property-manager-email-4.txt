@@ -1,0 +1,23 @@
+Sequence: property-manager
+Step: 4
+Day: 18
+Type: EMAIL
+Subject: {{contact.first_name}} - a question about your current towing setup
+
+--- CONTENT ---
+
+Hi {{contact.first_name}},
+
+Quick question: how much time per month does your team spend on towing-related issues? Complaints, disputes, documentation requests, coordinating with your current provider?
+
+Most property managers we talk to say it's 2-4 hours per month, per property. For a 10-property portfolio, that's 20-40 hours of staff time.
+
+With a properly structured enforcement setup, that number drops to under 30 minutes per property per month - mostly just reviewing monthly reports.
+
+That's the difference a good enforcement partner makes.
+
+Would it be worth 15 minutes to find out if we could get you there?
+
+Elliott
+Axle Towing & Impound
+480-288-5526

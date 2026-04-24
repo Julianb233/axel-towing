@@ -1,0 +1,29 @@
+Sequence: cold-outreach
+Step: 3
+Day: 5
+Type: EMAIL
+Subject: How Pinnacle Ridge HOA eliminated parking complaints in 30 days
+
+--- CONTENT ---
+
+Hi {{contact.first_name}},
+
+I wanted to share a quick story.
+
+A 200-unit HOA in Scottsdale was dealing with chronic unauthorized parking - residents were calling the board at all hours, tensions were high, and the previous towing company ghosted them after the first month.
+
+We took over the account. Within 30 days:
+
+- 47 unauthorized vehicles removed (no cost to the HOA)
+- Zero resident complaints about the process - every tow was documented and posted
+- Board chair stopped getting late-night calls
+
+The key difference: we show up. Every time. And we call you back.
+
+That's not marketing copy - it's just what we do.
+
+I'd love to bring that same consistency to {{contact.company_name}}. Are you available for a quick call this week?
+
+Elliott
+Axle Towing & Impound
+480-288-5526

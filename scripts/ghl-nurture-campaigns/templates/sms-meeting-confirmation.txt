@@ -1,0 +1,7 @@
+SMS Template: meeting-confirmation
+Use Case: Meeting confirmation
+Characters: 143
+
+--- MESSAGE ---
+
+Hi {{contact.first_name}}, confirming our call tomorrow at [TIME]. Elliott from Axle Towing. Call me directly at 480-288-5526 if anything changes.

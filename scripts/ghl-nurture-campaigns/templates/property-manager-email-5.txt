@@ -1,0 +1,26 @@
+Sequence: property-manager
+Step: 5
+Day: 28
+Type: EMAIL
+Subject: Portfolio partnership offer - closing this out
+
+--- CONTENT ---
+
+Hi {{contact.first_name}},
+
+Last note from me.
+
+For property managers with 5+ properties in the Phoenix metro, we offer:
+
+- Dedicated account rep (direct cell, not a hotline)
+- Consolidated monthly reporting across all properties
+- Priority dispatch - your properties jump the queue
+- Annual rate lock - pricing locked for 12 months
+- Free signage audit for every property at onboarding
+
+This package isn't listed anywhere - it's for portfolio partners only.
+
+If now isn't the right time, save my number. When your current setup lets you down, I want to be the first call.
+
+Elliott
+480-288-5526 | axletowing.com

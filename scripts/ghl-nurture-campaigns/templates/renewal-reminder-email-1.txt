@@ -1,0 +1,22 @@
+Sequence: renewal-reminder
+Step: 1
+Day: -60
+Type: EMAIL
+Subject: Your Axle Towing agreement renews in 60 days - a note from Elliott
+
+--- CONTENT ---
+
+Hi {{contact.first_name}},
+
+Your service agreement for {{contact.company_name}} renews on {{custom.contract_renewal_date}}. I wanted to give you plenty of heads-up and the chance to discuss any changes before then.
+
+A few things I'd like to cover when we reconnect:
+
+- Review of this year's tow activity
+- Any changes to your property or enforcement needs
+- Updated rate schedule for the coming year
+- Adding any new properties to your account
+
+Can we find 20 minutes in the next few weeks?
+
+Elliott
