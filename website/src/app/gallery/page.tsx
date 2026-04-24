@@ -8,6 +8,12 @@ export const metadata: Metadata = {
   title: "Gallery",
   description:
     "See our fleet, signage installations, and team in action. Axle Towing & Impound serves the Phoenix metro area with professional towing and parking enforcement.",
+  openGraph: {
+    title: "Gallery",
+    description:
+      "See our fleet, signage installations, and team in action. Axle Towing & Impound serves the Phoenix metro area with professional towing and parking enforcement.",
+    url: "https://axletowing.com/gallery",
+  },
 };
 
 const GALLERY_ITEMS = [
@@ -138,7 +144,7 @@ export default function GalleryPage() {
   return (
     <>
       {/* ── Hero (server component — static, no parallax JS) ── */}
-      <section className="parallax-fixed relative min-h-[50vh] flex items-center text-white overflow-hidden" style={{ backgroundImage: `url(/images/hero-tow-truck.jpg)` }}>
+      <section className="parallax-fixed relative min-h-[50vh] flex items-center text-white overflow-hidden" style={{ backgroundImage: `url(/images/optimized/axle-towing-hero-tow-truck-phoenix-az.webp)` }}>
         <div className="absolute inset-0 gradient-overlay-blue z-[1]" />
         <div className="absolute inset-0 grain-overlay z-[2]" />
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 md:py-32 w-full">

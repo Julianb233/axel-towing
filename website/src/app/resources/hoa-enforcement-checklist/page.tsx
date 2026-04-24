@@ -56,7 +56,7 @@ export default function HOAEnforcementChecklistPage() {
         <div
           ref={parallaxRef}
           className="parallax-bg"
-          style={{ backgroundImage: `url(/images/blog-parking-sign.jpg)` }}
+          style={{ backgroundImage: `url(/images/optimized/axle-towing-blog-parking-sign-compliance-phoenix-az.webp)` }}
         />
         <div className="absolute inset-0 gradient-overlay-blue z-[1]" />
         <div className="absolute inset-0 grain-overlay z-[2]" />
