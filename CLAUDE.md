@@ -105,7 +105,7 @@ Edit `dashboard/app/changelog/page.tsx` and add a new entry at the TOP of the `c
 
 ### 3. Notify Julian
 
-Send session report via iMessage to +16195090699 (Julian) with specific deliverables, URLs, and Linear IDs. Never send session reports to any client number.
+Send session report via iMessage to +12177665134 (Julian) with specific deliverables, URLs, and Linear IDs. Never send session reports to any client number.
 
 ## SEO Strategy
 
@@ -140,6 +140,14 @@ Send session report via iMessage to +16195090699 (Julian) with specific delivera
 - **SMS / Dispatch:** Twilio
 - **Transactional email:** Resend
 - **SEO data:** SEMrush (daily snapshots in `data/semrush/`)
+
+## Google Workspace Admin
+
+Super Admin: `admin@axletowing.com` (primary user: Elliott Tretiak).
+Creds are NOT stored in this repo (cleartext in git = no). Canonical location:
+`/opt/agency-workspace/obsidian-vault/People/Key-Circle/Elliott (Axle Towing).md` → "Google Workspace Admin" section. Last reset by Elliott 2026-04-24.
+
+Before admin work: read that Obsidian note, grab the current password, and rotate after major sessions.
 
 ## Current Blockers
 
