@@ -28,7 +28,8 @@ type CategoryKey =
   | 'arizona-towing-laws'
   | 'hoa-resources'
   | 'commercial-apartment'
-  | 'safety-community';
+  | 'safety-community'
+  | 'abandoned-vehicle-removal';
 
 interface Category {
   key: CategoryKey;
@@ -68,10 +69,17 @@ const CATEGORIES: Category[] = [
     color: 'bg-teal-100',
     textColor: 'text-teal-700',
   },
+  {
+    key: 'abandoned-vehicle-removal',
+    label: 'Abandoned Vehicle Removal Near You',
+    color: 'bg-rose-100',
+    textColor: 'text-rose-700',
+  },
 ];
 
 // ---------------------------------------------------------------------------
-// Article data — 47 articles (vehicle-owner articles removed per AI-7507)
+// Article data — 68 articles (47 + 21 abandoned-vehicle removal re-added
+// 2026-04-30 per AI-8982; vehicle-owner LAW articles still excluded per AI-7507)
 // ---------------------------------------------------------------------------
 
 interface Article {
@@ -670,6 +678,201 @@ const ARTICLES: Article[] = [
     gradient: 'from-sky-600 via-blue-700 to-sky-900',
     description:
       'Prepare your apartment complex for move-in season with a solid parking enforcement plan for 2026.',
+  },
+
+  // ── Abandoned Vehicle Removal — Near You (21 articles, AI-8982) ────────
+  // Per Elliott (2026-04-30): re-add abandoned-vehicle removal articles
+  // with "Near Me" / local-intent framing. Excludes 4 law-focused posts
+  // (laws-property-owners, private-property-rights, title-process,
+  // how-long-considered-abandoned) per Elliott's "nothing about laws" guard.
+  {
+    slug: 'abandoned-vehicle-phoenix-az',
+    title: 'Abandoned Vehicle Removal Near Me - Phoenix',
+    category: 'abandoned-vehicle-removal',
+    readTime: '6 min',
+    gradient: 'from-rose-500 via-red-600 to-rose-800',
+    description:
+      'Free abandoned vehicle removal for Phoenix property owners and managers. How it works, response times, and how to request a tow today.',
+  },
+  {
+    slug: 'abandoned-vehicle-mesa-az',
+    title: 'Abandoned Vehicle Removal Near Me - Mesa',
+    category: 'abandoned-vehicle-removal',
+    readTime: '6 min',
+    gradient: 'from-rose-500 via-red-600 to-rose-800',
+    description:
+      'Removing abandoned vehicles from apartment complexes, HOAs, and commercial lots in Mesa at zero cost to the property.',
+  },
+  {
+    slug: 'abandoned-vehicle-chandler-az',
+    title: 'Abandoned Vehicle Removal Near Me - Chandler',
+    category: 'abandoned-vehicle-removal',
+    readTime: '6 min',
+    gradient: 'from-rose-500 via-red-600 to-rose-800',
+    description:
+      'How Chandler property managers and HOA boards can clear abandoned vehicles fast - free service, professional dispatch.',
+  },
+  {
+    slug: 'abandoned-vehicle-gilbert-az',
+    title: 'Abandoned Vehicle Removal Near Me - Gilbert',
+    category: 'abandoned-vehicle-removal',
+    readTime: '6 min',
+    gradient: 'from-rose-500 via-red-600 to-rose-800',
+    description:
+      'Free abandoned vehicle removal across Gilbert apartment communities, HOAs, and commercial properties.',
+  },
+  {
+    slug: 'abandoned-vehicle-scottsdale-az',
+    title: 'Abandoned Vehicle Removal Near Me - Scottsdale',
+    category: 'abandoned-vehicle-removal',
+    readTime: '6 min',
+    gradient: 'from-rose-500 via-red-600 to-rose-800',
+    description:
+      'Scottsdale property owners: how to remove abandoned vehicles from your lot quickly and at no cost.',
+  },
+  {
+    slug: 'abandoned-vehicle-tempe-az',
+    title: 'Abandoned Vehicle Removal Near Me - Tempe',
+    category: 'abandoned-vehicle-removal',
+    readTime: '6 min',
+    gradient: 'from-rose-500 via-red-600 to-rose-800',
+    description:
+      'Abandoned vehicle removal for Tempe student housing, apartment complexes, and ASU-area commercial lots.',
+  },
+  {
+    slug: 'abandoned-vehicle-glendale-az',
+    title: 'Abandoned Vehicle Removal Near Me - Glendale',
+    category: 'abandoned-vehicle-removal',
+    readTime: '6 min',
+    gradient: 'from-rose-500 via-red-600 to-rose-800',
+    description:
+      'Free abandoned vehicle removal for Glendale property managers, HOAs, and commercial property owners.',
+  },
+  {
+    slug: 'abandoned-vehicle-peoria-az',
+    title: 'Abandoned Vehicle Removal Near Me - Peoria',
+    category: 'abandoned-vehicle-removal',
+    readTime: '6 min',
+    gradient: 'from-rose-500 via-red-600 to-rose-800',
+    description:
+      'Peoria abandoned vehicle removal - how to get unauthorized vehicles cleared from your property at zero cost.',
+  },
+  {
+    slug: 'abandoned-vehicle-surprise-az',
+    title: 'Abandoned Vehicle Removal Near Me - Surprise',
+    category: 'abandoned-vehicle-removal',
+    readTime: '6 min',
+    gradient: 'from-rose-500 via-red-600 to-rose-800',
+    description:
+      'Free abandoned vehicle removal serving Surprise property managers and HOA communities.',
+  },
+  {
+    slug: 'abandoned-vehicle-goodyear-az',
+    title: 'Abandoned Vehicle Removal Near Me - Goodyear',
+    category: 'abandoned-vehicle-removal',
+    readTime: '6 min',
+    gradient: 'from-rose-500 via-red-600 to-rose-800',
+    description:
+      'Abandoned vehicle removal for Goodyear apartments, HOAs, and commercial properties at no cost.',
+  },
+  {
+    slug: 'abandoned-vehicle-avondale-az',
+    title: 'Abandoned Vehicle Removal Near Me - Avondale',
+    category: 'abandoned-vehicle-removal',
+    readTime: '6 min',
+    gradient: 'from-rose-500 via-red-600 to-rose-800',
+    description:
+      'Free professional abandoned vehicle removal for Avondale property owners and managers.',
+  },
+  {
+    slug: 'abandoned-vehicle-buckeye-az',
+    title: 'Abandoned Vehicle Removal Near Me - Buckeye',
+    category: 'abandoned-vehicle-removal',
+    readTime: '6 min',
+    gradient: 'from-rose-500 via-red-600 to-rose-800',
+    description:
+      'Abandoned vehicle removal serving Buckeye HOAs, apartment communities, and commercial properties.',
+  },
+  {
+    slug: 'abandoned-vehicle-queen-creek-az',
+    title: 'Abandoned Vehicle Removal Near Me - Queen Creek',
+    category: 'abandoned-vehicle-removal',
+    readTime: '6 min',
+    gradient: 'from-rose-500 via-red-600 to-rose-800',
+    description:
+      'Queen Creek abandoned vehicle removal for property managers and HOA boards - fast, free, professional.',
+  },
+  {
+    slug: 'abandoned-vehicle-maricopa-az',
+    title: 'Abandoned Vehicle Removal Near Me - Maricopa',
+    category: 'abandoned-vehicle-removal',
+    readTime: '6 min',
+    gradient: 'from-rose-500 via-red-600 to-rose-800',
+    description:
+      'Free abandoned vehicle removal across Maricopa - residential, commercial, and HOA properties.',
+  },
+  {
+    slug: 'abandoned-vehicle-casa-grande-az',
+    title: 'Abandoned Vehicle Removal Near Me - Casa Grande',
+    category: 'abandoned-vehicle-removal',
+    readTime: '6 min',
+    gradient: 'from-rose-500 via-red-600 to-rose-800',
+    description:
+      'Casa Grande abandoned vehicle removal for property owners, HOAs, and apartment communities.',
+  },
+  {
+    slug: 'abandoned-vehicle-removal-phoenix-metro',
+    title: 'Abandoned Vehicle Removal Near Me - Phoenix Metro',
+    category: 'abandoned-vehicle-removal',
+    readTime: '7 min',
+    gradient: 'from-rose-600 via-red-700 to-rose-900',
+    description:
+      'Metro-wide abandoned vehicle removal across all Phoenix-area cities. One call, free dispatch, fast pickup.',
+  },
+  {
+    slug: 'abandoned-rv-removal-arizona',
+    title: 'Abandoned RV Removal Near Me - Arizona',
+    category: 'abandoned-vehicle-removal',
+    readTime: '6 min',
+    gradient: 'from-rose-600 via-red-700 to-rose-900',
+    description:
+      'Specialized removal for abandoned RVs, motorhomes, and oversized vehicles on Arizona private property.',
+  },
+  {
+    slug: 'commercial-property-abandoned-vehicle-removal-phoenix',
+    title: 'Commercial Property Abandoned Vehicle Removal Near Me - Phoenix',
+    category: 'abandoned-vehicle-removal',
+    readTime: '7 min',
+    gradient: 'from-rose-600 via-red-700 to-rose-900',
+    description:
+      'Free abandoned vehicle removal for Phoenix commercial properties, retail centers, office buildings, and industrial parks.',
+  },
+  {
+    slug: 'hoa-abandoned-vehicle-removal-arizona',
+    title: 'HOA Abandoned Vehicle Removal Near Me - Arizona',
+    category: 'abandoned-vehicle-removal',
+    readTime: '7 min',
+    gradient: 'from-rose-600 via-red-700 to-rose-900',
+    description:
+      'How HOA boards across Arizona clear abandoned vehicles from common areas at no cost to the association.',
+  },
+  {
+    slug: 'report-abandoned-vehicle-phoenix',
+    title: 'Report an Abandoned Vehicle Near Me - Phoenix',
+    category: 'abandoned-vehicle-removal',
+    readTime: '5 min',
+    gradient: 'from-rose-500 via-red-600 to-rose-800',
+    description:
+      'How property managers and residents report an abandoned vehicle in Phoenix - the fastest path to removal.',
+  },
+  {
+    slug: 'what-to-do-abandoned-vehicle-arizona',
+    title: 'Abandoned Vehicle on Your Property? What to Do Near You',
+    category: 'abandoned-vehicle-removal',
+    readTime: '6 min',
+    gradient: 'from-rose-500 via-red-600 to-rose-800',
+    description:
+      'Step-by-step playbook for property owners and managers when an abandoned vehicle shows up on your lot in Arizona.',
   },
 ];
 
