@@ -43,6 +43,7 @@ export const BLOG_SLUGS = [
   'parking-lot-signage-requirements-arizona',
   'phoenix-city-code-parking-enforcement',
   'phoenix-monsoon-season-parking-safety',
+  'private-property-towing-faq',
   'property-manager-guide-to-towing-contracts',
   'property-value-impact-parking-enforcement',
   'reducing-crime-through-parking-enforcement',

@@ -38,153 +38,35 @@ const changelog: ChangelogGroup[] = [
     ],
   },
   {
-    date: "April 23, 2026 (Lead form to GHL sync fixed - AI-8372)",
+    date: "April 30, 2026 (Path to #1: SEO + AI Overview Sprint — AI-8982 / AI-8993 / AI-9002)",
     type: "completed",
     entries: [
       {
-        text: "Fixed a silent bug where form submissions on axletowing.com were accepted but never reached GoHighLevel. The website was calling the deprecated GHL v1 REST API (rest.gohighlevel.com/v1) which is incompatible with the Private Integration Tokens (pit-*) the Axle sub-account uses. Requests returned 401 inside Promise.allSettled and the outer response still came back as a success, so the frontend looked healthy while leads disappeared.",
-        category: "infrastructure",
-      },
-      {
-        text: "PR #62 merged to main, Vercel redeployed in 57s. Switched the base URL to services.leadconnectorhq.com, added the Version: 2021-07-28 header, updated contact/opportunity payloads to the v2 schema, and added graceful recovery for duplicate-contact 400s.",
-        category: "website",
-      },
-      {
-        text: "Live-verified end to end: POST /api/leads returned a referenceId, and the matching contact appeared in the Axle GHL sub-account within 2 seconds with the correct tags (src-website-form, type-apartment, stage-new-lead, priority-cold, seq-new-lead-nurture). Test contact deleted after verification.",
-        category: "website",
-      },
-      {
-        text: "Sibling sweep: the workflow engine (website/src/lib/workflows/engine.ts) had the same v1 API bug on its tag add/remove calls. Would have silently 401'd on every nurture step once the 14 automations activate. Switched to v2 POST/DELETE /contacts/{id}/tags endpoints and verified against the live sub-account.",
-        category: "infrastructure",
-      },
-      {
-        text: "Replied to Elliott confirming info@axletowing.com is live (verified via probe delivery, zero bounce) so he can send his yes/no on the 9 cold/nurture email automation sequences he has been blocking on.",
-        category: "strategy",
-      },
-    ],
-  },
-  {
-    date: "April 21, 2026 (Website outage resolved - DNS migration)",
-    type: "completed",
-    entries: [
-      {
-        text: "Restored axletowing.com after a ~90 minute outage. Mike moved nameservers from LiquidWeb to GoDaddy earlier today to enable the Google Workspace email records, but the move did not carry over the Vercel A record and www CNAME. GoDaddy populated the new zone with default parking records, which is why the site briefly served a parked-domain page while Google search still pointed there.",
-        category: "infrastructure",
-      },
-      {
-        text: "Fix: A record for axletowing.com set back to 76.76.21.21 (Vercel) and www CNAME restored. Vercel auto-issued a fresh Let's Encrypt TLS certificate within seconds of the DNS flip. Verified end-to-end: HTTP 200, Vercel cache HIT, valid cert, real site content.",
-        category: "infrastructure",
-      },
-      {
-        text: "Email was never affected during the outage. The MX, SPF, DKIM and DMARC records that Hitesh set up during the migration were preserved and continued to function for admin@ and info@axletowing.com throughout.",
-        category: "infrastructure",
-      },
-      {
-        text: "Google search results and Google Business Profile click-throughs will refresh within about an hour as the cached page is replaced with the restored site.",
+        text: "Restored 21 abandoned-vehicle removal articles to the public /blog navigation under a new 'Abandoned Vehicle Removal Near You' section, with NEAR-ME framing in every title (per Elliott's request) — covers 15 city pages plus 6 service guides; underlying URLs unchanged so no SEO loss",
         category: "seo",
       },
-    ],
-  },
-  {
-    date: "April 21, 2026 (GHL wiring closeout — AI-8344 / AI-8428)",
-    type: "completed",
-    entries: [
       {
-        text: "Generated paste-ready artifacts for 5 built GHL email workflows (nurture-pm-inbound, referral-locksmith, referral-mechanic, transactional-vehicle-retrieval, cold-pm-introduction shell). All merge fields translated from JS-style ${vars.foo} to GHL tokens {{contact.foo}} so the Automation Builder can accept them as-is. Sheets live in axel-towing/.planning/bussit/ghl-paste-sheets/",
+        text: "Completed full SEO + AI Overview audit (30 queries tested across Google + Perplexity) — Axle's competitive AI citation rate jumped from 0/13 (March) to 7/23 (April), now the 4th most-cited Phoenix tow domain ahead of Priority Towing and Quik Pik",
+        category: "seo",
+      },
+      {
+        text: "Organic ranking keywords grew from 35 to 58 in 28 days (+66%), with new wins including 'gruas en phoenix' (pos 17 — Spanish gateway), 'towing peoria az' (pos 13), 'towing tolleson' (pos 4)",
+        category: "seo",
+      },
+      {
+        text: "Restored the broken daily SEMrush snapshot cron — was logging 'command not found' for 5 weeks, now writes fresh JSON to dashboard/data/semrush-snapshots/ every 6am",
         category: "infrastructure",
       },
       {
-        text: "Identified the real blocker: mandatory 2FA on the GHL agency-owner account routes codes to Julian's inbox, so an autonomous agent cannot log in. Browserbase login attempts (Worker G Apr 20, Worker I Apr 21) confirmed this gate, so the work was pivoted to human-in-the-loop paste. Created AI-8428 as a P3 follow-up (assigned to Julian, due 2026-04-28) with 20-minute click-path",
+        text: "Built a 90-day Path-to-#1 strategic plan (PATH-TO-1-PLAN.md) with 11 Linear tasks across 3 tiers: foundation (review recovery, GBP optimization, AI SEO retrofit), content + authority (3 pillar pages + content velocity + backlinks), and moat (original data + UGC integration)",
         category: "strategy",
       },
       {
-        text: "Normalized 3 em-dash characters in website/src/lib/email-templates.ts subject lines to ASCII per fleet email rule, preventing mojibake in clients that don't negotiate UTF-8 correctly. Bodies retain UTF-8 as designed",
-        category: "infrastructure",
-      },
-      {
-        text: "Posted close-out comment on AI-8344 with the 2FA root cause, the artifact list, and the handoff path. Existing blockers (AI-8363..AI-8371 copy approvals, AI-8372 prod env var gap) remain independent",
-        category: "strategy",
-      },
-    ],
-  },
-  {
-    date: "April 20, 2026 (GHL Automation Engine — plumbing complete, AI-8344)",
-    type: "completed",
-    entries: [
-      {
-        text: "GoHighLevel sub-account fully provisioned via API: added 5 custom fields (Event Name, Last Tow Count 90d, HOA Name, Referral Source, Lead Source dropdown, Rideshare Platform dropdown) bringing total to 23. Added 27 missing tags covering cold outbound, inbound, referral partners, source segmentation, sequence-completion markers — total now 65 tags",
-        category: "infrastructure",
-      },
-      {
-        text: "Verified Property Account Pipeline has all 9 stages required for the lead journey (New Lead -> Contacted -> Engaged -> Call Booked -> Proposal Sent -> Active Account -> On Hold -> Closed Lost -> Referred). No pipeline changes needed",
-        category: "infrastructure",
-      },
-      {
-        text: "Built docs/ghl-workflows/WIRING-CHECKLIST.md — drop-in click-path for wiring all 14 email workflows in GHL Automation Builder. Includes merge-field translation table (JS ${vars.foo} -> GHL {{contact.foo}}), trigger specs, node-by-node sequence for each workflow, known GHL gotchas",
-        category: "infrastructure",
-      },
-      {
-        text: "Opened 9 Linear sub-issues (AI-8363 through AI-8371) tracking each workflow that needs Elliott copy approval before GHL wiring. Each has the source copy location, trigger tag, and acceptance criteria",
-        category: "strategy",
-      },
-      {
-        text: "Identified a silent failure in production /api/leads — endpoint returns HTTP 200 with referenceId but the contact never lands in GHL. Root cause: Vercel prod env vars missing GHL_*. Escalated as AI-8372 (P2, Hitesh) with reproduction steps and suggested fix",
-        category: "infrastructure",
-      },
-    ],
-  },
-  {
-    date: "April 20, 2026 (Elliott Meeting Follow-ups — website tightened)",
-    type: "completed",
-    entries: [
-      {
-        text: "Pricing page cleanup — removed 'Money order / Cashier's check' from accepted payments (not actually accepted), and stripped the three agency-services marketing sections: 'What Being on Page 1 of Google Means for You', 'Your ROI at a Glance', and 'Your Digital Growth Investment' pricing card. Pricing page now serves tow-release customers only",
-        category: "website",
-      },
-      {
-        text: "Added 'Abandoned Vehicle Removal' as a dedicated service card on /services, linking to the existing abandoned-vehicle blog hub. Elliott flagged this as a top property-owner search intent",
-        category: "website",
-      },
-      {
-        text: "Removed three blog articles per Elliott: competitor comparison 'Best Private Property Towing Companies in Phoenix', 'Arizona Private Property Towing Laws: Complete 2026 Guide', and 'Arizona HB 2269: New Towing Signage Requirements'. Also removed the orphan 'Arizona Towing Laws: ARS 28-3511 Explained' page",
+        text: "Kicked off 3 parallel background agents shipping the audit's next-batch recommendations: 12 'Private Property Towing in [City]' service pages, 1 pillar guide on free private property towing in Arizona, and 1 PAA-FAQ hub with 12 schema-marked Q&As — all targeting the property-manager keyword cluster where All City Towing currently wins AI citations",
         category: "content",
       },
       {
-        text: "Related-page cleanup — scrubbed every broken internal link pointing at the four removed articles. Cleaned 8 related articles (related-reading bullets and inline 'see our guide' sentences) and 6 blog landing pages. Zero broken internal links to any deleted article remain",
-        category: "content",
-      },
-      {
-        text: "Live-verified on axletowing.com: all four deleted article URLs now show the standard not-found page; /pricing no longer contains marketing content; /services shows the new Abandoned Vehicle Removal card linking to the blog hub",
-        category: "infrastructure",
-      },
-    ],
-  },
-  {
-    date: "April 20, 2026 (Google Business Profile Optimization Started)",
-    type: "completed",
-    entries: [
-      {
-        text: "Accepted both Google Business Profile manager invitations on the agency account (Apache Junction + Phoenix locations) — both listings now editable and 100% verified",
-        category: "infrastructure",
-      },
-      {
-        text: "Apache Junction GBP listing — main business hours set to Mon-Fri 9am-5pm (office/impound retrieval window), matching actual staffed availability. 24/7 dispatch messaging lives in the business description to avoid the suspension risk of claiming 24h main hours when phones aren't physically answered at 2am. Optimized brand-aligned description and 4 secondary categories (Auto wrecker, Parking lot, Property maintenance, Automobile storage facility) pending Google review",
-        category: "seo",
-      },
-      {
-        text: "Phoenix GBP listing — same hours structure (Mon-Fri 9am-5pm main), Phoenix-specific 750-character description live and auto-approved on first submission, 4 secondary categories pending",
-        category: "seo",
-      },
-      {
-        text: "Built and shipped two client-facing dashboards: April monthly progress report and Google Business Profile optimization pack with copy-paste-ready descriptions, services, 25 Q&A entries, 12 GBP posts, photo plan, and 2026 best-practices research addendum",
-        category: "strategy",
-      },
-      {
-        text: "Filed 4 project tickets for outstanding CRM and automation items (domain transfer code and DNS, SMS business registration documents, environment configuration on the website host, and 14 CRM workflows) with assignees and due dates",
-        category: "infrastructure",
-      },
-      {
-        text: "Connected the axle-towing-portal Vercel project to the Julianb233/axel-towing GitHub repo so dashboard pushes auto-deploy from main",
+        text: "Scheduled an automatic 7-day check (May 7) that pulls Google Search Console impressions and clicks for the 21 NEAR-ME articles to measure whether the SEO bet is working in real numbers",
         category: "infrastructure",
       },
     ],
@@ -308,11 +190,11 @@ const changelog: ChangelogGroup[] = [
     ],
   },
   {
-    date: "April 12, 2026 (SMS Business Registration + CRM Automation Workflows)",
+    date: "April 12, 2026 (A2P 10DLC SMS Compliance + GHL Automation Workflows — AI-7457, AI-7459, AI-7460, AI-7461)",
     type: "completed",
     entries: [
       {
-        text: "SMS business registration guide created with pre-filled Axle Towing business info, campaign details, and step-by-step CRM walkthrough — awaiting business tax ID (EIN) from Elliott to submit",
+        text: "A2P 10DLC brand registration guide created with pre-filled Axle Towing business info, campaign details, and step-by-step GHL Trust Center walkthrough — awaiting EIN from Elliott to submit",
         category: "strategy",
       },
       {
@@ -366,7 +248,7 @@ const changelog: ChangelogGroup[] = [
         category: "website",
       },
       {
-        text: "Verified live deployment — all deleted pages now show the standard not-found page, and the blog and Spanish blog display correctly",
+        text: "Verified live deployment — all deleted pages correctly return 404, blog and Spanish blog display correctly",
         category: "infrastructure",
       },
     ],
@@ -510,7 +392,7 @@ const changelog: ChangelogGroup[] = [
         category: "dashboard",
       },
       {
-        text: "Two connection keys needed to activate CRM sync (GHL API key and Location ID — add to the website's environment configuration) — leads are still captured via email, SMS, and our database until then",
+        text: "Two environment variables needed to activate GHL sync: GHL_API_KEY and GHL_LOCATION_ID (add to Railway) — leads still captured via email/SMS/Supabase until then",
         category: "infrastructure",
       },
     ],
