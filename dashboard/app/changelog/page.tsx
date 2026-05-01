@@ -16,6 +16,28 @@ interface ChangelogGroup {
 
 const changelog: ChangelogGroup[] = [
   {
+    date: "April 30, 2026 (Pillar guide: free private property towing Arizona - AI-9018)",
+    type: "completed",
+    entries: [
+      {
+        text: "Shipped the top-of-funnel pillar guide 'Free Private Property Towing in Arizona - A Property Owner's 2026 Guide' at /blog/free-private-property-towing-arizona-property-owners-guide. ~3,750 words, written for property managers, HOA boards, apartment owners, and commercial property owners. Targets the 'free private property towing setup' / 'free towing for property owners arizona' citation gap identified in the April 30 SEO audit (Perplexity surfaced this question constantly but Axle was not cited).",
+        category: "content",
+      },
+      {
+        text: "Added FAQPage and HowTo structured data on top of the existing Article + BreadcrumbList schema. 13 PAA-aligned Q&As (signage, authorization, contracts, response times, retrieval, liability) and a 7-step HowTo (audit signage > free assessment > letter of authorization > install signs > train reps > activate dispatch > first tow). Schema validated in the build: all four @types present in the rendered HTML.",
+        category: "seo",
+      },
+      {
+        text: "Built lib/data/pillar-schema.ts as a reusable slug-keyed schema enhancement registry. Future pillar guides can attach FAQPage/HowTo data without touching the dynamic blog page.",
+        category: "infrastructure",
+      },
+      {
+        text: "Internal-linked all 12 Batch A city pages (Phoenix, Mesa, Tempe, Chandler, Gilbert, Scottsdale, Glendale, Peoria, Surprise, Goodyear, Avondale, Queen Creek) plus the FAQ hub and 6 existing law/HOA references. AMA Phoenix membership called out as a trust signal for the BOMA / multihousing newsletter pitch path.",
+        category: "seo",
+      },
+    ],
+  },
+  {
     date: "April 30, 2026 (Path to #1: SEO + AI Overview Sprint — AI-8982 / AI-8993 / AI-9002)",
     type: "completed",
     entries: [
