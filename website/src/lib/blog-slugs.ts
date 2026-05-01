@@ -94,4 +94,6 @@ export const BLOG_SLUGS = [
   'abandoned-vehicle-title-process-arizona',
   'commercial-property-abandoned-vehicle-removal-phoenix',
   'abandoned-rv-removal-arizona',
+  // Pillar guides (April 2026 — AI-9018 / AI-8993 epic)
+  'free-private-property-towing-arizona-property-owners-guide',
 ];

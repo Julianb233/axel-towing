@@ -543,6 +543,17 @@ const ARTICLES: Article[] = [
       "Extreme heat creates unique parking lot hazards. Safety strategies for Arizona's brutal summer months.",
   },
 
+  // ── Pillar Guides (April 2026 — AI-9018 / AI-8993 epic) ─────────────────
+  {
+    slug: 'free-private-property-towing-arizona-property-owners-guide',
+    title: "Free Private Property Towing in Arizona — A Property Owner's 2026 Guide",
+    category: 'property-management',
+    readTime: '17 min',
+    gradient: 'from-blue-700 via-indigo-800 to-blue-950',
+    description:
+      'Definitive 2026 guide for property owners. How free private property towing works, who qualifies, signage, setup steps, and the first 30 days.',
+  },
+
   // ── City & Specialty Guides (MDX articles) ─────────────────────────────
   {
     slug: 'arizona-parking-sign-templates-ars-9-499-05',
