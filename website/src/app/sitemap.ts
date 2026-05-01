@@ -112,7 +112,36 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: 'yearly',
       priority: 0.3,
     },
+    {
+      url: `${BASE_URL}/private-property-towing`,
+      lastModified: now,
+      changeFrequency: 'weekly',
+      priority: 0.9,
+    },
   ];
+
+  // Private Property Towing — city-specific landing pages (AI-9002 / AI-8993 batch)
+  const PRIVATE_PROPERTY_CITY_SLUGS = [
+    'phoenix',
+    'mesa',
+    'chandler',
+    'tempe',
+    'gilbert',
+    'scottsdale',
+    'glendale',
+    'peoria',
+    'surprise',
+    'goodyear',
+    'avondale',
+    'queen-creek',
+  ];
+  const privatePropertyCityPages: MetadataRoute.Sitemap =
+    PRIVATE_PROPERTY_CITY_SLUGS.map((slug) => ({
+      url: `${BASE_URL}/private-property-towing/${slug}`,
+      lastModified: now,
+      changeFrequency: 'weekly' as const,
+      priority: 0.9,
+    }));
 
   // Spanish / bilingual pages
   const spanishPages: MetadataRoute.Sitemap = [
@@ -264,5 +293,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ...neighborhoodPages,
     ...blogPages,
     ...nichePages,
+    ...privatePropertyCityPages,
   ];
 }
