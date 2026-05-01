@@ -69,6 +69,10 @@ async function logChatMessage(
   }
 }
 
+// AI-9180: Axel Towing Linear project — falls back if LINEAR_PROJECT_ID env
+// var is unset so chat-created tickets always land in the right project board.
+const AXEL_LINEAR_PROJECT_ID = "8c1e1d4c-9a6c-4759-99fa-91c6c61ec113";
+
 async function createLinearIssue(
   title: string,
   description: string,
@@ -78,6 +82,8 @@ async function createLinearIssue(
   const key = process.env.LINEAR_API_KEY;
   const teamId =
     process.env.LINEAR_TEAM_ID ?? "9a9d11aa-c8a5-4dc5-855c-c1da260db615";
+  const projectId =
+    process.env.LINEAR_PROJECT_ID ?? AXEL_LINEAR_PROJECT_ID;
   if (!key) return null;
 
   const labelQuery = `query { issueLabels(filter: { name: { in: ["client-request","chat-request","${CLIENT_SLUG}"] } }) { nodes { id } } }`;
@@ -106,6 +112,7 @@ async function createLinearIssue(
           description: fullDesc,
           priority,
           teamId,
+          projectId,
           labelIds: labelIds.length ? labelIds : undefined,
         },
       },
