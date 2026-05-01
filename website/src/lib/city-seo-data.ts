@@ -391,6 +391,216 @@ export const CITY_SEO_DATA: Record<string, CitySEOData> = {
     ],
     drivingDirections: "Our impound yard is located directly on Apache Trail (US-88) at 1151 W. Apache Trail, Apache Junction, AZ 85120. From anywhere in Apache Junction, you can reach our yard in under 15 minutes. We are just east of the intersection of Apache Trail and Ironwood Drive.",
     mapEmbedDescription: "Search Google Maps for '1151 W Apache Trail, Apache Junction, AZ 85120' — this is our home base. We are located on the main commercial corridor of Apache Junction, providing the fastest response times in our entire service area."
+  },
+
+  peoria: {
+    name: "Peoria",
+    slug: "peoria",
+    population: "190,000",
+    populationNum: 190985,
+    neighborhoods: [
+      "Vistancia", "Lake Pleasant", "P83 Entertainment District", "Old Town Peoria",
+      "Westwing Mountain", "Sunrise Mountain", "Fletcher Heights", "Bell Park",
+      "Terramar", "Blackstone at Vistancia"
+    ],
+    zipCodes: ["85345", "85381", "85382", "85383", "85385"],
+    nearestYard: "Phoenix",
+    nearestYardAddress: "320 E. Pioneer St., Phoenix, AZ 85040",
+    driveTime: "25-40 minutes depending on location within the city",
+    responseTime: "Under 30 minutes",
+    hoaCount: "600+",
+    apartmentCount: "1,800+",
+    commercialPropertyCount: "3,200+",
+    landmarks: [
+      "Peoria Sports Complex", "Lake Pleasant Regional Park", "P83 Entertainment District",
+      "Arrowhead Towne Center (border)", "Pioneer Community Park", "Rio Vista Recreation Center",
+      "Old Town Peoria", "Lake Pleasant Parkway"
+    ],
+    localRegulations: "Peoria City Code Chapter 20 governs parking enforcement on private property and aligns with ARS 9-499.05 signage requirements. Peoria additionally requires HOA-initiated towing programs to provide written notice to residents before enforcement begins on newly contracted properties. Master-planned communities like Vistancia operate under detailed CC&R documents that govern guest parking and trailer storage.",
+    majorEmployers: ["Banner Boswell Medical Center", "Peoria Unified School District", "Maxwell Technologies", "Honeywell Aerospace (nearby)", "City of Peoria"],
+    propertyManagementCompanies: ["FirstService Residential", "CCMC", "Brown Community Management", "Associa Arizona"],
+    competitorTowingCompanies: ["Peoria Towing", "Northwest Valley Towing", "All Pro Towing"],
+    notableApartmentComplexes: ["The Reserve at Peoria", "Bell 83", "Vista Ventana", "Peoria Crossings", "Camden Foothills"],
+    notableHOAs: ["Vistancia Community Association", "Westwing Mountain HOA", "Fletcher Heights HOA", "Terramar HOA", "Sunrise Mountain HOA"],
+    notableCommercialProperties: ["P83 Entertainment District", "Park West", "Peoria Crossings Plaza", "Bell Road retail corridor", "Lake Pleasant Towne Center"],
+    seasonalFactors: "Peoria is a major spring training destination — Peoria Sports Complex hosts the San Diego Padres and Seattle Mariners (February-March), creating massive parking demand at apartments and commercial properties along Bell Road and Loop 101. Lake Pleasant draws over a million visitors annually, with peak summer weekend pressure on properties along the Lake Pleasant Parkway corridor.",
+    uniqueCharacteristics: [
+      "One of the fastest-growing cities in Arizona with nearly 190,000 residents",
+      "Vistancia is one of the top-selling master-planned communities in the nation",
+      "P83 Entertainment District is a major dining and nightlife corridor for the Northwest Valley",
+      "Spring training home of the San Diego Padres and Seattle Mariners",
+      "Lake Pleasant Regional Park is a top recreation destination with year-round visitor traffic"
+    ],
+    drivingDirections: "From the P83 Entertainment District, take Loop 101 south to I-10 east, exit at 24th Street, and head south to Pioneer Street — approximately 35 minutes to our Phoenix yard. From Vistancia and the far northwest, take Lake Pleasant Parkway south to Loop 303, then I-10 east (approximately 40 minutes).",
+    mapEmbedDescription: "Search Google Maps for '320 E Pioneer St, Phoenix, AZ 85040' for directions from Peoria. Our Phoenix yard provides full coverage across Peoria with strategic dispatching for spring training and Lake Pleasant peak seasons."
+  },
+
+  surprise: {
+    name: "Surprise",
+    slug: "surprise",
+    population: "150,000",
+    populationNum: 150594,
+    neighborhoods: [
+      "Surprise Farms", "Marley Park", "Asante", "Sun Village", "Desert Oasis",
+      "Arizona Traditions", "Surprise City Center", "Rancho Gabriela",
+      "Sierra Montana", "Greer Ranch"
+    ],
+    zipCodes: ["85335", "85374", "85378", "85379", "85387", "85388"],
+    nearestYard: "Phoenix",
+    nearestYardAddress: "320 E. Pioneer St., Phoenix, AZ 85040",
+    driveTime: "30-45 minutes depending on location within the city",
+    responseTime: "Under 30 minutes",
+    hoaCount: "500+",
+    apartmentCount: "1,400+",
+    commercialPropertyCount: "2,800+",
+    landmarks: [
+      "Surprise Stadium", "Surprise Recreation Campus", "Marley Park",
+      "Bell Road retail corridor", "Surprise City Hall", "Loop 303 corridor",
+      "Wittmann (nearby)", "Sun City Grand"
+    ],
+    localRegulations: "Surprise enforces parking rules under Surprise City Code Chapter 86 and follows ARS 9-499.05 signage requirements. The city's master-planned community framework means HOA-driven enforcement programs are common — written CC&R authorization and board-approved rules are required before towing can begin in residential developments. Commercial properties along Bell Road and Waddell Road follow standard private-property signage rules.",
+    majorEmployers: ["Banner Del E. Webb Medical Center", "Sun Health", "City of Surprise", "Dysart Unified School District"],
+    propertyManagementCompanies: ["FirstService Residential", "CCMC", "Brown Community Management", "City Property Management"],
+    competitorTowingCompanies: ["Surprise Towing", "West Valley Recovery", "Sun City Towing"],
+    notableApartmentComplexes: ["Camden Marley Park", "The Vintage at Surprise", "San Marin", "Aviara at Marley Park", "Bell Park apartments"],
+    notableHOAs: ["Marley Park HOA", "Surprise Farms HOA", "Asante Community Association", "Sierra Montana HOA", "Greer Ranch HOA"],
+    notableCommercialProperties: ["Surprise Marketplace", "Prasada (Loop 303)", "Surprise Towne Center", "Bell Road retail corridor", "Waddell Road corridor"],
+    seasonalFactors: "Surprise is the spring training home of the Texas Rangers and Kansas City Royals (February-March), generating major parking overflow at properties around Surprise Stadium. The city's snowbird population swells significantly October through April, with 55+ communities like Sun Village and Arizona Traditions seeing seasonal residents return. New Loop 303 commercial development continues to expand.",
+    uniqueCharacteristics: [
+      "One of the fastest-growing cities in the entire United States",
+      "Population has more than tripled since 2000 to over 150,000 residents",
+      "Spring training home of the Texas Rangers and Kansas City Royals",
+      "Marley Park is nationally recognized for its award-winning community design",
+      "Major retail and commercial growth along Bell Road and Loop 303 corridors"
+    ],
+    drivingDirections: "From central Surprise, take Bell Road east to Loop 101 south, then I-10 east to 24th Street south — approximately 35 minutes to our Phoenix yard. From the western Loop 303 corridor, take Loop 303 south to I-10 east (approximately 45 minutes).",
+    mapEmbedDescription: "Search Google Maps for '320 E Pioneer St, Phoenix, AZ 85040' for directions from Surprise. Our Phoenix yard serves Surprise with strategic dispatching for spring training season and Loop 303 corridor coverage."
+  },
+
+  goodyear: {
+    name: "Goodyear",
+    slug: "goodyear",
+    population: "105,000",
+    populationNum: 105087,
+    neighborhoods: [
+      "Estrella", "Palm Valley", "PebbleCreek", "Canyon Trails",
+      "Goodyear Ballpark District", "Wigwam", "Centerra", "Montecito",
+      "Sarival", "Lomas Verdes"
+    ],
+    zipCodes: ["85338", "85395"],
+    nearestYard: "Phoenix",
+    nearestYardAddress: "320 E. Pioneer St., Phoenix, AZ 85040",
+    driveTime: "25-40 minutes depending on location within the city",
+    responseTime: "Under 30 minutes",
+    hoaCount: "350+",
+    apartmentCount: "1,200+",
+    commercialPropertyCount: "2,500+",
+    landmarks: [
+      "Goodyear Ballpark", "Estrella Mountain Regional Park", "Wigwam Resort",
+      "Goodyear Civic Square", "PebbleCreek Resort Community", "Estrella Mountain Ranch",
+      "Phoenix-Goodyear Airport", "Loop 303 industrial corridor"
+    ],
+    localRegulations: "Goodyear City Code Chapter 7 addresses parking on private property and follows ARS 9-499.05 signage standards. The city's master-planned community model means most HOA-led enforcement programs are governed by detailed CC&R documents — board-approved authorization and resident notice are standard. The growing industrial/commercial corridor along Loop 303 follows standard private-property towing rules.",
+    majorEmployers: ["Amazon (multiple fulfillment centers)", "Macy's Logistics", "REI Distribution", "Sub-Zero (manufacturing)", "Dignity Health", "Cancer Treatment Centers of America"],
+    propertyManagementCompanies: ["FirstService Residential", "CCMC", "Associated Asset Management", "Brown Community Management"],
+    competitorTowingCompanies: ["Goodyear Towing", "West Valley Towing", "Estrella Towing"],
+    notableApartmentComplexes: ["Camden Goodyear", "The Reserve at Estrella", "San Travesia", "Palms at Estrella", "Wigwam Apartments"],
+    notableHOAs: ["Estrella Mountain Ranch Community Association", "PebbleCreek HOA", "Palm Valley HOA", "Canyon Trails HOA", "Centerra HOA"],
+    notableCommercialProperties: ["Goodyear Ballpark District", "Palm Valley Pavilions", "Estrella Falls Mall", "Wigwam shopping district", "Loop 303 industrial parks (Amazon, Macy's, REI)"],
+    seasonalFactors: "Goodyear is the spring training home of the Cleveland Guardians and Cincinnati Reds (February-March) at Goodyear Ballpark, generating event-day parking demand at adjacent properties. PebbleCreek and other 55+ communities see snowbird population surges October through April. The Loop 303 industrial corridor continues massive expansion with Amazon, Macy's, REI, and other distribution hubs driving year-round commercial activity.",
+    uniqueCharacteristics: [
+      "One of the fastest-growing cities in Arizona with over 105,000 residents",
+      "Estrella is consistently ranked among the nation's top master-planned communities",
+      "Spring training home of the Cleveland Guardians and Cincinnati Reds",
+      "PebbleCreek is a premier 55+ active adult community",
+      "Major commercial and industrial growth along the I-10 and Loop 303 corridors"
+    ],
+    drivingDirections: "From central Goodyear, take I-10 east to 24th Street south, then south to Pioneer Street — approximately 30 minutes to our Phoenix yard. From PebbleCreek and the far western communities, take Indian School Road or Camelback Road east to I-10 (approximately 35-40 minutes).",
+    mapEmbedDescription: "Search Google Maps for '320 E Pioneer St, Phoenix, AZ 85040' for directions from Goodyear. Our Phoenix yard provides full coverage across Goodyear including Estrella, PebbleCreek, and the Loop 303 industrial corridor."
+  },
+
+  avondale: {
+    name: "Avondale",
+    slug: "avondale",
+    population: "90,000",
+    populationNum: 90048,
+    neighborhoods: [
+      "Coldwater Springs", "Garden Lakes", "Crystal Gardens", "Avondale Civic Center",
+      "Westwind", "Cashion", "Dysart Road Corridor", "Festival Foothills",
+      "Rio Paseo", "Tres Rios"
+    ],
+    zipCodes: ["85323", "85329", "85392"],
+    nearestYard: "Phoenix",
+    nearestYardAddress: "320 E. Pioneer St., Phoenix, AZ 85040",
+    driveTime: "20-35 minutes depending on location within the city",
+    responseTime: "Under 30 minutes",
+    hoaCount: "250+",
+    apartmentCount: "1,000+",
+    commercialPropertyCount: "2,200+",
+    landmarks: [
+      "Phoenix Raceway", "Tres Rios Wetlands", "Avondale Civic Center",
+      "Friendship Park", "Agua Fria River corridor", "Gateway Pavilions",
+      "Park 10 Plaza", "Avondale City Hall"
+    ],
+    localRegulations: "Avondale City Code Chapter 24 addresses parking enforcement on private property and follows ARS 9-499.05 signage requirements. Avondale has special provisions for race-event weekends — properties within several miles of Phoenix Raceway often coordinate enforcement schedules around major NASCAR and IndyCar events. Standard private-property signage rules apply year-round.",
+    majorEmployers: ["Phoenix Raceway", "Banner Estrella Medical Center", "City of Avondale", "Avondale Elementary School District", "Tres Rios distribution centers"],
+    propertyManagementCompanies: ["FirstService Residential", "CCMC", "Brown Community Management", "Planned Development Services"],
+    competitorTowingCompanies: ["Avondale Towing", "West Valley Towing", "AZ Auto Recovery"],
+    notableApartmentComplexes: ["The Reserve at Avondale", "San Cervantes", "Gateway Pointe", "Avondale Park", "Garden Lakes Apartments"],
+    notableHOAs: ["Coldwater Springs HOA", "Garden Lakes Community Association", "Crystal Gardens HOA", "Festival Foothills HOA", "Rio Paseo HOA"],
+    notableCommercialProperties: ["Gateway Pavilions", "Park 10 Plaza", "Avondale Towne Center", "McDowell Road retail corridor", "Dysart Road retail corridor"],
+    seasonalFactors: "Phoenix Raceway hosts major NASCAR and IndyCar events that draw 100,000+ visitors per race weekend, creating massive parking overflow at apartments, commercial lots, and HOA properties within several miles of the raceway. The fall and spring race seasons require specialized event-day enforcement. Tres Rios Wetlands draws steady year-round visitor traffic.",
+    uniqueCharacteristics: [
+      "Home to Phoenix Raceway, hosting major NASCAR and IndyCar events",
+      "Population of approximately 90,000 with continued strong growth",
+      "Strategically located along the I-10 corridor in the West Valley",
+      "Tres Rios Wetlands is one of the Valley's premier nature areas",
+      "Major commercial development along McDowell Road and Dysart Road corridors"
+    ],
+    drivingDirections: "From central Avondale, take I-10 east to 24th Street south to Pioneer Street — approximately 25 minutes to our Phoenix yard. From the Phoenix Raceway area, take I-10 east directly (approximately 30 minutes).",
+    mapEmbedDescription: "Search Google Maps for '320 E Pioneer St, Phoenix, AZ 85040' for directions from Avondale. Our Phoenix yard serves all of Avondale with strategic dispatching for race-weekend enforcement near Phoenix Raceway."
+  },
+
+  "queen-creek": {
+    name: "Queen Creek",
+    slug: "queen-creek",
+    population: "75,000",
+    populationNum: 75097,
+    neighborhoods: [
+      "Hastings Farms", "Queen Creek Station", "Encanterra", "Cortina",
+      "Sossaman Estates", "San Tan Heights", "Morning Sun Farms",
+      "Mandalay", "Meridian", "Queen Creek Town Center"
+    ],
+    zipCodes: ["85140", "85142", "85143"],
+    nearestYard: "Apache Junction",
+    nearestYardAddress: "1151 W. Apache Trail, Apache Junction, AZ 85120",
+    driveTime: "20-35 minutes depending on location within the town",
+    responseTime: "Under 30 minutes",
+    hoaCount: "250+",
+    apartmentCount: "600+",
+    commercialPropertyCount: "1,400+",
+    landmarks: [
+      "Queen Creek Olive Mill", "Schnepf Farms", "Queen Creek Town Center",
+      "Sossaman Road corridor", "Ellsworth Road corridor", "Founders Park",
+      "Horseshoe Park & Equestrian Centre", "Rittenhouse Road corridor"
+    ],
+    localRegulations: "Queen Creek follows Maricopa County and Pinal County regulations (the town spans both) and complies with ARS 9-499.05 signage requirements. Equestrian-friendly communities have special CC&R provisions for trailer parking and oversized vehicle restrictions. New master-planned developments are encouraged to install enforcement signage and authorization frameworks before residents move in.",
+    majorEmployers: ["Banner Ironwood Medical Center", "Queen Creek Unified School District", "J.O. Combs Unified School District", "Town of Queen Creek"],
+    propertyManagementCompanies: ["FirstService Residential", "CCMC", "Associated Asset Management", "Brown Community Management"],
+    competitorTowingCompanies: ["Queen Creek Towing", "East Valley Recovery", "San Tan Towing"],
+    notableApartmentComplexes: ["The Retreat at Queen Creek", "Cortina Apartments", "Queen Creek Station Lofts", "Hastings Farms apartments"],
+    notableHOAs: ["Hastings Farms HOA", "Queen Creek Station HOA", "Encanterra Community Association", "Cortina HOA", "Morning Sun Farms HOA"],
+    notableCommercialProperties: ["Queen Creek Town Center", "Queen Creek Marketplace", "Olive Mill commercial district", "Ellsworth Road retail corridor", "Rittenhouse Road retail corridor"],
+    seasonalFactors: "Queen Creek's agricultural and equestrian heritage drives seasonal events — Schnepf Farms hosts a year-round event calendar (Pumpkin & Chili Party, Peach Festival, Fall Festival) that creates parking overflow at adjacent properties. New residential developments come online almost monthly, requiring rapid-onboarding enforcement coverage.",
+    uniqueCharacteristics: [
+      "One of the fastest-growing towns in Arizona with over 75,000 residents",
+      "Known for its equestrian-friendly neighborhoods and agricultural heritage",
+      "Queen Creek Olive Mill and Schnepf Farms are beloved local attractions",
+      "Excellent school districts make it a top choice for families with children",
+      "Rapid commercial growth along Ellsworth Road and Rittenhouse Road corridors"
+    ],
+    drivingDirections: "From the Queen Creek Town Center, take Ellsworth Road north to US-60 west, then east to Apache Junction — our Apache Junction yard at 1151 W. Apache Trail is approximately 25 minutes. Alternatively, head west on US-60 to the Phoenix yard (approximately 35 minutes).",
+    mapEmbedDescription: "Search Google Maps for '1151 W Apache Trail, Apache Junction, AZ 85120' for directions from Queen Creek. Our Apache Junction yard provides the closest coverage for Queen Creek with sub-30-minute response times."
   }
 };
 
