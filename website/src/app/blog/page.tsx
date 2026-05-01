@@ -92,7 +92,16 @@ interface Article {
 }
 
 const ARTICLES: Article[] = [
-  // ── Property Management (10 articles) ──────────────────────────────────
+  // ── Property Management (11 articles, +1 FAQ hub AI-9019) ──────────────
+  {
+    slug: 'private-property-towing-faq',
+    title: 'Private Property Towing FAQ for Phoenix Property Managers (2026)',
+    category: 'property-management',
+    readTime: '12 min',
+    gradient: 'from-blue-700 via-indigo-700 to-blue-950',
+    description:
+      'The 12 most-asked questions Phoenix property managers, HOAs, and commercial owners have about private property towing — answered directly with FAQPage schema for direct AI Overview citation.',
+  },
   {
     slug: 'how-to-get-illegally-parked-vehicles-removed',
     title: 'How to Get Illegally Parked Vehicles Removed from Private Property for Free',
