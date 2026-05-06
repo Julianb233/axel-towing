@@ -1,0 +1,24 @@
+{
+  "$schema": "Review-response templates. Once we have Manager access, every existing review on both locations gets a response within 24h using these templates. Then ongoing: every new review responded to within 24h.",
+  "positive": {
+    "general": "Thank you for the kind words, {NAME}! We take pride in providing reliable parking enforcement for properties like yours. It's great to hear that our team has made a positive difference. We appreciate your trust in Axle Towing & Impound — we're here 24/7 whenever you need us!",
+    "specific_praise": "{NAME}, thank you for highlighting {SPECIFIC}! Our team works hard to {RELEVANT_ACTION}, and it means a lot when our property partners notice the effort. We're grateful for the opportunity to serve your property. Call 480-288-5526 any time.",
+    "property_manager": "{NAME}, thank you for trusting Axle Towing with your property's parking enforcement! Working with {PROPERTY_TYPE} communities is exactly what we built this business to do. Looking forward to a long partnership — reach out any time at 480-288-5526.",
+    "short_friendly": "Thank you, {NAME}! We're glad we could help. Looking forward to continuing to serve your property — we're available 24/7 if you ever need us!"
+  },
+  "negative": {
+    "vehicle_owner_complaint": "{NAME}, we understand how frustrating it is to have your vehicle towed. We want you to know that we only tow vehicles from private property at the direction of the property owner or manager, and in full compliance with Arizona law.\n\nIf you have questions about the tow or believe there was an error, please call us directly at 480-288-5526. We're happy to review the documentation and work with you to resolve any concerns.",
+    "service_complaint": "{NAME}, thank you for bringing this to our attention. We take every concern seriously and want to make this right. Please contact our office directly at 480-288-5526 or info@axletowing.com so we can review the details of your experience.\n\nWe hold ourselves to high standards, and your feedback helps us improve.",
+    "disputed_tow": "{NAME}, we're sorry to hear this situation has been frustrating. Every tow we conduct is documented thoroughly and performed at the authorized request of the property. If you believe there was an error, we welcome the opportunity to review the specifics with you directly — please call 480-288-5526. We want to resolve this.",
+    "hostile": "{NAME}, we're sorry to hear about your experience. We strive to provide professional service in full compliance with Arizona law. We'd welcome the opportunity to discuss the specifics of your situation directly — please reach out to us at 480-288-5526."
+  },
+  "rules": [
+    "Respond within 24 hours, no exceptions",
+    "Never argue publicly. Take disagreements offline.",
+    "Thank every positive reviewer by name.",
+    "Address every negative review professionally — even unfair ones.",
+    "Never reveal private information about the tow, property, or vehicle owner.",
+    "Include phone number in every negative response.",
+    "Never offer refunds publicly — move to private channel."
+  ]
+}

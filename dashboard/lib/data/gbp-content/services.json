@@ -1,0 +1,35 @@
+{
+  "$schema": "6 services to add to GBP via Business Information API. Apply to BOTH locations.",
+  "services": [
+    {
+      "name": "Private Property Towing",
+      "price_label": "Free for property owners",
+      "description": "24/7 private property towing for apartment complexes, HOA communities, commercial properties, and retail centers across the Phoenix metro area. Zero cost to property owners. We tow vehicles in violation of posted regulations, fire lanes, reserved spaces, and handicapped zones."
+    },
+    {
+      "name": "HOA Parking Enforcement",
+      "price_label": "Free for HOA",
+      "description": "Dedicated parking enforcement program for HOA communities. We install compliant Arizona signage, conduct scheduled patrols, enforce community parking rules, and provide monthly reports for board meetings. Customized enforcement programs for communities of all sizes."
+    },
+    {
+      "name": "Apartment Complex Towing",
+      "price_label": "Free for property owners",
+      "description": "Specialized towing and parking enforcement for apartment communities. We handle guest vehicle violations, expired tags, abandoned vehicles, and unauthorized parking in reserved spaces — protecting resident quality of life."
+    },
+    {
+      "name": "Commercial Property Towing",
+      "price_label": "Free for property owners",
+      "description": "Parking enforcement for retail centers, office buildings, medical facilities, churches, and industrial parks. We remove unauthorized vehicles quickly to protect your customer and tenant parking."
+    },
+    {
+      "name": "Vehicle Relocation",
+      "price_label": "Paid service",
+      "description": "Scheduled vehicle relocation for property maintenance, landscaping, and cleaning operations. We safely move vehicles to allow work to proceed and return them to designated spots. This is a paid service separate from standard enforcement towing."
+    },
+    {
+      "name": "Compliant Towing Signage Installation",
+      "price_label": "Free with enforcement program",
+      "description": "We provide and install Arizona-compliant towing signage at every property entrance at no additional cost. Signs meet all ARS 9-499.05 and HB 2269 requirements, protecting you from liability disputes. Free signage audits available."
+    }
+  ]
+}
