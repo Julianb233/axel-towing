@@ -131,6 +131,16 @@
       }
     }
   ],
+  "hours_resolution_pending": {
+    "issue": "Website schema (axletowing.com JSON-LD) declares 9 AM-5 PM Mon-Fri + Saturday by appointment for BOTH locations. Current GBP listings also show 9-5. Strategy doc + GBP checklist + the optimized description all say '24/7 dispatch with 30-minute average response'.",
+    "options": [
+      "A: Push 24/7 to GBP (matches marketing copy + Map Pack 'open now' search). Update website schema to match.",
+      "B: Keep 9-5 on GBP (matches current website). Drop '24/7 dispatch' from optimized description.",
+      "C: GBP shows 24/7 + 'by appointment after 5 PM' note (best of both — yard pickup 9-5 but dispatch round-the-clock)"
+    ],
+    "default_until_resolved": "DO NOT auto-push hours change in scripts/gbp-push.sh. Push other fields. Surface this to Elliott for decision.",
+    "added": "2026-05-06 by AI-2030 sub schema-verify"
+  },
   "live_state_2026_05_06": {
     "apache_junction": {
       "rating": 2.8,

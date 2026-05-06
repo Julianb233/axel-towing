@@ -162,11 +162,15 @@ for spec in content["locations"]:
         update["profile"] = {"description": desired_desc}
         update_mask.append("profile.description")
 
-    desired_hours_obj = desired_hours(spec["hours"])
-    live_hours_obj = live.get("regularHours") or {}
-    if json.dumps(live_hours_obj.get("periods",[]), sort_keys=True) != json.dumps(desired_hours_obj["periods"], sort_keys=True):
-        update["regularHours"] = desired_hours_obj
-        update_mask.append("regularHours")
+    # Hours: SKIPPED by default per hours_resolution_pending in locations.json
+    # (website schema declares 9-5; strategy says 24/7 dispatch — Elliott to confirm)
+    # Set GBP_PUSH_HOURS=1 to enable.
+    if os.environ.get("GBP_PUSH_HOURS") == "1":
+        desired_hours_obj = desired_hours(spec["hours"])
+        live_hours_obj = live.get("regularHours") or {}
+        if json.dumps(live_hours_obj.get("periods",[]), sort_keys=True) != json.dumps(desired_hours_obj["periods"], sort_keys=True):
+            update["regularHours"] = desired_hours_obj
+            update_mask.append("regularHours")
 
     desired_primary_cat = spec["primary_category"]
     live_primary_cat = ((live.get("categories") or {}).get("primaryCategory") or {}).get("name", "")
