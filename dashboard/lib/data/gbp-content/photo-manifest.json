@@ -1,0 +1,74 @@
+{
+  "$schema": "GBP photo upload manifest from existing axel-towing/website/public assets. Each entry: path relative to repo root, GBP category (one of: cover|logo|exterior|interior|fleet|team|at-work|services|signage|branding), location targeting (apache-junction|phoenix|both), suggested alt text, real_or_marketing flag (real photos beat marketing per Google's AI). Production: upload via My Business Account Management Media API once Manager access lands.",
+  "$source_inventory": "Built from `find website/public -name '*.{jpg,jpeg,png,webp}'` on 2026-05-06. ~60 assets total. Most appear to be AI-generated marketing imagery rather than real on-the-job shots — Google's AI deprioritizes stock photos, so we flag likely-stock vs likely-real and ask Elliott for 10-20 real iPhone shots to supplement.",
+  "$upload_priority_tiers": {
+    "tier1_immediate": "Upload these first — lowest stock-likelihood, highest signal",
+    "tier2_supplemental": "Upload after tier1 to hit 25/location floor — branded but possibly stylized",
+    "tier3_skip_unless_no_alternative": "Likely AI-generated luxury/celebrity car shots — Google may flag as stock"
+  },
+  "tier1_immediate": [
+    { "path": "website/public/images/about-office.jpg", "gbp_category": "interior", "location": "both", "alt": "Axle Towing dispatch office, Phoenix AZ", "real_or_marketing": "likely_real" },
+    { "path": "website/public/images/about-team.jpg", "gbp_category": "team", "location": "both", "alt": "Axle Towing & Impound team", "real_or_marketing": "likely_real" },
+    { "path": "website/public/images/contact-phoenix.jpg", "gbp_category": "exterior", "location": "phoenix", "alt": "Axle Towing Phoenix yard exterior, 320 E Pioneer St", "real_or_marketing": "likely_real" },
+    { "path": "website/public/images/optimized/axle-towing-team-phoenix-arizona.webp", "gbp_category": "team", "location": "phoenix", "alt": "Axle Towing team, Phoenix AZ" },
+    { "path": "website/public/images/optimized/axle-towing-office-phoenix-arizona.webp", "gbp_category": "interior", "location": "phoenix", "alt": "Axle Towing dispatch office Phoenix" },
+    { "path": "website/public/images/optimized/axle-towing-impound-lot-phoenix-arizona.webp", "gbp_category": "exterior", "location": "phoenix", "alt": "Axle Towing impound lot Phoenix Arizona" },
+    { "path": "website/public/images/optimized/axle-towing-tow-operator-phoenix-arizona.webp", "gbp_category": "team", "location": "both", "alt": "Axle Towing licensed Arizona tow operator" },
+    { "path": "website/public/images/optimized/axle-towing-veteran-owned-phoenix-arizona.webp", "gbp_category": "branding", "location": "both", "alt": "Axle Towing veteran-affiliated team member, Phoenix" },
+    { "path": "website/public/images/optimized/axle-towing-truck-branded-signage-phoenix-az.webp", "gbp_category": "fleet", "location": "both", "alt": "Axle Towing flatbed with branded signage, Phoenix AZ" }
+  ],
+  "tier2_supplemental": [
+    { "path": "website/public/images/optimized/axle-towing-apartment-flatbed-tow-phoenix-az.webp", "gbp_category": "at-work", "location": "phoenix", "alt": "Axle Towing flatbed at Phoenix apartment complex" },
+    { "path": "website/public/images/optimized/axle-towing-apartment-towing-phoenix-az.webp", "gbp_category": "at-work", "location": "phoenix", "alt": "Apartment complex parking enforcement, Phoenix" },
+    { "path": "website/public/images/optimized/axle-towing-commercial-property-towing-phoenix-az.webp", "gbp_category": "at-work", "location": "phoenix", "alt": "Commercial property towing, Phoenix" },
+    { "path": "website/public/images/optimized/axle-towing-fire-lane-enforcement-arizona-towing-service.webp", "gbp_category": "at-work", "location": "both", "alt": "Fire lane enforcement, Arizona" },
+    { "path": "website/public/images/optimized/axle-towing-hoa-entrance-arizona-towing-service.webp", "gbp_category": "signage", "location": "both", "alt": "HOA entrance with compliant towing signage, Arizona" },
+    { "path": "website/public/images/optimized/axle-towing-hoa-towing-phoenix-az.webp", "gbp_category": "at-work", "location": "phoenix", "alt": "HOA towing service, Phoenix metro" },
+    { "path": "website/public/images/optimized/axle-towing-parking-enforcement-phoenix-az.webp", "gbp_category": "at-work", "location": "both", "alt": "Phoenix metro parking enforcement" },
+    { "path": "website/public/images/optimized/axle-towing-private-property-impound-phoenix-az.webp", "gbp_category": "at-work", "location": "phoenix", "alt": "Private property impound, Phoenix" },
+    { "path": "website/public/images/optimized/axle-towing-vehicle-relocation-phoenix-az.webp", "gbp_category": "at-work", "location": "both", "alt": "Vehicle relocation service, Phoenix" },
+    { "path": "website/public/images/optimized/axle-towing-mesa-arizona-towing-service.webp", "gbp_category": "at-work", "location": "apache-junction", "alt": "Mesa Arizona service area" },
+    { "path": "website/public/images/optimized/axle-towing-blog-fire-lane-enforcement-phoenix-az.webp", "gbp_category": "at-work", "location": "both", "alt": "Fire lane violation tow, Phoenix" },
+    { "path": "website/public/images/optimized/axle-towing-blog-night-towing-phoenix-az.webp", "gbp_category": "at-work", "location": "both", "alt": "Night towing dispatch, Phoenix" },
+    { "path": "website/public/images/optimized/axle-towing-blog-parking-sign-compliance-phoenix-az.webp", "gbp_category": "signage", "location": "both", "alt": "Compliant parking sign installation, Phoenix" },
+    { "path": "website/public/images/optimized/axle-towing-hero-parking-enforcement-phoenix-az.webp", "gbp_category": "exterior", "location": "phoenix", "alt": "Phoenix parking enforcement hero" },
+    { "path": "website/public/images/optimized/axle-towing-phoenix-arizona-skyline-towing-service.webp", "gbp_category": "exterior", "location": "phoenix", "alt": "Axle Towing service area, Phoenix skyline" },
+    { "path": "website/public/images/optimized/axle-towing-contact-phoenix-arizona.webp", "gbp_category": "exterior", "location": "phoenix", "alt": "Axle Towing Phoenix yard contact location" },
+    { "path": "website/public/images/optimized/axle-towing-garage-impound-phoenix-az.webp", "gbp_category": "interior", "location": "phoenix", "alt": "Phoenix impound garage interior" },
+    { "path": "website/public/images/optimized/axle-towing-desert-recovery-phoenix-az.webp", "gbp_category": "at-work", "location": "phoenix", "alt": "Vehicle recovery, Arizona desert" },
+    { "path": "website/public/images/optimized/axle-towing-gmc-truck-tow-phoenix-az.webp", "gbp_category": "fleet", "location": "both", "alt": "GMC tow truck, Phoenix fleet" },
+    { "path": "website/public/images/optimized/axle-towing-rv-tow-night-phoenix-az.webp", "gbp_category": "fleet", "location": "both", "alt": "RV tow operation, Phoenix night" },
+    { "path": "website/public/images/optimized/axle-towing-rv-daytime-tow-phoenix-az.webp", "gbp_category": "at-work", "location": "both", "alt": "Daytime RV tow, Phoenix" },
+    { "path": "website/public/images/optimized/axle-towing-rv-tow-palm-trees-phoenix-az.webp", "gbp_category": "at-work", "location": "phoenix", "alt": "RV tow, Phoenix palm tree neighborhood" },
+    { "path": "website/public/images/optimized/axle-towing-boat-tow-phoenix-az.webp", "gbp_category": "fleet", "location": "both", "alt": "Boat trailer tow, Phoenix" }
+  ],
+  "tier3_skip_unless_no_alternative": [
+    { "path": "website/public/images/optimized/axle-towing-tesla-cybertruck-tow-phoenix-az.webp", "gbp_category": "skip", "reason": "Likely AI-generated luxury vehicle marketing image — Google may flag as stock" },
+    { "path": "website/public/images/optimized/axle-towing-corvette-c8-tow-phoenix-az.webp", "gbp_category": "skip", "reason": "Likely AI-generated" },
+    { "path": "website/public/images/optimized/axle-towing-maserati-luxury-tow-phoenix-az.webp", "gbp_category": "skip", "reason": "Likely AI-generated luxury car" },
+    { "path": "website/public/images/optimized/axle-towing-classic-car-flatbed-phoenix-az.webp", "gbp_category": "skip", "reason": "Likely AI-generated" },
+    { "path": "website/public/images/optimized/axle-towing-classic-car-dusk-tow-phoenix-az.webp", "gbp_category": "skip", "reason": "Likely AI-generated" }
+  ],
+  "logo": {
+    "path": "website/public/images/axle-towing-logo.png",
+    "gbp_category": "logo",
+    "location": "both",
+    "alt": "Axle Towing & Impound logo"
+  },
+  "missing_categories": [
+    "Real on-the-job dispatch-cam photos (Elliott to send 10-20 from his phone — auto geo-tagged)",
+    "Real signage installation in progress (need from past jobs)",
+    "Real before/after parking lot shots (need from past jobs)",
+    "Real team photos showing Brian + Tori + Chris by name",
+    "Real Apache Junction yard exterior (1151 W Apache Trail)"
+  ],
+  "totals": {
+    "tier1_count": 9,
+    "tier2_count": 23,
+    "tier3_count_skipped": 5,
+    "logo_count": 1,
+    "ready_for_immediate_upload": 33,
+    "target_per_location": 25,
+    "shortfall_apache_junction_specific": "Most existing assets are Phoenix-tagged. Need 5+ Apache Junction-specific shots from Elliott (yard exterior, AJ trucks, AJ team)."
+  }
+}
