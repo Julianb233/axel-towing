@@ -16,6 +16,36 @@ interface ChangelogGroup {
 
 const changelog: ChangelogGroup[] = [
   {
+    date: "May 6, 2026 (Google Business Profile Audit + Improvement Strategy — AI-2030)",
+    type: "completed",
+    entries: [
+      {
+        text: "Pulled live audit of both GBP listings (Apache Junction + Phoenix). Found Apache Junction at 2.8 stars, Phoenix at 3.0 stars, both showing 9-5 hours instead of 24/7, both with empty descriptions, no secondary categories, no services list, no Q&A, and no posts.",
+        category: "seo",
+      },
+      {
+        text: "Discovered Phoenix GBP listing has the WRONG phone number — (623) 401-2537 instead of (480) 288-5526. Every Maps call to the Phoenix location right now is being lost. Top priority to fix.",
+        category: "seo",
+      },
+      {
+        text: "Wrote 8-page improvement strategy in docs/GBP-IMPROVEMENT-STRATEGY-2026-05-06.md with 3 phases: Phase 1 (this week — fix phone, hours, descriptions, categories, services, appointment URL — 30 min total once Elliott grants Manager access). Phase 2 (weeks 2-3 — 25 photos per location, 10 Q&A entries, 3 starter posts). Phase 3 (ongoing — 3 posts/week, 5 photos/month, monthly Insights report).",
+        category: "strategy",
+      },
+      {
+        text: "Hardened the plan against Google's 2025-2026 wave of towing-listing suspensions: locked categories to towing-only (no Auto Repair / Roadside), enforced exact-name 'Axle Towing & Impound' (no city or 24/7 stuffing), aligned NAP across Yelp + Apple Maps + AMA + MapQuest + Bing.",
+        category: "seo",
+      },
+      {
+        text: "Set 90-day rating target: Apache Junction 4.3+ and Phoenix 4.3+ from current 2.8/3.0. 12-month target: 4.7+ on both with 75+ net new reviews, 200+ photos per location, top-3 Map Pack for 'private property towing phoenix' and 'HOA towing phoenix'.",
+        category: "strategy",
+      },
+      {
+        text: "Action items requested from Elliott: (1) add julian@aiacrobatics.com as Manager on both GBP locations [60 sec each], (2) confirm what the (623) 401-2537 line actually rings to, (3) send 10-20 dispatch-cam photos of trucks/signage/before-after, (4) confirm FB/IG/LinkedIn handles, (5) list 5-10 property-manager clients comfortable being asked for a Google review.",
+        category: "strategy",
+      },
+    ],
+  },
+  {
     date: "April 30, 2026 (Pillar guide: free private property towing Arizona - AI-9018)",
     type: "completed",
     entries: [
