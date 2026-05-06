@@ -1,0 +1,89 @@
+{
+  "$schema": "12 GBP posts (Mon/Wed/Fri x 4 weeks). Posts API is deprecated — these are paste-ready for the GBP web UI. Each post has title, body, CTA button text + URL, recommended photo asset.",
+  "posts": [
+    {
+      "week": 1, "day": "Mon", "type": "service-spotlight",
+      "title": "Zero-Cost Parking Enforcement for Phoenix Properties",
+      "body": "Did you know parking enforcement can cost your property absolutely nothing?\n\nAxle Towing & Impound provides 24/7 private property towing and parking enforcement at zero cost to property owners across the Phoenix metro area.\n\nWe handle everything: compliant signage, scheduled patrols, unauthorized vehicle removal, and monthly enforcement reports for your board or management team.\n\nCall 480-288-5526 for a free property assessment.",
+      "cta": { "label": "Call now", "type": "CALL", "value": "+14802885526" },
+      "photo_hint": "Fleet truck at apartment complex"
+    },
+    {
+      "week": 1, "day": "Wed", "type": "educational",
+      "title": "Arizona Towing Signage Requirements — Is Your Property Compliant?",
+      "body": "Under ARS 9-499.05, every private property in Arizona must have specific towing signage at EVERY entrance to legally enforce parking.\n\nSigns must include: the towing company's name, phone number, address, and hours of enforcement.\n\nNon-compliant signage can invalidate tows and expose property owners to liability.\n\nNot sure if your signs are compliant? We offer free signage audits — no obligation.",
+      "cta": { "label": "Learn more", "type": "LEARN_MORE", "value": "https://axletowing.com/blog/parking-lot-signage-requirements-arizona" },
+      "photo_hint": "Compliant towing sign at property entrance"
+    },
+    {
+      "week": 1, "day": "Fri", "type": "offer",
+      "title": "Free 30-Day Parking Enforcement Trial",
+      "body": "Apartment managers and HOA boards: try professional parking enforcement for 30 days — completely free.\n\nWe'll install compliant signage, patrol your property, and handle all unauthorized vehicle removal. Zero risk, zero commitment.\n\nIf you love the results (and every property does), we continue. If not, no hard feelings.",
+      "cta": { "label": "Book now", "type": "BOOK", "value": "https://axletowing.com/get-quote" },
+      "photo_hint": "Before/after parking lot comparison"
+    },
+    {
+      "week": 2, "day": "Mon", "type": "service-spotlight",
+      "title": "HOA Towing: Customized for Every Community",
+      "body": "Every HOA has different parking rules — guest passes, permit systems, reserved spaces, overnight restrictions.\n\nAxle Towing builds a customized enforcement program around YOUR community's CC&Rs.\n\nMonthly reports for board meetings.\n24/7 emergency dispatch.\nCompliant signage at no charge.\nZero cost to the HOA.",
+      "cta": { "label": "Learn more", "type": "LEARN_MORE", "value": "https://axletowing.com/services/hoa-towing" },
+      "photo_hint": "HOA community entrance with signage"
+    },
+    {
+      "week": 2, "day": "Wed", "type": "educational",
+      "title": "What Property Managers Need to Know About Private Property Towing",
+      "body": "Arizona law (ARS 9-499.05) gives property owners the right to remove unauthorized vehicles from private property — but only if the proper signage is in place.\n\nThree things every property manager should know:\n\n1. Signage must be posted at EVERY entrance\n2. You must use a licensed, bonded tow company\n3. The vehicle owner must be notified by the towing company per MVD requirements\n\nWe handle all of this for you. Free assessment at axletowing.com/get-quote.",
+      "cta": { "label": "Learn more", "type": "LEARN_MORE", "value": "https://axletowing.com/get-quote" },
+      "photo_hint": "Property manager reviewing compliance checklist (team photo)"
+    },
+    {
+      "week": 2, "day": "Fri", "type": "social-proof",
+      "title": "Serving the Phoenix Metro 24/7/365",
+      "body": "From Apache Junction to Glendale, Scottsdale to Laveen — Axle Towing & Impound serves the entire Valley.\n\n24/7 dispatch. 30-minute average response. Zero cost to property owners.\n\nWhether you manage 20 units or 2,000, we customize our enforcement program to your property's exact needs.",
+      "cta": { "label": "Call now", "type": "CALL", "value": "+14802885526" },
+      "photo_hint": "Map of Phoenix metro with Axle Towing brand overlay"
+    },
+    {
+      "week": 3, "day": "Mon", "type": "service-spotlight",
+      "title": "Commercial Property Towing: Keep Your Parking Lots Customer-Ready",
+      "body": "Non-customer vehicles in your parking lot cost you business.\n\nAxle Towing & Impound provides fast, professional parking enforcement for retail centers, office parks, and commercial properties across Phoenix.\n\nWe remove unauthorized vehicles quickly — protecting your customers' access and your tenants' satisfaction.",
+      "cta": { "label": "Get a free assessment", "type": "BOOK", "value": "https://axletowing.com/get-quote" },
+      "photo_hint": "Commercial parking lot with truck removing vehicle"
+    },
+    {
+      "week": 3, "day": "Wed", "type": "educational",
+      "title": "The 3 Most Common Parking Violations We Tow From Phoenix Properties",
+      "body": "After thousands of tows across the Valley, here are the violations that cause the most issues:\n\n1. Abandoned vehicles — old tags, no movement for weeks\n2. Fire lane parking — a safety and liability emergency\n3. Reserved spot violations — residents and tenants lose their assigned spaces\n\nAll three are immediately towable with proper signage in place.\n\nGot a problem that won't go away? Call 480-288-5526 and we'll assess your property.",
+      "cta": { "label": "Call now", "type": "CALL", "value": "+14802885526" },
+      "photo_hint": "Truck towing vehicle from fire lane"
+    },
+    {
+      "week": 3, "day": "Fri", "type": "offer",
+      "title": "Free Property Parking Assessment — Apache Junction + Phoenix",
+      "body": "Not sure if your property has a parking problem? We'll come assess it for free.\n\nOur team will:\nReview your current signage compliance.\nWalk your parking lot and identify violation hot spots.\nRecommend a customized enforcement schedule.\nProvide a written report — no charge.\n\nZero commitment. We just want you to see the difference professional enforcement makes.",
+      "cta": { "label": "Book now", "type": "BOOK", "value": "https://axletowing.com/get-quote" },
+      "photo_hint": "Team member reviewing signage at property"
+    },
+    {
+      "week": 4, "day": "Mon", "type": "service-spotlight",
+      "title": "24/7 Dispatch — We Never Close",
+      "body": "Unauthorized vehicle at 2am? Fire lane blocked at midnight?\n\nAxle Towing & Impound dispatches 24 hours a day, 7 days a week, 365 days a year — including holidays.\n\nOur two-location coverage means faster response times across the entire Valley. Average on-site: 30 minutes or less.",
+      "cta": { "label": "Call now", "type": "CALL", "value": "+14802885526" },
+      "photo_hint": "Truck at night / lit-up dispatch center"
+    },
+    {
+      "week": 4, "day": "Wed", "type": "educational",
+      "title": "Monthly Enforcement Reports: Why Your HOA Board Needs Them",
+      "body": "Property boards are asking: 'Are we actually enforcing parking rules?'\n\nAxle Towing provides monthly enforcement reports showing:\n- Number of tows by violation type\n- Patrol frequency and coverage\n- Signage compliance status\n- Recommendations for rule adjustments\n\nThis documentation protects the HOA from resident complaints and gives boards the data they need for informed decisions.",
+      "cta": { "label": "Learn more", "type": "LEARN_MORE", "value": "https://axletowing.com/services/hoa-towing" },
+      "photo_hint": "Sample monthly report graphic"
+    },
+    {
+      "week": 4, "day": "Fri", "type": "team-brand",
+      "title": "Phoenix's Private Property Towing Specialists",
+      "body": "30+ years of combined towing experience. 24/7/365 dispatch. Two strategic locations.\n\nAxle Towing & Impound isn't a general roadside service — we specialize exclusively in private property enforcement and HOA towing.\n\nThat focus means faster response, better compliance documentation, and a team that knows Arizona towing law inside and out.",
+      "cta": { "label": "Call now", "type": "CALL", "value": "+14802885526" },
+      "photo_hint": "Full team photo in uniform"
+    }
+  ]
+}

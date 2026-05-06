@@ -1,0 +1,160 @@
+{
+  "$schema": "Phase 1 GBP fields per location, ready to push via My Business Business Information API",
+  "locations": [
+    {
+      "key": "apache-junction",
+      "google_place_id": "0x872bb77ca3c77bbb:0x7758cbdc42454652",
+      "google_place_id_g": "/g/11nm_z4h6_",
+      "google_maps_url": "https://www.google.com/maps/place/Axle+Towing+%26+Impound/@33.4146529,-111.5586667,17z/data=!4m6!3m5!1s0x872bb77ca3c77bbb:0x7758cbdc42454652!8m2!3d33.4146529!4d-111.5586667",
+      "name": "Axle Towing & Impound",
+      "address": {
+        "street": "1151 W Apache Trail",
+        "city": "Apache Junction",
+        "state": "AZ",
+        "postal": "85120",
+        "country": "US"
+      },
+      "phone_primary": "+14802885526",
+      "phone_display": "(480) 288-5526",
+      "website": "https://axletowing.com",
+      "appointment_url": "https://axletowing.com/get-quote",
+      "year_established": 2021,
+      "hours": {
+        "monday":    [{"open":"00:00","close":"23:59"}],
+        "tuesday":   [{"open":"00:00","close":"23:59"}],
+        "wednesday": [{"open":"00:00","close":"23:59"}],
+        "thursday":  [{"open":"00:00","close":"23:59"}],
+        "friday":    [{"open":"00:00","close":"23:59"}],
+        "saturday":  [{"open":"00:00","close":"23:59"}],
+        "sunday":    [{"open":"00:00","close":"23:59"}]
+      },
+      "hours_label": "Open 24 hours",
+      "primary_category": "gcid:towing_service",
+      "secondary_categories": [
+        "gcid:impound_lot",
+        "gcid:parking_lot",
+        "gcid:property_maintenance",
+        "gcid:vehicle_storage_facility",
+        "gcid:tow_truck_operator"
+      ],
+      "service_area_cities": [
+        "Apache Junction, AZ",
+        "Mesa, AZ",
+        "Gilbert, AZ",
+        "Chandler, AZ",
+        "Queen Creek, AZ",
+        "Gold Canyon, AZ",
+        "San Tan Heights, AZ",
+        "Sun Lakes, AZ",
+        "Ahwatukee, AZ",
+        "Laveen, AZ"
+      ],
+      "description": "Axle Towing & Impound provides professional private property towing, parking enforcement, and HOA towing services across the East Valley. We serve apartment complexes, HOA communities, commercial properties, and retail centers — at zero cost to property owners.\n\nServices include 24/7 private property impounds, scheduled patrol enforcement, vehicle relocations, and Arizona-compliant signage installation. 30+ years combined team experience.\n\nWhat sets us apart: zero cost to owners, 24/7 dispatch with 30-minute average response, monthly enforcement reports, and full Arizona compliance (ARS 9-499.05). Call 480-288-5526 for a free property assessment.",
+      "attributes": {
+        "wheelchair_accessible_entrance": null,
+        "open_24_hours": true,
+        "veteran_led": null,
+        "women_led": null,
+        "lgbtq_friendly": null,
+        "online_appointments": true,
+        "languages_spoken": ["English", "Spanish"]
+      },
+      "social": {
+        "facebook": "TBD_NEED_FROM_ELLIOTT",
+        "instagram": "TBD_NEED_FROM_ELLIOTT",
+        "linkedin": "TBD_NEED_FROM_ELLIOTT"
+      }
+    },
+    {
+      "key": "phoenix",
+      "google_place_id": "PENDING_OAUTH",
+      "google_maps_url": "https://www.google.com/maps/search/Axle+Towing+%26+Impound+320+E+Pioneer+St+Phoenix+AZ",
+      "plus_code": "CW9J+4H Phoenix",
+      "name": "Axle Towing & Impound",
+      "address": {
+        "street": "320 E Pioneer St",
+        "city": "Phoenix",
+        "state": "AZ",
+        "postal": "85040",
+        "country": "US"
+      },
+      "phone_primary": "+14802885526",
+      "phone_display": "(480) 288-5526",
+      "phone_currently_wrong_on_gbp": "(623) 401-2537",
+      "website": "https://axletowing.com",
+      "appointment_url": "https://axletowing.com/get-quote",
+      "year_established": 2021,
+      "hours": {
+        "monday":    [{"open":"00:00","close":"23:59"}],
+        "tuesday":   [{"open":"00:00","close":"23:59"}],
+        "wednesday": [{"open":"00:00","close":"23:59"}],
+        "thursday":  [{"open":"00:00","close":"23:59"}],
+        "friday":    [{"open":"00:00","close":"23:59"}],
+        "saturday":  [{"open":"00:00","close":"23:59"}],
+        "sunday":    [{"open":"00:00","close":"23:59"}]
+      },
+      "hours_label": "Open 24 hours",
+      "primary_category": "gcid:towing_service",
+      "secondary_categories": [
+        "gcid:impound_lot",
+        "gcid:parking_lot",
+        "gcid:property_maintenance",
+        "gcid:vehicle_storage_facility",
+        "gcid:tow_truck_operator"
+      ],
+      "service_area_cities": [
+        "Phoenix, AZ",
+        "Scottsdale, AZ",
+        "Tempe, AZ",
+        "Glendale, AZ",
+        "Peoria, AZ",
+        "Surprise, AZ",
+        "Avondale, AZ",
+        "Goodyear, AZ",
+        "Tolleson, AZ",
+        "Buckeye, AZ"
+      ],
+      "description": "Axle Towing & Impound serves Phoenix, Scottsdale, Tempe, Glendale, and surrounding communities with professional private property towing and parking enforcement — at zero cost to property owners.\n\nWe work with apartment complexes, HOA boards, commercial properties, and office buildings to eliminate unauthorized parking. 24/7 dispatch, 30-minute average response, monthly enforcement reports, and full Arizona compliance.\n\nArizona Multihousing Association member. Fully licensed, insured, and bonded. Call 480-288-5526 for a free property assessment.",
+      "attributes": {
+        "wheelchair_accessible_entrance": null,
+        "open_24_hours": true,
+        "veteran_led": null,
+        "women_led": null,
+        "lgbtq_friendly": null,
+        "online_appointments": true,
+        "languages_spoken": ["English", "Spanish"]
+      },
+      "social": {
+        "facebook": "TBD_NEED_FROM_ELLIOTT",
+        "instagram": "TBD_NEED_FROM_ELLIOTT",
+        "linkedin": "TBD_NEED_FROM_ELLIOTT"
+      }
+    }
+  ],
+  "live_state_2026_05_06": {
+    "apache_junction": {
+      "rating": 2.8,
+      "hours_shown": "9 AM - 5 PM Mon-Fri",
+      "phone_shown": "(480) 288-5526",
+      "categories_shown": ["Towing service"],
+      "description_shown": "",
+      "photos_in_panel": 0,
+      "services_shown": [],
+      "qa_count": 0,
+      "posts_visible": 0,
+      "last_business_confirm": "2 weeks before 2026-05-06"
+    },
+    "phoenix": {
+      "rating": 3.0,
+      "hours_shown": "9 AM - 5 PM Mon-Fri",
+      "phone_shown": "(623) 401-2537",
+      "categories_shown": ["Towing service"],
+      "description_shown": "",
+      "photos_in_panel": 0,
+      "services_shown": [],
+      "qa_count": 0,
+      "posts_visible": 0,
+      "last_business_confirm": "2 weeks before 2026-05-06"
+    }
+  }
+}

@@ -16,6 +16,36 @@ interface ChangelogGroup {
 
 const changelog: ChangelogGroup[] = [
   {
+    date: "May 6, 2026 PM (GBP Prep Wave: API tooling + content pre-staged + portal action items — AI-9457)",
+    type: "completed",
+    entries: [
+      {
+        text: "Built and committed an idempotent GBP API push script (scripts/gbp-push.sh) plus a pre-flight account-listing script (scripts/gbp-list-accounts.sh) and a one-time OAuth seeder (scripts/gbp-auth-init.sh). The push script reads pre-staged content, diffs against live GBP fields, and PATCHes only the deltas — with a --dry-run mode and a JSONL audit log of every change.",
+        category: "infrastructure",
+      },
+      {
+        text: "Pre-staged ALL Phase 1 + 2 content as paste-ready JSON in dashboard/lib/data/gbp-content/: locations.json (descriptions, hours, phone, categories, service-area cities, attributes per location), services.json (6 service descriptions), qa.json (25 seeded Q&A entries), posts.json (12 starter posts with photo hints + CTAs), review-response-templates.json (positive + negative templates with vehicle-owner-complaint guardrail).",
+        category: "content",
+      },
+      {
+        text: "Wrote a 5-minute Google Cloud setup runbook (docs/GBP-API-SETUP-RUNBOOK.md) — exact 3 console clicks Julian needs to enable My Business APIs and add the business.manage OAuth scope. After that, the push script applies Phase 1 to BOTH locations in one command.",
+        category: "infrastructure",
+      },
+      {
+        text: "Updated this dashboard's 'What we need from you' page with 5 new GBP action items at critical/high priority — Manager access on both locations, confirmation of what (623) 401-2537 actually rings to, dispatch-cam photos, social handles, and 5-10 happy property-manager clients we can ask for Google reviews. Each item explains why, how, impact, and time required.",
+        category: "dashboard",
+      },
+      {
+        text: "Reverse-lookup of the wrong Phoenix phone (623) 401-2537 came up empty across the open web, Yelp, Apple Maps, AMA member directory, and MapQuest — strongly suggests Google injected it as a placeholder during automated listing creation rather than it being a competitor takeover. Elliott can confirm by calling it from a personal phone.",
+        category: "seo",
+      },
+      {
+        text: "Once Manager access lands, the order of operations is: (1) gbp-push.sh applies all Phase 1 fixes [phone, hours, descriptions, categories, services, appointment URL] to both locations in under 60 seconds; (2) we read every existing review on both locations and ship response drafts within 24h; (3) photo upload pass [25 per location from current website assets + Elliott's incoming dispatch shots]; (4) Q&A seeding via personal-Gmail-asks-business-account-answers; (5) first weekly post wave starts.",
+        category: "strategy",
+      },
+    ],
+  },
+  {
     date: "May 6, 2026 (Google Business Profile Audit + Improvement Strategy — AI-2030)",
     type: "completed",
     entries: [

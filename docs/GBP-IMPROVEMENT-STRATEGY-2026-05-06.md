@@ -7,6 +7,28 @@
 
 ---
 
+## Status — what's already shipped (2026-05-06 PM update, AI-9457 prep wave)
+
+Done in this session, before pinging Elliott:
+
+| # | Item | Where |
+|---|---|---|
+| 1 | Live audit of both GBP listings | This doc, §1 |
+| 2 | 8-page strategy plan with 30/60/90/365-day targets | This doc |
+| 3 | Reverse-lookup of Phoenix wrong number (623) 401-2537 | Anonymous on open web — not on Yelp / Apple Maps / AMA / MapQuest. Likely typo Google injected or stale answering line. Need Elliott to call it. |
+| 4 | Pre-staged ALL Phase 1 + 2 content as JSON, paste-ready | `dashboard/lib/data/gbp-content/` (locations.json, services.json, qa.json, posts.json, review-response-templates.json) |
+| 5 | GBP API push script (idempotent, dry-run mode, audit log) | `scripts/gbp-push.sh` + `scripts/gbp-list-accounts.sh` + `scripts/gbp-auth-init.sh` |
+| 6 | API setup runbook (3-min Julian console clicks + 60-sec OAuth seed) | `docs/GBP-API-SETUP-RUNBOOK.md` |
+| 7 | Dashboard "What we need from you" page updated with 5 GBP-specific action items at critical/high priority | `dashboard/app/needs/page.tsx` (items #2, #22-25) |
+| 8 | Dashboard changelog entries summarizing the audit + plan + asks | `dashboard/app/changelog/page.tsx` |
+| 9 | First PR (audit + strategy + initial changelog) merged to main, Vercel auto-deploys dashboard | https://github.com/Julianb233/axel-towing/pull/85 |
+
+The push script + content set means the moment Manager access lands, applying Phase 1 to BOTH locations is one command:
+```bash
+bash scripts/gbp-push.sh --dry-run    # preview diff against live
+bash scripts/gbp-push.sh              # apply
+```
+
 ## TL;DR — What we found, what we're doing
 
 We pulled both live Google Business Profile listings on 2026-05-06. Both are claimed and confirmed by the business in the last 2 weeks, but they are barely optimized — and one has a wrong phone number that is bleeding leads to nowhere. Two listings, ~12 critical gaps each, and one outright NAP error.
