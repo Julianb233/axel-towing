@@ -15,6 +15,7 @@ interface TemplateInfo {
   emailCount: number;
   dayOffsets: number[];
   subjects: string[];
+  bodies: string[];
   color: string;
   bgColor: string;
   borderColor: string;
@@ -35,6 +36,13 @@ const sequences: TemplateInfo[] = [
       "Free property assessment + first month of enforcement",
       "Still dealing with parking violations?",
     ],
+    bodies: [
+      `Hi [First Name],\n\nWelcome aboard. I'm Elliott with Axle Towing & Impound — your dedicated point of contact for parking enforcement at [Property Name].\n\nA few things you can expect from us:\n\n• Free standing-service agreement — vehicle owners pay statutory fees, never the property\n• ARS-compliant signage installed at no cost\n• 24/7 dispatch from our Phoenix and Apache Junction yards\n• Sub-30-minute average response time across the Phoenix metro\n• Per-impound documentation packet auto-delivered (photo, signage proof, time, driver ID)\n\nIf you'd like to schedule a free property assessment to walk through enforcement priorities, just reply or grab a slot here:\n\n[Book Property Assessment — Calendar Link]\n\nTalk soon,\nElliott\nAxle Towing & Impound\n480-288-5526 | axletowing.com`,
+      `Hi [First Name],\n\nUnauthorized parking at [Property Name] doesn't have to be a recurring conversation at every board or tenant meeting.\n\nHere's what we typically eliminate within the first 48 hours of taking over a property:\n\n• Fire-lane violators (immediate tow authority under Arizona fire-lane law)\n• Reserved-spot offenders (we coordinate with your tenant list)\n• Abandoned vehicles (full MVD chain of custody, recovered via lien sale — not billed to you)\n• After-hours commercial parking (with custom posting strategy)\n\nWe install ARS 9-499.05-compliant signage at every entrance the same week we sign. From that point on, enforcement runs in the background — you only hear from us when there's something to action.\n\nWant to see how it'd work at your property? Reply with your address and we'll do a free walk-through.\n\nElliott | Axle Towing & Impound`,
+      `Hi [First Name],\n\nQuick story.\n\nCopper Creek Apartments (148 units, Tempe) was getting 12-15 parking complaints/week before they switched to us. Tenants were parking in fire lanes, residents were taking visitor spots, two abandoned vehicles had been on the property for 3 months, and the previous tow company had a 90-minute response time and a yard 45 miles out.\n\nWithin 30 days of switching:\n\n• Parking complaints dropped from 12-15/week to 1-2/week\n• Both abandoned vehicles cleared via lien sale (zero cost to property)\n• Average response time on the property: 22 minutes\n• Tenant retrieval rate: 94% (tenants find their cars and pay statutory fees, not us)\n\nThe property manager said the unexpected win was the documentation packet — every tow comes with photo evidence + signage proof, which made HOA-board challenges drop to zero.\n\nWant to see if we can do the same at [Property Name]? Reply or call 480-288-5526.\n\nElliott`,
+      `Hi [First Name],\n\nQuick offer for new property accounts:\n\n**Free property assessment** — we walk your property, photograph current parking patterns, identify your top 3 enforcement gaps, and propose a posting + dispatch plan. No obligation.\n\n**First month of standing service free** — already free, but for the first 30 days we waive any sign-fabrication delay (we use stock-on-hand) so you can start enforcement same-week instead of 5-7 business days.\n\nIf this fits, the next step is a 15-minute call:\n\n[Book a Call — Calendar Link]\n\nOr reply with the best 3 time slots for a property walk-through this week.\n\nElliott | Axle Towing & Impound\n480-288-5526`,
+      `Hi [First Name],\n\nLast note from me.\n\nIf parking violations at [Property Name] are still costing you tenant complaints, board challenges, or insurance-rating risk on fire-lane infractions — let's solve that this month.\n\nIf you're already happy with your current operator or this isn't the right fit, no problem — I'll stop here.\n\nIf you want to talk: 480-288-5526 or reply.\n\nElliott\nAxle Towing & Impound\naxletowing.com`,
+    ],
     color: "text-blue-600",
     bgColor: "bg-blue-50",
     borderColor: "border-blue-200",
@@ -50,6 +58,11 @@ const sequences: TemplateInfo[] = [
       "A new revenue stream for your locksmith business",
       "Refer a tow, earn a commission — here's the process",
       "Join 200+ Phoenix partners in the Axle referral program",
+    ],
+    bodies: [
+      `Hi [First Name],\n\nLocksmiths and tow operators in Phoenix have a natural overlap — a stranded vehicle owner often calls one of us first, then needs the other.\n\nWe're opening up a referral program for Phoenix-metro locksmith businesses:\n\n• You refer a private-property tow that we accept → you earn a referral commission per completed dispatch\n• You handle the lockout side → we handle the impound side → both businesses get paid + the customer gets one coordinated experience\n• No exclusivity, no contracts, no minimum volume\n\nIf this is interesting, I can send the one-page referral agreement and our dispatcher number for direct routing.\n\nReply or call 480-288-5526.\n\nElliott | Axle Towing & Impound`,
+      `Hi [First Name],\n\nHow the Axle locksmith referral works:\n\n1. Locksmith arrives on-site, identifies a vehicle that needs to be towed (lockout that becomes total-loss situation, recovered stolen vehicle, etc.)\n2. Locksmith calls Axle dispatch on a dedicated partner line\n3. Axle dispatcher captures vehicle info + locksmith referral code\n4. Axle truck arrives within 30 minutes, locksmith leaves\n5. After successful tow + impound, partner commission is paid out monthly via direct deposit\n\nCommission rate, payment schedule, and the partner agreement are all on a one-page doc — happy to send it over for review.\n\nReply with your business name + the locksmith's name handling referrals on your team.\n\nElliott`,
+      `Hi [First Name],\n\nQuick stat: 200+ Phoenix-metro partners (locksmiths, mechanics, parking-permit providers, moving companies) refer business to Axle every month. The average partner earns $400-1,200/month in pure referral commission, no work beyond the call.\n\nIf you'd like to be on the list, last step is a 10-minute setup call so we can:\n\n• Get your business added to our partner CRM\n• Issue your dedicated referral code\n• Walk through the tracking dashboard (you can see every referral in real-time)\n• Set up direct-deposit payment\n\n[Book 10-min Setup — Calendar Link]\n\nOr reply with a good time this week.\n\nElliott | Axle Towing & Impound`,
     ],
     color: "text-amber-600",
     bgColor: "bg-amber-50",
@@ -67,6 +80,11 @@ const sequences: TemplateInfo[] = [
       "Tow-to-shop service: how it works for your customers",
       "Ready to partner? Here's your next step",
     ],
+    bodies: [
+      `Hi [First Name],\n\nMechanic shops in Phoenix lose customers to faster competitors when there's a delay between a vehicle breakdown and the tow to your shop.\n\nWe can fix that.\n\nAxle Towing's tow-to-shop partnership lets your customers call Axle directly when they need a tow to your facility. We respond in under 30 minutes, tow directly to your shop (not to a competitor's lot), and route the customer to your service writer.\n\nNo cost to your shop. No contracts. Just faster customers.\n\nReply or call 480-288-5526 to set this up.\n\nElliott | Axle Towing & Impound`,
+      `Hi [First Name],\n\nHere's exactly how the tow-to-shop service works for your customers:\n\n1. Customer's vehicle breaks down → they call Axle Towing\n2. Axle dispatcher asks "where's it going?" → customer says "[Your Shop Name]"\n3. Axle truck arrives within 30 minutes\n4. Customer's vehicle is towed directly to your shop\n5. Your service writer gets a heads-up call from our dispatcher with vehicle make/model + customer name\n6. Customer arrives at your shop already informed — no scrambling, no lost time\n\nNo middleman, no third-party platform fees, no markup. Customer pays the standard tow fee (statutory) directly to us.\n\nWant to be on the dispatcher's preferred-shop list? Reply with your shop name + address.\n\nElliott`,
+      `Hi [First Name],\n\nLast note: ready to be on Axle's preferred-shop list?\n\nIt takes about 5 minutes to set up:\n\n1. We add your shop to dispatcher's preferred-routing system\n2. You get a dedicated partner phone number for direct service-writer hand-offs\n3. We send you a window decal that says "Towing partner: Axle Towing & Impound" (some shops display it; optional)\n4. We start routing tow-to-shop customers your direction starting same-week\n\nReply or call 480-288-5526 with:\n• Shop name + address\n• Service writer name + direct line\n• Hours of operation\n\nThat's it.\n\nElliott | Axle Towing & Impound`,
+    ],
     color: "text-green-600",
     bgColor: "bg-green-50",
     borderColor: "border-green-200",
@@ -81,6 +99,10 @@ const sequences: TemplateInfo[] = [
     subjects: [
       "Your vehicle has been towed — here's how to retrieve it",
       "Reminder: Retrieve your vehicle — gate directions & payment info",
+    ],
+    bodies: [
+      `Your vehicle has been towed and impounded by Axle Towing & Impound.\n\n**Vehicle:** [Year] [Make] [Model], plate [Plate]\n**Tow location:** [Property Name], [Address]\n**Time of tow:** [Date/Time]\n**Reason:** [Reason — fire lane, expired permit, abandoned, etc.]\n**Impound yard:** [Phoenix yard, 320 E. Pioneer St., 85040 OR Apache Junction yard, 1151 W. Apache Trail, 85120]\n\n**To retrieve your vehicle, you will need:**\n\n• Government-issued photo ID\n• Vehicle registration (if available)\n• Proof of insurance\n• Payment for impound + storage fees (statutory rates set by Arizona)\n\nOur impound yard is open Mon-Fri 9am-5pm for vehicle pickup. After-hours retrieval is available — call 480-288-5526 to coordinate.\n\nIf you believe your vehicle was towed in error, reply to this email with your vehicle details and we'll review the impound documentation.\n\nAxle Towing & Impound\n480-288-5526 | axletowing.com`,
+      `Reminder: your vehicle is still at our impound yard.\n\n**Vehicle:** [Year] [Make] [Model], plate [Plate]\n**Days held:** [N] day(s)\n**Total fees as of today:** [Tow fee + N days × storage rate]\n**Each additional day adds:** [statutory daily storage rate]\n\n**Yard directions:**\n[Phoenix Yard]\n320 E. Pioneer St., Phoenix, AZ 85040\nMon-Fri 9am-5pm | Saturday by appointment\n\n[Apache Junction Yard]\n1151 W. Apache Trail, Apache Junction, AZ 85120\nMon-Fri 9am-5pm | Saturday by appointment\n\n**Payment accepted:** Credit/debit card, cash. Vehicles unclaimed for 30+ days enter Arizona's abandoned-vehicle process and become subject to lien sale per state statute.\n\nIf you cannot retrieve in person, you may authorize a third party with a notarized release. Reply for details.\n\nAxle Towing & Impound\n480-288-5526 | axletowing.com`,
     ],
     color: "text-red-600",
     bgColor: "bg-red-50",
@@ -219,28 +241,57 @@ export default function CampaignsPage() {
                   {isExpanded && (
                     <div className="px-5 pb-5 border-t border-white/50">
                       <div className="mt-4 space-y-2">
-                        {seq.subjects.map((subject, idx) => (
-                          <div
-                            key={idx}
-                            className="flex items-center gap-3 p-3 rounded-xl bg-white/70 border border-white hover:border-gray-200 transition-colors cursor-pointer"
-                            onClick={() => setPreviewSubject(previewSubject === subject ? null : subject)}
-                          >
-                            <div className="flex-shrink-0 w-8 h-8 rounded-lg bg-white border border-gray-100 flex items-center justify-center">
-                              <span className="text-xs font-bold text-gray-500">D{seq.dayOffsets[idx]}</span>
+                        {seq.subjects.map((subject, idx) => {
+                          const isPreviewOpen = previewSubject === subject;
+                          const body = seq.bodies?.[idx];
+                          return (
+                            <div key={idx} className="rounded-xl bg-white/70 border border-white hover:border-gray-200 transition-colors overflow-hidden">
+                              <div
+                                className="flex items-center gap-3 p-3 cursor-pointer"
+                                onClick={() => setPreviewSubject(isPreviewOpen ? null : subject)}
+                              >
+                                <div className="flex-shrink-0 w-8 h-8 rounded-lg bg-white border border-gray-100 flex items-center justify-center">
+                                  <span className="text-xs font-bold text-gray-500">D{seq.dayOffsets[idx]}</span>
+                                </div>
+                                <div className="flex-1 min-w-0">
+                                  <p className="text-sm font-medium text-gray-900 truncate">{subject}</p>
+                                  <p className="text-xs text-gray-500">Sends on day {seq.dayOffsets[idx]}</p>
+                                </div>
+                                <div className="flex items-center gap-2">
+                                  <span className="text-[10px] font-semibold text-gray-400 uppercase tracking-wider">
+                                    {isPreviewOpen ? "Hide" : "Preview"}
+                                  </span>
+                                  <svg
+                                    className={`w-4 h-4 text-gray-400 transition-transform ${isPreviewOpen ? "rotate-180" : ""}`}
+                                    fill="none"
+                                    viewBox="0 0 24 24"
+                                    stroke="currentColor"
+                                    strokeWidth={2}
+                                  >
+                                    <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
+                                  </svg>
+                                </div>
+                              </div>
+                              {isPreviewOpen && body && (
+                                <div className="px-4 pb-4 pt-1 border-t border-gray-100 bg-white/40">
+                                  <div className="bg-white rounded-lg border border-gray-100 p-4 mt-3">
+                                    <div className="mb-3 pb-3 border-b border-gray-100">
+                                      <p className="text-[10px] font-bold uppercase tracking-widest text-gray-400">Subject</p>
+                                      <p className="text-sm font-semibold text-gray-900 mt-1">{subject}</p>
+                                    </div>
+                                    <p className="text-[10px] font-bold uppercase tracking-widest text-gray-400 mb-2">Body Preview</p>
+                                    <pre className="text-sm text-gray-800 whitespace-pre-wrap font-sans leading-relaxed">{body}</pre>
+                                  </div>
+                                </div>
+                              )}
+                              {isPreviewOpen && !body && (
+                                <div className="px-4 pb-4 pt-3 border-t border-gray-100 text-xs italic text-gray-500">
+                                  Body content not yet available for this email — please check back later or contact your AI Acrobatics rep.
+                                </div>
+                              )}
                             </div>
-                            <div className="flex-1 min-w-0">
-                              <p className="text-sm font-medium text-gray-900 truncate">{subject}</p>
-                              <p className="text-xs text-gray-500">Sends on day {seq.dayOffsets[idx]}</p>
-                            </div>
-                            <div className="flex items-center gap-2">
-                              <span className="text-[10px] font-semibold text-gray-400 uppercase tracking-wider">Preview</span>
-                              <svg className="w-4 h-4 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                                <path strokeLinecap="round" strokeLinejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
-                                <path strokeLinecap="round" strokeLinejoin="round" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
-                              </svg>
-                            </div>
-                          </div>
-                        ))}
+                          );
+                        })}
                       </div>
                     </div>
                   )}
