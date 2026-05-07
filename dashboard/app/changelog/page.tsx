@@ -16,6 +16,24 @@ interface ChangelogGroup {
 
 const changelog: ChangelogGroup[] = [
   {
+    date: "May 6, 2026 PM (Three more pillar pages — Arizona statewide, tow-service decision pillar, Apache Sands comparison — AI-9001, AI-9512, AI-9513)",
+    type: "completed",
+    entries: [
+      {
+        text: "Shipped /arizona-towing — 2,500-word statewide hub targeting 'az towing' (vol 480) and 'arizona impound' (vol 170). Hub structure with 36-city directory grouped by region (Maricopa Metro / East Valley / West Valley / North Valley / Pinal County), Arizona-law section linking 6 existing law articles, services grid, 10-Q FAQ. Schema includes ItemList of all cities + LocalBusiness with both yards in address[] (first time both addresses are in a single block). Cross-link to today's /phoenix-towing pillar.",
+        category: "seo",
+      },
+      {
+        text: "Shipped /tow-service-phoenix-az — 2,500-word decision-oriented pillar targeting 'tow service phoenix az' (vol 320). Differentiated from /phoenix-towing by angle: this one is the buyer's guide with a 12-criteria comparison table (Axle vs typical Phoenix-metro operator), 12-criteria scorecard with discovery-call questions, choose-by-property-scenario guidance for HOA / Apartment / Commercial, and the mechanical switching playbook. 10-Q FAQ.",
+        category: "seo",
+      },
+      {
+        text: "Shipped /apache-sands-vs-axle-towing — 1,800-word balanced competitor comparison page targeting 'apache sands towing' (vol 1,000, currently pos 39 — highest single-keyword opportunity on the board). Carefully framed as a property manager's buyer's guide rather than head-to-head trash talk; ten questions to ask BOTH operators rather than asserting unverifiable claims. PR not auto-merged — held for Elliott to sanity-check the framing on the Vercel preview before going live.",
+        category: "seo",
+      },
+    ],
+  },
+  {
     date: "May 6, 2026 PM (Phoenix Towing 2026 pillar page + NAP verification — AI-8999, AI-9480)",
     type: "completed",
     entries: [
