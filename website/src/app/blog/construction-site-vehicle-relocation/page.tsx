@@ -33,8 +33,21 @@ const RELATED_ARTICLES = [
 ];
 
 export default function ArticlePage() {
+  const articleSchema = {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    headline: "Vehicle Relocation for Construction and Asphalt Projects: A Complete Guide",
+    description: "Learn how Phoenix construction and asphalt companies can relocate vehicles from work zones. Covers Arizona laws, coordination with property managers, and professional vehicle relocation services.",
+    image: "https://axletowing.com/images/axle-towing-logo.png",
+    datePublished: "2026-04-01",
+    dateModified: "2026-05-07",
+    author: { "@type": "Organization", name: "Axle Towing & Impound", url: "https://axletowing.com" },
+    publisher: { "@type": "Organization", name: "Axle Towing & Impound", logo: { "@type": "ImageObject", url: "https://axletowing.com/images/axle-towing-logo.png" } },
+    mainEntityOfPage: "https://axletowing.com/blog/construction-site-vehicle-relocation",
+  };
   return (
     <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }} />
       {/* Parallax Hero */}
       <section className="parallax-container min-h-[45vh] flex items-end relative">
         <div className="absolute inset-0 bg-gradient-to-br from-blue-950 via-blue-900 to-blue-800 z-0" />
