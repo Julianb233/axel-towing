@@ -37,6 +37,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${BASE_URL}/arizona-towing`, lastModified: now, changeFrequency: 'weekly', priority: 0.92 },
     { url: `${BASE_URL}/tow-service-phoenix-az`, lastModified: now, changeFrequency: 'weekly', priority: 0.92 },
     { url: `${BASE_URL}/apache-sands-vs-axle-towing`, lastModified: now, changeFrequency: 'weekly', priority: 0.85 },
+    { url: `${BASE_URL}/licensing`, lastModified: now, changeFrequency: 'monthly', priority: 0.7 },
     { url: `${BASE_URL}/contact`, lastModified: now, changeFrequency: 'monthly', priority: 0.8 },
     { url: `${BASE_URL}/blog`, lastModified: now, changeFrequency: 'weekly', priority: 0.7 },
     {
