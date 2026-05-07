@@ -5,7 +5,7 @@ import Breadcrumbs from "@/components/Breadcrumbs";
 import { COMPANY } from "@/lib/constants";
 
 const CANONICAL = `https://${COMPANY.domain}/tow-service-phoenix-az`;
-const PAGE_TITLE = "Tow Service in Phoenix, AZ — How Property Managers Compare and Choose (2026) | Axle Towing";
+const PAGE_TITLE = "Tow Service in Phoenix, AZ — Property Manager's Guide (2026)";
 const PAGE_DESCRIPTION =
   "How Phoenix property managers compare tow services in 2026. Side-by-side comparison of the major Phoenix-metro tow operators on response time, insurance, signage, fees, and dispatch model. Free service for HOAs, apartments, and commercial properties.";
 
@@ -159,10 +159,15 @@ export default function Page() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessJsonLd) }} />
 
-      <section
-        className="parallax-fixed relative min-h-[55vh] flex items-center"
-        style={{ backgroundImage: `url(/images/hero-parking-lot.jpg)` }}
-      >
+      <section className="relative min-h-[55vh] flex items-center overflow-hidden">
+        <Image
+          src="/images/hero-parking-lot.jpg"
+          alt=""
+          fill
+          priority
+          sizes="100vw"
+          className="object-cover"
+        />
         <div className="absolute inset-0 bg-gradient-to-br from-blue-950/95 via-blue-900/85 to-primary/60" />
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 md:py-28 w-full">
           <Breadcrumbs items={[{ label: "Home", href: "/" }, { label: "Tow Service Phoenix AZ" }]} />
