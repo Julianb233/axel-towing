@@ -1,16 +1,18 @@
-"use client";
-
 import Link from "next/link";
 import PageHeader from "../components/PageHeader";
 import ScrollReveal from "../components/ScrollReveal";
+import { getLatestSnapshot } from "../lib/convex";
 
-const stats = [
-  { label: "Total Pages", value: "299", color: "text-brand-blue", accent: "#1e6bb8" },
-  { label: "Blog Articles", value: "60+", color: "text-green-600", accent: "#16a34a" },
-  { label: "Location Pages", value: "120+", color: "text-amber-500", accent: "#f59e0b" },
-  { label: "Service Pages", value: "25", color: "text-purple-600", accent: "#9333ea" },
-  { label: "Keywords Tracked", value: "50+", color: "text-brand-red", accent: "#dc3a30" },
-];
+// Re-fetch stats every 5 minutes — Convex semrushSnapshots are cron-fed daily
+export const revalidate = 300;
+
+// Static page counts (updated 2026-05-06 — refresh quarterly or after major build push)
+const STATIC_STATS = {
+  totalPages: 358,        // from latest `next build` output for the website
+  blogArticles: 77,       // public blog count
+  locationPages: 40,      // /locations/<city> pages
+  servicePages: 22,       // 6 /services + 12 /private-property-towing/<city> + 4 head-term pillars
+};
 
 const quickLinks = [
   {
@@ -71,38 +73,48 @@ const quickLinks = [
 
 const recentUpdates = [
   {
-    date: "Apr 20",
-    text: "Post-meeting cleanup: branded merchandise section removed from the website, storage-fee card removed from pricing, and 20 abandoned-vehicle articles sent to Elliott for approval",
-    category: "website",
-  },
-  {
-    date: "Mar 29",
-    text: "Removed specific pricing from Vehicle Relocation pages, deleted 8 towing law blog articles per Elliott's request, cleaned all cross-references",
-    category: "website",
-  },
-  {
-    date: "Mar 26",
-    text: "Rate limiting deployed on API endpoints, social media links fixed, newsletter form connected",
+    date: "May 6",
+    text: "SEO Performance page launched on the portal — daily SEMrush snapshot pulls Authority Score, organic keywords, traffic, backlinks, AI visibility, and competitor benchmarks. Refreshes every morning at 06:30 PT.",
     category: "infrastructure",
   },
   {
-    date: "Mar 26",
-    text: "AZ Towing Laws report, Citation Building Plan, Link Building Strategy produced",
-    category: "strategy",
-  },
-  {
-    date: "Mar 25",
-    text: "Outreach drip sequences designed for 4 audience segments (PM, locksmith, mechanic, vehicle owner)",
-    category: "content",
-  },
-  {
-    date: "Mar 24",
-    text: "60+ blog articles published covering parking enforcement, towing laws, and HOA guides",
+    date: "May 6",
+    text: "/phoenix-towing pillar shipped — 3,100-word 2026 guide for property managers targeting the 'phoenix towing' head term (vol 720). 8 sections, 12-city directory, 21 abandoned-vehicle article links, full FAQ + Article + LocalBusiness schema.",
     category: "seo",
   },
   {
-    date: "Mar 22",
-    text: "299-page website deployed to Vercel production with full SEO optimization",
+    date: "May 6",
+    text: "/arizona-towing statewide hub shipped — 2,500-word pillar covering 36 Arizona cities organized by region (Maricopa Metro / East Valley / West Valley / North Valley / Pinal County), with 6 deep-link statute references.",
+    category: "seo",
+  },
+  {
+    date: "May 6",
+    text: "/tow-service-phoenix-az decision pillar shipped — 2,500-word buyer's guide with 12-criteria comparison table, property-scenario weighting (HOA / Apartment / Commercial), and switching playbook.",
+    category: "seo",
+  },
+  {
+    date: "May 6",
+    text: "Schema.org NAP markup verification clean — Phoenix and Apache Junction LocalBusiness blocks both match canonical address/phone. AMA partner directory citation also matches.",
+    category: "seo",
+  },
+  {
+    date: "May 6",
+    text: "GBP API tooling complete — push script ready, 25 Q&A entries pre-staged, 12 starter posts drafted, 60+ photos categorized in manifest. Awaiting Manager access on both locations to apply Phase 1 fixes.",
+    category: "infrastructure",
+  },
+  {
+    date: "May 4",
+    text: "GBP NAP audit + photo manifest + review monitor (wave 3): cron-friendly NAP audit script across 5 sources, 3-tier photo ranking from existing assets, hourly review-monitor on both locations with iMessage alerts on changes.",
+    category: "infrastructure",
+  },
+  {
+    date: "May 1",
+    text: "Path-to-#1 strategic plan published — quantified 53× organic-traffic gap vs Freeway, 38× keyword gap, sequenced 3-tier roadmap (review recovery → pillar pages → backlinks/moat) with 17 Linear sub-issues.",
+    category: "strategy",
+  },
+  {
+    date: "Apr 20",
+    text: "Post-meeting cleanup: branded merchandise section removed, storage-fee card removed from pricing, 20 abandoned-vehicle articles sent to Elliott for approval.",
     category: "website",
   },
 ];
@@ -116,10 +128,11 @@ const categoryColors: Record<string, string> = {
 };
 
 const actionItems = [
-  { text: "Point axletowing.com DNS to new site", status: "critical" },
-  { text: "Google Business Profile access", status: "high" },
-  { text: "Google Search Console access", status: "high" },
-  { text: "Google Analytics access", status: "medium" },
+  { text: "Add julian@aiacrobatics.com as Manager on both Google Business Profile listings", status: "critical" },
+  { text: "Confirm what (623) 401-2537 actually rings to (Phoenix listing)", status: "high" },
+  { text: "Send 10-20 dispatch-cam photos of trucks, team, yard, and jobs in progress", status: "high" },
+  { text: "Confirm Facebook / Instagram / LinkedIn handles", status: "medium" },
+  { text: "Resolve hours conflict — site shows 9-5, strategy says 24/7 dispatch", status: "medium" },
 ];
 
 const statusColors: Record<string, string> = {
@@ -128,7 +141,37 @@ const statusColors: Record<string, string> = {
   medium: "bg-blue-100 text-blue-700",
 };
 
-export default function DashboardOverview() {
+export default async function DashboardOverview() {
+  // Live SEO data from Convex (semrushSnapshots:getLatest). Falls back to a
+  // friendly placeholder if the cron hasn't landed the first snapshot yet.
+  let liveKeywordsTracked = "—";
+  let liveAuthorityScore: string | null = null;
+  let liveDataDate: string | null = null;
+  try {
+    const snap = await getLatestSnapshot("axle-towing");
+    if (snap) {
+      liveKeywordsTracked = snap.overview.organicKeywords.toString();
+      liveAuthorityScore = snap.overview.authorityScore.toString();
+      liveDataDate = snap.date;
+    }
+  } catch (err) {
+    // Network or Convex outage — keep the dashboard rendering, log to server console
+    console.error("[homepage] Convex semrushSnapshots query failed:", err);
+  }
+
+  const stats = [
+    { label: "Total Pages", value: STATIC_STATS.totalPages.toString(), color: "text-brand-blue", accent: "#1e6bb8" },
+    { label: "Blog Articles", value: STATIC_STATS.blogArticles.toString(), color: "text-green-600", accent: "#16a34a" },
+    { label: "Location Pages", value: STATIC_STATS.locationPages.toString(), color: "text-amber-500", accent: "#f59e0b" },
+    { label: "Service Pages", value: STATIC_STATS.servicePages.toString(), color: "text-purple-600", accent: "#9333ea" },
+    {
+      label: liveAuthorityScore ? `Keywords (AS ${liveAuthorityScore})` : "Keywords Tracked",
+      value: liveKeywordsTracked,
+      color: "text-brand-red",
+      accent: "#dc3a30",
+    },
+  ];
+
   return (
     <>
       <PageHeader
@@ -151,6 +194,11 @@ export default function DashboardOverview() {
             </div>
           ))}
         </div>
+        {liveDataDate && (
+          <p className="text-xs text-gray-400 -mt-6 mb-8 text-right">
+            Live SEO data: <span className="font-mono">{liveDataDate}</span> via Convex
+          </p>
+        )}
       </ScrollReveal>
 
       {/* Action Items Summary */}

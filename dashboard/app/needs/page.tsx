@@ -18,9 +18,9 @@ const needs: NeedItem[] = [
     id: 1,
     title: "Point axletowing.com DNS to our new site",
     priority: "critical",
-    why: "Your brand-new 299-page website is live and ready — but until the domain points to it, Google can't index any of it. Every day without this costs you ranking momentum.",
+    why: "Your brand-new 358-page website is live and ready — but until the domain points to it, Google can't index any of it. Every day without this costs you ranking momentum.",
     howTo: "We've already emailed your previous web developer (Duo Webz) with the exact DNS changes needed. He just needs to update 2 records in LiquidWeb: A record to 76.76.21.21 and CNAME for www to cname.vercel-dns.com. We're waiting on him to make the change — follow up if you haven't heard back.",
-    impact: "Unlocks ALL 299 pages for Google indexing, enabling keyword rankings, organic traffic, and lead generation.",
+    impact: "Unlocks ALL 358 pages for Google indexing, enabling keyword rankings, organic traffic, and lead generation.",
     estimatedTime: "5 minutes",
   },
   {
