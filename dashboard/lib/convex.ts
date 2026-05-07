@@ -81,6 +81,74 @@ export async function getLatestSnapshot(clientSlug: string): Promise<SemrushSnap
   );
 }
 
+// Portal changelog (auto-fed by .fleet-config/hooks/auto-changelog.sh on every git push)
+export interface PortalChangelogEntry {
+  _id: string;
+  clientSlug: string;
+  title: string;
+  description?: string;
+  category: "feature" | "fix" | "content" | "seo" | "design" | "infrastructure" | "improvement" | "strategy";
+  items?: string[];
+  linearIssueIds?: string[];
+  repo?: string;
+  branch?: string;
+  commitSha?: string;
+  deployUrl?: string;
+  agent?: string;
+  createdAt: number;
+}
+
+export async function listChangelog(clientSlug: string, limit = 100): Promise<PortalChangelogEntry[]> {
+  return convexQuery<PortalChangelogEntry[]>(
+    "portalChangelog:listForClient",
+    { clientSlug, limit },
+  );
+}
+
+// Portal feed (deploy events, content publishes, milestones)
+export interface PortalFeedEntry {
+  _id: string;
+  clientSlug: string;
+  type: "deploy" | "content-published" | "meeting-notes" | "deliverable" | "seo-snapshot" | "review" | "approval-needed" | "milestone" | "other";
+  title: string;
+  body?: string;
+  url?: string;
+  icon?: string;
+  agent?: string;
+  createdAt: number;
+}
+
+export async function listFeed(clientSlug: string, limit = 50): Promise<PortalFeedEntry[]> {
+  return convexQuery<PortalFeedEntry[]>(
+    "portalFeed:listForClient",
+    { clientSlug, limit },
+  );
+}
+
+// Portal action items (mirror of Linear `client-action` issues)
+export interface PortalActionItem {
+  _id: string;
+  clientSlug: string;
+  linearIssueId: string;
+  title: string;
+  why?: string;
+  howTo?: string;
+  impact?: string;
+  estimatedTime?: string;
+  priority: "critical" | "high" | "medium" | "low";
+  status: "open" | "in_progress" | "waiting" | "resolved";
+  linearUrl?: string;
+  createdAt: number;
+  updatedAt: number;
+}
+
+export async function listOpenActionItems(clientSlug: string, limit = 50): Promise<PortalActionItem[]> {
+  return convexQuery<PortalActionItem[]>(
+    "portalActionItems:listOpenForClient",
+    { clientSlug, limit },
+  );
+}
+
 export async function listSnapshots(
   clientSlug: string,
   limit = 30,
