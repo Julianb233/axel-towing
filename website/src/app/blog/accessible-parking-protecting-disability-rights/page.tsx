@@ -15,8 +15,21 @@ const RELATED_ARTICLES = [
 ];
 
 export default function ArticlePage() {
+  const articleSchema = {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    headline: "Protecting Disability Rights: Why Accessible Parking Enforcement Matters",
+    description: "Learn why accessible parking enforcement protects disability rights in Arizona. Understand ADA requirements, state laws, and the real impact of parking abuse.",
+    image: "https://axletowing.com/images/axle-towing-logo.png",
+    datePublished: "2026-04-01",
+    dateModified: "2026-05-07",
+    author: { "@type": "Organization", name: "Axle Towing & Impound", url: "https://axletowing.com" },
+    publisher: { "@type": "Organization", name: "Axle Towing & Impound", logo: { "@type": "ImageObject", url: "https://axletowing.com/images/axle-towing-logo.png" } },
+    mainEntityOfPage: "https://axletowing.com/blog/accessible-parking-protecting-disability-rights",
+  };
   return (
     <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }} />
       <section className="parallax-container min-h-[45vh] flex items-end relative">
         <div className="absolute inset-0 bg-gradient-to-br from-blue-950 via-blue-900 to-blue-800 z-0" />
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_left,rgba(224,43,32,0.15),transparent_60%)] z-[1]" />

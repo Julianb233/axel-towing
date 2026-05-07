@@ -33,8 +33,21 @@ const RELATED_ARTICLES = [
 ];
 
 export default function ArticlePage() {
+  const articleSchema = {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    headline: "RV and Boat Parking in HOA Communities: Rules, Enforcement, and Best Practices",
+    description: "Navigate RV and boat parking enforcement in Arizona HOA communities. Learn about CC&R restrictions, Arizona law, storage alternatives, and how to enforce oversized vehicle rules without community conflict.",
+    image: "https://axletowing.com/images/axle-towing-logo.png",
+    datePublished: "2026-04-01",
+    dateModified: "2026-05-07",
+    author: { "@type": "Organization", name: "Axle Towing & Impound", url: "https://axletowing.com" },
+    publisher: { "@type": "Organization", name: "Axle Towing & Impound", logo: { "@type": "ImageObject", url: "https://axletowing.com/images/axle-towing-logo.png" } },
+    mainEntityOfPage: "https://axletowing.com/blog/hoa-rv-boat-parking-enforcement",
+  };
   return (
     <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }} />
       {/* Parallax Hero */}
       <section className="parallax-container min-h-[45vh] flex items-end relative">
         <div className="absolute inset-0 bg-gradient-to-br from-blue-950 via-blue-900 to-blue-800 z-0" />

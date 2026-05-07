@@ -33,8 +33,21 @@ const RELATED_ARTICLES = [
 ];
 
 export default function ArticlePage() {
+  const articleSchema = {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    headline: "The Complete Guide to Apartment Complex Parking Management in Phoenix",
+    description: "Learn how to manage apartment complex parking in Phoenix. Covers tenant parking assignments, unauthorized vehicle removal, ARS 28-3511 compliance, and free enforcement programs for property owners.",
+    image: "https://axletowing.com/images/axle-towing-logo.png",
+    datePublished: "2026-04-01",
+    dateModified: "2026-05-07",
+    author: { "@type": "Organization", name: "Axle Towing & Impound", url: "https://axletowing.com" },
+    publisher: { "@type": "Organization", name: "Axle Towing & Impound", logo: { "@type": "ImageObject", url: "https://axletowing.com/images/axle-towing-logo.png" } },
+    mainEntityOfPage: "https://axletowing.com/blog/apartment-complex-parking-management-guide",
+  };
   return (
     <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }} />
       {/* Parallax Hero */}
       <section className="parallax-container min-h-[45vh] flex items-end relative">
         <div className="absolute inset-0 bg-gradient-to-br from-blue-950 via-blue-900 to-blue-800 z-0" />

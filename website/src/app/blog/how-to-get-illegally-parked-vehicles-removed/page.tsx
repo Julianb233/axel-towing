@@ -34,8 +34,21 @@ const RELATED_ARTICLES = [
 ];
 
 export default function ArticlePage() {
+  const articleSchema = {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    headline: "How to Get Illegally Parked Vehicles Removed from Private Property for Free",
+    description: "Complete guide for Arizona property owners: how to legally remove unauthorized vehicles from your private property at no cost using a professional towing company like Axle Towing.",
+    image: "https://axletowing.com/images/axle-towing-logo.png",
+    datePublished: "2026-04-01",
+    dateModified: "2026-05-07",
+    author: { "@type": "Organization", name: "Axle Towing & Impound", url: "https://axletowing.com" },
+    publisher: { "@type": "Organization", name: "Axle Towing & Impound", logo: { "@type": "ImageObject", url: "https://axletowing.com/images/axle-towing-logo.png" } },
+    mainEntityOfPage: "https://axletowing.com/blog/how-to-get-illegally-parked-vehicles-removed",
+  };
   return (
     <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }} />
       {/* Parallax Hero */}
       <section className="parallax-container min-h-[45vh] flex items-end relative">
         <div className="absolute inset-0 bg-gradient-to-br from-blue-950 via-blue-900 to-blue-800 z-0" />
