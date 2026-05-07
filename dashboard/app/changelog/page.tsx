@@ -16,6 +16,24 @@ interface ChangelogGroup {
 
 const changelog: ChangelogGroup[] = [
   {
+    date: "May 6, 2026 PM (Phoenix Towing 2026 pillar page + NAP verification — AI-8999, AI-9480)",
+    type: "completed",
+    entries: [
+      {
+        text: "Shipped /phoenix-towing — a 3,100+ word pillar guide targeting the head term 'phoenix towing' (search vol 720, currently homepage rank pos 23). The dedicated pillar frees the homepage to convert and gives Google a single canonical answer page to rank. Structured with quick-answer callout, what-it-is/isn't, free-towing cost table, 12-city directory, 15-point selection checklist, compliance/signage section linking 21 abandoned-vehicle articles, and a 12-question FAQ — all with FAQPage + Article + LocalBusiness + BreadcrumbList schema.",
+        category: "seo",
+      },
+      {
+        text: "Added internal-link entry points: homepage Coverage Area section + the existing /private-property-towing pillar both now link the new 2026 guide. Sitemap registered at priority 0.95.",
+        category: "seo",
+      },
+      {
+        text: "Verified Schema.org LocalBusiness markup on axletowing.com matches canonical NAP for both Phoenix and Apache Junction locations. AMA partner directory citation also matches. Report committed at docs/NAP-VERIFICATION-2026-05-06.md. (GBP-side verification still gated on Manager API access.)",
+        category: "seo",
+      },
+    ],
+  },
+  {
     date: "May 6, 2026 PM (GBP Prep Wave: API tooling + content pre-staged + portal action items — AI-9457)",
     type: "completed",
     entries: [

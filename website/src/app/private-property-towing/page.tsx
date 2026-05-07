@@ -112,6 +112,15 @@ export default function PrivatePropertyTowingHubPage() {
               );
             })}
           </div>
+          <div className="mt-12 text-center">
+            <p className="text-gray-700">
+              Looking for the metro-wide overview?{" "}
+              <Link href="/phoenix-towing" className="text-blue-700 underline hover:text-blue-900 font-semibold">
+                Read the 2026 Phoenix Towing Guide for Property Owners
+              </Link>{" "}
+              — pricing breakdown, 15-point selection checklist, and the complete city directory.
+            </p>
+          </div>
         </div>
       </section>
     </>

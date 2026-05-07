@@ -683,7 +683,10 @@ export default function HomePage() {
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold font-heading mt-3 mb-4" style={{ color: '#1a202c' }}>Serving the Greater Phoenix Area</h2>
             <div className="mx-auto w-24 h-1 bg-gradient-to-r from-blue-500 to-blue-300 rounded-full mb-6" />
             <p className="text-gray-700 text-lg max-w-2xl mx-auto">
-              We provide towing and parking enforcement services throughout the Phoenix metro, including these communities.
+              We provide towing and parking enforcement services throughout the Phoenix metro, including these communities.{" "}
+              <Link href="/phoenix-towing" className="text-blue-700 underline hover:text-blue-900 font-semibold">
+                Read the 2026 Phoenix Towing Guide
+              </Link>{" "}for the full service overview.
             </p>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
