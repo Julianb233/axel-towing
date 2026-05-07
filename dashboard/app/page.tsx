@@ -58,6 +58,15 @@ const quickLinks = [
     bg: "bg-red-50",
     border: "border-red-100",
   },
+  {
+    title: "SEO Performance",
+    description: "Daily SEMrush snapshot — Authority Score, keywords, traffic, backlinks, AI visibility, and competitor benchmarks.",
+    href: "/seo",
+    icon: "M3 3v18h18M7 14l3-3 4 4 5-5",
+    color: "text-emerald-600",
+    bg: "bg-emerald-50",
+    border: "border-emerald-100",
+  },
 ];
 
 const recentUpdates = [
