@@ -5,7 +5,7 @@ import Breadcrumbs from "@/components/Breadcrumbs";
 import { COMPANY } from "@/lib/constants";
 
 const CANONICAL = `https://${COMPANY.domain}/licensing`;
-const PAGE_TITLE = "Axle Towing Licensing & Insurance — Verified Arizona Tow Operator | Axle Towing & Impound";
+const PAGE_TITLE = "Licensing & Insurance — Verified Arizona Tow Operator";
 const PAGE_DESCRIPTION =
   "Axle Towing & Impound — current Arizona Department of Public Safety tow operator license, commercial insurance certificates, TRAA-certified operators, and full credentials available on request. Verified Phoenix-metro tow operator since 2021.";
 
@@ -123,10 +123,15 @@ export default function Page() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(orgJsonLd) }} />
 
-      <section
-        className="parallax-fixed relative min-h-[40vh] flex items-center"
-        style={{ backgroundImage: `url(/images/hero-parking-lot.jpg)` }}
-      >
+      <section className="relative min-h-[40vh] flex items-center overflow-hidden">
+        <Image
+          src="/images/hero-parking-lot.jpg"
+          alt=""
+          fill
+          priority
+          sizes="100vw"
+          className="object-cover"
+        />
         <div className="absolute inset-0 bg-gradient-to-br from-blue-950/95 via-blue-900/85 to-primary/60" />
         <div className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-20 w-full">
           <Breadcrumbs items={[{ label: "Home", href: "/" }, { label: "Licensing" }]} />

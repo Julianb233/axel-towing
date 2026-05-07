@@ -5,7 +5,7 @@ import Breadcrumbs from "@/components/Breadcrumbs";
 import { COMPANY, SERVICE_AREAS } from "@/lib/constants";
 
 const CANONICAL = `https://${COMPANY.domain}/arizona-towing`;
-const PAGE_TITLE = "Arizona Towing — Statewide Private Property Services for Property Owners (2026 Hub) | Axle Towing";
+const PAGE_TITLE = "Arizona Towing — Statewide Services for Property Owners (2026)";
 const PAGE_DESCRIPTION =
   "Statewide hub for Arizona private property towing. Free service for HOAs, apartments, and commercial properties across the Phoenix metro and Pinal County. 24/7 dispatch from yards in Phoenix and Apache Junction. Directory of every city we cover.";
 
@@ -231,10 +231,15 @@ export default function Page() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessJsonLd) }} />
 
       {/* HERO */}
-      <section
-        className="parallax-fixed relative min-h-[55vh] flex items-center"
-        style={{ backgroundImage: `url(/images/hero-parking-lot.jpg)` }}
-      >
+      <section className="relative min-h-[55vh] flex items-center overflow-hidden">
+        <Image
+          src="/images/hero-parking-lot.jpg"
+          alt=""
+          fill
+          priority
+          sizes="100vw"
+          className="object-cover"
+        />
         <div className="absolute inset-0 bg-gradient-to-br from-blue-950/95 via-blue-900/85 to-primary/60" />
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 md:py-28 w-full">
           <Breadcrumbs items={[{ label: "Home", href: "/" }, { label: "Arizona Towing" }]} />
