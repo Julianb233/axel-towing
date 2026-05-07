@@ -39,3 +39,10 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# Agent / runtime artifacts (don't commit)
+.claude/
+.logs/
+.planning/
+reports/internal-link-enrichment/
+scripts/semrush-cron.log

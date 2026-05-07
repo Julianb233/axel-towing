@@ -23,9 +23,13 @@ const RELATED = [
 ];
 
 export default function Page() {
+    const articleSchema = { "@context": "https://schema.org", "@type": "Article", headline: "How Long Before a Vehicle Is Considered Abandoned in AZ?", description: "Arizona's legal definition of abandoned vehicles, timelines under ARS 28-4141, and what property owners can do immediately under ARS 28-3511.", datePublished: "2026-04-08", dateModified: "2026-05-07", author: { "@type": "Organization", name: "Axle Towing & Impound", url: "https://axletowing.com" }, publisher: { "@type": "Organization", name: "Axle Towing & Impound", logo: { "@type": "ImageObject", url: "https://axletowing.com/og-image.png" } }, mainEntityOfPage: { "@type": "WebPage", "@id": "https://axletowing.com/blog/how-long-vehicle-considered-abandoned-arizona" } };
+  const breadcrumbSchema = { "@context": "https://schema.org", "@type": "BreadcrumbList", itemListElement: [{ "@type": "ListItem", position: 1, name: "Home", item: "https://axletowing.com" }, { "@type": "ListItem", position: 2, name: "Blog", item: "https://axletowing.com/blog" }, { "@type": "ListItem", position: 3, name: "How Long Before a Vehicle Is Considered Abandoned in AZ?", item: "https://axletowing.com/blog/how-long-vehicle-considered-abandoned-arizona" }] };
   const faqSchema = { "@context": "https://schema.org", "@type": "FAQPage", mainEntity: FAQS.map((f) => ({ "@type": "Question", name: f.question, acceptedAnswer: { "@type": "Answer", text: f.answer } })) };
   return (
     <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
       <section className="parallax-container min-h-[45vh] flex items-end relative">
         <div className="absolute inset-0 bg-gradient-to-br from-blue-950 via-blue-900 to-blue-800 z-0" />

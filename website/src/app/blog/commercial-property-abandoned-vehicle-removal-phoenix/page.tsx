@@ -23,9 +23,13 @@ const RELATED = [
 ];
 
 export default function Page() {
+    const articleSchema = { "@context": "https://schema.org", "@type": "Article", headline: "Commercial Property Abandoned Vehicle Removal Phoenix", description: "How commercial property managers in Phoenix handle abandoned vehicle removal under Arizona law. Free towing, signage requirements, legal process.", datePublished: "2026-04-08", dateModified: "2026-05-07", author: { "@type": "Organization", name: "Axle Towing & Impound", url: "https://axletowing.com" }, publisher: { "@type": "Organization", name: "Axle Towing & Impound", logo: { "@type": "ImageObject", url: "https://axletowing.com/og-image.png" } }, mainEntityOfPage: { "@type": "WebPage", "@id": "https://axletowing.com/blog/commercial-property-abandoned-vehicle-removal-phoenix" } };
+  const breadcrumbSchema = { "@context": "https://schema.org", "@type": "BreadcrumbList", itemListElement: [{ "@type": "ListItem", position: 1, name: "Home", item: "https://axletowing.com" }, { "@type": "ListItem", position: 2, name: "Blog", item: "https://axletowing.com/blog" }, { "@type": "ListItem", position: 3, name: "Commercial Property Abandoned Vehicle Removal Phoenix", item: "https://axletowing.com/blog/commercial-property-abandoned-vehicle-removal-phoenix" }] };
   const faqSchema = { "@context": "https://schema.org", "@type": "FAQPage", mainEntity: FAQS.map((f) => ({ "@type": "Question", name: f.question, acceptedAnswer: { "@type": "Answer", text: f.answer } })) };
   return (
     <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
       <section className="parallax-container min-h-[45vh] flex items-end relative">
         <div className="absolute inset-0 bg-gradient-to-br from-blue-950 via-blue-900 to-blue-800 z-0" />
