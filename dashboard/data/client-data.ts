@@ -28,7 +28,7 @@ export const hubLinks = [
   { label: "Campaigns", url: "/campaigns", icon: "mail", description: "Marketing campaigns" },
   { label: "Changelog", url: "/changelog", icon: "list", description: "Detailed update history" },
   { label: "What We Need", url: "/needs", icon: "clipboard", description: "Action items from you" },
-  { label: "Book a Call", url: "https://calendly.com/julian-aiacrobatics", icon: "phone", description: "Schedule with Julian" },
+  { label: "Book a Call", url: "https://msgsndr.com/widget/booking/76ergSktTpvayx9tldnl", icon: "phone", description: "Schedule with Julian" },
 ];
 
 export const snapshot = {
