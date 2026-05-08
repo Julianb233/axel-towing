@@ -412,7 +412,7 @@ export default function ChatWidget() {
           {/* Quick actions */}
           <div className="flex gap-2 px-4 py-2 border-b border-gray-100 overflow-x-auto scrollbar-none">
             <a
-              href="https://calendly.com/julian-aiacrobatics"
+              href="https://msgsndr.com/widget/booking/76ergSktTpvayx9tldnl"
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-emerald-50 text-emerald-700 border border-emerald-200 text-xs font-medium whitespace-nowrap hover:bg-emerald-100 transition-colors"
