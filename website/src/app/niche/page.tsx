@@ -24,7 +24,7 @@ export default function NicheIndexPage() {
       <section className="relative min-h-[45vh] flex items-center overflow-hidden">
         <div
           className="parallax-bg"
-          style={{ backgroundImage: "url(/images/arizona-skyline-panoramic.jpg)" }}
+          style={{ backgroundImage: "url(/images/optimized/axle-towing-arizona-skyline-panoramic-phoenix-az.webp)" }}
         />
         <div
           className="absolute inset-0 z-[1]"
@@ -150,7 +150,7 @@ export default function NicheIndexPage() {
       <section className="relative py-20 overflow-hidden">
         <div
           className="parallax-bg"
-          style={{ backgroundImage: "url(/images/arizona-skyline-panoramic.jpg)" }}
+          style={{ backgroundImage: "url(/images/optimized/axle-towing-arizona-skyline-panoramic-phoenix-az.webp)" }}
         />
         <div
           className="absolute inset-0 z-[1]"

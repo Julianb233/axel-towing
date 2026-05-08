@@ -35,7 +35,7 @@ export default function SpanishLocationsHubPage() {
         <div
           className="parallax-bg"
           style={{
-            backgroundImage: "url(/images/arizona-skyline-panoramic.jpg)",
+            backgroundImage: "url(/images/optimized/axle-towing-arizona-skyline-panoramic-phoenix-az.webp)",
           }}
         />
         <div
@@ -196,7 +196,7 @@ export default function SpanishLocationsHubPage() {
         <div
           className="parallax-bg"
           style={{
-            backgroundImage: "url(/images/arizona-skyline-panoramic.jpg)",
+            backgroundImage: "url(/images/optimized/axle-towing-arizona-skyline-panoramic-phoenix-az.webp)",
           }}
         />
         <div

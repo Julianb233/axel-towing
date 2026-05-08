@@ -189,7 +189,7 @@ export default function PortalPage() {
         <div
           ref={parallaxRef}
           className="parallax-bg"
-          style={{ backgroundImage: `url(/images/hero-parking-lot.jpg)` }}
+          style={{ backgroundImage: `url(/images/optimized/axle-towing-hero-parking-lot-phoenix-az.webp)` }}
         />
         <div className="absolute inset-0 gradient-overlay-blue z-[1]" />
         <div className="absolute inset-0 grain-overlay z-[2]" />

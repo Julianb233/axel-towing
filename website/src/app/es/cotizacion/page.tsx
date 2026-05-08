@@ -56,7 +56,7 @@ export default function CotizacionPage() {
         <div
           ref={parallaxRef}
           className="parallax-bg"
-          style={{ backgroundImage: `url(/images/contact-phoenix.jpg)` }}
+          style={{ backgroundImage: `url(/images/optimized/axle-towing-contact-phoenix-arizona.webp)` }}
         />
         <div className="absolute inset-0 gradient-overlay-blue z-[1]" />
         <div className="absolute inset-0 grain-overlay z-[2]" />

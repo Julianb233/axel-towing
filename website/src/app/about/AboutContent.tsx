@@ -124,7 +124,7 @@ export default function AboutContent() {
         <div
           ref={parallaxRef}
           className="parallax-bg"
-          style={{ backgroundImage: `url(/images/about-team.jpg)` }}
+          style={{ backgroundImage: `url(/images/optimized/axle-towing-about-team-phoenix-az.webp)` }}
         />
         <div className="absolute inset-0 gradient-overlay-blue z-[1]" />
         <div className="absolute inset-0 grain-overlay z-[2]" />

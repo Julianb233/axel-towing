@@ -67,7 +67,7 @@ export default function VehicleLookupContent() {
         <div
           ref={parallaxRef}
           className="parallax-bg"
-          style={{ backgroundImage: `url(/images/hero-tow-truck.jpg)` }}
+          style={{ backgroundImage: `url(/images/optimized/axle-towing-hero-tow-truck-phoenix-az.webp)` }}
         />
         <div className="absolute inset-0 gradient-overlay-blue z-[1]" />
         <div className="absolute inset-0 grain-overlay z-[2]" />

@@ -250,7 +250,7 @@ export default function ServiceAreaPage() {
         <div
           className="parallax-bg"
           style={{
-            backgroundImage: `url(/images/contact-phoenix.jpg)`,
+            backgroundImage: `url(/images/optimized/axle-towing-contact-phoenix-arizona.webp)`,
           }}
         />
         <div className="absolute inset-0 gradient-overlay-blue z-[1]" />
