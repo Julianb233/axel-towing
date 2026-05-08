@@ -1,0 +1,208 @@
+{
+  "name": "PM Nurture — 21 Day",
+  "description": "21-day property manager nurture sequence. 7 emails + 2 SMS (SMS disabled until A2P 10DLC). Trigger: Tag 'nurture-active' added.",
+  "status": "DRAFT",
+  "linearTask": "AI-7461",
+  "dependsOn": ["AI-7455 (GHL sub-account)", "AI-7457 (A2P 10DLC for SMS)"],
+  "trigger": {
+    "type": "tag_added",
+    "tag": "nurture-active"
+  },
+  "stopConditions": [
+    {
+      "type": "TAG_ADDED",
+      "tag": "nurture-replied",
+      "description": "Stop if contact replies to any email"
+    },
+    {
+      "type": "TAG_ADDED",
+      "tag": "do-not-contact",
+      "description": "Stop if contact is flagged do-not-contact"
+    }
+  ],
+  "sendingWindow": {
+    "days": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+    "startTime": "08:00",
+    "endTime": "17:00",
+    "timezone": "America/Phoenix"
+  },
+  "smsWindow": {
+    "days": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+    "startTime": "09:00",
+    "endTime": "16:00",
+    "timezone": "America/Phoenix",
+    "note": "TCPA safe harbor compliance"
+  },
+  "steps": [
+    {
+      "order": 1,
+      "action": "add_tag",
+      "tag": "nurture-sequence-active",
+      "notes": "Mark contact as in active nurture sequence to prevent double-enrollment"
+    },
+    {
+      "order": 2,
+      "action": "send_email",
+      "delay": "1 day",
+      "dayNumber": 1,
+      "template": "PM Nurture - Email 1 - Intro + Zero-Cost Value Prop",
+      "subject": "Free parking enforcement for {{contact.company_name}}?",
+      "subjectB": "Unauthorized parking at {{contact.company_name}} — we can help",
+      "from": "elliott@axletowing.com",
+      "fromName": "Elliott — Axle Towing",
+      "templateFile": "pm-nurture-email-1-intro.txt"
+    },
+    {
+      "order": 3,
+      "action": "wait",
+      "delay": "2 days",
+      "notes": "Day 3 from enrollment"
+    },
+    {
+      "order": 4,
+      "action": "send_email",
+      "dayNumber": 3,
+      "template": "PM Nurture - Email 2 - Case Study (HOA Success)",
+      "subject": "How a Scottsdale HOA eliminated parking complaints in 30 days",
+      "subjectB": "47 unauthorized vehicles removed — zero resident complaints",
+      "from": "elliott@axletowing.com",
+      "fromName": "Elliott — Axle Towing",
+      "templateFile": "pm-nurture-email-2-case-study.txt"
+    },
+    {
+      "order": 5,
+      "action": "wait",
+      "delay": "2 days",
+      "notes": "Day 5 from enrollment"
+    },
+    {
+      "order": 6,
+      "action": "send_sms",
+      "dayNumber": 5,
+      "enabled": false,
+      "disabledReason": "A2P 10DLC registration (AI-7457) not yet confirmed. Build step but set INACTIVE.",
+      "message": "Hi {{contact.first_name}}, just sent you some info about free parking enforcement. Worth a quick look?",
+      "charCount": 89,
+      "notes": "SMS Step 1 — DISABLED until A2P 10DLC confirmed"
+    },
+    {
+      "order": 7,
+      "action": "wait",
+      "delay": "2 days",
+      "notes": "Day 7 from enrollment"
+    },
+    {
+      "order": 8,
+      "action": "send_email",
+      "dayNumber": 7,
+      "template": "PM Nurture - Email 3 - Benefits Breakdown + ROI",
+      "subject": "The real cost of not enforcing parking at {{contact.company_name}}",
+      "subjectB": "Property managers save 20-40 hrs/month with proper enforcement",
+      "from": "elliott@axletowing.com",
+      "fromName": "Elliott — Axle Towing",
+      "templateFile": "pm-nurture-email-3-benefits-roi.txt"
+    },
+    {
+      "order": 9,
+      "action": "wait",
+      "delay": "3 days",
+      "notes": "Day 10 from enrollment"
+    },
+    {
+      "order": 10,
+      "action": "send_email",
+      "dayNumber": 10,
+      "template": "PM Nurture - Email 4 - Social Proof",
+      "subject": "4.9 stars across 1,000+ properties — here's why",
+      "subjectB": "What property managers say after switching to Axle Towing",
+      "from": "elliott@axletowing.com",
+      "fromName": "Elliott — Axle Towing",
+      "templateFile": "pm-nurture-email-4-social-proof.txt"
+    },
+    {
+      "order": 11,
+      "action": "wait",
+      "delay": "2 days",
+      "notes": "Day 12 from enrollment"
+    },
+    {
+      "order": 12,
+      "action": "send_sms",
+      "dayNumber": 12,
+      "enabled": false,
+      "disabledReason": "A2P 10DLC registration (AI-7457) not yet confirmed. Build step but set INACTIVE.",
+      "message": "Any questions about the parking enforcement program? Happy to chat: 480-288-5526",
+      "charCount": 82,
+      "notes": "SMS Step 2 — DISABLED until A2P 10DLC confirmed"
+    },
+    {
+      "order": 13,
+      "action": "wait",
+      "delay": "2 days",
+      "notes": "Day 14 from enrollment"
+    },
+    {
+      "order": 14,
+      "action": "send_email",
+      "dayNumber": 14,
+      "template": "PM Nurture - Email 5 - Objection Handler",
+      "subject": "The 3 most common concerns about switching towing companies",
+      "subjectB": "\"What if residents complain?\" — and other common questions",
+      "from": "elliott@axletowing.com",
+      "fromName": "Elliott — Axle Towing",
+      "templateFile": "pm-nurture-email-5-objections.txt"
+    },
+    {
+      "order": 15,
+      "action": "wait",
+      "delay": "3 days",
+      "notes": "Day 17 from enrollment"
+    },
+    {
+      "order": 16,
+      "action": "send_email",
+      "dayNumber": 17,
+      "template": "PM Nurture - Email 6 - Urgency (Limited Capacity)",
+      "subject": "Limited enforcement capacity in {{contact.city}} — heads up",
+      "subjectB": "We have room for 3 more property accounts this month",
+      "from": "elliott@axletowing.com",
+      "fromName": "Elliott — Axle Towing",
+      "templateFile": "pm-nurture-email-6-urgency.txt"
+    },
+    {
+      "order": 17,
+      "action": "wait",
+      "delay": "4 days",
+      "notes": "Day 21 from enrollment"
+    },
+    {
+      "order": 18,
+      "action": "send_email",
+      "dayNumber": 21,
+      "template": "PM Nurture - Email 7 - Final Follow-Up + Free Assessment CTA",
+      "subject": "Last note from me — free parking enforcement assessment",
+      "subjectB": "Before I move on — one offer for {{contact.company_name}}",
+      "from": "elliott@axletowing.com",
+      "fromName": "Elliott — Axle Towing",
+      "templateFile": "pm-nurture-email-7-final.txt"
+    },
+    {
+      "order": 19,
+      "action": "remove_tag",
+      "tag": "nurture-sequence-active"
+    },
+    {
+      "order": 20,
+      "action": "add_tag",
+      "tag": "nurture-completed"
+    }
+  ],
+  "verification": {
+    "totalSteps": 9,
+    "emailSteps": 7,
+    "smsSteps": 2,
+    "smsEnabled": false,
+    "workflowStatus": "DRAFT",
+    "daySequence": [1, 3, 5, 7, 10, 12, 14, 17, 21]
+  }
+}

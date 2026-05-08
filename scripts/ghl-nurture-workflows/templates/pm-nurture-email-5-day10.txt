@@ -1,0 +1,37 @@
+Workflow: PM Nurture -- 21 Day
+Type: Email
+Step: 5 of 9
+Day: 10
+Subject A: 4.9 stars across 1,000+ properties — here's why
+Subject B: What property managers say after switching to Axle Towing
+From: elliott@axletowing.com
+From Name: Elliott -- Axle Towing
+Tag Trigger: nurture-active
+
+--- EMAIL BODY ---
+
+Hi {{contact.first_name}},
+
+When I ask property managers what changed after they switched to us, the most common answer is: "I stopped getting calls."
+
+Not that parking violations disappeared — those still happen. But when they do:
+
+- Residents call us, not you
+- We handle it within 60 minutes
+- You get a notification, not a crisis
+
+We currently serve 1,000+ properties across the Phoenix metro with a 4.9-star rating. Here's what we consistently hear from clients:
+
+"We went from 5-6 parking complaints per board meeting to zero." — HOA Board Chair, Gilbert
+
+"Elliott picks up the phone every time. Our last company didn't even return voicemails." — Property Manager, Chandler
+
+"The documentation is the best part. When a resident disputes a tow, I just send them the packet and it's done." — Community Manager, Mesa
+
+We've worked with managers handling everything from 50-unit condos to 400-unit master-planned communities. The setup takes less than a week.
+
+If parking enforcement is still eating meeting time or generating resident drama, I'd like to show you a different way.
+
+Elliott
+Axle Towing & Impound
+(480) 288-5526

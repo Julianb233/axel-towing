@@ -1,0 +1,42 @@
+Workflow: PM Nurture -- 21 Day
+Type: Email
+Step: 9 of 9
+Day: 21
+Subject A: Last note from me — free parking enforcement assessment
+Subject B: Before I move on — one offer for {{contact.company_name}}
+From: elliott@axletowing.com
+From Name: Elliott -- Axle Towing
+Tag Trigger: nurture-active
+
+--- EMAIL BODY ---
+
+Hi {{contact.first_name}},
+
+I'm going to wrap up my outreach here, but I wanted to leave you with something concrete.
+
+I'd like to offer a free parking enforcement assessment for {{contact.company_name}} — no strings attached. Here's what it includes:
+
+- Signage audit: Are your current signs ARS-compliant? (You'd be surprised how many aren't)
+- Enforcement gap analysis: Where are unauthorized vehicles parking and when?
+- Liability review: Are you exposed if a tow goes wrong with your current provider?
+- Written recommendation with specific next steps
+
+The assessment takes about 15 minutes and you'll get a written report regardless of whether we work together.
+
+What an Axle Towing property account includes:
+
+- Written service agreement with response time guarantees
+- Free ARS-compliant signage consultation
+- 24/7 dispatch (real people, real phone)
+- Full documentation on every tow
+- Monthly tow activity report for your records
+- Dedicated contact — Elliott's direct cell
+
+If parking enforcement is ever a board agenda item or a recurring headache, save this email.
+
+(480) 288-5526 | axletowing.com
+
+I'll leave the door open.
+
+Elliott
+Axle Towing & Impound

@@ -1,0 +1,292 @@
+{
+  "_meta": {
+    "version": "1.0.0",
+    "generated": "2026-04-13T03:52:32.540Z",
+    "task": "AI-7461",
+    "description": "Axle Towing - PM Nurture 21-Day Campaign for GoHighLevel",
+    "instructions": [
+      "1. Go to GHL > Automation > Workflows > Create New Workflow",
+      "2. Name: \"PM Nurture -- 21 Day\"",
+      "3. Trigger: Tag Added = \"nurture-active\"",
+      "4. Add each step in order (see steps array)",
+      "5. Copy email body text from the \"body\" field in each email step",
+      "6. Set both SMS steps to INACTIVE/DISABLED",
+      "7. Set workflow status to DRAFT",
+      "8. Set sending window to Mon-Fri 8AM-5PM America/Phoenix",
+      "9. Test with a test contact before activating",
+      "10. Do NOT activate until Elliott reviews and approves"
+    ],
+    "smsWarning": "SMS steps MUST remain disabled until A2P 10DLC registration (AI-7457) is confirmed.",
+    "dependsOn": [
+      "AI-7455 (GHL sub-account setup)",
+      "AI-7457 (A2P 10DLC registration for SMS)"
+    ]
+  },
+  "workflow": {
+    "name": "PM Nurture -- 21 Day",
+    "status": "DRAFT",
+    "description": "21-day property manager nurture sequence. 7 emails + 2 SMS. SMS disabled until A2P 10DLC confirmed.",
+    "linearTask": "AI-7461",
+    "trigger": {
+      "type": "TAG_ADDED",
+      "tag": "nurture-active"
+    },
+    "sendingWindow": {
+      "days": [
+        "Monday",
+        "Tuesday",
+        "Wednesday",
+        "Thursday",
+        "Friday"
+      ],
+      "startTime": "08:00",
+      "endTime": "17:00",
+      "timezone": "America/Phoenix"
+    },
+    "steps": [
+      {
+        "type": "ADD_TAG",
+        "tag": "nurture-sequence-active",
+        "description": "Mark contact as in active nurture sequence"
+      },
+      {
+        "type": "WAIT",
+        "duration": 1,
+        "unit": "days",
+        "description": "Wait 1 day (Day 1)"
+      },
+      {
+        "type": "SEND_EMAIL",
+        "step": 1,
+        "dayNumber": 1,
+        "subject": "Free parking enforcement for {{contact.company_name}}?",
+        "subjectB": "Unauthorized parking at {{contact.company_name}} — we can help",
+        "body": "Hi {{contact.first_name}},\n\nI'm Elliott with Axle Towing & Impound. I work with property managers and HOA boards across the Phoenix metro to handle unauthorized parking and vehicle removal — fast, compliant, and at zero cost to the property.\n\nHere's what we offer property accounts:\n\n- Free towing enforcement — no cost to your property or HOA budget\n- Response typically within 60 minutes, 24/7/365\n- Fully compliant with ARS Chapter 28 — we handle the paperwork and documentation\n- One point of contact — my direct cell, not a call center\n\nWe service 38+ cities across the Valley and have 30+ years of combined team experience.\n\nWould you be open to a 15-minute call this week to see if it's a fit for {{contact.company_name}}?\n\nElliott\nAxle Towing & Impound\n(480) 288-5526\naxletowing.com",
+        "from": "elliott@axletowing.com",
+        "fromName": "Elliott -- Axle Towing",
+        "description": "Email 1: Day 1 - Free parking enforcement for {{contact.company_nam..."
+      },
+      {
+        "type": "WAIT",
+        "duration": 2,
+        "unit": "days",
+        "description": "Wait 2 days (Day 3)"
+      },
+      {
+        "type": "SEND_EMAIL",
+        "step": 2,
+        "dayNumber": 3,
+        "subject": "How a Scottsdale HOA eliminated parking complaints in 30 days",
+        "subjectB": "47 unauthorized vehicles removed — zero resident complaints",
+        "body": "Hi {{contact.first_name}},\n\nI wanted to share a quick story.\n\nA 200-unit HOA in Scottsdale was dealing with chronic unauthorized parking — residents calling the board at all hours, tensions running high, and the previous towing company ghosted them after the first month.\n\nWe took over the account. Within 30 days:\n\n- 47 unauthorized vehicles removed (no cost to the HOA)\n- Zero resident complaints about the process — every tow was documented and posted\n- Board chair stopped getting late-night calls\n\nThe key difference: we show up. Every time. And we call you back.\n\nThat's not marketing copy — it's just what we do.\n\nI'd love to bring that same consistency to {{contact.company_name}}. Are you available for a quick call this week?\n\nElliott\nAxle Towing & Impound\n(480) 288-5526",
+        "from": "elliott@axletowing.com",
+        "fromName": "Elliott -- Axle Towing",
+        "description": "Email 2: Day 3 - How a Scottsdale HOA eliminated parking complaints..."
+      },
+      {
+        "type": "WAIT",
+        "duration": 2,
+        "unit": "days",
+        "description": "Wait 2 days (Day 5)"
+      },
+      {
+        "type": "SEND_SMS",
+        "step": 3,
+        "dayNumber": 5,
+        "message": "Hi {{contact.first_name}}, just sent you some info about free parking enforcement. Worth a quick look?",
+        "charCount": 89,
+        "enabled": false,
+        "disabledReason": "A2P 10DLC registration (AI-7457) not yet confirmed",
+        "description": "SMS 3: Day 5 (DISABLED - awaiting A2P 10DLC)"
+      },
+      {
+        "type": "WAIT",
+        "duration": 2,
+        "unit": "days",
+        "description": "Wait 2 days (Day 7)"
+      },
+      {
+        "type": "SEND_EMAIL",
+        "step": 4,
+        "dayNumber": 7,
+        "subject": "The real cost of not enforcing parking at {{contact.company_name}}",
+        "subjectB": "Property managers save 20-40 hrs/month with proper enforcement",
+        "body": "Hi {{contact.first_name}},\n\nQuick question: how much time per month does your team spend on parking-related issues? Complaints, disputes, documentation requests, coordinating with your current provider?\n\nMost property managers we talk to say it's 2-4 hours per month, per property. For a 10-property portfolio, that's 20-40 hours of staff time.\n\nHere's what the numbers look like with a proper enforcement setup:\n\nTime saved: 1.5-3.5 hrs/month per property on parking complaints\nLiability reduced: Full ARS-compliant documentation on every tow\nResident satisfaction: Parking rules are actually enforced, consistently\nCost to you: $0 — our service is funded by the tow, not your budget\n\nWith a properly structured enforcement setup, that number drops to under 30 minutes per property per month — mostly just reviewing monthly reports.\n\nThat's the difference a good enforcement partner makes.\n\nWould it be worth 15 minutes to find out if we could get you there?\n\nElliott\nAxle Towing & Impound\n(480) 288-5526 | axletowing.com",
+        "from": "elliott@axletowing.com",
+        "fromName": "Elliott -- Axle Towing",
+        "description": "Email 4: Day 7 - The real cost of not enforcing parking at {{contac..."
+      },
+      {
+        "type": "WAIT",
+        "duration": 3,
+        "unit": "days",
+        "description": "Wait 3 days (Day 10)"
+      },
+      {
+        "type": "SEND_EMAIL",
+        "step": 5,
+        "dayNumber": 10,
+        "subject": "4.9 stars across 1,000+ properties — here's why",
+        "subjectB": "What property managers say after switching to Axle Towing",
+        "body": "Hi {{contact.first_name}},\n\nWhen I ask property managers what changed after they switched to us, the most common answer is: \"I stopped getting calls.\"\n\nNot that parking violations disappeared — those still happen. But when they do:\n\n- Residents call us, not you\n- We handle it within 60 minutes\n- You get a notification, not a crisis\n\nWe currently serve 1,000+ properties across the Phoenix metro with a 4.9-star rating. Here's what we consistently hear from clients:\n\n\"We went from 5-6 parking complaints per board meeting to zero.\" — HOA Board Chair, Gilbert\n\n\"Elliott picks up the phone every time. Our last company didn't even return voicemails.\" — Property Manager, Chandler\n\n\"The documentation is the best part. When a resident disputes a tow, I just send them the packet and it's done.\" — Community Manager, Mesa\n\nWe've worked with managers handling everything from 50-unit condos to 400-unit master-planned communities. The setup takes less than a week.\n\nIf parking enforcement is still eating meeting time or generating resident drama, I'd like to show you a different way.\n\nElliott\nAxle Towing & Impound\n(480) 288-5526",
+        "from": "elliott@axletowing.com",
+        "fromName": "Elliott -- Axle Towing",
+        "description": "Email 5: Day 10 - 4.9 stars across 1,000+ properties — here's why..."
+      },
+      {
+        "type": "WAIT",
+        "duration": 2,
+        "unit": "days",
+        "description": "Wait 2 days (Day 12)"
+      },
+      {
+        "type": "SEND_SMS",
+        "step": 6,
+        "dayNumber": 12,
+        "message": "Any questions about the parking enforcement program? Happy to chat: 480-288-5526",
+        "charCount": 82,
+        "enabled": false,
+        "disabledReason": "A2P 10DLC registration (AI-7457) not yet confirmed",
+        "description": "SMS 6: Day 12 (DISABLED - awaiting A2P 10DLC)"
+      },
+      {
+        "type": "WAIT",
+        "duration": 2,
+        "unit": "days",
+        "description": "Wait 2 days (Day 14)"
+      },
+      {
+        "type": "SEND_EMAIL",
+        "step": 7,
+        "dayNumber": 14,
+        "subject": "The 3 most common concerns about switching towing companies",
+        "subjectB": "\"What if residents complain?\" — and other common questions",
+        "body": "Hi {{contact.first_name}},\n\nI've talked to a lot of property managers who want better parking enforcement but hesitate to make a change. Here are the three concerns I hear most — and how we address them:\n\n1. \"What if residents complain about the towing?\"\n\nEvery tow comes with a full documentation packet: photo of the vehicle in violation, signage visible in frame, timestamp, and the ARS statute that applies. When a resident sees that packet, the conversation is over. They were parked in violation. It's documented.\n\n2. \"We already have a towing company — switching is a hassle.\"\n\nOur onboarding takes less than a week. We review your current signage, ensure ARS compliance, and start enforcement. Most managers tell us the transition was the easiest part.\n\n3. \"How do I know you'll actually show up?\"\n\nEvery Axle Towing account gets my direct cell number. Not a dispatcher, not a call center — Elliott's cell. If I don't pick up within 30 minutes, something is genuinely wrong. In three years, that hasn't happened.\n\nIf any of these concerns have been holding you back, I'm happy to address them directly on a quick call.\n\nElliott\nAxle Towing & Impound\n(480) 288-5526 | axletowing.com",
+        "from": "elliott@axletowing.com",
+        "fromName": "Elliott -- Axle Towing",
+        "description": "Email 7: Day 14 - The 3 most common concerns about switching towing ..."
+      },
+      {
+        "type": "WAIT",
+        "duration": 3,
+        "unit": "days",
+        "description": "Wait 3 days (Day 17)"
+      },
+      {
+        "type": "SEND_EMAIL",
+        "step": 8,
+        "dayNumber": 17,
+        "subject": "Limited enforcement capacity in {{contact.city}} — heads up",
+        "subjectB": "We have room for 3 more property accounts this month",
+        "body": "Hi {{contact.first_name}},\n\nQuick heads up — we're currently onboarding new property accounts in {{contact.city}} and we have room for 3 more this month.\n\nWe deliberately limit the number of properties per service area so our response times stay under 60 minutes. Once we're at capacity in an area, new accounts go on a waitlist.\n\nFor accounts that sign this month, we're including:\n\n- Free parking violation notice templates (Arizona-compliant)\n- Free signage consultation — we'll tell you exactly what signs you need per ARS requirements\n- Priority response guarantee in writing\n- Monthly tow activity report for your records\n\nIf the timing isn't right, no worries — save my number for when your current situation changes.\n\n(480) 288-5526 | elliott@axletowing.com\n\nElliott\nAxle Towing & Impound",
+        "from": "elliott@axletowing.com",
+        "fromName": "Elliott -- Axle Towing",
+        "description": "Email 8: Day 17 - Limited enforcement capacity in {{contact.city}} —..."
+      },
+      {
+        "type": "WAIT",
+        "duration": 4,
+        "unit": "days",
+        "description": "Wait 4 days (Day 21)"
+      },
+      {
+        "type": "SEND_EMAIL",
+        "step": 9,
+        "dayNumber": 21,
+        "subject": "Last note from me — free parking enforcement assessment",
+        "subjectB": "Before I move on — one offer for {{contact.company_name}}",
+        "body": "Hi {{contact.first_name}},\n\nI'm going to wrap up my outreach here, but I wanted to leave you with something concrete.\n\nI'd like to offer a free parking enforcement assessment for {{contact.company_name}} — no strings attached. Here's what it includes:\n\n- Signage audit: Are your current signs ARS-compliant? (You'd be surprised how many aren't)\n- Enforcement gap analysis: Where are unauthorized vehicles parking and when?\n- Liability review: Are you exposed if a tow goes wrong with your current provider?\n- Written recommendation with specific next steps\n\nThe assessment takes about 15 minutes and you'll get a written report regardless of whether we work together.\n\nWhat an Axle Towing property account includes:\n\n- Written service agreement with response time guarantees\n- Free ARS-compliant signage consultation\n- 24/7 dispatch (real people, real phone)\n- Full documentation on every tow\n- Monthly tow activity report for your records\n- Dedicated contact — Elliott's direct cell\n\nIf parking enforcement is ever a board agenda item or a recurring headache, save this email.\n\n(480) 288-5526 | axletowing.com\n\nI'll leave the door open.\n\nElliott\nAxle Towing & Impound",
+        "from": "elliott@axletowing.com",
+        "fromName": "Elliott -- Axle Towing",
+        "description": "Email 9: Day 21 - Last note from me — free parking enforcement asses..."
+      },
+      {
+        "type": "REMOVE_TAG",
+        "tag": "nurture-sequence-active",
+        "description": "Remove active nurture sequence tag"
+      },
+      {
+        "type": "ADD_TAG",
+        "tag": "nurture-completed",
+        "description": "Mark nurture sequence as completed"
+      }
+    ],
+    "stopConditions": [
+      {
+        "type": "TAG_ADDED",
+        "tag": "nurture-replied",
+        "description": "Stop if contact replies"
+      },
+      {
+        "type": "TAG_ADDED",
+        "tag": "do-not-contact",
+        "description": "Stop if contact is DNC"
+      }
+    ]
+  },
+  "tags": [
+    "nurture-active",
+    "nurture-sequence-active",
+    "nurture-replied",
+    "nurture-completed",
+    "nurture-pm",
+    "nurture-hoa"
+  ],
+  "customFields": [
+    {
+      "name": "Nurture Sequence",
+      "type": "SINGLE_OPTIONS",
+      "options": [
+        "PM 21-Day",
+        "HOA 25-Day",
+        "Cold Outreach",
+        "Re-Engagement"
+      ]
+    },
+    {
+      "name": "Nurture Step",
+      "type": "NUMERICAL"
+    },
+    {
+      "name": "Nurture Start Date",
+      "type": "DATE"
+    },
+    {
+      "name": "Nurture End Date",
+      "type": "DATE"
+    },
+    {
+      "name": "Property Type",
+      "type": "SINGLE_OPTIONS",
+      "options": [
+        "HOA",
+        "Apartment",
+        "Commercial",
+        "Other"
+      ]
+    },
+    {
+      "name": "Number of Properties",
+      "type": "NUMERICAL"
+    }
+  ],
+  "verification": {
+    "totalSteps": 9,
+    "emailSteps": 7,
+    "smsSteps": 2,
+    "smsEnabled": false,
+    "workflowStatus": "DRAFT",
+    "daySequence": [
+      1,
+      3,
+      5,
+      7,
+      10,
+      12,
+      14,
+      17,
+      21
+    ],
+    "totalDuration": "21 days"
+  }
+}
