@@ -1,0 +1,33 @@
+Sequence: hoa-board-member
+Step: 1
+Day: 0
+Type: EMAIL
+Subject: HOA board members in {{custom.city_area}} - are parking violations becoming a liability?
+
+--- CONTENT ---
+
+Hi {{contact.first_name}},
+
+Managing an HOA means dealing with the stuff nobody else wants to handle - and unauthorized parking is near the top of that list.
+
+Residents file complaints. Boards get blamed. And if the towing company doesn't document everything properly, you could be looking at a wrongful tow dispute.
+
+My name is Elliott. Axle Towing & Impound has worked with HOA boards across Chandler, Gilbert, Scottsdale, Mesa, and Tempe for years. Here's what we bring to every HOA account:
+
+Compliance protection:
+Every vehicle removal is documented with photos, timestamps, and ARS-compliant notification. You get a copy. You're covered.
+
+Resident communication:
+We post notices at the vehicle before towing whenever required by your CC&Rs. No surprises. No "I didn't know" calls to the board.
+
+No cost to the HOA:
+Our service is funded by the vehicle owner - not your budget.
+
+24/7 availability:
+Board members shouldn't be fielding parking complaints at midnight. When residents call, we're available.
+
+Would it make sense to have a 15-minute conversation about your current situation?
+
+Elliott
+Axle Towing & Impound
+480-288-5526

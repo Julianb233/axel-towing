@@ -1,0 +1,18 @@
+Sequence: referral-thank-you
+Step: 1
+Day: 0
+Type: EMAIL
+Subject: Thank you, {{contact.first_name}} - a small token of appreciation
+
+--- CONTENT ---
+
+Hi {{contact.first_name}},
+
+I wanted to reach out personally to say thank you for referring business our way. Clients like you are the reason this business works. No complicated service structure, no runaround - just mutual trust and people who show up.
+
+I'd like to send you something as a small thank-you. Would a gift card work? Just reply with your mailing address and I'll get it out this week.
+
+Thanks again.
+
+Elliott
+Axle Towing & Impound

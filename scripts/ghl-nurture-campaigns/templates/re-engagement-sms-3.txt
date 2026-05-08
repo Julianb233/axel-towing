@@ -1,0 +1,8 @@
+Sequence: re-engagement
+Step: 3
+Day: 14
+Type: SMS
+
+--- CONTENT ---
+
+Hi {{contact.first_name}}, Elliott from Axle Towing. I sent a couple of emails - didn't want to let this slip. If you ever want to reconnect about {{contact.company_name}}, I'm here. 480-288-5526.

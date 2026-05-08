@@ -1,0 +1,8 @@
+Sequence: retention-quarterly
+Step: 2
+Day: 0
+Type: SMS
+
+--- CONTENT ---
+
+Hi {{contact.first_name}}, just checking in on your account. Everything running smoothly? Any changes I should know about? - Elliott, 480-288-5526.

@@ -1,0 +1,30 @@
+{
+  "name": "Nurture: Quarterly Account Check-In",
+  "trigger": {
+    "type": "TAG_AND_DATE",
+    "tag": "active-account",
+    "dateCondition": "Every 90 days",
+    "description": "Active account quarterly touchpoint"
+  },
+  "steps": [
+    {
+      "type": "SEND_EMAIL",
+      "step": 1,
+      "subject": "Quarterly check-in - {{contact.company_name}} account update",
+      "body": "Hi {{contact.first_name}},\n\nJust wanted to touch base on your {{contact.company_name}} account as we wrap up the quarter.\n\nYour quarterly snapshot:\n\n- Tows processed: [auto-populated from GHL or TowBook]\n- Average response time: [X] minutes\n- Documentation packets sent: [X]\n- Disputes received: [X]\n\nEverything running smoothly on your end? Any changes to your property - new parking rules, construction zones, changes to authorized vehicles - that we should know about?\n\nI'm also here if you ever need backup documentation for a tenant dispute or a board meeting.\n\nThanks for the continued trust.\n\nElliott\n480-288-5526",
+      "from": "elliott@axletowing.com",
+      "fromName": "Elliott - Axle Towing",
+      "description": "Quarterly check-in email"
+    },
+    {
+      "type": "SEND_SMS",
+      "step": 2,
+      "body": "Hi {{contact.first_name}}, just checking in on your account. Everything running smoothly? Any changes I should know about? - Elliott, 480-288-5526.",
+      "description": "Quarterly check-in SMS"
+    }
+  ],
+  "recurring": true,
+  "interval": "90 days",
+  "duration": "Recurring",
+  "touchpoints": "1 email + 1 SMS = 2 touches per quarter"
+}

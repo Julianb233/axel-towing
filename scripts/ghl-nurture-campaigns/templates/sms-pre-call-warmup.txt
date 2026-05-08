@@ -1,0 +1,7 @@
+SMS Template: pre-call-warmup
+Use Case: Pre-call warm-up
+Characters: 158
+
+--- MESSAGE ---
+
+{{contact.first_name}} - quick question: how many unauthorized vehicles do you typically deal with per month? Just trying to understand your situation before our call.

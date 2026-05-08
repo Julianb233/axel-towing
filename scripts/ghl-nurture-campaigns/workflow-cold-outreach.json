@@ -1,0 +1,127 @@
+{
+  "name": "Nurture: Cold Outreach (21-Day Multi-Channel)",
+  "trigger": {
+    "type": "PIPELINE_STAGE_CHANGE",
+    "pipeline": "Lead Nurture Pipeline",
+    "stage": "New Lead",
+    "description": "Contact added to New Lead stage"
+  },
+  "steps": [
+    {
+      "type": "ADD_TAG",
+      "tag": "nurture-active",
+      "description": "Mark contact as in active nurture sequence"
+    },
+    {
+      "type": "SEND_EMAIL",
+      "step": 1,
+      "subject": "Unauthorized parking at {{contact.company_name}}?",
+      "body": "Hi {{contact.first_name}},\n\nI'm reaching out because we work with property managers and HOA boards across {{custom.city_area}} to handle unauthorized parking and vehicle removal - fast, clean, and fully compliant with Arizona law.\n\nI'm Elliott with Axle Towing & Impound. We service 38+ cities across the Phoenix metro, and we're one of the few operators with 30+ years of combined team experience and 24/7/365 dispatch.\n\nWhat we offer property accounts:\n\n- Free towing enforcement - no cost to the property\n- Response typically within 60 minutes\n- Compliant with ARS Chapter 28 - we handle the paperwork\n- One point of contact - not a call center, a dedicated rep\n\nWould you be open to a 15-minute call this week to see if it's a fit?\n\nBest,\nElliott\nAxle Towing & Impound\n480-288-5526\naxletowing.com",
+      "from": "elliott@axletowing.com",
+      "fromName": "Elliott - Axle Towing",
+      "description": "Email 1: Day 0"
+    },
+    {
+      "type": "WAIT",
+      "duration": 2,
+      "unit": "days",
+      "description": "Wait 2 days (Day 2)"
+    },
+    {
+      "type": "SEND_SMS",
+      "step": 2,
+      "body": "Hi {{contact.first_name}}, this is Elliott from Axle Towing. Did you get my email about unauthorized parking enforcement for {{contact.company_name}}? Happy to answer any questions - just reply here.",
+      "description": "SMS 2: Day 2"
+    },
+    {
+      "type": "WAIT",
+      "duration": 3,
+      "unit": "days",
+      "description": "Wait 3 days (Day 5)"
+    },
+    {
+      "type": "SEND_EMAIL",
+      "step": 3,
+      "subject": "How Pinnacle Ridge HOA eliminated parking complaints in 30 days",
+      "body": "Hi {{contact.first_name}},\n\nI wanted to share a quick story.\n\nA 200-unit HOA in Scottsdale was dealing with chronic unauthorized parking - residents were calling the board at all hours, tensions were high, and the previous towing company ghosted them after the first month.\n\nWe took over the account. Within 30 days:\n\n- 47 unauthorized vehicles removed (no cost to the HOA)\n- Zero resident complaints about the process - every tow was documented and posted\n- Board chair stopped getting late-night calls\n\nThe key difference: we show up. Every time. And we call you back.\n\nThat's not marketing copy - it's just what we do.\n\nI'd love to bring that same consistency to {{contact.company_name}}. Are you available for a quick call this week?\n\nElliott\nAxle Towing & Impound\n480-288-5526",
+      "from": "elliott@axletowing.com",
+      "fromName": "Elliott - Axle Towing",
+      "description": "Email 3: Day 5"
+    },
+    {
+      "type": "WAIT",
+      "duration": 3,
+      "unit": "days",
+      "description": "Wait 3 days (Day 8)"
+    },
+    {
+      "type": "DROP_VOICEMAIL",
+      "step": 4,
+      "script": "A",
+      "body": "Hi {{contact.first_name}}, this is Elliott calling from Axle Towing and Impound here in the Phoenix metro. I sent you an email earlier this week about unauthorized parking enforcement for your property - I just wanted to put a voice to the name. We work with HOA boards and property managers across 38 cities in the Phoenix area. No cost to the property, full ARS compliance, 24/7 dispatch. If this is something worth a quick conversation, just call or text me back at 480-288-5526. That's my direct cell. Hope to connect soon - have a great day.",
+      "schedule": "10:00 AM weekday",
+      "description": "Ringless Voicemail (Script A): Day 8"
+    },
+    {
+      "type": "WAIT",
+      "duration": 6,
+      "unit": "days",
+      "description": "Wait 6 days (Day 14)"
+    },
+    {
+      "type": "SEND_EMAIL",
+      "step": 5,
+      "subject": "Last note from me - special offer for new accounts",
+      "body": "Hi {{contact.first_name}},\n\nI've reached out a couple of times and haven't heard back - totally understand, you're busy.\n\nI wanted to leave you with one thing: we're currently onboarding new property accounts in {{custom.city_area}} and we have room for 3 more this month.\n\nFor accounts that sign this month, we're including:\n\n- Free parking violation notice templates (Arizona-compliant)\n- Free signage consultation (we'll tell you exactly what signs you need per ARS requirements)\n- Priority response guarantee in writing\n\nIf the timing isn't right, no worries - save my number for when your current situation changes.\n\n480-288-5526 | elliott@axletowing.com\n\nElliott\nAxle Towing & Impound",
+      "from": "elliott@axletowing.com",
+      "fromName": "Elliott - Axle Towing",
+      "description": "Email 5: Day 14"
+    },
+    {
+      "type": "WAIT",
+      "duration": 7,
+      "unit": "days",
+      "description": "Wait 7 days (Day 21)"
+    },
+    {
+      "type": "SEND_SMS",
+      "step": 6,
+      "body": "Hey {{contact.first_name}} - Elliott from Axle Towing. I'll stop reaching out after this. If unauthorized parking ever becomes a headache at {{contact.company_name}}, we're here. 480-288-5526.",
+      "description": "SMS 6: Day 21"
+    },
+    {
+      "type": "WAIT",
+      "duration": 1,
+      "unit": "days",
+      "description": "Wait 1 day (Day 22)"
+    },
+    {
+      "type": "MOVE_PIPELINE_STAGE",
+      "stage": "On Hold",
+      "condition": "no_response",
+      "description": "Move to \"On Hold\" if no_response"
+    },
+    {
+      "type": "REMOVE_TAG",
+      "tag": "nurture-active",
+      "description": "Remove active nurture tag"
+    },
+    {
+      "type": "ADD_TAG",
+      "tag": "nurture-completed",
+      "description": "Mark nurture sequence as completed"
+    }
+  ],
+  "stopCondition": {
+    "type": "TAG_ADDED",
+    "tag": "nurture-replied",
+    "description": "Stop if contact replies to any email/SMS"
+  },
+  "sendingWindow": {
+    "emails": "Mon-Fri 8:00 AM - 5:00 PM",
+    "sms": "Mon-Fri 9:00 AM - 4:00 PM",
+    "voicemail": "Tue-Thu 10:00 AM - 12:00 PM"
+  },
+  "duration": "22 days",
+  "touchpoints": "3 emails + 2 SMS + 1 voicemail = 6 touches"
+}

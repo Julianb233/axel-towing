@@ -1,0 +1,23 @@
+Sequence: property-manager
+Step: 2
+Day: 5
+Type: EMAIL
+Subject: The #1 complaint property managers have about towing companies
+
+--- CONTENT ---
+
+Hi {{contact.first_name}},
+
+After years in this business, I can tell you the #1 complaint we hear from property managers who switch to us:
+
+"My last company never called back."
+
+Not once. Not twice. Consistently. Property manager calls about a tow, company doesn't respond. Tenant dispute, company goes quiet. Invoice question, voicemail purgatory.
+
+We operate differently.
+
+When you call Elliott's direct line, Elliott picks up. When there's a dispute, we send you the documentation within 24 hours. When you need something documented for a tenant file, we're on it.
+
+Is that the kind of reliability missing from your current setup?
+
+Elliott

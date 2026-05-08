@@ -1,0 +1,27 @@
+Sequence: retention-quarterly
+Step: 1
+Day: 0
+Type: EMAIL
+Subject: Quarterly check-in - {{contact.company_name}} account update
+
+--- CONTENT ---
+
+Hi {{contact.first_name}},
+
+Just wanted to touch base on your {{contact.company_name}} account as we wrap up the quarter.
+
+Your quarterly snapshot:
+
+- Tows processed: [auto-populated from GHL or TowBook]
+- Average response time: [X] minutes
+- Documentation packets sent: [X]
+- Disputes received: [X]
+
+Everything running smoothly on your end? Any changes to your property - new parking rules, construction zones, changes to authorized vehicles - that we should know about?
+
+I'm also here if you ever need backup documentation for a tenant dispute or a board meeting.
+
+Thanks for the continued trust.
+
+Elliott
+480-288-5526

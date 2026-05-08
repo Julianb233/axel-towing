@@ -1,0 +1,7 @@
+SMS Template: breakup-day21
+Use Case: Break-up SMS Day 21
+Characters: 148
+
+--- MESSAGE ---
+
+Hey {{contact.first_name}} - Elliott, Axle Towing. I'll stop reaching out after this. If unauthorized parking is ever a problem, we're here. 480-288-5526.

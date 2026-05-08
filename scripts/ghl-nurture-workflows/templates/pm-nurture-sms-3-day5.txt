@@ -1,0 +1,10 @@
+Workflow: PM Nurture -- 21 Day
+Type: SMS (DISABLED - awaiting A2P 10DLC)
+Step: 3 of 9
+Day: 5
+Characters: 89
+Status: INACTIVE until AI-7457 confirmed
+
+--- SMS BODY ---
+
+Hi {{contact.first_name}}, just sent you some info about free parking enforcement. Worth a quick look?

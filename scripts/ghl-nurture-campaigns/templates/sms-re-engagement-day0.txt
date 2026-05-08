@@ -1,0 +1,7 @@
+SMS Template: re-engagement-day0
+Use Case: Re-engagement Day 0
+Characters: 152
+
+--- MESSAGE ---
+
+Hi {{contact.first_name}} - Elliott from Axle Towing. It's been a while. How's parking enforcement going at {{contact.company_name}}? Open to reconnecting.

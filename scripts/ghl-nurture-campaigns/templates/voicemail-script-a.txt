@@ -1,0 +1,6 @@
+Voicemail Script: A - General Prospect
+Duration: ~55 seconds
+
+--- SCRIPT ---
+
+Hi {{contact.first_name}}, this is Elliott calling from Axle Towing and Impound here in the Phoenix metro. I sent you an email earlier this week about unauthorized parking enforcement for your property - I just wanted to put a voice to the name. We work with HOA boards and property managers across 38 cities in the Phoenix area. No cost to the property, full ARS compliance, 24/7 dispatch. If this is something worth a quick conversation, just call or text me back at 480-288-5526. That's my direct cell. Hope to connect soon - have a great day.

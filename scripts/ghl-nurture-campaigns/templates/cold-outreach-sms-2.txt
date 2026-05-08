@@ -1,0 +1,8 @@
+Sequence: cold-outreach
+Step: 2
+Day: 2
+Type: SMS
+
+--- CONTENT ---
+
+Hi {{contact.first_name}}, this is Elliott from Axle Towing. Did you get my email about unauthorized parking enforcement for {{contact.company_name}}? Happy to answer any questions - just reply here.

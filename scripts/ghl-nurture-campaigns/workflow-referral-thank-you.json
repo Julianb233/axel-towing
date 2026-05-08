@@ -1,0 +1,32 @@
+{
+  "name": "Nurture: Referral Thank-You",
+  "trigger": {
+    "type": "TAG_ADDED",
+    "tag": "referred-us",
+    "description": "Contact tagged as having referred business"
+  },
+  "steps": [
+    {
+      "type": "SEND_EMAIL",
+      "step": 1,
+      "subject": "Thank you, {{contact.first_name}} - a small token of appreciation",
+      "body": "Hi {{contact.first_name}},\n\nI wanted to reach out personally to say thank you for referring business our way. Clients like you are the reason this business works. No complicated service structure, no runaround - just mutual trust and people who show up.\n\nI'd like to send you something as a small thank-you. Would a gift card work? Just reply with your mailing address and I'll get it out this week.\n\nThanks again.\n\nElliott\nAxle Towing & Impound",
+      "from": "elliott@axletowing.com",
+      "fromName": "Elliott - Axle Towing",
+      "description": "Thank-you email (immediate)"
+    },
+    {
+      "type": "SEND_SMS",
+      "step": 2,
+      "body": "{{contact.first_name}} - thanks for the referral! I really appreciate it. I'm going to take great care of them. Anything I can do for you? - Elliott",
+      "description": "Thank-you SMS (immediate)"
+    },
+    {
+      "type": "ADD_TAG",
+      "tag": "retention-enrolled",
+      "description": "Enroll in retention priority"
+    }
+  ],
+  "duration": "Immediate",
+  "touchpoints": "1 email + 1 SMS = 2 touches"
+}

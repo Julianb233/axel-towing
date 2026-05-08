@@ -1,0 +1,7 @@
+SMS Template: referral-thankyou
+Use Case: Referral thank-you
+Characters: 147
+
+--- MESSAGE ---
+
+{{contact.first_name}} - thanks for the referral! I really appreciate it. I'm going to take great care of them. Anything I can do for you? - Elliott

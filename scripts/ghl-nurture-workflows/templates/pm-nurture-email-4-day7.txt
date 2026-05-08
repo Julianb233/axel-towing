@@ -1,0 +1,34 @@
+Workflow: PM Nurture -- 21 Day
+Type: Email
+Step: 4 of 9
+Day: 7
+Subject A: The real cost of not enforcing parking at {{contact.company_name}}
+Subject B: Property managers save 20-40 hrs/month with proper enforcement
+From: elliott@axletowing.com
+From Name: Elliott -- Axle Towing
+Tag Trigger: nurture-active
+
+--- EMAIL BODY ---
+
+Hi {{contact.first_name}},
+
+Quick question: how much time per month does your team spend on parking-related issues? Complaints, disputes, documentation requests, coordinating with your current provider?
+
+Most property managers we talk to say it's 2-4 hours per month, per property. For a 10-property portfolio, that's 20-40 hours of staff time.
+
+Here's what the numbers look like with a proper enforcement setup:
+
+Time saved: 1.5-3.5 hrs/month per property on parking complaints
+Liability reduced: Full ARS-compliant documentation on every tow
+Resident satisfaction: Parking rules are actually enforced, consistently
+Cost to you: $0 — our service is funded by the tow, not your budget
+
+With a properly structured enforcement setup, that number drops to under 30 minutes per property per month — mostly just reviewing monthly reports.
+
+That's the difference a good enforcement partner makes.
+
+Would it be worth 15 minutes to find out if we could get you there?
+
+Elliott
+Axle Towing & Impound
+(480) 288-5526 | axletowing.com

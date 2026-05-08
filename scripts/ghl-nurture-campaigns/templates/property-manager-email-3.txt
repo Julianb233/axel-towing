@@ -1,0 +1,26 @@
+Sequence: property-manager
+Step: 3
+Day: 11
+Type: EMAIL
+Subject: How we handle tenant parking disputes so you don't have to
+
+--- CONTENT ---
+
+Hi {{contact.first_name}},
+
+Here's a scenario I'll bet you've dealt with:
+
+A tenant gets towed. They're furious. They come to your office. You have to track down your towing company, get documentation, and play referee - all while trying to do everything else on your plate.
+
+Here's how it works when you have an Axle Towing account:
+
+1. Tenant calls us directly (we give them our number)
+2. We walk them through what happened and why
+3. We send them their documentation
+4. You get a heads-up if it escalates - usually it doesn't
+
+We take the dispute off your desk. That's part of the service.
+
+Want to see how this would work across your properties?
+
+Elliott

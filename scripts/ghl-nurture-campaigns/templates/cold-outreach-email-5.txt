@@ -1,0 +1,26 @@
+Sequence: cold-outreach
+Step: 5
+Day: 14
+Type: EMAIL
+Subject: Last note from me - special offer for new accounts
+
+--- CONTENT ---
+
+Hi {{contact.first_name}},
+
+I've reached out a couple of times and haven't heard back - totally understand, you're busy.
+
+I wanted to leave you with one thing: we're currently onboarding new property accounts in {{custom.city_area}} and we have room for 3 more this month.
+
+For accounts that sign this month, we're including:
+
+- Free parking violation notice templates (Arizona-compliant)
+- Free signage consultation (we'll tell you exactly what signs you need per ARS requirements)
+- Priority response guarantee in writing
+
+If the timing isn't right, no worries - save my number for when your current situation changes.
+
+480-288-5526 | elliott@axletowing.com
+
+Elliott
+Axle Towing & Impound

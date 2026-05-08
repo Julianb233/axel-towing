@@ -1,0 +1,8 @@
+Sequence: cold-outreach
+Step: 6
+Day: 21
+Type: SMS
+
+--- CONTENT ---
+
+Hey {{contact.first_name}} - Elliott from Axle Towing. I'll stop reaching out after this. If unauthorized parking ever becomes a headache at {{contact.company_name}}, we're here. 480-288-5526.

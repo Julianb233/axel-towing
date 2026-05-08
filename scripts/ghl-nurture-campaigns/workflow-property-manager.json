@@ -1,0 +1,104 @@
+{
+  "name": "Nurture: Property Manager (28-Day Email Sequence)",
+  "trigger": {
+    "type": "TAG_ADDED",
+    "tag": "property-manager",
+    "description": "Contact tagged as Property Manager"
+  },
+  "steps": [
+    {
+      "type": "ADD_TAG",
+      "tag": "nurture-active",
+      "description": "Mark contact as in active nurture sequence"
+    },
+    {
+      "type": "SEND_EMAIL",
+      "step": 1,
+      "subject": "Managing multiple Phoenix-area properties? One towing partner for all of them.",
+      "body": "Hi {{contact.first_name}},\n\nIf you're managing more than one property in the Phoenix metro, you know how painful it is when each one has a different towing vendor - different contacts, different response times, different paperwork.\n\nI'm Elliott with Axle Towing & Impound. We work with property management companies that want one consistent enforcement partner across their portfolio.\n\nHere's what that looks like in practice:\n\nSingle point of contact: My direct cell for every property in your book. Not a call center.\nConsistent response: Same standards, same documentation, same speed - whether it's your property in Mesa or your property in Chandler.\nPortfolio-level reporting: Monthly tow activity summary across all properties, ready for your records or for your clients.\nBulk account pricing: More properties = better rates. We reward portfolio partnerships.\n\nDo you have 15 minutes this week? I'd like to learn about your portfolio and see if we'd be a fit.\n\nElliott\n480-288-5526",
+      "from": "elliott@axletowing.com",
+      "fromName": "Elliott - Axle Towing",
+      "description": "Email 1: Day 0"
+    },
+    {
+      "type": "WAIT",
+      "duration": 5,
+      "unit": "days",
+      "description": "Wait 5 days (Day 5)"
+    },
+    {
+      "type": "SEND_EMAIL",
+      "step": 2,
+      "subject": "The #1 complaint property managers have about towing companies",
+      "body": "Hi {{contact.first_name}},\n\nAfter years in this business, I can tell you the #1 complaint we hear from property managers who switch to us:\n\n\"My last company never called back.\"\n\nNot once. Not twice. Consistently. Property manager calls about a tow, company doesn't respond. Tenant dispute, company goes quiet. Invoice question, voicemail purgatory.\n\nWe operate differently.\n\nWhen you call Elliott's direct line, Elliott picks up. When there's a dispute, we send you the documentation within 24 hours. When you need something documented for a tenant file, we're on it.\n\nIs that the kind of reliability missing from your current setup?\n\nElliott",
+      "from": "elliott@axletowing.com",
+      "fromName": "Elliott - Axle Towing",
+      "description": "Email 2: Day 5"
+    },
+    {
+      "type": "WAIT",
+      "duration": 6,
+      "unit": "days",
+      "description": "Wait 6 days (Day 11)"
+    },
+    {
+      "type": "SEND_EMAIL",
+      "step": 3,
+      "subject": "How we handle tenant parking disputes so you don't have to",
+      "body": "Hi {{contact.first_name}},\n\nHere's a scenario I'll bet you've dealt with:\n\nA tenant gets towed. They're furious. They come to your office. You have to track down your towing company, get documentation, and play referee - all while trying to do everything else on your plate.\n\nHere's how it works when you have an Axle Towing account:\n\n1. Tenant calls us directly (we give them our number)\n2. We walk them through what happened and why\n3. We send them their documentation\n4. You get a heads-up if it escalates - usually it doesn't\n\nWe take the dispute off your desk. That's part of the service.\n\nWant to see how this would work across your properties?\n\nElliott",
+      "from": "elliott@axletowing.com",
+      "fromName": "Elliott - Axle Towing",
+      "description": "Email 3: Day 11"
+    },
+    {
+      "type": "WAIT",
+      "duration": 7,
+      "unit": "days",
+      "description": "Wait 7 days (Day 18)"
+    },
+    {
+      "type": "SEND_EMAIL",
+      "step": 4,
+      "subject": "{{contact.first_name}} - a question about your current towing setup",
+      "body": "Hi {{contact.first_name}},\n\nQuick question: how much time per month does your team spend on towing-related issues? Complaints, disputes, documentation requests, coordinating with your current provider?\n\nMost property managers we talk to say it's 2-4 hours per month, per property. For a 10-property portfolio, that's 20-40 hours of staff time.\n\nWith a properly structured enforcement setup, that number drops to under 30 minutes per property per month - mostly just reviewing monthly reports.\n\nThat's the difference a good enforcement partner makes.\n\nWould it be worth 15 minutes to find out if we could get you there?\n\nElliott\nAxle Towing & Impound\n480-288-5526",
+      "from": "elliott@axletowing.com",
+      "fromName": "Elliott - Axle Towing",
+      "description": "Email 4: Day 18"
+    },
+    {
+      "type": "WAIT",
+      "duration": 10,
+      "unit": "days",
+      "description": "Wait 10 days (Day 28)"
+    },
+    {
+      "type": "SEND_EMAIL",
+      "step": 5,
+      "subject": "Portfolio partnership offer - closing this out",
+      "body": "Hi {{contact.first_name}},\n\nLast note from me.\n\nFor property managers with 5+ properties in the Phoenix metro, we offer:\n\n- Dedicated account rep (direct cell, not a hotline)\n- Consolidated monthly reporting across all properties\n- Priority dispatch - your properties jump the queue\n- Annual rate lock - pricing locked for 12 months\n- Free signage audit for every property at onboarding\n\nThis package isn't listed anywhere - it's for portfolio partners only.\n\nIf now isn't the right time, save my number. When your current setup lets you down, I want to be the first call.\n\nElliott\n480-288-5526 | axletowing.com",
+      "from": "elliott@axletowing.com",
+      "fromName": "Elliott - Axle Towing",
+      "description": "Email 5: Day 28"
+    },
+    {
+      "type": "REMOVE_TAG",
+      "tag": "nurture-active",
+      "description": "Remove active nurture tag"
+    },
+    {
+      "type": "ADD_TAG",
+      "tag": "nurture-completed",
+      "description": "Mark nurture sequence as completed"
+    }
+  ],
+  "stopCondition": {
+    "type": "TAG_ADDED",
+    "tag": "nurture-replied",
+    "description": "Stop if contact replies"
+  },
+  "sendingWindow": {
+    "emails": "Mon-Fri 8:00 AM - 5:00 PM"
+  },
+  "duration": "28 days",
+  "touchpoints": "5 emails"
+}

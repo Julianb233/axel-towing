@@ -1,0 +1,8 @@
+Sequence: renewal-reminder
+Step: 4
+Day: -30
+Type: SMS
+
+--- CONTENT ---
+
+{{contact.first_name}}, your Axle Towing service agreement renews in 30 days. Let's connect to review - reply or call 480-288-5526.

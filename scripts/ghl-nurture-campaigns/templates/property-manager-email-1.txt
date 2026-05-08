@@ -1,0 +1,25 @@
+Sequence: property-manager
+Step: 1
+Day: 0
+Type: EMAIL
+Subject: Managing multiple Phoenix-area properties? One towing partner for all of them.
+
+--- CONTENT ---
+
+Hi {{contact.first_name}},
+
+If you're managing more than one property in the Phoenix metro, you know how painful it is when each one has a different towing vendor - different contacts, different response times, different paperwork.
+
+I'm Elliott with Axle Towing & Impound. We work with property management companies that want one consistent enforcement partner across their portfolio.
+
+Here's what that looks like in practice:
+
+Single point of contact: My direct cell for every property in your book. Not a call center.
+Consistent response: Same standards, same documentation, same speed - whether it's your property in Mesa or your property in Chandler.
+Portfolio-level reporting: Monthly tow activity summary across all properties, ready for your records or for your clients.
+Bulk account pricing: More properties = better rates. We reward portfolio partnerships.
+
+Do you have 15 minutes this week? I'd like to learn about your portfolio and see if we'd be a fit.
+
+Elliott
+480-288-5526

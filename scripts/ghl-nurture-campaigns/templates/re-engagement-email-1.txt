@@ -1,0 +1,22 @@
+Sequence: re-engagement
+Step: 1
+Day: 0
+Type: EMAIL
+Subject: Checking in - it's been a while, {{contact.first_name}}
+
+--- CONTENT ---
+
+Hi {{contact.first_name}},
+
+It's Elliott from Axle Towing. I know we haven't connected in a while, and I wanted to reach out personally.
+
+I've been thinking about {{contact.company_name}} and wondering how parking enforcement has been going since we last spoke. If we dropped the ball on follow-up - that's on me, and I'm sorry. We've made changes internally to make sure that doesn't happen anymore.
+
+If you found a solution that's working great, I'm genuinely glad. But if things have been inconsistent, slow, or just a hassle - I'd like to earn another shot.
+
+No pitch. Just a quick conversation to catch up.
+
+Would you be open to 10 minutes this week?
+
+Elliott
+480-288-5526

@@ -1,0 +1,7 @@
+SMS Template: quarterly-checkin
+Use Case: Quarterly check-in
+Characters: 144
+
+--- MESSAGE ---
+
+Hi {{contact.first_name}}, just checking in on your account. Everything running smoothly? Any changes I should know about? - Elliott, 480-288-5526.

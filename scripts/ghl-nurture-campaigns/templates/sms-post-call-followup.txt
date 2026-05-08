@@ -1,0 +1,7 @@
+SMS Template: post-call-followup
+Use Case: Post-call follow-up
+Characters: 158
+
+--- MESSAGE ---
+
+{{contact.first_name}}, great talking to you today. I'll send over the service agreement details by end of day. Let me know if you have questions - 480-288-5526.

@@ -1,0 +1,10 @@
+Workflow: PM Nurture -- 21 Day
+Type: SMS (DISABLED - awaiting A2P 10DLC)
+Step: 6 of 9
+Day: 12
+Characters: 82
+Status: INACTIVE until AI-7457 confirmed
+
+--- SMS BODY ---
+
+Any questions about the parking enforcement program? Happy to chat: 480-288-5526
