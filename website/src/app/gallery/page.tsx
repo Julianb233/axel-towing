@@ -8,6 +8,18 @@ export const metadata: Metadata = {
   title: "Gallery",
   description:
     "See our fleet, signage installations, and team in action. Axle Towing & Impound serves the Phoenix metro area with professional towing and parking enforcement.",
+  openGraph: {
+    title: "Gallery",
+    description:
+      "See our fleet, signage installations, and team in action. Axle Towing & Impound serves the Phoenix metro area with professional towing and parking enforcement.",
+    url: "https://axletowing.com/gallery",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Gallery",
+    description:
+      "See our fleet, signage installations, and team in action. Axle Towing & Impound serves the Phoenix metro area with professional towing and parking enforcement.",
+  },
 };
 
 const GALLERY_ITEMS = [

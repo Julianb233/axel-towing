@@ -9,6 +9,18 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "https://axletowing.com/careers",
   },
+  openGraph: {
+    title: "Careers - Join the Axle Towing Team",
+    description:
+      "Join Axle Towing & Impound. We're hiring tow truck operators and dispatchers in the Phoenix metro area. Competitive pay, benefits, and growth opportunities.",
+    url: "https://axletowing.com/careers",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Careers - Join the Axle Towing Team",
+    description:
+      "Join Axle Towing & Impound. We're hiring tow truck operators and dispatchers in the Phoenix metro area. Competitive pay, benefits, and growth opportunities.",
+  },
 };
 
 export default function CareersPage() {

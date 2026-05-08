@@ -275,7 +275,12 @@ export default function VoiceAgentContent() {
             {[
               { label: 'AI Agent (primary)', path: '/api/voice/ai-agent' },
               { label: 'IVR Menu Handler', path: '/api/voice/ai-agent/menu' },
-              { label: 'After-Hours Handler', path: '/api/voice/ai-agent/after-hours' },
+              { label: 'AI Receptionist (after-hours)', path: '/api/voice/receptionist' },
+              { label: 'Receptionist Intake', path: '/api/voice/receptionist/intake' },
+              { label: 'PM Intake Sub-menu', path: '/api/voice/receptionist/pm-collect' },
+              { label: 'TowBook Webhook', path: '/api/towbook/webhook' },
+              { label: 'Phone System Config', path: '/api/phone-system' },
+              { label: 'Call Log API', path: '/api/phone-system/call-log' },
               { label: 'Transcript Callback', path: '/api/voice/transcript' },
               { label: 'Outbound Initiation', path: '/api/voice/outbound' },
             ].map((w) => (

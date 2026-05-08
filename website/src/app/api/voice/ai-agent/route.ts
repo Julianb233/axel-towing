@@ -27,9 +27,11 @@ export async function POST(req: NextRequest) {
 
   const baseUrl = process.env.NEXT_PUBLIC_BASE_URL ?? 'https://axletowing.com';
 
-  // Route based on business hours
+  // Route based on business hours — after-hours uses enhanced AI receptionist
   if (!isBusinessHours()) {
-    return xmlResponse(buildAfterHoursTwiml(baseUrl));
+    // Redirect to the enhanced AI receptionist (AI-3353)
+    const { RECEPTIONIST_SCRIPTS } = await import('@/lib/receptionist');
+    return xmlResponse(RECEPTIONIST_SCRIPTS.afterHoursGreeting(baseUrl));
   }
 
   // Business-hours greeting — matches the task's TwiML spec

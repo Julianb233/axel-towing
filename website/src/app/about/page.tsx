@@ -13,6 +13,18 @@ export const metadata: Metadata = {
       es: "https://axletowing.com/es/nosotros",
     },
   },
+  openGraph: {
+    title: "About Axle Towing & Impound - Phoenix Private Property Towing Experts",
+    description:
+      "Axle Towing & Impound is a Phoenix-based towing company founded in 2021, specializing in free private property towing, parking enforcement, and impound services for property managers across the Phoenix metro area. Two impound yards, 24/7 dispatch, sub-30-minute response.",
+    url: "https://axletowing.com/about",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "About Axle Towing & Impound - Phoenix Private Property Towing Experts",
+    description:
+      "Axle Towing & Impound is a Phoenix-based towing company founded in 2021, specializing in free private property towing, parking enforcement, and impound services for property managers across the Phoenix metro area. Two impound yards, 24/7 dispatch, sub-30-minute response.",
+  },
 };
 
 export default function AboutPage() {

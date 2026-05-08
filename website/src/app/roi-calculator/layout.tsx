@@ -16,7 +16,14 @@ export const metadata: Metadata = {
     title: "ROI Calculator — See Your Parking Enforcement Impact",
     description:
       "Calculate the impact of professional parking enforcement on your Phoenix property. Always free for property owners.",
+    url: "https://axletowing.com/roi-calculator",
     type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "ROI Calculator — See Your Parking Enforcement Impact",
+    description:
+      "Calculate the impact of professional parking enforcement on your Phoenix property. Always free for property owners.",
   },
 };
 
