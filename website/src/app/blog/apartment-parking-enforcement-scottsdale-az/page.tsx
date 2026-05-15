@@ -3,7 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { COMPANY } from "@/lib/constants";
 
-const HERO_IMAGE = "/images/optimized/axle-towing-apartment-parking-arizona-towing-service.webp";
+const HERO_IMAGE = "/images/seo/apartment-parking-enforcement-scottsdale-az.webp";
 const HERO_IMAGE_URL = "https://axletowing.com" + HERO_IMAGE;
 const HERO_ALT = "Apartment parking enforcement in Scottsdale AZ - Axle Towing premium property service";
 const CANONICAL = "https://axletowing.com/blog/apartment-parking-enforcement-scottsdale-az";
@@ -103,7 +103,18 @@ export default function Page() {
     image: HERO_IMAGE_URL,
     datePublished: PUBLISHED,
     dateModified: MODIFIED,
-    author: { "@type": "Organization", name: "Axle Towing & Impound", url: "https://axletowing.com" },
+    author: {
+      "@type": "Organization",
+      "name": "Axle Towing & Impound",
+      "url": "https://axletowing.com",
+      "knowsAbout": ["Arizona private property towing", "ARS 28-3511", "apartment parking enforcement", "Property management"],
+      "areaServed": "Phoenix metro, Arizona"
+    },
+    reviewedBy: {
+      "@type": "Organization",
+      "name": "Axle Towing Operations Team",
+      "description": "ARS-compliant private property towing operators serving the Phoenix metro since 2021"
+    },
     publisher: { "@type": "Organization", name: "Axle Towing & Impound", logo: { "@type": "ImageObject", url: "https://axletowing.com/images/axle-towing-logo.png" } },
     mainEntityOfPage: CANONICAL,
   };
@@ -139,6 +150,13 @@ export default function Page() {
         </div>
       </section>
 
+      <aside className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 -mt-6 mb-10">
+        <div className="bg-blue-50 border-l-4 border-primary rounded-r-2xl p-6">
+          <p className="text-xs uppercase tracking-wider font-bold text-primary mb-2">TL;DR</p>
+          <p className="text-gray-800 leading-relaxed">Scottsdale apartment managers can enforce parking at zero cost under Arizona&apos;s private property impound model — the vehicle owner pays all fees. In a premium Scottsdale market where tenants pay top rents, consistent parking enforcement is part of the product you deliver. Axle Towing provides documentation-heavy, process-driven enforcement suited to luxury and mid-density communities near the Waterfront and along the North Scottsdale corridor. Call 480-288-5526 to set up your compliant Scottsdale enforcement program.</p>
+        </div>
+      </aside>
+
       <article className="py-16 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-4 gap-12">
@@ -147,6 +165,17 @@ export default function Page() {
               <p className="text-xl text-gray-600 leading-relaxed mb-8 reveal">
                 Scottsdale's apartment market is one of the most premium in Arizona — from luxury high-rises near the Scottsdale Waterfront to sophisticated mid-density communities along the North Scottsdale corridor. For property managers in Scottsdale, maintaining parking standards is not just an operational necessity — it is a direct component of the product they are selling. Tenants who pay Scottsdale rents expect parking enforcement that matches the quality of the community.
               </p>
+
+              <div className="glass-card-white rounded-2xl p-6 my-8 border-l-4 border-cta">
+                <h3 className="font-heading text-lg font-bold text-gray-900 mb-3">Key Takeaways</h3>
+                <ul className="space-y-2 text-gray-700">
+                  <li className="flex items-start gap-2"><span className="text-cta font-bold">&#8594;</span><span>Scottsdale apartment parking enforcement costs the property nothing — Arizona&apos;s PPI model places all costs on the vehicle owner</span></li>
+                  <li className="flex items-start gap-2"><span className="text-cta font-bold">&#8594;</span><span>In Scottsdale&apos;s premium rental market, consistent parking enforcement is a direct component of the tenant experience your property delivers</span></li>
+                  <li className="flex items-start gap-2"><span className="text-cta font-bold">&#8594;</span><span>ARS 28-3511 authorizes immediate removal from Scottsdale apartment lots once ARS 9-499.05-compliant signage is posted</span></li>
+                  <li className="flex items-start gap-2"><span className="text-cta font-bold">&#8594;</span><span>Axle Towing provides full photo documentation and law enforcement notification on every Scottsdale tow, protecting your property from liability claims</span></li>
+                  <li className="flex items-start gap-2"><span className="text-cta font-bold">&#8594;</span><span>Coverage spans all Scottsdale apartment communities from the Waterfront and Old Town to North Scottsdale luxury corridors</span></li>
+                </ul>
+              </div>
 
               <h2 className="text-2xl font-bold text-gray-900 mt-12 mb-4 reveal">How Apartment Parking Enforcement Works in Scottsdale</h2>
               <p className="text-gray-600 leading-relaxed mb-4 reveal">

@@ -4,11 +4,6 @@ import Link from 'next/link';
 import { getArticle, getAllArticleSlugs } from '@/lib/mdx-utils';
 import { COMPANY } from '@/lib/constants';
 import { breadcrumbSchema, articleSchema } from '@/lib/schema';
-import {
-  PILLAR_SCHEMA,
-  pillarFaqSchema,
-  pillarHowToSchema,
-} from '@/lib/data/pillar-schema';
 
 interface Props {
   params: Promise<{ slug: string }>;
@@ -114,7 +109,7 @@ export default async function DynamicArticlePage({ params }: Props) {
   const categoryStyle = getCategoryStyle(frontmatter.category);
   const canonicalUrl = `https://axletowing.com/blog/${slug}`;
 
-  const structuredData: object[] = [
+  const structuredData = [
     breadcrumbSchema([
       { name: 'Home', url: 'https://axletowing.com' },
       { name: 'Blog', url: 'https://axletowing.com/blog' },
@@ -127,15 +122,6 @@ export default async function DynamicArticlePage({ params }: Props) {
       datePublished: frontmatter.date,
     }),
   ];
-
-  // Attach pillar-specific schema (FAQPage + HowTo) when this slug has one defined.
-  const pillar = PILLAR_SCHEMA[slug];
-  if (pillar?.faqPage && pillar.faqPage.length > 0) {
-    structuredData.push(pillarFaqSchema(pillar.faqPage));
-  }
-  if (pillar?.howTo) {
-    structuredData.push(pillarHowToSchema(pillar.howTo));
-  }
 
   return (
     <>

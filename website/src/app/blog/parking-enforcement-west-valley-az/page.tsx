@@ -1,10 +1,15 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import { COMPANY } from "@/lib/constants";
 
 const CANONICAL = "https://axletowing.com/blog/parking-enforcement-west-valley-az";
 const PUBLISHED = "2026-05-15T00:00:00.000Z";
 const MODIFIED = "2026-05-15T00:00:00.000Z";
+
+const HERO_IMAGE = "/images/seo/parking-enforcement-west-valley-az.webp";
+const HERO_IMAGE_URL = "https://axletowing.com" + HERO_IMAGE;
+const HERO_ALT = "Parking enforcement across the West Valley of metro Phoenix - Axle Towing";
 
 export const metadata: Metadata = {
   title: "Parking Enforcement West Valley AZ | Goodyear, Avondale, Buckeye, Surprise",
@@ -18,11 +23,13 @@ export const metadata: Metadata = {
     type: "article",
     publishedTime: PUBLISHED,
     authors: ["Axle Towing & Impound"],
+    images: [{ url: HERO_IMAGE_URL, width: 1200, height: 630, alt: HERO_ALT }],
   },
   twitter: {
     card: "summary_large_image",
     title: "Parking Enforcement West Valley AZ | Goodyear, Avondale, Buckeye, Surprise",
     description: "HOA, apartment, and commercial parking enforcement across Goodyear, Avondale, Buckeye, Surprise, Peoria, and all West Valley cities.",
+    images: [HERO_IMAGE_URL],
   },
 };
 
@@ -92,7 +99,19 @@ export default function Page() {
     description: "Professional parking enforcement programs for HOAs, apartments, and commercial properties across Goodyear, Avondale, Buckeye, Surprise, Peoria, and the wider West Valley.",
     datePublished: PUBLISHED,
     dateModified: MODIFIED,
-    author: { "@type": "Organization", name: COMPANY.name },
+    image: HERO_IMAGE_URL,
+    author: {
+      "@type": "Organization",
+      "name": "Axle Towing & Impound",
+      "url": "https://axletowing.com",
+      "knowsAbout": ["Arizona private property towing", "ARS 28-3511", "West Valley parking enforcement", "HOA towing programs", "Property management"],
+      "areaServed": "West Valley Phoenix metro, Arizona",
+    },
+    reviewedBy: {
+      "@type": "Organization",
+      "name": "Axle Towing Operations Team",
+      "description": "ARS-compliant private property towing operators serving the Phoenix metro since 2021",
+    },
     publisher: {
       "@type": "Organization",
       name: COMPANY.name,
@@ -174,6 +193,32 @@ export default function Page() {
         </div>
       </section>
 
+      {/* Hero Image */}
+      <section className="bg-gray-950">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-8">
+          <div className="relative aspect-[16/9] w-full overflow-hidden rounded-2xl shadow-lg">
+            <Image
+              src={HERO_IMAGE}
+              alt={HERO_ALT}
+              fill
+              priority
+              sizes="(max-width: 1280px) 100vw, 1280px"
+              className="object-cover"
+            />
+          </div>
+        </div>
+      </section>
+
+      {/* TL;DR */}
+      <aside className="bg-gray-950 px-4 sm:px-6 lg:px-8 pt-8 pb-2">
+        <div className="max-w-7xl mx-auto">
+          <div className="bg-blue-950 border-l-4 border-primary rounded-r-2xl p-6">
+            <p className="text-xs uppercase tracking-wider font-bold text-blue-300 mb-2">TL;DR</p>
+            <p className="text-gray-200 leading-relaxed">Axle Towing provides free parking enforcement programs for HOAs, apartments, and commercial properties across all West Valley cities — Goodyear, Avondale, Buckeye, Surprise, Peoria, Glendale, and beyond. Arizona's private property impound law (ARS 28-3511) means property owners pay nothing: all towing and storage costs are collected from the violating vehicle owner. Programs include signage compliance, 24/7 dispatch, and ongoing patrol tailored to each property's specific violation patterns.</p>
+          </div>
+        </div>
+      </aside>
+
       {/* Breadcrumb */}
       <nav className="bg-navy-900/50 border-b border-white/10 py-3 px-4" aria-label="Breadcrumb">
         <ol className="max-w-6xl mx-auto flex items-center gap-2 text-sm text-gray-400">
@@ -191,6 +236,17 @@ export default function Page() {
 
           {/* Article Body */}
           <article className="lg:col-span-3 prose prose-lg prose-invert max-w-none">
+
+            <div className="not-prose glass-card rounded-2xl p-6 mb-8 border-l-4 border-cta">
+              <h3 className="font-heading text-lg font-bold text-white mb-3">Key Takeaways</h3>
+              <ul className="space-y-2 text-gray-300">
+                <li className="flex items-start gap-2"><span className="text-cta font-bold">&#8594;</span><span>West Valley parking enforcement is completely free to property owners — HOAs, apartments, and commercial operators pay nothing under Arizona's PPI framework.</span></li>
+                <li className="flex items-start gap-2"><span className="text-cta font-bold">&#8594;</span><span>Goodyear, Avondale, Buckeye, Surprise, Peoria, Glendale, Litchfield Park, El Mirage, Tolleson, and Youngtown are all fully served with 24/7 dispatch.</span></li>
+                <li className="flex items-start gap-2"><span className="text-cta font-bold">&#8594;</span><span>ARS 28-3511, ARS 9-499.05, and ARS 28-874 govern all West Valley private property towing — the same statutes apply in every city across the region.</span></li>
+                <li className="flex items-start gap-2"><span className="text-cta font-bold">&#8594;</span><span>West Valley-specific challenges include RV and boat storage violations, State Farm Stadium event-night overflow, and new-community residents unfamiliar with HOA parking rules.</span></li>
+                <li className="flex items-start gap-2"><span className="text-cta font-bold">&#8594;</span><span>No setup fees, no monthly retainers, and no minimum contract — Axle Towing's West Valley programs launch after a complimentary site assessment and signage review.</span></li>
+              </ul>
+            </div>
 
             <h2>Parking Enforcement for the West Valley's Growing Communities</h2>
             <p>

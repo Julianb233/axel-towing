@@ -3,7 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { COMPANY } from "@/lib/constants";
 
-const HERO_IMAGE = "/images/optimized/axle-towing-hoa-towing-phoenix-az.webp";
+const HERO_IMAGE = "/images/seo/hoa-parking-enforcement-scottsdale-az.webp";
 const HERO_IMAGE_URL = "https://axletowing.com" + HERO_IMAGE;
 const HERO_ALT = "HOA parking enforcement in Scottsdale AZ - Axle Towing luxury community service";
 const CANONICAL = "https://axletowing.com/blog/hoa-parking-enforcement-scottsdale-az";
@@ -105,7 +105,18 @@ export default function Page() {
     image: HERO_IMAGE_URL,
     datePublished: PUBLISHED,
     dateModified: MODIFIED,
-    author: { "@type": "Organization", name: "Axle Towing & Impound", url: "https://axletowing.com" },
+    author: {
+      "@type": "Organization",
+      "name": "Axle Towing & Impound",
+      "url": "https://axletowing.com",
+      "knowsAbout": ["Arizona private property towing", "ARS 28-3511", "HOA parking enforcement", "Property management"],
+      "areaServed": "Phoenix metro, Arizona"
+    },
+    reviewedBy: {
+      "@type": "Organization",
+      "name": "Axle Towing Operations Team",
+      "description": "ARS-compliant private property towing operators serving the Phoenix metro since 2021"
+    },
     publisher: { "@type": "Organization", name: "Axle Towing & Impound", logo: { "@type": "ImageObject", url: "https://axletowing.com/images/axle-towing-logo.png" } },
     mainEntityOfPage: CANONICAL,
   };
@@ -141,6 +152,13 @@ export default function Page() {
         </div>
       </section>
 
+      <aside className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 -mt-6 mb-10">
+        <div className="bg-blue-50 border-l-4 border-primary rounded-r-2xl p-6">
+          <p className="text-xs uppercase tracking-wider font-bold text-primary mb-2">TL;DR</p>
+          <p className="text-gray-800 leading-relaxed">Scottsdale HOAs can enforce parking rules at zero cost under Arizona&apos;s private property impound model — all fees are paid by the vehicle owner. Axle Towing provides documentation-heavy, process-driven enforcement suited to Scottsdale&apos;s premium communities, including guard-gated estates and luxury condos. Compliant signage under ARS 9-499.05 must be posted before any tow. Professional third-party enforcement protects your board from selective-enforcement allegations while maintaining the high community standard Scottsdale residents expect.</p>
+        </div>
+      </aside>
+
       <article className="py-16 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-4 gap-12">
@@ -149,6 +167,17 @@ export default function Page() {
               <p className="text-xl text-gray-600 leading-relaxed mb-8 reveal">
                 Scottsdale's HOA communities set a high standard for community living — and that standard extends to parking. From guard-gated luxury estates in DC Ranch and Troon Village to established communities in McCormick Ranch and Gainey Ranch, Scottsdale HOA boards face the dual challenge of enforcing rules firmly while maintaining the premium experience that residents expect.
               </p>
+
+              <div className="glass-card-white rounded-2xl p-6 my-8 border-l-4 border-cta">
+                <h3 className="font-heading text-lg font-bold text-gray-900 mb-3">Key Takeaways</h3>
+                <ul className="space-y-2 text-gray-700">
+                  <li className="flex items-start gap-2"><span className="text-cta font-bold">&#8594;</span><span>Scottsdale HOA enforcement is free to your association — Arizona&apos;s PPI model places all costs on the vehicle owner</span></li>
+                  <li className="flex items-start gap-2"><span className="text-cta font-bold">&#8594;</span><span>Premium Scottsdale communities require extra documentation and process discipline — Axle Towing provides time-stamped photos and full incident reports on every tow</span></li>
+                  <li className="flex items-start gap-2"><span className="text-cta font-bold">&#8594;</span><span>ARS 28-3511 authorizes immediate removal once compliant signage per ARS 9-499.05 is in place — no prior notice to the driver required</span></li>
+                  <li className="flex items-start gap-2"><span className="text-cta font-bold">&#8594;</span><span>Professional enforcement shields your Scottsdale board from selective-enforcement claims while keeping the premium community atmosphere intact</span></li>
+                  <li className="flex items-start gap-2"><span className="text-cta font-bold">&#8594;</span><span>Service covers all Scottsdale HOA communities from DC Ranch and Troon to McCormick Ranch, Gainey Ranch, and Old Town-adjacent developments</span></li>
+                </ul>
+              </div>
 
               <h2 className="text-2xl font-bold text-gray-900 mt-12 mb-4 reveal">How HOA Parking Enforcement Works in Scottsdale</h2>
               <p className="text-gray-600 leading-relaxed mb-4 reveal">

@@ -3,7 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { COMPANY } from "@/lib/constants";
 
-const HERO_IMAGE = "/images/optimized/axle-towing-hoa-towing-phoenix-az.webp";
+const HERO_IMAGE = "/images/seo/hoa-parking-enforcement-phoenix-az.webp";
 const HERO_IMAGE_URL = "https://axletowing.com" + HERO_IMAGE;
 const HERO_ALT = "HOA parking enforcement in Phoenix AZ - Axle Towing professional service";
 const CANONICAL = "https://axletowing.com/blog/hoa-parking-enforcement-phoenix-az";
@@ -109,7 +109,18 @@ export default function Page() {
     image: HERO_IMAGE_URL,
     datePublished: PUBLISHED,
     dateModified: MODIFIED,
-    author: { "@type": "Organization", name: "Axle Towing & Impound", url: "https://axletowing.com" },
+    author: {
+      "@type": "Organization",
+      "name": "Axle Towing & Impound",
+      "url": "https://axletowing.com",
+      "knowsAbout": ["Arizona private property towing", "ARS 28-3511", "HOA parking enforcement", "Property management"],
+      "areaServed": "Phoenix metro, Arizona"
+    },
+    reviewedBy: {
+      "@type": "Organization",
+      "name": "Axle Towing Operations Team",
+      "description": "ARS-compliant private property towing operators serving the Phoenix metro since 2021"
+    },
     publisher: { "@type": "Organization", name: "Axle Towing & Impound", logo: { "@type": "ImageObject", url: "https://axletowing.com/images/axle-towing-logo.png" } },
     mainEntityOfPage: CANONICAL,
   };
@@ -145,6 +156,13 @@ export default function Page() {
         </div>
       </section>
 
+      <aside className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 -mt-6 mb-10">
+        <div className="bg-blue-50 border-l-4 border-primary rounded-r-2xl p-6">
+          <p className="text-xs uppercase tracking-wider font-bold text-primary mb-2">TL;DR</p>
+          <p className="text-gray-800 leading-relaxed">Phoenix HOAs can enforce parking rules at zero cost by partnering with a private property towing company under Arizona&apos;s PPI model. Axle Towing handles all towing, documentation, and law enforcement notifications on your behalf. Proper ARS 9-499.05-compliant signage must be in place before enforcement begins. Property managers and HOA boards can authorize 24/7 enforcement without personally confronting residents. Call 480-288-5526 to set up a compliant program for your Phoenix community.</p>
+        </div>
+      </aside>
+
       <article className="py-16 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-4 gap-12">
@@ -153,6 +171,17 @@ export default function Page() {
               <p className="text-xl text-gray-600 leading-relaxed mb-8 reveal">
                 Phoenix is home to more HOA-governed communities than almost any metro in the United States — and with that density comes one of the most complex parking enforcement landscapes in Arizona. From sprawling master-planned communities in North Phoenix to urban townhome associations near Downtown, Phoenix HOA boards face constant pressure to keep parking rules fair, consistent, and legally defensible.
               </p>
+
+              <div className="glass-card-white rounded-2xl p-6 my-8 border-l-4 border-cta">
+                <h3 className="font-heading text-lg font-bold text-gray-900 mb-3">Key Takeaways</h3>
+                <ul className="space-y-2 text-gray-700">
+                  <li className="flex items-start gap-2"><span className="text-cta font-bold">&#8594;</span><span>Phoenix HOA parking enforcement is free to the association — all costs are paid by the vehicle owner under Arizona&apos;s PPI model</span></li>
+                  <li className="flex items-start gap-2"><span className="text-cta font-bold">&#8594;</span><span>ARS 28-3511 allows immediate towing from private property when ARS 9-499.05-compliant signage is posted — no prior notice to the driver required</span></li>
+                  <li className="flex items-start gap-2"><span className="text-cta font-bold">&#8594;</span><span>Consistent third-party enforcement protects your HOA from selective-enforcement complaints and liability disputes</span></li>
+                  <li className="flex items-start gap-2"><span className="text-cta font-bold">&#8594;</span><span>Axle Towing provides time-stamped photo documentation and mandatory law enforcement notification on every tow</span></li>
+                  <li className="flex items-start gap-2"><span className="text-cta font-bold">&#8594;</span><span>24/7 dispatch covers all Phoenix HOA communities from Ahwatukee Foothills to Desert Ridge to Downtown</span></li>
+                </ul>
+              </div>
 
               <h2 className="text-2xl font-bold text-gray-900 mt-12 mb-4 reveal">How HOA Parking Enforcement Works in Phoenix</h2>
               <p className="text-gray-600 leading-relaxed mb-4 reveal">

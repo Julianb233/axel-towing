@@ -1,5 +1,10 @@
 import type { Metadata } from 'next'
+import Image from 'next/image'
 import { COMPANY } from '@/lib/constants'
+
+const HERO_IMAGE = "/images/seo/commercial-property-towing-tempe-az.webp";
+const HERO_IMAGE_URL = "https://axletowing.com" + HERO_IMAGE;
+const HERO_ALT = "Commercial property towing service in Tempe Arizona - Axle Towing";
 
 export const metadata: Metadata = {
   title: 'Commercial Property Towing Tempe AZ | Retail & Office Parking Enforcement',
@@ -24,19 +29,13 @@ export const metadata: Metadata = {
     description: 'Professional commercial property towing in Tempe AZ for retail centers, office buildings, and entertainment district properties. ARS 28-3511 compliant.',
     url: `https://${COMPANY.domain}/blog/commercial-property-towing-tempe-az`,
     type: 'article',
-    images: [
-      {
-        url: `https://${COMPANY.domain}/images/optimized/axle-towing-commercial-property-towing-phoenix-az.webp`,
-        width: 1200,
-        height: 630,
-        alt: 'Commercial property towing service in Tempe Arizona',
-      },
-    ],
+    images: [{ url: HERO_IMAGE_URL, width: 1200, height: 630, alt: HERO_ALT }],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Commercial Property Towing Tempe AZ',
     description: 'Retail centers, office parks, and entertainment district properties throughout Tempe. ARS 28-3511 compliant towing. 480-288-5526.',
+    images: [HERO_IMAGE_URL],
   },
 }
 
@@ -109,8 +108,19 @@ const jsonLd = {
       '@type': 'Article',
       headline: 'Commercial Property Towing Tempe AZ: Protecting Retail, Office & Entertainment District Parking',
       description: 'Comprehensive guide for Tempe commercial property managers on authorized towing programs, Arizona law compliance, and protecting business parking from unauthorized use.',
-      image: `https://${COMPANY.domain}/images/optimized/axle-towing-commercial-property-towing-phoenix-az.webp`,
-      author: { '@type': 'Organization', name: COMPANY.name },
+      image: HERO_IMAGE_URL,
+      author: {
+        '@type': 'Organization',
+        name: COMPANY.name,
+        url: 'https://axletowing.com',
+        knowsAbout: ['Arizona private property towing', 'ARS 28-3511', 'commercial property towing', 'Property management'],
+        areaServed: 'Phoenix metro, Arizona',
+      },
+      reviewedBy: {
+        '@type': 'Organization',
+        name: 'Axle Towing Operations Team',
+        description: 'ARS-compliant private property towing operators serving the Phoenix metro since 2021',
+      },
       publisher: {
         '@type': 'Organization',
         name: COMPANY.name,
@@ -175,8 +185,33 @@ export default function CommercialPropertyTowingTempeAZ() {
           </div>
         </section>
 
+        <section className="bg-gray-950">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-8">
+            <div className="relative aspect-[16/9] w-full overflow-hidden rounded-2xl shadow-lg">
+              <Image src={HERO_IMAGE} alt={HERO_ALT} fill priority sizes="(max-width: 1280px) 100vw, 1280px" className="object-cover" />
+            </div>
+          </div>
+        </section>
+
+        <aside className="max-w-4xl mx-auto px-4 sm:px-6 mt-8 mb-4">
+          <div className="bg-blue-950 border-l-4 border-primary rounded-r-2xl p-6">
+            <p className="text-xs uppercase tracking-wider font-bold text-blue-300 mb-2">TL;DR</p>
+            <p className="text-gray-200 leading-relaxed">Tempe commercial property managers face unique parking pressure from ASU students, Mill Avenue event crowds, and tech-corridor employees competing for limited spaces. Under Arizona&apos;s PPI model, enforcement costs the property nothing — the vehicle owner pays all fees. Axle Towing provides 24/7 dispatch, ARS 28-3511-compliant documentation, and mandatory law enforcement notification for Tempe commercial lots. Compliant signage per ARS 9-499.05 must be in place before enforcement begins.</p>
+          </div>
+        </aside>
+
         {/* Intro */}
         <section className="py-16 max-w-4xl mx-auto px-4 sm:px-6">
+          <div className="glass-card rounded-2xl p-6 mb-8 border-l-4 border-cta">
+            <h3 className="font-heading text-lg font-bold text-white mb-3">Key Takeaways</h3>
+            <ul className="space-y-2 text-gray-300">
+              <li className="flex items-start gap-2"><span className="text-cta font-bold">&#8594;</span><span>Tempe commercial parking enforcement is free to the property — Arizona&apos;s PPI model places all costs on the vehicle owner</span></li>
+              <li className="flex items-start gap-2"><span className="text-cta font-bold">&#8594;</span><span>ASU student parking overflow, Mill Avenue event crowds, and tech-corridor employees create chronic unauthorized parking pressure in Tempe lots</span></li>
+              <li className="flex items-start gap-2"><span className="text-cta font-bold">&#8594;</span><span>ARS 28-3511 authorizes immediate removal from Tempe commercial parking once ARS 9-499.05-compliant signage is in place</span></li>
+              <li className="flex items-start gap-2"><span className="text-cta font-bold">&#8594;</span><span>Time-stamped photo documentation on every tow protects your Tempe property from vehicle owner liability claims</span></li>
+              <li className="flex items-start gap-2"><span className="text-cta font-bold">&#8594;</span><span>24/7 coverage spans all Tempe commercial areas: Mill Avenue, ASU Research Park, Tempe Town Lake, Rural Road corridor, and the tech office district</span></li>
+            </ul>
+          </div>
           <h2 className="text-3xl font-bold mb-6">
             The Tempe Commercial Parking Challenge
           </h2>

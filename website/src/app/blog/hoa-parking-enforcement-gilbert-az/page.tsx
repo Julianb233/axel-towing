@@ -3,7 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { COMPANY } from "@/lib/constants";
 
-const HERO_IMAGE = "/images/optimized/axle-towing-hoa-entrance-arizona-towing-service.webp";
+const HERO_IMAGE = "/images/seo/hoa-parking-enforcement-gilbert-az.webp";
 const HERO_IMAGE_URL = "https://axletowing.com" + HERO_IMAGE;
 const HERO_ALT = "HOA parking enforcement in Gilbert AZ - Axle Towing family community service";
 const CANONICAL = "https://axletowing.com/blog/hoa-parking-enforcement-gilbert-az";
@@ -103,7 +103,18 @@ export default function Page() {
     image: HERO_IMAGE_URL,
     datePublished: PUBLISHED,
     dateModified: MODIFIED,
-    author: { "@type": "Organization", name: "Axle Towing & Impound", url: "https://axletowing.com" },
+    author: {
+      "@type": "Organization",
+      "name": "Axle Towing & Impound",
+      "url": "https://axletowing.com",
+      "knowsAbout": ["Arizona private property towing", "ARS 28-3511", "HOA parking enforcement", "Property management"],
+      "areaServed": "Phoenix metro, Arizona"
+    },
+    reviewedBy: {
+      "@type": "Organization",
+      "name": "Axle Towing Operations Team",
+      "description": "ARS-compliant private property towing operators serving the Phoenix metro since 2021"
+    },
     publisher: { "@type": "Organization", name: "Axle Towing & Impound", logo: { "@type": "ImageObject", url: "https://axletowing.com/images/axle-towing-logo.png" } },
     mainEntityOfPage: CANONICAL,
   };
@@ -139,6 +150,13 @@ export default function Page() {
         </div>
       </section>
 
+      <aside className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 -mt-6 mb-10">
+        <div className="bg-blue-50 border-l-4 border-primary rounded-r-2xl p-6">
+          <p className="text-xs uppercase tracking-wider font-bold text-primary mb-2">TL;DR</p>
+          <p className="text-gray-800 leading-relaxed">Gilbert HOA boards can enforce community parking rules at zero cost — Arizona&apos;s private property impound model places all towing and storage fees on the vehicle owner, not your association. From Val Vista Lakes to Agritopia, Gilbert&apos;s family-focused communities take parking standards seriously, and professional enforcement keeps violations from damaging the neighborhood culture. Axle Towing covers all Gilbert HOA communities 24/7, documenting every tow and handling law enforcement notification. Call 480-288-5526 to get started.</p>
+        </div>
+      </aside>
+
       <article className="py-16 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-4 gap-12">
@@ -147,6 +165,17 @@ export default function Page() {
               <p className="text-xl text-gray-600 leading-relaxed mb-8 reveal">
                 Gilbert has earned its reputation as one of the most family-friendly communities in Arizona, and with that reputation comes one of the highest concentrations of HOA-governed communities in the East Valley. From the heritage-inspired streets of Agritopia to the lakefront properties of Val Vista Lakes, Gilbert HOA boards manage parking rules in neighborhoods where community standards are taken seriously — and violations create real friction.
               </p>
+
+              <div className="glass-card-white rounded-2xl p-6 my-8 border-l-4 border-cta">
+                <h3 className="font-heading text-lg font-bold text-gray-900 mb-3">Key Takeaways</h3>
+                <ul className="space-y-2 text-gray-700">
+                  <li className="flex items-start gap-2"><span className="text-cta font-bold">&#8594;</span><span>Gilbert HOA parking enforcement is free to your association — Arizona&apos;s PPI model bills all costs to the vehicle owner</span></li>
+                  <li className="flex items-start gap-2"><span className="text-cta font-bold">&#8594;</span><span>Gilbert&apos;s family-focused HOA culture means parking violations create real community friction — professional enforcement resolves it without board confrontations</span></li>
+                  <li className="flex items-start gap-2"><span className="text-cta font-bold">&#8594;</span><span>Compliant signage per ARS 9-499.05 must be posted before enforcement begins — Axle Towing handles signage consultation at setup</span></li>
+                  <li className="flex items-start gap-2"><span className="text-cta font-bold">&#8594;</span><span>Time-stamped photo documentation on every tow protects your Gilbert HOA from vehicle owner disputes</span></li>
+                  <li className="flex items-start gap-2"><span className="text-cta font-bold">&#8594;</span><span>Coverage spans all of Gilbert from Val Vista Lakes and Agritopia to SanTan Village and Power Ranch</span></li>
+                </ul>
+              </div>
 
               <h2 className="text-2xl font-bold text-gray-900 mt-12 mb-4 reveal">How HOA Parking Enforcement Works in Gilbert</h2>
               <p className="text-gray-600 leading-relaxed mb-4 reveal">

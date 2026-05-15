@@ -1,5 +1,10 @@
 import type { Metadata } from 'next'
+import Image from 'next/image'
 import { COMPANY } from '@/lib/constants'
+
+const HERO_IMAGE = "/images/seo/commercial-property-towing-chandler-az.webp";
+const HERO_IMAGE_URL = "https://axletowing.com" + HERO_IMAGE;
+const HERO_ALT = "Commercial property towing service in Chandler Arizona - Axle Towing";
 
 export const metadata: Metadata = {
   title: 'Commercial Property Towing Chandler AZ | Office Park & Retail Parking Enforcement',
@@ -24,19 +29,13 @@ export const metadata: Metadata = {
     description: 'Professional commercial property towing in Chandler AZ for tech-corridor office parks, retail centers, and industrial properties. ARS 28-3511 compliant.',
     url: `https://${COMPANY.domain}/blog/commercial-property-towing-chandler-az`,
     type: 'article',
-    images: [
-      {
-        url: `https://${COMPANY.domain}/images/optimized/axle-towing-commercial-property-towing-phoenix-az.webp`,
-        width: 1200,
-        height: 630,
-        alt: 'Commercial property towing service in Chandler Arizona',
-      },
-    ],
+    images: [{ url: HERO_IMAGE_URL, width: 1200, height: 630, alt: HERO_ALT }],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Commercial Property Towing Chandler AZ',
     description: 'Tech-corridor office parks, retail centers, and industrial properties throughout Chandler. ARS 28-3511 compliant. 480-288-5526.',
+    images: [HERO_IMAGE_URL],
   },
 }
 
@@ -109,8 +108,19 @@ const jsonLd = {
       '@type': 'Article',
       headline: 'Commercial Property Towing Chandler AZ: Tech-Corridor Office Parks, Retail Centers & Industrial Properties',
       description: 'Comprehensive guide for Chandler commercial property managers on authorized towing programs, Arizona law compliance, and protecting parking at tech campuses, retail centers, and industrial facilities.',
-      image: `https://${COMPANY.domain}/images/optimized/axle-towing-commercial-property-towing-phoenix-az.webp`,
-      author: { '@type': 'Organization', name: COMPANY.name },
+      image: HERO_IMAGE_URL,
+      author: {
+        '@type': 'Organization',
+        name: COMPANY.name,
+        url: 'https://axletowing.com',
+        knowsAbout: ['Arizona private property towing', 'ARS 28-3511', 'commercial property towing', 'Property management'],
+        areaServed: 'Phoenix metro, Arizona',
+      },
+      reviewedBy: {
+        '@type': 'Organization',
+        name: 'Axle Towing Operations Team',
+        description: 'ARS-compliant private property towing operators serving the Phoenix metro since 2021',
+      },
       publisher: {
         '@type': 'Organization',
         name: COMPANY.name,
@@ -175,8 +185,33 @@ export default function CommercialPropertyTowingChandlerAZ() {
           </div>
         </section>
 
+        <section className="bg-gray-950">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-8">
+            <div className="relative aspect-[16/9] w-full overflow-hidden rounded-2xl shadow-lg">
+              <Image src={HERO_IMAGE} alt={HERO_ALT} fill priority sizes="(max-width: 1280px) 100vw, 1280px" className="object-cover" />
+            </div>
+          </div>
+        </section>
+
+        <aside className="max-w-4xl mx-auto px-4 sm:px-6 mt-8 mb-4">
+          <div className="bg-blue-950 border-l-4 border-primary rounded-r-2xl p-6">
+            <p className="text-xs uppercase tracking-wider font-bold text-blue-300 mb-2">TL;DR</p>
+            <p className="text-gray-200 leading-relaxed">Chandler commercial property managers can enforce parking at zero cost under Arizona&apos;s PPI model — all fees are paid by the vehicle owner. Chandler&apos;s Price Road tech corridor, Chandler Fashion Center, and industrial parks generate heavy unauthorized parking pressure. Axle Towing provides 24/7 dispatch, ARS 28-3511-compliant documentation, and law enforcement notification for all Chandler commercial properties. ARS 9-499.05-compliant signage must be in place before any tow.</p>
+          </div>
+        </aside>
+
         {/* Intro */}
         <section className="py-16 max-w-4xl mx-auto px-4 sm:px-6">
+          <div className="glass-card rounded-2xl p-6 mb-8 border-l-4 border-cta">
+            <h3 className="font-heading text-lg font-bold text-white mb-3">Key Takeaways</h3>
+            <ul className="space-y-2 text-gray-300">
+              <li className="flex items-start gap-2"><span className="text-cta font-bold">&#8594;</span><span>Chandler commercial parking enforcement costs the property nothing — Arizona&apos;s PPI model places all fees on the vehicle owner</span></li>
+              <li className="flex items-start gap-2"><span className="text-cta font-bold">&#8594;</span><span>Chandler&apos;s tech corridor and major employers generate above-average unauthorized parking pressure in adjacent commercial lots</span></li>
+              <li className="flex items-start gap-2"><span className="text-cta font-bold">&#8594;</span><span>ARS 28-3511 authorizes immediate removal from Chandler commercial parking when ARS 9-499.05-compliant signage is posted</span></li>
+              <li className="flex items-start gap-2"><span className="text-cta font-bold">&#8594;</span><span>Axle Towing documents every Chandler tow with time-stamped photos and handles mandatory law enforcement notification</span></li>
+              <li className="flex items-start gap-2"><span className="text-cta font-bold">&#8594;</span><span>Service covers all Chandler commercial zones: Price Road corridor, Chandler Fashion Center, Ocotillo, south Chandler industrial, and mixed-use retail</span></li>
+            </ul>
+          </div>
           <h2 className="text-3xl font-bold mb-6">
             Commercial Parking Enforcement in Chandler&apos;s Growing Business Landscape
           </h2>

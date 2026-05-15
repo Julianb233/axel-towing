@@ -3,7 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { COMPANY } from "@/lib/constants";
 
-const HERO_IMAGE = "/images/optimized/axle-towing-apartment-towing-phoenix-az.webp";
+const HERO_IMAGE = "/images/seo/apartment-parking-enforcement-tempe-az.webp";
 const HERO_IMAGE_URL = "https://axletowing.com" + HERO_IMAGE;
 const HERO_ALT = "Apartment parking enforcement in Tempe AZ near ASU - Axle Towing professional service";
 const CANONICAL = "https://axletowing.com/blog/apartment-parking-enforcement-tempe-az";
@@ -103,7 +103,18 @@ export default function Page() {
     image: HERO_IMAGE_URL,
     datePublished: PUBLISHED,
     dateModified: MODIFIED,
-    author: { "@type": "Organization", name: "Axle Towing & Impound", url: "https://axletowing.com" },
+    author: {
+      "@type": "Organization",
+      "name": "Axle Towing & Impound",
+      "url": "https://axletowing.com",
+      "knowsAbout": ["Arizona private property towing", "ARS 28-3511", "apartment parking enforcement", "Property management"],
+      "areaServed": "Phoenix metro, Arizona"
+    },
+    reviewedBy: {
+      "@type": "Organization",
+      "name": "Axle Towing Operations Team",
+      "description": "ARS-compliant private property towing operators serving the Phoenix metro since 2021"
+    },
     publisher: { "@type": "Organization", name: "Axle Towing & Impound", logo: { "@type": "ImageObject", url: "https://axletowing.com/images/axle-towing-logo.png" } },
     mainEntityOfPage: CANONICAL,
   };
@@ -139,6 +150,13 @@ export default function Page() {
         </div>
       </section>
 
+      <aside className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 -mt-6 mb-10">
+        <div className="bg-blue-50 border-l-4 border-primary rounded-r-2xl p-6">
+          <p className="text-xs uppercase tracking-wider font-bold text-primary mb-2">TL;DR</p>
+          <p className="text-gray-800 leading-relaxed">Tempe apartment managers face year-round parking pressure from ASU student turnover, event traffic on Mill Avenue, and high-density residential living — all addressable with a free professional enforcement program. Under Arizona&apos;s PPI model, the vehicle owner pays all towing fees, not your property. Axle Towing provides 24/7 dispatch, documentation, and law enforcement notification for Tempe complexes near campus and the Downtown corridor. Compliant signage per ARS 9-499.05 must be posted before enforcement begins.</p>
+        </div>
+      </aside>
+
       <article className="py-16 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-4 gap-12">
@@ -147,6 +165,17 @@ export default function Page() {
               <p className="text-xl text-gray-600 leading-relaxed mb-8 reveal">
                 Tempe is one of the highest-density apartment markets in the Phoenix metro, driven by Arizona State University's 70,000-plus student enrollment and the city's active Downtown and Mill Avenue corridor. For apartment property managers in Tempe, parking enforcement is not a periodic issue — it is a year-round operational necessity driven by constant tenant turnover, event traffic, and a demographic that often underestimates parking rules.
               </p>
+
+              <div className="glass-card-white rounded-2xl p-6 my-8 border-l-4 border-cta">
+                <h3 className="font-heading text-lg font-bold text-gray-900 mb-3">Key Takeaways</h3>
+                <ul className="space-y-2 text-gray-700">
+                  <li className="flex items-start gap-2"><span className="text-cta font-bold">&#8594;</span><span>Tempe apartment parking enforcement is free to your property — Arizona&apos;s PPI model places all towing costs on the vehicle owner</span></li>
+                  <li className="flex items-start gap-2"><span className="text-cta font-bold">&#8594;</span><span>ASU&apos;s 70,000-plus enrollment and Mill Avenue event traffic create unique year-round enforcement pressure in Tempe complexes</span></li>
+                  <li className="flex items-start gap-2"><span className="text-cta font-bold">&#8594;</span><span>ARS 28-3511 authorizes immediate tow-away from Tempe apartment lots once ARS 9-499.05-compliant signage is in place</span></li>
+                  <li className="flex items-start gap-2"><span className="text-cta font-bold">&#8594;</span><span>Clear written rules at move-in and resident orientation reduce violations and dispute rates significantly</span></li>
+                  <li className="flex items-start gap-2"><span className="text-cta font-bold">&#8594;</span><span>24/7 dispatch covers all Tempe apartment communities including ASU-area, Downtown, and Rural Road corridor properties</span></li>
+                </ul>
+              </div>
 
               <h2 className="text-2xl font-bold text-gray-900 mt-12 mb-4 reveal">How Apartment Parking Enforcement Works in Tempe</h2>
               <p className="text-gray-600 leading-relaxed mb-4 reveal">
