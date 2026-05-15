@@ -1,0 +1,57 @@
+{
+  "client": "Axle Towing & Impound",
+  "domain": "axletowing.com",
+  "created_at": "2026-05-15",
+  "baseline": {
+    "date": "2026-03-23",
+    "sources": [
+      "docs/AI-CITATION-BASELINE-2026-03-23.md",
+      "dashboard/data/semrush-snapshots/2026-03-23.json",
+      "Fireflies transcript 01KKYGPKF4ZPGYJXYJ3B1GCXR1"
+    ],
+    "organic_keywords": 37,
+    "estimated_organic_traffic": 529,
+    "brand_ai_citation_rate": "7/7",
+    "competitive_ai_citation_rate": "0/13",
+    "new_site_indexed_pages": 0,
+    "quality_backlinks_estimate": 8
+  },
+  "current": {
+    "date": "2026-05-14",
+    "sources": [
+      "/Users/macair/Documents/New project 6/data/semrush/axletowing.com/2026-05-14/gui-capture-manifest.json",
+      "dashboard/data/semrush-snapshots/2026-05-06.json"
+    ],
+    "organic_keywords": 66,
+    "estimated_organic_traffic": 429,
+    "authority_score": 17,
+    "referring_domains": 114,
+    "backlinks": 196,
+    "ai_visibility": 30,
+    "ai_mentions": 11,
+    "ai_cited_pages": 10
+  },
+  "deltas": {
+    "organic_keywords": {
+      "absolute": 29,
+      "percent": 78.4
+    },
+    "estimated_organic_traffic": {
+      "absolute": -100,
+      "percent": -18.9
+    }
+  },
+  "client_safe_interpretation": "AISCO / AI SEO is working for search footprint and AI visibility, but not yet proven as traffic growth. The next sprint should convert the expanded footprint into non-branded rankings, owned-site AI citations, and stronger local/service query performance.",
+  "monthly_tracking": [
+    "competitive_ai_citation_rate_original_13_prompts",
+    "semrush_ai_visibility",
+    "ai_mentions",
+    "ai_cited_pages",
+    "organic_keywords_branded_vs_nonbranded",
+    "estimated_organic_traffic",
+    "priority_keyword_positions",
+    "indexed_page_count",
+    "content_output_count",
+    "citation_quality"
+  ]
+}
