@@ -3,6 +3,7 @@
 import { useEffect, useRef, useState, FormEvent } from "react";
 import Link from "next/link";
 import { COMPANY } from "@/lib/constants";
+import Image from "next/image";
 
 function useParallax() {
   const ref = useRef<HTMLDivElement>(null);
@@ -16,6 +17,10 @@ function useParallax() {
   }, []);
   return ref;
 }
+
+const HERO_IMAGE = "/images/seo/parking-policy-template.webp";
+const HERO_IMAGE_URL = "https://axletowing.com" + HERO_IMAGE;
+const HERO_ALT = "Property manager reviewing Arizona parking policy template document at commercial property - Axle Towing";
 
 const TEMPLATE_INCLUDES = [
   "Complete parking rules and regulations section",
@@ -78,10 +83,49 @@ export default function ParkingPolicyTemplatePage() {
         </div>
       </section>
 
+      {/* Hero Image */}
+      <section className="bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-8">
+          <div className="relative aspect-[16/9] w-full overflow-hidden rounded-2xl shadow-lg">
+            <Image
+              src={HERO_IMAGE}
+              alt={HERO_ALT}
+              fill
+              className="object-cover"
+              priority
+              sizes="(max-width: 768px) 100vw, 1200px"
+            />
+          </div>
+        </div>
+      </section>
+
+      {/* TL;DR */}
+      <aside className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 mt-8 mb-6">
+        <div className="bg-blue-50 border-l-4 border-primary rounded-r-2xl p-6">
+          <p className="text-xs uppercase tracking-wider font-bold text-primary mb-2">TL;DR</p>
+          <p className="text-gray-800 leading-relaxed">
+            Arizona property managers need a written parking policy to legally authorize towing under ARS 28-3511. This free template covers permitted parking areas, permit systems, guest vehicle rules, prohibited vehicles, fire lane and ADA enforcement, violation escalation, appeal procedures, and the ARS-compliant authorization language your towing agreement references. Customizable for HOAs, apartment complexes, and commercial properties.
+          </p>
+        </div>
+      </aside>
+
       {/* Content Grid */}
       <section className="py-20 bg-gray-50 wave-separator">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+
+
+            {/* Key Takeaways */}
+            <div className="glass-card-white rounded-2xl p-6 my-8 border-l-4 border-cta col-span-1 lg:col-span-2">
+              <h3 className="font-heading text-lg font-bold text-gray-900 mb-3">Key Takeaways</h3>
+              <ul className="space-y-2 text-gray-700">
+                <li className="flex items-start gap-2"><span className="text-cta font-bold">→</span><span>A written parking policy is the legal foundation for all private property towing — without it, every tow you authorize is potentially contestable under ARS 28-3511</span></li>
+                <li className="flex items-start gap-2"><span className="text-cta font-bold">→</span><span>Your policy must explicitly reference the towing authorization agreement with your licensed towing company and the specific ARS statutes governing removal</span></li>
+                <li className="flex items-start gap-2"><span className="text-cta font-bold">→</span><span>Guest and visitor parking provisions are the #1 source of towing disputes — define time limits, permit processes, and grace periods before enforcement begins</span></li>
+                <li className="flex items-start gap-2"><span className="text-cta font-bold">→</span><span>Board approval and an adoption date are required to make parking policy enforceable — verbal or email-only policies do not satisfy Arizona HOA documentation standards</span></li>
+                <li className="flex items-start gap-2"><span className="text-cta font-bold">→</span><span>This template is ready to customize: fill in your property name, towing company, permit system details, and board signatures — no legal drafting required</span></li>
+              </ul>
+            </div>
 
             {/* LEFT: What's Included + Testimonial */}
             <div className="reveal space-y-8">

@@ -16,6 +16,8 @@ const SERVICE_TYPE_MAP: Record<string, "property" | "relocation" | "enforcement"
 };
 
 export default function ServicePageTemplate({ data }: { data: ServicePageData }) {
+  const categorySlug = data.category?.slug || "services";
+  const categoryLabel = data.category?.label || "Services";
   return (
     <>
       {/* ===== PARALLAX HERO ===== */}
@@ -29,7 +31,7 @@ export default function ServicePageTemplate({ data }: { data: ServicePageData })
           <nav className="flex items-center gap-2 text-sm text-white/90 mb-6 reveal">
             <Link href="/" className="hover:text-white transition-colors">Home</Link>
             <span>/</span>
-            <Link href="/services" className="hover:text-white transition-colors">Services</Link>
+            <Link href={`/${categorySlug}`} className="hover:text-white transition-colors">{categoryLabel}</Link>
             <span>/</span>
             <span className="text-white">{data.title}</span>
           </nav>
@@ -385,7 +387,7 @@ export default function ServicePageTemplate({ data }: { data: ServicePageData })
             {data.relatedServices.map((s, i) => (
               <Link
                 key={s.slug}
-                href={`/services/${s.slug}`}
+                href={`/${s.category || "services"}/${s.slug}`}
                 className="group glass-card-white rounded-2xl p-8 reveal"
                 style={{ animationDelay: `${(i + 1) * 100}ms` }}
               >

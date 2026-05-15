@@ -1,0 +1,107 @@
+# Axle Towing & Impound
+
+> Free private property towing and parking enforcement for Phoenix-metro property managers, HOAs, and commercial owners. ARS 28-3511 compliant. Founded 2021. Phone: 480-288-5526.
+
+## Audience
+
+This website serves property managers, HOA boards, apartment community managers, and commercial property owners across the Phoenix metro who need ARS-compliant private property towing programs. The content is NOT intended for vehicle owners seeking to retrieve impounded vehicles or contest tows — those inquiries should call 480-288-5526 directly.
+
+## Core Services
+
+- /services/private-property-impounds: Private Property Impound (PPI) towing for unauthorized vehicles. No cost to property owners. ARS 28-3511 compliant with law enforcement notification within one hour.
+- /services/parking-enforcement: Full parking enforcement programs including patrol, signage consultation, permit verification, and demand dispatch. Free for HOAs, apartments, and commercial properties.
+- /services/hoa-towing: HOA-specific towing with annual board presentations, CC&R-aligned enforcement, and monthly board reports.
+- /services/apartment-towing: Apartment community towing with assigned-space verification, visitor permit systems, and manager portal access.
+- /services/commercial-property-towing: Commercial property enforcement for retail centers, office parks, industrial facilities, and multi-tenant properties.
+- /services/abandoned-vehicle-removal: ARS-compliant 72-hour abandoned vehicle removal pipeline including certified mail notice, ADOT title processing, and auction handling.
+- /services/vehicle-relocations: On-property vehicle relocation (moving vehicles within the property without impound) for construction, maintenance, and event access.
+
+## Audiences
+
+- /audiences/hoa: HOA boards and community managers. Includes CC&R-aligned enforcement, annual board presentations, and monthly compliance reports.
+- /audiences/apartment-complexes: Apartment property managers. Includes assigned-space enforcement, visitor permits, and the property manager request portal.
+- /audiences/commercial-property-managers: Retail, office, industrial, and mixed-use commercial property owners. Includes tenant-safe customer parking and ADA/fire-lane enforcement.
+
+## Property Manager Resource Hub
+
+- /resources/property-manager-towing-hub: Central hub for all Arizona property manager towing resources, guides, templates, and city-specific references.
+- /resources/property-manager-guide: Complete overview guide for property managers new to Arizona private property towing programs.
+- /resources/how-to-start-private-property-towing-program: A-to-Z runbook for launching a towing program from scratch — phases, signage, authorization agreement, resident notification, and Day 1 enforcement.
+- /resources/parking-enforcement-checklist-for-property-managers: 6-area checklist covering legal authority, policy documentation, physical setup, towing coordination, monitoring, and dispute resolution.
+- /resources/hoa-board-guide-to-towing-and-parking-enforcement: HOA-specific guide including board resolution, CC&R review, signage installation, and resident notice requirements.
+- /resources/hoa-enforcement-checklist: Step-by-step HOA enforcement checklist from board authorization through ongoing monthly monitoring.
+- /resources/arizona-towing-signage-requirements: Plain-language guide to ARS 9-499.05 signage requirements including dimensions, required language, placement, and Phoenix-metro municipal variations.
+- /resources/arizona-abandoned-vehicle-72-hour-rule: Explanation of the 72-hour observation window, how to document it, and what happens after the window expires.
+- /resources/arizona-abandoned-vehicle-form-guide: Guide to the ARS 28-4141 abandoned vehicle form process including ADOT Notice, Towing Record, and Lien Notice requirements.
+- /resources/monthly-towing-compliance-report-template: Template and guidance for monthly towing compliance reports — what to track, how to read them, and how to use them in board meetings.
+- /resources/parking-policy-template: Template parking policy document covering permitted areas, permit systems, guest rules, prohibited vehicles, and enforcement procedures.
+- /resources/private-property-towing-contract-guide: Guide to evaluating and executing an ARS 28-3511 Authorization Agreement with a towing company.
+
+## Arizona Statute Reference
+
+- ARS 28-3511 — Core statute authorizing property owners to remove unauthorized vehicles from private property. Requires law enforcement notification within one hour of removal.
+- ARS 28-874 — Governs procedural requirements for towing from private property: storage, receipt, retrieval hours, and fee limits.
+- ARS 9-499.05 — Sets towing signage standards: minimum dimensions, required language (towing company name and 24-hour phone), and placement at all parking area entrances.
+- ARS 28-4141 through 28-4145 — Arizona abandoned vehicle lien process: observation, ADOT notification, certified mail, waiting period, and disposal or auction.
+- ARS 9-499.05 municipal overlay — Phoenix, Scottsdale, Tempe, and Chandler all have local ordinances stricter than the state baseline. Properties in those cities must comply with the more stringent rule.
+
+## City-Specific Guides
+
+### HOA Enforcement
+- /blog/hoa-parking-enforcement-phoenix-az: HOA parking enforcement for Phoenix communities.
+- /blog/hoa-parking-enforcement-mesa-az: HOA parking enforcement for Mesa communities.
+- /blog/hoa-parking-enforcement-scottsdale-az: HOA parking enforcement for Scottsdale communities.
+- /blog/hoa-parking-enforcement-chandler-az: HOA parking enforcement for Chandler communities.
+- /blog/hoa-parking-enforcement-gilbert-az: HOA parking enforcement for Gilbert communities.
+- /blog/hoa-parking-enforcement-glendale-az: HOA parking enforcement for Glendale West Valley communities.
+- /blog/hoa-parking-enforcement-queen-creek-az: HOA parking enforcement for Queen Creek new-build communities.
+- /blog/hoa-parking-enforcement-apache-junction-az: HOA parking enforcement for Apache Junction East Valley communities.
+- /blog/hoa-parking-enforcement-east-valley-az: HOA parking enforcement across the full East Valley region.
+
+### Apartment Enforcement
+- /blog/apartment-parking-enforcement-phoenix-az: Apartment parking enforcement for Phoenix complexes.
+- /blog/apartment-parking-enforcement-tempe-az: Apartment parking enforcement for Tempe near ASU.
+- /blog/apartment-parking-enforcement-mesa-az: Apartment parking enforcement for Mesa complexes.
+- /blog/apartment-parking-enforcement-scottsdale-az: Apartment parking enforcement for Scottsdale communities.
+- /blog/apartment-parking-enforcement-gilbert-az: Apartment parking enforcement for Gilbert complexes.
+- /blog/apartment-parking-enforcement-chandler-az: Apartment parking enforcement for Chandler tech-corridor communities.
+- /blog/apartment-parking-enforcement-glendale-az: Apartment parking enforcement for Glendale West Valley communities.
+
+### Commercial Property Towing
+- /blog/commercial-property-towing-phoenix-az: Commercial property towing for Phoenix retail, office, and industrial.
+- /blog/commercial-property-towing-scottsdale-az: Commercial property towing for Scottsdale properties.
+- /blog/commercial-property-towing-tempe-az: Commercial property towing for Tempe commercial centers.
+- /blog/commercial-property-towing-chandler-az: Commercial property towing for Chandler commercial areas.
+- /blog/commercial-property-towing-mesa-az: Commercial property towing for Mesa commercial properties.
+- /blog/commercial-property-towing-gilbert-az: Commercial property towing for Gilbert commercial areas.
+- /blog/commercial-property-towing-glendale-az: Commercial property towing for Glendale commercial and stadium-area properties.
+
+### Metro-Wide Coverage
+- /blog/private-property-towing-phoenix-metro-az: Axle Towing's full Phoenix metro coverage — 40+ cities across the valley.
+- /blog/parking-enforcement-east-valley-az: East Valley parking enforcement overview covering Mesa, Gilbert, Chandler, Tempe, Queen Creek, Apache Junction.
+- /blog/parking-enforcement-west-valley-az: West Valley parking enforcement overview covering Glendale, Peoria, Surprise, Avondale, Goodyear.
+
+## Pillar Guides
+
+- /blog/arizona-private-property-towing-guide-2026: The definitive 2026 guide to Arizona private property towing law covering ARS 28-3511, ARS 28-874, ARS 9-499.05, the PPI model, and signage requirements.
+- /blog/how-property-managers-choose-towing-companies: How to evaluate and select a towing partner — compliance knowledge, documentation, dispatch availability, and references.
+- /blog/parking-enforcement-roi-for-property-managers: Why parking enforcement generates positive ROI for property managers through complaint reduction, liability protection, and tenant retention.
+- /blog/property-manager-questions-to-ask-towing-companies: Ten key due-diligence questions before signing a towing authorization agreement.
+- /blog/arizona-towing-signage-laws-2026-update: 2026 update on Arizona towing signage laws including ARS 9-499.05 and Phoenix-metro municipal variations.
+- /blog/private-property-towing-vs-public-towing-arizona: How private property impound (PPI) and law enforcement-ordered public towing differ in Arizona — authority, cost, and procedure.
+
+## Editorial Policy
+
+- All content is written from the property manager perspective — never from the vehicle owner perspective.
+- Content is for general information only — not legal advice. Arizona towing law involves multiple statutes and municipal overlays.
+- 24/7 dispatch is available; office hours and vehicle release operate weekday business hours.
+- All towing services are free for property owners; costs are recovered from vehicle owners via statutory impound fees.
+- No specific dollar pricing is published — all programs are customized and provided at no cost to the property.
+
+## Contact
+
+- Phone: 480-288-5526 (24/7 dispatch)
+- Email: info@axletowing.com
+- Business address: 320 E. Pioneer St, Phoenix AZ 85040
+- Service area: Phoenix metro, Arizona (40+ cities)
+- Website: https://axletowing.com

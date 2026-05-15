@@ -116,7 +116,7 @@ export const FREE_SERVICES = [
   {
     title: "Abandoned Vehicle Removal",
     slug: "abandoned-vehicle-removal",
-    shortDesc: "Clear abandoned vehicles from apartments, HOAs, and commercial lots.",
+    shortDesc: "ARS-compliant 72-hour pipeline for long-sitting vehicles on apartments, HOAs, and commercial lots. Title clearance and auction handled end-to-end.",
     icon: "truck",
   },
 ];
