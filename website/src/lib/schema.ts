@@ -132,14 +132,17 @@ export function serviceSchema(service: {
   title: string;
   slug: string;
   description: string;
+  /** URL path prefix — defaults to "services". Use "audiences" for /audiences/<slug>. */
+  pathPrefix?: string;
 }) {
+  const prefix = service.pathPrefix || "services";
   return {
     "@context": "https://schema.org",
     "@type": "Service",
-    "@id": `${BASE_URL}/services/${service.slug}`,
+    "@id": `${BASE_URL}/${prefix}/${service.slug}`,
     name: service.title,
     description: service.description,
-    url: `${BASE_URL}/services/${service.slug}`,
+    url: `${BASE_URL}/${prefix}/${service.slug}`,
     provider: {
       "@type": "LocalBusiness",
       name: COMPANY.name,
@@ -163,13 +166,16 @@ export function articleSchema(article: {
   description: string;
   slug: string;
   datePublished: string;
+  /** URL path prefix — defaults to "blog". Use "resources" for /resources/<slug>. */
+  pathPrefix?: string;
 }) {
+  const prefix = article.pathPrefix || "blog";
   return {
     "@context": "https://schema.org",
     "@type": "BlogPosting",
     headline: article.title,
     description: article.description,
-    url: `${BASE_URL}/blog/${article.slug}`,
+    url: `${BASE_URL}/${prefix}/${article.slug}`,
     datePublished: article.datePublished,
     dateModified: article.datePublished,
     author: {
@@ -188,7 +194,7 @@ export function articleSchema(article: {
     },
     mainEntityOfPage: {
       "@type": "WebPage",
-      "@id": `${BASE_URL}/blog/${article.slug}`,
+      "@id": `${BASE_URL}/${prefix}/${article.slug}`,
     },
   };
 }

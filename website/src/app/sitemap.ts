@@ -33,11 +33,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: BASE_URL, lastModified: now, changeFrequency: 'weekly', priority: 1 },
     { url: `${BASE_URL}/about`, lastModified: now, changeFrequency: 'monthly', priority: 0.8 },
     { url: `${BASE_URL}/services`, lastModified: now, changeFrequency: 'monthly', priority: 0.9 },
-    { url: `${BASE_URL}/phoenix-towing`, lastModified: now, changeFrequency: 'weekly', priority: 0.95 },
-    { url: `${BASE_URL}/arizona-towing`, lastModified: now, changeFrequency: 'weekly', priority: 0.92 },
-    { url: `${BASE_URL}/tow-service-phoenix-az`, lastModified: now, changeFrequency: 'weekly', priority: 0.92 },
-    { url: `${BASE_URL}/apache-sands-vs-axle-towing`, lastModified: now, changeFrequency: 'weekly', priority: 0.85 },
-    { url: `${BASE_URL}/licensing`, lastModified: now, changeFrequency: 'monthly', priority: 0.7 },
+    { url: `${BASE_URL}/audiences`, lastModified: now, changeFrequency: 'monthly', priority: 0.85 },
+    { url: `${BASE_URL}/audiences/hoa`, lastModified: now, changeFrequency: 'monthly', priority: 0.8 },
+    { url: `${BASE_URL}/audiences/apartment-complexes`, lastModified: now, changeFrequency: 'monthly', priority: 0.8 },
+    { url: `${BASE_URL}/audiences/commercial-property-managers`, lastModified: now, changeFrequency: 'monthly', priority: 0.8 },
+    { url: `${BASE_URL}/services/abandoned-vehicle-removal`, lastModified: now, changeFrequency: 'monthly', priority: 0.85 },
     { url: `${BASE_URL}/contact`, lastModified: now, changeFrequency: 'monthly', priority: 0.8 },
     { url: `${BASE_URL}/blog`, lastModified: now, changeFrequency: 'weekly', priority: 0.7 },
     {
@@ -106,6 +106,60 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.6,
     },
     {
+      url: `${BASE_URL}/resources/property-manager-towing-hub`,
+      lastModified: now,
+      changeFrequency: 'monthly',
+      priority: 0.75,
+    },
+    {
+      url: `${BASE_URL}/resources/arizona-abandoned-vehicle-form-guide`,
+      lastModified: now,
+      changeFrequency: 'monthly',
+      priority: 0.65,
+    },
+    {
+      url: `${BASE_URL}/resources/arizona-abandoned-vehicle-72-hour-rule`,
+      lastModified: now,
+      changeFrequency: 'monthly',
+      priority: 0.65,
+    },
+    {
+      url: `${BASE_URL}/resources/private-property-towing-contract-guide`,
+      lastModified: now,
+      changeFrequency: 'monthly',
+      priority: 0.65,
+    },
+    {
+      url: `${BASE_URL}/resources/how-to-start-private-property-towing-program`,
+      lastModified: now,
+      changeFrequency: 'monthly',
+      priority: 0.65,
+    },
+    {
+      url: `${BASE_URL}/resources/arizona-towing-signage-requirements`,
+      lastModified: now,
+      changeFrequency: 'monthly',
+      priority: 0.65,
+    },
+    {
+      url: `${BASE_URL}/resources/parking-enforcement-checklist-for-property-managers`,
+      lastModified: now,
+      changeFrequency: 'monthly',
+      priority: 0.65,
+    },
+    {
+      url: `${BASE_URL}/resources/hoa-board-guide-to-towing-and-parking-enforcement`,
+      lastModified: now,
+      changeFrequency: 'monthly',
+      priority: 0.65,
+    },
+    {
+      url: `${BASE_URL}/resources/monthly-towing-compliance-report-template`,
+      lastModified: now,
+      changeFrequency: 'monthly',
+      priority: 0.65,
+    },
+    {
       url: `${BASE_URL}/privacy-policy`,
       lastModified: now,
       changeFrequency: 'yearly',
@@ -118,35 +172,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.3,
     },
     {
-      url: `${BASE_URL}/private-property-towing`,
+      url: `${BASE_URL}/merchandise`,
       lastModified: now,
-      changeFrequency: 'weekly',
-      priority: 0.9,
+      changeFrequency: 'monthly',
+      priority: 0.5,
     },
   ];
-
-  // Private Property Towing — city-specific landing pages (AI-9002 / AI-8993 batch)
-  const PRIVATE_PROPERTY_CITY_SLUGS = [
-    'phoenix',
-    'mesa',
-    'chandler',
-    'tempe',
-    'gilbert',
-    'scottsdale',
-    'glendale',
-    'peoria',
-    'surprise',
-    'goodyear',
-    'avondale',
-    'queen-creek',
-  ];
-  const privatePropertyCityPages: MetadataRoute.Sitemap =
-    PRIVATE_PROPERTY_CITY_SLUGS.map((slug) => ({
-      url: `${BASE_URL}/private-property-towing/${slug}`,
-      lastModified: now,
-      changeFrequency: 'weekly' as const,
-      priority: 0.9,
-    }));
 
   // Spanish / bilingual pages
   const spanishPages: MetadataRoute.Sitemap = [
@@ -298,6 +329,5 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ...neighborhoodPages,
     ...blogPages,
     ...nichePages,
-    ...privatePropertyCityPages,
   ];
 }

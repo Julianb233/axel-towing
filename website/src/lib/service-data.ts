@@ -8,6 +8,11 @@ export interface ServiceTestimonial {
 export interface ServicePageData {
   title: string;
   slug: string;
+  /**
+   * URL category — defaults to "services". Set to "audiences" for
+   * /audiences/<slug> pages so breadcrumbs and JSON-LD use the right path.
+   */
+  category?: { slug: "services" | "audiences"; label: string };
   metaTitle: string;
   metaDescription: string;
   heroHeadline: string;
@@ -19,7 +24,7 @@ export interface ServicePageData {
   howItWorks: { step: number; title: string; desc: string }[];
   benefits: { title: string; desc: string; align: "left" | "right" }[];
   faqs: { q: string; a: string }[];
-  relatedServices: { title: string; slug: string; desc: string }[];
+  relatedServices: { title: string; slug: string; desc: string; category?: "services" | "audiences" | "resources" }[];
   targetAudience: string;
   testimonials?: ServiceTestimonial[];
   propertyTypes?: string[];
@@ -376,6 +381,225 @@ export const SERVICE_PAGES: Record<string, ServicePageData> = {
     testimonials: [
       { quote: "We lost an estimated $30K per month in foot traffic from non-customer parking. Axle's enforcement solved it completely — our tenants are thrilled.", name: "Steven L.", role: "Shopping Center Owner", company: "Baseline Marketplace" },
       { quote: "Professional, discreet, and effective. Their team handles everything so my property staff never has to deal with confrontations.", name: "Rachel N.", role: "Office Park Director", company: "Scottsdale Business Center" },
+    ],
+  },
+
+  "abandoned-vehicle-removal": {
+    title: "Abandoned Vehicle Removal",
+    slug: "abandoned-vehicle-removal",
+    metaTitle: "Abandoned Vehicle Removal — Phoenix, AZ | Property Managers",
+    metaDescription:
+      "Free abandoned vehicle removal for Phoenix property managers, HOAs, and commercial owners. ARS-compliant 72-hour process, certified mail notice, title processing and auction handled end-to-end.",
+    heroHeadline: "Abandoned Vehicle Removal in Phoenix",
+    heroSubtext:
+      "Get long-sitting, unregistered, and abandoned vehicles legally removed from your property — fully compliant with Arizona's abandoned vehicle statutes, at no cost to property owners.",
+    heroImage: "/images/service-private-impound.jpg",
+    introTitle: "Phoenix's Property-Manager-Focused Abandoned Vehicle Service",
+    introText: [
+      "Abandoned vehicles are more than an eyesore — they reduce available parking, attract vandalism, leak fluids into your lot, and signal neglect to prospective residents or tenants. For HOAs and apartment communities, a single abandoned car sitting for weeks can trigger code complaints, board frustration, and lower satisfaction scores.",
+      "Axle Towing handles the entire abandoned vehicle process under Arizona's 72-hour rule and abandoned vehicle statutes: identification, documentation, posting, certified-mail notice through ADOT, secure tow, secure storage, and title processing or public auction when unclaimed. Property owners pay nothing — the process is funded by statutory impound fees and auction proceeds.",
+      "We are exclusively focused on property managers, HOAs, and commercial owners across the Phoenix metro. Every removal includes time-stamped photos, GPS coordinates, and the documentation your insurer or legal team will want if the prior owner ever surfaces. You sign one authorization once; we handle the rest.",
+    ],
+    features: [
+      { title: "ARS-Compliant 72-Hour Process", desc: "We follow Arizona's abandoned vehicle statutes including the 72-hour observation window, ADOT-coordinated notice, and statutory waiting periods before disposition.", icon: "shield" },
+      { title: "Certified Mail to Last Known Owner", desc: "We pull title records, send certified notice to the last registered owner and lienholder, and document non-response per Arizona law before disposition.", icon: "mail" },
+      { title: "Title Processing & Auction", desc: "When vehicles remain unclaimed past the statutory window we handle title clearance and public auction — clearing your lot permanently, not just temporarily.", icon: "dollar" },
+      { title: "Zero Cost to Property Owners", desc: "All costs — observation, posting, notice, tow, storage, title processing — are recovered through impound fees and auction proceeds. Property owners never pay.", icon: "dollar" },
+    ],
+    howItWorks: [
+      { step: 1, title: "Property-Manager Identification", desc: "You flag a candidate vehicle through the portal, by phone, or our patrol team identifies it during a routine sweep." },
+      { step: 2, title: "Documentation & 72-Hour Observation", desc: "We photograph the vehicle from 4 angles, capture GPS, log condition markers (flat tires, dust, expired tags) and begin the statutory observation window." },
+      { step: 3, title: "Posting & Certified Notice", desc: "A statutory notice is posted on the vehicle and certified mail goes to the last registered owner and lienholder via ADOT records." },
+      { step: 4, title: "Secure Tow & Storage", desc: "When the observation window closes without contact, we tow the vehicle to our secure impound and continue notice procedures." },
+      { step: 5, title: "Title Clearance or Auction", desc: "Vehicles unclaimed past the statutory waiting period proceed to title transfer or public auction per ARS — fully closing the file." },
+    ],
+    benefits: [
+      { title: "Stop Abandoned Cars from Aging In Place", desc: "Without a documented process, abandoned vehicles often sit for months. Our ARS-compliant pipeline starts the clock the same day you flag the car, so it's gone in the shortest legal window — not lingering on your property indefinitely.", align: "left" },
+      { title: "Audit-Trail Documentation Your Insurer Will Approve", desc: "Every step — photos, GPS, posting, certified mail receipts, auction records — is captured and available on demand. If a prior owner ever resurfaces, you have a defensible legal record. Most carriers and HOA boards explicitly require this.", align: "right" },
+      { title: "Free Up Parking, Reduce Code Complaints", desc: "Abandoned vehicles take up real spaces that residents or tenants are paying for. Removing them improves parking availability, reduces resident complaints, and protects you from municipal code violations tied to derelict-vehicle ordinances.", align: "left" },
+    ],
+    faqs: [
+      { q: "How long until an abandoned vehicle can legally be towed in Arizona?", a: "Arizona uses a 72-hour observation window for vehicles on private property combined with statutory notice requirements via ADOT. After the observation period and proper posting, the vehicle can be lawfully removed. Total time from first sighting to tow is typically 4-7 days when notice is required." },
+      { q: "Do I need to file anything with the city or ADOT?", a: "We handle the ADOT abandoned vehicle paperwork, certified mail notices to the registered owner and lienholder, and any required city filings on your behalf. You authorize the process once; we handle the rest." },
+      { q: "What if the vehicle has expired tags but is still being driven occasionally?", a: "Expired tags alone don't make a vehicle abandoned. Abandonment requires observable signs of non-use (dust, flat tires, no movement, debris underneath) over the observation period. If a vehicle is being moved or used, it's a parking permit / permit-violation issue handled under our other services instead." },
+      { q: "Does removal cost the property anything?", a: "No. All costs are recovered through impound fees and, where applicable, auction proceeds under the statutory framework. Property owners and HOAs pay nothing." },
+      { q: "What about vehicles with liens, salvage titles, or out-of-state plates?", a: "We've handled all three. ADOT records reveal lienholders, and we send required notice to them in addition to the registered owner. Out-of-state plates are run through interstate vehicle databases. Salvage and rebuilt titles follow specialized auction procedures." },
+      { q: "Can we just have you remove a vehicle the same day it's reported?", a: "Not for true abandonment cases — Arizona's observation and notice requirements protect both vehicle owners and property managers from wrongful-tow liability. For vehicles that are clearly violating posted parking rules (no permit, blocking fire lane, etc.) we can act much faster under our private property impound service." },
+    ],
+    relatedServices: [
+      { title: "Private Property Impounds", slug: "private-property-impounds", desc: "Fast removal for posted parking violations (different from abandonment)." },
+      { title: "HOA Towing", slug: "hoa-towing", desc: "Ongoing parking enforcement for HOA communities." },
+      { title: "Property Manager Towing Hub", slug: "property-manager-towing-hub", desc: "Pillar resource hub with the full set of guides.", category: "resources" },
+    ],
+    targetAudience: "property managers, HOAs, and commercial owners",
+    testimonials: [
+      { quote: "We had two abandoned cars sitting for over a month and our board was getting heat. Axle started the legal clock the same day I called and the lot was clear within a week. The paperwork trail is incredible.", name: "Lori H.", role: "Community Manager", company: "Mesa Greens HOA" },
+      { quote: "We get an abandoned vehicle every 2-3 weeks across our portfolio. Knowing the process is handled — and we have the documentation — has saved my team hours and the legal anxiety.", name: "Marcus B.", role: "Regional Property Manager", company: "Sonoran Property Group" },
+    ],
+  },
+
+  "hoa-audience": {
+    title: "Towing for HOA Boards & Community Managers",
+    slug: "hoa",
+    category: { slug: "audiences", label: "Audiences" },
+    metaTitle: "HOA Towing Company Phoenix — Board-Approved Programs | Axle Towing",
+    metaDescription:
+      "Free, board-approved towing programs for Phoenix HOA communities. Annual board presentations, ARS-compliant signage, CC&R-aligned enforcement, monthly reporting. Built for HOA boards and community managers.",
+    heroHeadline: "Towing & Parking Enforcement for HOA Boards",
+    heroSubtext:
+      "Board-approved, ARS-compliant enforcement that aligns with your CC&Rs — at zero cost to the HOA. We present to your board every year and handle every detail so volunteers don't have to.",
+    heroImage: "/images/arizona-hoa-entrance.jpg",
+    introTitle: "Built for the People Who Sit on the Board",
+    introText: [
+      "HOA boards are made up of homeowners who volunteer their time. Parking enforcement is consistently one of the most contentious topics on the agenda — RVs in the street, guests overstaying, fire-lane violations, vehicles that have not moved in months. Without a clear program, every incident becomes a board debate.",
+      "We've worked with dozens of HOA boards across the Phoenix metro and we know the lifecycle: annual elections, new members who need to be educated, CC&R language that has not been updated in 15 years, and a property management company that needs a single point of contact. Our HOA program is designed around that lifecycle.",
+      "This page is the audience-specific landing for HOA boards and community managers. If you serve a homeowner association in Phoenix, Scottsdale, Mesa, Chandler, Gilbert, Tempe, Glendale, or anywhere across the metro, this is the right place to start.",
+    ],
+    features: [
+      { title: "Annual Board Presentations", desc: "When new board members come on each year, we present the program from scratch — Arizona law, your CC&Rs, the zero-cost model, and the monthly reporting your board needs.", icon: "education" },
+      { title: "CC&R-Aligned Enforcement", desc: "We review your community's CC&Rs and parking rules and design enforcement that matches what your community actually voted on — no gaps, no overreach.", icon: "shield" },
+      { title: "Monthly Reports for Board Meetings", desc: "Every month we deliver a written report covering enforcement activity, trends, problem areas, and recommendations — ready to drop into your board packet.", icon: "patrol" },
+      { title: "One Point of Contact for Management Co.", desc: "If you're a property management company managing multiple HOAs, you get one account manager covering every community in your portfolio with consistent reporting.", icon: "portal" },
+    ],
+    howItWorks: [
+      { step: 1, title: "Board Discovery Call", desc: "A 30-minute call with the board or community manager to understand the community, current pain points, and CC&R language." },
+      { step: 2, title: "Board Presentation", desc: "We present the proposed program at a board meeting, answer questions, and address resident concerns before anything is decided." },
+      { step: 3, title: "CC&R + Signage Alignment", desc: "Our team aligns the enforcement plan with your CC&Rs and installs ARS-compliant signage at all entry points, guest parking, and common areas — at no cost." },
+      { step: 4, title: "Warning-First Rollout", desc: "We start with a warning-first phase so residents understand the new program before any tows happen. Communication templates included." },
+      { step: 5, title: "Ongoing Enforcement & Reporting", desc: "Patrols run on the schedule the board approved, with monthly written reports and an annual board check-in." },
+    ],
+    benefits: [
+      { title: "Take Parking off the Board Agenda", desc: "When your enforcement program runs predictably and is documented monthly, parking stops being a recurring debate. Board members get to focus on landscaping, reserves, and amenities — not arguing about whose guest stayed too long.", align: "left" },
+      { title: "Protect the Community from Liability", desc: "Fire-lane violations, ADA spaces, and CC&R-prohibited storage all create real legal exposure. A documented, ARS-compliant enforcement program with a clear paper trail is the single best way to protect both the HOA board and the management company from a wrongful-tow or negligence claim.", align: "right" },
+      { title: "Annual Continuity Through Board Turnover", desc: "When new board members come on, we re-present the program, answer their questions, and re-establish the relationship. That continuity is hard to maintain when enforcement is run ad-hoc through whoever happens to be on the board this year.", align: "left" },
+    ],
+    faqs: [
+      { q: "Does this cost the HOA anything?", a: "No. Our program is completely free for the HOA. Sign installation, patrol, towing, and reporting are all funded through statutory impound fees charged to vehicle owners who violate the posted rules." },
+      { q: "What if the board wants to approve every tow individually?", a: "We support that. Many HOAs prefer a model where our patrol identifies and documents violations and the board (or community manager) authorizes the tow. Others prefer fully delegated enforcement under the policies the board approved up front." },
+      { q: "How do you handle pushback from residents?", a: "Our warning-first phase gives residents notice and time to adjust. Signage is ARS-compliant so the legal basis is clear. When residents call the board, the board can point at the documented program, the photos, and the monthly report rather than personally defending each decision." },
+      { q: "What about RVs and trailer storage?", a: "RV, trailer, boat, and oversized-vehicle rules are highly community-specific. We codify your CC&R language into a clear enforcement matrix and execute against it consistently — including grace periods if your CC&Rs allow them." },
+      { q: "Can you work with our existing property management company?", a: "Yes. We work directly with property management companies including all reporting, billing-of-record routing, and portal access. Your community manager becomes the single point of contact instead of the board." },
+      { q: "What happens at the annual board transition?", a: "We proactively request a slot at the first board meeting of the new term to re-introduce the program, walk through prior year activity, and answer any questions the new members have. The program doesn't restart from zero every year." },
+    ],
+    relatedServices: [
+      { title: "HOA Towing Service", slug: "hoa-towing", desc: "The HOA-specific service page with the operational details." },
+      { title: "Private Property Impounds", slug: "private-property-impounds", desc: "The underlying impound service that powers HOA enforcement." },
+      { title: "Property Manager Towing Hub", slug: "property-manager-towing-hub", desc: "All HOA and property manager resources in one place.", category: "resources" },
+    ],
+    targetAudience: "HOA board members and community managers",
+    testimonials: [
+      { quote: "We have new board members every January. Axle re-presents the program every year so the new folks don't have to figure it out from scratch. That's the part nobody else does.", name: "Diane K.", role: "Board President", company: "Saguaro Hills HOA" },
+      { quote: "Our community manager said pick anyone we wanted. We picked Axle because the monthly report shows up before the board meeting every single month without us asking.", name: "Andrew M.", role: "Board Treasurer", company: "Sonoran Ridge HOA" },
+    ],
+  },
+
+  "apartment-complexes": {
+    title: "Towing for Apartment Complexes",
+    slug: "apartment-complexes",
+    category: { slug: "audiences", label: "Audiences" },
+    metaTitle: "Apartment Towing Phoenix — Property Manager Programs | Axle Towing",
+    metaDescription:
+      "Apartment towing programs in Phoenix built around assigned spaces, visitor management, and resident satisfaction. Property manager portal, ARS-compliant signage, abandoned vehicle removal — at no cost to the complex.",
+    heroHeadline: "Towing & Enforcement for Apartment Property Managers",
+    heroSubtext:
+      "Keep assigned spaces available, prevent visitor parking abuse, clear abandoned vehicles, and lift resident satisfaction scores — with a property-manager portal that turns enforcement into a 60-second task.",
+    heroImage: "/images/arizona-apartment-parking.jpg",
+    introTitle: "Parking is a Top-3 Resident Satisfaction Driver",
+    introText: [
+      "On almost every resident satisfaction survey, parking ranks in the top three. When residents can't find their assigned spot or their guest can't park because someone left a junker in the lot for three months, it shows up as lower satisfaction, lower lease renewal, and more move-out reviews about parking.",
+      "Apartment communities have a specific parking enforcement pattern: assigned spaces, visitor permit systems, occasional abandoned vehicles, and chronic problem cars whose owners do not live in the community. The on-site team does not have the time or the legal protection to run enforcement themselves.",
+      "Our apartment programs handle every piece — assigned-space verification, visitor permit issuance and time limits, abandoned vehicle removal under Arizona statute, and full property manager portal access for requesting tows and viewing reports — at zero cost to the property.",
+    ],
+    features: [
+      { title: "Assigned Space Verification", desc: "Patrol verifies decals, permits, or unit-association against the master roster you provide — and updates as turnover happens.", icon: "parking" },
+      { title: "Visitor Parking with Time Limits", desc: "Temporary permits, hang tags, or QR-based visitor systems with time limits prevent ongoing abuse while welcoming legitimate guests.", icon: "visitor" },
+      { title: "Abandoned Vehicle Pipeline", desc: "Long-sitting unregistered vehicles get processed under Arizona's 72-hour rule with full ARS-compliant documentation.", icon: "car" },
+      { title: "Property Manager Portal", desc: "Request tows, view every patrol report, see photo evidence, and manage your community's rules from one logged-in dashboard.", icon: "portal" },
+    ],
+    howItWorks: [
+      { step: 1, title: "On-Site Walk & Master Roster", desc: "We walk the property with the on-site manager to understand parking layout, problem areas, and current assignment of spaces to residents." },
+      { step: 2, title: "Program Design & Permit System", desc: "We design the right permit / decal / hang tag system for your community, plus the visitor parking model and the enforcement schedule." },
+      { step: 3, title: "Signage & Resident Communication", desc: "ARS-compliant signage goes up at entry points and all problem zones. We provide templated resident notifications for the rollout." },
+      { step: 4, title: "Portal Onboarding", desc: "Your manager and assistant managers get portal logins, training, and a 24/7 hotline number to use if the portal isn't convenient." },
+      { step: 5, title: "Ongoing Enforcement & Monthly Reports", desc: "Patrol runs on the schedule we agreed, every tow is documented, and a monthly summary lands in your inbox." },
+    ],
+    benefits: [
+      { title: "Higher Resident Renewal Rates", desc: "When residents trust that their assigned spot will be there at 11pm after a 12-hour shift, satisfaction goes up. Communities consistently report lease renewal lifts of 5-15% after a parking program is professionally managed.", align: "left" },
+      { title: "Free Up the On-Site Team", desc: "Your leasing agents and assistant manager should be leasing units and handling resident relations — not arguing with someone whose car got towed. The portal lets the property manager request a tow in under a minute and never engage with the vehicle owner directly.", align: "right" },
+      { title: "Eliminate the Abandoned Vehicle Problem", desc: "Apartment communities are a magnet for abandoned vehicles. A documented, statutorily-compliant pipeline means cars actually leave instead of aging in place — and your lot doesn't degrade into a junkyard appearance.", align: "left" },
+    ],
+    faqs: [
+      { q: "How quickly can we get a new property set up?", a: "Most apartment complexes are fully set up within 5-7 business days, including the walk-through, signage installation, permit distribution, portal logins, and initial resident communications." },
+      { q: "What is the lift on the on-site team?", a: "After initial setup, the typical apartment manager spends under 5 minutes per week on parking enforcement — usually one or two portal tow requests, occasionally checking the monthly report." },
+      { q: "Do residents get warnings or are they towed immediately?", a: "Warning-first is the default. Residents get a clearly-marked notice on the windshield with a deadline. Repeat offenders, blocked fire lanes, and unauthorized vehicles from outside the community can be towed without warning per the posted rules." },
+      { q: "How do you handle short-term guests and overnight visitors?", a: "We use either a property-manager-issued guest permit, a hang tag system, or a QR-based visitor registration depending on what works for your community. Time limits and permit caps prevent abuse." },
+      { q: "What about vehicles owned by residents but parked in someone else's assigned spot?", a: "We document the violation and notify the property manager via the portal. Most communities prefer the management team handle resident-on-resident parking conflicts directly with us as the towing backstop if it persists." },
+      { q: "Will this cost the apartment complex anything?", a: "No. The program is completely free for property owners and management companies. All costs are recovered through statutory impound fees charged to vehicle owners." },
+    ],
+    relatedServices: [
+      { title: "Apartment Towing Service", slug: "apartment-towing", desc: "The operational service page with the apartment-specific details." },
+      { title: "Abandoned Vehicle Removal", slug: "abandoned-vehicle-removal", desc: "The ARS-compliant pipeline for long-sitting vehicles." },
+      { title: "Property Manager Towing Hub", slug: "property-manager-towing-hub", desc: "Every property-manager guide and template in one place.", category: "resources" },
+    ],
+    targetAudience: "apartment property managers and management companies",
+    testimonials: [
+      { quote: "Resident parking was our top recurring complaint. Three months after we onboarded with Axle, parking dropped completely off the satisfaction survey's top-issue list. The on-site team barely spends any time on it now.", name: "Karen S.", role: "Property Manager", company: "Tempe Gateway Apartments" },
+      { quote: "I manage 9 apartment communities across the East Valley. Having one portal, one phone number, and one monthly report per community is a massive workflow simplification for my regional team.", name: "David O.", role: "Regional Manager", company: "Pinnacle Property Group" },
+    ],
+  },
+
+  "commercial-property-managers": {
+    title: "Towing for Commercial Property Managers",
+    slug: "commercial-property-managers",
+    category: { slug: "audiences", label: "Audiences" },
+    metaTitle: "Commercial Property Towing Phoenix — Retail, Office, Industrial | Axle Towing",
+    metaDescription:
+      "Commercial property towing in Phoenix for retail centers, office parks, strip malls, medical, and industrial. Tenant-friendly enforcement, fire lane / ADA compliance, multi-tenant coordination — at zero cost to property owners.",
+    heroHeadline: "Commercial Property Towing & Parking Enforcement",
+    heroSubtext:
+      "Tenant-friendly, customer-friendly enforcement for retail centers, office parks, strip malls, medical facilities, and industrial sites — designed to protect tenant revenue and your property's professional image.",
+    heroImage: "/images/arizona-commercial-parking.jpg",
+    introTitle: "Built Around What Commercial Property Owners Actually Need",
+    introText: [
+      "Commercial properties have a different parking problem than apartments or HOAs. Your customers need to find a spot quickly. Your tenants need their employees to park somewhere that does not consume customer-facing inventory. Fire lanes, ADA spaces, and loading zones have real legal exposure if they go unenforced. And the absolute last thing you want is a customer of a tenant getting towed — that's a phone call you don't want to take.",
+      "Axle's commercial program is designed around these constraints. Customer-facing parking is enforced with reasonable time limits and a warning-first approach. Employee parking is delegated to the back-of-lot zones with permit systems. Fire lanes, ADA, and loading zones are non-negotiables enforced 24/7 to protect you from code violations.",
+      "We work with retail centers, strip malls, office parks, medical facilities, industrial sites, churches, and event venues across the Phoenix metro. The program is free for property owners — all costs are recovered through statutory impound fees on the people actually violating the rules.",
+    ],
+    features: [
+      { title: "Tenant + Customer Coordination", desc: "Before enforcement starts, we coordinate with every tenant to understand employee parking patterns, customer expectations, and shift schedules.", icon: "store" },
+      { title: "Fire Lane / ADA / Loading Zone Enforcement", desc: "Strict, 24/7 enforcement of legally-protected zones to eliminate ADA fine exposure and fire-code violation risk.", icon: "shield" },
+      { title: "Employee Permit Systems", desc: "Designated employee parking with sticker, hang-tag, or QR permit systems keep customer-facing spaces open during business hours.", icon: "sticker" },
+      { title: "After-Hours & Storage Prevention", desc: "Overnight enforcement prevents lot-as-storage abuse, dumping, and vandalism that drag down property values.", icon: "patrol" },
+    ],
+    howItWorks: [
+      { step: 1, title: "Property + Tenant Discovery", desc: "We meet with the property owner and key tenants to understand parking patterns, customer flow, and the property's specific liability exposures." },
+      { step: 2, title: "Multi-Tenant Plan + Sign-Off", desc: "We draft the enforcement plan including employee parking zones, customer time limits, and fire-lane policy, then get sign-off from the owner and primary tenants." },
+      { step: 3, title: "Signage, Permits, Communication", desc: "ARS-compliant signage installed at the property, employee permits distributed to tenants, customer-friendly notices posted to set expectations." },
+      { step: 4, title: "Tiered Enforcement Rollout", desc: "Warning-first phase for customer-zone violations. Strict enforcement from day one on fire lanes, ADA, and loading zones." },
+      { step: 5, title: "Ongoing Monitoring + Quarterly Reviews", desc: "Patrol on the schedule we agreed, monthly reports, and a quarterly review of what's working and what should adjust." },
+    ],
+    benefits: [
+      { title: "Protect Tenant Revenue + Lease Renewals", desc: "If customers can't find parking, they leave. If they leave, your retail tenant's revenue drops, and at lease renewal time you hear about it. Professional enforcement keeps customer-facing parking available and your tenants profitable.", align: "left" },
+      { title: "Zero ADA / Fire-Code Exposure", desc: "ADA violations carry federal penalties. Fire lane violations carry municipal fines and serious life-safety risk. Documented, consistent 24/7 enforcement of these zones is the single most effective insurance policy against a costly violation.", align: "right" },
+      { title: "Professional Property Image", desc: "Well-managed parking, clean signage, and orderly lots reflect the quality of your property. Prospective tenants notice. Customers of existing tenants notice. The maintenance team notices because nobody is leaving junk cars overnight.", align: "left" },
+    ],
+    faqs: [
+      { q: "We're worried about scaring away customers — is enforcement compatible with retail traffic?", a: "Yes — and this is the most common owner concern. We use a customer-first model: clear signage about time limits, warning notices before tows in customer zones, and strict enforcement only on chronic violators, employees taking customer spots, and protected zones (fire / ADA / loading). Legitimate customers are never inconvenienced." },
+      { q: "How does this work across multiple tenants with different needs?", a: "We coordinate with each tenant individually, codify the parking plan in writing, and get sign-off. Each tenant ends up with a defined employee parking zone and a shared understanding of customer-facing rules. Multi-tenant properties are our most common engagement." },
+      { q: "What about chronic violators — same vehicle parking after-hours every night?", a: "Documented chronic violations move from warning to tow quickly. With photo + GPS documentation across multiple nights, the legal basis for tow without further warning is rock-solid under Arizona law." },
+      { q: "Can we have you handle just fire lane and ADA enforcement?", a: "Yes. Some commercial owners want full enforcement; others want fire/ADA-only with everything else handled informally. We support both models and any combination in between." },
+      { q: "How do you handle after-hours overnight parking and vehicle storage on the property?", a: "After-hours patrol prevents your lot from becoming free overnight storage. This is especially important for retail and medical properties that close at night. We also flag dumping and vandalism risk during these patrols." },
+      { q: "Will this cost the property anything?", a: "No. Our program is free for commercial property owners. All costs are recovered through statutory impound fees charged to vehicle owners." },
+    ],
+    relatedServices: [
+      { title: "Commercial Property Towing Service", slug: "commercial-property-towing", desc: "The operational service page with the commercial details." },
+      { title: "Parking Enforcement", slug: "parking-enforcement", desc: "The patrol + permit system behind the commercial program." },
+      { title: "Property Manager Towing Hub", slug: "property-manager-towing-hub", desc: "Every commercial property manager resource in one place.", category: "resources" },
+    ],
+    targetAudience: "commercial property owners, retail center managers, and office park directors",
+    testimonials: [
+      { quote: "We were losing real revenue from customers leaving without parking. The customer-first approach Axle laid out kept legitimate shoppers happy while solving the employee-overspill problem. Tenants noticed.", name: "Steven L.", role: "Shopping Center Owner", company: "Baseline Marketplace" },
+      { quote: "Fire lane enforcement was our liability blind spot. Documented patrol with photos and timestamps is exactly what our insurance carrier wanted to see. Premium discussions changed.", name: "Rachel N.", role: "Office Park Director", company: "Scottsdale Business Center" },
     ],
   },
 };

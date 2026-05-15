@@ -113,6 +113,12 @@ export const FREE_SERVICES = [
     shortDesc: "Protect your commercial property from unauthorized parking.",
     icon: "store",
   },
+  {
+    title: "Abandoned Vehicle Removal",
+    slug: "abandoned-vehicle-removal",
+    shortDesc: "ARS-compliant 72-hour pipeline for long-sitting vehicles. Title clearance and auction handled end-to-end.",
+    icon: "shield",
+  },
 ];
 
 export const PAID_SERVICES = [
