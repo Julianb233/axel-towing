@@ -1,0 +1,28 @@
+{
+  "client": "Axle Towing & Impound",
+  "domain": "axletowing.com",
+  "capture_date": "2026-05-15",
+  "source": "Production deployment verification via Vercel + Playwright screenshots",
+  "url": "https://axletowing.com/services/abandoned-vehicle-removal",
+  "page_title": "Abandoned Vehicle Removal — Phoenix & Apache Junction | Axle Towing & Impound",
+  "screenshot": "data/seo-ai/axletowing.com/2026-05-15/screenshots/live/services-abandoned-vehicle-removal.png",
+  "commit": "0a0cee7ab135be25e0332231c14495dd9f07267b",
+  "deployment_id": "dpl_FQp5h92w1FjH227HRtjLdWNgPG8k",
+  "local_seo_keywords": [
+    "services abandoned vehicle removal"
+  ],
+  "ai_seo_entities": [
+    "Axle Towing",
+    "private property towing",
+    "parking enforcement",
+    "abandoned vehicle removal",
+    "Phoenix metro",
+    "property managers"
+  ],
+  "recall_tags": [
+    "seo-ai-rollout",
+    "live-url-verification",
+    "ppp-evidence",
+    "axle-towing"
+  ]
+}
