@@ -1,0 +1,46 @@
+{
+  "client": "Axle Towing",
+  "domain": "axletowing.com",
+  "capture_date": "2026-05-15",
+  "storage_path": "data/gbp/axletowing.com/2026-05-15/media/gbp-ready/axle-towing-apartment-complex-parking-enforcement.jpg",
+  "source_path": "website/public/images/service-apartment-towing.jpg",
+  "gbp_photo_type": "photos_at_work",
+  "location_applicability": "both",
+  "service_intent": "Apartment Complex Towing",
+  "local_seo_keywords": [
+    "apartment complex towing",
+    "apartment parking enforcement",
+    "unauthorized parking removal"
+  ],
+  "ai_seo_entities": [
+    "apartment complexes",
+    "resident parking",
+    "guest parking enforcement"
+  ],
+  "alt_text": "Apartment complex parking enforcement by Axle Towing",
+  "google_media_requirements": {
+    "format_allowed": "JPG or PNG",
+    "size_allowed": "10 KB to 5 MB",
+    "recommended_resolution": "720 x 720 or higher",
+    "minimum_resolution": "250 x 250",
+    "quality": "In focus, well lit, represents reality, no heavy filters or AI alteration"
+  },
+  "file": {
+    "bytes": 169800,
+    "width": 1408,
+    "height": 768,
+    "format": "jpeg"
+  },
+  "validation": {
+    "extOk": true,
+    "sizeOk": true,
+    "minOk": true,
+    "recommendedOk": true,
+    "uploadReady": true
+  },
+  "usage_notes": [
+    "Use only if the image truthfully represents Axle Towing's current business.",
+    "Do not use legal-advice captions or competitor-comparison captions.",
+    "Use 24/7 wording only for towing dispatch, not vehicle release or office availability."
+  ]
+}

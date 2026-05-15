@@ -1,0 +1,45 @@
+{
+  "client": "Axle Towing",
+  "domain": "axletowing.com",
+  "capture_date": "2026-05-15",
+  "storage_path": "data/gbp/axletowing.com/2026-05-15/media/gbp-ready/axle-towing-team-arizona.jpg",
+  "source_path": "website/public/images/about-team.jpg",
+  "gbp_photo_type": "team",
+  "location_applicability": "both",
+  "service_intent": "team",
+  "local_seo_keywords": [
+    "Arizona towing team",
+    "Axle Towing staff",
+    "towing professionals"
+  ],
+  "ai_seo_entities": [
+    "Axle Towing team",
+    "Arizona towing professionals"
+  ],
+  "alt_text": "Axle Towing team photo for Google Business Profile",
+  "google_media_requirements": {
+    "format_allowed": "JPG or PNG",
+    "size_allowed": "10 KB to 5 MB",
+    "recommended_resolution": "720 x 720 or higher",
+    "minimum_resolution": "250 x 250",
+    "quality": "In focus, well lit, represents reality, no heavy filters or AI alteration"
+  },
+  "file": {
+    "bytes": 219266,
+    "width": 1600,
+    "height": 900,
+    "format": "jpeg"
+  },
+  "validation": {
+    "extOk": true,
+    "sizeOk": true,
+    "minOk": true,
+    "recommendedOk": true,
+    "uploadReady": true
+  },
+  "usage_notes": [
+    "Use only if the image truthfully represents Axle Towing's current business.",
+    "Do not use legal-advice captions or competitor-comparison captions.",
+    "Use 24/7 wording only for towing dispatch, not vehicle release or office availability."
+  ]
+}
