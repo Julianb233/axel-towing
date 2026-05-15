@@ -16,6 +16,24 @@ interface ChangelogGroup {
 
 const changelog: ChangelogGroup[] = [
   {
+    date: "May 15, 2026 (SEO Performance + Strategy pages wired — AI-10026)",
+    type: "completed",
+    entries: [
+      {
+        text: "Created /seo-strategy page — full written SEO strategy with 5 pillars (topical authority, AI SEO layer, Local SEO/GBP, domain authority, tracking), keyword cluster table, content inventory, and 90-day milestones",
+        category: "seo",
+      },
+      {
+        text: "Added SEO Strategy summary section to /seo performance page — 4-card overview of active initiatives with link to full strategy",
+        category: "seo",
+      },
+      {
+        text: "Confirmed Convex data pipeline is live: SEMrush snapshot (2026-05-08) showing Authority Score 17, 67 keywords, 429 organic visits/mo, 29 AI mentions on 12 cited pages",
+        category: "infrastructure",
+      },
+    ],
+  },
+  {
     date: "May 15, 2026 (40 New Pages: Audiences + Pillar + City-Service + Resources — AI-9979 / AI-9980 / AI-10006)",
     type: "completed",
     entries: [
