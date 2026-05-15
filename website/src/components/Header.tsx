@@ -127,7 +127,7 @@ export default function Header() {
                   <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-green-500" />
                 </span>
                 <span className="text-green-400 font-semibold tracking-wide text-xs uppercase">
-                  Available Now
+                  Dispatch Available
                 </span>
               </div>
               <span className="hidden sm:inline text-white/30">|</span>

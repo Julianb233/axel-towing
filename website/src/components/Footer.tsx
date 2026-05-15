@@ -387,7 +387,7 @@ export default function Footer() {
                 Terms of Service
               </Link>
               <span className="text-white/20">|</span>
-              <span>Serving the Greater Phoenix Metro Area &mdash; 24/7</span>
+              <span>Serving the Greater Phoenix Metro Area &mdash; 24/7 dispatch</span>
             </div>
           </div>
         </div>

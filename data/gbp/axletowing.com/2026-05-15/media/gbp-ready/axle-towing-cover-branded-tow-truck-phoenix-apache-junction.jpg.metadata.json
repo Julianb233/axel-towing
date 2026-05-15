@@ -1,0 +1,46 @@
+{
+  "client": "Axle Towing",
+  "domain": "axletowing.com",
+  "capture_date": "2026-05-15",
+  "storage_path": "data/gbp/axletowing.com/2026-05-15/media/gbp-ready/axle-towing-cover-branded-tow-truck-phoenix-apache-junction.jpg",
+  "source_path": "website/public/images/hero-tow-truck.jpg",
+  "gbp_photo_type": "cover",
+  "location_applicability": "both",
+  "service_intent": "towing dispatch",
+  "local_seo_keywords": [
+    "24/7 towing dispatch",
+    "Phoenix towing service",
+    "Apache Junction towing service"
+  ],
+  "ai_seo_entities": [
+    "tow truck",
+    "private property towing",
+    "Phoenix metro"
+  ],
+  "alt_text": "Branded Axle Towing truck for the Google Business Profile cover photo",
+  "google_media_requirements": {
+    "format_allowed": "JPG or PNG",
+    "size_allowed": "10 KB to 5 MB",
+    "recommended_resolution": "720 x 720 or higher",
+    "minimum_resolution": "250 x 250",
+    "quality": "In focus, well lit, represents reality, no heavy filters or AI alteration"
+  },
+  "file": {
+    "bytes": 289737,
+    "width": 1920,
+    "height": 1080,
+    "format": "jpeg"
+  },
+  "validation": {
+    "extOk": true,
+    "sizeOk": true,
+    "minOk": true,
+    "recommendedOk": true,
+    "uploadReady": true
+  },
+  "usage_notes": [
+    "Use only if the image truthfully represents Axle Towing's current business.",
+    "Do not use legal-advice captions or competitor-comparison captions.",
+    "Use 24/7 wording only for towing dispatch, not vehicle release or office availability."
+  ]
+}

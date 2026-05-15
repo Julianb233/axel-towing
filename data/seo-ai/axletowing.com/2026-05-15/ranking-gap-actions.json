@@ -1,0 +1,64 @@
+{
+  "client": "Axle Towing & Impound",
+  "generated_at": "2026-05-15T08:14:21.816Z",
+  "ranking_gap_actions": [
+    {
+      "type": "quick_win",
+      "priority": "high",
+      "title": "Index the six pillar articles",
+      "metric": "crawl/index coverage",
+      "owner": "agent",
+      "status": "blocked_by_search_console_access"
+    },
+    {
+      "type": "striking_distance",
+      "priority": "high",
+      "title": "Support abandoned vehicle removal in Phoenix/Mesa/Tempe/Scottsdale/Chandler/Gilbert/Glendale",
+      "metric": "local organic impressions and AI citation eligibility",
+      "owner": "content+indexing",
+      "status": "deployed_pending_indexing"
+    },
+    {
+      "type": "content_gap",
+      "priority": "medium",
+      "title": "Add GBP posts and Q&A entries for property-manager and HOA towing terms",
+      "metric": "GBP discovery terms and conversion actions",
+      "owner": "GBP operator",
+      "status": "ready_after_gbp_access"
+    },
+    {
+      "type": "authority_gap",
+      "priority": "medium",
+      "title": "Build citation support to the new service and article URLs",
+      "metric": "referring local citations and entity consistency",
+      "owner": "SEO operator",
+      "status": "planned"
+    }
+  ],
+  "ai_seo_actions": [
+    {
+      "type": "missing_entity",
+      "priority": "high",
+      "title": "Make Axle appear as Phoenix private property towing / abandoned vehicle removal entity in AI answers",
+      "status": "cluster_deployed_pending_indexing"
+    },
+    {
+      "type": "weak_citation",
+      "priority": "high",
+      "title": "Use GBP, sitemap, and citation pages to give AI systems crawlable corroboration",
+      "status": "blocked_by_search_console_and_gbp_execution"
+    },
+    {
+      "type": "content_needed",
+      "priority": "done",
+      "title": "Create city-service coverage matrix for Phoenix metro intent",
+      "status": "deployed"
+    },
+    {
+      "type": "source_gap",
+      "priority": "medium",
+      "title": "Add external citations from business directories and association profiles",
+      "status": "planned"
+    }
+  ]
+}

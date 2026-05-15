@@ -7,14 +7,18 @@ import { COMPANY } from "@/lib/constants";
 const CANONICAL = `https://${COMPANY.domain}/tow-service-phoenix-az`;
 const PAGE_TITLE = "Tow Service in Phoenix, AZ — Property Manager's Guide (2026)";
 const PAGE_DESCRIPTION =
-  "How Phoenix property managers compare tow services in 2026. Side-by-side comparison of the major Phoenix-metro tow operators on response time, insurance, signage, fees, and dispatch model. Free service for HOAs, apartments, and commercial properties.";
+  "A property-manager guide to evaluating private property towing, parking enforcement, documentation, response time, and dispatch coverage in the Phoenix metro area.";
 
 export const metadata: Metadata = {
   title: PAGE_TITLE,
   description: PAGE_DESCRIPTION,
   alternates: { canonical: CANONICAL },
+  robots: {
+    index: false,
+    follow: true,
+  },
   openGraph: {
-    title: "Tow Service in Phoenix, AZ — Property Manager's Comparison (2026)",
+    title: "Tow Service in Phoenix, AZ — Property Manager's Guide (2026)",
     description: PAGE_DESCRIPTION,
     url: CANONICAL,
     type: "article",
@@ -22,7 +26,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Tow Service Phoenix AZ — Property Manager Comparison 2026",
+    title: "Tow Service Phoenix AZ — Property Manager Guide 2026",
     description: PAGE_DESCRIPTION,
   },
 };

@@ -9,13 +9,13 @@ export const metadata: Metadata = {
   title: data.metaTitle,
   description: data.metaDescription,
   alternates: {
-    canonical: `https://axletowing.com/services/abandoned-vehicle-removal`,
+    canonical: "https://axletowing.com/services/abandoned-vehicle-removal",
   },
   openGraph: {
     title: data.metaTitle,
     description: data.metaDescription,
     images: [{ url: "https://axletowing.com/images/seo/abandoned-vehicle-removal-service.webp", width: 1200, height: 630, alt: "Professional tow truck removing an abandoned vehicle from a Phoenix AZ property - Axle Towing" }],
-    url: `https://axletowing.com/services/abandoned-vehicle-removal`,
+    url: "https://axletowing.com/services/abandoned-vehicle-removal",
   },
 };
 

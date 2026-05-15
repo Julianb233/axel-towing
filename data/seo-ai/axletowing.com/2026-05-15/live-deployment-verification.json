@@ -1,0 +1,132 @@
+{
+  "client": "Axle Towing & Impound",
+  "domain": "axletowing.com",
+  "capture_date": "2026-05-15",
+  "source": "Production deployment verification via Vercel + Playwright screenshots",
+  "commit": "0a0cee7ab135be25e0332231c14495dd9f07267b",
+  "deployment": {
+    "id": "dpl_FQp5h92w1FjH227HRtjLdWNgPG8k",
+    "url": "https://axel-towing-g3s488zm8-ai-acrobatics.vercel.app",
+    "aliases": [
+      "https://axletowing.com",
+      "https://axeltowing.com",
+      "https://www.axletowing.com",
+      "https://www.axeltowing.com"
+    ],
+    "state": "READY"
+  },
+  "checks": [
+    {
+      "slug": "abandoned-vehicle-removal-apartment-complexes-phoenix",
+      "url": "https://axletowing.com/blog/abandoned-vehicle-removal-apartment-complexes-phoenix",
+      "title": "Abandoned Vehicle Removal for Phoenix Apartment Complexes | Axle Towing & Impound",
+      "http_status": 200,
+      "screenshot": "data/seo-ai/axletowing.com/2026-05-15/screenshots/live/abandoned-vehicle-removal-apartment-complexes-phoenix.png",
+      "metadata": "data/seo-ai/axletowing.com/2026-05-15/screenshots/live/abandoned-vehicle-removal-apartment-complexes-phoenix.png.metadata.json",
+      "tags": [
+        "seo-ai-rollout",
+        "live-url-verification",
+        "ppp-evidence",
+        "axle-towing"
+      ]
+    },
+    {
+      "slug": "towing-dispatch-vs-vehicle-release-hours",
+      "url": "https://axletowing.com/blog/towing-dispatch-vs-vehicle-release-hours",
+      "title": "24/7 Towing Dispatch vs. Vehicle Release Hours: What Property Managers Should Know | Axle Towing & Impound",
+      "http_status": 200,
+      "screenshot": "data/seo-ai/axletowing.com/2026-05-15/screenshots/live/towing-dispatch-vs-vehicle-release-hours.png",
+      "metadata": "data/seo-ai/axletowing.com/2026-05-15/screenshots/live/towing-dispatch-vs-vehicle-release-hours.png.metadata.json",
+      "tags": [
+        "seo-ai-rollout",
+        "live-url-verification",
+        "ppp-evidence",
+        "axle-towing"
+      ]
+    },
+    {
+      "slug": "abandoned-vehicle-removal-mesa-apartment-communities",
+      "url": "https://axletowing.com/blog/abandoned-vehicle-removal-mesa-apartment-communities",
+      "title": "Abandoned Vehicle Removal for Mesa Apartment Communities | Axle Towing & Impound",
+      "http_status": 200,
+      "screenshot": "data/seo-ai/axletowing.com/2026-05-15/screenshots/live/abandoned-vehicle-removal-mesa-apartment-communities.png",
+      "metadata": "data/seo-ai/axletowing.com/2026-05-15/screenshots/live/abandoned-vehicle-removal-mesa-apartment-communities.png.metadata.json",
+      "tags": [
+        "seo-ai-rollout",
+        "live-url-verification",
+        "ppp-evidence",
+        "axle-towing"
+      ]
+    },
+    {
+      "slug": "hoa-parking-enforcement-mesa-az",
+      "url": "https://axletowing.com/blog/hoa-parking-enforcement-mesa-az",
+      "title": "HOA Parking Enforcement in Mesa, AZ | Axle Towing & Impound",
+      "http_status": 200,
+      "screenshot": "data/seo-ai/axletowing.com/2026-05-15/screenshots/live/hoa-parking-enforcement-mesa-az.png",
+      "metadata": "data/seo-ai/axletowing.com/2026-05-15/screenshots/live/hoa-parking-enforcement-mesa-az.png.metadata.json",
+      "tags": [
+        "seo-ai-rollout",
+        "live-url-verification",
+        "ppp-evidence",
+        "axle-towing"
+      ]
+    },
+    {
+      "slug": "apartment-parking-enforcement-phoenix-az",
+      "url": "https://axletowing.com/blog/apartment-parking-enforcement-phoenix-az",
+      "title": "Apartment Parking Enforcement in Phoenix, AZ | Axle Towing & Impound",
+      "http_status": 200,
+      "screenshot": "data/seo-ai/axletowing.com/2026-05-15/screenshots/live/apartment-parking-enforcement-phoenix-az.png",
+      "metadata": "data/seo-ai/axletowing.com/2026-05-15/screenshots/live/apartment-parking-enforcement-phoenix-az.png.metadata.json",
+      "tags": [
+        "seo-ai-rollout",
+        "live-url-verification",
+        "ppp-evidence",
+        "axle-towing"
+      ]
+    },
+    {
+      "slug": "services-abandoned-vehicle-removal",
+      "url": "https://axletowing.com/services/abandoned-vehicle-removal",
+      "title": "Abandoned Vehicle Removal — Phoenix & Apache Junction | Axle Towing & Impound",
+      "http_status": 200,
+      "screenshot": "data/seo-ai/axletowing.com/2026-05-15/screenshots/live/services-abandoned-vehicle-removal.png",
+      "metadata": "data/seo-ai/axletowing.com/2026-05-15/screenshots/live/services-abandoned-vehicle-removal.png.metadata.json",
+      "tags": [
+        "seo-ai-rollout",
+        "live-url-verification",
+        "ppp-evidence",
+        "axle-towing"
+      ]
+    }
+  ],
+  "sitemap": {
+    "url": "https://axletowing.com/sitemap.xml",
+    "http_status": 200,
+    "verified_paths": [
+      "/blog/abandoned-vehicle-removal-apartment-complexes-phoenix",
+      "/blog/towing-dispatch-vs-vehicle-release-hours",
+      "/blog/abandoned-vehicle-removal-mesa-apartment-communities",
+      "/blog/hoa-parking-enforcement-mesa-az",
+      "/blog/apartment-parking-enforcement-phoenix-az",
+      "/services/abandoned-vehicle-removal"
+    ]
+  },
+  "robots": {
+    "url": "https://axletowing.com/robots.txt",
+    "http_status": 200
+  },
+  "guardrails": [
+    "24/7 means towing dispatch only",
+    "No 24/7 office/release promise",
+    "No competitor-comparison publish intent",
+    "No legal-dispute playbook"
+  ],
+  "next_linear_tasks": [
+    "AI-10009",
+    "AI-10010",
+    "AI-10011",
+    "AI-10013"
+  ]
+}

@@ -1,0 +1,305 @@
+{
+  "client": "Axle Towing",
+  "domain": "axletowing.com",
+  "run_date": "2026-05-15",
+  "generated_at": "2026-05-15T06:40:47.819Z",
+  "google_best_practices_source": [
+    "https://support.google.com/business/answer/7091",
+    "https://support.google.com/business/answer/6123536",
+    "https://support.google.com/business/answer/6103862"
+  ],
+  "meeting_guardrails": {
+    "dispatch": "24/7 towing dispatch can be described.",
+    "office_release": "Do not imply office or vehicle release is available 24/7.",
+    "content": "Avoid legal advice and competitor-comparison content."
+  },
+  "assets": [
+    {
+      "storage_path": "data/gbp/axletowing.com/2026-05-15/media/gbp-ready/axle-towing-logo-google-business-profile.png",
+      "metadata_path": "data/gbp/axletowing.com/2026-05-15/media/gbp-ready/axle-towing-logo-google-business-profile.png.metadata.json",
+      "gbp_photo_type": "logo",
+      "location_applicability": "both",
+      "service_intent": "brand",
+      "local_seo_keywords": [
+        "Axle Towing",
+        "Axle Towing & Impound",
+        "Phoenix towing",
+        "Apache Junction towing"
+      ],
+      "ai_seo_entities": [
+        "Axle Towing & Impound",
+        "Arizona towing company"
+      ],
+      "validation": {
+        "extOk": true,
+        "sizeOk": true,
+        "minOk": true,
+        "recommendedOk": true,
+        "uploadReady": true
+      }
+    },
+    {
+      "storage_path": "data/gbp/axletowing.com/2026-05-15/media/gbp-ready/axle-towing-cover-branded-tow-truck-phoenix-apache-junction.jpg",
+      "metadata_path": "data/gbp/axletowing.com/2026-05-15/media/gbp-ready/axle-towing-cover-branded-tow-truck-phoenix-apache-junction.jpg.metadata.json",
+      "gbp_photo_type": "cover",
+      "location_applicability": "both",
+      "service_intent": "towing dispatch",
+      "local_seo_keywords": [
+        "24/7 towing dispatch",
+        "Phoenix towing service",
+        "Apache Junction towing service"
+      ],
+      "ai_seo_entities": [
+        "tow truck",
+        "private property towing",
+        "Phoenix metro"
+      ],
+      "validation": {
+        "extOk": true,
+        "sizeOk": true,
+        "minOk": true,
+        "recommendedOk": true,
+        "uploadReady": true
+      }
+    },
+    {
+      "storage_path": "data/gbp/axletowing.com/2026-05-15/media/gbp-ready/axle-towing-private-property-impound-service.jpg",
+      "metadata_path": "data/gbp/axletowing.com/2026-05-15/media/gbp-ready/axle-towing-private-property-impound-service.jpg.metadata.json",
+      "gbp_photo_type": "photos_at_work",
+      "location_applicability": "both",
+      "service_intent": "Private Property Towing",
+      "local_seo_keywords": [
+        "private property towing",
+        "private property impound",
+        "parking enforcement"
+      ],
+      "ai_seo_entities": [
+        "property managers",
+        "HOA boards",
+        "apartment communities"
+      ],
+      "validation": {
+        "extOk": true,
+        "sizeOk": true,
+        "minOk": true,
+        "recommendedOk": true,
+        "uploadReady": true
+      }
+    },
+    {
+      "storage_path": "data/gbp/axletowing.com/2026-05-15/media/gbp-ready/axle-towing-apartment-complex-parking-enforcement.jpg",
+      "metadata_path": "data/gbp/axletowing.com/2026-05-15/media/gbp-ready/axle-towing-apartment-complex-parking-enforcement.jpg.metadata.json",
+      "gbp_photo_type": "photos_at_work",
+      "location_applicability": "both",
+      "service_intent": "Apartment Complex Towing",
+      "local_seo_keywords": [
+        "apartment complex towing",
+        "apartment parking enforcement",
+        "unauthorized parking removal"
+      ],
+      "ai_seo_entities": [
+        "apartment complexes",
+        "resident parking",
+        "guest parking enforcement"
+      ],
+      "validation": {
+        "extOk": true,
+        "sizeOk": true,
+        "minOk": true,
+        "recommendedOk": true,
+        "uploadReady": true
+      }
+    },
+    {
+      "storage_path": "data/gbp/axletowing.com/2026-05-15/media/gbp-ready/axle-towing-hoa-parking-enforcement.jpg",
+      "metadata_path": "data/gbp/axletowing.com/2026-05-15/media/gbp-ready/axle-towing-hoa-parking-enforcement.jpg.metadata.json",
+      "gbp_photo_type": "photos_at_work",
+      "location_applicability": "both",
+      "service_intent": "HOA Parking Enforcement",
+      "local_seo_keywords": [
+        "HOA towing",
+        "HOA parking enforcement",
+        "community parking rules"
+      ],
+      "ai_seo_entities": [
+        "HOA communities",
+        "board meetings",
+        "parking enforcement"
+      ],
+      "validation": {
+        "extOk": true,
+        "sizeOk": true,
+        "minOk": true,
+        "recommendedOk": true,
+        "uploadReady": true
+      }
+    },
+    {
+      "storage_path": "data/gbp/axletowing.com/2026-05-15/media/gbp-ready/axle-towing-commercial-property-towing.jpg",
+      "metadata_path": "data/gbp/axletowing.com/2026-05-15/media/gbp-ready/axle-towing-commercial-property-towing.jpg.metadata.json",
+      "gbp_photo_type": "photos_at_work",
+      "location_applicability": "both",
+      "service_intent": "Commercial Property Towing",
+      "local_seo_keywords": [
+        "commercial property towing",
+        "retail parking enforcement",
+        "office building towing"
+      ],
+      "ai_seo_entities": [
+        "commercial properties",
+        "retail centers",
+        "office buildings"
+      ],
+      "validation": {
+        "extOk": true,
+        "sizeOk": true,
+        "minOk": true,
+        "recommendedOk": true,
+        "uploadReady": true
+      }
+    },
+    {
+      "storage_path": "data/gbp/axletowing.com/2026-05-15/media/gbp-ready/axle-towing-paid-vehicle-relocation-service.jpg",
+      "metadata_path": "data/gbp/axletowing.com/2026-05-15/media/gbp-ready/axle-towing-paid-vehicle-relocation-service.jpg.metadata.json",
+      "gbp_photo_type": "photos_at_work",
+      "location_applicability": "both",
+      "service_intent": "Vehicle Relocation",
+      "local_seo_keywords": [
+        "vehicle relocation",
+        "paid vehicle relocation",
+        "property maintenance towing"
+      ],
+      "ai_seo_entities": [
+        "property maintenance",
+        "landscaping access",
+        "scheduled relocation"
+      ],
+      "validation": {
+        "extOk": true,
+        "sizeOk": true,
+        "minOk": true,
+        "recommendedOk": true,
+        "uploadReady": true
+      }
+    },
+    {
+      "storage_path": "data/gbp/axletowing.com/2026-05-15/media/gbp-ready/axle-towing-secure-impound-lot-arizona.jpg",
+      "metadata_path": "data/gbp/axletowing.com/2026-05-15/media/gbp-ready/axle-towing-secure-impound-lot-arizona.jpg.metadata.json",
+      "gbp_photo_type": "exterior",
+      "location_applicability": "both",
+      "service_intent": "Impound Lot",
+      "local_seo_keywords": [
+        "impound lot",
+        "vehicle storage facility",
+        "secure vehicle storage"
+      ],
+      "ai_seo_entities": [
+        "impound lot",
+        "vehicle storage",
+        "Arizona towing"
+      ],
+      "validation": {
+        "extOk": true,
+        "sizeOk": true,
+        "minOk": true,
+        "recommendedOk": true,
+        "uploadReady": true
+      }
+    },
+    {
+      "storage_path": "data/gbp/axletowing.com/2026-05-15/media/gbp-ready/axle-towing-office-vehicle-release-hours.jpg",
+      "metadata_path": "data/gbp/axletowing.com/2026-05-15/media/gbp-ready/axle-towing-office-vehicle-release-hours.jpg.metadata.json",
+      "gbp_photo_type": "interior",
+      "location_applicability": "both",
+      "service_intent": "Office / vehicle release",
+      "local_seo_keywords": [
+        "vehicle release office",
+        "towed vehicle pickup",
+        "impound office"
+      ],
+      "ai_seo_entities": [
+        "office hours",
+        "vehicle release",
+        "customer service"
+      ],
+      "validation": {
+        "extOk": true,
+        "sizeOk": true,
+        "minOk": true,
+        "recommendedOk": false,
+        "uploadReady": true
+      }
+    },
+    {
+      "storage_path": "data/gbp/axletowing.com/2026-05-15/media/gbp-ready/axle-towing-team-arizona.jpg",
+      "metadata_path": "data/gbp/axletowing.com/2026-05-15/media/gbp-ready/axle-towing-team-arizona.jpg.metadata.json",
+      "gbp_photo_type": "team",
+      "location_applicability": "both",
+      "service_intent": "team",
+      "local_seo_keywords": [
+        "Arizona towing team",
+        "Axle Towing staff",
+        "towing professionals"
+      ],
+      "ai_seo_entities": [
+        "Axle Towing team",
+        "Arizona towing professionals"
+      ],
+      "validation": {
+        "extOk": true,
+        "sizeOk": true,
+        "minOk": true,
+        "recommendedOk": true,
+        "uploadReady": true
+      }
+    },
+    {
+      "storage_path": "data/gbp/axletowing.com/2026-05-15/media/gbp-ready/axle-towing-compliant-signage-installation.jpg",
+      "metadata_path": "data/gbp/axletowing.com/2026-05-15/media/gbp-ready/axle-towing-compliant-signage-installation.jpg.metadata.json",
+      "gbp_photo_type": "photos_at_work",
+      "location_applicability": "both",
+      "service_intent": "Compliant Towing Signage Installation",
+      "local_seo_keywords": [
+        "towing signage installation",
+        "parking enforcement signs",
+        "compliant towing signage"
+      ],
+      "ai_seo_entities": [
+        "property managers",
+        "parking signs",
+        "private property enforcement"
+      ],
+      "validation": {
+        "extOk": true,
+        "sizeOk": true,
+        "minOk": true,
+        "recommendedOk": true,
+        "uploadReady": true
+      }
+    },
+    {
+      "storage_path": "data/gbp/axletowing.com/2026-05-15/media/gbp-ready/axle-towing-abandoned-vehicle-removal-apartment-property.jpg",
+      "metadata_path": "data/gbp/axletowing.com/2026-05-15/media/gbp-ready/axle-towing-abandoned-vehicle-removal-apartment-property.jpg.metadata.json",
+      "gbp_photo_type": "photos_at_work",
+      "location_applicability": "both",
+      "service_intent": "Abandoned Vehicle Removal",
+      "local_seo_keywords": [
+        "abandoned vehicle removal",
+        "abandoned car towing",
+        "apartment abandoned vehicle removal"
+      ],
+      "ai_seo_entities": [
+        "abandoned vehicles",
+        "apartment communities",
+        "property owners"
+      ],
+      "validation": {
+        "extOk": true,
+        "sizeOk": true,
+        "minOk": true,
+        "recommendedOk": true,
+        "uploadReady": true
+      }
+    }
+  ]
+}

@@ -1,0 +1,29 @@
+{
+  "client": "Axle Towing",
+  "domain": "axletowing.com",
+  "capture_date": "2026-05-15",
+  "storage_path": "data/gbp/axletowing.com/2026-05-15/screenshots/gbp-apache-junction-business-info-2026-05-15.png",
+  "evidence_type": "Google Business Profile screenshot",
+  "location": "Apache Junction",
+  "gbp_surface": "Business info",
+  "evidence_intent": "Live Google Business Profile evidence",
+  "source": "Google Business Profile Manager via local Chrome",
+  "meeting_guardrails": {
+    "dispatch": "24/7 dispatch is allowed.",
+    "office_release": "Do not imply vehicle release or office is open 24/7."
+  },
+  "file": {
+    "bytes": 3473269,
+    "width": 2880,
+    "height": 1864,
+    "format": "png"
+  },
+  "recall_tags": [
+    "gbp",
+    "local-seo",
+    "ai-seo-evidence",
+    "Axle Towing",
+    "Apache Junction",
+    "Business info"
+  ]
+}

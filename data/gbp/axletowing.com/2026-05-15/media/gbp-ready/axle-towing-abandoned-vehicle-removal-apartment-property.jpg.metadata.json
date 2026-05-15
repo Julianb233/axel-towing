@@ -1,0 +1,46 @@
+{
+  "client": "Axle Towing",
+  "domain": "axletowing.com",
+  "capture_date": "2026-05-15",
+  "storage_path": "data/gbp/axletowing.com/2026-05-15/media/gbp-ready/axle-towing-abandoned-vehicle-removal-apartment-property.jpg",
+  "source_path": "website/public/images/gallery/apartment-flatbed.jpg",
+  "gbp_photo_type": "photos_at_work",
+  "location_applicability": "both",
+  "service_intent": "Abandoned Vehicle Removal",
+  "local_seo_keywords": [
+    "abandoned vehicle removal",
+    "abandoned car towing",
+    "apartment abandoned vehicle removal"
+  ],
+  "ai_seo_entities": [
+    "abandoned vehicles",
+    "apartment communities",
+    "property owners"
+  ],
+  "alt_text": "Abandoned vehicle removal for an apartment property by Axle Towing",
+  "google_media_requirements": {
+    "format_allowed": "JPG or PNG",
+    "size_allowed": "10 KB to 5 MB",
+    "recommended_resolution": "720 x 720 or higher",
+    "minimum_resolution": "250 x 250",
+    "quality": "In focus, well lit, represents reality, no heavy filters or AI alteration"
+  },
+  "file": {
+    "bytes": 2949629,
+    "width": 4000,
+    "height": 3000,
+    "format": "jpeg"
+  },
+  "validation": {
+    "extOk": true,
+    "sizeOk": true,
+    "minOk": true,
+    "recommendedOk": true,
+    "uploadReady": true
+  },
+  "usage_notes": [
+    "Use only if the image truthfully represents Axle Towing's current business.",
+    "Do not use legal-advice captions or competitor-comparison captions.",
+    "Use 24/7 wording only for towing dispatch, not vehicle release or office availability."
+  ]
+}

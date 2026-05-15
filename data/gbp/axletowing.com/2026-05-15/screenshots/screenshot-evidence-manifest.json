@@ -1,0 +1,71 @@
+{
+  "client": "Axle Towing",
+  "domain": "axletowing.com",
+  "run_date": "2026-05-15",
+  "generated_at": "2026-05-15T06:42:04.199Z",
+  "screenshots": [
+    {
+      "storage_path": "data/gbp/axletowing.com/2026-05-15/screenshots/gbp-apache-junction-business-info-2026-05-15.png",
+      "metadata_path": "data/gbp/axletowing.com/2026-05-15/screenshots/gbp-apache-junction-business-info-2026-05-15.png.metadata.json",
+      "location": "Apache Junction",
+      "gbp_surface": "Business info",
+      "evidence_intent": "Live Google Business Profile evidence"
+    },
+    {
+      "storage_path": "data/gbp/axletowing.com/2026-05-15/screenshots/gbp-apache-junction-profile-2026-05-15.png",
+      "metadata_path": "data/gbp/axletowing.com/2026-05-15/screenshots/gbp-apache-junction-profile-2026-05-15.png.metadata.json",
+      "location": "Apache Junction",
+      "gbp_surface": "Public profile",
+      "evidence_intent": "Live Google Business Profile evidence"
+    },
+    {
+      "storage_path": "data/gbp/axletowing.com/2026-05-15/screenshots/gbp-apache-junction-services-2026-05-15.png",
+      "metadata_path": "data/gbp/axletowing.com/2026-05-15/screenshots/gbp-apache-junction-services-2026-05-15.png.metadata.json",
+      "location": "Apache Junction",
+      "gbp_surface": "Services",
+      "evidence_intent": "Live Google Business Profile evidence"
+    },
+    {
+      "storage_path": "data/gbp/axletowing.com/2026-05-15/screenshots/gbp-businesses-list-2026-05-15.png",
+      "metadata_path": "data/gbp/axletowing.com/2026-05-15/screenshots/gbp-businesses-list-2026-05-15.png.metadata.json",
+      "location": "Both",
+      "gbp_surface": "Business list",
+      "evidence_intent": "Live Google Business Profile evidence"
+    },
+    {
+      "storage_path": "data/gbp/axletowing.com/2026-05-15/screenshots/gbp-businesses-list-clean-state-2026-05-15.png",
+      "metadata_path": "data/gbp/axletowing.com/2026-05-15/screenshots/gbp-businesses-list-clean-state-2026-05-15.png.metadata.json",
+      "location": "Both",
+      "gbp_surface": "Business list",
+      "evidence_intent": "Clean state after discarding unsaved hours edits"
+    },
+    {
+      "storage_path": "data/gbp/axletowing.com/2026-05-15/screenshots/gbp-phoenix-business-info-2026-05-15.png",
+      "metadata_path": "data/gbp/axletowing.com/2026-05-15/screenshots/gbp-phoenix-business-info-2026-05-15.png.metadata.json",
+      "location": "Phoenix",
+      "gbp_surface": "Business info",
+      "evidence_intent": "Live Google Business Profile evidence"
+    },
+    {
+      "storage_path": "data/gbp/axletowing.com/2026-05-15/screenshots/gbp-phoenix-phone-pending-2026-05-15.png",
+      "metadata_path": "data/gbp/axletowing.com/2026-05-15/screenshots/gbp-phoenix-phone-pending-2026-05-15.png.metadata.json",
+      "location": "Phoenix",
+      "gbp_surface": "Phone / contact",
+      "evidence_intent": "Pending Google review state"
+    },
+    {
+      "storage_path": "data/gbp/axletowing.com/2026-05-15/screenshots/gbp-phoenix-profile-2026-05-15.png",
+      "metadata_path": "data/gbp/axletowing.com/2026-05-15/screenshots/gbp-phoenix-profile-2026-05-15.png.metadata.json",
+      "location": "Phoenix",
+      "gbp_surface": "Public profile",
+      "evidence_intent": "Live Google Business Profile evidence"
+    },
+    {
+      "storage_path": "data/gbp/axletowing.com/2026-05-15/screenshots/gbp-phoenix-services-2026-05-15.png",
+      "metadata_path": "data/gbp/axletowing.com/2026-05-15/screenshots/gbp-phoenix-services-2026-05-15.png.metadata.json",
+      "location": "Phoenix",
+      "gbp_surface": "Services",
+      "evidence_intent": "Live Google Business Profile evidence"
+    }
+  ]
+}

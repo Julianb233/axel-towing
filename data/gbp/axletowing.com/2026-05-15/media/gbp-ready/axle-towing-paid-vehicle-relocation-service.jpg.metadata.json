@@ -1,0 +1,46 @@
+{
+  "client": "Axle Towing",
+  "domain": "axletowing.com",
+  "capture_date": "2026-05-15",
+  "storage_path": "data/gbp/axletowing.com/2026-05-15/media/gbp-ready/axle-towing-paid-vehicle-relocation-service.jpg",
+  "source_path": "website/public/images/service-vehicle-relocation.jpg",
+  "gbp_photo_type": "photos_at_work",
+  "location_applicability": "both",
+  "service_intent": "Vehicle Relocation",
+  "local_seo_keywords": [
+    "vehicle relocation",
+    "paid vehicle relocation",
+    "property maintenance towing"
+  ],
+  "ai_seo_entities": [
+    "property maintenance",
+    "landscaping access",
+    "scheduled relocation"
+  ],
+  "alt_text": "Paid vehicle relocation service by Axle Towing",
+  "google_media_requirements": {
+    "format_allowed": "JPG or PNG",
+    "size_allowed": "10 KB to 5 MB",
+    "recommended_resolution": "720 x 720 or higher",
+    "minimum_resolution": "250 x 250",
+    "quality": "In focus, well lit, represents reality, no heavy filters or AI alteration"
+  },
+  "file": {
+    "bytes": 335541,
+    "width": 1920,
+    "height": 1080,
+    "format": "jpeg"
+  },
+  "validation": {
+    "extOk": true,
+    "sizeOk": true,
+    "minOk": true,
+    "recommendedOk": true,
+    "uploadReady": true
+  },
+  "usage_notes": [
+    "Use only if the image truthfully represents Axle Towing's current business.",
+    "Do not use legal-advice captions or competitor-comparison captions.",
+    "Use 24/7 wording only for towing dispatch, not vehicle release or office availability."
+  ]
+}

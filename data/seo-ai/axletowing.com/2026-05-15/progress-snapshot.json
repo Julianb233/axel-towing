@@ -1,0 +1,42 @@
+{
+  "client": "Axle Towing & Impound",
+  "domain": "axletowing.com",
+  "generated_at": "2026-05-15T08:14:21.816Z",
+  "status": "deployed_with_indexing_blocker",
+  "summary": {
+    "articles_total_on_site": 48,
+    "new_cluster_articles": 32,
+    "pillar_articles": 6,
+    "city_service_articles": 26,
+    "build_pages_generated": 395,
+    "production_deployment": "READY",
+    "production_domain": "https://axletowing.com"
+  },
+  "completed": [
+    "Article cluster generated and committed",
+    "Article cluster deployed to production",
+    "Priority URLs verified with HTTP 200 checks",
+    "Sitemap and robots.txt verified live",
+    "Screenshots captured with metadata sidecars for PPP recall",
+    "Linear publish QA task completed"
+  ],
+  "blocked": [
+    {
+      "area": "Google Search Console indexing",
+      "reason": "Current Google session lacks access to the axletowing.com Search Console domain property; verification requires GoDaddy Domain Connect sign-in or property-owner access.",
+      "evidence": "data/seo-ai/axletowing.com/2026-05-15/blockers/google-search-console-domain-verification-BLOCKER.json",
+      "screenshot": "data/seo-ai/axletowing.com/2026-05-15/screenshots/search-console/gsc-godaddy-domain-connect-blocker-2026-05-15.png"
+    }
+  ],
+  "live_search_observations": [
+    "Existing Axle pages are visible in Google search and show recent crawl dates.",
+    "Brand-new cluster URLs are live on axletowing.com but were not yet returned by site: checks during the immediate post-deploy verification window.",
+    "Next measurable lift requires Search Console verification, sitemap resubmission, and URL inspection requests for the highest-value pages."
+  ],
+  "next_actions": [
+    "Complete Search Console domain verification through GoDaddy or add julian@aiacrobatics.com to the existing property.",
+    "Request indexing for the first six pillar URLs and the abandoned vehicle removal city pages.",
+    "Publish GBP posts that point to the new pillar pages once GBP UI access is confirmed.",
+    "Run AI visibility screenshots after the pages are indexed so AI answers have crawlable source material."
+  ]
+}

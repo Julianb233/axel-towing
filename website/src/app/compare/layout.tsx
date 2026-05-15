@@ -3,19 +3,21 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Why Choose Axle Towing — Compare Our Services",
   description:
-    "See how Axle Towing & Impound compares to the industry average. Zero cost, sub-30-minute response, real-time tracking, and no contracts. Serving 8 Phoenix metro cities.",
+    "Review Axle Towing & Impound's private property towing, parking enforcement, documentation, response model, and property-manager service standards across the Phoenix metro area.",
   keywords: [
-    "towing company comparison Phoenix",
-    "best towing company Phoenix AZ",
     "free towing for property owners",
-    "parking enforcement comparison",
-    "Axle Towing vs competitors",
+    "parking enforcement standards",
     "no contract towing Phoenix",
+    "property manager towing Phoenix",
   ],
+  robots: {
+    index: false,
+    follow: true,
+  },
   openGraph: {
     title: "Why Choose Axle Towing — Compare Our Services",
     description:
-      "See how Axle Towing & Impound compares to the industry average. Zero cost, sub-30-minute response, and no contracts.",
+      "Review Axle Towing & Impound's property-manager service standards, documentation model, and response approach.",
     type: "website",
   },
 };

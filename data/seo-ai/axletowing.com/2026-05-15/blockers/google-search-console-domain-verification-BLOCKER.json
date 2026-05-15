@@ -1,0 +1,16 @@
+{
+  "client": "Axle Towing",
+  "domain": "axletowing.com",
+  "captured_at": "2026-05-15T08:13:13.953Z",
+  "surface": "google_search_console",
+  "workflow": "domain_property_verification_and_indexing",
+  "evidence_type": "blocker_screenshot",
+  "source_url": "https://search.google.com/search-console?resource_id=sc-domain%3Aaxletowing.com",
+  "status": "blocked",
+  "blocker": "Search Console domain property is not accessible from the current Google session; verification redirects to GoDaddy Domain Connect sign-in. Computer Use capture stream also failed when attempting GUI continuation.",
+  "next_step": "Sign into the correct GoDaddy account or grant Search Console access to the current Google account, then complete domain verification and request indexing for the published URLs.",
+  "related_linear": [
+    "AI-10008"
+  ],
+  "image": "data/seo-ai/axletowing.com/2026-05-15/screenshots/search-console/gsc-godaddy-domain-connect-blocker-2026-05-15.png"
+}
