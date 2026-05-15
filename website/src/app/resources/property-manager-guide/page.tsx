@@ -3,6 +3,7 @@
 import { useEffect, useRef, useState, FormEvent } from "react";
 import Link from "next/link";
 import { COMPANY } from "@/lib/constants";
+import Image from "next/image";
 
 function useParallax() {
   const ref = useRef<HTMLDivElement>(null);
@@ -16,6 +17,10 @@ function useParallax() {
   }, []);
   return ref;
 }
+
+const HERO_IMAGE = "/images/seo/property-manager-guide.webp";
+const HERO_IMAGE_URL = "https://axletowing.com" + HERO_IMAGE;
+const HERO_ALT = "Phoenix property manager reviewing Arizona towing laws guide at apartment complex - Axle Towing";
 
 const CHAPTERS = [
   {
@@ -116,10 +121,49 @@ export default function PropertyManagerGuidePage() {
         </div>
       </section>
 
+      {/* Hero Image */}
+      <section className="bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-8">
+          <div className="relative aspect-[16/9] w-full overflow-hidden rounded-2xl shadow-lg">
+            <Image
+              src={HERO_IMAGE}
+              alt={HERO_ALT}
+              fill
+              className="object-cover"
+              priority
+              sizes="(max-width: 768px) 100vw, 1200px"
+            />
+          </div>
+        </div>
+      </section>
+
+      {/* TL;DR */}
+      <aside className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 mt-8 mb-6">
+        <div className="bg-blue-50 border-l-4 border-primary rounded-r-2xl p-6">
+          <p className="text-xs uppercase tracking-wider font-bold text-primary mb-2">TL;DR</p>
+          <p className="text-gray-800 leading-relaxed">
+            Arizona property managers need to understand three statutes — ARS 28-3511 (removal authority), ARS 28-874 (storage and retrieval rules), and ARS 9-499.05 (signage standards) — before authorizing a single tow. This 10-chapter guide covers everything: the law in plain English, signage specs, contract red flags, violation documentation, fire-lane enforcement, tenant communication, dispute handling, liability protection, partner selection, and building a long-term parking strategy.
+          </p>
+        </div>
+      </aside>
+
       {/* Content */}
       <section className="py-20 bg-gray-50 wave-separator">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+
+
+            {/* Key Takeaways */}
+            <div className="glass-card-white rounded-2xl p-6 my-8 border-l-4 border-cta col-span-1 lg:col-span-2 mb-0">
+              <h3 className="font-heading text-lg font-bold text-gray-900 mb-3">Key Takeaways</h3>
+              <ul className="space-y-2 text-gray-700">
+                <li className="flex items-start gap-2"><span className="text-cta font-bold">→</span><span>ARS 28-3511 is the core authorization statute — it lets property owners remove unauthorized vehicles, but only with proper signage and law enforcement notification within one hour</span></li>
+                <li className="flex items-start gap-2"><span className="text-cta font-bold">→</span><span>Towing signs must meet minimum ARS 9-499.05 specifications AND any stricter local requirements (Phoenix, Scottsdale, Tempe, and Chandler all have additional rules)</span></li>
+                <li className="flex items-start gap-2"><span className="text-cta font-bold">→</span><span>A photo + timestamp + GPS documentation protocol is your best defense against wrongful-tow claims — implement it before Day 1 enforcement</span></li>
+                <li className="flex items-start gap-2"><span className="text-cta font-bold">→</span><span>The towing authorization agreement (not a verbal arrangement) is the document that makes free-to-you towing actually work — it's how the towing company recovers its fees from vehicle owners</span></li>
+                <li className="flex items-start gap-2"><span className="text-cta font-bold">→</span><span>This free 10-chapter guide covers Arizona towing law, signage requirements, contracts, documentation, tenant communications, dispute resolution, and liability protection</span></li>
+              </ul>
+            </div>
 
             {/* LEFT: Table of Contents */}
             <div className="reveal space-y-8">

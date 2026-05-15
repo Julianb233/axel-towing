@@ -3,6 +3,7 @@
 import { useEffect, useRef, useState, FormEvent } from "react";
 import Link from "next/link";
 import { COMPANY } from "@/lib/constants";
+import Image from "next/image";
 
 function useParallax() {
   const ref = useRef<HTMLDivElement>(null);
@@ -16,6 +17,11 @@ function useParallax() {
   }, []);
   return ref;
 }
+
+
+const HERO_IMAGE = "/images/seo/hoa-enforcement-checklist.webp";
+const HERO_IMAGE_URL = "https://axletowing.com" + HERO_IMAGE;
+const HERO_ALT = "HOA parking enforcement manager reviewing compliance checklist at Arizona community - Axle Towing";
 
 const CHECKLIST_PREVIEW = [
   { num: 1, text: "Verify all parking rules are documented in CC&Rs or bylaws", visible: true },
@@ -86,6 +92,32 @@ export default function HOAEnforcementChecklistPage() {
         </div>
       </section>
 
+      {/* Hero Image */}
+      <section className="bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-8">
+          <div className="relative aspect-[16/9] w-full overflow-hidden rounded-2xl shadow-lg">
+            <Image
+              src={HERO_IMAGE}
+              alt={HERO_ALT}
+              fill
+              className="object-cover"
+              priority
+              sizes="(max-width: 768px) 100vw, 1200px"
+            />
+          </div>
+        </div>
+      </section>
+
+      {/* TL;DR */}
+      <aside className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 mt-8 mb-6">
+        <div className="bg-blue-50 border-l-4 border-primary rounded-r-2xl p-6">
+          <p className="text-xs uppercase tracking-wider font-bold text-primary mb-2">TL;DR</p>
+          <p className="text-gray-800 leading-relaxed">
+            Arizona HOAs need a 20-point enforcement program to tow legally: board resolution, CC&R-aligned rules, ARS 9-499.05-compliant signage, a written towing authorization agreement, resident communication, and monthly compliance reporting. Miss any step and you expose the board to liability. This free checklist walks you through all 20 items with implementation notes and Arizona statute references.
+          </p>
+        </div>
+      </aside>
+
       {/* Content */}
       <section className="py-20 bg-gray-50 wave-separator">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -93,6 +125,19 @@ export default function HOAEnforcementChecklistPage() {
 
             {/* LEFT: Checklist Preview */}
             <div className="reveal space-y-8">
+
+              {/* Key Takeaways */}
+              <div className="glass-card-white rounded-2xl p-6 my-8 border-l-4 border-cta">
+                <h3 className="font-heading text-lg font-bold text-gray-900 mb-3">Key Takeaways</h3>
+                <ul className="space-y-2 text-gray-700">
+                  <li className="flex items-start gap-2"><span className="text-cta font-bold">→</span><span>HOA boards must pass a formal resolution before authorizing any towing — verbal approval is not legally sufficient under ARS 28-3511</span></li>
+                  <li className="flex items-start gap-2"><span className="text-cta font-bold">→</span><span>Towing signs must be at least 18" x 24", posted at every parking area entrance, and include the towing company name, phone, and impound address</span></li>
+                  <li className="flex items-start gap-2"><span className="text-cta font-bold">→</span><span>A written authorization agreement with a licensed Arizona towing company is required — verbal arrangements expose the HOA to uncollectable tow fees</span></li>
+                  <li className="flex items-start gap-2"><span className="text-cta font-bold">→</span><span>Monthly enforcement reports with violation counts, tow records, and signage inspection notes are the standard defense against wrongful-tow claims</span></li>
+                  <li className="flex items-start gap-2"><span className="text-cta font-bold">→</span><span>Download all 20 items with detailed implementation notes — the complete checklist covers every phase from board authorization through ongoing compliance monitoring</span></li>
+                </ul>
+              </div>
+
               {/* Trust Badge */}
               <div className="inline-flex items-center gap-3 bg-blue-50 border border-blue-200 rounded-2xl px-6 py-4">
                 <div className="w-10 h-10 bg-primary text-white rounded-full flex items-center justify-center font-bold font-heading text-sm">
