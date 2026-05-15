@@ -1,0 +1,84 @@
+{
+  "client": "Axle Towing",
+  "domain": "axletowing.com",
+  "capture_date": "2026-05-15",
+  "source": "Google Business Profile Manager via local Chrome profile",
+  "google_account": "julian@aiacrobatics.com",
+  "status": {
+    "manager_access_confirmed": true,
+    "businesses_visible": 2,
+    "verified_profiles": 2,
+    "google_updates_visible": 2,
+    "missing_store_codes": 1,
+    "live_changes_saved": false
+  },
+  "profiles": [
+    {
+      "location": "Apache Junction",
+      "business_name": "Axle Towing & Impound",
+      "address": "1151 W Apache Trail, Apache Junction, AZ 85120",
+      "phone": "(480) 288-5526",
+      "rating": 2.8,
+      "reviews": 258,
+      "public_hours": "Closed; opens 9 AM Friday; confirmed by this business 3 weeks ago",
+      "profile_strength": "Looks good",
+      "customer_interactions": 2403,
+      "primary_category": "Towing service",
+      "additional_categories": [
+        "Parking lot",
+        "Auto wrecker",
+        "Property maintenance",
+        "Automobile storage facility"
+      ],
+      "priority_gaps": [
+        "Main hours still show 9 AM-5 PM weekdays and closed weekends",
+        "Chat not enabled",
+        "Social profiles not added",
+        "Google service update includes questionable services that should be reviewed before accepting"
+      ]
+    },
+    {
+      "location": "Phoenix",
+      "business_name": "Axle Towing & Impound",
+      "address": "320 East Pioneer St, Phoenix, AZ 85040",
+      "phone": "(623) 401-2537",
+      "target_phone": "(480) 288-5526",
+      "rating": 3.0,
+      "reviews": 4,
+      "public_hours": "Closed; opens 9 AM Friday; confirmed by this business 3 weeks ago",
+      "profile_strength": "Complete Info",
+      "customer_interactions": 664,
+      "primary_category": "Towing service",
+      "additional_categories": [
+        "Parking lot",
+        "Auto wrecker",
+        "Property maintenance",
+        "Automobile storage facility"
+      ],
+      "visible_services": [
+        "Car towing",
+        "Car lockouts",
+        "Local hauling",
+        "Private Impounds",
+        "Parking Enforcement"
+      ],
+      "priority_gaps": [
+        "Wrong phone number is still live",
+        "Main hours still show 9 AM-5 PM weekdays and closed weekends",
+        "Chat not enabled",
+        "Social profiles not added",
+        "Only five visible services under primary category",
+        "Service area is thinner than Apache Junction"
+      ]
+    }
+  ],
+  "screenshots": [
+    "data/gbp/axletowing.com/2026-05-15/screenshots/gbp-businesses-list-2026-05-15.png",
+    "data/gbp/axletowing.com/2026-05-15/screenshots/gbp-apache-junction-profile-2026-05-15.png",
+    "data/gbp/axletowing.com/2026-05-15/screenshots/gbp-apache-junction-business-info-2026-05-15.png",
+    "data/gbp/axletowing.com/2026-05-15/screenshots/gbp-apache-junction-services-2026-05-15.png",
+    "data/gbp/axletowing.com/2026-05-15/screenshots/gbp-phoenix-profile-2026-05-15.png",
+    "data/gbp/axletowing.com/2026-05-15/screenshots/gbp-phoenix-business-info-2026-05-15.png",
+    "data/gbp/axletowing.com/2026-05-15/screenshots/gbp-phoenix-services-2026-05-15.png"
+  ]
+}
