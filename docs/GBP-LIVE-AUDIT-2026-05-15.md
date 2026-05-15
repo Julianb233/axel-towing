@@ -9,7 +9,9 @@ Source: Google Business Profile Manager in Julian's local Chrome profile, signed
 
 We have manager access to both Axle Towing Google Business Profiles. Both profiles are verified and can be managed from Google Search / Business Profile Manager.
 
-The highest-priority issue is still live: the Phoenix profile phone number is wrong. Both locations also still show regular business hours as Monday-Friday 9 AM-5 PM and closed weekends, while the SEO/GMB strategy depends on a 24/7 dispatch posture or a clean split between dispatch hours and office/vehicle-release hours.
+The highest-priority issue is still live: the Phoenix profile phone number is wrong. Both locations also show regular business hours as Monday-Friday 9 AM-5 PM and closed weekends. The client-approved direction is to avoid showing the office as simply open 24/7. GBP should distinguish 24/7 towing dispatch from limited office/vehicle-release availability so vehicle owners do not assume they can retrieve a car at any time.
+
+Client source: Google Drive / Gemini note `Julian <> Elliott (Axle Towing) - 2026/04/20 17:07 PDT - Notes by Gemini`. Elliott specifically said Axle is towing 24/7, but the office is not open 24/7 for releases, and suggested release-only availability such as Monday-Friday 9 AM-5 PM.
 
 ## Evidence Captured
 
@@ -167,13 +169,14 @@ Change Phoenix from `(623) 401-2537` to `(480) 288-5526`, unless Elliott confirm
 
 ### P0: Fix hours posture on both profiles
 
-The profiles currently tell Google and searchers the business is closed after 5 PM and on weekends. The recommended setup is:
+The profiles currently tell Google and searchers the business is closed after 5 PM and on weekends. Do not solve this by setting main GBP hours to open 24 hours without a release-hours split. The meeting-backed setup is:
 
-- Main hours: Open 24 hours, if Axle truly dispatches 24/7.
-- More hours: Vehicle release / office pickup Monday-Friday 9 AM-5 PM.
-- If Google does not support the exact label, use the closest available "More hours" option and document the decision.
+- Main hours: keep office / vehicle-release availability visible, currently Monday-Friday 9 AM-5 PM and closed weekends, unless Elliott approves a different release schedule.
+- Public description/services/posts: state that towing dispatch is available 24/7.
+- More hours: add the closest supported GBP label for towing dispatch/service availability if Google supports it. Do not use a misleading "pickup" or "access" label for dispatch.
+- Q&A: add an approved answer that says towing dispatch is available 24/7, while vehicle releases are handled during office/release hours or by arrangement.
 
-Do not save this until Elliott confirms the dispatch vs release-hours wording.
+Do not save public hours changes unless the screen clearly preserves this dispatch vs release-hours distinction.
 
 ### P1: Clean service lists
 
@@ -211,9 +214,8 @@ Recommended execution sequence:
 2. Verify both profiles show `Verified`.
 3. Capture before screenshots.
 4. For Phoenix, open Edit profile -> Contact and stage phone update to `(480) 288-5526`.
-5. For both locations, open Hours and stage approved 24/7 dispatch + office/release hours split.
+5. For both locations, open Hours and preserve office/release hours; only add 24/7 dispatch if GBP offers a non-misleading secondary hours label.
 6. Open Services and reject/remove off-strategy services, then add approved B2B/private-property services.
 7. Add social/profile/booking fields.
 8. Capture after screenshots.
 9. Verify public Search/Maps panels reflect the changes.
-

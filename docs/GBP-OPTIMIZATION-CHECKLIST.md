@@ -35,7 +35,7 @@ Complete EVERY field Google offers. Profiles that are 100% complete rank higher 
 | Address              |  [ ]   | Verify exact address matches website and all citations          |
 | Phone Number         |  [ ]   | 480-288-5526 (must match website exactly — NAP consistency)     |
 | Website URL          |  [ ]   | Update to axletowing.com (NOT the Railway or Vercel subdomain)  |
-| Hours of Operation   |  [ ]   | **Dispatch: Open 24/7** — mark "Open 24 hours" in GBP           |
+| Hours of Operation   |  [ ]   | **Do not mark office as simply 24/7**. Keep release/office hours separate from 24/7 towing dispatch. |
 | Business Description |  [ ]   | See optimized descriptions below (separate for each location)   |
 | Year Established     |  [ ]   | 2021                                                            |
 | Service Area         |  [ ]   | Add all cities served (see Section 9 for full list)             |
@@ -870,6 +870,8 @@ Use this checklist to maintain and grow your GBP rankings every month.
 
 ## Section 12: GBP Action Items — Priority Order
 
+Meeting-backed guardrail: Gemini notes from `Julian <> Elliott (Axle Towing) - 2026/04/20 17:07 PDT` say towing dispatch is 24/7, but the office is not open 24/7 for vehicle releases. Do not set main GBP hours to 24/7 unless Google also shows a clear release-hours distinction.
+
 ### Immediate (This Week)
 
 - [ ] Verify both locations are claimed and verified in Google Business Profile
@@ -877,7 +879,7 @@ Use this checklist to maintain and grow your GBP rankings every month.
 - [ ] Upload optimized business description (see Section 1) to both locations
 - [ ] Set primary category to "Towing Service" + secondary categories (Section 2)
 - [ ] Upload logo and cover photo to both locations
-- [ ] Set hours to 24/7 (Open 24 hours)
+- [ ] Preserve office/vehicle-release hours and add 24/7 towing dispatch only through a non-misleading GBP secondary hours/service/Q&A path
 - [ ] Add service area cities (Section 9) to both locations
 - [ ] Add all 6 services with descriptions (Section 3)
 - [ ] Link appointment URL to axletowing.com/get-quote
