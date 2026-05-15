@@ -1,3 +1,4 @@
+import Link from "next/link";
 import PageHeader from "../../components/PageHeader";
 import { getLatestSnapshot, listSnapshots, computeDelta } from "../../lib/convex";
 
@@ -260,7 +261,114 @@ export default async function SeoPage() {
               </div>
             </section>
           )}
+
+          {/* ── SEO Strategy Summary ─────────────────────────────── */}
+          <section className="mt-12">
+            <div className="flex items-center justify-between mb-4">
+              <h2 className="text-xl font-bold text-gray-900">SEO Strategy</h2>
+              <Link
+                href="/seo-strategy"
+                className="inline-flex items-center gap-1.5 text-sm font-semibold text-blue-600 hover:text-blue-800 transition-colors"
+              >
+                View full strategy
+                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                </svg>
+              </Link>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              {[
+                {
+                  icon: "🏗",
+                  title: "Topical Authority — Property Manager TAM",
+                  status: "Active",
+                  statusColor: "text-emerald-700 bg-emerald-50 border-emerald-200",
+                  summary: "40 new pages (71K words) targeting Phoenix-metro HOA boards, apartment managers, and commercial property owners. Audiences hub, 6 pillar SEO articles, 26 city-service pages now indexing.",
+                },
+                {
+                  icon: "🤖",
+                  title: "AI SEO Layer",
+                  status: "Active",
+                  statusColor: "text-emerald-700 bg-emerald-50 border-emerald-200",
+                  summary: "llms.txt, HowTo + FAQPage + Article schema, TL;DR blocks on all major pages. Current: 29 AI mentions, 12 cited pages. Positions Axle for ChatGPT, Perplexity, and Google AI Overviews.",
+                },
+                {
+                  icon: "📍",
+                  title: "Local SEO & Google Business Profile",
+                  status: "In Progress",
+                  statusColor: "text-blue-700 bg-blue-50 border-blue-200",
+                  summary: "GBP phone + hours fix pending GCP API scope approval (AI-9986). Weekly GBP posts planned. Targeting 30+ local citations vs current ~8.",
+                },
+                {
+                  icon: "🔗",
+                  title: "Domain Authority Growth",
+                  status: "In Progress",
+                  statusColor: "text-blue-700 bg-blue-50 border-blue-200",
+                  summary: "Authority Score 17 today — targeting 30+ by Aug 2026 via local citations, referral partner co-citations, and HOA industry publication backlinks.",
+                },
+              ].map((item) => (
+                <div key={item.title} className="rounded-xl border border-gray-200 bg-white p-5">
+                  <div className="flex items-start gap-3 mb-2">
+                    <span className="text-xl leading-none">{item.icon}</span>
+                    <div className="flex-1 min-w-0">
+                      <div className="flex flex-wrap items-center gap-2 mb-1">
+                        <h3 className="font-semibold text-gray-900 text-sm leading-snug">{item.title}</h3>
+                        <span className={`text-[10px] font-bold uppercase tracking-wider px-2 py-0.5 rounded-full border flex-shrink-0 ${item.statusColor}`}>
+                          {item.status}
+                        </span>
+                      </div>
+                      <p className="text-xs text-gray-500 leading-relaxed">{item.summary}</p>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+
+            <div className="mt-5 rounded-xl border border-gray-100 bg-gray-50 p-4 text-sm text-gray-600">
+              <span className="font-semibold text-gray-900">90-Day Target (Aug 2026):</span>
+              {" "}Authority Score 30+, top-3 rankings in 5+ city-service pages, first HOA contracts from organic search.{" "}
+              <Link href="/seo-strategy" className="font-semibold text-blue-600 hover:underline">
+                See full strategy and keyword clusters &rarr;
+              </Link>
+            </div>
+          </section>
         </>
+      )}
+
+      {/* ── Strategy always visible (even without snapshot data) ── */}
+      {!latest && !fetchError && (
+        <section className="mt-10">
+          <div className="flex items-center justify-between mb-4">
+            <h2 className="text-xl font-bold text-gray-900">SEO Strategy</h2>
+            <Link
+              href="/seo-strategy"
+              className="inline-flex items-center gap-1.5 text-sm font-semibold text-blue-600 hover:text-blue-800 transition-colors"
+            >
+              View full strategy
+              <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+              </svg>
+            </Link>
+          </div>
+          <div className="rounded-xl border border-gray-200 bg-white p-6">
+            <p className="text-sm text-gray-600 leading-relaxed mb-4">
+              While the first SEMrush snapshot is pending, the SEO strategy is fully defined.
+              Axle Towing&apos;s SEO plan focuses on 5 pillars: topical authority for the property manager
+              TAM, AI SEO layer (ChatGPT + Perplexity citations), Local SEO and GBP optimization,
+              domain authority growth, and monthly performance tracking.
+            </p>
+            <Link
+              href="/seo-strategy"
+              className="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-blue-600 text-white text-sm font-semibold hover:bg-blue-700 transition-colors"
+            >
+              View SEO Strategy
+              <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+              </svg>
+            </Link>
+          </div>
+        </section>
       )}
     </main>
   );
