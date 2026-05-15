@@ -113,6 +113,12 @@ export const FREE_SERVICES = [
     shortDesc: "Protect your commercial property from unauthorized parking.",
     icon: "store",
   },
+  {
+    title: "Abandoned Vehicle Removal",
+    slug: "abandoned-vehicle-removal",
+    shortDesc: "Clear abandoned vehicles from apartments, HOAs, and commercial lots.",
+    icon: "truck",
+  },
 ];
 
 export const PAID_SERVICES = [

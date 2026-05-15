@@ -20,7 +20,7 @@ const STATS = [
   { value: "$0", label: "Cost to Property Owners" },
   { value: "30min", label: "Average Response Time" },
   { value: "24/7", label: "Dispatch Available" },
-  { value: "100%", label: "ARS Compliant" },
+  { value: "100%", label: "Documented Process" },
 ];
 
 const SERVICE_ICONS: Record<string, React.ReactNode> = {
@@ -97,7 +97,7 @@ export default function ServicesPage() {
             Free Towing &amp; Enforcement Services
           </h2>
           <p className="text-blue-100 text-center text-lg mb-12 max-w-2xl mx-auto reveal delay-100">
-            These services are completely free for property owners and managers. All costs are recovered through legally mandated impound fees.
+            These services are designed for property owners and managers. We review each property and recommend a documented enforcement setup that fits the site.
           </p>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {FREE_SERVICES.map((service, i) => (
@@ -124,27 +124,6 @@ export default function ServicesPage() {
                 </span>
               </Link>
             ))}
-            <Link
-              href="/blog/abandoned-vehicle-removal-private-property-arizona"
-              className="group rounded-2xl p-8 reveal bg-white/10 backdrop-blur-sm border border-white/15 hover:bg-white/15 transition-all hover:-translate-y-1"
-              style={{ animationDelay: `${(FREE_SERVICES.length + 1) * 100}ms` }}
-            >
-              <div className="w-14 h-14 rounded-xl bg-white/15 flex items-center justify-center mb-5 text-blue-200 group-hover:bg-white/25 transition-colors">
-                {SERVICE_ICONS.truck}
-              </div>
-              <h3 className="font-heading text-xl font-bold text-white mb-3 group-hover:text-blue-200 transition-colors">
-                Abandoned Vehicle Removal
-              </h3>
-              <p className="text-blue-100 text-sm leading-relaxed mb-4">
-                Remove abandoned vehicles from private property across Phoenix metro at no cost to property owners.
-              </p>
-              <span className="inline-flex items-center text-sm font-semibold text-blue-300 group-hover:text-white transition-colors">
-                Learn More
-                <svg className="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                </svg>
-              </span>
-            </Link>
           </div>
         </div>
       </section>

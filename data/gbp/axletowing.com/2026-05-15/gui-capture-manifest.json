@@ -102,5 +102,65 @@
       "Use real, well-lit JPG/PNG photos between 10 KB and 5 MB with at least 250x250 resolution; 720x720 or higher preferred.",
       "Use service-specific photos, exterior/interior/team/logo/cover images, reviews/replies, and fresh posts to support prominence and conversion."
     ]
+  },
+  "tonight_artifacts": {
+    "upload_packet": "docs/GBP-UPLOAD-PACKET-2026-05-15.md",
+    "qa_seed_set": "docs/GBP-QA-SEED-SET-2026-05-15.md",
+    "post_calendar": "docs/GBP-POST-CALENDAR-2026-05-15.md",
+    "review_response_queue": "docs/GBP-REVIEW-RESPONSE-QUEUE-2026-05-15.md",
+    "website_content_cleanup": "docs/WEBSITE-CONTENT-CLEANUP-2026-05-15.md",
+    "ppp_client_update": "docs/PPP-CLIENT-UPDATE-2026-05-15.md"
+  },
+  "website_implementation": {
+    "completed_on": "2026-05-15",
+    "build_status": "passed",
+    "new_service_path": "https://axletowing.com/services/abandoned-vehicle-removal",
+    "repo_files": [
+      "website/src/app/services/abandoned-vehicle-removal/page.tsx",
+      "website/src/lib/constants.ts",
+      "website/src/lib/service-data.ts",
+      "website/src/lib/schema.ts",
+      "website/src/components/ServicePageTemplate.tsx",
+      "website/src/app/services/page.tsx",
+      "website/src/app/layout.tsx",
+      "website/src/components/Header.tsx",
+      "website/src/components/Footer.tsx"
+    ],
+    "seo_actions": [
+      "Added abandoned vehicle removal as a dedicated service path.",
+      "Added abandoned vehicle removal to the service grid and structured service catalog.",
+      "Removed broad legal/competitor keywords from global metadata.",
+      "Updated AI citation metadata with the dispatch vs vehicle-release distinction.",
+      "Changed shared header/footer 24/7 wording to dispatch-specific language.",
+      "Set comparison-style pages to noindex, follow pending rewrite or retirement."
+    ]
+  },
+  "ai_seo_city_service_cluster": {
+    "generated_at": "2026-05-15T07:43:39.918Z",
+    "article_count": 26,
+    "total_new_article_assets": 32,
+    "pillar_article_count": 6,
+    "implementation_plan": "docs/SEO-AI-SEO-IMPLEMENTATION-PLAN-2026-05-15.md",
+    "linear_master": "AI-10006",
+    "linear_tasks": [
+      "AI-10007",
+      "AI-10008",
+      "AI-10009",
+      "AI-10010",
+      "AI-10011",
+      "AI-10012",
+      "AI-10013"
+    ],
+    "matrix": "docs/SEO-AI-SEO-CITY-SERVICE-MATRIX-2026-05-15.md",
+    "schedule": "docs/SEO-AI-SEO-ARTICLE-SCHEDULE-2026-05-15.md",
+    "generator": "scripts/generate-ai-seo-city-service-cluster.js",
+    "build_verification": "npm run build passed on 2026-05-15 with 395 generated pages.",
+    "purpose": "City + service AI SEO coverage for abandoned vehicle removal, HOA enforcement, apartment enforcement, commercial towing, private property towing, and parking enforcement across Phoenix metro priority cities.",
+    "guardrails": [
+      "24/7 means towing dispatch only",
+      "No competitor-comparison content",
+      "No legal-dispute playbooks",
+      "No unsupported vehicle-release hours claims"
+    ]
   }
 }
