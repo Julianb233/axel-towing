@@ -53,7 +53,7 @@
       "phone": "(623) 401-2537",
       "target_phone": "(480) 288-5526",
       "pending_phone_edit": "(480) 288-5526",
-      "rating": 3.0,
+      "rating": 3,
       "reviews": 4,
       "public_hours": "Closed; opens 9 AM Friday; confirmed by this business 3 weeks ago",
       "profile_strength": "Complete Info",
@@ -91,5 +91,16 @@
     "data/gbp/axletowing.com/2026-05-15/screenshots/gbp-phoenix-business-info-2026-05-15.png",
     "data/gbp/axletowing.com/2026-05-15/screenshots/gbp-phoenix-services-2026-05-15.png",
     "data/gbp/axletowing.com/2026-05-15/screenshots/gbp-phoenix-phone-pending-2026-05-15.png"
-  ]
+  ],
+  "media_storage": {
+    "gbp_ready_manifest": "data/gbp/axletowing.com/2026-05-15/media/gbp-ready/gbp-media-manifest.json",
+    "screenshot_evidence_manifest": "data/gbp/axletowing.com/2026-05-15/screenshots/screenshot-evidence-manifest.json",
+    "metadata_model": "Each GBP-ready asset and screenshot has a .metadata.json sidecar plus macOS xattrs for client, domain, capture date, source, service intent, local SEO keywords, AI SEO entities, and recall tags.",
+    "google_best_practices_applied": [
+      "Complete and accurate business information for relevance.",
+      "Keep hours accurate; separate 24/7 dispatch from office/vehicle-release hours.",
+      "Use real, well-lit JPG/PNG photos between 10 KB and 5 MB with at least 250x250 resolution; 720x720 or higher preferred.",
+      "Use service-specific photos, exterior/interior/team/logo/cover images, reviews/replies, and fresh posts to support prominence and conversion."
+    ]
+  }
 }
