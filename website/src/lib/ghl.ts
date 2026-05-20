@@ -93,6 +93,7 @@ function buildTags(params: {
   propertyType?: string;
   urgency?: string;
   timeline?: string;
+  smsConsent?: boolean;
 }): string[] {
   const tags: string[] = [];
 
@@ -142,6 +143,13 @@ function buildTags(params: {
 
   // Active sequence
   tags.push('seq-new-lead-nurture');
+
+  // A2P 10DLC SMS consent tags (used by GHL workflow guards)
+  if (params.smsConsent) {
+    tags.push('sms-consent-web');
+  } else {
+    tags.push('no-sms');
+  }
 
   return tags;
 }
